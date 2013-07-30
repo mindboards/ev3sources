@@ -1,0 +1,137 @@
+/*
+ * LEGO® MINDSTORMS EV3
+ *
+ * Copyright (C) 2010-2013 The LEGO Group
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
+
+//  TCP 08.04.2013
+//! \page testsdcardappcode SDCard Application
+//!
+//! <hr size="1"/>
+//!
+//! \verbatim
+//**********************************************************************
+define appv 'SDCard V1.02'                                            //
+//**********************************************************************
+                                                                      //
+                                                                      //
+vmthread  MAIN                                                        //  void    MAIN(void)
+{                                                                     //  {
+  DATA8   ShowVersion                                                 //
+                                                                      //
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //    UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+  JR_FALSE(ShowVersion,DontShowVersion)                               //    if (ShowVersion)
+                                                                      //    {
+  UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)                              //      UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)
+  UI_DRAW(RECT,FG_COLOR,6,52,166,24)                                  //      UI_DRAW(RECT,FG_COLOR,6,52,166,24)
+  UI_DRAW(TEXT,FG_COLOR,13,60,appv)                                   //      UI_DRAW(TEXT,FG_COLOR,13,60,appv)
+  UI_DRAW(UPDATE)                                                     //      UI_DRAW(UPDATE)
+                                                                      //
+ShowVersionWait:                                                      //      do
+                                                                      //      {  
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //        UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+                                                                      //      }
+  JR_TRUE(ShowVersion,ShowVersionWait)                                //      while (ShowVersion)
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //      UI_BUTTON(FLUSH)
+DontShowVersion:                                                      //    }  
+                                                                      //
+  UI_DRAW(RESTORE,0)                                                  //    UI_DRAW(RESTORE,0)
+  UI_DRAW(TOPLINE,0)                                                  //    UI_DRAW(TOPLINE,0)
+  UI_WRITE(LED,LED_GREEN)                                             //    UI_WRITE(LED,LED_GREEN)
+                                                                      //
+  CALL(TestSDCard)                                                    //    TestSDCard()
+                                                                      //
+  UI_DRAW(TOPLINE,1)                                                  //    UI_DRAW(TOPLINE,1)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestSDCard                                                  //  void TestSDCard(void)
+{                                                                     //  {
+  DATAF   DataF                                                       //
+  DATA32  Total                                                       //
+  DATA32  Used                                                        //
+  DATA32  Free                                                        //
+  DATA8   State                                                       //
+  DATA8   Run                                                         //
+  DATA8   Tmp                                                         //
+                                                                      //
+  MOVE8_8(1,Run)                                                      //    Run     =  1
+                                                                      //    do
+Loop1:                                                                //    {
+                                                                      //
+  UI_DRAW(FILLWINDOW,0x00,0,0                                         //      UI_DRAW(FILLWINDOW,0x00,0,0
+  UI_DRAW(SELECT_FONT,SMALL_FONT)                                     //      UI_DRAW(SELECT_FONT,SMALL_FONT)
+  UI_DRAW(TEXT,FG_COLOR,0,1,'SDCard')                                 //      UI_DRAW(TEXT,FG_COLOR,0,1,'SDCard')
+  UI_DRAW(LINE,FG_COLOR,0,TOPLINE_HEIGHT,LCD_WIDTH,TOPLINE_HEIGHT)    //
+  UI_DRAW(SELECT_FONT,NORMAL_FONT)                                    //      UI_DRAW(SELECT_FONT,NORMAL_FONT)
+                                                                      //
+  UI_READ(GET_SDCARD,State,Total,Free)                                //      UI_READ(GET_SDCARD,State,Total,Free)
+  JR_FALSE(State,NoCard)                                              //      if (State)
+                                                                      //      {
+  SUB32(Total,Free,Used)                                              //        Used  =  Total - Free
+                                                                      //                                                                      
+  MOVE32_F(Total,DataF)                                               //        DataF  =  Total
+  DIVF(DataF,1000000.0F,DataF)                                        //        DataF /=  1000000
+                                                                      //                                                                      
+  UI_DRAW(TEXT,FG_COLOR,8,48,'Size')                                  //        UI_DRAW(TEXT,FG_COLOR,8,48,'Size')
+  UI_DRAW(VALUE,FG_COLOR,48,48,DataF,9,6)                             //        UI_DRAW(VALUE,FG_COLOR,48,48,DataF,9,6)
+  UI_DRAW(TEXT,FG_COLOR,124,48,'GB')                                  //        UI_DRAW(TEXT,FG_COLOR,124,48,'GB')
+                                                                      //
+  MOVE32_F(Used,DataF)                                                //        DataF  =  Used
+  DIVF(DataF,1000000.0F,DataF)                                        //        DataF /=  1000000
+                                                                      //                                                                      
+  UI_DRAW(TEXT,FG_COLOR,8,72,'Used')                                  //        UI_DRAW(TEXT,FG_COLOR,8,72,'Used')
+  UI_DRAW(VALUE,FG_COLOR,48,72,DataF,9,6)                             //        UI_DRAW(VALUE,FG_COLOR,48,72,DataF,9,6)
+  UI_DRAW(TEXT,FG_COLOR,124,72,'GB')                                  //        UI_DRAW(TEXT,FG_COLOR,124,72,'GB')
+                                                                      //
+  MOVE32_F(Free,DataF)                                                //        DataF  =  Free
+  DIVF(DataF,1000000.0F,DataF)                                        //        DataF /=  1000000
+                                                                      //                                                                      
+  UI_DRAW(TEXT,FG_COLOR,8,96,'Free')                                  //        UI_DRAW(TEXT,FG_COLOR,8,96,'Free')
+  UI_DRAW(VALUE,FG_COLOR,48,96,DataF,9,6)                             //        UI_DRAW(VALUE,FG_COLOR,48,96,DataF,9,6)
+  UI_DRAW(TEXT,FG_COLOR,124,96,'GB')                                  //        UI_DRAW(TEXT,FG_COLOR,124,96,'GB')
+                                                                      //
+  JR(EndCard)                                                         //      }
+                                                                      //      else
+NoCard:                                                               //      {
+                                                                      //
+  UI_DRAW(TEXT,FG_COLOR,24,60,'NO CARD DETECTED')                     //        UI_DRAW(TEXT,FG_COLOR,24,60,'NO CARD DETECTED')
+                                                                      //
+EndCard:                                                              //      }
+  UI_DRAW(UPDATE)                                                     //      UI_DRAW(UPDATE)
+                                                                      //
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotBackButton)                                         //      if (Tmp != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotBackButton:                                                        //      }
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotEnterButton)                                        //      if (Tmp != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotEnterButton:                                                       //      }
+                                                                      //    }
+  JR_TRUE(Run,Loop1)                                                  //    while (Run)
+Stop:                                                                 //
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//! \endverbatim
+

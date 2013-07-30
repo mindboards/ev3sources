@@ -1,0 +1,341 @@
+/*
+ * LEGO® MINDSTORMS EV3
+ *
+ * Copyright (C) 2010-2013 The LEGO Group
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
+
+//  TCP 05.04.2013
+//! \page motorcontrolappcode Motor Control Source Code
+//!
+//! <hr size="1"/>
+//!
+//! \verbatim
+//**********************************************************************
+define appv 'Motor Control V1.02'                                     //
+//**********************************************************************
+                                                                      //
+define    MOTORL      0x02                                            //
+define    MOTORR      0x04                                            //
+define    MOTORLR     0x06                                            //
+                                                                      //
+define    MOTORA      0x01                                            //
+define    MOTORD      0x08                                            //
+define    MOTORAD     0x09                                            //
+                                                                      //
+define    MOTORALL    0x0F                                            //
+                                                                      //
+define    FWD_POWER   100                                             //
+define    BWD_POWER   -100                                            //
+                                                                      //
+define    IR_PORT     3                                               //
+define    IR_TYPE     33                                              //
+                                                                      //
+define    TIMEOUT     250                                             //
+                                                                      //
+DATA32    Timer                                                       //    Timer used for timeout if no IR
+DATA8     Update                                                      //
+                                                                      //
+DATA8     Select                                                      //
+DATA8     LeftPower                                                   //
+DATA8     RightPower                                                  //
+DATA8     OldLeftPower                                                //
+DATA8     OldRightPower                                               //
+DATA8     PowerA                                                      //
+DATA8     PowerD                                                      //
+DATA8     OldPowerA                                                   //
+DATA8     OldPowerD                                                   //
+                                                                      //
+// MAIN ************************************************************************************************
+                                                                      //
+                                                                      //
+vmthread  MAIN                                                        //  void MAIN(void)
+{                                                                     //  {
+  DATA8   Run                                                         //
+  DATA8   State                                                       //
+  DATA8   ShowVersion                                                 //
+                                                                      //
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //    UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+  JR_FALSE(ShowVersion,DontShowVersion)                               //    if (ShowVersion)
+                                                                      //    {
+  UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)                              //      UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)
+  UI_DRAW(RECT,FG_COLOR,6,52,166,24)                                  //      UI_DRAW(RECT,FG_COLOR,6,52,166,24)
+  UI_DRAW(TEXT,FG_COLOR,13,60,appv)                                   //      UI_DRAW(TEXT,FG_COLOR,13,60,appv)
+  UI_DRAW(UPDATE)                                                     //      UI_DRAW(UPDATE)
+                                                                      //
+ShowVersionWait:                                                      //      do
+                                                                      //      {  
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //        UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+                                                                      //      }
+  JR_TRUE(ShowVersion,ShowVersionWait)                                //      while (ShowVersion)
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //      UI_BUTTON(FLUSH)
+DontShowVersion:                                                      //    }  
+                                                                      //
+  UI_DRAW(RESTORE,0)                                                  //    UI_DRAW(RESTORE,0)
+  UI_DRAW(TOPLINE,1)                                                  //    UI_DRAW(TOPLINE,1)
+  UI_BUTTON(SET_BACK_BLOCK,1)                                         //    UI_BUTTON(SET_BACK_BLOCK,1)
+  UI_WRITE(LED,LED_GREEN)                                             //    UI_WRITE(LED,LED_GREEN)
+                                                                      //
+  CALL(Init)                                                          //    Init()
+                                                                      //
+  MOVE8_8(1,Run)                                                      //    Run  =  1
+                                                                      //
+                                                                      //    do
+Loop:                                                                 //    {
+                                                                      //
+  CALL(Ctrl)                                                          //      Ctrl()
+                                                                      //
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,State)                             //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,State)
+  JR_FALSE(State,NotBack)                                             //      if (State)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+                                                                      //
+NotBack:                                                              //      }
+                                                                      //    }
+  JR_TRUE(Run,Loop)                                                   //    while (Run)
+                                                                      //
+  CALL(Exit)                                                          //    Exit()
+                                                                      //
+  UI_BUTTON(SET_BACK_BLOCK,0)                                         //    UI_BUTTON(SET_BACK_BLOCK,0)
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// Init ************************************************************************************************
+                                                                      //
+                                                                      //
+subcall   Init                                                        //  Init
+{                                                                     //  {
+  MOVE8_8(0,Select)                                                   //    Select      =  0
+                                                                      //
+  MOVE8_8(0,LeftPower)                                                //    LeftPower   =  0
+  MOVE8_8(0,RightPower)                                               //    RightPower  =  0
+  MOVE8_8(0,PowerA)                                                   //    PowerA      =  0
+  MOVE8_8(0,PowerD)                                                   //    PowerD      =  0
+                                                                      //
+  OUTPUT_POWER(0,MOTORALL,0)                                          //    OUTPUT_POWER(0,MOTORALL,0)
+                                                                      //
+  TIMER_READ(Timer)                                                   //    TIMER_READ(Timer)
+  MOVE8_8(1,Update)                                                   //    Update      =  1
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// Ctrl ************************************************************************************************
+                                                                      //
+                                                                      //
+subcall   Ctrl                                                        //  Ctrl
+{                                                                     //  {
+  DATA8   Section                                                     //    Motor section (B+C or A+D)
+  DATA8   Tmp                                                         //    Temp variable
+  DATA8   State                                                       //
+                                                                      //
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,State)                            //    UI_BUTTON(SHORTPRESS,ENTER_BUTTON,State)
+  JR_FALSE(State,NotEnter)                                            //    if (State)
+                                                                      //    {
+  JR_TRUE(Select,ActSelect34)                                         //      if (!Select)
+                                                                      //      {
+  MOVE8_8(1,Select)                                                   //        Select  =  1
+  MOVE8_8(1,Update)                                                   //        Update  =  1
+                                                                      //
+  JR(EndSelect34)                                                     //      }
+                                                                      //      else
+ActSelect34:                                                          //      {
+  MOVE8_8(0,Select)                                                   //        Select  =  0
+  MOVE8_8(1,Update)                                                   //        Update  =  1
+                                                                      //
+EndSelect34:                                                          //      }
+NotEnter:                                                             //    }
+                                                                      //
+  MOVE8_8(0,LeftPower)                                                //    LeftPower   =  0
+  MOVE8_8(0,RightPower)                                               //    RightPower  =  0
+  MOVE8_8(0,PowerA)                                                   //    PowerA      =  0
+  MOVE8_8(0,PowerD)                                                   //    PowerD      =  0
+                                                                      //
+  JR_NEQ8(Select,0,Select1)                                           //    if (Select == 0)
+                                                                      //    {
+  UI_BUTTON(PRESSED,UP_BUTTON,State)                                  //      UI_BUTTON(PRESSED,UP_BUTTON,State)
+  JR_FALSE(State,NotUp)                                               //      if (State)
+                                                                      //      {
+  MOVE8_8(FWD_POWER,PowerA)                                           //        PowerA   =  FWD_POWER
+                                                                      //
+NotUp:                                                                //      }
+                                                                      //
+  UI_BUTTON(PRESSED,DOWN_BUTTON,State)                                //      UI_BUTTON(PRESSED,DOWN_BUTTON,State)
+  JR_FALSE(State,NotDown)                                             //      if (State)
+                                                                      //      {
+  MOVE8_8(BWD_POWER,PowerA)                                           //        PowerA   =  BWD_POWER
+                                                                      //
+NotDown:                                                              //      }
+                                                                      //
+  UI_BUTTON(PRESSED,LEFT_BUTTON,State)                                //      UI_BUTTON(PRESSED,LEFT_BUTTON,State)
+  JR_FALSE(State,NotLeft)                                             //      if (State)
+                                                                      //      {
+  MOVE8_8(BWD_POWER,PowerD)                                           //        PowerD  =  BWD_POWER
+                                                                      //
+NotLeft:                                                              //      }
+                                                                      //
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,State)                               //      UI_BUTTON(PRESSED,RIGHT_BUTTON,State)
+  JR_FALSE(State,NotRight)                                            //      if (State)
+                                                                      //      {
+  MOVE8_8(FWD_POWER,PowerD)                                           //        PowerD  =  FWD_POWER
+                                                                      //
+NotRight:                                                             //      }
+  JR(SelectEnd)                                                       //    }
+                                                                      //    else
+Select1:                                                              //    {                                                                                                                                                                                                                    
+  UI_BUTTON(PRESSED,UP_BUTTON,State)                                  //      UI_BUTTON(PRESSED,UP_BUTTON,State)
+  JR_FALSE(State,NotUp1)                                              //      if (State)
+                                                                      //      {
+  MOVE8_8(FWD_POWER,LeftPower)                                        //        LeftPower   =  FWD_POWER
+                                                                      //
+NotUp1:                                                               //      }
+                                                                      //
+  UI_BUTTON(PRESSED,DOWN_BUTTON,State)                                //      UI_BUTTON(PRESSED,DOWN_BUTTON,State)
+  JR_FALSE(State,NotDown1)                                            //      if (State)
+                                                                      //      {
+  MOVE8_8(BWD_POWER,LeftPower)                                        //        LeftPower   =  BWD_POWER
+                                                                      //
+NotDown1:                                                             //      }
+                                                                      //
+  UI_BUTTON(PRESSED,LEFT_BUTTON,State)                                //      UI_BUTTON(PRESSED,LEFT_BUTTON,State)
+  JR_FALSE(State,NotLeft1)                                            //      if (State)
+                                                                      //      {
+  MOVE8_8(BWD_POWER,RightPower)                                       //        RightPower  =  BWD_POWER
+                                                                      //
+NotLeft1:                                                             //      }
+                                                                      //
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,State)                               //      UI_BUTTON(PRESSED,RIGHT_BUTTON,State)
+  JR_FALSE(State,NotRight1)                                           //      if (State)
+                                                                      //      {
+  MOVE8_8(FWD_POWER,RightPower)                                       //        RightPower  =  FWD_POWER
+                                                                      //
+NotRight1:                                                            //      }
+SelectEnd:                                                            //    }
+                                                                      //
+  OUTPUT_START(0,MOTORALL)                                            //    OUTPUT_START(0,MOTORALL)
+  JR_EQ8(LeftPower,OldLeftPower,NoLeftChange)                         //    if (OldLeftPower != LeftPower)
+                                                                      //    {
+  MOVE8_8(LeftPower,OldLeftPower)                                     //      OldLeftPower    =  LeftPower
+  OUTPUT_POWER(0,MOTORL,LeftPower)                                    //      OUTPUT_POWER(0,MOTORL,LeftPower)
+  MOVE8_8(1,Update)                                                   //      Update          =  1
+                                                                      //
+NoLeftChange:                                                         //    }
+                                                                      //
+  JR_EQ8(RightPower,OldRightPower,NoRightChange)                      //    if (OldRightPower != RightPower)
+                                                                      //    {
+  MOVE8_8(RightPower,OldRightPower)                                   //      OldRightPower   =  RightPower
+  OUTPUT_POWER(0,MOTORR,RightPower)                                   //      OUTPUT_POWER(0,MOTORR,RightPower)
+  MOVE8_8(1,Update)                                                   //      Update          =  1
+                                                                      //
+NoRightChange:                                                        //    }
+                                                                      //
+  JR_EQ8(PowerA,OldPowerA,NoAChange)                                  //    if (OldPowerA != PowerA)
+                                                                      //    {
+  MOVE8_8(PowerA,OldPowerA)                                           //      OldPowerA   =  PowerA
+  OUTPUT_POWER(0,MOTORA,PowerA)                                       //      OUTPUT_POWER(0,MOTORA,PowerA)
+  MOVE8_8(1,Update)                                                   //      Update          =  1
+                                                                      //
+NoAChange:                                                            //    }
+                                                                      //
+  JR_EQ8(PowerD,OldPowerD,NoDChange)                                  //    if (OldPowerD != PowerD)
+                                                                      //    {
+  MOVE8_8(PowerD,OldPowerD)                                           //      OldPowerD   =  PowerD
+  OUTPUT_POWER(0,MOTORD,PowerD)                                       //      OUTPUT_POWER(0,MOTORD,PowerD)
+  MOVE8_8(1,Update)                                                   //      Update          =  1
+                                                                      //
+NoDChange:                                                            //    }
+                                                                      //
+  JR_FALSE(Update,NoUpdate)                                           //    if (Update)
+                                                                      //    {
+  UI_DRAW(FILLWINDOW,BG_COLOR,TOPLINE_HEIGHT,0)                       //      UI_DRAW(FILLWINDOW,BG_COLOR,TOPLINE_HEIGHT,0)
+                                                                      //
+  JR_TRUE(Select,Select34)                                            //      if (!Select)
+                                                                      //      {
+  UI_DRAW(BMPFILE,FG_COLOR,0,17,'MotorCtlAD')                         //        UI_DRAW(BMPFILE,FG_COLOR,0,17,'MotorCtlAD')
+                                                                      //
+  JR(EndSelect)                                                       //      }
+                                                                      //      else
+Select34:                                                             //      {
+                                                                      //
+  UI_DRAW(BMPFILE,FG_COLOR,0,17,'MotorCtlBC')                         //        UI_DRAW(BMPFILE,FG_COLOR,0,17,'MotorCtlBC')
+                                                                      //
+EndSelect:                                                            //      }
+                                                                      //
+  JR_EQ8(LeftPower,0,NoLeftPower)                                     //      if (LeftPower != 0)
+                                                                      //      {
+  UI_DRAW(INVERSERECT,51,18,34,15)                                    //        UI_DRAW(INVERSERECT,51,18,34,15)
+                                                                      //
+NoLeftPower:                                                          //      }
+                                                                      //
+  JR_EQ8(RightPower,0,NoRightPower)                                   //      if (RightPower != 0)
+                                                                      //      {
+  UI_DRAW(INVERSERECT,91,18,34,15)                                    //        UI_DRAW(INVERSERECT,91,18,34,15)
+                                                                      //
+NoRightPower:                                                         //      }
+                                                                      //
+  JR_EQ8(PowerA,0,NoAPower)                                           //      if (PowerA != 0)
+                                                                      //      {
+  UI_DRAW(INVERSERECT,11,18,34,15)                                    //        UI_DRAW(INVERSERECT,11,18,34,15)
+                                                                      //
+NoAPower:                                                             //      }
+                                                                      //
+  JR_EQ8(PowerD,0,NoDPower)                                           //      if (PowerD != 0)
+                                                                      //      {
+  UI_DRAW(INVERSERECT,131,18,34,15)                                   //        UI_DRAW(INVERSERECT,131,18,34,15)
+                                                                      //
+NoDPower:                                                             //      }
+                                                                      //
+  MOVE8_8(0,Tmp)                                                      //      Tmp  =  0
+  OR8(LeftPower,Tmp,Tmp)                                              //      Tmp |=  LeftPower
+  OR8(RightPower,Tmp,Tmp)                                             //      Tmp |=  RightPower
+  OR8(PowerA,Tmp,Tmp)                                                 //      Tmp |=  PowerA
+  OR8(PowerD,Tmp,Tmp)                                                 //      Tmp |=  PowerB
+                                                                      //
+  JR_EQ8(Tmp,0,NotActive)                                             //      if (Tmp)
+                                                                      //      {
+  UI_WRITE(LED,LED_GREEN_PULSE)                                       //        UI_WRITE(LED,LED_GREEN_PULSE)
+                                                                      //
+  JR(EndActive)                                                       //      }
+                                                                      //      else
+NotActive:                                                            //      {
+                                                                      //
+  UI_WRITE(LED,LED_GREEN)                                             //        UI_WRITE(LED,LED_GREEN)
+                                                                      //
+EndActive:                                                            //      }
+                                                                      //
+  UI_DRAW(UPDATE)                                                     //      UI_DRAW(UPDATE)
+  MOVE8_8(0,Update)                                                   //      Update  =  0
+                                                                      //
+NoUpdate:                                                             //    }
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// Exit ************************************************************************************************
+                                                                      //
+                                                                      //
+subcall   Exit                                                        //  Exit
+{                                                                     //  {
+  DATAF   DataF                                                       //    Temp variable
+                                                                      //
+  INPUT_READSI(0,IR_PORT,0,0,DataF)                                   //    INPUT_READSI(0,IR_PORT,0,0,DataF)
+  OUTPUT_STOP(0,MOTORALL,0)                                           //    OUTPUT_STOP(0,MOTORALL,0)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//! \endverbatim

@@ -1,0 +1,2 @@
+set remotetimeout 1000
+set solib-absolute-prefix ~/CodeSourcery/Sourcery_G++_Lite/arm-none-linux-gnueabi/libc/

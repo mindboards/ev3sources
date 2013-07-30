@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Setup directories
+source ../../open_first/env_setup
+
+# Be sure to have path to compiler
+if [ -d $AM1808_COMPILER ]
+then
+  PATH=$AM1808_COMPILER:$PATH
+fi
+export PATH
+
+# Check for input filename
+if [ -z "$1" ]; then
+  echo usage: $0 modulename
+  exit
+fi  
+
+cp d_uart.c d_uart_new.c
+
+# Make module
+make -C ${AM1808_KERNEL} MOD=$1 M=`pwd` ARCH=arm CROSS_COMPILE=arm-none-linux-gnueabi-
+
+cp $1.ko $AM1808_MODULES/$1.ko
+
+rm *.o
+rm Module.symvers
+rm modules.order
+rm *.mod.c
+rm *.ko
+rm .*.*
+rm d_uart_new.c
+
+rm -r .tmp_versions
+
+

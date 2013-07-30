@@ -1,0 +1,513 @@
+/*
+
+r../projects/lms2012/lms2012/Linux_X86/sys/ui/tststr.rbf
+*/
+vmthread  main
+{
+  UI_WRITE(PUT_STRING,'\r\n')
+  UI_WRITE(PUT_STRING,'          DYNAMIC STRING ARRAY TEST V0.53\r\n')
+  UI_WRITE(PUT_STRING,'    -------------------------------------------\r\n')
+  UI_WRITE(PUT_STRING,'\r\n')
+  UI_WRITE(WRITE_FLUSH)
+
+  CALL(Test_STRINGS_ADD)
+  CALL(Test_STRINGS_DUPLICATE)
+  CALL(Test_STRINGS_VALUE_TO_STRING)
+  CALL(Test_STRINGS_NUMBER_TO_STRING)
+  CALL(Test_STRINGS_STRIP)
+  CALL(Test_INPUT_DEVICE_GET_NAME)
+  CALL(Test_INPUT_DEVICE_GET_SYMBOL)
+  CALL(Test_INPUT_DEVICE_GET_MODENAME)
+  CALL(Test_opUI_READ_GET_HW_VERS)
+  CALL(Test_opUI_READ_GET_FW_VERS)
+  CALL(Test_opUI_READ_GET_FW_BUILD)
+  CALL(Test_opUI_READ_GET_OS_VERS)
+  CALL(Test_opUI_READ_GET_OS_BUILD)
+  CALL(Test_opUI_READ_GET_VERSION)
+}
+
+
+subcall   Test_INFO_ERRORTEXT
+{
+  DATA16  Destination
+
+  UI_WRITE(PUT_STRING,'\r\n')
+  UI_WRITE(PUT_STRING,'opINFO ERRORTEXT [')
+
+  ARRAY(CREATE8,0,Destination)
+
+  INFO(ERRORTEXT,10,-1,@Destination)
+
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n\n')
+  UI_WRITE(WRITE_FLUSH)
+
+  ARRAY(DELETE,Destination)
+}
+
+
+subcall   Test_STRINGS_ADD
+{
+  DATA16  Source1
+  DATA16  Source2
+  DATA16  Destination
+
+  UI_WRITE(PUT_STRING,'\r\n')
+  UI_WRITE(PUT_STRING,'opSTRINGS ADD [')
+
+  ARRAY(CREATE8,0,Source1)
+  ARRAY(CREATE8,0,Source2)
+  ARRAY(CREATE8,0,Destination)
+
+  STRINGS(DUPLICATE,'This is a STRING_ADD Test:',@Source1)
+  STRINGS(DUPLICATE,'01234567890123456789012345678901234567890123456789012345678901234567890123456789',@Source2)
+
+  STRINGS(ADD,@Source1,@Source2,@Destination)
+
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n\n')
+  UI_WRITE(WRITE_FLUSH)
+
+  ARRAY(DELETE,Source1)
+  ARRAY(DELETE,Source2)
+  ARRAY(DELETE,Destination)
+}
+
+
+subcall   Test_STRINGS_DUPLICATE
+{
+  DATA16  Source1
+  DATA16  Destination
+
+  UI_WRITE(PUT_STRING,'\r\n')
+  UI_WRITE(PUT_STRING,'opSTRINGS DUPLICATE [')
+
+  ARRAY(CREATE8,0,Source1)
+  ARRAY(CREATE8,0,Destination)
+
+  STRINGS(DUPLICATE,'This is fine',@Source1)
+  STRINGS(DUPLICATE,@Source1,@Destination)
+
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n\n')
+  UI_WRITE(WRITE_FLUSH)
+
+  ARRAY(DELETE,Source1)
+  ARRAY(DELETE,Destination)
+}
+
+
+subcall   Test_STRINGS_VALUE_TO_STRING
+{
+  DATAF   Value
+  DATA16  Destination
+
+  UI_WRITE(PUT_STRING,'\r\n')
+  UI_WRITE(PUT_STRING,'opSTRINGS VALUE_TO_STRING \r\n')
+
+  ARRAY(CREATE8,0,Destination)
+
+  UI_WRITE(PUT_STRING,'12345.6789     (12,4)  -> [')
+  STRINGS(VALUE_TO_STRING,12345.6789F,12,4,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  UI_WRITE(PUT_STRING,'12345.6789     (12,2)  -> [')
+  STRINGS(VALUE_TO_STRING,12345.6789F,12,2,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  UI_WRITE(PUT_STRING,'12345.6789     (12,2)  -> [')
+  STRINGS(VALUE_TO_STRING,12345.6789F,12,2,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  UI_WRITE(PUT_STRING,'6.0000         (12,4)  -> [')
+  STRINGS(VALUE_TO_STRING,6.0000F,12,4,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  UI_WRITE(PUT_STRING,'6.6000         (12,4)  -> [')
+  STRINGS(VALUE_TO_STRING,6.6000F,12,4,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  UI_WRITE(PUT_STRING,'6.6600         (12,4)  -> [')
+  STRINGS(VALUE_TO_STRING,6.6600F,12,4,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  UI_WRITE(PUT_STRING,'345.67         (12,4)  -> [')
+  STRINGS(VALUE_TO_STRING,345.67F,12,4,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  UI_WRITE(PUT_STRING,'12345.67       (12,4)  -> [')
+  STRINGS(VALUE_TO_STRING,12345.67F,12,4,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  UI_WRITE(PUT_STRING,'12345.67       (7,4)   -> [')
+  STRINGS(VALUE_TO_STRING,12345.67F,7,4,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  UI_WRITE(PUT_STRING,'-12345.67      (7,4)   -> [')
+  STRINGS(VALUE_TO_STRING,-12345.67F,7,4,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  UI_WRITE(PUT_STRING,'12345.67       (5,4)   -> [')
+  STRINGS(VALUE_TO_STRING,12345.67F,5,4,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  UI_WRITE(PUT_STRING,'12345.67       (4,4)   -> [')
+  STRINGS(VALUE_TO_STRING,12345.67F,4,4,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  UI_WRITE(PUT_STRING,'-12345.67      (4,4)   -> [')
+  STRINGS(VALUE_TO_STRING,-12345.67F,4,4,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  UI_WRITE(PUT_STRING,'12345.6789     (-12,2) -> [')
+  STRINGS(VALUE_TO_STRING,12345.6789F,-12,2,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  UI_WRITE(PUT_STRING,'6.0000         (-12,4) -> [')
+  STRINGS(VALUE_TO_STRING,6.0000F,-12,4,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  UI_WRITE(PUT_STRING,'6.6000         (-12,4) -> [')
+  STRINGS(VALUE_TO_STRING,6.6000F,-12,4,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  UI_WRITE(PUT_STRING,'6.6600         (-12,4) -> [')
+  STRINGS(VALUE_TO_STRING,6.6600F,-12,4,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  UI_WRITE(PUT_STRING,'345.67         (-12,4) -> [')
+  STRINGS(VALUE_TO_STRING,345.67F,-12,4,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  UI_WRITE(PUT_STRING,'12345.67       (-12,4) -> [')
+  STRINGS(VALUE_TO_STRING,12345.67F,-12,4,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  UI_WRITE(PUT_STRING,'12345.67       (-7,4)  -> [')
+  STRINGS(VALUE_TO_STRING,12345.67F,-7,4,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  UI_WRITE(PUT_STRING,'-12345.67      (-7,4)  -> [')
+  STRINGS(VALUE_TO_STRING,-12345.67F,-7,4,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  UI_WRITE(PUT_STRING,'12345.67       (-5,4)  -> [')
+  STRINGS(VALUE_TO_STRING,12345.67F,-5,4,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  UI_WRITE(PUT_STRING,'12345.67       (-4,4)  -> [')
+  STRINGS(VALUE_TO_STRING,12345.67F,-4,4,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  UI_WRITE(PUT_STRING,'-12345.67      (-4,4)  -> [')
+  STRINGS(VALUE_TO_STRING,-12345.67F,-4,4,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  
+  MATH(SQRT,-4.0F,Value)
+  UI_WRITE(PUT_STRING,'SQRT(-4)       (8,0)   -> [')
+  STRINGS(VALUE_TO_STRING,Value,8,0,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  MATH(SQRT,-4.0F,Value)
+  UI_WRITE(PUT_STRING,'SQRT(-4)       (4,0)   -> [')
+  STRINGS(VALUE_TO_STRING,Value,4,0,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  MATH(SQRT,-4.0F,Value)
+  UI_WRITE(PUT_STRING,'SQRT(-4)       (2,0)   -> [')
+  STRINGS(VALUE_TO_STRING,Value,2,0,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  MATH(SQRT,-4.0F,Value)
+  UI_WRITE(PUT_STRING,'SQRT(-4)       (-8,0)  -> [')
+  STRINGS(VALUE_TO_STRING,Value,-8,0,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  MATH(SQRT,-4.0F,Value)
+  UI_WRITE(PUT_STRING,'SQRT(-4)       (-4,0)  -> [')
+  STRINGS(VALUE_TO_STRING,Value,-4,0,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  MATH(SQRT,-4.0F,Value)
+  UI_WRITE(PUT_STRING,'SQRT(-4)       (-2,0)  -> [')
+  STRINGS(VALUE_TO_STRING,Value,-2,0,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  
+  DIVF(1.0F,0.0F,Value)
+  UI_WRITE(PUT_STRING,'1/0            (4,0)   -> [')
+  STRINGS(VALUE_TO_STRING,Value,4,0,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  DIVF(-1.0F,0.0F,Value)
+  UI_WRITE(PUT_STRING,'-1/0           (4,0)   -> [')
+  STRINGS(VALUE_TO_STRING,Value,4,0,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  
+  
+  UI_WRITE(WRITE_FLUSH)
+
+  ARRAY(DELETE,Destination)
+}
+
+
+subcall   Test_STRINGS_NUMBER_TO_STRING
+{
+  DATA16  Test
+  DATA16  Destination
+
+  UI_WRITE(PUT_STRING,'\r\n')
+  UI_WRITE(PUT_STRING,'opSTRINGS NUMBER_TO_STRING\r\n')
+
+  ARRAY(CREATE8,0,Destination)
+
+  UI_WRITE(PUT_STRING,'100               (9)  -> [')
+  STRINGS(NUMBER_TO_STRING,100,9,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  UI_WRITE(PUT_STRING,'100               (6)  -> [')
+  STRINGS(NUMBER_TO_STRING,100,6,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+  
+  UI_WRITE(PUT_STRING,'100               (2)  -> [')
+  STRINGS(NUMBER_TO_STRING,100,2,@Destination)
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n')
+
+  UI_WRITE(PUT_STRING,'\r\n\n')
+  UI_WRITE(WRITE_FLUSH)
+
+  ARRAY(DELETE,Destination)
+}
+
+
+subcall   Test_STRINGS_STRIP
+{
+  DATA16  Source1
+  DATA16  Destination
+
+  UI_WRITE(PUT_STRING,'\r\n')
+  UI_WRITE(PUT_STRING,'opSTRINGS STRIP [')
+
+  ARRAY(CREATE8,0,Source1)
+  ARRAY(CREATE8,0,Destination)
+
+  STRINGS(DUPLICATE,'  This is not     full  of holes  ',@Source1)
+  STRINGS(STRIP,@Source1,@Destination)
+
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n\n')
+  UI_WRITE(WRITE_FLUSH)
+
+  ARRAY(DELETE,Source1)
+  ARRAY(DELETE,Destination)
+}
+
+
+subcall   Test_INPUT_DEVICE_GET_NAME
+{
+  DATA16  Destination
+
+  UI_WRITE(PUT_STRING,'\r\n')
+  UI_WRITE(PUT_STRING,'opINPUT_DEVICE GET_NAME [')
+
+  ARRAY(CREATE8,0,Destination)
+
+  INPUT_DEVICE(GET_NAME,0,0,-1,@Destination)
+
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n\n')
+  UI_WRITE(WRITE_FLUSH)
+
+  ARRAY(DELETE,Destination)
+}
+
+
+subcall   Test_INPUT_DEVICE_GET_SYMBOL
+{
+  DATA16  Destination
+
+  UI_WRITE(PUT_STRING,'\r\n')
+  UI_WRITE(PUT_STRING,'opINPUT_DEVICE GET_SYMBOL [')
+
+  ARRAY(CREATE8,0,Destination)
+
+  INPUT_DEVICE(GET_SYMBOL,0,0,-1,@Destination)
+
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n\n')
+  UI_WRITE(WRITE_FLUSH)
+
+  ARRAY(DELETE,Destination)
+}
+
+
+subcall   Test_INPUT_DEVICE_GET_MODENAME
+{
+  DATA16  Destination
+
+  UI_WRITE(PUT_STRING,'\r\n')
+  UI_WRITE(PUT_STRING,'opINPUT_DEVICE GET_MODENAME [')
+
+  ARRAY(CREATE8,0,Destination)
+
+  INPUT_DEVICE(GET_MODENAME,0,0,0,-1,@Destination)
+
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n\n')
+  UI_WRITE(WRITE_FLUSH)
+
+  ARRAY(DELETE,Destination)
+}
+
+
+subcall   Test_opUI_READ_GET_HW_VERS
+{
+  DATA16  Destination
+
+  UI_WRITE(PUT_STRING,'\r\n')
+  UI_WRITE(PUT_STRING,'opUI_READ GET_HW_VERS [')
+
+  ARRAY(CREATE8,0,Destination)
+
+  UI_READ(GET_HW_VERS,-1,@Destination)
+
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n\n')
+  UI_WRITE(WRITE_FLUSH)
+
+  ARRAY(DELETE,Destination)
+}
+
+
+subcall   Test_opUI_READ_GET_FW_VERS
+{
+  DATA16  Destination
+
+  UI_WRITE(PUT_STRING,'\r\n')
+  UI_WRITE(PUT_STRING,'opUI_READ GET_FW_VERS [')
+
+  ARRAY(CREATE8,0,Destination)
+
+  UI_READ(GET_FW_VERS,-1,@Destination)
+
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n\n')
+  UI_WRITE(WRITE_FLUSH)
+
+  ARRAY(DELETE,Destination)
+}
+
+
+subcall   Test_opUI_READ_GET_FW_BUILD
+{
+  DATA16  Destination
+
+  UI_WRITE(PUT_STRING,'\r\n')
+  UI_WRITE(PUT_STRING,'opUI_READ GET_FW_BUILD [')
+
+  ARRAY(CREATE8,0,Destination)
+
+  UI_READ(GET_FW_BUILD,-1,@Destination)
+
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n\n')
+  UI_WRITE(WRITE_FLUSH)
+
+  ARRAY(DELETE,Destination)
+}
+
+
+subcall   Test_opUI_READ_GET_OS_VERS
+{
+  DATA16  Destination
+
+  UI_WRITE(PUT_STRING,'\r\n')
+  UI_WRITE(PUT_STRING,'opUI_READ GET_OS_VERS [')
+
+  ARRAY(CREATE8,0,Destination)
+
+  UI_READ(GET_OS_VERS,-1,@Destination)
+
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n\n')
+  UI_WRITE(WRITE_FLUSH)
+
+  ARRAY(DELETE,Destination)
+}
+
+
+subcall   Test_opUI_READ_GET_OS_BUILD
+{
+  DATA16  Destination
+
+  UI_WRITE(PUT_STRING,'\r\n')
+  UI_WRITE(PUT_STRING,'opUI_READ GET_OS_BUILD [')
+
+  ARRAY(CREATE8,0,Destination)
+
+  UI_READ(GET_OS_BUILD,-1,@Destination)
+
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n\n')
+  UI_WRITE(WRITE_FLUSH)
+
+  ARRAY(DELETE,Destination)
+}
+
+
+subcall   Test_opUI_READ_GET_VERSION
+{
+  DATA16  Destination
+
+  UI_WRITE(PUT_STRING,'\r\n')
+  UI_WRITE(PUT_STRING,'opUI_READ GET_VERSION [')
+
+  ARRAY(CREATE8,0,Destination)
+
+  UI_READ(GET_VERSION,-1,@Destination)
+
+  UI_WRITE(PUT_STRING,@Destination)
+  UI_WRITE(PUT_STRING,']\r\n\n')
+  UI_WRITE(WRITE_FLUSH)
+
+  ARRAY(DELETE,Destination)
+}
+
+

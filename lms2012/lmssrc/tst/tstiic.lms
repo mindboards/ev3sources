@@ -1,0 +1,128 @@
+//! \page tstiicapp opINPUT_DEVICE SETUP Example
+//!
+//! <hr size="1"/>
+//! \anchor cinputdevicesetup
+//!
+//! \verbatim
+// 
+//
+//
+//**********************************************************************
+//        READ LOOP FOR IIC DEVICES (manual poll)
+//**********************************************************************
+                                                                      //
+                                                                      //
+                                                                      //
+define    PORT                          1                             //
+define    READ_INTERVAL                 330                           //
+                                                                      //
+vmthread  MAIN                                                        //  void    MAIN(void)
+{                                                                     //  {
+  DATA32  ReadoutTimer                                                //
+  DATAF   Value                                                       //
+  DATA16  hIicSetup                                                   //
+  DATA16  hIicCommand                                                 //
+  DATA16  hIicReply                                                   //
+  DATA16  Result                                                      //
+  DATA8   Tmp                                                         //
+                                                                      //
+  // Clear display                                                    //
+  UI_DRAW(FILLWINDOW,BG_COLOR,0,0)                                    //    UI_DRAW(FILLWINDOW,BG_COLOR,0,0)
+                                                                      //
+  // Initialize                                                       //                                                                      
+  ARRAY(CREATE8,0,hIicSetup)                                          //    ARRAY(CREATE8,0,hIicSetup)
+  ARRAY(CREATE8,0,hIicCommand)                                        //    ARRAY(CREATE8,0,hIicCommand)
+  ARRAY(CREATE8,0,hIicReply)                                          //    ARRAY(CREATE8,0,hIicReply)
+                                                                      //
+  // Setup initialization for IIC device                              //                                               
+  ARRAY_WRITE(hIicSetup,0,0x01)                                       //    ARRAY_WRITE(hIicSetup,0,0x01)                 
+  ARRAY_WRITE(hIicSetup,1,0x41)                                       //    ARRAY_WRITE(hIicSetup,1,0x41)                 
+  ARRAY_WRITE(hIicSetup,2,0x02)                                       //    ARRAY_WRITE(hIicSetup,2,0x02)                 
+                                                                      //
+  // Setup manual poll from IIC device                                //    
+  ARRAY_WRITE(hIicCommand,0,0x01)                                     //    ARRAY_WRITE(hIicCommand,0,0x01)                 
+  ARRAY_WRITE(hIicCommand,1,0x42)                                     //    ARRAY_WRITE(hIicCommand,1,0x42)                 
+                                                                      //
+                                                                      //    do
+Loop:                                                                 //    {
+                                                                      //
+  // Read Value from IIC device                                       //
+  INPUT_DEVICE(SETUP,0,PORT,1,0,3,@hIicSetup,0,@hIicReply)            //      INPUT_DEVICE(SETUP,0,PORT,1,0,3,@hIicSetup,0,@hIicReply)
+  INPUT_DEVICE(SETUP,0,PORT,1,0,2,@hIicCommand,1,@hIicReply)          //      INPUT_DEVICE(SETUP,0,PORT,1,0,2,@hIicCommand,1,@hIicReply)
+                                                                      //
+  // Convert data from 3th. party IIC device (UBYTE to DATA16)        //
+  ARRAY_READ(hIicReply,0,Tmp)                                         //      Tmp     =  hIicReply[0]
+  MOVE8_16(Tmp,Result)                                                //      Result  =  (DATA16)Tmp
+  AND16(Result,0xFF,Result)                                           //      Result &=  0x00FF
+  MOVE16_F(Result,Value)                                              //      Value   =  (DATAF)Result
+                                                                      //
+  // Write Value to display                                           //
+  UI_DRAW(SELECT_FONT,LARGE_FONT)                                     // 
+  UI_DRAW(VALUE,FG_COLOR,20,54,Value,6,0)                             //      UI_DRAW(VALUE,FG_COLOR,20,54,Value,6,0)
+  UI_DRAW(UPDATE)                                                     //      UI_DRAW(UPDATE) 
+                                                                      //
+  // Wait                                                             //                                                                      
+  TIMER_WAIT(READ_INTERVAL,ReadoutTimer)                              //      TIMER_WAIT(READ_INTERVAL,ReadoutTimer)
+  TIMER_READY(ReadoutTimer)                                           //      TIMER_READY(ReadoutTimer)
+                                                                      //    }
+  JR(Loop)                                                            //    while (TRUE)
+                                                                      //
+  // Clean up                                                         //
+  ARRAY(DELETE,hIicReply)                                             //    ARRAY(DELETE,hIicReply)
+  ARRAY(DELETE,hIicCommand)                                           //    ARRAY(DELETE,hIicCommand)
+  ARRAY(DELETE,hIicSetup)                                             //    ARRAY(DELETE,hIicSetup)
+}                                                                     //  }
+//! \endverbatim
+/*
+//**********************************************************************
+//        READ LOOP FOR IIC DEVICES (automatic poll)
+//**********************************************************************
+                                                                      //
+                                                                      //
+                                                                      //
+define    PORT                          1                             //
+define    READ_INTERVAL                 330                           //
+                                                                      //
+vmthread  MAIN                                                        //  void    MAIN(void)
+{                                                                     //  {
+  DATAF   Value                                                       //
+  DATA16  hIicCommand                                                 //
+  DATA16  hIicReply                                                   //
+                                                                      //
+  // Clear display                                                    //
+  UI_DRAW(FILLWINDOW,BG_COLOR,0,0)                                    //    UI_DRAW(FILLWINDOW,BG_COLOR,0,0)
+                                                                      //
+  // Initialize                                                       //                                                                      
+  ARRAY(CREATE8,0,hIicCommand)                                        //    ARRAY(CREATE8,0,hIicCommand)
+  ARRAY(CREATE8,0,hIicReply)                                          //    ARRAY(CREATE8,0,hIicReply)
+                                                                      //
+  // Setup initialization for IIC device                              //                                               
+  ARRAY_WRITE(hIicCommand,0,0x01)                                     //    ARRAY_WRITE(hIicCommand,0,0x01)                 
+  ARRAY_WRITE(hIicCommand,1,0x41)                                     //    ARRAY_WRITE(hIicCommand,1,0x41)                 
+  ARRAY_WRITE(hIicCommand,2,0x02)                                     //    ARRAY_WRITE(hIicCommand,2,0x02)                 
+  INPUT_DEVICE(SETUP,0,PORT,1,0,3,@hIicCommand,0,@hIicReply)          //    INPUT_DEVICE(SETUP,0,PORT,1,0,3,@hIicCommand,0,@hIicReply)
+                                                                      //
+  // Setup automatic poll from IIC device                             //    
+  ARRAY_WRITE(hIicCommand,0,0x01)                                     //    ARRAY_WRITE(hIicCommand,0,0x01)                 
+  ARRAY_WRITE(hIicCommand,1,0x42)                                     //    ARRAY_WRITE(hIicCommand,1,0x42)                 
+  INPUT_DEVICE(SETUP,0,PORT,0,READ_INTERVAL,2,@hIicCommand,1,@hIicReply)//  INPUT_DEVICE(SETUP,0,PORT,0,READ_INTERVAL,2,@hIicCommand,1,@hIicReply)
+                                                                      //
+                                                                      //    do
+Loop:                                                                 //    {
+                                                                      //
+  // Read Value from IIC device                                       //
+  INPUT_DEVICE(READY_SI,0,PORT,100,0,1,Value)                         //      INPUT_DEVICE(READY_SI,0,PORT,100,0,1,Value)                                        
+                                                                      //
+  // Write Value to display                                           // 
+  UI_DRAW(SELECT_FONT,LARGE_FONT)                                     // 
+  UI_DRAW(VALUE,FG_COLOR,20,54,Value,6,0)                             //      UI_DRAW(VALUE,FG_COLOR,20,54,Value,6,0)
+  UI_DRAW(UPDATE)                                                     //      UI_DRAW(UPDATE)
+                                                                      //    }
+  JR(Loop)                                                            //    while (TRUE)
+                                                                      //
+  // Clean up                                                         //
+  ARRAY(DELETE,hIicReply)                                             //    ARRAY(DELETE,hIicReply)
+  ARRAY(DELETE,hIicCommand)                                           //    ARRAY(DELETE,hIicCommand)
+}                                                                     //  }
+*/
+

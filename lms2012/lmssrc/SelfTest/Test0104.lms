@@ -1,0 +1,441 @@
+//! \page test0104app Test 0104 Application
+//!
+//! <hr size="1"/>
+//!
+//! \verbatim
+// 
+//
+//
+//**********************************************************************
+//        TEST0104 
+//**********************************************************************
+                                                                      //
+define    TESTREPORT  'TestReport'                                    //
+define    LINE        64                                              //
+                                                                      //
+vmthread  MAIN                                                        //  void    MAIN(void)
+{                                                                     //  {
+  CALL(Test0104)                                                      //    Test0104()
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   Test0104                                                    //  void Test0104(void)
+{                                                                     //  {
+  DATAF   Result                                                      //
+  DATAF   DataF                                                       //
+  DATA32  Data32                                                      //
+  DATA16  Data16                                                      //
+  DATA8   Data8                                                       //
+  DATAS   String LINE                                                 //
+                                                                      //
+  // Set success as default                                           //
+	MEMORY_WRITE(GUI_SLOT,4,0,1,0)                                      //    MEMORY_WRITE(GUI_SLOT,4,0,1,0)
+                                                                      //
+  CALL(TestOpen)                                                      //
+                                                                      //
+  CALL(TestWrite,' VM MATH')                                          //
+                                                                      //
+  MULF(13.57F,57.13F,Result)                                          //
+  STRINGS(VALUE_TO_STRING,Result,11,5,String)                         //
+  CALL(TestCheck,'13.57 x 57.13      ',String,'  775.25409')          //
+                                                                      //
+  MULF(57.13F,13.57F,Result)                                          //
+  STRINGS(VALUE_TO_STRING,Result,11,5,String)                         //
+  CALL(TestCheck,'57.13 x 13.57      ',String,'  775.25409')          //
+                                                                      //
+  DIVF(13.57F,57.13F,Result)                                          //
+  STRINGS(VALUE_TO_STRING,Result,11,5,String)                         //
+  CALL(TestCheck,'13.57 / 57.13      ',String,'    0.23753')          //
+                                                                      //
+  DIVF(57.13F,13.57F,Result)                                          //
+  STRINGS(VALUE_TO_STRING,Result,11,5,String)                         //
+  CALL(TestCheck,'57.13 / 13.57      ',String,'    4.21002')          //
+                                                                      //
+  ADDF(13.57F,57.13F,Result)                                          //
+  STRINGS(VALUE_TO_STRING,Result,11,5,String)                         //
+  CALL(TestCheck,'13.57 + 57.13      ',String,'   70.7')              //
+                                                                      //
+  ADDF(57.13F,13.57F,Result)                                          //
+  STRINGS(VALUE_TO_STRING,Result,11,5,String)                         //
+  CALL(TestCheck,'57.13 + 13.57      ',String,'   70.7')              //
+                                                                      //
+  SUBF(13.57F,57.13F,Result)                                          //
+  STRINGS(VALUE_TO_STRING,Result,11,5,String)                         //
+  CALL(TestCheck,'13.57 - 57.13      ',String,'  -43.56')             //
+                                                                      //
+  SUBF(57.13F,13.57F,Result)                                          //
+  STRINGS(VALUE_TO_STRING,Result,11,5,String)                         //
+  CALL(TestCheck,'57.13 - 13.57      ',String,'   43.56')             //
+                                                                      //
+  // Check MATH EXP                                                   //
+  MATH(EXP,1.0F,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,11,5,String)                         //
+  CALL(TestCheck,'EXP(1)             ',String,'    2.71828')          //
+                                                                      //
+  // Check MATH POW                                                   //
+  MATH(POW,4.0F,2.0F,Result)                                          //
+  STRINGS(VALUE_TO_STRING,Result,11,0,String)                         //
+  CALL(TestCheck,'4^2                ',String,'         16')          //
+                                                                      //
+  MATH(POW,2.0F,10.0F,Result)                                         //
+  STRINGS(VALUE_TO_STRING,Result,11,0,String)                         //
+  CALL(TestCheck,'2^10               ',String,'       1024')          //
+                                                                      //
+  MATH(POW,10.0F,10.0F,Result)                                        //
+  STRINGS(VALUE_TO_STRING,Result,15,0,String)                         //
+  CALL(TestCheck,'10^10              ',String,'    10000000000')      //
+                                                                      //
+  MATH(POW,10.0F,10.0F,Result)                                        //
+  STRINGS(VALUE_TO_STRING,Result,-11,4,String)                        //
+  CALL(TestCheck,'10^10         -11,4',String,'1')                    //
+                                                                      //
+  MATH(POW,10.0F,10.0F,Result)                                        //
+  STRINGS(VALUE_TO_STRING,Result,-16,4,String)                        //
+  CALL(TestCheck,'10^10         -16,4',String,'10000000000')          //
+                                                                      //
+  MATH(POW,20.0F,10.0F,Result)                                        //
+  STRINGS(VALUE_TO_STRING,Result,15,0,String)                         //
+  CALL(TestCheck,'20^10              ',String,' 10240000000000')      //
+                                                                      //
+  // Check MATH MOD                                                   //
+  MATH(MOD8,12,5,Data8)                                               //
+  MOVE8_F(Data8,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'12     MOD8  5     ',String,'   2')                 //
+                                                                      //
+  MATH(MOD16,302,5,Data16)                                            //
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'302    MOD16 5     ',String,'   2')                 //
+                                                                      //
+  MATH(MOD32,100002,5,Data32)                                         //
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'100002 MOD32 5     ',String,'   2')                 //
+                                                                      //
+  MATH(MOD,5.2F,5.0F,DataF)                                           //
+  MOVEF_F(DataF,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'5.2    MODF  5     ',String,'   0.2')               //
+                                                                      //
+  // Check MATH FLOOR                                                 //
+  MATH(FLOOR,5.499F,Result)                                           //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'FLOOR 5.499        ',String,'   5')                 //
+                                                                      //
+  MATH(FLOOR,5.500F,Result)                                           //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'FLOOR 5.500        ',String,'   5')                 //
+                                                                      //
+  MATH(FLOOR,-5.499F,Result)                                          //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'FLOOR -5.499       ',String,'  -6')                 //
+                                                                      //
+  MATH(FLOOR,-5.500F,Result)                                          //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'FLOOR -5.500       ',String,'  -6')                 //
+                                                                      //
+  // Check MATH CEIL                                                  //
+  MATH(CEIL,5.499F,Result)                                            //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'CEIL  5.499        ',String,'   6')                 //
+                                                                      //
+  MATH(CEIL,5.500F,Result)                                            //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'CEIL  5.500        ',String,'   6')                 //
+                                                                      //
+  MATH(CEIL,-5.499F,Result)                                           //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'CEIL  -5.499       ',String,'  -5')                 //
+                                                                      //
+  MATH(CEIL,-5.500F,Result)                                           //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'CEIL  -5.500       ',String,'  -5')                 //
+                                                                      //
+  // Check MATH ROUND                                                 //
+  MATH(ROUND,5.499F,Result)                                           //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'ROUND 5.499        ',String,'   5')                 //
+                                                                      //
+  MATH(ROUND,5.500F,Result)                                           //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'ROUND 5.500        ',String,'   6')                 //
+                                                                      //
+  MATH(ROUND,-5.499F,Result)                                          //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'ROUND -5.499       ',String,'  -5')                 //
+                                                                      //
+  MATH(ROUND,-5.500F,Result)                                          //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'ROUND -5.500       ',String,'  -6')                 //
+                                                                      //
+  // Check MATH ABS                                                   //
+  MATH(ABS,5.499F,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'ABS   5.499        ',String,'   5.499')             //
+                                                                      //
+  MATH(ABS,-5.499F,Result)                                            //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'ABS   -5.499       ',String,'   5.499')             //
+                                                                      //
+  // Check MATH NEGATE                                                //
+  MATH(NEGATE,5.499F,Result)                                          //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'NEGATE 5.499       ',String,'  -5.499')             //
+                                                                      //
+  MATH(NEGATE,-5.499F,Result)                                         //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'NEGATE -5.499      ',String,'   5.499')             //
+                                                                      //
+  // Check MATH TRUNC                                                 //
+  MATH(TRUNC,5.499F,3,Result)                                         //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'TRUNC  5.499 to 3  ',String,'   5.499')             //
+                                                                      //
+  MATH(TRUNC,-5.499F,1,Result)                                        //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'TRUNC -5.499 to 1  ',String,'  -5.4')               //
+                                                                      //
+  MATH(TRUNC,0.123456F,-1,Result)                                     //
+  STRINGS(VALUE_TO_STRING,Result,11,8,String)                         //
+  CALL(TestCheck,'TRUNC 0.123456 to-1',String,' 0')                   //
+                                                                      //
+  MATH(TRUNC,0.123456F,0,Result)                                      //
+  STRINGS(VALUE_TO_STRING,Result,11,8,String)                         //
+  CALL(TestCheck,'TRUNC 0.123456 to 0',String,' 0')                   //
+                                                                      //
+  MATH(TRUNC,0.123456F,1,Result)                                      //
+  STRINGS(VALUE_TO_STRING,Result,11,8,String)                         //
+  CALL(TestCheck,'TRUNC 0.123456 to 1',String,' 0.1')                 //
+                                                                      //
+  MATH(TRUNC,0.123456F,2,Result)                                      //
+  STRINGS(VALUE_TO_STRING,Result,11,8,String)                         //
+  CALL(TestCheck,'TRUNC 0.123456 to 2',String,' 0.12')                //
+                                                                      //
+  MATH(TRUNC,0.123456F,3,Result)                                      //
+  STRINGS(VALUE_TO_STRING,Result,11,8,String)                         //
+  CALL(TestCheck,'TRUNC 0.123456 to 3',String,' 0.123')               //
+                                                                      //
+  MATH(TRUNC,0.123456F,4,Result)                                      //
+  STRINGS(VALUE_TO_STRING,Result,11,8,String)                         //
+  CALL(TestCheck,'TRUNC 0.123456 to 4',String,' 0.1234')              //
+                                                                      //
+  MATH(TRUNC,0.123456F,5,Result)                                      //
+  STRINGS(VALUE_TO_STRING,Result,11,8,String)                         //
+  CALL(TestCheck,'TRUNC 0.123456 to 5',String,' 0.12345')             //
+                                                                      //
+  MATH(TRUNC,0.123456F,6,Result)                                      //
+  STRINGS(VALUE_TO_STRING,Result,11,8,String)                         //
+  CALL(TestCheck,'TRUNC 0.123456 to 6',String,' 0.123456')            //
+                                                                      //
+  // Check MATH SQRT                                                  //
+  MATH(SQRT,100.0F,Result)                                            //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'SQRT  100.0        ',String,'  10')                 //
+                                                                      //
+  MATH(SQRT,0.0F,Result)                                              //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'SQRT  0.0          ',String,'   0')                 //
+                                                                      //
+  // Check MATH LOG                                                   //
+  MATH(LOG,1.0F,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'LOG   1.0          ',String,'   0')                 //
+                                                                      //
+  MATH(LOG,100.0F,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'LOG   100.0        ',String,'   2')                 //
+                                                                      //
+  MATH(LOG,1000.0F,Result)                                            //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'LOG   1000.0       ',String,'   3')                 //
+                                                                      //
+  // Check MATH LN                                                    //
+  MATH(LN,1.0F,Result)                                                //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'LN    1.0          ',String,'   0')                 //
+                                                                      //
+  MATH(LN,100.0F,Result)                                              //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'LN    100.0        ',String,'   4.60517')           //
+                                                                      //
+  MATH(LN,1000.0F,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'LN    1000.0       ',String,'   6.907755')          //
+                                                                      //
+  // Check MATH SIN                                                   //
+  MATH(SIN,1.0F,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'SIN   1.0          ',String,'   0.017452')          //
+                                                                      //
+  MATH(SIN,-5.499F,Result)                                            //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'SIN   -5.499       ',String,'  -0.095828')          //
+                                                                      //
+  MATH(SIN,0.0F,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'SIN   0.0          ',String,'   0')                 //
+                                                                      //
+  // Check MATH COS                                                   //
+  MATH(COS,1.0F,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'COS   1.0          ',String,'   0.999848')          //
+                                                                      //
+  MATH(COS,-5.499F,Result)                                            //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'COS   -5.499       ',String,'   0.995398')          //
+                                                                      //
+  MATH(COS,0.0F,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'COS   0.0          ',String,'   1')                 //
+                                                                      //
+  // Check MATH TAN                                                   //
+  MATH(TAN,1.0F,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'TAN   1.0          ',String,'   0.017455')          //
+                                                                      //
+  MATH(TAN,-5.499F,Result)                                            //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'TAN   -5.499       ',String,'  -0.096271')          //
+                                                                      //
+  MATH(TAN,0.0F,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'TAN   0.0          ',String,'   0')                 //
+                                                                      //
+  // Check MATH ASIN                                                  //
+  MATH(ASIN,1.0F,Result)                                              //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'ASIN  1.0          ',String,'  90')                 //
+                                                                      //
+  MATH(ASIN,-5.499F,Result)                                           //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'ASIN  -5.499       ',String,'       ----')          //
+                                                                      //
+  MATH(ASIN,0.0F,Result)                                              //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'ASIN  0.0          ',String,'   0')                 //
+                                                                      //
+  // Check MATH ACOS                                                  //
+  MATH(ACOS,1.0F,Result)                                              //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'ACOS  1.0          ',String,'   0')                 //
+                                                                      //
+  MATH(ACOS,-5.499F,Result)                                           //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'ACOS  -5.499       ',String,'       ----')          //
+                                                                      //
+  MATH(ACOS,0.0F,Result)                                              //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'ACOS  0.0          ',String,'  90')                 //
+                                                                      //
+  // Check MATH ATAN                                                  //
+  MATH(ATAN,1.0F,Result)                                              //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'ATAN  1.0          ',String,'  45')                 //
+                                                                      //
+  MATH(ATAN,-5.499F,Result)                                           //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'ATAN  -5.499       ',String,' -79.693321')          //
+                                                                      //
+  MATH(ATAN,0.0F,Result)                                              //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'ATAN  0.0          ',String,'   0')                 //
+                                                                      //
+  CALL(TestWrite,' VM MATH ABNORMALS')                                //
+                                                                      //
+  DIVF(13.57F,0.0F,Result)                                            //
+  STRINGS(VALUE_TO_STRING,Result,11,5,String)                         //
+  CALL(TestCheck,'13.57 / 0.0        ',String,'        inf')          //
+                                                                      //
+  DIVF(0.0F,0.0F,Result)                                              //
+  STRINGS(VALUE_TO_STRING,Result,11,5,String)                         //
+  CALL(TestCheck,'0.0 / 0.0          ',String,'       ----')          //
+                                                                      //
+  MATH(SQRT,-5.499F,Result)                                           //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'SQRT  -5.499       ',String,'       ----')          //
+                                                                      //
+  MATH(LOG,-5.499F,Result)                                            //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'LOG   -5.499       ',String,'       ----')          //
+                                                                      //
+  MATH(LOG,0.0F,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'LOG   0.0          ',String,'       -inf')          //
+                                                                      //
+  MATH(LN,-5.499F,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'LN    -5.499       ',String,'       ----')          //
+                                                                      //
+  MATH(LN,0.0F,Result)                                                //
+  STRINGS(VALUE_TO_STRING,Result,11,6,String)                         //
+  CALL(TestCheck,'LN    0.0          ',String,'       -inf')          //
+                                                                      //
+  CALL(TestClose)                                                     //
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestCheck                                                   //  void TestCheck(Text,IstWert,SollWert)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+  IN_S    IstWert LINE                                                //
+  IN_S    SollWert LINE                                               //
+                                                                      //
+  DATA8   Result                                                      //
+  DATAS   String LINE                                                 //
+                                                                      //
+  STRINGS(COMPARE,IstWert,SollWert,Result)                            //    STRINGS(COMPARE,IstWert,SollWert,Result)
+  JR_FALSE(Result,Error)                                              //    if (Result)
+                                                                      //    {
+  STRINGS(ADD,'  ',Text,String)                                       //      STRINGS(ADD,' ',Text,String)
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  STRINGS(ADD,String,IstWert,String)                                  //      STRINGS(ADD,String,IstWert,String)
+  STRINGS(ADD,String,']',String)                                      //      STRINGS(ADD,String,']',String)
+                                                                      //
+  JR(EndError)                                                        //    }
+                                                                      //    else
+Error:                                                                //    {
+                                                                      //
+  STRINGS(ADD,'# ',Text,String)                                       //      STRINGS(ADD,' ',Text,String) 
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  STRINGS(ADD,String,IstWert,String)                                  //      STRINGS(ADD,String,IstWert,String)
+  STRINGS(ADD,String,'] (',String)                                    //      STRINGS(ADD,String,'] (',String)
+  STRINGS(ADD,String,SollWert,String)                                 //      STRINGS(ADD,String,SollWert,String)
+  STRINGS(ADD,String,')',String)                                      //      STRINGS(ADD,String,')',String)
+                                                                      //
+  // Set failed                                                       //
+	MEMORY_WRITE(GUI_SLOT,4,0,1,1)                                      //      MEMORY_WRITE(GUI_SLOT,4,0,1,1)
+                                                                      //
+EndError:                                                             //    }
+                                                                      //
+  CALL(TestWrite,String)                                              //    CALL(TestWrite,String)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+DATA16    hFile                                                       //
+                                                                      //
+subcall   TestOpen                                                    //  void TestOpen(void)
+{                                                                     //  {
+  DATAS   TestReport FILENAMESIZE                                     //
+                                                                      //
+  STRINGS(ADD,TESTREPORT,EXT_TEXT,TestReport)                         //    STRINGS(ADD,TESTREPORT,EXT_TEXT,TestReport)
+  FILE(OPEN_APPEND,TestReport,hFile)                                  //    FILE(OPEN_APPEND,TestReport,hFile)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestWrite                                                   //  void TestWrite(Text)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+                                                                      //
+  FILE(WRITE_TEXT,hFile,DEL_CRLF,Text)                                //    FILE(WRITE_TEXT,hFile,DEL_CRLF,Text)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestClose                                                   //  void TestClose(void)
+{                                                                     //  {
+  FILE(CLOSE,hFile)                                                   //    FILE(CLOSE,hFile)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//! \endverbatim
+

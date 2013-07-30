@@ -1,0 +1,866 @@
+//! \page formatsd Format System SD Card for Rudolf
+//!
+//! \verbatim
+//!
+
+    SETUP:        PC running Linux console with SD cardreader
+    ------        Make a plain text file "fdisk.cmd" containing:        
+p
+d
+1
+d
+2
+p
+n
+p
+1
+1
++50M
+t
+b
+n
+p
+2
+
++200M
+p
+w    
+ 
+    CHECK:        Open Linux console and type:
+    ------
+
+cat /proc/partitions
+            
+                  Insert SD card in reader and type again:
+
+cat /proc/partitions
+
+                  Check the difference to see the name of the SD card - assumed "sdx"
+                  CARE MUST BE TAKEN TO USE THE RIGHT NAME !!
+              
+    UNMOUNT:      all partitions by typing (substitute "sdx" with the right name):
+    --------
+
+sudo umount /dev/sdx1
+sudo umount /dev/sdx2
+
+    PARTITIONING: Type following (substitute "sdx" with the right name):              
+    -------------
+
+sudo fdisk /dev/sdx < fdisk.cmd
+
+    FORMATTING:   Type (substitute "sdx" with the right name):
+    -----------
+
+sudo mkfs.msdos -n LMS2012 /dev/sdx1
+
+sudo mkfs.ext3 -L LMS2012_EXT /dev/sdx2
+
+    REMOVE:           Use the "Safely Remove Drive" and remove SD card
+    -------           or type:
+
+sync
+
+//! \endverbatim
+
+
+//! \page formatdatasd Format Data SD Card for Rudolf
+//!
+//! \verbatim
+//!
+
+    SETUP:        PC running Linux console with SD cardreader
+    ------        
+    
+ 
+    CHECK:        Open Linux console and type:
+    ------
+
+cat /proc/partitions
+            
+                  Insert SD card in reader and type again:
+
+cat /proc/partitions
+
+                  Check the difference to see the name of the SD card - assumed "sdb"
+                  CARE MUST BE TAKEN TO USE THE RIGHT NAME !!
+              
+    UNMOUNT:      all partitions by typing (substitute "sdx" with the right name):
+    --------
+
+sudo umount /dev/sdx1
+sudo umount /dev/sdx2
+
+    PARTITIONING: Type following (substitute "sdb" with the right name):              
+    -------------
+
+sudo fdisk /dev/sdx
+p
+d
+1
+d
+p
+n
+p
+1
+
+
+t
+b
+p
+w    
+
+    FORMATTING:   Type (substitute "sdx" with the right name):
+    -----------
+
+sudo mkfs.msdos -n EV3_DATA /dev/sdx1
+
+
+    REMOVE:           Use the "Safely Remove Drive" and remove SD card
+    -------           or type:
+
+sync
+
+//! \endverbatim
+
+
+//! \page copysd Copy SD Card
+//!
+//! \verbatim
+//!
+
+    SETUP:        PC running Linux console with SD cardreader
+    ------        Formatted SD card
+                  Master SD card        
+
+    COPY TO PC:   Insert master SD card in reader
+    -----------   Copy master SD card to PC folder by typing:
+
+sudo rm -r -f ~/sdcard
+mkdir ~/sdcard
+cp /media/LMS2012/uImage ~/sdcard/uImage
+sudo tar -jcvf ~/sdcard/lmsfs.tar.bz2 /media/LMS2012_EXT/*
+
+    REMOVE:       Use the "Safely Remove Drive" and remove master SD card
+    -------       or type:
+
+sync
+
+    COPY TO SD:   Insert formatted SD card in reader
+    -----------   Copy PC folder to SD card by typing:
+
+sudo cp ~/sdcard/uImage /media/LMS2012/uImage
+sudo tar -jxvf ~/sdcard/lmsfs.tar.bz2 -C /
+
+    REMOVE:       Use the "Safely Remove Drive" and remove SD card
+    -------       or type:
+
+sync
+
+//! \endverbatim
+
+
+//! \page makefspk    Make File System Package (Needs BSP installed)
+//!
+//! \verbatim
+//!
+
+    SETUP:            PC running Linux console
+    ------            
+
+    MAKE PACKAGE:     Make a tarball containing file system
+    -------------     and put it into the project by typing:
+
+cd ~
+mkdir lmsfs
+cd lmsfs
+sudo cp -r ~/am1808/DaVinci-PSP-SDK-03.20.00.13/filesys/* .
+sudo rm -r home/root/lms2012
+sudo mkdir home/root/lms2012
+sudo chmod 666 home/root/lms2012
+sudo tar -jcvf ~/lmsfs.tar.bz2 * bin/*
+cd ~
+sudo rm -r lmsfs
+cd ~/projects/lms2012/open_first
+mv ~/lmsfs.tar.bz2 ./
+cd ~
+
+
+//! \endverbatim
+
+
+//! \page readfssd    Make File System Package From SDCARD
+//!
+//! \verbatim
+//!
+
+    SETUP:            PC running Linux console with SD cardreader
+    ------            SD card with kernel, filesystem and application
+                  
+
+    MAKE PACKAGE:     Make a tarball containing file system from sdcard
+    -------------     by typing:
+
+cd ~
+sudo rm -r lmsfs
+mkdir lmsfs
+cd lmsfs
+sudo cp -r /media/LMS2012_EXT/* .
+sudo tar -jcvf ~/lmsfs.tar.bz2 * bin/*
+cd ~
+
+    REMOVE:           Use the "Safely Remove Drive" and remove SD card
+    -------           or type:
+
+sync
+
+//! \endverbatim
+
+
+//! \page writefssd   Write File System Package to SDcard
+//!
+//! \verbatim
+//!
+
+    SETUP:            PC running Linux console with SD cardreader
+    ------            SD card containing old file system
+                      New file system package "lmsfs.tar.bz2"        
+
+    DELETE OLD FS:    Insert SD card in reader
+    --------------    Remove old filsystem from SD card by typing:
+                  
+sudo rm -r /media/LMS2012_EXT/*   
+
+    WRITE FS TO SD:   Change to folder containing "lmsfs.tar.bz2"
+    ---------------   Write new filsystem to SD card by typing:
+                      
+                      
+sudo cp lmsfs.tar.bz2 /media/LMS2012_EXT
+cd /media/LMS2012_EXT 
+sudo tar -jxvf lmsfs.tar.bz2 
+sudo rm lmsfs.tar.bz2
+cd ~
+
+    REMOVE:           Use the "Safely Remove Drive" and remove SD card
+    -------           or type:
+
+sync
+
+//! \endverbatim
+
+
+//! \page updatesd Update SD Card Application
+//!
+//! \verbatim
+//!
+
+    SETUP:        PC running Linux console with SD cardreader
+    ------        SD card with kernel, filesystem and application
+                  Update package located at ~
+                  
+    UPDATE:       This assumes update package is named "Linux_AM1808_v021_110201_LE.tar.gz"                 
+    -------       Insert SD card to update and type:
+    
+sudo rm -r /media/LMS2012_EXT/home/root/lms2012    
+
+sudo tar xvfz ~/Linux_AM1808_v021_110201_LE.tar.gz -C /media/LMS2012_EXT/home/root/
+
+sudo mv /media/LMS2012_EXT/home/root/Linux_AM1808 /media/LMS2012_EXT/home/root/lms2012
+
+    REMOVE:           Use the "Safely Remove Drive" and remove SD card
+    -------           or type:
+
+sync
+
+//! \endverbatim
+
+
+//! \page kernelsd Copy Kernel to SD Card (Needs project installed)
+//!
+//! \verbatim
+//!
+
+    SETUP:        PC running Linux console with SD cardreader
+    ------        Formatted SD card        
+                  Kernel is located at ~/projects/lms2012/open_first/
+
+
+    COPY:         Insert SD card in reader
+    -----         Open Linux console and type:
+
+sudo cp ~/projects/lms2012/open_first/uImage /media/LMS2012/uImage
+
+    REMOVE:           Use the "Safely Remove Drive" and remove SD card
+    -------           or type:
+
+sync
+
+//! \endverbatim
+
+
+//! \page filesyssd Copy FileSystem to SD Card (Needs BSP installed)
+//!
+//! \verbatim
+//!
+
+    SETUP:        PC running Linux console with SD cardreader
+    ------        Formatted SD card        
+                  Filesystem is located at ~/am1808/DaVinci-PSP-SDK-03.20.00.13/filesys
+
+    DELETE:       Insert SD card in reader
+    -------       Open Linux console and type:
+    
+sudo rm -r /media/LMS2012_EXT/*
+
+    COPY:         Type:
+    -----         
+    
+sudo cp -r ~/am1808/DaVinci-PSP-SDK-03.20.00.13/filesys/* /media/LMS2012_EXT/
+
+    REMOVE:           Use the "Safely Remove Drive" and remove SD card
+    -------           or type:
+
+sync
+
+//! \endverbatim
+
+
+//! \page applicationsd Copy Application to SD Card (Needs project installed)
+//!
+//! \verbatim
+//!
+
+    SETUP:        PC running Linux console with SD cardreader
+    ------        Formatted SD card        
+                  Application is located at ~/projects/lms2012/lms2012/Linux_AM1808
+
+    DELETE:       Insert SD card in reader
+    -------       Open Linux console and type:
+    
+sudo rm -r /media/LMS2012_EXT/home/root/lms2012/*
+
+    COPY:         Type:
+    -----         
+    
+sudo cp -r ~/projects/lms2012/lms2012/Linux_AM1808/* /media/LMS2012_EXT/home/root/lms2012/
+
+    REMOVE:           Use the "Safely Remove Drive" and remove SD card
+    -------           or type:
+
+sync
+
+//! \endverbatim
+
+
+
+/*! \page pcsetup Development Tools Setup
+ * 
+ *- \subpage  pclinux
+ *
+ *- \subpage  pcvm
+ * 
+ *- \subpage  pcfilesystem
+ * 
+ *- \subpage  pckernel
+ *
+ *
+ */
+
+//! \page pclinux Computer setup
+//!
+//! \verbatim
+//!
+
+    SETUP:        PC running linux terminal
+    ------        Active internet connection
+                  Get and save following packages in personal folder "~"
+                  "arm-2009q1-203-arm-none-linux-gnueabi-i686-pc-linux-gnu.tar.bz2"
+                  "eclipse-cpp-helios-SR1-linux-gtk.tar.gz"
+
+    CODESOURCERY: Install CodeSourcery (gcc compiler for kernel and application)       
+    -------------
+    
+cd ~
+mkdir ~/CodeSourcery
+tar -jxvf ~/arm-2009q1-203-arm-none-linux-gnueabi-i686-pc-linux-gnu.tar.bz2 -C ~/CodeSourcery/
+mv ~/CodeSourcery/arm-2009q1 ~/CodeSourcery/Sourcery_G++_Lite
+cat ~/.bashrc | sed '$aexport PATH=~/CodeSourcery/Sourcery_G++_Lite/bin:$PATH' > ~/.bashrcnew
+mv ~/.bashrc ~/.bashold
+mv ~/.bashrcnew ~/.bashrc
+source ~/.bashrc
+    
+    ECLIPSE:      Install Eclipse (Development environment)
+    --------     
+                 
+cd ~
+tar xvfz ~/eclipse-cpp-helios-SR1-linux-gtk.tar.gz -C ~/
+    
+    JAVA:         Install Java (Runtime for Eclipse)
+    -----
+    
+cd ~
+sudo apt-get install openjdk-6-jre
+
+    MKIMAGE:      Install mkimage (used in the "build_kernel" script to compress kernel image)
+    --------
+    
+sudo apt-get install u-boot-tools
+
+    
+
+    Next packages is not need for compilation to target:
+        
+    DOXYGEN:      Install Doxygen (Documentation generator)
+    --------
+    
+sudo apt-get install doxygen
+
+    IMAGEMAGICK:  Install ImageMagick (Bitmap convertion)
+    ------------
+    
+sudo apt-get install imagemagick libmagickcore-dev
+
+    X11:          Install X11 (PC simulator graphic interface library)
+    ----
+
+sudo apt-get install libx11-xcb-dev
+sudo apt-get install libxpm-dev
+sudo apt-get install libx11-dev
+
+
+
+//! \endverbatim
+
+
+//! \page pcfilesystem Filesystem
+//!
+//! \verbatim
+//!
+
+    SETUP:        PC running linux terminal
+    ------        Application source installed
+    
+    SOURCE:       Install file system
+    -------
+    
+cd ~
+mkdir am1808
+cd am1808
+mkdir DaVinci-PSP-SDK-03.20.00.13
+cd ~/am1808/DaVinci-PSP-SDK-03.20.00.13
+sudo rm -r filesys
+sudo mkdir filesys
+cd ~/am1808/DaVinci-PSP-SDK-03.20.00.13/filesys
+sudo cp ~/projects/lms2012/open_first/lmsfs*.tar.bz2 ./
+sudo tar -jxf lmsfs*.tar.bz2
+sudo rm lmsfs*.tar.bz2
+cd home/root/
+sudo rm -r lms2012
+sudo mkdir lms2012
+sudo chmod 777 lms2012
+                
+    
+
+
+//! \endverbatim
+
+
+//! \page pckernel u-boot and Kernel 
+//!
+//! \verbatim
+//!
+
+    SETUP:        PC running linux terminal
+    ------        CodeSourcery installed
+                  VM application source installed
+                  File system installed
+                  "EV3os.tar.bz2" in personal folder "~"
+
+    UNPACK:       Unpack "EV3os" folder
+    -------
+
+cd ~
+tar -jxf EV3os.tar.bz2
+    
+    SOURCE:       Install u-boot source
+    -------
+    
+cd ~
+cd am1808/DaVinci-PSP-SDK-03.20.00.13
+mkdir src
+cd src
+mkdir u-boot
+cd u-boot
+cp ~/uboot-03.20.00.13_*.tar.bz2 ./
+tar -jxf uboot-03.20.00.13_*.tar.bz2
+rm uboot-03.20.00.13_*.tar.bz2
+
+    BUILD:        u-boot
+    ------     
+                 
+cd ~
+cd projects/lms2012/open_first
+./uboot_build.sh
+
+    SOURCE:       Install kernel source
+    -------
+
+cd ~
+cd am1808/DaVinci-PSP-SDK-03.20.00.13/src
+mkdir kernel
+cd kernel
+cp ~/linux-03.20.00.13_*.tgz ./
+tar zxvf linux-03.20.00.13_*.tgz
+rm linux-03.20.00.13_*.tgz
+
+cd ~
+cd am1808/DaVinci-PSP-SDK-03.20.00.13
+cp ~/linux-devkit.tar.gz ./
+tar zxvf linux-devkit.tar.gz
+rm linux-devkit.tar.gz
+    
+    BUILD:       Kernel
+    ------     
+                 
+cd ~
+cd projects/lms2012/open_first
+./build_kernel.sh
+
+    
+
+
+//! \endverbatim
+
+
+//! \page pcvm VM application
+//!
+//! \verbatim
+//!
+
+    SETUP:        PC running linux terminal
+    ------        "lms2012_vxxx_XXXXXX.tar.bz2" VM application source package in personal folder "~"
+    
+    SOURCE:       If not done earlier (readme.txt) - install VM application source         
+    -------
+    
+cd ~
+mkdir projects
+cd projects
+cp ~/lms2012_v*.tar.bz2 ./
+tar -jxf lms2012_v*.tar.bz2
+rm lms2012_v*.tar.bz2
+
+    ECLIPSE       When Filesystem, kernel and application source is installed - select project in Eclipse
+    -------    
+                 
+cd ~
+eclipse/eclipse
+
+                  Inside eclipse:
+                  Uncheck "Project/Build Automatically"   
+                  Select project "File/Switch Workspace = ~/projects/lms2012"    
+    
+    BUILD:        Use Eclipse to build the application
+    ------     
+                  Inside eclipse    
+                  "Project/Clean/  (build the entire workspace) OK"    
+    
+    OUTPUT        Application is placed in "~/projects/lms2012/lms2012/Linux_AM1808" folder
+    ------
+    
+
+//! \endverbatim
+
+
+/*! \page configuboot Configure where to Boot from
+ * 
+ *- \subpage  bootsd
+ *
+ *- \subpage  bootsde
+ *
+ *- \subpage  bootnfse
+ * 
+ *
+ */
+
+//! \page bootsd Boot From SDcard
+//!
+//! \verbatim
+//!
+
+    SETUP:        PC running serial terminal
+    ------        
+    
+    UBOOT:        U-Boot MUST be active see below:         
+    ------        Connect the PC running terminal to the brick (input port 1)
+                  Boot the brick by turning it on
+                  When U-Boot writes "Hit spacebar to stop autoboot:  #" press space bar
+    
+    SDCARD:       To boot from SD card type: 
+    -------
+        
+setenv bootargs mem=32M console=ttyS1,115200n8 noinitrd root=/dev/mmcblk0p2 rootwait rw ip=off    
+    
+    SAVE:         Save the boot argument by typing:
+    -----       
+    
+saveenv
+
+    BOOT:         Boot again by typing :
+    -----    
+
+reset    
+
+
+//! \endverbatim
+
+
+//! \page bootsde Boot From SDcard With Ethernet Telnet support
+//!
+//! \verbatim
+//!
+
+    SETUP:        PC running serial terminal
+    ------        PC also connected via USB to Ethernet adaptor 
+    
+    UBOOT:        U-Boot MUST be active see below:         
+    ------        Connect the PC running terminal to the brick (input port 1)
+                  Boot the brick by turning it on
+                  When U-Boot writes "Hit spacebar to stop autoboot:  #" press space bar
+    
+    SDCARD:       To boot from SD card with ethernet telnet support 
+    -------       (asuming Brick will get ip = 10.131.145.223) type:  
+        
+setenv bootargs mem=32M console=ttyS1,115200n8 noinitrd root=/dev/mmcblk0p2 rootwait rw ip=10.131.145.223    
+
+    SAVE:         Save the boot argument by typing:
+    -----       
+    
+saveenv
+
+    BOOT:         Boot again by typing :
+    -----    
+
+reset    
+
+
+//! \endverbatim
+
+
+//! \page bootnfse Boot From NFS With Ethernet Telnet support
+//!
+//! \verbatim
+//!
+
+    SETUP:        PC running serial terminal
+    ------        PC nfs server setup with filesystem and connected via USB to Ethernet adaptor 
+    
+    UBOOT:        U-Boot MUST be active see below:         
+    ------        Connect the PC running terminal to the brick (input port 1)
+                  Boot the brick by turning it on
+                  When U-Boot writes "Hit spacebar to stop autoboot:  #" press space bar
+    
+    NFS:          To boot from NFS with ethernet telnet support 
+    ----          (asuming Brick will get ip = 10.131.145.223) 
+                  (asuming PC has ip = 10.131.145.222) type:  
+        
+setenv bootargs console=ttyS1,115200n8 noinitrd rw ip=10.131.145.223 root=/dev/nfs nfsroot=10.131.145.222:/home/tcp/am1808/DaVinci-PSP-SDK-03.20.00.13/filesys,nolock,rsize=1024 mem=32M    
+
+    SAVE:         Save the boot argument by typing:
+    -----       
+    
+saveenv
+
+    BOOT:         Boot again by typing :
+    -----    
+
+reset    
+
+
+//! \endverbatim
+
+
+
+//! \page updateuboot Update uboot on LEGO Board
+//!
+//! \verbatim
+//!
+
+    SETUP:        PC running serial terminal
+    ------        Formatted SD card        
+                  uBoot is located at ~/projects/lms2012/open_first/
+            
+    COPY:         Insert SD card in reader
+    -----         Open Linux console and type:
+
+sudo cp ~/projects/lms2012/open_first/uBoot /media/LMS2012/uBoot
+
+    REMOVE:       Use the "Safely Remove Drive" and remove SD card
+    -------       or type:
+
+sync
+
+    UBOOT:        U-Boot MUST be active see below:         
+    ------        Connect the PC running terminal to the brick (input port 1)
+                  Insert SD card with uBoot in brick
+                  Boot the brick by turning it on
+                  When U-Boot writes "Hit spacebar to stop autoboot:  #" press space bar
+    
+    UPDATE:       To update uBoot type:
+    -------
+    
+mmcinfo
+
+fatload mmc 0 c0700000 uBoot
+
+sf probe 0
+sf erase 0 0x40000
+sf write 0xC0700000 0 0x40000
+
+reset    
+                  
+//! \endverbatim
+
+
+//! \page linuxprompt Get LINUX prompt
+//!
+//! \verbatim
+//!
+
+    SETUP:        PC running serial terminal
+    ------        
+
+    GET PROMPT:   Connect the PC running terminal to the brick (input port 1)
+    -----------   Select "Debug" in the "Tools" menu
+                  On the terminal press "q"
+                  "rudolf login:" root
+
+    START VM:     Type following:
+    ---------
+    
+cd lms2012/sys
+./run    
+                  
+//! \endverbatim
+
+
+/*! \page release Release Firmware Package Check List
+
+  <hr size="1"/>
+
+
+
+-#    Check version and debug/special settings in "lms2012.h"                             \n
+\n
+-#    Check version in "bytecodes.h"                                                      \n
+\n
+-#    Check version and change log in "Implementation"                                    \n
+\n
+-#    Build documentation                                                                 \n
+\n
+-#    Check documentation                                                                 \n
+\n
+-#    Update byte code compile ("cd ~/projects/lms2012/open_first", "./asm_update.sh"     \n
+\n
+-#    Update all graphics ("cd ~/projects/lms2012/lms2012/doc/graphics", "./update")      \n
+\n
+-#    Compile all bytecode programs ("cd ~/projects/lms2012/lmssrc", "./update_all")      \n
+\n
+-#    Compile project for Linux_AM1808                                                    \n
+\n
+-#    Check that VM runs on NFS                                                           \n
+\n
+-#    Make image ("cd ~/projects/lms2012/open_first", "sudo ./make_image.sh"              \n
+\n
+-#    Rename EV3-image.xxxxxxxxxx.bin to ev3_firmware_vxxx                                \n
+\n
+-#    Update a bricks firmware with the new one                                           \n
+\n
+-#    Check that VM runs from the image                                                   \n
+\n
+-#    Commit all changes to CVS                                                           \n
+\n
+-#    Backup CVS version                                                                  \n
+\n
+-#    Compress project folder "~/projects/lms2012" into "lms2012_vxxx_yymmdd.tar.gz"      \n
+\n
+-#    Move "lms2012_vxxx_yymmdd.tar.gz" to a windows PC                                   \n
+\n
+-#    Move documentation folder "~/projects/lms2012/lms2012/doc/html" to a windows PC     \n
+\n
+-#    Rename old documentation "\\dka022\GIM_electronics\People\Tommy Christian Pedersen\lms2012\html" to "...\html_v..."\n
+\n
+-#    Copy documentation to "\\dka022\GIM_electronics\People\Tommy Christian Pedersen\lms2012\html"\n
+\n
+-#    Add "lms2012_vxxx_yymmdd.tar.gz" to SourceSafe                                      \n
+\n
+-#    Upload "lms2012_vxxx_yymmdd.tar.gz" to PICO ftp site                                \n
+\n
+-#    Send "html" in mail to NI and PICO and announce update                              \n
+
+*/
+
+
+//! \page endtest Prototype End Test
+//!
+//! \verbatim
+//!
+
+Setup:        4 motors, UART sensor, NXT IIC sensor, Analog Gyro sensor, NXT Light sensor, 4 wires, USB memory stick
+              PC running terminal connected to brick, USB cable (mini) and PC with Brick application
+
+Brick:        UBOOT and SDCard containing kernel and filesystem, loaded with batteries. 
+
+
+
+  SDSLOT      Check that the card can be removed and inserted easyly
+
+
+  DISPLAY     Check contrast and content
+
+
+  KEYS        Check that the keys moves the cursor around the display
+              Select "Version" in the "tools" menu
+              Check Battery Voltage and Battery Temperature (~25)
+              Press back to to to menu again
+
+
+  INPUT       Select "View Inputs" in the "Apps" menu
+              Check all ports are "Open"
+              Connect a UART sensor to ports supporting that and check the readout
+              Connect a NXT IIC sensor to ports and check readout
+              Connect an ANALOG Gyro sensor to ports and check readout
+              Connect a NXT Light sensor to ports and check readout
+              Press back to get the menu again 
+
+
+  OUTPUT      Select "View Outputs" in the "Apps" menu
+              Check all ports are "Open"
+              Connect all 4 motors and check all ports are "Tacho"
+              Press back to get the menu again 
+              Select "Test_Motors" in the "Tools" menu
+              Watch the motors one by one running forward and backwards
+
+
+  LEDS        Select "Test_Leds" in the "Tools" menu
+              Watch the LED's glowing from green to red and back
+              Press back to get the menu again 
+              
+
+  SOUND       Select "Test_Sound" in the "Tools" menu
+              Check sound ("Starting sound" and a tone looping)
+              Press back to get the menu again 
+              
+
+  USB HOST    Connect the PC running terminal to the brick (input port 1)
+              Insert the USB memory stick and check the response on the terminal
+
+
+  USB DEVICE  Connect the PC with USB cable to the brick and run PC application to check the connection
+
+
+  ON/OFF      Select "Power Off" in the "Tools" menu and check that the brick goes off
+
+
+
+//! \endverbatim

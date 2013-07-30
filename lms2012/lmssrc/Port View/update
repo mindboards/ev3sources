@@ -1,0 +1,300 @@
+#! /bin/bash
+
+#*** APPLICATION *************************************************************
+
+path="apps"
+app="Port View"
+
+#*** HOST ********************************************************************
+
+lms_to_rbf="../adk/cmp"
+xbm_to_rgf="../adk/bmp"
+bmp_to_xbm="convert"
+
+#*** TARGET ******************************************************************
+
+am1808="../../lms2012/Linux_AM1808"
+x86="../../lms2012/Linux_X86"
+nfs="../../../../am1808/DaVinci-PSP-SDK-03.20.00.13/filesys/home/root/lms2012"
+
+#*** FILES ******************************************************************* 
+
+bmp=".bmp"
+xbm=".xbm"
+
+rbf=".rbf"
+rgf=".rgf"
+rsf=".rsf"
+raf=".raf"
+
+#*** DO CLEAN UP *************************************************************
+
+if [ -e "${app}/*${rbf}" ]
+then
+  rm "${app}"/*"${rbf}"
+fi
+
+if [ -e "${app}/*${rgf}" ]
+then
+  rm "${app}"/*"${rgf}"
+fi
+
+if [ -e "${app}/*${rsf}" ]
+then
+  rm "${app}"/*"${rsf}"
+fi
+
+if [ -e "${x86}/${path}/${app}/*${rbf}" ]
+then
+  rm "${x86}"/"${path}"/"${app}"/*"${rbf}"
+fi
+
+if [ -e "${x86}/${path}/${app}/*${rgf}" ]
+then
+  rm "${x86}"/"${path}"/"${app}"/*"${rgf}"
+fi
+
+if [ -e "${x86}/${path}/${app}/*${rsf}" ]
+then
+  rm "${x86}"/"${path}"/"${app}"/*"${rsf}"
+fi
+
+if [ -e "${nfs}/${path}/${app}/*${rbf}" ]
+then
+  rm "${nfs}"/"${path}"/"${app}"/*"${rbf}"
+fi
+
+if [ -e "${nfs}/${path}/${app}/*${rgf}" ]
+then
+  rm "${nfs}"/"${path}"/"${app}"/*"${rgf}"
+fi
+
+if [ -e "${nfs}/${path}/${app}/*${rsf}" ]
+then
+  rm "${nfs}"/"${path}"/"${app}"/*"${rsf}"
+fi
+
+if [ -e "${am1808}/${path}/${app}/*${rbf}" ]
+then
+  rm "${am1808}"/"${path}"/"${app}"/*"${rbf}"
+fi
+
+if [ -e "${am1808}/${path}/${app}/*${rgf}" ]
+then
+  rm "${am1808}"/"${path}"/"${app}"/*"${rgf}"
+fi
+
+if [ -e "${am1808}/${path}/${app}/*${rsf}" ]
+then
+  rm "${am1808}"/"${path}"/"${app}"/*"${rsf}"
+fi
+
+#*** DO COMPILE **************************************************************
+
+echo -n Compile "  "../${path}/${app}"        "
+${lms_to_rbf} "${app}" "${app}"/"${app}""${rbf}"
+
+#*** DO CONVERT **************************************************************
+
+echo -n Convert and copy
+
+#*** DO CONVERT ICON *********************************************************
+
+srcfile="24x12_ViewApp"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/icon
+
+#*** DO CONVERT GRAPHICS *****************************************************
+
+srcfile="MotorCtlAD"
+
+srcbitmap="View_Core"
+dstbitmap="ViewCore"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+
+srcbitmap="P0_top"
+dstbitmap="ViewTop"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+
+srcbitmap="P0_bot"
+dstbitmap="ViewBot"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+
+srcbitmap="P1"
+dstbitmap="ViewP1"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+
+srcbitmap="P2"
+dstbitmap="ViewP2"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+
+srcbitmap="P3"
+dstbitmap="ViewP3"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+
+srcbitmap="P4"
+dstbitmap="ViewP4"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+
+srcbitmap="PA"
+dstbitmap="ViewPA"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+
+srcbitmap="PB"
+dstbitmap="ViewPB"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+
+srcbitmap="PC"
+dstbitmap="ViewPC"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+
+srcbitmap="PD"
+dstbitmap="ViewPD"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+
+srcbitmap="other"
+dstbitmap="tdef"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+#1
+srcbitmap="NXT_device"
+dstbitmap="t010"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+#2
+srcbitmap="NXT_device"
+dstbitmap="t020"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+#3
+srcbitmap="NXT_device"
+dstbitmap="t030"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+#4
+srcbitmap="NXT_device"
+dstbitmap="t040"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+#5
+srcbitmap="NXT_device"
+dstbitmap="t050"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+#6 0
+srcbitmap="temp_c"
+dstbitmap="t060"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+#6 1
+srcbitmap="temp_f"
+dstbitmap="t061"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+#7 0
+srcbitmap="lrg_motor_d"
+dstbitmap="t070"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+#7 1
+srcbitmap="lrg_motor"
+dstbitmap="t071"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+#8 0
+srcbitmap="med_motor_d"
+dstbitmap="t080"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+#8 1
+srcbitmap="med_motor"
+dstbitmap="t081"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+#16
+srcbitmap="touch"
+dstbitmap="t160"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+#29 0
+srcbitmap="color_ref"
+dstbitmap="t290"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+#29 1
+srcbitmap="color_amb"
+dstbitmap="t291"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+#29 2
+srcbitmap="color_col"
+dstbitmap="t292"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+#30 0
+srcbitmap="us_prox"
+dstbitmap="t300"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+#32 0
+srcbitmap="gyro_a"
+dstbitmap="t320"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+#32 1
+srcbitmap="gyro_rate"
+dstbitmap="t321"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+#33 0
+srcbitmap="ir_prox"
+dstbitmap="t330"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+#33 1
+srcbitmap="ir_bpos"
+dstbitmap="t331"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+#33 2
+srcbitmap="ir_bbut"
+dstbitmap="t332"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+
+srcbitmap="PE_input"
+dstbitmap="PE_input"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+
+srcbitmap="PE_output"
+dstbitmap="PE_output"
+${bmp_to_xbm} "${srcbitmap}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${dstbitmap}"
+
+#*** DO COPY IN PLACE ********************************************************
+
+cp "${app}"/*"${rbf}" "${x86}"/"${path}"/"${app}"/
+cp "${app}"/*"${rgf}" "${x86}"/"${path}"/"${app}"/
+
+cp "${app}"/*"${rbf}" "${nfs}"/"${path}"/"${app}"/
+cp "${app}"/*"${rgf}" "${nfs}"/"${path}"/"${app}"/
+
+cp "${app}"/*"${rbf}" "${am1808}"/"${path}"/"${app}"/
+cp "${app}"/*"${rgf}" "${am1808}"/"${path}"/"${app}"/
+
+#*** DONE ********************************************************************
+
+echo
+

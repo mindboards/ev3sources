@@ -1,0 +1,30 @@
+#! /bin/sh
+
+#insmod ${PWD}/mod/d_power.ko
+#insmod ${PWD}/mod/d_ppboard.ko
+#insmod ${PWD}/mod/d_pwm.ko
+#sudo insmod ${PWD}/mod/d_analog.ko
+#insmod ${PWD}/mod/d_ui.ko
+#insmod ${PWD}/mod/d_uart.ko
+#insmod ${PWD}/mod/d_display.ko
+#insmod ${PWD}/mod/d_usbdev.ko
+#insmod ${PWD}/mod/d_usbhost.ko
+#insmod ${PWD}/mod/d_sound.ko
+#insmod ${PWD}/mod/d_iic.ko
+#insmod ${PWD}/mod/d_bt.ko
+#chmod 666 /dev/lms_pwm
+#chmod 666 /dev/lms_motor
+#sudo chmod 666 /dev/lms_analog 
+#chmod 666 /dev/lms_dcm
+#chmod 666 /dev/lms_ui
+#chmod 666 /dev/lms_uart
+#chmod 666 /dev/lms_power
+#chmod 666 /dev/lms_display
+#chmod 666 /dev/lms_usbdev
+#chmod 666 /dev/lms_usbhost
+#chmod 666 /dev/lms_sound
+#chmod 666 /dev/lms_iic
+#chmod 666 /dev/lms_bt
+
+
+

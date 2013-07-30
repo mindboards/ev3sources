@@ -1,0 +1,34 @@
+#! /bin/bash
+
+path="tst"
+app="tst"
+
+#*** GENERIC CONSTANTS *******************************************************
+
+gext=".rgf"
+bext=".rbf"
+hardware="/home/tcp/am1808/DaVinci-PSP-SDK-03.20.00.13/filesys/home/root/lms2012"
+am1808="../../lms2012/Linux_AM1808"
+x86="../../lms2012/Linux_X86"
+
+#*** COMPILE *****************************************************************
+
+echo
+echo -------------------------------------------------------------------------
+echo Compiling ../${path}/${app}
+echo
+
+lms="tst"
+../adk/asm "${lms}"
+cp "${lms}""${bext}" "${app}"/
+rm "${lms}""${bext}"
+
+#*** COPY IN PLACE ***********************************************************
+
+#cp "${app}"/"${lms}".r?f "${am1808}"/"${path}"/
+#cp "${app}"/"${lms}".r?f "${x86}"/"${path}"/
+sudo cp "${app}"/"${lms}".r?f "${hardware}"/"prjs/tst"/
+
+
+
+

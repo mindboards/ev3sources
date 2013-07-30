@@ -1,0 +1,27 @@
+
+**** Build of configuration Linuxlib_AM1808 for project c_ui ****
+
+make all 
+Building file: ../source/c_ui.c
+Invoking: GCC C Compiler
+~/CodeSourcery/Sourcery_G++_Lite/bin/arm-none-linux-gnueabi-gcc -I"/home/al/projects/lms2012/lms2012/source" -I"/home/al/projects/lms2012/c_input/source" -O0 -p -pg -Wall -c -fmessage-length=0 -fPIC -MMD -MP -MF"source/c_ui.d" -MT"source/c_ui.d" -o"source/c_ui.o" "../source/c_ui.c"
+Finished building: ../source/c_ui.c
+ 
+Building file: ../source/d_lcd.c
+Invoking: GCC C Compiler
+~/CodeSourcery/Sourcery_G++_Lite/bin/arm-none-linux-gnueabi-gcc -I"/home/al/projects/lms2012/lms2012/source" -I"/home/al/projects/lms2012/c_input/source" -O0 -p -pg -Wall -c -fmessage-length=0 -fPIC -MMD -MP -MF"source/d_lcd.d" -MT"source/d_lcd.d" -o"source/d_lcd.o" "../source/d_lcd.c"
+Finished building: ../source/d_lcd.c
+ 
+Building file: ../source/d_terminal.c
+Invoking: GCC C Compiler
+~/CodeSourcery/Sourcery_G++_Lite/bin/arm-none-linux-gnueabi-gcc -I"/home/al/projects/lms2012/lms2012/source" -I"/home/al/projects/lms2012/c_input/source" -O0 -p -pg -Wall -c -fmessage-length=0 -fPIC -MMD -MP -MF"source/d_terminal.d" -MT"source/d_terminal.d" -o"source/d_terminal.o" "../source/d_terminal.c"
+Finished building: ../source/d_terminal.c
+ 
+Building target: libc_ui.so
+Invoking: GCC C Linker
+~/CodeSourcery/Sourcery_G++_Lite/bin/arm-none-linux-gnueabi-gcc -shared -p -pg -o"libc_ui.so"  ./source/c_ui.o ./source/d_lcd.o ./source/d_terminal.o   
+Finished building target: libc_ui.so
+ 
+make --no-print-directory post-build
+cp /home/al/projects/lms2012/c_ui/Linuxlib_AM1808/libc_ui.so /home/al/projects/lms2012/lms2012/Linux_AM1808/sys/lib/libc_ui.so; rm -r /home/al/projects/lms2012/c_ui/Linuxlib_AM1808
+ 

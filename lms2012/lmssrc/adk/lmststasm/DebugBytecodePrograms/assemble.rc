@@ -1,0 +1,13 @@
+#! /bin/bash
+
+src=$(pwd)
+cd ..
+cp "$src"/$1".src" prg.c
+gcc -o bytecodeassembler bytecodeassembler.c
+chmod +x bytecodeassembler
+./bytecodeassembler
+mv prg.rbf "$src"/$1.rbf
+rm prg.c
+
+cd "$src"
+scp $1.rbf root@$2:"/mnt/ramdisk/prjs/BrkProg_SAVE/"$1.rbf

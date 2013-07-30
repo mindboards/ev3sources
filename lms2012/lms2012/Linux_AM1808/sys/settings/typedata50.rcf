@@ -1,0 +1,16 @@
+//! \page types Known Device Types
+//!
+//! \verbatim
+
+//  Type  Mode  Name      DataSets  Format  Figures  Decimals  Views  Conn. Pins  RawMin   RawMax   PctMin  PctMax  SiMin    SiMax    Time  IdValue  Symbol     Setup
+//  ----  ----  --------  --------  ------  -------  --------  -----  ----- ----  -------  -------  ------  ------  -------  -------  ----  -------  --------   --------------------------
+
+    50    0     HT-PIR        1       1     5        0         1      120   0x46      0.0    255.0    -100     100   -100.0    100.0   100        0  pct        HITECHNC PIR 3 0x01410200 2 0x01420000 1 
+
+    51    0     HT-ALT.       1       1     5        1         2      120   0x46  30400.0  29400.0       0     100      0.0    300.0   100        0  m          HiTechnc Barometr 3 0x01410200 2 0x01440000 2 
+    51    1     HT-TEMP.      1       1     5        1         2      120   0x46      0.0   1000.0       0     100      0.0    100.0   100        0  c          HiTechnc Barometr 3 0x01410200 2 0x01420000 2 
+
+    52    0     HT-DIR-DC     1       1     5        0         2      120   0x46      0.0      9.0       0     100      0.0      9.0   100        0  _          HiTechnc NewIRDir 3 0x08410200 2 0x08420000 1 
+    52    1     HT-DIR-AC     1       1     5        0         2      120   0x46      0.0      9.0       0     100      0.0      9.0   100        0  _          HiTechnc NewIRDir 3 0x08410200 2 0x08420000 1 
+
+//!  \endverbatim

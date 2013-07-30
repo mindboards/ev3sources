@@ -1,0 +1,19 @@
+# stock fstab - you probably want to override this with a machine specific one
+
+rootfs               /                    auto       defaults              1  1
+proc                 /proc                proc       defaults              0  0
+devpts               /dev/pts             devpts     mode=0620,gid=5       0  0
+tmpfs                /var/volatile        tmpfs      defaults,size=2M      0  0
+tmpfs                /mnt/ramdisk         tmpfs      defaults,size=6M      0  0
+#tmpfs                /media/              tmpfs      defaults,size=1M      0  0
+
+#usbfs                /proc/bus/usb        usbfs      defaults              0  0
+
+# uncomment this if your device has a SD/MMC/Transflash slot
+/dev/mmcblk0p1       /media/card          auto       defaults,sync,noauto  0  0
+/dev/mmcblk0         /media/card          auto       defaults,sync,noauto  0  0
+/dev/mmcblk1p1       /media/card          auto       defaults,sync,noauto  0  0
+/dev/mmcblk1         /media/card          auto       defaults,sync,noauto  0  0
+/dev/sda1            /media/usb           auto       defaults,sync,noauto  0  0
+/dev/sdb1            /media/usb           auto       defaults,sync,noauto  0  0
+

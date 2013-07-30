@@ -1,0 +1,23 @@
+#! /bin/sh
+
+lms=/home/root/lms2012/sys/run
+
+test -x "$lms" || exit 0
+
+case "$1" in
+  start)
+    echo -n "Starting lms2012"
+    start-stop-daemon --start --quiet --exec $lms
+    echo "."
+    ;;
+  stop)
+    echo -n "Stopping lms2012"
+    start-stop-daemon --stop --quiet --pidfile /var/run/lms2012.pid
+    echo "."
+    ;;
+  *)
+    echo "Usage: /etc/init.d/lms {start|stop}"
+    exit 1
+esac
+
+exit 0

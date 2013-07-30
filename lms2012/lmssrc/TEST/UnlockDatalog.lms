@@ -1,0 +1,85 @@
+/*
+ * LEGO® MINDSTORMS EV3
+ *
+ * Copyright (C) 2010-2013 The LEGO Group
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
+
+//  TCP 09.04.2013
+//! \page testunlockdatalogappcode UnlockDatalog Application
+//!
+//! <hr size="1"/>
+//!
+//! \verbatim
+//**********************************************************************
+define appv 'UnlockDatalog V1.02'                                     //
+//**********************************************************************
+                                                                      //
+                                                                      //
+vmthread  MAIN                                                        //  void    MAIN(void)
+{                                                                     //  {
+  DATA8   ShowVersion                                                 //
+                                                                      //
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //    UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+  JR_FALSE(ShowVersion,DontShowVersion)                               //    if (ShowVersion)
+                                                                      //    {
+  UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)                              //      UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)
+  UI_DRAW(RECT,FG_COLOR,6,52,166,24)                                  //      UI_DRAW(RECT,FG_COLOR,6,52,166,24)
+  UI_DRAW(TEXT,FG_COLOR,13,60,appv)                                   //      UI_DRAW(TEXT,FG_COLOR,13,60,appv)
+  UI_DRAW(UPDATE)                                                     //      UI_DRAW(UPDATE)
+                                                                      //
+ShowVersionWait:                                                      //      do
+                                                                      //      {  
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //        UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+                                                                      //      }
+  JR_TRUE(ShowVersion,ShowVersionWait)                                //      while (ShowVersion)
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //      UI_BUTTON(FLUSH)
+DontShowVersion:                                                      //    }  
+                                                                      //
+  UI_DRAW(RESTORE,0)                                                  //    UI_DRAW(RESTORE,0)
+  UI_DRAW(TOPLINE,0)                                                  //    UI_DRAW(TOPLINE,0)
+  UI_WRITE(LED,LED_GREEN)                                             //    UI_WRITE(LED,LED_GREEN)
+                                                                      //
+  CALL(TestLeds)                                                      //    TestLeds()
+                                                                      //
+  UI_DRAW(TOPLINE,1)                                                  //    UI_DRAW(TOPLINE,1)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestLeds                                                    //  void TestLeds(void)
+{                                                                     //  {
+  DATA8   Run                                                         //
+  DATA8   Tmp                                                         //
+                                                                      //
+                                                                      //
+  UI_DRAW(FILLWINDOW,0x00,0,0                                         //    UI_DRAW(FILLWINDOW,0x00,0,0
+  UI_DRAW(SELECT_FONT,SMALL_FONT)                                     //    UI_DRAW(SELECT_FONT,SMALL_FONT)
+  UI_DRAW(TEXT,FG_COLOR,0,1,'UnlockDatalog')                          //    UI_DRAW(TEXT,FG_COLOR,0,1,'UnlockDatalog')
+  UI_DRAW(LINE,FG_COLOR,0,TOPLINE_HEIGHT,LCD_WIDTH,TOPLINE_HEIGHT)    //    UI_DRAW(LINE,FG_COLOR,0,TOPLINE_HEIGHT,LCD_WIDTH,TOPLINE_HEIGHT)
+  UI_DRAW(SELECT_FONT,NORMAL_FONT)                                    //    UI_DRAW(SELECT_FONT,NORMAL_FONT)
+                                                                      //
+  UI_DRAW(UPDATE)                                                     //    UI_DRAW(UPDATE)
+                                                                      //
+  FILENAME(UNPACK,'../apps/Brick\ Datalog')                           //    FILENAME(UNPACK,'../apps/Brick\ Datalog')
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//! \endverbatim
+

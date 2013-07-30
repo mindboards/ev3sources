@@ -1,0 +1,53 @@
+
+DATAF     Tmp0
+DATAF     Tmp1
+DATAF     Tmp2
+
+vmthread  MAIN
+{
+  UI_DRAW(FILLWINDOW,BG_COLOR,0,0)                                    //      UI_DRAW(FILLWINDOW,BG_COLOR,0,0)
+  UI_DRAW(SELECT_FONT,1)
+  UI_DRAW(TEXT,FG_COLOR,0,5,'READY_SI TEST')
+  UI_DRAW(SELECT_FONT,0)
+  UI_DRAW(LINE,FG_COLOR,0,16,177,16)
+  UI_DRAW(LINE,FG_COLOR,0,17,177,17)
+
+  UI_DRAW(TEXT,FG_COLOR,0,30,'Mode 0')
+  UI_DRAW(TEXT,FG_COLOR,0,50,'Mode 1')
+  UI_DRAW(TEXT,FG_COLOR,0,70,'Mode 2')
+
+  OBJECT_START(Mode0)
+  OBJECT_START(Mode1)
+  OBJECT_START(Mode2)
+
+  Loop:
+    UI_DRAW(VALUE,FG_COLOR,64,30,Tmp0,6,1)
+    UI_DRAW(VALUE,FG_COLOR,64,50,Tmp1,6,1)
+    UI_DRAW(VALUE,FG_COLOR,64,70,Tmp2,6,1)
+    UI_DRAW(UPDATE)
+  JR(Loop)
+}
+
+vmthread  Mode0
+{
+  Loop:
+    INPUT_DEVICE(READY_SI,0,0,0,0,1,Tmp0)
+  JR(Loop)
+}
+
+vmthread  Mode1
+{
+  Loop:
+    INPUT_DEVICE(READY_SI,0,0,0,1,1,Tmp1)
+  JR(Loop)
+}
+
+vmthread  Mode2
+{
+  Loop:
+    INPUT_DEVICE(READY_SI,0,0,0,2,1,Tmp2)
+  JR(Loop)
+}
+
+
+

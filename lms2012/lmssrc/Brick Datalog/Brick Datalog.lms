@@ -1,0 +1,1816 @@
+/*
+ * LEGO® MINDSTORMS EV3
+ *
+ * Copyright (C) 2010-2013 The LEGO Group
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
+
+//  TCP 04.04.2013
+//! \page brickdatalogapp Brick Datalog Source Code
+//!
+//! <hr size="1"/>
+//!
+//! \verbatim
+//**********************************************************************
+define appv 'Brick Datalog V1.02'                                     //
+//**********************************************************************
+                                                                      //
+define    MAX_PORTS                     (INPUTS + OUTPUTS)            //  Number of ports supported
+define    OUTPUT_OFFSET                 (INPUTS * CHAIN_DEPT)         //  Offset from start of inputs to start of outputs
+                                                                      //
+define    GRAPH_SAMPLETIME              100                           //
+define    DEFAULT_SAMPLERATE            3                             //
+define    SAMPLERATES                   6                             //
+                                                                      //
+define    DATALOG_FILENO                'fileno.rtf'                  //
+define    TMPLOGFILE                    'log.rdf'                     //
+define    BDL_NAME                      'BrkDL_'                      //
+                                                                      //
+define    TERMINATION                   '\t'                          //
+                                                                      //
+define    ALL_PORTS                     0                             //  Posibility to show all graphs (yes = -1, No = 0)
+                                                                      //
+DATAF     Actual                                                      //
+DATAF     Lowest                                                      //
+DATAF     Highest                                                     //
+DATAF     Average                                                     //
+                                                                      //
+DATAF     Count                                                       //
+                                                                      //
+DATA32    StartTime                                                   //  Sample timer (time from start of log) [mS]
+DATA32    Timer                                                       //  Actual time [mS]
+DATA32    SampleTime                                                  //  Time between samples [mS]
+DATA32    IdleSampleTime                                              //  Time between samples [mS]
+DATA32    FlashTimer                                                  //
+DATA16    SampleRate                                                  //  Pointer to actual sample rate
+DATA16    hDevices                                                    //
+DATA16    hValues                                                     //
+DATA16    hMins                                                       //
+DATA16    hMaxs                                                       //
+DATA16    hOffsets                                                    //
+DATA16    hSpans                                                      //
+DATA16    hFigures                                                    //
+DATA16    hDecimals                                                   //
+                                                                      //
+DATA16    hTypes                                                      //
+                                                                      //
+DATA16    hInits                                                      //                                                                      
+DATA16    hTypes                                                      //
+DATA16    hModes                                                      //
+DATA16    hDataSets                                                   //
+DATA16    hLogModes                                                   //
+DATA16    hMaxModes                                                   //
+                                                                      //
+DATA16    hSampleRates                                                //
+                                                                      //
+DATA16    hhGrids                                                     //  Handle to handles to grid bitmap names
+                                                                      //
+DATA16    Handle                                                      //
+                                                                      //
+                                                                      //
+define    IDLE                          0                             //
+define    LOGGING                       1                             //
+define    SETUP                         2                             //
+                                                                      //
+DATA16    NoOfPorts                                                   //  No of ports to show/log
+DATA8     SelectedMode                                                //  Selected mode (IDLE, LOGING, SETUP)
+DATA8     WantedMode                                                  //  Mode to be selected
+DATA8     SelectedPort                                                //  Selected port
+DATA8     HighSpeedLogging                                            //
+DATA8     Update                                                      //
+                                                                      //
+// MAIN ************************************************************************************************
+                                                                      //
+                                                                      //
+vmthread  MAIN                                                        //  void MAIN(void)
+{                                                                     //  {
+  DATA32  Index                                                       //
+  DATA32  Status                                                      //
+  DATA8   Changed                                                     //
+  DATA8   State                                                       //
+  DATA8   Tmp                                                         //
+  DATA8   Initialised                                                 //
+  DATAS   String 20                                                   //
+  DATA8   ShowVersion                                                 //
+                                                                      //
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //    UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+  JR_FALSE(ShowVersion,DontShowVersion)                               //    if (ShowVersion)
+                                                                      //    {
+  UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)                              //      UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)
+  UI_DRAW(RECT,FG_COLOR,6,52,166,24)                                  //      UI_DRAW(RECT,FG_COLOR,6,52,166,24)
+  UI_DRAW(TEXT,FG_COLOR,13,60,appv)                                   //      UI_DRAW(TEXT,FG_COLOR,13,60,appv)
+  UI_DRAW(UPDATE)                                                     //      UI_DRAW(UPDATE)
+                                                                      //
+ShowVersionWait:                                                      //      do
+                                                                      //      {  
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //        UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+                                                                      //      }
+  JR_TRUE(ShowVersion,ShowVersionWait)                                //      while (ShowVersion)
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //      UI_BUTTON(FLUSH)
+DontShowVersion:                                                      //    }  
+                                                                      //
+  UI_DRAW(RESTORE,0)                                                  //    UI_DRAW(RESTORE,0)
+  UI_DRAW(TOPLINE,1)                                                  //    UI_DRAW(TOPLINE,1)
+  UI_BUTTON(SET_BACK_BLOCK,1)                                         //    UI_BUTTON(SET_BACK_BLOCK,1)
+  UI_WRITE(LED,LED_GREEN)                                             //    UI_WRITE(LED,LED_GREEN)
+                                                                      //
+  CALL(Init)                                                          //    Init()
+                                                                      //
+  MOVE8_8(IDLE,SelectedMode)                                          //    SelectedMode      =  IDLE
+  MOVE8_8(IDLE,WantedMode)                                            //    WantedMode        =  IDLE
+  MOVE8_8(1,Changed)                                                  //    Changed           =  1
+  MOVE8_8(0,HighSpeedLogging)                                         //    HighSpeedLogging  =  0
+  MOVE8_8(0,Initialised)                                              //    Initialised       =  0
+  CALL(UpdateModes)                                                   //    UpdateModes()
+  CALL(UpdateDeviceInPort)                                            //    UpdateDeviceInPort()
+  MOVE8_8(0,SelectedPort)                                             //    SelectedPort  =  0
+  JR_NEQ8(NoOfPorts,0,NotNull)                                        //    if (NoOfPorts == 0)
+                                                                      //    {
+  MOVE8_8(ALL_PORTS,SelectedPort)                                     //      SelectedPort  = ALL_PORTS
+NotNull:                                                              //    }
+                                                                      //
+  MOVE16_16(DEFAULT_SAMPLERATE,SampleRate)                            //    MOVE16_16(DEFAULT_SAMPLERATE,SampleRate)
+  MOVE16_32(SampleRate,Index)                                         //    MOVE16_32(SampleRate,Index)
+  ARRAY_READ(hSampleRates,Index,SampleTime)                           //    ARRAY_READ(hSampleRates,Index,SampleTime)
+                                                                      //
+                                                                      //    do
+Loop:                                                                 //    {
+                                                                      //
+  JR_NEQ8(WantedMode,IDLE,NotIdle)                                    //      if (WantedMode == IDLE)
+                                                                      //      {
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,State)                            //        UI_BUTTON(SHORTPRESS,ENTER_BUTTON,State)
+  UI_BUTTON(SHORTPRESS,UP_BUTTON,State)                               //        UI_BUTTON(SHORTPRESS,UP_BUTTON,State)
+  UI_BUTTON(SHORTPRESS,DOWN_BUTTON,State)                             //        UI_BUTTON(SHORTPRESS,DOWN_BUTTON,State)
+  JR_FALSE(State,NotDownIdle)                                         //        if (State)
+                                                                      //        {
+  MOVE8_8(LOGGING,WantedMode)                                         //          WantedMode  =  LOGGING
+  MOVE8_8(1,Update)                                                   //          Update      =  1
+NotDownIdle:                                                          //        }
+NotIdle:                                                              //      }
+                                                                      //
+  JR_NEQ8(WantedMode,LOGGING,NotLogging)                              //      if (WantedMode == LOGGING)
+                                                                      //      {
+  JR_EQ8(SelectedMode,LOGGING,Logging)                                //        if (SelectedMode != LOGGING)
+                                                                      //        {
+  UI_BUTTON(SHORTPRESS,DOWN_BUTTON,State)                             //          UI_BUTTON(SHORTPRESS,DOWN_BUTTON,State)
+  UI_BUTTON(SHORTPRESS,LEFT_BUTTON,State)                             //          UI_BUTTON(SHORTPRESS,LEFT_BUTTON,State)
+  UI_BUTTON(SHORTPRESS,UP_BUTTON,State)                               //          UI_BUTTON(SHORTPRESS,UP_BUTTON,State)
+  JR_FALSE(State,NotUpLogging)                                        //          if (State)
+                                                                      //          {
+  MOVE8_8(IDLE,WantedMode)                                            //            WantedMode  =  IDLE
+  MOVE8_8(1,Update)                                                   //            Update      =  1
+NotUpLogging:                                                         //          }
+                                                                      //
+  UI_BUTTON(SHORTPRESS,RIGHT_BUTTON,State)                            //          UI_BUTTON(SHORTPRESS,RIGHT_BUTTON,State)
+  JR_FALSE(State,NotRightLogging)                                     //          if (State)
+                                                                      //          {
+  MOVE8_8(SETUP,WantedMode)                                           //            WantedMode  =  SETUP
+  MOVE8_8(1,Update)                                                   //            Update      =  1
+NotRightLogging:                                                      //          }
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,State)                            //          UI_BUTTON(SHORTPRESS,ENTER_BUTTON,State)
+  JR_FALSE(State,NotEnterLogging)                                     //          if (State)
+                                                                      //          {
+  JR_LTEQ8(NoOfPorts,0,NoPorts)                                       //            if (NoOfPorts > 0)
+                                                                      //            {
+  MOVE8_8(LOGGING,SelectedMode)                                       //              SelectedMode  =  LOGGING
+  MOVE8_8(1,Update)                                                   //              Update        =  1
+  MOVE8_8(0,HighSpeedLogging)                                         //              HighSpeedLogging  =  0
+  UI_DRAW(TOPLINE,1)                                                  //              UI_DRAW(TOPLINE,1)
+                                                                      //
+  JR_GTEQ32(SampleTime,GRAPH_SAMPLETIME,NotHighSpeed)                 //              if (SampleTime > GRAPH_SAMPLETIME)
+                                                                      //              {
+  MOVE8_8(1,HighSpeedLogging)                                         //                HighSpeedLogging  =  1
+  UI_DRAW(TOPLINE,0)                                                  //                UI_DRAW(TOPLINE,0)
+NotHighSpeed:                                                         //              }
+  MOVE8_8(1,Changed)                                                  //              Changed       =  1
+  UI_WRITE(LED,LED_GREEN_PULSE)                                       //              UI_WRITE(LED,LED_GREEN_PULSE)
+  CALL(LoggingScreen,Changed)                                         //              LoggingScreen(Changed)
+NoPorts:                                                              //            }
+NotEnterLogging:                                                      //          }
+JR(EndLogging)                                                        //        }
+                                                                      //        else
+Logging:                                                              //        {
+  UI_BUTTON(SHORTPRESS,DOWN_BUTTON,State)                             //          UI_BUTTON(SHORTPRESS,DOWN_BUTTON,State)
+  UI_BUTTON(SHORTPRESS,UP_BUTTON,State)                               //          UI_BUTTON(SHORTPRESS,UP_BUTTON,State)
+  JR_FALSE(State,NotUpLogging2)                                       //          if (State && !HighSpeedLogging)
+  JR_TRUE(HighSpeedLogging,NotUpLogging2                              //          {
+  MOVE8_8(IDLE,WantedMode)                                            //            WantedMode  =  IDLE
+  MOVE8_8(1,Update)                                                   //            Update      =  1
+NotUpLogging2:                                                        //          }
+                                                                      //
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,State)                            //          UI_BUTTON(SHORTPRESS,ENTER_BUTTON,State)
+  JR_FALSE(State,NotEnterLogging2)                                    //          if (State)
+                                                                      //          {
+                                                                      //
+//! \endverbatim
+//! \anchor file_close_log
+//! \verbatim
+                                                                      //
+  FILE(CLOSE_LOG,Handle,TMPLOGFILE)                                   //
+  UI_WRITE(LED,LED_GREEN)                                             //            UI_WRITE(LED,LED_GREEN)
+  CALL(SaveFile)                                                      //            SaveFile()
+  MOVE8_8(IDLE,SelectedMode)                                          //            SelectedMode      =  IDLE
+  MOVE8_8(1,Update)                                                   //            Update            =  1
+  MOVE8_8(0,HighSpeedLogging)                                         //            HighSpeedLogging  =  0
+  UI_DRAW(TOPLINE,1)                                                  //            UI_DRAW(TOPLINE,1)
+  MOVE8_8(1,Changed)                                                  //            Changed           =  1
+NotEnterLogging2:                                                     //          }
+EndLogging:                                                           //        }
+                                                                      //
+NotLogging:                                                           //      }
+                                                                      //
+  JR_NEQ8(WantedMode,SETUP,NotSetup)                                  //      if (WantedMode == SETUP)
+                                                                      //      {
+  UI_BUTTON(SHORTPRESS,DOWN_BUTTON,State)                             //        UI_BUTTON(SHORTPRESS,DOWN_BUTTON,State)
+  UI_BUTTON(SHORTPRESS,RIGHT_BUTTON,State)                            //        UI_BUTTON(SHORTPRESS,RIGHT_BUTTON,State)
+  UI_BUTTON(SHORTPRESS,UP_BUTTON,State)                               //        UI_BUTTON(SHORTPRESS,UP_BUTTON,State)
+  JR_FALSE(State,NotUpSetup)                                          //        if (State)
+                                                                      //        {
+  MOVE8_8(IDLE,WantedMode)                                            //          WantedMode  =  IDLE
+  MOVE8_8(1,Update)                                                   //          Update      =  1
+NotUpSetup:                                                           //        }
+                                                                      //
+  UI_BUTTON(SHORTPRESS,LEFT_BUTTON,State)                             //        UI_BUTTON(SHORTPRESS,LEFT_BUTTON,State)
+  JR_FALSE(State,NotLeftSetup)                                        //        if (State)
+                                                                      //        {
+  MOVE8_8(LOGGING,WantedMode)                                         //          WantedMode  =  LOGGING
+  MOVE8_8(1,Update)                                                   //          Update      =  1
+NotLeftSetup:                                                         //        }
+                                                                      //
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,State)                            //        UI_BUTTON(SHORTPRESS,ENTER_BUTTON,State)
+  JR_FALSE(State,NotEnterSetup)                                       //        if (State)
+                                                                      //        {
+  MOVE8_8(1,Changed)                                                  //          Changed       =  1
+  CALL(IdleScreen,Changed)                                            //          IdleScreen(Changed)
+  MOVE8_8(1,Update)                                                   //          Update      =  1
+  CALL(Settings)                                                      //          Settings()
+  MOVE8_8(1,Changed)                                                  //          Changed       =  1
+  CALL(IdleScreen,Changed)                                            //          IdleScreen(Changed)
+NotEnterSetup:                                                        //        }
+                                                                      //
+NotSetup:                                                             //      }
+                                                                      //
+  JR_NEQ8(WantedMode,IDLE,NotWantedIdle)                              //      if (WantedMode == IDLE)
+                                                                      //      {
+  JR_EQ8(SelectedMode,LOGGING,Logging1)                               //        if (SelectedMode != LOGGING)
+                                                                      //        {
+  UI_BUTTON(SHORTPRESS,RIGHT_BUTTON,State)                            //          UI_BUTTON(SHORTPRESS,RIGHT_BUTTON,State)
+  JR_FALSE(State,NotRight)                                            //          if (State)
+                                                                      //          {
+  ADD8(SelectedPort,1,SelectedPort)                                   //            SelectedPort++
+  CALL(CheckPort)                                                     //            CheckPort()
+  MOVE8_8(1,Changed)                                                  //            Changed       =  1
+NotRight:                                                             //          }
+  UI_BUTTON(SHORTPRESS,LEFT_BUTTON,State)                             //          UI_BUTTON(SHORTPRESS,Left_BUTTON,State)
+  JR_FALSE(State,NotLeft)                                             //          if (State)
+                                                                      //          {
+  SUB8(SelectedPort,1,SelectedPort)                                   //            SelectedPort--
+  CALL(CheckPort)                                                     //            CheckPort()
+  MOVE8_8(1,Changed)                                                  //            Changed       =  1
+NotLeft:                                                              //          }
+JR(EndLogging1)                                                       //        }
+                                                                      //        else
+Logging1:                                                             //        {
+                                                                      //
+  UI_BUTTON(SHORTPRESS,RIGHT_BUTTON,State)                            //          UI_BUTTON(SHORTPRESS,RIGHT_BUTTON,State)
+  JR_FALSE(State,NotRight2)                                           //          if (State)
+                                                                      //          {
+  ADD8(SelectedPort,1,SelectedPort)                                   //            SelectedPort++
+  CALL(CheckPort)                                                     //            CheckPort()
+NotRight2:                                                            //          }
+  UI_BUTTON(SHORTPRESS,LEFT_BUTTON,State)                             //          UI_BUTTON(SHORTPRESS,Left_BUTTON,State)
+  JR_FALSE(State,NotLeft2)                                            //          if (State)
+                                                                      //          {
+  SUB8(SelectedPort,1,SelectedPort)                                   //            SelectedPort--
+  CALL(CheckPort)                                                     //            CheckPort()
+NotLeft2:                                                             //          }
+EndLogging1:                                                          //        }
+NotWantedIdle:                                                        //      }
+                                                                      //
+  JR_NEQ8(SelectedMode,IDLE,NotIDLE)                                  //      if (SelectedMode == IDLE)
+                                                                      //      {
+  INPUT_DEVICE_LIST(0,0,Tmp)                                          //        INPUT_DEVICE_LIST(0,0,Tmp)
+  JR_FALSE(Tmp,NoChange)                                              //        if (Tmp == 1)
+                                                                      //        {
+  MOVE8_8(0,SelectedPort)                                             //          SelectedPort  =  0
+  CALL(CheckPort)                                                     //          CheckPort()
+  MOVE8_8(1,Changed)                                                  //          Changed       =  1
+NoChange:                                                             //        }
+                                                                      //
+  CALL(IdleScreen,Changed)                                            //        IdleScreen(Changed)
+                                                                      //
+NotIDLE:                                                              //      }
+                                                                      //
+  JR_NEQ8(SelectedMode,LOGGING,NotLOGGING)                            //      if (SelectedMode == LOGGING)
+                                                                      //      {
+  CALL(LoggingScreen,Changed)                                         //        LoggingScreen(Changed)
+                                                                      //
+NotLOGGING:                                                           //      }
+                                                                      //
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,State)                             //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,State)
+  JR_NEQ8(SelectedMode,LOGGING,NotLogging2)                           //      if (SelectedMode == LOGGING)
+                                                                      //      {
+  MOVE8_8(0,State)                                                    //        State  =  0
+NotLogging2:                                                          //      }
+  JR_FALSE(Update,NoUpdate)                                           //      if (Update)
+                                                                      //      {
+  UI_DRAW(UPDATE)                                                     //        UI_DRAW(UPDATE)
+  MOVE8_8(0,Update)                                                   //        Update  =  0
+NoUpdate:                                                             //      }
+                                                                      //
+  JR_EQ8(Initialised,1,Skip)                                          //      if (!Initialised)
+                                                                      //      {
+  INPUT_DEVICE(CLR_ALL,0)                                             //        INPUT_DEVICE(CLR_ALL,0)
+  MOVE8_8(1,Initialised)                                              //        Initialised  =  1
+                                                                      //  
+Skip:                                                                 //      }
+                                                                      //    }
+  JR_FALSE(State,Loop)                                                //    while (State == 0)
+                                                                      //
+  CALL(Exit)                                                          //    Exit()
+                                                                      //
+  UI_BUTTON(SET_BACK_BLOCK,0)                                         //    UI_BUTTON(SET_BACK_BLOCK,0)
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// Init ************************************************************************************************
+                                                                      //
+                                                                      //
+subcall   Init                                                        //  Init(void)
+{                                                                     //  {
+  DATA32  Index                                                       //
+  DATA16  Handle                                                      //
+  DATA8   Exist                                                       //
+                                                                      //
+  FILENAME(EXIST,DATALOG_FOLDER,Exist)                                //    FILENAME(EXIST,DATALOG_FOLDER,Exist)
+  JR_TRUE(Exist,FolderExist)                                          //    if (!Exist)
+                                                                      //    {
+  FILE(MAKE_FOLDER,DATALOG_FOLDER,Exist)                              //      FILE(MAKE_FOLDER,DATALOG_FOLDER,Exist)
+                                                                      //
+FolderExist:                                                          //    }
+                                                                      //
+  ARRAY(CREATE8,MAX_PORTS,hDevices)                                   //    ARRAY(CREATE8,MAX_PORTS,hDevices)
+  ARRAY(CREATEF,MAX_PORTS,hValues)                                    //    ARRAY(CREATEF,MAX_PORTS,hValues)
+  ARRAY(CREATEF,MAX_PORTS,hMins)                                      //    ARRAY(CREATEF,MAX_PORTS,hMins)
+  ARRAY(CREATEF,MAX_PORTS,hMaxs)                                      //    ARRAY(CREATEF,MAX_PORTS,hMaxs)
+  ARRAY(CREATE16,MAX_PORTS,hOffsets)                                  //    ARRAY(CREATE16,MAX_PORTS,hOffsets)
+  ARRAY(CREATE16,MAX_PORTS,hSpans)                                    //    ARRAY(CREATE16,MAX_PORTS,hSpans)
+  ARRAY(CREATE8,MAX_PORTS,hFigures)                                   //    ARRAY(CREATE8,MAX_PORTS,hFigures)
+  ARRAY(CREATE8,MAX_PORTS,hDecimals)                                  //    ARRAY(CREATE8,MAX_PORTS,hDecimals)
+  ARRAY(CREATE16,MAX_PORTS,hInits)                                    //    ARRAY(CREATE16,MAX_PORTS,hInits)
+  ARRAY(FILL,hInits,-1)                                               //    ARRAY(FILL,hInits,-1)
+  ARRAY(CREATE8,MAX_PORTS,hTypes)                                     //    ARRAY(CREATE8,MAX_PORTS,hTypes)
+  ARRAY(FILL,hTypes,0)                                                //    ARRAY(FILL,hTypes,0)
+  ARRAY(CREATE8,MAX_PORTS,hModes)                                     //    ARRAY(CREATE8,MAX_PORTS,hModes)
+  ARRAY(FILL,hModes,0)                                                //    ARRAY(FILL,hModes,0)
+  ARRAY(CREATE8,MAX_PORTS,hDataSets)                                  //    ARRAY(CREATE8,MAX_PORTS,hDataSets)
+  ARRAY(FILL,hDataSets,0)                                             //    ARRAY(FILL,hDataSets,0)
+  ARRAY(CREATE8,MAX_PORTS,hMaxModes)                                  //    ARRAY(CREATE8,MAX_PORTS,hMaxModes)
+  ARRAY(CREATE8,MAX_PORTS,hLogModes)                                  //    ARRAY(CREATE8,MAX_PORTS,hLogModes)
+  ARRAY(CREATE32,SAMPLERATES,hSampleRates)                            //    ARRAY(CREATE32,SAMPLERATES,hSampleRates)
+  ARRAY_WRITE(hSampleRates,0,60000)                                   //    ARRAY_WRITE(hSampleRates,0,60000)
+  ARRAY_WRITE(hSampleRates,1,10000)                                   //    ARRAY_WRITE(hSampleRates,1,10000)
+  ARRAY_WRITE(hSampleRates,2,1000)                                    //    ARRAY_WRITE(hSampleRates,2,1000)
+  ARRAY_WRITE(hSampleRates,3,100)                                     //    ARRAY_WRITE(hSampleRates,3,100)
+  ARRAY_WRITE(hSampleRates,4,10)                                      //    ARRAY_WRITE(hSampleRates,4,10)
+  ARRAY_WRITE(hSampleRates,5,1)                                       //    ARRAY_WRITE(hSampleRates,5,1)
+                                                                      //
+  ARRAY(CREATE16,MAX_PORTS,hhGrids)                                   //
+  MOVE8_32(0,Index)                                                   //    Index   =  0
+InitData:                                                             //    while (Index < Index)
+  JR_GTEQ32(Index,MAX_PORTS,InitDataDone)                             //    {
+                                                                      //
+  ARRAY(CREATE8,FILENAMESIZE,Handle)                                  //      ARRAY(CREATE8,FILENAMESIZE,Handle)
+  ARRAY_WRITE(hhGrids,Index,Handle)                                   //      hhGrids[Index]  =  Handle
+                                                                      //
+  ADD32(Index,1,Index)                                                //      Index++
+  JR(InitData)                                                        //    }
+InitDataDone:                                                         //
+  MOVE8_32(0,Index)                                                   //    Index   =  0
+  ARRAY_READ(hhGrids,Index,Handle)                                    //    Handle  =  hhGrids[Index]
+  STRINGS(DUPLICATE,'dl_GRc180',@Handle)                              //    Handle  =  "dl_GRc180"
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// Exit ************************************************************************************************
+                                                                      //
+                                                                      //
+subcall   Exit                                                        //  Exit(void)
+{                                                                     //  {
+  DATA32  Index                                                       //
+  DATA16  Handle                                                      //
+                                                                      //
+  MOVE8_32(0,Index)                                                   //    Index  =  0
+ExitData:                                                             //    while (Index < Index)
+  JR_GTEQ32(Index,MAX_PORTS,ExitDataDone)                             //    {
+                                                                      //
+  ARRAY_READ(hhGrids,Index,Handle)                                    //      Handle  =  hhGrids[Index]
+  ARRAY(DELETE,Handle)                                                //      ARRAY(DELETE,Handle)
+                                                                      //
+  ADD32(Index,1,Index)                                                //      Index++
+  JR(ExitData)                                                        //    }
+ExitDataDone:                                                         //
+                                                                      //
+  ARRAY(DELETE,hhGrids)                                               //    ARRAY(DELETE,hhGrids)
+  ARRAY(DELETE,hSampleRates)                                          //    ARRAY(DELETE,hSampleRates)
+  ARRAY(DELETE,hDataSets)                                             //    ARRAY(DELETE,hDataSets)
+  ARRAY(DELETE,hLogModes)                                             //    ARRAY(DELETE,hLogModes)
+  ARRAY(DELETE,hMaxModes)                                             //    ARRAY(DELETE,hMaxModes)
+  ARRAY(DELETE,hTypes)                                                //    ARRAY(DELETE,hTypes)
+  ARRAY(DELETE,hInits)                                                //    ARRAY(DELETE,hInits)
+  ARRAY(DELETE,hModes)                                                //    ARRAY(DELETE,hModes)
+  ARRAY(DELETE,hDecimals)                                             //    ARRAY(DELETE,hDecimals)
+  ARRAY(DELETE,hFigures)                                              //    ARRAY(DELETE,hFigures)
+  ARRAY(DELETE,hSpans)                                                //    ARRAY(DELETE,hSpans)
+  ARRAY(DELETE,hOffsets)                                              //    ARRAY(DELETE,hOffsets)
+  ARRAY(DELETE,hMaxs)                                                 //    ARRAY(DELETE,hMaxs)
+  ARRAY(DELETE,hMins)                                                 //    ARRAY(DELETE,hMins)
+  ARRAY(DELETE,hValues)                                               //    ARRAY(DELETE,hValues)
+  ARRAY(DELETE,hDevices)                                              //    ARRAY(DELETE,hDevices)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// IdleScreen ******************************************************************************************
+                                                                      //
+                                                                      //
+subcall   IdleScreen                                                  //  IdleScreen(Changed)
+{                                                                     //  {
+  IO_8    Changed                                                     //
+                                                                      //
+  DATA8   Mode                                                        //
+  DATA16  Grid                                                        //
+  DATA32  Tmp                                                         //
+  DATA32  Index                                                       //
+                                                                      //
+  JR_FALSE(Changed,NotChanged)                                        //    if (Changed)
+                                                                      //    {
+  MOVE8_8(0,Changed)                                                  //      Changed  =  0
+                                                                      //
+  CALL(UpdateDeviceInPort)                                            //      UpdateDeviceInPort()
+                                                                      //
+  CALL(InitSensorData)                                                //
+  ARRAY(FILL,hInits,-1)                                               //      ARRAY(FILL,hInits,-1)
+                                                                      //
+  MOVE32_32(GRAPH_SAMPLETIME,IdleSampleTime)                          //      IdleSampleTime    =  GRAPH_SAMPLETIME
+  UI_DRAW(FILLWINDOW,BG_COLOR,TOPLINE_HEIGHT,0)                       //      UI_DRAW(FILLWINDOW,BG_COLOR,TOPLINE_HEIGHT,0)
+  UI_DRAW(GRAPH_SETUP,16,100,NoOfPorts,@hOffsets,@hSpans,@hMins,@hMaxs,@hValues) // UI_DRAW(GRAPH_SETUP,16,100,NoOfPorts,@hOffsets,@hSpans,@hMins,@hMaxs,@hValues)
+                                                                      //
+  TIMER_READ(StartTime)                                               //      TIMER_READ(StartTime)
+  SUB32(StartTime,IdleSampleTime,Timer)                               //      Timer  =  StartTime - IdleSampleTime
+NotChanged:                                                           //    }
+                                                                      //
+  TIMER_READ(Tmp)                                                     //    TIMER_READ(Tmp)
+  SUB32(Tmp,Timer,Tmp)                                                //    Tmp -=  Timer
+  JR_LT32(Tmp,IdleSampleTime,NoTimeout)                               //    if (Tmp >= IdleSampleTime)
+                                                                      //    {
+  ADD32(Timer,IdleSampleTime,Timer)                                   //      Timer +=  IdleSampleTime
+                                                                      //
+  // Read device to log                                               //
+  INPUT_SAMPLE(IdleSampleTime,NoOfPorts,@hInits,@hDevices,@hTypes,@hLogModes,@hDataSets,@hValues)  
+                                                                      //
+  UI_WRITE(GRAPH_SAMPLE)                                              //      UI_WRITE(GRAPH_SAMPLE)
+                                                                      //
+  MOVE8_8(1,Update)                                                   //      Update      =  1
+                                                                      //
+NoTimeout:                                                            //    }
+  JR_FALSE(Update,NoUpdate)                                           //    if (Update)
+                                                                      //    {
+  UI_DRAW(FILLWINDOW,BG_COLOR,TOPLINE_HEIGHT,0)                       //      UI_DRAW(FILLWINDOW,BG_COLOR,TOPLINE_HEIGHT,0)
+                                                                      //
+  JR_LT8(SelectedPort,0,All)                                          //
+  MOVE8_32(SelectedPort,Index)                                        //
+  ARRAY_READ(hhGrids,Index,Grid)                                      //
+  UI_DRAW(BMPFILE,FG_COLOR,0,20,@Grid)                                //      Draw bitmap
+All:                                                                  //
+  UI_DRAW(GRAPH_DRAW,SelectedPort,Actual,Lowest,Highest,Average)      //      UI_DRAW(GRAPH_DRAW,SelectedPort,Actual,Lowest,Highest,Average)
+  CALL(DetailScreen)                                                  //      DetailScreen()
+  CALL(DetailValues)                                                  //      DetailValues()
+  CALL(WantedScreen)                                                  //      WantedScreen()
+                                                                      //
+NoUpdate:                                                             //    }
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// DetailValues ****************************************************************************************
+                                                                      //
+                                                                      //
+subcall   DetailValues                                                //  DetailValues(void)
+{                                                                     //  {
+  DATAF   Tmp                                                         //
+  DATA32  Time                                                        //
+  DATA32  Index                                                       //
+  DATA8   TmpPort                                                     //
+  DATA8   Type                                                        //
+  DATA8   Mode                                                        //
+  DATAS   Unit 4                                                      //
+                                                                      //
+  JR_LT8(SelectedPort,0,NoDetails)                                    //    if (SelectedPort >= 0)
+                                                                      //    {
+  UI_DRAW(LINE,FG_COLOR,121,26,175,26)                                //      UI_DRAW(LINE,FG_COLOR,121,26,175,26)
+  UI_DRAW(LINE,FG_COLOR,121,27,175,27)                                //      UI_DRAW(LINE,FG_COLOR,121,27,175,27)
+  UI_DRAW(SELECT_FONT,SMALL_FONT)                                     //      UI_DRAW(SELECT_FONT,SMALL_FONT)
+  UI_DRAW(VALUE,FG_COLOR,120,15,Actual,5,0)                           //      UI_DRAW(VALUE,FG_COLOR,120,15,Actual,5,0)
+  UI_DRAW(SELECT_FONT,NORMAL_FONT)                                    //      UI_DRAW(SELECT_FONT,NORMAL_FONT)
+                                                                      //
+  MOVE8_32(SelectedPort,Index)                                        //      Index             =  SelectedPort
+  ARRAY_READ(hDevices,Index,TmpPort)                                  //      TmpPort           =  hDevices[Index]
+  CALL(Convert,TmpPort)                                               //      Convert(TmpPort)
+                                                                      //
+  INPUT_DEVICE(GET_TYPEMODE,0,TmpPort,Type,Mode)                      //
+                                                                      //
+  JR_GT8(Type,101,NoSensor)                                           //
+                                                                      //
+  INPUT_DEVICE(GET_SYMBOL,0,TmpPort,4,Unit)                           //      INPUT_DEVICE(GET_SYMBOL,0,TmpPort,4,Unit)
+  UI_DRAW(SELECT_FONT,TINY_FONT)                                      //      UI_DRAW(SELECT_FONT,TINY_FONT)
+  UI_DRAW(TEXT,FG_COLOR,162,16,Unit)                                  //      UI_DRAW(TEXT,FG_COLOR,162,16,Unit)
+  UI_DRAW(SELECT_FONT,NORMAL_FONT)                                    //      UI_DRAW(SELECT_FONT,NORMAL_FONT)
+                                                                      //
+  JR(EndSensor)                                                       //
+                                                                      //
+NoSensor:                                                             //
+                                                                      //
+  UI_DRAW(TEXT,FG_COLOR,160,15,'--')                                  //
+                                                                      //
+EndSensor:                                                            //
+                                                                      //
+  UI_DRAW(VALUE,FG_COLOR,136,47,Highest,-5,0)                         //      UI_DRAW(VALUE,FG_COLOR,136,47,Highest,-5,0)
+  UI_DRAW(VALUE,FG_COLOR,136,60,Lowest,-5,0)                          //      UI_DRAW(VALUE,FG_COLOR,136,60,Lowest,-5,0)
+  UI_DRAW(VALUE,FG_COLOR,136,73,Average,-5,0)                         //      UI_DRAW(VALUE,FG_COLOR,136,73,Average,-5,0)
+                                                                      //
+  JR(EndDetails)                                                      //    }
+                                                                      //    else
+NoDetails:                                                            //    {
+EndDetails:                                                           //    }
+                                                                      //
+  SUB32(Timer,StartTime,Time)                                         //    Time  =  Timer - StartTime
+  MOVE32_F(Time,Tmp)                                                  //    Tmp   =  Time
+  DIVF(Tmp,1000.0F,Tmp)                                               //    Tmp  /=  1000.0
+  JR_NEQ8(SelectedMode,LOGGING,NotLogging)                            //    if (SelectedMode == LOGGING)
+                                                                      //    {
+  UI_DRAW(SELECT_FONT,1)                                              //      UI_DRAW(SELECT_FONT,1)
+  JR_GT32(Time,999999,Gt999999)                                       //      if (Time <= 999999)
+                                                                      //      {
+  UI_DRAW(VALUE,FG_COLOR,136,32,Tmp,-5,1)                             //        UI_DRAW(VALUE,FG_COLOR,120,32,Tmp,-5,3)
+  JR(End999999)                                                       //      }
+                                                                      //      else
+Gt999999:                                                             //      {
+  UI_DRAW(VALUE,FG_COLOR,136,32,Tmp,-5,0)                             //        UI_DRAW(VALUE,FG_COLOR,120,32,Tmp,-5,3)
+                                                                      //
+End999999:                                                            //      }
+  UI_DRAW(SELECT_FONT,0)                                              //      UI_DRAW(SELECT_FONT,0)
+NotLogging:                                                           //    }
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// DetailScreen ****************************************************************************************
+                                                                      //
+                                                                      //
+subcall   DetailScreen                                                //  DetailScreen(void)
+{                                                                     //  {
+  DATA32  Index                                                       //
+  DATA8   Port                                                        //
+  DATA8   Type                                                        //
+                                                                      //
+  UI_DRAW(BMPFILE,FG_COLOR,120,86,'dl_PrtDetault')                    //    Draw bitmap
+  JR_GTEQ8(SelectedPort,0,NotAll)                                     //    if (SelectedPort < 0)
+                                                                      //    {
+  UI_DRAW(BMPFILE,FG_COLOR,120,28,'dl_NoDetails')                     //      Draw bitmap
+  UI_DRAW(BMPFILE,FG_COLOR,121,87,'dl_Prt_All')                       //      Draw bitmap
+  JR(EndAll)                                                          //    }
+                                                                      //    else
+NotAll:                                                               //    {
+  MOVE8_32(SelectedPort,Index)                                        //      Index   =  SelectedPort
+  ARRAY_READ(hDevices,Index,Port)                                     //      Port    =  hDevices[Index]
+                                                                      //
+  UI_DRAW(BMPFILE,FG_COLOR,120,28,'dl_mxave')                         //      Draw bitmap
+                                                                      //
+  CALL(GetDeviceType,Port,Type)                                       //      GetDeviceType(Port,Type)
+                                                                      //
+  JR_LTEQ8(Type,101,NotError)                                         //      if (Type > 101)
+                                                                      //      {
+  JR_NEQ8(Type,127,NotError2)                                         //        if (Type == TYPE_ERROR)
+                                                                      //        {
+  UI_DRAW(BMPFILE,FG_COLOR,121,87,'dl_Prt_Er')                        //          Draw bitmap
+                                                                      //
+  JR(EndError2)                                                       //        }
+                                                                      //        else
+NotError2:                                                            //        {
+  UI_DRAW(BMPFILE,FG_COLOR,121,87,'dl_Prt_Un')                        //          Draw bitmap
+                                                                      //
+EndError2:                                                            //        }
+  JR(EndError)                                                        //      }
+                                                                      //      else
+NotError:                                                             //      {
+  JR_NEQ8(Port,0,Not0)                                                //        if (Port == 0)
+                                                                      //        {
+  UI_DRAW(BMPFILE,FG_COLOR,121,87,'dl_Prt1')                          //          Draw bitmap
+Not0:                                                                 //        }
+  JR_NEQ8(Port,1,Not1)                                                //        if (Port == 1)
+                                                                      //        {
+  UI_DRAW(BMPFILE,FG_COLOR,121,87,'dl_Prt2')                          //          Draw bitmap
+Not1:                                                                 //        }
+  JR_NEQ8(Port,2,Not2)                                                //        if (Port == 2)
+                                                                      //        {
+  UI_DRAW(BMPFILE,FG_COLOR,121,87,'dl_Prt3')                          //          Draw bitmap
+Not2:                                                                 //        }
+  JR_NEQ8(Port,3,Not3)                                                //        if (Port == 3)
+                                                                      //        {
+  UI_DRAW(BMPFILE,FG_COLOR,121,87,'dl_Prt4')                          //          Draw bitmap
+Not3:                                                                 //        }
+  JR_NEQ8(Port,4,Not4)                                                //        if (Port == 4)
+                                                                      //        {
+  UI_DRAW(BMPFILE,FG_COLOR,121,87,'dl_PrtA')                          //          Draw bitmap
+Not4:                                                                 //        }
+  JR_NEQ8(Port,5,Not5)                                                //        if (Port == 5)
+                                                                      //        {
+  UI_DRAW(BMPFILE,FG_COLOR,121,87,'dl_PrtB')                          //          Draw bitmap
+Not5:                                                                 //        }
+  JR_NEQ8(Port,6,Not6)                                                //        if (Port == 6)
+                                                                      //        {
+  UI_DRAW(BMPFILE,FG_COLOR,121,87,'dl_PrtC')                          //          Draw bitmap
+Not6:                                                                 //        }
+  JR_NEQ8(Port,7,Not7)                                                //        if (Port == 7)
+                                                                      //        {
+  UI_DRAW(BMPFILE,FG_COLOR,121,87,'dl_PrtD')                          //          Draw bitmap
+Not7:                                                                 //        }
+EndAll:                                                               //      }
+                                                                      //
+  UI_DRAW(DOTLINE,FG_COLOR,122,43,173,43,1,2)                         //      UI_DRAW(DOTLINE,FG_COLOR,122,43,173,43,1,2)
+                                                                      //
+EndError:                                                             //    }
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// WantedScreen ****************************************************************************************
+                                                                      //
+                                                                      //
+subcall   WantedScreen                                                //  WantedScreen(void)
+{                                                                     //  {
+  JR_NEQ8(WantedMode,IDLE,NotIdle)                                    //    if (WantedMode == IDLE)
+                                                                      //    {
+  JR_EQ8(SelectedMode,LOGGING,Logging)                                //      if (SelectedMode != LOGGING)
+                                                                      //      {
+  UI_DRAW(BMPFILE,FG_COLOR,120,101,'dl_Rec')                          //        Draw bitmap
+Logging:                                                              //      }
+  UI_DRAW(BMPFILE,FG_COLOR,147,101,'dl_Set')                          //      Draw bitmap
+                                                                      //
+  UI_DRAW(INVERSERECT,122,88,18,10)                                   //      UI_DRAW(INVERSERECT,122,88,18,10)
+                                                                      //
+NotIdle:                                                              //    }
+                                                                      //
+  JR_NEQ8(WantedMode,LOGGING,NotLogging)                              //    if (WantedMode == LOGGING)
+                                                                      //    {
+  JR_EQ8(SelectedMode,LOGGING,Logging1)                               //      if (SelectedMode != LOGGING)
+                                                                      //      {
+  UI_DRAW(BMPFILE,FG_COLOR,120,101,'dl_RecH')                         //        Draw bitmap
+Logging1:                                                             //      }
+  UI_DRAW(BMPFILE,FG_COLOR,147,101,'dl_Set')                          //      Draw bitmap
+                                                                      //
+NotLogging:                                                           //    }
+                                                                      //
+  JR_NEQ8(WantedMode,SETUP,NotSetup)                                  //    if (WantedMode == SETUP)
+                                                                      //    {
+  JR_EQ8(SelectedMode,LOGGING,Logging2)                               //      if (SelectedMode != LOGGING)
+                                                                      //      {
+  UI_DRAW(BMPFILE,FG_COLOR,120,101,'dl_Rec')                          //        Draw bitmap
+Logging2:                                                             //      }
+  UI_DRAW(BMPFILE,FG_COLOR,147,101,'dl_SetH')                         //      Draw bitmap
+                                                                      //
+NotSetup:                                                             //    }
+                                                                      //
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// LoggingScreen ***************************************************************************************
+                                                                      //
+                                                                      //
+subcall   LoggingScreen                                               //  LoggingScreen(Changed)
+{                                                                     //  {
+  IO_8    Changed                                                     //
+                                                                      //
+  DATA8   TmpPort                                                     //
+  DATA8   Pointer                                                     //
+  DATA8   Mode                                                        //
+  DATAF   Value                                                       //
+  DATA32  Time                                                        //
+  DATA32  Tmp                                                         //
+  DATA32  Index                                                       //
+  DATA32  SyncTime                                                    //
+  DATA32  SyncTick                                                    //
+  DATA16  Grid                                                        //
+  DATA16  Bytes                                                       //
+  DATA8   FF                                                          //
+  DATA8   Data8                                                       //
+  DATAS   TmpBuf 16                                                   //
+  DATAS   TmpBuf2 16                                                  //
+  DATAS   Buffer 200                                                  //
+  DATAS   Unit 4                                                      //
+                                                                      //
+  JR_FALSE(Changed,NotChanged)                                        //    if (Changed)
+                                                                      //    {
+  MOVE8_8(0,Changed)                                                  //      Changed  =  0
+                                                                      //
+  CALL(UpdateDeviceInPort)                                            //      UpdateDeviceInPort()
+                                                                      //
+  STRINGS(DUPLICATE,'Sdata',Buffer)                                   //      STRINGS(DUPLICATE,'Sdata',Buffer)
+                                                                      //
+  // Init device data to log                                          //
+  CALL(InitSensorData)                                                //
+  ARRAY(FILL,hInits,-1)                                               //      ARRAY(FILL,hInits,-1)
+                                                                      //
+  MOVE8_8(0,Pointer)                                                  //      Pointer  =  0
+InitData:                                                             //      while (Pointer < NoOfPorts)
+  JR_GTEQ8(Pointer,NoOfPorts,InitDataDone)                            //      {
+                                                                      //
+  STRINGS(ADD,Buffer,TERMINATION,Buffer)                              //        STRINGS(ADD,Buffer,TERMINATION,Buffer)
+                                                                      //
+  // Get and save device formats                                      //
+  MOVE8_32(Pointer,Index)                                             //        Index             =  Pointer
+  ARRAY_READ(hDevices,Index,TmpPort)                                  //        TmpPort           =  hDevices[Index]
+  CALL(Convert,TmpPort)                                               //        Convert(TmpPort)
+                                                                      //
+  // Make file header                                                 //
+  MOVE8_F(TmpPort,Value)                                              //        Value  =  TmpPort
+  ADDF(Value,1.0F,Value)                                              //        Value++
+                                                                      //
+  STRINGS(VALUE_TO_STRING,Value,1,0,TmpBuf)                           //        STRINGS(VALUE_TO_STRING,Value,1,0,TmpBuf)
+                                                                      //
+  CALL(ConvertText,TmpPort,TmpBuf)                                    //        Convert(TmpPort,TmpBuf)
+                                                                      //
+  STRINGS(ADD,Buffer,TmpBuf,Buffer)                                   //        STRINGS(ADD,Buffer,TmpBuf,Buffer)
+  STRINGS(ADD,Buffer,'_',Buffer)                                      //        STRINGS(ADD,Buffer,'_',Buffer)
+                                                                      //
+  INPUT_DEVICE(GET_NAME,0,TmpPort,16,TmpBuf)                          //        INPUT_DEVICE(GET_NAME,0,TmpPort,16,TmpBuf)
+  STRINGS(STRIP,TmpBuf,TmpBuf2)                                       //        STRINGS(STRIP,TmpBuf,TmpBuf2)
+  STRINGS(ADD,Buffer,TmpBuf2,Buffer)                                  //        STRINGS(ADD,Buffer,TmpBuf2,Buffer)
+  STRINGS(ADD,Buffer,'_',Buffer)                                      //        STRINGS(ADD,Buffer,'_',Buffer)
+                                                                      //
+  INPUT_DEVICE(GET_SYMBOL,0,TmpPort,16,TmpBuf)                        //        INPUT_DEVICE(GET_SYMBOL,0,TmpPort,16,TmpBuf)
+  STRINGS(STRIP,TmpBuf,TmpBuf2)                                       //        STRINGS(STRIP,TmpBuf,TmpBuf2)
+  STRINGS(ADD,Buffer,TmpBuf2,Buffer)                                  //        STRINGS(ADD,Buffer,TmpBuf2,Buffer)
+                                                                      //
+  ADD8(Pointer,1,Pointer)                                             //        Pointer++
+  JR(InitData)                                                        //      }
+InitDataDone:                                                         //
+                                                                      //
+  STRINGS(ADD,Buffer,'\r\n',Buffer)                                   //      STRINGS(ADD,Buffer,'\r\n',Buffer)
+  STRINGS(GET_SIZE,Buffer,Bytes)                                      //      STRINGS(GET_SIZE,Buffer,Bytes)
+                                                                      //
+  FILE(REMOVE,TMPLOGFILE)                                             //      FILE(REMOVE,TMPLOGFILE)                                           
+//! \endverbatim
+//! \anchor file_open_log
+//! \verbatim
+                                                                      //
+  // Init file header                                                 //
+  FILE(GET_LOG_SYNC_TIME,SyncTime,SyncTick)                           //
+  FILE(OPEN_LOG,TMPLOGFILE,SyncTime,SyncTick,0,SampleTime,0,Buffer,Handle) // FILE(OPEN_LOG,TMPLOGFILE,SyncTime,SyncTick,0,SampleTime,0,Buffer,Handle)
+                                                                      //
+  UI_DRAW(GRAPH_SETUP,16,100,NoOfPorts,@hOffsets,@hSpans,@hMins,@hMaxs,@hValues) // UI_DRAW(GRAPH_SETUP,16,100,NoOfPorts,@hOffsets,@hSpans,@hMins,@hMaxs,@hValues)
+                                                                      //
+  JR_FALSE(HighSpeedLogging,GraphOk)                                  //      if (HighSpeedLogging)
+                                                                      //      {
+                                                                      //
+  UI_DRAW(FILLWINDOW,BG_COLOR,TOPLINE_HEIGHT,0)                       //        UI_DRAW(FILLWINDOW,BG_COLOR,TOPLINE_HEIGHT,0)
+  JR_LT8(SelectedPort,0,All2)                                         //
+  MOVE8_32(SelectedPort,Index)                                        //
+  ARRAY_READ(hhGrids,Index,Grid)                                      //
+  UI_DRAW(BMPFILE,FG_COLOR,0,20,@Grid)                                //        Draw bitmap
+All2:                                                                 //
+                                                                      //
+  // Show high speed screen                                           //
+  CALL(DetailScreen)                                                  //        DetailScreen()
+                                                                      //
+  UI_DRAW(SELECT_FONT,SMALL_FONT)                                     //        UI_DRAW(SELECT_FONT,SMALL_FONT)
+  UI_DRAW(TEXT,FG_COLOR,136,15,'---')                                 //
+                                                                      //
+  INPUT_DEVICE(GET_SYMBOL,0,SelectedPort,4,Unit)                      //        INPUT_DEVICE(GET_SYMBOL,0,SelectedPort,4,Unit)
+  UI_DRAW(SELECT_FONT,TINY_FONT)                                      //        UI_DRAW(SELECT_FONT,TINY_FONT)
+  UI_DRAW(TEXT,FG_COLOR,162,16,Unit)                                  //        UI_DRAW(TEXT,FG_COLOR,162,16,Unit)
+  UI_DRAW(SELECT_FONT,NORMAL_FONT)                                    //        UI_DRAW(SELECT_FONT,NORMAL_FONT)
+                                                                      //
+  UI_DRAW(LINE,FG_COLOR,121,26,175,26)                                //        UI_DRAW(LINE,FG_COLOR,121,26,175,26)
+  UI_DRAW(LINE,FG_COLOR,121,27,175,27)                                //        UI_DRAW(LINE,FG_COLOR,121,27,175,27)
+                                                                      //
+  UI_DRAW(TEXT,FG_COLOR,136,32,'---')                                 //        UI_DRAW(TEXT,FG_COLOR,136,32,'---')
+  UI_DRAW(TEXT,FG_COLOR,136,47,'---')                                 //        UI_DRAW(TEXT,FG_COLOR,136,47,'---')
+  UI_DRAW(TEXT,FG_COLOR,136,60,'---')                                 //        UI_DRAW(TEXT,FG_COLOR,136,60,'---')
+  UI_DRAW(TEXT,FG_COLOR,136,73,'---')                                 //        UI_DRAW(TEXT,FG_COLOR,136,73,'---')
+                                                                      //
+  CALL(WantedScreen)                                                  //        WantedScreen()
+                                                                      //
+  UI_DRAW(BMPFILE,FG_COLOR,120,101,'dl_RecH')                         //        Draw bitmap
+  UI_DRAW(BMPFILE,FG_COLOR,24,37,'dl_Highrate')                       //        Draw bitmap
+                                                                      //
+  JR_EQ16(SampleRate,5,Rate1000)                                      //        if (SampleRate != 5)
+                                                                      //        {
+                                                                      //
+  UI_DRAW(TEXT,FG_COLOR,40,46,' 100p/s')                              //          UI_DRAW(TEXT,FG_COLOR,40,46,' 100p/s')
+                                                                      //
+  JR(RateEnd)                                                         //        }
+                                                                      //        else
+Rate1000:                                                             //        {
+                                                                      //
+  UI_DRAW(TEXT,FG_COLOR,40,46,'1000p/s')                              //          UI_DRAW(TEXT,FG_COLOR,40,46,'1000p/s') 
+                                                                      //
+RateEnd:                                                              //        }
+                                                                      //
+  UI_DRAW(FILLRECT,BG_COLOR,0,0,32,TOPLINE_HEIGHT)                    //        UI_DRAW(FILLRECT,BG_COLOR,0,0,32,TOPLINE_HEIGHT)
+  UI_DRAW(FILLRECT,BG_COLOR,144,0,178,TOPLINE_HEIGHT)                 //        UI_DRAW(FILLRECT,BG_COLOR,144,0,178,TOPLINE_HEIGHT)
+                                                                      //
+  UI_DRAW(LINE,FG_COLOR,0,TOPLINE_HEIGHT,LCD_WIDTH,TOPLINE_HEIGHT)    //        UI_DRAW(LINE,FG_COLOR,0,TOPLINE_HEIGHT,LCD_WIDTH,TOPLINE_HEIGHT)
+  MOVE8_8(1,Update)                                                   //        Update  =  1
+                                                                      //
+                                                                      //
+GraphOk:                                                              //      }
+                                                                      //
+  MOVE8_8(1,FF)                                                       //      FF  =  1
+  TIMER_READ(StartTime)                                               //      TIMER_READ(StartTime)
+  MOVE32_32(StartTime,FlashTimer)                                     //      FlashTimer  =  StartTime
+  SUB32(StartTime,SampleTime,Timer)                                   //      Timer       =  StartTime - SampleTime
+NotChanged:                                                           //    }
+                                                                      //
+  TIMER_READ(Tmp)                                                     //    TIMER_READ(Tmp)
+  SUB32(Tmp,Timer,Tmp)                                                //    Tmp -=  Timer
+  JR_LT32(Tmp,SampleTime,NoTimeout)                                   //    if (Tmp >= SampleTime)
+                                                                      //    {
+  ADD32(Timer,SampleTime,Timer)                                       //      Timer +=  SampleTime
+                                                                      //
+  // Read device to log                                               //
+  INPUT_SAMPLE(SampleTime,NoOfPorts,@hInits,@hDevices,@hTypes,@hLogModes,@hDataSets,@hValues) // INPUT_SAMPLE(SampleTime,NoOfPorts,@hInits,@hDevices,@hTypes,@hLogModes,@hDataSets,@hValues)
+                                                                      //
+  SUB32(Timer,StartTime,Time)                                         //      Time  =  Timer - StartTime
+                                                                      //
+//! \endverbatim
+//! \anchor file_write_log
+//! \verbatim
+                                                                      //
+  FILE(WRITE_LOG,Handle,Time,NoOfPorts,@hValues)                      //      FILE(WRITE_LOG,Handle,Time,NoOfPorts,@hValues)
+                                                                      //
+  KEEP_ALIVE(Data8)                                                   //      KEEP_ALIVE(Data8)
+                                                                      //
+  JR_TRUE(HighSpeedLogging,NoGraph)                                   //      if (!HighSpeedLogging)
+                                                                      //      {
+  UI_WRITE(GRAPH_SAMPLE)                                              //        UI_WRITE(GRAPH_SAMPLE)
+                                                                      //
+  MOVE8_8(1,Update)                                                   //        MOVE8_8(1,Update)
+NoGraph:                                                              //      }
+                                                                      //
+NoTimeout:                                                            //    }
+                                                                      //
+  JR_TRUE(HighSpeedLogging,NoGraph2)                                  //    if (!HighSpeedLogging)
+                                                                      //    {
+  TIMER_READ(Tmp)                                                     //      TIMER_READ(Tmp)
+  SUB32(Tmp,FlashTimer,Tmp)                                           //      Tmp -=  FlashTimer
+  JR_LT32(Tmp,500,NoTimeout2)                                         //      if (Tmp >= 500)
+                                                                      //      {
+  ADD32(FlashTimer,500,FlashTimer)                                    //        FlashTimer +=  500
+  MOVE8_8(1,Update)                                                   //        MOVE8_8(1,Update)
+                                                                      //
+  JR_TRUE(FF,TrueFF)                                                  //        if (!FF)
+                                                                      //        {
+                                                                      //
+  MOVE8_8(1,FF)                                                       //          FF  =  1
+                                                                      //  
+  JR(EndFF)                                                           //        }
+                                                                      //        else
+TrueFF:                                                               //        {
+                                                                      //
+  MOVE8_8(0,FF)                                                       //          FF  =  0
+                                                                      //
+EndFF:                                                                //        }
+NoTimeout2:                                                           //      }
+  JR_FALSE(Update,NoUpdate)                                           //      if (Update)
+                                                                      //      {
+  UI_DRAW(FILLWINDOW,BG_COLOR,TOPLINE_HEIGHT,0)                       //        UI_DRAW(FILLWINDOW,BG_COLOR,TOPLINE_HEIGHT,0)
+  JR_LT8(SelectedPort,0,All)                                          //        if (SelectedPort >= 0)
+                                                                      //        {
+  MOVE8_32(SelectedPort,Index)                                        //          Index  =  SelectedPort
+  ARRAY_READ(hhGrids,Index,Grid)                                      //          Grid   =  hhGrids[Index]
+  UI_DRAW(BMPFILE,FG_COLOR,0,20,@Grid)                                //          Draw bitmap
+                                                                      //
+All:                                                                  //        }
+  UI_DRAW(GRAPH_DRAW,SelectedPort,Actual,Lowest,Highest,Average)      //        UI_DRAW(GRAPH_DRAW,SelectedPort,Actual,Lowest,Highest,Average)
+  CALL(DetailScreen)                                                  //        DetailScreen()
+  CALL(DetailValues)                                                  //        DetailValues()
+  CALL(WantedScreen)                                                  //        WantedScreen()
+                                                                      //
+  JR_TRUE(FF,TrueFF2)                                                 //        if (!FF)
+                                                                      //        {
+                                                                      //
+  UI_DRAW(BMPFILE,FG_COLOR,120,101,'dl_RecH')                         //          Draw bitmap
+                                                                      //
+  JR(EndFF2)                                                          //        }
+                                                                      //        else
+TrueFF2:                                                              //        {
+                                                                      //
+  UI_DRAW(BMPFILE,FG_COLOR,120,101,'dl_Rec')                          //          Draw bitmap
+                                                                      //
+EndFF2:                                                               //        }
+NoUpdate:                                                             //      }
+NoGraph2:                                                             //    }
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// Setttings *******************************************************************************************
+                                                                      //
+define    SETTINGS_STARTX        17                                   //
+define    SETTINGS_STARTY        35                                   //
+define    SETTINGS_ICON1X        (SETTINGS_STARTX + 18)               //
+define    SETTINGS_ICON1Y        (SETTINGS_STARTY + 5)                //
+define    SETTINGS_ICON2X        (SETTINGS_STARTX + 56)               //
+define    SETTINGS_ICON2Y        (SETTINGS_STARTY + 56)               //
+define    SETTINGS_LINE1X        (SETTINGS_STARTX + 6)                //
+define    SETTINGS_LINE1Y        (SETTINGS_STARTY + 21)               //
+define    SETTINGS_LINE1X1       (SETTINGS_STARTX + 137)              //
+define    SETTINGS_LINE2X        (SETTINGS_STARTX + 6)                //
+define    SETTINGS_LINE2Y        (SETTINGS_STARTY + 54)               //
+define    SETTINGS_LINE2X1       (SETTINGS_STARTX + 137)              //
+define    SETTINGS_TEXTX         (SETTINGS_STARTX + 39)               //
+define    SETTINGS_TEXTY         (SETTINGS_STARTY + 8)                //
+define    SETTINGS_LINE_STARTX   (SETTINGS_STARTX + 7)                //
+define    SETTINGS_LINE_STARTY   (SETTINGS_STARTY + 26)               //
+define    SETTINGS_LINE_SPACEY   14                                   //
+define    SETTINGS_LINES         3                                    //
+define    SETTINGS_CURSOR_STARTX (SETTINGS_STARTX + 6)                //
+define    SETTINGS_CURSOR_STARTY (SETTINGS_STARTY + 24)               //
+define    SETTINGS_CURSOR_WIDTH  132                                  //
+define    SETTINGS_CURSOR_HEIGHT 13                                   //
+                                                                      //
+                                                                      //
+subcall   Settings                                                    //  Settings(void)
+{                                                                     //  {
+  DATA32  Index                                                       //
+  DATAF   Value                                                       //
+  DATA16  Xpos                                                        //
+  DATA16  Ypos                                                        //
+  DATA16  Ytmp                                                        //
+  DATA16  Line                                                        //
+  DATA16  Cursor                                                      //
+  DATA16  CursorX                                                     //
+  DATA16  CursorY                                                     //
+  DATA16  Inc                                                         //
+  DATA16  TmpSampleRate                                               //
+  DATA8   Run                                                         //
+  DATA8   Tmp                                                         //
+                                                                      //
+  UI_DRAW(STORE,0)                                                    //    UI_DRAW(STORE,0)
+  MOVE8_8(1,Run)                                                      //    Run             =  1
+  MOVE16_16(0,Cursor)                                                 //    Cursor          =  0
+  MOVE16_16(SampleRate,TmpSampleRate)                                 //    TmpSampleRate   =  SampleRate
+                                                                      //    do
+Loop:                                                                 //    {
+  UI_BUTTON(FLUSH)                                                    //      UI_BUTTON(FLUSH)
+  UI_DRAW(RESTORE,0)                                                  //      UI_DRAW(RESTORE,0)
+                                                                      //
+  // Show popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,SETTINGS_STARTX,SETTINGS_STARTY,'144x82_POP4') //  Draw bitmap
+  UI_DRAW(ICON,FG_COLOR,SETTINGS_ICON1X,SETTINGS_ICON1Y,NORMAL_ICON,ICON_SETTINGS) //
+  UI_DRAW(LINE,FG_COLOR,SETTINGS_LINE1X,SETTINGS_LINE1Y,SETTINGS_LINE1X1,SETTINGS_LINE1Y) //
+  UI_DRAW(LINE,FG_COLOR,SETTINGS_LINE2X,SETTINGS_LINE2Y,SETTINGS_LINE2X1,SETTINGS_LINE2Y) //
+  UI_DRAW(SELECT_FONT,1)                                              //
+  UI_DRAW(TEXT,FG_COLOR,SETTINGS_TEXTX,SETTINGS_TEXTY,'Settings')     //
+  UI_DRAW(SELECT_FONT,0)                                              //
+                                                                      //
+  // Show 1. line                                                     //
+  MOVE16_16(SETTINGS_LINE_STARTX,Xpos)                                //      MOVE16_16(SETTINGS_LINE_STARTX,Xpos)
+  MOVE16_16(SETTINGS_LINE_STARTY,Ypos)                                //      MOVE16_16(SETTINGS_LINE_STARTY,Ypos)
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Rate')                             //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Rate')
+                                                                      //
+  SUB16(Ypos,2,Ytmp)                                                  //      Ytmp  =  Ypos - 2
+  UI_DRAW(ICON,FG_COLOR,80,Ytmp,ARROW_ICON,ICON_LEFT)                 //      Draw icon
+  UI_DRAW(ICON,FG_COLOR,144,Ytmp,ARROW_ICON,ICON_RIGHT)               //      Draw icon
+                                                                      //
+  // Show sample rate                                                 //
+  MOVE16_32(TmpSampleRate,Index)                                      //      Index       =  TmpSampleRate
+  ARRAY_READ(hSampleRates,Index,SampleTime)                           //      SampleTime  =  hSampleRates[Index]
+                                                                      //
+  MOVE32_F(SampleTime,Value)                                          //      Value       =  SampleTime
+                                                                      //
+  JR_GT32(SampleTime,10000,GT10000)                                   //      if (SampleTime <= 10000)
+                                                                      //      {
+  DIVF(1000.0F,Value,Value)                                           //        Value     =  1000 / Value
+  JR_LTEQ32(SampleTime,1000,LTEQ1000)                                 //        if (SampleTime > 1000)
+                                                                      //        {
+  UI_DRAW(VALUE,FG_COLOR,88,Ypos,Value,4,1)                           //          UI_DRAW(VALUE,FG_COLOR,88,Ypos,Value,4,1)
+  JR(End1000)                                                         //        }
+                                                                      //        else
+LTEQ1000:                                                             //        {
+  UI_DRAW(VALUE,FG_COLOR,88,Ypos,Value,4,0)                           //          UI_DRAW(VALUE,FG_COLOR,88,Ypos,Value,4,0)
+End1000:                                                              //        }
+  UI_DRAW(TEXT,FG_COLOR,120,Ypos,'p/s')                               //        UI_DRAW(TEXT,FG_COLOR,120,Ypos,'p/s')
+  JR(End)                                                             //      }
+                                                                      //      else
+GT10000:                                                              //      {
+  JR_GT32(SampleTime,60000,GT60000)                                   //        if (SampleTime <= 60000)
+                                                                      //        {
+  DIVF(60000.0F,Value,Value)                                          //          Value  =  60000 / Value
+  UI_DRAW(VALUE,FG_COLOR,88,Ypos,Value,4,0)                           //          UI_DRAW(VALUE,FG_COLOR,88,Ypos,Value,4,0)
+  UI_DRAW(TEXT,FG_COLOR,120,Ypos,'p/m')                               //          UI_DRAW(TEXT,FG_COLOR,120,Ypos,'p/m') 
+  JR(End)                                                             //        }
+                                                                      //        else
+GT60000:                                                              //        {
+  DIVF(3600000.0F,Value,Value)                                        //          Value  =  3600000 / Value
+  UI_DRAW(VALUE,FG_COLOR,88,Ypos,Value,4,0)                           //          UI_DRAW(VALUE,FG_COLOR,88,Ypos,Value,4,0)
+  UI_DRAW(TEXT,FG_COLOR,120,Ypos,'p/h')                               //          UI_DRAW(TEXT,FG_COLOR,120,Ypos,'p/h')
+                                                                      //        }
+End:                                                                  //      }
+                                                                      //
+  // Show 2. line                                                     //
+  ADD16(Ypos,SETTINGS_LINE_SPACEY,Ypos)                               //      Ypos -=  SETTINGS_LINE_SPACEY
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Sensor Setup')                     //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Sensor Setup')
+                                                                      //
+  // Show cursor                                                      //
+  MUL16(Cursor,SETTINGS_LINE_SPACEY,CursorY)                          //      CursorY  =  Cursor * SETTINGS_LINE_SPACEY
+  ADD16(CursorY,SETTINGS_CURSOR_STARTY,CursorY)                       //      CursorY +=  SETTINGS_CURSOR_STARTY
+                                                                      //
+  JR_GTEQ16(Cursor,2,NoBar)                                           //      if (Cursor < 2)
+                                                                      //      {
+                                                                      //
+  UI_DRAW(INVERSERECT,SETTINGS_CURSOR_STARTX,CursorY,SETTINGS_CURSOR_WIDTH,SETTINGS_CURSOR_HEIGHT) // UI_DRAW(INVERSERECT,SETTINGS_CURSOR_STARTX,CursorY,SETTINGS_CURSOR_WIDTH,SETTINGS_CURSOR_HEIGHT)
+  UI_DRAW(ICON,FG_COLOR,SETTINGS_ICON2X,SETTINGS_ICON2Y,LARGE_ICON,YES_NOTSEL) // UI_DRAW(ICON,FG_COLOR,SETTINGS_ICON2X,SETTINGS_ICON2Y,LARGE_ICON,YES_NOTSEL)
+                                                                      //
+  JR(EndBar)                                                          //      }
+                                                                      //      else
+NoBar:                                                                //      {
+                                                                      //
+  UI_DRAW(ICON,FG_COLOR,SETTINGS_ICON2X,SETTINGS_ICON2Y,LARGE_ICON,YES_SEL) //  UI_DRAW(ICON,FG_COLOR,SETTINGS_ICON2X,SETTINGS_ICON2Y,LARGE_ICON,YES_SEL)
+                                                                      //
+EndBar:                                                               //      }
+                                                                      //
+  // Update display                                                   //
+  UI_DRAW(UPDATE)                                                     //      UI_DRAW(UPDATE)
+                                                                      //
+  UI_BUTTON(WAIT_FOR_PRESS)                                           //      UI_BUTTON(WAIT_FOR_PRESS)
+                                                                      //
+  UI_BUTTON(GET_VERT,Inc)                                             //      UI_BUTTON(GET_VERT,Inc)
+  ADD16(Cursor,Inc,Cursor)                                            //      Cursor +=  Inc
+  JR_GT16(Cursor,0,HighEnough)                                        //      if (Cursor <= 0)
+                                                                      //      {
+  MOVE16_16(0,Cursor)                                                 //        Cursor  =  0
+HighEnough:                                                           //      }
+  JR_LT16(Cursor,SETTINGS_LINES,LowEnough)                            //      if (Cursor >= SETTINGS_LINES)
+                                                                      //      {
+  MOVE16_16(SETTINGS_LINES,Cursor)                                    //        Cursor  =  SETTINGS_LINES
+  SUB16(Cursor,1,Cursor)                                              //        Cursor--
+LowEnough:                                                            //      }
+                                                                      //
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotBackButton)                                         //      if (Tmp != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotBackButton:                                                        //      }
+                                                                      //
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotEnterButton)                                        //      if (Tmp != FALSE)
+                                                                      //      {
+  JR_NEQ16(Cursor,1,Not1)                                             //        if (Cursor == 1)
+                                                                      //        {
+  CALL(SetupScreen)                                                   //          SetupScreen()
+Not1:                                                                 //        }
+  JR_NEQ16(Cursor,2,Not2)                                             //        if (Cursor == 2)
+                                                                      //        {
+  MOVE16_16(TmpSampleRate,SampleRate)                                 //          SampleRate  =  TmpSampleRate                                                                      
+  MOVE8_8(0,Run)                                                      //          Run  =  0
+Not2:                                                                 //        }
+NotEnterButton:                                                       //      }
+  JR_NEQ16(Cursor,0,Not0)                                             //      if (Cursor == 0)
+                                                                      //      {
+  UI_BUTTON(GET_HORZ,Inc)                                             //        UI_BUTTON(GET_HORZ,Inc)
+  ADD16(TmpSampleRate,Inc,TmpSampleRate)                              //        TmpSampleRate +=  Inc
+  JR_GT16(TmpSampleRate,0,HighEnough2)                                //        if (TmpSampleRate <= 0)
+                                                                      //        {
+  MOVE16_16(0,TmpSampleRate)                                          //          TmpSampleRate  =  0
+HighEnough2:                                                          //        }
+  JR_LT16(TmpSampleRate,SAMPLERATES,LowEnough2)                       //        if (TmpSampleRate >= SAMPLERATES)
+                                                                      //        {
+  MOVE16_16(SAMPLERATES,TmpSampleRate)                                //          TmpSampleRate  =  SAMPLERATES
+  SUB16(TmpSampleRate,1,TmpSampleRate)                                //          TmpSampleRate--
+LowEnough2:                                                           //        }
+Not0:                                                                 //      }
+                                                                      //    }
+  JR_TRUE(Run,Loop)                                                   //    while (Run)
+                                                                      //
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// SetupScreen *****************************************************************************************
+                                                                      //
+define    SETUP_STARTX           0                                    //
+define    SETUP_STARTY           0                                    //
+define    SETUP_LINE_STARTX      (SETUP_STARTX + 8)                   //
+define    SETUP_LINE_STARTY      (SETUP_STARTY + 18)                  //
+define    SETUP_LINE_SPACEY      13                                   //
+define    SETUP_LINES            9                                    //
+define    SETUP_BAR              (SETUP_LINES - 1)                    //
+define    SETUP_CURSOR_STARTX    (SETUP_STARTX + 8)                   //
+define    SETUP_CURSOR_STARTY    (SETUP_STARTY + 16)                  //
+define    SETUP_CURSOR_WIDTH     120                                  //
+define    SETUP_CURSOR_HEIGHT    13                                   //
+define    SETUP_BMPX             (SETUP_STARTX + 8)                   //
+define    SETUP_BMPY             (SETUP_STARTY + 107)                 //
+                                                                      //
+define    SETUP_MODE_STARTX      (SETUP_STARTX + 32)                  //
+define    MODENAME_SIZE          12                                   //
+                                                                      //
+subcall   SetupScreen                                                 //  SetupScreen(void)
+{                                                                     //  {
+  DATA32  Index                                                       //
+  DATA16  Xpos                                                        //
+  DATA16  Ypos                                                        //
+  DATA16  Cursor                                                      //
+  DATA16  CursorX                                                     //
+  DATA16  CursorY                                                     //
+  DATA16  Inc                                                         //
+  DATA16  hModesTmp                                                   //
+  DATA8   Run                                                         //
+  DATA8   Tmp                                                         //
+  DATA8   Port                                                        //
+  DATA8   Mode                                                        //
+  DATA8   Modes                                                       //
+  DATAS   ModeName MODENAME_SIZE                                      //
+                                                                      //
+  MOVE8_8(SETUP_BAR,Cursor)                                           //    Cursor  =  SETUP_BAR
+  MOVE8_8(1,Run)                                                      //    Run     =  1
+  CALL(UpdateModes)                                                   //    UpdateModes()
+  ARRAY(CREATE8,0,hModesTmp)                                          //    ARRAY(CREATE8,0,hModesTmp)
+  ARRAY(COPY,hModes,hModesTmp)                                        //    ARRAY(COPY,hModes,hModesTmp)
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+                                                                      //    do
+Loop:                                                                 //    {
+  UI_DRAW(FILLWINDOW,BG_COLOR,TOPLINE_HEIGHT,0)                       //      UI_DRAW(FILLWINDOW,BG_COLOR,TOPLINE_HEIGHT,0)
+                                                                      //
+  JR_GTEQ16(Cursor,8,NoBar)                                           //      if (Cursor < 8)
+                                                                      //      {
+  UI_DRAW(BMPFILE,FG_COLOR,SETUP_BMPX,SETUP_BMPY,'dlSetAccept')       //        Draw bitmap
+  JR(EndBar)                                                          //      }
+                                                                      //      else
+NoBar:                                                                //      {
+  UI_DRAW(BMPFILE,FG_COLOR,SETUP_BMPX,SETUP_BMPY,'dlSetAcceptH')      //        Draw bitmap
+EndBar:                                                               //      }
+                                                                      //
+  // Show lines                                                       //
+  MOVE16_16(SETUP_LINE_STARTX,Xpos)                                   //      Xpos  =  SETUP_LINE_STARTX
+  MOVE16_16(SETUP_LINE_STARTY,Ypos)                                   //      Ypos  =  SETUP_LINE_STARTY
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'1:')                               //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'1:')
+  ADD16(Ypos,SETUP_LINE_SPACEY,Ypos)                                  //      Ypos +=  SETUP_LINE_SPACEY
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'2:')                               //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'2:')
+  ADD16(Ypos,SETUP_LINE_SPACEY,Ypos)                                  //      Ypos +=  SETUP_LINE_SPACEY
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'3:')                               //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'3:')
+  ADD16(Ypos,SETUP_LINE_SPACEY,Ypos)                                  //      Ypos +=  SETUP_LINE_SPACEY
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'4:')                               //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'4:')
+  ADD16(Ypos,SETUP_LINE_SPACEY,Ypos)                                  //      Ypos +=  SETUP_LINE_SPACEY
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'A:')                               //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'A:')
+  ADD16(Ypos,SETUP_LINE_SPACEY,Ypos)                                  //      Ypos +=  SETUP_LINE_SPACEY
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'B:')                               //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'B:')
+  ADD16(Ypos,SETUP_LINE_SPACEY,Ypos)                                  //      Ypos +=  SETUP_LINE_SPACEY
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'C:')                               //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'C:')
+  ADD16(Ypos,SETUP_LINE_SPACEY,Ypos)                                  //      Ypos +=  SETUP_LINE_SPACEY
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'D:')                               //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'D:')
+                                                                      //
+  // Show actual modes                                                //
+  MOVE16_16(SETUP_MODE_STARTX,Xpos)                                   //      Xpos  =  SETUP_MODE_STARTX
+  MOVE16_16(SETUP_LINE_STARTY,Ypos)                                   //      Ypos  =  SETUP_LINE_STARTY
+                                                                      //
+  MOVE8_8(0,Port)                                                     //      Port  =  0
+                                                                      //      do
+NextPort:                                                             //      {
+  MOVE8_8(Port,Tmp)                                                   //        Tmp     =  Port
+  CALL(Convert,Tmp)                                                   //        Convert(Tmp)
+  MOVE8_32(Port,Index)                                                //        Index   =  Port
+  ARRAY_READ(hModesTmp,Index,Mode)                                    //        Mode    =  hModes[Index]
+  JR_EQ8(Mode,-1,NoMode)                                              //        if (Mode != -1)
+                                                                      //        {
+  INPUT_DEVICE(GET_MODENAME,0,Tmp,Mode,MODENAME_SIZE,ModeName)        //          INPUT_DEVICE(GET_MODENAME,0,Tmp,Mode,MODENAME_SIZE,ModeName)
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,ModeName)                           //          UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,ModeName)
+                                                                      //
+  JR(EndMode)                                                         //        }
+                                                                      //        else
+NoMode:                                                               //        {
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'IGNORE')                           //          UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'IGNORE')
+EndMode:                                                              //        }
+  ADD16(Ypos,SETUP_LINE_SPACEY,Ypos)                                  //        Ypos +=  SETUP_LINE_SPACEY
+                                                                      //
+  ADD8(1,Port,Port)                                                   //        Port++
+                                                                      //      }
+  JR_LT8(Port,MAX_PORTS,NextPort)                                     //      while (Port < MAX_PORTS)
+                                                                      //
+  // Show cursor                                                      //
+  MUL16(Cursor,SETUP_LINE_SPACEY,CursorY)                             //      CursorY  =  Cursor * SETUP_LINE_SPACEY
+  ADD16(CursorY,SETUP_CURSOR_STARTY,CursorY)                          //      CursorY +=  SETUP_CURSOR_STARTY
+                                                                      //
+  JR_GTEQ16(Cursor,SETUP_BAR,NoBar2)                                  //      if (Cursor < SETUP_BAR)
+                                                                      //      {
+  UI_DRAW(ICON,FG_COLOR,24,CursorY,ARROW_ICON,ICON_LEFT)              //        Draw icon
+  UI_DRAW(ICON,FG_COLOR,120,CursorY,ARROW_ICON,ICON_RIGHT)            //        Draw icon
+                                                                      //
+  UI_DRAW(INVERSERECT,SETUP_CURSOR_STARTX,CursorY,SETUP_CURSOR_WIDTH,SETUP_CURSOR_HEIGHT) // UI_DRAW(INVERSERECT,SETUP_CURSOR_STARTX,CursorY,SETUP_CURSOR_WIDTH,SETUP_CURSOR_HEIGHT)
+                                                                      //
+  MOVE8_32(Cursor,Index)                                              //        Index  =  Cursor
+  ARRAY_READ(hModesTmp,Index,Mode)                                    //        Mode   =  hModesTmp[Index]
+  JR_EQ8(Mode,-1,NoMode2)                                             //        if (Mode != -1)
+                                                                      //        {
+  CALL(ShowDeviceType,134,17,Cursor,Mode)                             //          ShowDeviceType(134,17,Cursor,Mode)
+NoMode2:                                                              //        }
+NoBar2:                                                               //      }
+                                                                      //
+  UI_DRAW(RECT,FG_COLOR,133,16,40,48)                                 //      UI_DRAW(RECT,FG_COLOR,133,16,40,48)
+  UI_DRAW(LINE,FG_COLOR,133,65,133,106)                               //      UI_DRAW(LINE,FG_COLOR,133,65,133,106)
+                                                                      //
+  UI_DRAW(UPDATE)                                                     //      UI_DRAW(UPDATE)
+                                                                      //
+  // Wait for button press or device list changed                     //
+  UI_BUTTON(FLUSH)                                                    //      UI_BUTTON(FLUSH)
+                                                                      //      do
+WaitForPress:                                                         //      {
+  INPUT_DEVICE_LIST(0,0,Tmp)                                          //        INPUT_DEVICE_LIST(0,0,Tmp)
+  JR_TRUE(Tmp,ListChanged)                                            //        if (Tmp == 0)
+                                                                      //        {
+  UI_BUTTON(TESTSHORTPRESS,ANY_BUTTON,Tmp)                            //          UI_BUTTON(TESTSHORTPRESS,ANY_BUTTON,Tmp)
+ListChanged:                                                          //        }
+                                                                      //      }
+  JR_FALSE(Tmp,WaitForPress)                                          //      while (Tmp == 0)
+                                                                      //
+  // Check for up and down and adjust cursor                          //
+  UI_BUTTON(GET_VERT,Inc)                                             //      UI_BUTTON(GET_VERT,Inc)
+  ADD16(Cursor,Inc,Cursor)                                            //      Cursor +=  Inc
+  JR_GTEQ16(Cursor,0,HighEnough)                                      //      if (Cursor < 0)
+                                                                      //      {
+  MOVE16_16(0,Cursor)                                                 //        Cursor  =  0
+HighEnough:                                                           //      }
+  JR_LT16(Cursor,SETUP_LINES,LowEnough)                               //      if (Cursor >= SETUP_LINES)
+                                                                      //      {
+  MOVE16_16(SETUP_LINES,Cursor)                                       //        Cursor  =  SETUP_LINES
+  SUB16(Cursor,1,Cursor)                                              //        Cursor--
+LowEnough:                                                            //      }
+                                                                      //
+  JR_GTEQ16(Cursor,SETUP_BAR,NoBar3)                                  //      if (Cursor < SETUP_BAR)
+                                                                      //      {
+                                                                      //
+  MOVE8_32(Cursor,Index)                                              //        Index  =  Cursor
+  ARRAY_READ(hMaxModes,Index,Modes)                                   //        Modes  =  hMaxModes[Index]
+  ARRAY_READ(hModesTmp,Index,Mode)                                    //        Mode   =  hModesTmp[Index]
+                                                                      //
+  // Check for left and right and adjust mode                         //
+  UI_BUTTON(GET_HORZ,Inc)                                             //        UI_BUTTON(GET_HORZ,Inc)
+  MOVE16_8(Inc,Tmp)                                                   //        Tmp    =  Inc
+  ADD8(Mode,Tmp,Mode)                                                 //        Mode  +=  Tmp
+  JR_GTEQ8(Mode,-1,HighEnough2)                                       //        if (Mode < -1)
+                                                                      //        {
+  MOVE8_8(-1,Mode)                                                    //          Mode  =  -1
+HighEnough2:                                                          //        }
+  JR_LT8(Mode,Modes,LowEnough2)                                       //        if (Mode >= Modes)
+                                                                      //        {
+  MOVE8_8(Modes,Mode)                                                 //          Mode  =  Modes
+  SUB8(Mode,1,Mode)                                                   //          Mode--
+LowEnough2:                                                           //        }
+  ARRAY_WRITE(hModesTmp,Index,Mode)                                   //        hModesTmp[Index]  =  Mode
+                                                                      //
+NoBar3:                                                               //      }
+  // Check for enter                                                  //
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotEnterButton)                                        //      if (Tmp != FALSE)
+                                                                      //      {
+  ARRAY(COPY,hModesTmp,hModes)                                        //        ARRAY(COPY,hModesTmp,hModes)                               
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotEnterButton:                                                       //      }
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotBackButton)                                         //      if (Tmp != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotBackButton:                                                        //      }
+                                                                      //    }
+  JR_TRUE(Run,Loop)                                                   //    while (Run)
+  ARRAY(DELETE,hModesTmp)                                             //    ARRAY(DELETE,hModesTmp)
+                                                                      //
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// UpdateModes *****************************************************************************************
+                                                                      //
+                                                                      //
+subcall   UpdateModes                                                 //  UpdateModes(void)
+{                                                                     //  {
+  DATA32  Index                                                       //
+  DATA8   Device                                                      //
+  DATA8   Datasets                                                    //
+  DATA8   Format                                                      //
+  DATA8   Modes                                                       //
+  DATA8   Views                                                       //
+  DATA8   Tmp                                                         //
+                                                                      //
+  MOVE8_8(0,Device)                                                   //    Device    =  0
+  MOVE32_32(0,Index)                                                  //    Index     =  0
+                                                                      //    do
+CheckInput:                                                           //    {
+  INPUT_DEVICE(GET_FORMAT,0,Device,Datasets,Format,Modes,Views)       //      INPUT_DEVICE(GET_FORMAT,0,Device,Datasets,Format,Modes,Views)
+  ARRAY_WRITE(hMaxModes,Index,Views)                                  //      hMaxModes[Index]  =  Views
+                                                                      //
+  // Adjust mode if not ok                                            //
+  ARRAY_READ(hModes,Index,Modes)                                      //      Modes   =  hModes[Index]
+  JR_LT8(Modes,Views,InputModeOk)                                     //      if (Modes >= Views)
+                                                                      //      {
+  MOVE8_8(Views,Modes)                                                //        Modes           =  Views
+  SUB8(Modes,1,Modes)                                                 //        Modes--
+  ARRAY_WRITE(hModes,Index,Modes)                                     //        hModes[Index]   =  Modes
+                                                                      //
+InputModeOk:                                                          //      }
+  ADD32(1,Index,Index)                                                //      Index++
+  ADD8(1,Device,Device)                                               //      Device++
+                                                                      //    }
+  JR_LT8(Device,INPUTS,CheckInput)                                    //    while (Device < INPUTS)
+                                                                      //
+  MOVE8_8(0,Device)                                                   //    Device    =  0
+                                                                      //    do
+CheckOutput:                                                          //    {
+  ADD8(OUTPUT_OFFSET,Device,Tmp)                                      //      Tmp     =  Device + OUTPUT_OFFSET
+  INPUT_DEVICE(GET_FORMAT,0,Tmp,Datasets,Format,Modes,Views)          //      INPUT_DEVICE(GET_FORMAT,0,Tmp,Datasets,Format,Modes,Views)
+  ARRAY_WRITE(hMaxModes,Index,Views)                                  //      hMaxModes[Index]  =  Views
+                                                                      //
+  // Adjust mode if not ok                                            //
+  ARRAY_READ(hModes,Index,Modes)                                      //      Modes   =  hModes[Index]
+  JR_LT8(Modes,Views,OutputModeOk)                                    //      if (Modes >= Views)
+                                                                      //      {
+  MOVE8_8(Views,Modes)                                                //        Modes           =  Views
+  SUB8(Modes,1,Modes)                                                 //        Modes--
+  ARRAY_WRITE(hModes,Index,Modes)                                     //        hModes[Index]   =  Modes
+                                                                      //
+OutputModeOk:                                                         //      }
+  ADD32(1,Index,Index)                                                //      Index++
+  ADD8(1,Device,Device)                                               //      Device++
+                                                                      //    }
+  JR_LT8(Device,OUTPUTS,CheckOutput)                                  //    while (Device < OUTPUTS
+                                                                      //
+  MOVE32_8(Index,NoOfPorts)                                           //
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// UpdateDeviceInPort **********************************************************************************
+                                                                      //
+                                                                      //
+subcall   UpdateDeviceInPort                                          //  UpdateDeviceInPort(void)
+{                                                                     //  {
+  DATA32  Index                                                       //
+  DATA32  Mindex                                                      //
+  DATA8   Type                                                        //
+  DATA8   Device                                                      //
+  DATA8   Mode                                                        //
+  DATA8   TmpMode                                                     //
+  DATA8   Tmp                                                         //
+                                                                      //
+  MOVE8_8(0,Device)                                                   //    Device    =  0
+  MOVE32_32(0,Index)                                                  //    Index     =  0
+  MOVE32_32(0,Mindex)                                                 //    Mindex    =  0
+                                                                      //    do
+CheckInput:                                                           //    {
+  ARRAY_READ(hModes,Mindex,Mode)                                      //      Mode    =  hModes[Mindex]
+  INPUT_DEVICE(GET_TYPEMODE,0,Device,Type,TmpMode)                    //      INPUT_DEVICE(GET_TYPEMODE,0,Device,Type,TmpMode)
+  JR_GT8(Type,101,CheckInputEmpty)                                    //      if (Type <= 101)
+                                                                      //      {
+  JR_EQ8(Mode,-1,CheckInputMode)                                      //        if (Mode != -1)
+                                                                      //        {
+  ARRAY_WRITE(hDevices,Index,Device)                                  //          hDevices[Index]   =  Device
+  ARRAY_WRITE(hLogModes,Index,Mode)                                   //          hLogModes[Index]  =  Mode
+  ADD32(1,Index,Index)                                                //          Index++
+CheckInputMode:                                                       //        }
+CheckInputEmpty:                                                      //      }
+  ADD32(Mindex,1,Mindex)                                              //      Mindex++
+  ADD8(1,Device,Device)                                               //      Device++
+                                                                      //    }
+  JR_LT8(Device,INPUTS,CheckInput)                                    //    while (Device < INPUTS)
+                                                                      //
+  MOVE8_8(0,Device)                                                   //    Device    =  0
+                                                                      //    do
+CheckOutput:                                                          //    {
+  ARRAY_READ(hModes,Mindex,Mode)                                      //      Mode    =  hModes[Mindex]
+  ADD8(OUTPUT_OFFSET,Device,Tmp)                                      //      Tmp     =  Device + OUTPUT_OFFSET
+  INPUT_DEVICE(GET_TYPEMODE,0,Tmp,Type,TmpMode)                       //      INPUT_DEVICE(GET_TYPEMODE,0,Tmp,Type,TmpMode)
+  ADD8(Device,INPUTS,Tmp)                                             //      Tmp     =  Device + INPUTS
+  JR_GT8(Type,101,CheckOutputEmpty)                                   //      if (Type <= 101)
+                                                                      //      {
+  JR_EQ8(Mode,-1,CheckOutputMode)                                     //        if (Mode != -1)
+                                                                      //        {
+  ARRAY_WRITE(hDevices,Index,Tmp)                                     //          hDevices[Index]   =  Tmp
+  ARRAY_WRITE(hLogModes,Index,Mode)                                   //          hLogModes[Index]  =  Mode
+  ADD32(1,Index,Index)                                                //          Index++
+CheckOutputMode:                                                      //        }
+CheckOutputEmpty:                                                     //      }
+  ADD32(Mindex,1,Mindex)                                              //      Mindex++
+  ADD8(1,Device,Device)                                               //      Device++
+                                                                      //    }
+  JR_LT8(Device,OUTPUTS,CheckOutput)                                  //    while (Device < OUTPUTS
+                                                                      //
+  MOVE32_8(Index,NoOfPorts)                                           //
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// InitSensorData **************************************************************************************
+                                                                      //
+                                                                      //
+subcall   InitSensorData                                              //  InitSensorData(void)
+{                                                                     //  {
+  DATA32  Index                                                       //
+  DATAF   TmpMin                                                      //
+  DATAF   TmpMax                                                      //
+  DATA16  TmpOffset                                                   //
+  DATA16  TmpSpan                                                     //
+  DATAF   TmpDiff                                                     //
+  DATA8   TmpFigures                                                  //
+  DATA8   TmpDecimals                                                 //
+  DATA8   Pointer                                                     //
+  DATA8   TmpPort                                                     //
+  DATA8   TmpType                                                     //
+  DATA8   TmpMode                                                     //
+  DATA8   Mode                                                        //
+  DATA16  Grid                                                        //
+                                                                      //
+  // Init device data to log                                          //
+  MOVE8_8(0,Pointer)                                                  //      Pointer  =  0
+InitData:                                                             //      while (Pointer < NoOfPorts)
+  JR_GTEQ8(Pointer,NoOfPorts,InitDataDone)                            //      {
+                                                                      //
+  // Get and save device formats                                      //
+  MOVE8_32(Pointer,Index)                                             //        Index             =  Pointer
+  ARRAY_READ(hDevices,Index,TmpPort)                                  //        TmpPort           =  hDevices[Index]
+  ARRAY_READ(hLogModes,Index,Mode)                                    //        Mode              =  hLogModes[Index]
+  CALL(Convert,TmpPort)                                               //        Convert(TmpPort)
+  INPUT_DEVICE(GET_TYPEMODE,0,TmpPort,TmpType,TmpMode)                //        INPUT_DEVICE(GET_TYPEMODE,0,TmpPort,TmpType,TmpMode)
+  INPUT_DEVICE(READY_SI,0,TmpPort,0,Mode,0)                           //        INPUT_DEVICE(READY_SI,0,TmpPort,0,Mode,0)
+  INPUT_DEVICE(GET_FIGURES,0,TmpPort,TmpFigures,TmpDecimals)          //        INPUT_DEVICE(GET_FIGURES,0,TmpPort,TmpFigures,TmpDecimals)
+  INPUT_DEVICE(GET_MINMAX,0,TmpPort,TmpMin,TmpMax)                    //        INPUT_DEVICE(GET_MINMAX,0,TmpPort,TmpMin,TmpMax)
+  ARRAY_WRITE(hFigures,Index,TmpFigures)                              //        hFigures[Index]   =  TmpFigures
+  ARRAY_WRITE(hDecimals,Index,TmpDecimals)                            //        hDecimals[Index]  =  TmpFigures
+                                                                      //
+  ARRAY_READ(hhGrids,Index,Grid)                                      //        Grid          =  hhGrids[Index]
+  MOVE16_16(20,TmpOffset)                                             //        TmpOffset     =  20
+  MOVE16_16(100,TmpSpan)                                              //        TmpSpan       =  100
+  STRINGS(DUPLICATE,'dl_GRc180',@Grid)                                //        Grid          =  "dl_GRc180"
+                                                                      //
+  SUBF(TmpMax,TmpMin,TmpDiff)                                         //        TmpDiff  =  TmpMax - TmpMin
+                                                                      //
+  JR_GTEQF(TmpMin,0.0F,OneQuad)                                       //        if ((TmpMin < 0) &&
+  JR_LTEQF(TmpMax,0.0F,OneQuad)                                       //            (TmpMax > 0))
+                                                                      //        {
+  // Two Y quadrants                                                  //
+                                                                      //
+  JR_GTF(TmpDiff,200.0F,DifGT200)                                     //          if (TmpDiff <= 200)
+                                                                      //          {
+  JR_GTF(TmpDiff,140.0F,DifGT140)                                     //            if (TmpDiff <= 140)
+                                                                      //            {
+  // dl_GR_TC                                                         //
+  MOVEF_F(-20.0F,TmpMin)                                              //              TmpMin      = -20
+  MOVEF_F(120.0F,TmpMax)                                              //              TmpMax      =  120
+  MOVE16_16(25,TmpOffset)                                             //              TmpOffset   =  25
+  MOVE16_16(98,TmpSpan)                                               //              TmpSpan     =  98
+  STRINGS(DUPLICATE,'dl_GR_TC',@Grid)                                 //              Grid        =  "dl_GR_TC"
+                                                                      //
+  JR(EndDif140)                                                       //            }
+                                                                      //            else
+DifGT140:                                                             //            {
+  // dl_GRc100                                                        //
+  MOVEF_F(-100.0F,TmpMin)                                             //              TmpMin      = -100
+  MOVEF_F(100.0F,TmpMax)                                              //              TmpMax      =  100
+  MOVE16_16(25,TmpOffset)                                             //              TmpOffset   =  25
+  MOVE16_16(94,TmpSpan)                                               //              TmpSpan     =  94
+  STRINGS(DUPLICATE,'dl_GRc100',@Grid)                                //              Grid        =  "dl_GRc100"
+                                                                      //
+EndDif140:                                                            //            }
+  JR(EndDif200)                                                       //          }
+                                                                      //          else
+DifGT200:                                                             //          {
+  JR_GTF(TmpDiff,360.0F,DifGT360)                                     //            if (TmpDiff <= 360)
+                                                                      //            {
+  // dl_GRc180                                                        //
+  MOVEF_F(-180.0F,TmpMin)                                             //              TmpMin      = -180
+  MOVEF_F(180.0F,TmpMax)                                              //              TmpMax      =  180
+  MOVE16_16(25,TmpOffset)                                             //              TmpOffset   =  25
+  MOVE16_16(96,TmpSpan)                                               //              TmpSpan     =  95
+  STRINGS(DUPLICATE,'dl_GRc180',@Grid)                                //              Grid        =  "dl_GRc180"
+                                                                      //
+  JR(EndDif360)                                                       //            }
+                                                                      //            else
+DifGT360:                                                             //            {
+  // dl_GRc450                                                        //
+  MOVEF_F(-450.0F,TmpMin)                                             //              TmpMin      = -450
+  MOVEF_F(450.0F,TmpMax)                                              //              TmpMax      =  450
+  MOVE16_16(28,TmpOffset)                                             //              TmpOffset   =  28
+  MOVE16_16(90,TmpSpan)                                               //              TmpSpan     =  90
+  STRINGS(DUPLICATE,'dl_GRc450',@Grid)                                //              Grid        =  "dl_GRc450"
+                                                                      //
+EndDif360:                                                            //            }
+EndDif200:                                                            //          }
+  JR(EndQuad)                                                         //        }
+                                                                      //        else
+OneQuad:                                                              //        {
+  // One Y quadrants                                                  //
+  JR_GTF(TmpDiff,50.0F,DifGT50)                                       //          if (TmpDiff <= 50)
+                                                                      //          {
+  JR_GTF(TmpDiff,8.0F,DifGT8)                                         //            if (TmpDiff <= 8)
+                                                                      //            {
+  JR_GTF(TmpDiff,1.0F,DifGT1)                                         //              if (TmpDiff <= 1)
+                                                                      //              {
+  // dl_GR0_1                                                         //
+  MOVEF_F(0.0F,TmpMin)                                                //                TmpMin      =  0.0
+  MOVEF_F(1.0F,TmpMax)                                                //                TmpMax      =  1.0
+  MOVE16_16(43,TmpOffset)                                             //                TmpOffset   =  43
+  MOVE16_16(60,TmpSpan)                                               //                TmpSpan     =  60
+  STRINGS(DUPLICATE,'dl_GR0_1',@Grid)                                 //                Grid        =  "dl_GR0_1"
+                                                                      //
+  JR(EndDif1)                                                         //              }
+                                                                      //              else
+DifGT1:                                                               //              {
+  // dl_GR0_8                                                         //
+  MOVEF_F(0.0F,TmpMin)                                                //                TmpMin      =  0
+  MOVEF_F(8.0F,TmpMax)                                                //                TmpMax      =  8
+  MOVE16_16(25,TmpOffset)                                             //                TmpOffset   =  25
+  MOVE16_16(98,TmpSpan)                                               //                TmpSpan     =  98
+  STRINGS(DUPLICATE,'dl_GR0_8',@Grid)                                 //                Grid        =  "dl_GR0_8"
+                                                                      //
+EndDif1:                                                              //              }
+                                                                      //
+  JR(EndDif8)                                                         //            }
+                                                                      //            else
+DifGT8:                                                               //            {
+  // dl_GR_50                                                         //
+  MOVEF_F(0.0F,TmpMin)                                                //              TmpMin      =  0
+  MOVEF_F(10.0F,TmpMax)                                               //              TmpMax      =  10
+  MOVE16_16(23,TmpOffset)                                             //              TmpOffset   =  23
+  MOVE16_16(100,TmpSpan)                                              //              TmpSpan     =  100
+  STRINGS(DUPLICATE,'dl_GR0_10',@Grid)                                //              Grid        =  "dl_GR0_10"
+                                                                      //
+EndDif8:                                                              //            }
+  JR(EndDif50)                                                        //          }
+                                                                      //          else
+DifGT50:                                                              //          {
+  JR_GTF(TmpDiff,100.0F,DifGT100)                                     //            if (TmpDiff <= 100)
+                                                                      //            {
+  // dl_GR0_100                                                       //
+  MOVEF_F(0.0F,TmpMin)                                                //              TmpMin      =  0
+  MOVEF_F(100.0F,TmpMax)                                              //              TmpMax      =  100
+  MOVE16_16(23,TmpOffset)                                             //              TmpOffset   =  23
+  MOVE16_16(100,TmpSpan)                                              //              TmpSpan     =  100
+  STRINGS(DUPLICATE,'dl_GR0_100',@Grid)                               //              Grid        =  "dl_GR0_100"
+                                                                      //
+  JR(EndDif100)                                                       //            }
+                                                                      //            else
+DifGT100:                                                             //            {
+  // dl_GR0_250                                                       //
+  MOVEF_F(0.0F,TmpMin)                                                //              TmpMin      =  0
+  MOVEF_F(250.0F,TmpMax)                                              //              TmpMax      =  250
+  MOVE16_16(23,TmpOffset)                                             //              TmpOffset   =  23
+  MOVE16_16(100,TmpSpan)                                              //              TmpSpan     =  100
+  STRINGS(DUPLICATE,'dl_GR0_250',@Grid)                               //              Grid        =  "dl_GR0_250"
+                                                                      //
+EndDif100:                                                            //            }
+EndDif50:                                                             //          }
+EndQuad:                                                              //        }
+  ARRAY_WRITE(hMins,Index,TmpMin)                                     //        hMins[Index]      =  TmpMin
+  ARRAY_WRITE(hMaxs,Index,TmpMax)                                     //        hMaxs[Index]      =  TmpMax
+  ARRAY_WRITE(hOffsets,Index,TmpOffset)                               //        hOffsets[Index]   =  TmpOffset
+  ARRAY_WRITE(hSpans,Index,TmpSpan)                                   //        hSpans[Index]     =  TmpSpan
+                                                                      //
+  ADD8(Pointer,1,Pointer)                                             //        Pointer++
+  JR(InitData)                                                        //      }
+InitDataDone:                                                         //
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// Convert *********************************************************************************************
+                                                                      //
+                                                                      //
+subcall   Convert                                                     //  Convert(Port)
+{                                                                     //  {
+  IO_8    Port                                                        //
+                                                                      //
+  JR_LT8(Port,INPUTS,Input)                                           //    if (Port >= INPUTS)
+                                                                      //    {
+  ADD8(Port,OUTPUT_OFFSET,Port)                                       //      Port +=  OUTPUT_OFFSET
+  SUB8(Port,INPUTS,Port)                                              //      Port -=  INPUTS
+Input:                                                                //    }
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// ConvertText *****************************************************************************************
+                                                                      //
+                                                                      //
+subcall   ConvertText                                                 //  ConvertText(Port,Text)
+{                                                                     //  {
+  IN_8    Port                                                        //
+  OUT_S   Text 16                                                     //
+                                                                      //
+  DATA8   Text0                                                       //
+  DATA8   Text1                                                       //
+                                                                      //
+  ADD8(Port,'1',Text0)                                                //    Text0   =  '1' + Port
+  MOVE8_8(0,Text1)                                                    //    Text1   =  0
+  STRINGS(DUPLICATE,Text0,Text)                                       //    STRINGS(DUPLICATE,Text0,Text)
+                                                                      //
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// CheckPort *******************************************************************************************
+                                                                      //
+                                                                      //
+subcall   CheckPort                                                   //  CheckPort(void)
+{                                                                     //  {
+                                                                      //
+  JR_LT8(SelectedPort,NoOfPorts,NotTooHigh)                           //    if (SelectedPort >= NoOfPorts)
+                                                                      //    {
+  MOVE8_8(ALL_PORTS,SelectedPort)                                     //      SelectedPort  = ALL_PORTS
+                                                                      //
+NotTooHigh:                                                           //    }
+  JR_GTEQ8(SelectedPort,ALL_PORTS,NotTooLow)                          //    if (SelectedPort < ALL_PORTS)
+                                                                      //    {
+  MOVE8_8(NoOfPorts,SelectedPort)                                     //      SelectedPort  =  NoOfPorts
+                                                                      //
+  SUB8(SelectedPort,1,SelectedPort)                                   //      SelectedPort--
+  JR_GTEQ8(SelectedPort,ALL_PORTS,NotTooLow1)                         //      if (SelectedPort < ALL_PORTS)
+                                                                      //      {
+  MOVE8_8(ALL_PORTS,SelectedPort)                                     //        SelectedPort  =  ALL_PORTS
+                                                                      //
+NotTooLow1:                                                           //      }
+NotTooLow:                                                            //    }
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// Show device type and mode ***************************************************************************
+                                                                      //
+                                                                      //
+subcall   ShowDeviceType                                              //  ShowDeviceType(X,Y,Selection,Mode)
+{                                                                     //  {
+  IN_16   X                                                           //
+  IN_16   Y                                                           //
+  IN_8    Selection                                                   //
+  IN_8    Mode                                                        //
+                                                                      //
+  DATA8   Type                                                        //
+  DATA8   Tmp                                                         //
+  DATA8   Char                                                        //
+  DATAS   TypeName 5                                                  //
+  DATAS   BitmapName FILENAMESIZE                                     //
+                                                                      //
+  CALL(GetDeviceType,Selection,Type)                                  //    CALL(GetDeviceType,Selection,Type)
+                                                                      //
+  JR_LTEQ8(Type,MAX_VALID_TYPE,Valid)                                 //    if (Type > MAX_TYPE_VALID)
+NotValid:                                                             //    {
+                                                                      //
+  JR_NEQ8(Type,127,NoError)                                           //      if (Type == 127)
+                                                                      //      {
+  JR_GTEQ8(Selection,INPUTS,NotInput)                                 //        if (Selection < INPUTS)
+                                                                      //        {
+  UI_DRAW(BMPFILE,FG_COLOR,X,Y,'PE_input')                            //          Draw bitmap
+                                                                      //
+  JR(EndInput)                                                        //        }
+                                                                      //        else
+NotInput:                                                             //        {
+  UI_DRAW(BMPFILE,FG_COLOR,X,Y,'PE_output')                           //          Draw bitmap
+                                                                      //
+EndInput:                                                             //        }
+NoError:                                                              //      }
+                                                                      //  
+  JR(ValidEnd)                                                        //    }
+                                                                      //    else
+Valid:                                                                //    {
+                                                                      //
+  WRITE8(0x74,0,TypeName)                                             //      TypeName[0]     =  't'
+                                                                      //
+  DIV8(Type,10,Tmp)                                                   //      Tmp             =  Type / 10
+  ADD8(Tmp,0x30,Char)                                                 //      Char            =  '0' + Tmp
+  WRITE8(Char,1,TypeName)                                             //      TypeName[1]     =  Char
+                                                                      //
+  MUL8(Tmp,10,Tmp)                                                    //      Tmp            *=  10
+  SUB8(Type,Tmp,Tmp)                                                  //      Tmp             =  Type - Tmp
+  ADD8(Tmp,0x30,Char)                                                 //      Char            =  '0' + Tmp
+  WRITE8(Char,2,TypeName)                                             //      TypeName[2]     =  Char
+                                                                      //
+  ADD8(Mode,0x30,Char)                                                //      Char            =  '0' + Mode
+  WRITE8(Char,3,TypeName)                                             //      TypeName[3]     =  Char
+                                                                      //
+  WRITE8(0,4,TypeName)                                                //      TypeName[4]     =  0
+                                                                      //
+  STRINGS(ADD,TypeName,EXT_GRAPHICS,BitmapName)                       //      STRINGS(ADD,TypeName,EXT_GRAPHICS,BitmapName)                                              
+  FILENAME(EXIST,BitmapName,Tmp)                                      //      FILENAME(EXIST,BitmapName,Tmp)
+  JR_TRUE(Tmp,Found1)                                                 //      if (!Tmp)
+                                                                      //      {
+  WRITE8(0x30,3,TypeName)                                             //        TypeName[3]     =  '0'
+  STRINGS(ADD,TypeName,EXT_GRAPHICS,BitmapName)                       //        STRINGS(ADD,TypeName,EXT_GRAPHICS,BitmapName)                                              
+  FILENAME(EXIST,BitmapName,Tmp)                                      //        FILENAME(EXIST,BitmapName,Tmp)
+  JR_TRUE(Tmp,Found2)                                                 //        if (!Tmp)
+                                                                      //        {
+  STRINGS(DUPLICATE,'tdef',TypeName)                                  //          STRINGS(DUPLICATE,'tdef',TypeName)
+Found2:                                                               //        }                                                                    
+Found1:                                                               //      }                                                                    
+  UI_DRAW(BMPFILE,FG_COLOR,X,Y,TypeName)                              //      UI_DRAW(BMPFILE,FG_COLOR,X,Y,TypeName)                                                        
+ValidEnd:                                                             //    }
+}                                                                     //  }
+                                                                      //
+// Get device type *************************************************************************************
+                                                                      //
+                                                                      //
+subcall   GetDeviceType                                               //  GetDeviceType(Connection,Type)
+{                                                                     //  {
+  IN_8    Connection                                                  //
+  OUT_8   Type                                                        //
+                                                                      //
+  DATA8   Mode                                                        //
+                                                                      //
+  CALL(Convert,Connection)                                            //    Convert(Connection)
+  INPUT_DEVICE(GET_TYPEMODE,0,Connection,Type,Mode)                   //    INPUT_DEVICE(GET_TYPEMODE,0,Connection,Type,Mode)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// SaveFile ********************************************************************************************
+                                                                      //
+                                                                      //
+subcall   SaveFile                                                    //  SaveFile(void)
+{                                                                     //  {
+  DATAF   Tmp                                                         //
+  DATA32  Size                                                        //
+  DATA16  hFile                                                       //
+  DATA16  FileNo                                                      //
+  DATA8   State                                                       //
+  DATA8   Volume                                                      //
+  DATAS   String FILENAMESIZE                                         //
+  DATAS   Name FILENAMESIZE                                           //
+  DATAS   Filename FILENAMESIZE                                       //
+                                                                      //
+                                                                      //
+  INFO(GET_VOLUME,Volume)                                             //    INFO(GET_VOLUME,Volume)
+  SOUND(PLAY,Volume,'GeneralAlarm')                                   //    SOUND(PLAY,Volume,'GeneralAlarm')
+                                                                      //
+  // Find file name suggestion                                        //
+  MOVE16_16(0,FileNo)                                                 //    FileNo  =  0
+  FILE(OPEN_READ,DATALOG_FILENO,hFile,Size)                           //    FILE(OPEN_READ,DATALOG_FILENO,hFile,Size)
+  JR_EQ32(Size,0,NotFound)                                            //    if (Size != 0)
+                                                                      //    {
+  FILE(READ_VALUE,hFile,DEL_TAB,Tmp)                                  //      FILE(READ_VALUE,hFile,DEL_TAB,Tmp)
+  FILE(CLOSE,hFile)                                                   //      FILE(CLOSE,hFile)
+  MOVEF_16(Tmp,FileNo)                                                //      FileNo  =  Tmp
+NotFound:                                                             //    }
+  ADD16(FileNo,1,FileNo)                                              //    FileNo++
+  STRINGS(NUMBER_TO_STRING,FileNo,3,String)                           //    STRINGS(NUMBER_TO_STRING,FileNo,3,String)
+                                                                      //
+  STRINGS(ADD,BDL_NAME,String,Name)                                   //    STRINGS(ADD,BDL_NAME,String,Name)
+                                                                      //
+  // Save name for compare                                            //
+  STRINGS(DUPLICATE,Name,String)                                      //    STRINGS(DUPLICATE,Name,String)
+                                                                      //
+  // Get file name from user                                          //
+  MOVE8_8(CHARSET_NAME,State)                                         //    State  =  CHARSET_NAME
+  UI_DRAW(KEYBOARD,FG_COLOR,16,26,ICON_DISC,NAMESIZE,'',State,Name)   //    UI_DRAW(KEYBOARD,FG_COLOR,16,26,NAMESIZE,ICON_DISC,'',State,Name)
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+                                                                      //
+  JR_FALSE(Name,NoName)                                               //    if (Name[0])
+                                                                      //    {
+  STRINGS(COMPARE,Name,String,State)                                  //      STRINGS(COMPARE,Name,String,State)
+  JR_FALSE(State,NotSuggested)                                        //      if (State)
+                                                                      //      {
+  MOVE16_F(FileNo,Tmp)                                                //        Tmp  =  FileNo
+  FILE(OPEN_WRITE,DATALOG_FILENO,hFile)                               //        FILE(OPEN_WRITE,DATALOG_FILENO,hFile)
+  FILE(WRITE_VALUE,hFile,DEL_TAB,Tmp,3,0)                             //        FILE(WRITE_VALUE,hFile,DEL_TAB,Tmp,3,0)
+  FILE(CLOSE,hFile)                                                   //        FILE(CLOSE,hFile)
+                                                                      //
+NotSuggested:                                                         //      }
+                                                                      //
+  // Save file                                                        //
+  STRINGS(ADD,DATALOG_FOLDER,'/',String)                              //      STRINGS(ADD,DATALOG_FOLDER,'/',String)
+  STRINGS(ADD,String,Name,Filename)                                   //      STRINGS(ADD,String,Name,Filename)
+  STRINGS(ADD,Filename,EXT_DATALOG,Name)                              //      STRINGS(ADD,Filename,EXT_DATALOG,Name)
+  FILE(MOVE,TMPLOGFILE,Name)                                          //      FILE(MOVE,TMPLOGFILE,Name)
+                                                                      //
+NoName:                                                               //    }
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// Convert *********************************************************************************************
+                                                                      //
+                                                                      //
+subcall   Convert                                                     //  Convert(Port)
+{                                                                     //  {
+  IO_8    Port                                                        //
+                                                                      //
+  JR_LT8(Port,INPUTS,Input)                                           //    if (Port >= INPUTS)
+                                                                      //    {
+  ADD8(Port,OUTPUT_OFFSET,Port)                                       //      Port +=  OUTPUT_OFFSET
+  SUB8(Port,INPUTS,Port)                                              //      Port -=  INPUTS
+Input:                                                                //    }
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//! \endverbatim

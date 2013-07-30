@@ -1,0 +1,12 @@
+/d_analog.ko/1.22/Mon May 13 12:10:09 2013/-kb/
+/d_bt.ko/1.15/Mon May 13 12:10:10 2013/-kb/
+/d_display.ko/1.14/Mon Nov 12 08:32:29 2012/-kb/
+/d_iic.ko/1.13/Mon May 13 12:10:10 2013/-kb/
+/d_power.ko/1.16/Mon May 13 12:10:11 2013/-kb/
+/d_ppboard.ko/1.19/Mon Nov 12 08:32:29 2012/-kb/
+/d_pwm.ko/1.15/Mon May 13 12:10:12 2013/-kb/
+/d_sound.ko/1.15/Mon May 13 12:10:12 2013/-kb/
+/d_uart.ko/1.18/Mon May 13 12:10:13 2013/-kb/
+/d_ui.ko/1.16/Mon May 13 12:10:13 2013/-kb/
+/d_usbdev.ko/1.15/Mon May 13 12:10:14 2013/-kb/
+/d_usbhost.ko/1.15/Mon May 13 12:10:15 2013/-kb/

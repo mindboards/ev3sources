@@ -1,0 +1,13 @@
+#! /bin/bash
+
+src=$(pwd)
+cd ../adk/lmststasm
+
+cp "$src"/"$1".c prg.c
+
+gcc -o bytecodeassembler bytecodeassembler.c
+chmod +x bytecodeassembler
+./bytecodeassembler
+mv prg.rbf "$src"/"$2".rbf
+rm prg.c
+

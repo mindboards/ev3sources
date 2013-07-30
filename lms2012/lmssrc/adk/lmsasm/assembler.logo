@@ -1,0 +1,470 @@
+to asm
+assemble file-field
+end
+
+to assemble :file
+preprocess word :file ".lms
+let [code lineread]
+asm-init
+pass0 :code
+;defines
+let [codebytes pass1 :code]
+make "codebytes pass2 :codebytes
+make "codebytes (se program-header object-headers :codebytes)
+listtofile (word :file ".rbf) :codebytes
+print se count :codebytes "bytes
+;print hexl :codebytes 
+end
+
+to asm-init
+make "next-global 0
+dolist [i :defines][erplist :i]
+erase-locals
+make "defines []
+make "objects []
+end
+
+
+;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; headers
+;;
+;;;;;;;;;;;;;;;;;;;;;;;
+
+to program-header
+output (se strbytes 'LEGO' 
+           4bytes :pc 
+           2bytes :version 
+           2bytes count :objects 
+           4bytes :next-global)
+end
+
+to object-headers
+let [res []
+     trg 0]
+dolist [i :objects]
+ [make "trg 0
+  if (get :i "type) = "subcall [make "trg 1]
+  make "res (se :res 4bytes get :i "offset 0 0 2bytes :trg 4bytes get :i "locals)]
+output :res
+end
+
+define headersize[][output 16 + 12 * count :objects]
+
+;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; pass 0 
+;; process definitions
+;;
+;;;;;;;;;;;;;;;;;;;;;;;
+
+
+to pass0 :code
+setread :code
+make "thisobject "
+loop
+ [if eot? [stop]
+  pass0-line parse readline]
+end
+
+to pass0-line :line
+let [token first :line]
+if :token = "vmthread  [setup-object :line stop]
+if :token = "subcall  [setup-subcall :line stop]
+if :token = "define [setup-define nth 1 :line getvalue bf bf :line "define stop]
+if (last :token) = ": [setup-label intern bl :token stop]
+if param? :token [put :thisobject "params (get :thisobject "params) + 1 stop]
+end
+
+to setup-label :name
+let [fname lname :name]
+put :fname "value "undefined
+put :name "type "label
+put :fname "type "label
+make "defines se :defines :name
+make "defines se :defines :fname
+end
+
+to setup-subcall :line
+setup-object :line
+end
+
+to setup-object :line
+let [type nth 0 :line
+     name nth 1 :line]
+make "objects se :objects :name
+setup-define :name count :objects :type
+put :name "params 0
+make "thisobject :name
+end
+
+to setup-define :name :value :type
+put :name "value :value
+put :name "type :type
+make "defines se :defines :name
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; pass 1
+;; fill in opcode, etc
+;;
+;;;;;;;;;;;;;;;;;;;;;;;
+
+to pass1 :code
+let [res []]
+make "thisobject "
+setread :code
+loop
+ [if eot? [output :res]
+  pass1-line parse readline]
+end
+
+to pass1-line :line
+ifelse empty? :thisobject
+ [pass1-line-outside :line]
+ [pass1-line-inside :line]
+end
+
+to pass1-line-outside :line
+let [token first :line]
+if member? :token [vmthread subcall] 
+ [add word "& nth 1 :line make "thisobject nth 1 :line 
+  if :token = "subcall [add get :thisobject "params]
+  stop]
+if :token = "define [stop]
+if :token = "global [setup-global nth 1 :line getvalue bf bf :line stop]
+if member? :token [DATA8 DATA16 DATA32 DATAF HANDLE] [setup-data-global :token nth 1 :line stop]
+if member? :token  [DATAS ARRAY8][setup-global nth 1 :line getvalue bf bf :line stop]
+if :token = "ARRAY16 [setup-global nth 1 :line 2 * getvalue bf bf :line stop]
+if member? :token  [ARRAY32 ARRAYF][setup-global nth 1 :line 4 * getvalue bf bf :line stop]
+print (se "*** :line "??? "***)
+end
+
+to pass1-line-inside :line
+let [token first :line]
+if (last :token) = ": [add lname :token stop]
+if :token = "local [setup-local nth 1 :line getvalue bf bf :line stop]
+if member? :token [DATA8 DATA16 DATA32 DATAF HANDLE] [setup-data-local :token nth 1 :line stop]
+if member? :token  [DATAS ARRAY8][setup-local nth 1 :line getvalue bf bf :line stop]
+if :token = "ARRAY16 [setup-local nth 1 :line 2 * getvalue bf bf :line stop]
+if member? :token  [ARRAY32 ARRAYF][setup-local nth 1 :line 4 * getvalue bf bf :line stop]
+if param? :token [setup-param :line stop]
+if :token = "{ [stop]
+if :token = "} [pass1-} stop]
+pass1-instruction :line
+end
+
+to pass1-}
+put :thisobject "locals :next-local 
+erase-locals 
+if (get :thisobject "type) = "subcall [add get "RETURN "op]
+add get "OBJECT_END "op
+make "thisobject "
+end
+
+to pass1-instruction :l
+let [op first :line
+     template get-template :l]
+if :listing? [print lput :template :l]
+if empty? get :op "op [print se [bad op -] :op stop]
+ifelse :op = "CALL 
+ [make "l expand-call-arg :l]
+ [arg-check :template :l]
+let [args get-args bf :l]
+if :listing? [print (se count :res "-  hexl se get :op "op :args)]
+add se get :op "op :args
+end
+
+to get-args :l
+let [args []]
+dolist [i :l][make "args se :args get-arg :i]
+output :args
+end
+
+to get-arg :i
+if string? :i [output pass1-str :i]
+if number? :i [output make-LC :i]
+if and number? bl :i (last :i) = "F [output make-LC floatbits bl :i]
+if (first :i) = "@ [output get-hnd intern bf :i]
+if (first :i) = "& [output get-adr intern bf :i]
+if not empty? get :i "local [output addbits $40 make-LC get :i "local]
+selectq get :i "type
+ [enum [output make-LC get :i "value]
+  global [output addbits $60 make-LC get :i "value]
+  label [output lname :i]
+  vmthread [output get :i "value]
+  subcall [output make-LC get :i "value]
+  define [output get-arg  get :i "value]]
+print (se "*** :i "undefined "*** "in :thisobject)
+output []
+end
+
+to get-hnd :i
+if not empty? get :i "local [output addbits $40 make-hnd get :i "local]
+if (get :i "type) = "global [output addbits $60 make-hnd get :i "value]
+print (se "*** :i "undefined "*** "in :thisobject)
+output []
+end
+
+to get-adr :i
+if not empty? get :i "local [output addbits $40 make-adr get :i "local]
+if (get :i "type) = "global [output addbits $60 make-adr get :i "value]
+print (se "*** :i "undefined "*** "in :thisobject)
+output []
+end
+
+to arg-check :t :l
+if empty? :t [stop]
+if (last :t) = "PARNO [repeat (nth count bl :t bf :l) [make "t se :t "PAR32]]
+if not (count bf :l) = (count :t) [print se [argcount error -] :l]
+end
+
+to setup-param :l
+let [type nth 0 :l
+     name nth 1 :l]
+selectq :type
+ [IN_8 [setup-plocal $80 :name 1 ]
+  IN_16 [setup-plocal $81  :name 2]
+  IN_32 [setup-plocal $82  :name 4]
+  IN_F [setup-plocal $83 :name 4]
+  IN_S [setup-plocal $84 :name get-value nth 2 :l]
+  OUT_8 [setup-plocal $40 :name 1]
+  OUT_16 [setup-plocal $41 :name 2]
+  OUT_32 [setup-plocal $42 :name 4]
+  OUT_F [setup-plocal $43 :name 4]
+  OUT_S [setup-plocal $44 :name get-value nth 2 :l]
+  IO_8 [setup-plocal $c0 :name 1]
+  IO_16 [setup-plocal $c1 :name 2]
+  IO_32 [setup-plocal $c2 :name 4]
+  IO_F [setup-plocal $c3 :name 4]
+  IO_S [setup-plocal $c4 :name get-value nth 2 :l]]
+end
+
+to setup-plocal :code :name :len
+setup-local :name :len
+add (se :code)
+if member? :code [$44 $84 $c4] [add (se :len)]
+end
+
+to get-value :i
+if number? :i [output :i]
+selectq get :i "type
+ [enum [output get :i "value]
+  define [output get :i "value]]
+print (se "*** :i "undefined "*** "in :thisobject)
+output 0
+end
+
+to setup-data-global :type :name
+selectq :type
+ [DATA8 [setup-global :name 1]
+  DATA16 [setup-global :name 2]
+  HANDLE [setup-global :name 2]
+  DATA32 [setup-global :name 4]
+  DATAF [setup-global :name 4]]]
+end
+
+to setup-data-local :type :name
+selectq :type
+ [DATA8 [setup-local :name 1]
+  DATA16 [setup-local :name 2]
+  HANDLE [setup-local :name 2]
+  DATA32 [setup-local :name 4]
+  DATAF [setup-local :name 4]]]
+end
+
+
+to setup-global :name :len
+if :len = 2 [make "next-global align :next-global 2]
+if :len = 4 [make "next-global align :next-global 4]
+setup-define :name :next-global "global
+put :name "size :len
+make "next-global :next-global + :len
+end
+
+to setup-local :name :len
+if :len = 2 [make "next-local align :next-local 2]
+if :len = 4 [make "next-local align :next-local 4]
+put :name "local :next-local
+make "next-local :next-local + :len
+make "locals se :locals :name
+end
+
+to expand-call-arg :l
+if not (get nth 1 :l "type) = "subcall [output :l]
+output (se nth 0 :l nth 1 :l get nth 1 :l "params bf bf :l)
+end
+
+to pass1-str :s
+if (count :s) = 2 [if (first :s) = "_ [output make-LC ascii nth 1 :s]]
+output (se $80 strbytes :s 0)
+end
+
+to param? :x
+output empty? replace :x '(IN|OUT|IO)_(8|16|32|F|S)' "
+end
+
+to addbits :bits :n
+if number? :n [output :n + :bits]
+output se (first :n) + :bits bf :n
+end
+
+to make-LC :n
+if and :n > -32 :n < 32 [output logand :n $3f]
+if and :n > -128 :n < 128 [output se $81 logand :n $ff]
+if and :n > -32768 :n < 32768  [output (se $82 logand :n $ff logand lsh :n -8 $ff)]
+output (se $83 logand :n $ff logand lsh :n -8 $ff logand lsh :n -16 $ff logand lsh :n -24 $ff)
+end
+
+
+to make-hnd :n
+if and :n > -128 :n < 128 [output se $91 logand :n $ff]
+output (se $92 logand :n 255 lsh :n -8)
+end
+
+to make-adr :n
+if and :n > -128 :n < 128 [output se $89 logand :n $ff]
+if and :n > -32768 :n < 32768  [output (se $8A logand :n $ff logand lsh :n -8 $ff)]
+output (se $8B logand :n $ff logand lsh :n -8 $ff logand lsh :n -16 $ff logand lsh :n -24 $ff)
+end
+
+to get-template :l
+let [t get first :l "args]
+if not member? "SUBP :t [output :t] 
+output se bl bl :t get intern (word last :t "_ nth (count :t) - 2 :l) "args
+end
+
+to add :l
+if empty? :l [stop]
+make "res se :res :l
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; pass 2 
+;; process labels
+;;
+;;;;;;;;;;;;;;;;;;;;;;;
+
+to pass2 :code
+pass2a :code
+output pass2b :code
+end
+
+to pass2a :code
+make "pc headersize
+dolist [i :code]
+ [ifelse number? :i 
+   [make "pc :pc + 1]
+   [pass2-syma :i]]]
+end
+
+to pass2-syma :s
+if (last :s) = ": [put intern bl :s "value :pc stop]
+if (first :s) = "&  [put intern bf :s "offset :pc stop]
+make "pc :pc + 3
+end
+
+
+to pass2b :code
+let [res [] offset 0]
+dolist [i :code]
+ [ifelse number? :i [make "res se :res :i]
+   [if (get :i "type) = "label
+     [make "offset (get :i "value) - (headersize + count :res) - 3 
+      make "res (se :res $82 logand :offset 255 logand 255 lsh :offset -8)]]]
+output :res
+end
+
+;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;; etc.
+;;
+;;;;;;;;;;;;;;;;;;;;;;;
+
+
+to hexl :l
+let[res []]
+dolist [i (se :l)]
+ [if number? :i [make "i word "$ hexw :i 2]
+  make "res se :res :i]
+output :res
+end
+
+to erase-locals
+dolist [i :locals][put :i "local []]
+make "locals []
+make "next-local 0
+end
+
+to getvalue :l
+let [v []]
+dolist [i :l][make "v lput get-a-value :i :v]
+if (count :v) = 1 [output first :v]
+if member? "+ :v [output run :v]
+if member? "- :v [output run :v]
+if member? "* :v [output run :v]
+if member? "/ :v [output run :v]
+output :v
+end
+
+to get-a-value :x
+if member? :x [+ - * /][output :x]
+if number? :x [output :x]
+if string? :x [output :x]
+output get :x "value
+end
+
+to align :n :a
+make "n :n + :a - 1
+output :a * int :n / :a
+end
+
+to strbytes :s
+make "s replace :s '\\r' char 13
+make "s replace :s '\\n' char 10
+make "s replace :s '\\q' char 39
+make "s replace :s '\\t' char 9
+let [res []]
+dotimes [i count :s][make "res se :res ascii nth :i :s]
+output :res
+end
+
+to listtofile :file :l 
+let [bytes bytearray count :l]
+dotimes [i count :l][setnth :i :bytes nth :i :l]
+bytestofile :file :bytes 
+end
+
+define lname[n][output intern (word :thisobject "- :n)]
+
+define string?[a][output (classof :a) = (classof 'a')]
+define 4bytes[n][output se 2bytes logand :n $ffff 2bytes logand $ffff lsh :n -16]
+define 2bytes[n][output se logand :n $ff logand $ff lsh :n -8]
+
+to defines
+dolist [i :defines][print se :i plist :i]
+end
+
+to startswith :start :str
+loop
+ [if empty? :start [output true]
+  if empty? :str [output false]
+  if not (first :start) = (first :str) [output false]
+  make "start bf :start
+  make "str bf :str]
+end
+
+define bfs [x n][repeat :n [make "x bf :x] output :x]
+
+to app-startup
+if name? "defines [stop]
+make "defines [] make "locals []
+read-enums read-opdefs read-defines
+make "listing? false
+if (count clargs) = 1 [assemble first clargs stop]
+showcc
+print 'Welcome to Logo!'
+setfile-field "Program
+end

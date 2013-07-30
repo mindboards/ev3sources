@@ -1,0 +1,33 @@
+
+
+Add library to lms2012
+----------------------
+
+  lms2012 -> Properties -> C/C++ Build -> Settings -> Libraries
+
+    Add: dbus-1
+
+
+Add include paths to c_bt.c
+---------------------------
+  
+  c_bt.c -> Properties ->C7C++ Build -> Settings -> Directories
+  
+    Add: "${HOME}/am1808/DaVinci-PSP-SDK-03.20.00.13/linux-devkit/arm-none-linux-gnueabi/usr/include/dbus-1.0"
+    Add: "${HOME}/am1808/DaVinci-PSP-SDK-03.20.00.13/linux-devkit/arm-none-linux-gnueabi/usr/lib/dbus-1.0/include"
+   
+
+Changes to BT_Init.sh
+---------------------
+
+  Out-comment or remove the line: "agent --path /org/bluez/agent 1234 &> /dev/null &"
+
+  Agent functionality is now included in out application together with the dbus
+
+
+Remarks
+-------
+
+The /lib/firmware/TIInit_6.2.31.bts has also been upgraded (from SP2.38 to SP2.44)with version v048. But changes included in the new .bts version is not related to any of our changes.
+
+

@@ -1,0 +1,10 @@
+#! /bin/sh
+
+if [ -d ${PWD}/lib ]
+then
+  LD_LIBRARY_PATH=${PWD}/lib:$LD_LIBRARY_PATH
+fi
+export LD_LIBRARY_PATH
+
+./lms2012
+

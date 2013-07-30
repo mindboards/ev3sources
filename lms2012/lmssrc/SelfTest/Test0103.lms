@@ -1,0 +1,288 @@
+//! \page test0103app Test 0103 Application
+//!
+//! <hr size="1"/>
+//!
+//! \verbatim
+// 
+//
+//
+//**********************************************************************
+//        TEST0103 
+//**********************************************************************
+                                                                      //
+define    TESTREPORT  'TestReport'                                    //
+define    LINE        64                                              //
+                                                                      //
+vmthread  MAIN                                                        //  void    MAIN(void)
+{                                                                     //  {
+  CALL(Test0103)                                                      //    Test0103()
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   Test0103                                                    //  void Test0103(void)
+{                                                                     //  {
+  DATAF   Result                                                      //
+  DATA16  Size                                                        //
+  DATA16  hSrc1                                                       //
+  DATA16  hSrc2                                                       //
+  DATA16  hDestination                                                //
+  DATAS   String LINE                                                 //
+                                                                      //
+  // Set success as default                                           //
+	MEMORY_WRITE(GUI_SLOT,4,0,1,0)                                      //    MEMORY_WRITE(GUI_SLOT,4,0,1,0)
+                                                                      //
+  CALL(TestOpen)                                                      //
+                                                                      //
+  CALL(TestWrite,' VM STRINGS')                                       //
+                                                                      //
+  STRINGS(GET_SIZE,'',Size)                                           //
+  STRINGS(NUMBER_TO_STRING,Size,6,String)                             //
+  CALL(TestCheck,'GET_SIZE           ',String,'000000')               //
+                                                                      //
+  STRINGS(GET_SIZE,'1234567890',Size)                                 //
+  STRINGS(NUMBER_TO_STRING,Size,6,String)                             //
+  CALL(TestCheck,'GET_SIZE           ',String,'000010')               //
+                                                                      //
+  ARRAY(CREATE8,0,hSrc1)                                              //
+  ARRAY(CREATE8,0,hDestination)                                       //
+  STRINGS(DUPLICATE,'Src1',@hSrc1)                                    //
+  STRINGS(DUPLICATE,@hSrc1,@hDestination)                             //
+  STRINGS(DUPLICATE,@hDestination,String)                             //
+  ARRAY(DELETE,hDestination)                                          //
+  ARRAY(DELETE,hSrc1)                                                 //
+  CALL(TestCheck,'Src1               ',String,'Src1')                 //
+                                                                      //
+  ARRAY(CREATE8,0,hSrc1)                                              //
+  ARRAY(CREATE8,0,hSrc2)                                              //
+  ARRAY(CREATE8,0,hDestination)                                       //
+  STRINGS(DUPLICATE,'Src1',@hSrc1)                                    //
+  STRINGS(DUPLICATE,'Src2',@hSrc2)                                    //
+  STRINGS(ADD,@hSrc1,@hSrc2,@hDestination)                            //
+  STRINGS(DUPLICATE,@hDestination,String)                             //
+  ARRAY(DELETE,hDestination)                                          //
+  ARRAY(DELETE,hSrc2)                                                 //
+  ARRAY(DELETE,hSrc1)                                                 //
+  CALL(TestCheck,'Src1 + Src2        ',String,'Src1Src2')             //
+                                                                      //
+  STRINGS(VALUE_TO_STRING,123.456F,10,3,String)                       //
+  CALL(TestCheck,'123.456  xxxxxx.xxx',String,'   123.456')           //
+                                                                      //
+  STRINGS(VALUE_TO_STRING,123.456F,10,2,String)                       //
+  CALL(TestCheck,'123.456  xxxxxxx.xx',String,'    123.46')           //
+                                                                      //
+  STRINGS(VALUE_TO_STRING,6.0000F,10,4,String)                        //
+  CALL(TestCheck,'6.0000   xxxxx.xxxx',String,'    6')                //
+                                                                      //
+  STRINGS(VALUE_TO_STRING,6.6000F,10,4,String)                        //
+  CALL(TestCheck,'6.6000   xxxxx.xxxx',String,'    6.6')              //
+                                                                      //
+  STRINGS(VALUE_TO_STRING,6.6600F,10,4,String)                        //
+  CALL(TestCheck,'6.6600   xxxxx.xxxx',String,'    6.66')             //
+                                                                      //
+  STRINGS(VALUE_TO_STRING,345.67F,10,4,String)                        //
+  CALL(TestCheck,'345.67   xxxxx.xxxx',String,'  345.67')             //
+                                                                      //
+  STRINGS(VALUE_TO_STRING,12345.67F,10,4,String)                      //
+  CALL(TestCheck,'12345.67 xxxxx.xxxx',String,'12345.6699')           //
+                                                                      //
+  STRINGS(VALUE_TO_STRING,12345.67F,7,4,String)                       //
+  CALL(TestCheck,'12345.67    xx.xxxx',String,'12345.6')              //
+                                                                      //
+  STRINGS(VALUE_TO_STRING,-12345.67F,7,4,String)                      //
+  CALL(TestCheck,'-12345.67   xx.xxxx',String,'-12345')               //
+                                                                      //
+  STRINGS(VALUE_TO_STRING,12345.67F,5,4,String)                       //
+  CALL(TestCheck,'12345.67      .xxxx',String,'12345')                //
+                                                                      //
+  STRINGS(VALUE_TO_STRING,12345.67F,4,4,String)                       //
+  CALL(TestCheck,'12345.67       xxxx',String,'1234')                 //
+                                                                      //
+  STRINGS(VALUE_TO_STRING,123.456F,-10,3,String)                      //
+  CALL(TestCheck,'123.456 -xxxxxx.xxx',String,'123.456')              //
+                                                                      //
+  STRINGS(VALUE_TO_STRING,6.0000F,-10,4,String)                       //
+  CALL(TestCheck,'6.0000  -xxxxx.xxxx',String,'6')                    //
+                                                                      //
+  STRINGS(VALUE_TO_STRING,6.6000F,-10,4,String)                       //
+  CALL(TestCheck,'6.6000  -xxxxx.xxxx',String,'6.6')                  //
+                                                                      //
+  STRINGS(VALUE_TO_STRING,6.6600F,-10,4,String)                       //
+  CALL(TestCheck,'6.6600  -xxxxx.xxxx',String,'6.66')                 //
+                                                                      //
+  STRINGS(VALUE_TO_STRING,345.67F,-10,4,String)                       //
+  CALL(TestCheck,'345.67  -xxxxx.xxxx',String,'345.67')               //
+                                                                      //
+  STRINGS(VALUE_TO_STRING,12345.67F,-10,4,String)                     //
+  CALL(TestCheck,'12345.67-xxxxx.xxxx',String,'12345.6699')           //
+                                                                      //
+  STRINGS(VALUE_TO_STRING,12345.67F,-7,4,String)                      //
+  CALL(TestCheck,'12345.67   -xx.xxxx',String,'12345.6')              //
+                                                                      //
+  STRINGS(VALUE_TO_STRING,-12345.67F,-7,4,String)                     //
+  CALL(TestCheck,'-12345.67  -xx.xxxx',String,'-12345')               //
+                                                                      //
+  STRINGS(VALUE_TO_STRING,12345.67F,-5,4,String)                      //
+  CALL(TestCheck,'12345.67     -.xxxx',String,'12345')                //
+                                                                      //
+  STRINGS(VALUE_TO_STRING,12345.67F,-4,4,String)                      //
+  CALL(TestCheck,'12345.67      -xxxx',String,'1234')                 //
+                                                                      //
+  MATH(SQRT,-4.0F,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,8,0,String)                          //
+  CALL(TestCheck,'nan        xxxxxxxx',String,'    ----')             //
+                                                                      //
+  MATH(SQRT,-4.0F,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,4,0,String)                          //
+  CALL(TestCheck,'nan            xxxx',String,'----')                 //
+                                                                      //
+  MATH(SQRT,-4.0F,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,2,0,String)                          //
+  CALL(TestCheck,'nan              xx',String,'--')                   //
+                                                                      //
+  MATH(SQRT,-4.0F,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,-8,0,String)                         //
+  CALL(TestCheck,'nan       -xxxxxxxx',String,'----    ')             //
+                                                                      //
+  MATH(SQRT,-4.0F,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,-4,0,String)                         //
+  CALL(TestCheck,'nan           -xxxx',String,'----')                 //
+                                                                      //
+  MATH(SQRT,-4.0F,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,-2,0,String)                         //
+  CALL(TestCheck,'nan             -xx',String,'--')                   //
+                                                                      //
+  DIVF(1.0F,0.0F,Result)                                              //
+  STRINGS(VALUE_TO_STRING,Result,4,0,String)                          //
+  CALL(TestCheck,'inf            xxxx',String,' inf')                 //
+                                                                      //
+  DIVF(-1.0F,0.0F,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,4,0,String)                          //
+  CALL(TestCheck,'-inf           xxxx',String,'-inf')                 //
+                                                                      //
+  STRINGS(NUMBER_TO_STRING,100,9,String)                              //
+  CALL(TestCheck,'100       xxxxxxxxx',String,'000000100')            //
+                                                                      //
+  STRINGS(NUMBER_TO_STRING,100,6,String)                              //
+  CALL(TestCheck,'100          xxxxxx',String,'000100')               //
+                                                                      //
+  STRINGS(NUMBER_TO_STRING,100,2,String)                              //
+  CALL(TestCheck,'100              xx',String,'10')                   //
+                                                                      //
+  DIVF(0.0F,0.0F,Result)                                              //
+  STRINGS(DUPLICATE,'xxxx',String)                                    //  
+  STRINGS(STRING_TO_VALUE,'123.456',Result)                           //
+  STRINGS(VALUE_TO_STRING,Result,7,3,String)                          //
+  CALL(TestCheck,'123.456     xxx.xxx',String,'123.456')              //
+                                                                      //
+  DIVF(0.0F,0.0F,Result)                                              //  
+  STRINGS(DUPLICATE,'xxxx',String)                                    //  
+  STRINGS(STRING_TO_VALUE,'123,456',Result)                           //
+  STRINGS(VALUE_TO_STRING,Result,7,3,String)                          //
+  CALL(TestCheck,'123,456     xxx.xxx',String,'123.456')              //
+                                                                      //
+  DIVF(0.0F,0.0F,Result)                                              //
+  STRINGS(DUPLICATE,'xxxx',String)                                    //  
+  STRINGS(STRING_TO_VALUE,' 123.456',Result)                          //
+  STRINGS(VALUE_TO_STRING,Result,7,3,String)                          //
+  CALL(TestCheck,' 123.456    xxx.xxx',String,'123.456')              //
+                                                                      //
+  DIVF(0.0F,0.0F,Result)                                              //
+  STRINGS(DUPLICATE,'xxxx',String)                                    //  
+  STRINGS(STRING_TO_VALUE,'123.456HI',Result)                         //
+  STRINGS(VALUE_TO_STRING,Result,7,3,String)                          //
+  CALL(TestCheck,'123.456HI   xxx.xxx',String,'123.456')              //
+                                                                      //
+  DIVF(0.0F,0.0F,Result)                                              //
+  STRINGS(DUPLICATE,'xxxx',String)                                    //  
+  STRINGS(STRING_TO_VALUE,'123.456 HI',Result)                        //
+  STRINGS(VALUE_TO_STRING,Result,7,3,String)                          //
+  CALL(TestCheck,'123.456 HI  xxx.xxx',String,'123.456')              //
+                                                                      //
+  DIVF(0.0F,0.0F,Result)                                              //  
+  STRINGS(DUPLICATE,'xxxx',String)                                    //  
+  STRINGS(STRING_TO_VALUE,'0',Result)                                 //
+  STRINGS(VALUE_TO_STRING,Result,7,3,String)                          //
+  CALL(TestCheck,'0           xxx.xxx',String,'  0')                  //
+                                                                      //
+  DIVF(0.0F,0.0F,Result)                                              //  
+  STRINGS(DUPLICATE,'xxxx',String)                                    //  
+  STRINGS(STRING_TO_VALUE,'0.1',Result)                               //
+  STRINGS(VALUE_TO_STRING,Result,7,3,String)                          //
+  CALL(TestCheck,'0.1         xxx.xxx',String,'  0.1')                //
+                                                                      //
+  STRINGS(DUPLICATE,'xxxx',String)                                    //  
+  STRINGS(STRIP,' 1 23  456 ',String)                                 //
+  CALL(TestCheck,'STRIP " 1 23  456 "',String,'123456')               //
+                                                                      //
+  STRINGS(DUPLICATE,'xxxx',String)                                    //  
+  STRINGS(SUB,'LEGO EV3','LE',String)                                 //
+  CALL(TestCheck,'SUB "LEGO EV3"-"LE"',String,'GO EV3')               //
+                                                                      //
+  CALL(TestClose)                                                     //
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestCheck                                                   //  void TestCheck(Text,IstWert,SollWert)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+  IN_S    IstWert LINE                                                //
+  IN_S    SollWert LINE                                               //
+                                                                      //
+  DATA8   Result                                                      //
+  DATAS   String LINE                                                 //
+                                                                      //
+  STRINGS(COMPARE,IstWert,SollWert,Result)                            //    STRINGS(COMPARE,IstWert,SollWert,Result)
+  JR_FALSE(Result,Error)                                              //    if (Result)
+                                                                      //    {
+  STRINGS(ADD,'  ',Text,String)                                       //      STRINGS(ADD,' ',Text,String)
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  STRINGS(ADD,String,IstWert,String)                                  //      STRINGS(ADD,String,IstWert,String)
+  STRINGS(ADD,String,']',String)                                      //      STRINGS(ADD,String,']',String)
+                                                                      //
+  JR(EndError)                                                        //    }
+                                                                      //    else
+Error:                                                                //    {
+                                                                      //
+  STRINGS(ADD,'# ',Text,String)                                       //      STRINGS(ADD,' ',Text,String) 
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  STRINGS(ADD,String,IstWert,String)                                  //      STRINGS(ADD,String,IstWert,String)
+  STRINGS(ADD,String,'] (',String)                                    //      STRINGS(ADD,String,'] (',String)
+  STRINGS(ADD,String,SollWert,String)                                 //      STRINGS(ADD,String,SollWert,String)
+  STRINGS(ADD,String,')',String)                                      //      STRINGS(ADD,String,')',String)
+                                                                      //
+  // Set failed                                                       //
+	MEMORY_WRITE(GUI_SLOT,4,0,1,1)                                      //      MEMORY_WRITE(GUI_SLOT,4,0,1,1)
+                                                                      //
+EndError:                                                             //    }
+                                                                      //
+  CALL(TestWrite,String)                                              //    CALL(TestWrite,String)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+DATA16    hFile                                                       //
+                                                                      //
+subcall   TestOpen                                                    //  void TestOpen(void)
+{                                                                     //  {
+  DATAS   TestReport FILENAMESIZE                                     //
+                                                                      //
+  STRINGS(ADD,TESTREPORT,EXT_TEXT,TestReport)                         //    STRINGS(ADD,TESTREPORT,EXT_TEXT,TestReport)
+  FILE(OPEN_APPEND,TestReport,hFile)                                  //    FILE(OPEN_APPEND,TestReport,hFile)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestWrite                                                   //  void TestWrite(Text)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+                                                                      //
+  FILE(WRITE_TEXT,hFile,DEL_CRLF,Text)                                //    FILE(WRITE_TEXT,hFile,DEL_CRLF,Text)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestClose                                                   //  void TestClose(void)
+{                                                                     //  {
+  FILE(CLOSE,hFile)                                                   //    FILE(CLOSE,hFile)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//! \endverbatim
+

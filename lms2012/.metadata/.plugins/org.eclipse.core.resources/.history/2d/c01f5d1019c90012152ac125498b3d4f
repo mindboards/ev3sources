@@ -1,0 +1,139 @@
+#XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+# EV3os package update
+#XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+# All folders must exists 
+
+
+
+
+
+###################################################
+# GET OS CONTAINER FROM FTP
+###################################################
+
+cd ~
+
+# Connect to server
+sftp dktochpe@171.20.2.209
+# -- Password
+
+# Change remote path
+cd /var/local/cvs/cvsroot/
+
+# Copy OS container from CVS
+get EV3os.tar.bz2 ./
+
+# Check that the container has been downloaded
+lls
+
+# Close connection
+exit
+
+###################################################
+# OPEN OS CONTAINER
+###################################################
+
+cd ~
+
+# Unpack container
+tar -jxf EV3os.tar.bz2
+
+###################################################
+# DECOMPRESS KERNEL SOURCE
+###################################################
+
+cd ~/am1808/DaVinci-PSP-SDK-03.20.00.13/src/kernel/
+
+# Rename current kernel source
+mv linux-03.20.00.13 linux-03.20.00.13_yyyymmdd
+
+# Get kernel source package from home folder
+cp ~/linux-03.20.00.13_*.tgz ./
+
+# Unpack new kernel source
+tar zxvf linux-03.20.00.13_yyyymmdd.tgz
+
+# Clean up - delete all kernel source packages
+rm linux-03.20.00.13_*.tgz
+
+###################################################
+# MAKE CHANGES IN KERNEL SOURCE
+###################################################
+
+#
+
+#
+
+###################################################
+# COMPRESS KERNEL SOURCE
+###################################################
+
+cd ~/am1808/DaVinci-PSP-SDK-03.20.00.13/src/kernel/
+
+# Pack kernel source
+tar czfv linux-03.20.00.13_yyyymmdd.tgz linux-03.20.00.13
+
+###################################################
+# PUT KERNEL SOURCE IN OS CONTAINER
+###################################################
+
+cd ~
+
+# Delete old kernel source package
+rm linux-03.20.00.13_*.tgz
+
+# Copy kernel source package to container
+cp ~/am1808/DaVinci-PSP-SDK-03.20.00.13/src/kernel/linux-03.20.00.13_yyyymmdd.tgz ./
+
+###################################################
+# CLOSE OS CONTAINER
+###################################################
+
+cd ~
+
+rm EV3os.tar.bz2
+
+# Pack container
+tar -jcvf ~/EV3os.tar.bz2 linux-03.20.00.13_*.tgz linux-devkit.tar.gz uboot-03.20.00.13_*.tar.bz2
+
+###################################################
+# BACKUP CONTAINER ON FTP
+###################################################
+
+# Connect to server
+ssh 171.20.2.209 -l dktochpe
+# -- Password
+
+# Change remote path
+cd /var/local/cvs/cvsroot
+
+# Backup
+mv EV3os.tar.bz2 EV3os_yyyymmdd.tar.bz2
+
+# Close connection
+exit
+
+###################################################
+# PUT OS CONTAINER TO FTP
+###################################################
+
+cd ~
+
+# Connect to server
+sftp dktochpe@171.20.2.209
+# -- Password
+
+# Change remote path
+cd /var/local/cvs/cvsroot/
+
+# Copy OS container to CVS
+put EV3os.tar.bz2 ./
+
+# Check the container has been uploaded
+ls
+
+# Close connection
+exit
+
+

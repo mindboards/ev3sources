@@ -1,0 +1,463 @@
+//! \page test0201app Test 0201 Application
+//!
+//! <hr size="1"/>
+//!
+//! \verbatim
+// 
+//
+//
+//**********************************************************************
+//        TEST0201 ARRAY TEST
+//**********************************************************************
+                                                                      //
+define    TESTREPORT  'TestReport'                                    //
+define    LINE        64                                              //
+                                                                      //
+vmthread  MAIN                                                        //  void    MAIN(void)
+{                                                                     //  {
+  CALL(Test0201)                                                      //    Test0201()
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   Test0201                                                    //  void Test0201(void)
+{                                                                     //  {
+  DATAF   Result                                                      //
+  DATAF   DataF                                                       //
+  DATA32  Size                                                        //
+  DATA32  Elements                                                    //
+  DATA32  Data32                                                      //
+  DATA32  Place                                                       //
+  DATA32  DataSize                                                    //
+  DATA16  hArray                                                      //
+  DATA16  hCopy                                                       //
+  DATA16  Data16                                                      //
+  DATA8   Data8                                                       //
+  DATAS   String LINE                                                 //
+                                                                      //
+  // Set success as default                                           //
+	MEMORY_WRITE(GUI_SLOT,4,0,1,0)                                      //    MEMORY_WRITE(GUI_SLOT,4,0,1,0)
+                                                                      //
+  CALL(TestOpen)                                                      //
+                                                                      //
+  CALL(TestWrite,' MEMORY ARRAY DATA8')                               //
+                                                                      //
+  MOVE32_32(1,DataSize)                                               //
+  MOVE32_32(0,Size)                                                   //
+  ARRAY(CREATE8,Size,hArray)                                          //
+  MOVE16_F(hArray,Result)                                             //
+  CALL(TestRange,'CREATE8  handle    ',Result,0.0F,249.0F)            //
+  ARRAY(SIZE,hArray,Elements)                                         //
+  MOVE32_F(Elements,Result)                                           //
+  MOVE32_F(Size,DataF)                                                //
+  CALL(TestRange,'SIZE               ',Result,DataF,DataF)            //
+  MOVE32_32(10,Size)                                                  //
+  ARRAY(RESIZE,hArray,Size)                                           //
+  ARRAY(SIZE,hArray,Elements)                                         //
+  MOVE32_F(Elements,Result)                                           //
+  MOVE32_F(Size,DataF)                                                //
+  CALL(TestRange,'RESIZE             ',Result,DataF,DataF)            //
+  ARRAY(FILL,hArray,55)                                               //
+  MUL32(Size,DataSize,Size)                                           //
+  SUB32(Size,DataSize,Place)                                          //
+  ARRAY(READ_CONTENT,DEBUG_SLOT,hArray,Place,1,Data8)                 //
+  MOVE8_F(Data8,Result)                                               //
+  MOVE8_F(55,DataF)                                                   //
+  CALL(TestRange,'FILL               ',Result,DataF,DataF)            //
+                                                                      //
+  ARRAY(CREATE8,0,hCopy)                                              //
+  ARRAY(COPY,hArray,hCopy)                                            //
+  ARRAY(READ_CONTENT,DEBUG_SLOT,hArray,Place,1,Data8)                 //
+  MOVE8_F(Data8,Result)                                               //
+  MOVE8_F(55,DataF)                                                   //
+  CALL(TestRange,'COPY               ',Result,DataF,DataF)            //
+                                                                      //
+  ARRAY(WRITE_CONTENT,DEBUG_SLOT,hArray,Place,1,77)                   //
+  ARRAY(READ_CONTENT,DEBUG_SLOT,hArray,Place,1,Data8)                 //
+  MOVE8_F(Data8,Result)                                               //
+  MOVE8_F(77,DataF)                                                   //
+  CALL(TestRange,'WRITE/READ_CONTENT ',Result,DataF,DataF)            //
+                                                                      //
+  ARRAY(READ_SIZE,DEBUG_SLOT,hArray,Data32)                           //
+  MOVE32_F(Data32,Result)                                             //
+  MOVE32_F(Size,DataF)                                                //
+  CALL(TestRange,'READ_SIZE          ',Result,DataF,DataF)            //
+                                                                      //
+/* Following generates compiler error
+  ARRAY(INIT8,hArray,Place,1,33)                                      //
+  ARRAY(READ_CONTENT,DEBUG_SLOT,hArray,Place,1,Data8)                 //
+  MOVE8_F(Data8,Result)                                               //
+  MOVE8_F(33,DataF)                                                   //
+  CALL(TestRange,'INIT8              ',Result,DataF,DataF)            //
+*/
+  DIV32(Size,DataSize,Size)                                           //
+  ADD32(Size,1,Place)                                                 //
+  ARRAY_WRITE(hArray,Place,99)                                        //
+  ARRAY_READ(hArray,Place,Data8)                                      //
+  MOVE8_F(Data8,Result)                                               //
+  MOVE8_F(99,DataF)                                                   //
+  CALL(TestRange,'ARRAY_WRITE/READ   ',Result,DataF,DataF)            //
+  ARRAY(SIZE,hArray,Elements)                                         //
+  MOVE32_F(Elements,Result)                                           //
+  ADD32(Place,1,Place)                                                //
+  MOVE32_F(Place,DataF)                                               //
+  CALL(TestRange,'SIZE               ',Result,DataF,DataF)            //
+                                                                      //
+  ARRAY_APPEND(hArray,54)                                             //
+  ARRAY_READ(hArray,Place,Data8)                                      //
+  MOVE8_F(Data8,Result)                                               //
+  MOVE8_F(54,DataF)                                                   //
+  CALL(TestRange,'ARRAY_APPEND       ',Result,DataF,DataF)            //
+  ARRAY(SIZE,hArray,Elements)                                         //
+  MOVE32_F(Elements,Result)                                           //
+  ADD32(Place,1,Place)                                                //
+  MOVE32_F(Place,DataF)                                               //
+  CALL(TestRange,'SIZE               ',Result,DataF,DataF)            //
+                                                                      //
+  ARRAY(DELETE,hCopy)                                                 //
+  ARRAY(DELETE,hArray)                                                //
+                                                                      //
+                                                                      //
+  CALL(TestWrite,' MEMORY ARRAY DATA16')                              //
+                                                                      //
+  MOVE32_32(2,DataSize)                                               //
+  MOVE32_32(0,Size)                                                   //
+  ARRAY(CREATE16,Size,hArray)                                         //
+  MOVE16_F(hArray,Result)                                             //
+  CALL(TestRange,'CREATE16 handle    ',Result,0.0F,249.0F)            //
+  ARRAY(SIZE,hArray,Elements)                                         //
+  MOVE32_F(Elements,Result)                                           //
+  MOVE32_F(Size,DataF)                                                //
+  CALL(TestRange,'SIZE               ',Result,DataF,DataF)            //
+  MOVE32_32(10,Size)                                                  //
+  ARRAY(RESIZE,hArray,Size)                                           //
+  ARRAY(SIZE,hArray,Elements)                                         //
+  MOVE32_F(Elements,Result)                                           //
+  MOVE32_F(Size,DataF)                                                //
+  CALL(TestRange,'RESIZE             ',Result,DataF,DataF)            //
+  ARRAY(FILL,hArray,55)                                               //
+  MUL32(Size,DataSize,Size)                                           //
+  SUB32(Size,DataSize,Place)                                          //
+  ARRAY(READ_CONTENT,DEBUG_SLOT,hArray,Place,1,Data8)                 //
+  MOVE8_F(Data8,Result)                                               //
+  MOVE8_F(55,DataF)                                                   //
+  CALL(TestRange,'FILL               ',Result,DataF,DataF)            //
+                                                                      //
+  ARRAY(CREATE16,0,hCopy)                                             //
+  ARRAY(COPY,hArray,hCopy)                                            //
+  ARRAY(READ_CONTENT,DEBUG_SLOT,hArray,Place,1,Data8)                 //
+  MOVE8_F(Data8,Result)                                               //
+  MOVE8_F(55,DataF)                                                   //
+  CALL(TestRange,'COPY               ',Result,DataF,DataF)            //
+                                                                      //
+  ARRAY(WRITE_CONTENT,DEBUG_SLOT,hArray,Place,1,77)                   //
+  ARRAY(READ_CONTENT,DEBUG_SLOT,hArray,Place,1,Data8)                 //
+  MOVE8_F(Data8,Result)                                               //
+  MOVE8_F(77,DataF)                                                   //
+  CALL(TestRange,'WRITE/READ_CONTENT ',Result,DataF,DataF)            //
+                                                                      //
+  ARRAY(READ_SIZE,DEBUG_SLOT,hArray,Data32)                           //
+  MOVE32_F(Data32,Result)                                             //
+  MOVE32_F(Size,DataF)                                                //
+  CALL(TestRange,'READ_SIZE          ',Result,DataF,DataF)            //
+                                                                      //
+/* Following generates compiler error
+  ARRAY(INIT16,hArray,Place,1,33)                                     //
+  ARRAY(READ_CONTENT,DEBUG_SLOT,hArray,Place,1,Data8)                 //
+  MOVE16_F(Data8,Result)                                              //
+  MOVE16_F(33,DataF)                                                  //
+  CALL(TestRange,'INIT16             ',Result,DataF,DataF)            //
+*/
+  DIV32(Size,DataSize,Size)                                           //
+  ADD32(Size,1,Place)                                                 //
+  ARRAY_WRITE(hArray,Place,99)                                        //
+  ARRAY_READ(hArray,Place,Data16)                                     //
+  MOVE16_F(Data16,Result)                                             //
+  MOVE16_F(99,DataF)                                                  //
+  CALL(TestRange,'ARRAY_WRITE/READ   ',Result,DataF,DataF)            //
+  ARRAY(SIZE,hArray,Elements)                                         //
+  MOVE32_F(Elements,Result)                                           //
+  ADD32(Place,1,Place)                                                //
+  MOVE32_F(Place,DataF)                                               //
+  CALL(TestRange,'SIZE               ',Result,DataF,DataF)            //
+                                                                      //
+  ARRAY_APPEND(hArray,54)                                             //
+  ARRAY_READ(hArray,Place,Data16)                                     //
+  MOVE16_F(Data16,Result)                                             //
+  MOVE16_F(54,DataF)                                                  //
+  CALL(TestRange,'ARRAY_APPEND       ',Result,DataF,DataF)            //
+  ARRAY(SIZE,hArray,Elements)                                         //
+  MOVE32_F(Elements,Result)                                           //
+  ADD32(Place,1,Place)                                                //
+  MOVE32_F(Place,DataF)                                               //
+  CALL(TestRange,'SIZE               ',Result,DataF,DataF)            //
+                                                                      //
+  ARRAY(DELETE,hCopy)                                                 //
+  ARRAY(DELETE,hArray)                                                //
+                                                                      //
+                                                                      //
+  CALL(TestWrite,' MEMORY ARRAY DATA32')                              //
+                                                                      //
+  MOVE32_32(4,DataSize)                                               //
+  MOVE32_32(0,Size)                                                   //
+  ARRAY(CREATE32,Size,hArray)                                         //
+  MOVE16_F(hArray,Result)                                             //
+  CALL(TestRange,'CREATE32 handle    ',Result,0.0F,249.0F)            //
+  ARRAY(SIZE,hArray,Elements)                                         //
+  MOVE32_F(Elements,Result)                                           //
+  MOVE32_F(Size,DataF)                                                //
+  CALL(TestRange,'SIZE               ',Result,DataF,DataF)            //
+  MOVE32_32(10,Size)                                                  //
+  ARRAY(RESIZE,hArray,Size)                                           //
+  ARRAY(SIZE,hArray,Elements)                                         //
+  MOVE32_F(Elements,Result)                                           //
+  MOVE32_F(Size,DataF)                                                //
+  CALL(TestRange,'RESIZE             ',Result,DataF,DataF)            //
+  ARRAY(FILL,hArray,55)                                               //
+  MUL32(Size,DataSize,Size)                                           //
+  SUB32(Size,DataSize,Place)                                          //
+  ARRAY(READ_CONTENT,DEBUG_SLOT,hArray,Place,1,Data8)                 //
+  MOVE8_F(Data8,Result)                                               //
+  MOVE8_F(55,DataF)                                                   //
+  CALL(TestRange,'FILL               ',Result,DataF,DataF)            //
+                                                                      //
+  ARRAY(CREATE32,0,hCopy)                                             //
+  ARRAY(COPY,hArray,hCopy)                                            //
+  ARRAY(READ_CONTENT,DEBUG_SLOT,hArray,Place,1,Data8)                 //
+  MOVE8_F(Data8,Result)                                               //
+  MOVE8_F(55,DataF)                                                   //
+  CALL(TestRange,'COPY               ',Result,DataF,DataF)            //
+                                                                      //
+  ARRAY(WRITE_CONTENT,DEBUG_SLOT,hArray,Place,1,77)                   //
+  ARRAY(READ_CONTENT,DEBUG_SLOT,hArray,Place,1,Data8)                 //
+  MOVE8_F(Data8,Result)                                               //
+  MOVE8_F(77,DataF)                                                   //
+  CALL(TestRange,'WRITE/READ_CONTENT ',Result,DataF,DataF)            //
+                                                                      //
+  ARRAY(READ_SIZE,DEBUG_SLOT,hArray,Data32)                           //
+  MOVE32_F(Data32,Result)                                             //
+  MOVE32_F(Size,DataF)                                                //
+  CALL(TestRange,'READ_SIZE          ',Result,DataF,DataF)            //
+                                                                      //
+/* Following generates compiler error
+  ARRAY(INIT32,hArray,Place,1,33)                                     //
+  ARRAY(READ_CONTENT,DEBUG_SLOT,hArray,Place,1,Data8)                 //
+  MOVE8_F(Data8,Result)                                               //
+  MOVE16_F(33,DataF)                                                  //
+  CALL(TestRange,'INIT32             ',Result,DataF,DataF)            //
+*/
+  DIV32(Size,DataSize,Size)                                           //
+  ADD32(Size,1,Place)                                                 //
+  ARRAY_WRITE(hArray,Place,99)                                        //
+  ARRAY_READ(hArray,Place,Data32)                                     //
+  MOVE32_F(Data32,Result)                                             //
+  MOVE32_F(99,DataF)                                                  //
+  CALL(TestRange,'ARRAY_WRITE/READ   ',Result,DataF,DataF)            //
+  ARRAY(SIZE,hArray,Elements)                                         //
+  MOVE32_F(Elements,Result)                                           //
+  ADD32(Place,1,Place)                                                //
+  MOVE32_F(Place,DataF)                                               //
+  CALL(TestRange,'SIZE               ',Result,DataF,DataF)            //
+                                                                      //
+  ARRAY_APPEND(hArray,54)                                             //
+  ARRAY_READ(hArray,Place,Data32)                                     //
+  MOVE32_F(Data32,Result)                                             //
+  MOVE32_F(54,DataF)                                                  //
+  CALL(TestRange,'ARRAY_APPEND       ',Result,DataF,DataF)            //
+  ARRAY(SIZE,hArray,Elements)                                         //
+  MOVE32_F(Elements,Result)                                           //
+  ADD32(Place,1,Place)                                                //
+  MOVE32_F(Place,DataF)                                               //
+  CALL(TestRange,'SIZE               ',Result,DataF,DataF)            //
+                                                                      //
+  ARRAY(DELETE,hCopy)                                                 //
+  ARRAY(DELETE,hArray)                                                //
+                                                                      //
+                                                                      //
+  CALL(TestWrite,' MEMORY ARRAY DATAF')                               //
+                                                                      //
+  MOVE32_32(4,DataSize)                                               //
+  MOVE32_32(0,Size)                                                   //
+  ARRAY(CREATEF,Size,hArray)                                          //
+  MOVE16_F(hArray,Result)                                             //
+  CALL(TestRange,'CREATEF  handle    ',Result,0.0F,249.0F)            //
+  ARRAY(SIZE,hArray,Elements)                                         //
+  MOVE32_F(Elements,Result)                                           //
+  MOVE32_F(Size,DataF)                                                //
+  CALL(TestRange,'SIZE               ',Result,DataF,DataF)            //
+  MOVE32_32(10,Size)                                                  //
+  ARRAY(RESIZE,hArray,Size)                                           //
+  ARRAY(SIZE,hArray,Elements)                                         //
+  MOVE32_F(Elements,Result)                                           //
+  MOVE32_F(Size,DataF)                                                //
+  CALL(TestRange,'RESIZE             ',Result,DataF,DataF)            //
+  ARRAY(FILL,hArray,11111.11111F)                                     //
+  MUL32(Size,DataSize,Size)                                           //
+  SUB32(Size,DataSize,Place)                                          //
+  ARRAY(READ_CONTENT,DEBUG_SLOT,hArray,Place,1,Data8)                 //
+  MOVE8_F(Data8,Result)                                               //
+  MOVE8_F(114,DataF)                                                  //
+  CALL(TestRange,'FILL               ',Result,DataF,DataF)            //
+                                                                      //
+  ARRAY(CREATEF,0,hCopy)                                              //
+  ARRAY(COPY,hArray,hCopy)                                            //
+  ARRAY(READ_CONTENT,DEBUG_SLOT,hArray,Place,1,Data8)                 //
+  MOVE8_F(Data8,Result)                                               //
+  MOVE8_F(114,DataF)                                                  //
+  CALL(TestRange,'COPY               ',Result,DataF,DataF)            //
+                                                                      //
+  ARRAY(WRITE_CONTENT,DEBUG_SLOT,hArray,Place,1,77)                   //
+  ARRAY(READ_CONTENT,DEBUG_SLOT,hArray,Place,1,Data8)                 //
+  MOVE8_F(Data8,Result)                                               //
+  MOVE8_F(77,DataF)                                                   //
+  CALL(TestRange,'WRITE/READ_CONTENT ',Result,DataF,DataF)            //
+                                                                      //
+  ARRAY(READ_SIZE,DEBUG_SLOT,hArray,Data32)                           //
+  MOVE32_F(Data32,Result)                                             //
+  MOVE32_F(Size,DataF)                                                //
+  CALL(TestRange,'READ_SIZE          ',Result,DataF,DataF)            //
+                                                                      //
+/* Following generates compiler error
+  ARRAY(INIT8,hArray,Place,1,33)                                      //
+  ARRAY(READ_CONTENT,DEBUG_SLOT,hArray,Place,1,Data8)                 //
+  MOVE8_F(Data8,Result)                                               //
+  MOVE8_F(33,DataF)                                                   //
+  CALL(TestRange,'INIT8              ',Result,DataF,DataF)            //
+*/
+  DIV32(Size,DataSize,Size)                                           //
+  ADD32(Size,1,Place)                                                 //
+  ARRAY_WRITE(hArray,Place,99.0F)                                     //
+  ARRAY_READ(hArray,Place,DataF)                                      //
+  MOVEF_F(DataF,Result)                                               //
+  MOVEF_F(99.0F,DataF)                                                //
+  CALL(TestRange,'ARRAY_WRITE/READ   ',Result,DataF,DataF)            //
+  ARRAY(SIZE,hArray,Elements)                                         //
+  MOVE32_F(Elements,Result)                                           //
+  ADD32(Place,1,Place)                                                //
+  MOVE32_F(Place,DataF)                                               //
+  CALL(TestRange,'SIZE               ',Result,DataF,DataF)            //
+                                                                      //
+  ARRAY_APPEND(hArray,54.0F)                                          //
+  ARRAY_READ(hArray,Place,DataF)                                      //
+  MOVEF_F(DataF,Result)                                               //
+  MOVEF_F(54.0F,DataF)                                                //
+  CALL(TestRange,'ARRAY_APPEND       ',Result,DataF,DataF)            //
+  ARRAY(SIZE,hArray,Elements)                                         //
+  MOVE32_F(Elements,Result)                                           //
+  ADD32(Place,1,Place)                                                //
+  MOVE32_F(Place,DataF)                                               //
+  CALL(TestRange,'SIZE               ',Result,DataF,DataF)            //
+                                                                      //
+  ARRAY(DELETE,hCopy)                                                 //
+  ARRAY(DELETE,hArray)                                                //
+                                                                      //
+  CALL(TestClose)                                                     //
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestRange                                                   //  void TestRange(Text,IstWert,Min,Max)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+  IN_F    IstWert                                                     //
+  IN_F    Min                                                         //
+  IN_F    Max                                                         //
+                                                                      //
+  DATAS   String LINE                                                 //
+  DATAS   Result LINE                                                 //
+                                                                      //
+  JR_LT32(IstWert,Min,Error)                                          //    if ((IstWert >= Min) &&
+  JR_GT32(IstWert,Max,Error)                                          //        (IstWert <= Max))
+                                                                      //    {
+  STRINGS(ADD,'  ',Text,String)                                       //      STRINGS(ADD,'  ',Text,String)
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  STRINGS(VALUE_TO_STRING,IstWert,-13,6,Result)                       //      STRINGS(VALUE_TO_STRING,IstWert,-13,6,Result)
+  STRINGS(ADD,String,Result,String)                                   //      STRINGS(ADD,String,Result,String)
+  STRINGS(ADD,String,']',String)                                      //      STRINGS(ADD,String,']',String)
+                                                                      //
+  JR(EndError)                                                        //    }
+                                                                      //    else
+Error:                                                                //    {
+  STRINGS(ADD,'# ',Text,String)                                       //      STRINGS(ADD,'# ',Text,String)
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  STRINGS(VALUE_TO_STRING,IstWert,-13,6,Result)                       //      STRINGS(VALUE_TO_STRING,IstWert,-13,6,Result)
+  STRINGS(ADD,String,Result,String)                                   //      STRINGS(ADD,String,Result,String)
+  STRINGS(ADD,String,'] (',String)                                    //      STRINGS(ADD,String,'] (',String)
+  STRINGS(VALUE_TO_STRING,Min,-13,6,Result)                           //      STRINGS(VALUE_TO_STRING,Min,-13,6,Result)
+  STRINGS(ADD,String,Result,String)                                   //      STRINGS(ADD,String,Result,String)
+  STRINGS(ADD,String,'<=X<=',String)                                  //      STRINGS(ADD,String,'<=X<=',String)
+  STRINGS(VALUE_TO_STRING,Max,-13,6,Result)                           //      STRINGS(VALUE_TO_STRING,Max,-13,6,Result)
+  STRINGS(ADD,String,Result,String)                                   //      STRINGS(ADD,String,Result,String)
+  STRINGS(ADD,String,')',String)                                      //      STRINGS(ADD,String,')',String)
+                                                                      //
+  // Set failed                                                       //
+	MEMORY_WRITE(GUI_SLOT,4,0,1,1)                                      //      MEMORY_WRITE(GUI_SLOT,4,0,1,1)
+                                                                      //
+EndError:                                                             //    }
+                                                                      //
+  CALL(TestWrite,String)                                              //    CALL(TestWrite,String)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestCheck                                                   //  void TestCheck(Text,IstWert,SollWert)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+  IN_S    IstWert LINE                                                //
+  IN_S    SollWert LINE                                               //
+                                                                      //
+  DATA8   Result                                                      //
+  DATAS   String LINE                                                 //
+                                                                      //
+  STRINGS(COMPARE,IstWert,SollWert,Result)                            //    STRINGS(COMPARE,IstWert,SollWert,Result)
+  JR_FALSE(Result,Error)                                              //    if (Result)
+                                                                      //    {
+  STRINGS(ADD,'  ',Text,String)                                       //      STRINGS(ADD,' ',Text,String)
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  STRINGS(ADD,String,IstWert,String)                                  //      STRINGS(ADD,String,IstWert,String)
+  STRINGS(ADD,String,']',String)                                      //      STRINGS(ADD,String,']',String)
+                                                                      //
+  JR(EndError)                                                        //    }
+                                                                      //    else
+Error:                                                                //    {
+                                                                      //
+  STRINGS(ADD,'# ',Text,String)                                       //      STRINGS(ADD,' ',Text,String) 
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  STRINGS(ADD,String,IstWert,String)                                  //      STRINGS(ADD,String,IstWert,String)
+  STRINGS(ADD,String,'] (',String)                                    //      STRINGS(ADD,String,'] (',String)
+  STRINGS(ADD,String,SollWert,String)                                 //      STRINGS(ADD,String,SollWert,String)
+  STRINGS(ADD,String,')',String)                                      //      STRINGS(ADD,String,')',String)
+                                                                      //
+  // Set failed                                                       //
+	MEMORY_WRITE(GUI_SLOT,4,0,1,1)                                      //      MEMORY_WRITE(GUI_SLOT,4,0,1,1)
+                                                                      //
+EndError:                                                             //    }
+                                                                      //
+  CALL(TestWrite,String)                                              //    CALL(TestWrite,String)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+DATA16    hFile                                                       //
+                                                                      //
+subcall   TestOpen                                                    //  void TestOpen(void)
+{                                                                     //  {
+  DATAS   TestReport FILENAMESIZE                                     //
+                                                                      //
+  STRINGS(ADD,TESTREPORT,EXT_TEXT,TestReport)                         //    STRINGS(ADD,TESTREPORT,EXT_TEXT,TestReport)
+  FILE(OPEN_APPEND,TestReport,hFile)                                  //    FILE(OPEN_APPEND,TestReport,hFile)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestWrite                                                   //  void TestWrite(Text)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+                                                                      //
+  FILE(WRITE_TEXT,hFile,DEL_CRLF,Text)                                //    FILE(WRITE_TEXT,hFile,DEL_CRLF,Text)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestClose                                                   //  void TestClose(void)
+{                                                                     //  {
+  FILE(CLOSE,hFile)                                                   //    FILE(CLOSE,hFile)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//! \endverbatim
+

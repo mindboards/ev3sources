@@ -1,0 +1,55 @@
+//! \page tst Test Template
+//!
+//!
+//! \verbatim
+
+
+define    US_PORT     1
+
+vmthread  MAIN
+{
+  DATAF   Tmp
+  DATAF   Count
+  DATA32  Timer
+  DATA8   Busy
+
+  MOVE8_F(0,Count)
+  INPUT_READSI(0,US_PORT,30,3,Tmp)
+
+  UI_DRAW(FILLWINDOW,BG_COLOR,0,0)                                    //      UI_DRAW(FILLWINDOW,BG_COLOR,0,0)
+  UI_DRAW(SELECT_FONT,1)
+  UI_DRAW(TEXT,FG_COLOR,0,5,' ULTRASONIC PING TEST')
+  UI_DRAW(SELECT_FONT,0)
+  UI_DRAW(TEXT,FG_COLOR,0,30,'Actual')
+  UI_DRAW(TEXT,FG_COLOR,0,50,'Changes')
+  UI_DRAW(TEXT,FG_COLOR,0,70,'Fired')
+  UI_DRAW(TEXT,FG_COLOR,0,100,'Press a button to fire')
+  UI_DRAW(UPDATE)
+
+Loop:
+
+  UI_BUTTON(WAIT_FOR_PRESS)
+  UI_BUTTON(FLUSH)
+  INPUT_WRITE(0,US_PORT,1,17)
+
+Wait:
+  INPUT_TEST(0,US_PORT,Busy)
+  JR_TRUE(Busy,Wait)
+
+  INPUT_READSI(0,US_PORT,30,3,Tmp)
+  UI_DRAW(VALUE,FG_COLOR,64,30,Tmp,6,1)
+
+  INPUT_DEVICE(GET_CHANGES,0,US_PORT,Tmp)
+  UI_DRAW(VALUE,FG_COLOR,64,50,Tmp,6,1)
+
+  MOVE8_F(1,Tmp)
+  ADDF(Tmp,Count,Count)
+  UI_DRAW(VALUE,FG_COLOR,64,70,Count,6,1)
+
+  UI_DRAW(UPDATE)
+//  TIMER_WAIT(250,Timer)
+//  TIMER_READY(Timer)
+  
+  JR(Loop)
+
+}

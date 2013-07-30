@@ -1,0 +1,172 @@
+to read-defines
+preprocess "bytecodes.h
+make "version 0
+loop 
+ [if eot? [stop]
+  def-line parse replace readline '\"' char 39]
+end
+
+to def-line :l
+if (count :l) < 3 [stop]
+if not (nth 0 :l) = "#define [stop]
+let [name nth 1 :l]
+if :name = "BYTECODE_VERSION [make "version int (last :l) * 100 stop]
+if not (substring :name 0 2) = "vm [stop] 
+make "name intern bf bf :name 
+put :name "type "define
+put :name "value nth 2 :l
+end
+
+to read-opdefs
+preprocess "bytecodes.c
+loop
+ [if eot? [stop]
+  read-opdef parse readline]
+end
+
+to read-opdef :l
+if (first :l) = "OC [read-OC :l]
+if (first :l) = "SC [read-SC :l]
+end
+
+to read-OC :l
+let [op intern bf bf nth 1 :l
+     args extract-args bf bf :l] 
+put :op "args :args
+end
+
+to read-SC :l
+let [op intern (word nth 1 :l "_ nth 2 :l)
+     args extract-args bf bf bf :l] 
+put :op "args :args
+end
+
+to extract-args :l
+repeat count :l 
+ [if not (last :l) = 0 [output :l]
+  make "l bl :l]
+output []
+end
+
+to read-enums
+preprocess "bytecodes.h
+enum-loop
+preprocess "bytecodes.c
+enum-loop
+end
+
+to enum-loop
+loop
+ [find-enum
+  if eot? [stop]
+  process-enum]
+end
+
+to find-enum
+loop
+ [if eot? [stop]
+  if member? "enum readline [stop]]
+end
+
+to process-enum
+let [l "]
+loop
+ [if eot? [stop]
+  make "l readline
+  if member? "} :l [stop]
+  process-enum-line parse :l]
+end
+
+to process-enum-line :l
+if not (count :l) = 3 [stop]
+if not (nth 1 :l) = "= [stop]
+enum-define nth 0 :l nth 2 :l
+end
+
+to enum-define :name :value
+ifelse (substring :name 0 2) = "op 
+ [put intern bf bf :name "op :value]
+ [put :name "type "enum
+  put :name "value :value]
+end
+
+to preprocess :x
+setread filetostring :x
+clean-up-crs
+remove-comments
+clean-up-whitespace
+end
+
+to remove-comments
+clearstringbuffer
+loop
+ [if eot? [setread stringbuffer stop]
+  rc-char getc]
+end
+
+to rc-char :c
+if :c = '(' [addtostringbuffer ' ' stop] 
+if :c = ')' [addtostringbuffer ' ' stop] 
+if :c = ',' [addtostringbuffer ' ' stop] 
+if :c = "/ [handle-slash stop]
+if :c = char 39 [handle-quote stop]
+addtostringbuffer :c
+end
+
+to handle-quote
+let [c "]
+addtostringbuffer char 39
+loop
+ [if eot? [addtostringbuffer char 39 stop]
+  make "c getc
+  if :c = char 39 [addtostringbuffer :c stop]
+  addtostringbuffer quote-escape :c]
+end
+
+to quote-escape :c
+if :c = char 32 [output "\s]
+if and :c = "\ peek = char 39 [ignore getc output "\q]
+if :c = char 9 [output "\t]
+output :c
+end
+
+to handle-slash
+if peek = "/ [skip-one-line-comment stop]
+if peek = "* [skip-multi-line-comment stop]
+addtostringbuffer "/
+end
+
+
+to skip-one-line-comment
+let [c "]
+loop
+ [if eot? [stop]
+  make "c getc
+  if :c = char 10 [addtostringbuffer :c stop]]
+end
+
+to skip-multi-line-comment
+let [c "]
+ignore getc
+ignore getc
+loop
+ [if eot? [stop]
+  make "c getc
+  if and :c = "* peek = "/ [ignore getc stop]]
+end
+
+to clean-up-crs
+setread replace lineread '\r\n|\r|\n' char 10
+end
+
+to clean-up-whitespace
+setread replace lineread '\n[\s\n]*\n' char 10
+setread replace lineread '^\n*' "
+setread replace lineread '[\n\t\s]*$' "
+setread replace lineread '[ \t]+' ' '
+setread replace lineread '\\s' ' '
+setread replace lineread '\s*=\s*\n\s*' ' '
+end
+
+
+define ignore [n][]

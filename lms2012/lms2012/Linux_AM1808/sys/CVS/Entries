@@ -1,0 +1,19 @@
+/10-lms.rules/1.1/Mon Aug  8 08:30:33 2011/-kb/
+/ctrl/1.2/Fri Sep  9 10:31:23 2011/-kb/
+/debug/1.1/Mon Aug  8 08:30:33 2011/-kb/
+/exit/1.11/Fri Apr 12 07:00:17 2013/-kb/
+/gdbinit/1.1/Mon Aug  8 08:30:33 2011/-kb/
+/init/1.12/Thu Aug 30 05:38:06 2012/-kb/
+/iwconfig/1.1/Thu Mar 15 13:35:06 2012/-kb/
+/iwlist/1.1/Thu Mar 15 13:35:06 2012/-kb/
+D/lib////
+/lms/1.1/Mon Aug  8 08:30:33 2011/-kb/
+/lms2012/1.204/Fri May 31 08:54:14 2013/-kb/
+D/mod////
+/run/1.1/Mon Aug  8 08:30:33 2011/-kb/
+D/settings////
+D/ui////
+/wpa_cli/1.1/Thu Mar 15 13:35:06 2012/-kb/
+/wpa_passphrase/1.1/Thu Mar 15 13:35:06 2012/-kb/
+/wpa_supplicant/1.1/Thu Mar 15 13:35:06 2012/-kb/
+/wpa_supplicant.conf/1.1/Thu Mar 15 13:35:06 2012/-kb/

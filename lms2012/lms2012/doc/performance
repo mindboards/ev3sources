@@ -1,0 +1,185 @@
+
+		p0	p5	p7	lf		lms2012 codesize
+
+v022		3.13	0.397	0.678	0.072		280419
+
+v022s		3.17	0.399	0.705	0.073		238655
+
+v022ss		3.21	0.350	0.683	0.074
+
+
+v022-v022s	+1.3%	+0.5%	+4.0%	+1.4%		-15%
+
+v022-v022ss	
+
+
+v022 opt	5.58	0.720	1.17	0.105		60348
+
+v022s opt	5.43	0.673	1.18	0.100		55595
+
+v022ss opt	5.62	0.683	1.21	0.104
+
+
+v022-v022s	-2.7%	-6.5%	-0.9%	-4.8%		-8%
+
+
+
+
+
+
+lms2012_v022_110208 running on ONE2ONE (reworked) SDcard (10 seconds - not optimized)
+------------------------------------------------------------------------------------------------
+	1	2	3	4	5	6	7	8	9	10	AVR
+
+p0	3.14	3.12	3.15	3.14	3.14	3.14	3.12	3.12	3.12	3.12	3.13
+
+p5	0.397	0.397	0.397	0.397	0.397	0.397	0.397	0.397	0.397	0.397	0.397
+
+p7	0.679	0.677	0.679	0.677	0.678	0.678	0.678	0.679	0.679	0.678	0.678
+
+lf	0.071	0.072	0.072	0.071	0.072	0.072	0.071	0.072	0.072	0.072	0.072
+
+
+-rwxr-xr-x    1 root     root       280419 Feb  9  2011 lms2012
+
+-rw-r--r--    1 root     root        55745 Feb  9  2011 libc_com.so
+-rw-r--r--    1 root     root        76660 Feb  9  2011 libc_input.so
+-rw-r--r--    1 root     root        53383 Feb  9  2011 libc_memory.so
+-rw-r--r--    1 root     root        68170 Feb  9  2011 libc_output.so
+-rw-r--r--    1 root     root        14904 Feb  9  2011 libc_sound.so
+-rw-r--r--    1 root     root       163634 Feb  9  2011 libc_ui.so
+-rw-r--r--    1 root     root         3854 Feb  9  2011 typedata
+
+-rw-r--r--    1 root     root        18600 Feb  9  2011 d_analog.ko
+-rw-r--r--    1 root     root        13280 Feb  9  2011 d_display.ko
+-rw-r--r--    1 root     root         7269 Feb  9  2011 d_power.ko
+-rw-r--r--    1 root     root         2578 Feb  9  2011 d_ppboard.ko
+-rw-r--r--    1 root     root        23409 Feb  9  2011 d_pwm.ko
+-rw-r--r--    1 root     root         4998 Feb  9  2011 d_tacho.ko
+-rw-r--r--    1 root     root        13078 Feb  9  2011 d_uart.ko
+-rw-r--r--    1 root     root        12898 Feb  9  2011 d_ui.ko
+-rw-r--r--    1 root     root        27763 Feb  9  2011 g_hid.ko
+
+				    840642
+
+
+lms2012_v022_110208 running on ONE2ONE (reworked) SDcard (10 seconds - optm.=-O3 debug=none)
+------------------------------------------------------------------------------------------------
+	1	2	3	4	5	6	7	8	9	10	AVR
+
+p0	5.47	5.66	5.66	5.58	5.59	5.58	5.58	5.56	5.57	5.57	5.58
+
+p5	0.704	0.724	0.724	0.724	0.725	0.720	0.720	0.719	0.719	0.720	0.720
+
+p7	1.14	1.17	1.17	1.17	1.17	1.16	1.17	1.17	1.17	1.17	1.17
+
+lf	0.101	0.105	0.105	0.106	0.106	0.106	0.104	0.105	0.106	0.106	0.105
+
+
+-rwxr-xr-x    1 root     root        60348 Feb  9  2011 lms2012
+
+-rw-r--r--    1 root     root         9068 Feb  9  2011 libc_com.so
+-rw-r--r--    1 root     root        20556 Feb  9  2011 libc_input.so
+-rw-r--r--    1 root     root         7635 Feb  9  2011 libc_memory.so
+-rw-r--r--    1 root     root        13666 Feb  9  2011 libc_output.so
+-rw-r--r--    1 root     root         5124 Feb  9  2011 libc_sound.so
+-rw-r--r--    1 root     root        36736 Feb  9  2011 libc_ui.so
+-rw-r--r--    1 root     root         3854 Feb  9  2011 typedata
+
+-rw-r--r--    1 root     root        18600 Feb  9  2011 d_analog.ko
+-rw-r--r--    1 root     root        13280 Feb  9  2011 d_display.ko
+-rw-r--r--    1 root     root         7269 Feb  9  2011 d_power.ko
+-rw-r--r--    1 root     root         2578 Feb  9  2011 d_ppboard.ko
+-rw-r--r--    1 root     root        23409 Feb  9  2011 d_pwm.ko
+-rw-r--r--    1 root     root         4998 Feb  9  2011 d_tacho.ko
+-rw-r--r--    1 root     root        13078 Feb  9  2011 d_uart.ko
+-rw-r--r--    1 root     root        12898 Feb  9  2011 d_ui.ko
+-rw-r--r--    1 root     root        27763 Feb  9  2011 g_hid.ko
+
+				    280860
+
+
+
+
+lms2012_v022S_110209 running on ONE2ONE (reworked) SDcard (10 seconds - not optimized)
+------------------------------------------------------------------------------------------------
+	1	2	3	4	5	6	7	8	9	10	AVR
+
+p0	3.16	3.17	3.17
+
+p5	0.399	0.399	0.399
+
+p7	0.706	0.706	0.704
+
+lf	0.073	0.073	0.073
+
+
+-rwxr-xr-x    1 root     root       238655 Feb  9  2011 lms2012
+
+-rw-r--r--    1 root     root        55761 Feb  9  2011 libc_com.so
+-rw-r--r--    1 root     root        76680 Feb  9  2011 libc_input.so
+-rw-r--r--    1 root     root        53411 Feb  9  2011 libc_memory.so
+-rw-r--r--    1 root     root        68186 Feb  9  2011 libc_output.so
+-rw-r--r--    1 root     root        14924 Feb  9  2011 libc_sound.so
+-rw-r--r--    1 root     root       163682 Feb  9  2011 libc_ui.so
+-rw-r--r--    1 root     root         3854 Feb  9  2011 typedata
+
+-rw-r--r--    1 root     root        18600 Feb  9  2011 d_analog.ko
+-rw-r--r--    1 root     root        13280 Feb  9  2011 d_display.ko
+-rw-r--r--    1 root     root         7269 Feb  9  2011 d_power.ko
+-rw-r--r--    1 root     root         2578 Feb  9  2011 d_ppboard.ko
+-rw-r--r--    1 root     root        23409 Feb  9  2011 d_pwm.ko
+-rw-r--r--    1 root     root         4998 Feb  9  2011 d_tacho.ko
+-rw-r--r--    1 root     root        13078 Feb  9  2011 d_uart.ko
+-rw-r--r--    1 root     root        12898 Feb  9  2011 d_ui.ko
+-rw-r--r--    1 root     root        27763 Feb  9  2011 g_hid.ko
+
+
+
+
+
+lms2012_v022s_110209 running on ONE2ONE (reworked) SDcard (10 seconds - optm.=-O3 debug=none)
+------------------------------------------------------------------------------------------------
+	1	2	3	4	5	6	7	8	9	10	AVR
+
+p0	5.39	5.49	5.42								5.43
+
+p5	0.672	0.672	0.674								0.673
+
+p7	1.18	1.18	1.18								1.18
+
+lf	0.100	0.099	0.100								0.100
+
+
+-rwxr-xr-x    1 root     root        55595 Feb  9  2011 lms2012
+
+-rw-r--r--    1 root     root         9068 Feb  9  2011 libc_com.so
+-rw-r--r--    1 root     root        20556 Feb  9  2011 libc_input.so
+-rw-r--r--    1 root     root         7635 Feb  9  2011 libc_memory.so
+-rw-r--r--    1 root     root        13666 Feb  9  2011 libc_output.so
+-rw-r--r--    1 root     root         5124 Feb  9  2011 libc_sound.so
+-rw-r--r--    1 root     root        36736 Feb  9  2011 libc_ui.so
+-rw-r--r--    1 root     root         3854 Feb  9  2011 typedata
+
+-rw-r--r--    1 root     root        18600 Feb  9  2011 d_analog.ko
+-rw-r--r--    1 root     root        13280 Feb  9  2011 d_display.ko
+-rw-r--r--    1 root     root         7269 Feb  9  2011 d_power.ko
+-rw-r--r--    1 root     root         2578 Feb  9  2011 d_ppboard.ko
+-rw-r--r--    1 root     root        23409 Feb  9  2011 d_pwm.ko
+-rw-r--r--    1 root     root         4998 Feb  9  2011 d_tacho.ko
+-rw-r--r--    1 root     root        13078 Feb  9  2011 d_uart.ko
+-rw-r--r--    1 root     root        12898 Feb  9  2011 d_ui.ko
+-rw-r--r--    1 root     root        27763 Feb  9  2011 g_hid.ko
+
+
+
+
+prg1	7381
+
+
+
+
+
+
+
+

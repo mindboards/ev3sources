@@ -1,0 +1,17 @@
+
+**** Build of configuration Linuxlib_AM1808 for project c_sound ****
+
+make all 
+Building file: ../source/c_sound.c
+Invoking: GCC C Compiler
+~/CodeSourcery/Sourcery_G++_Lite/bin/arm-none-linux-gnueabi-gcc -I"/home/al/projects/lms2012/lms2012/source" -O0 -Wall -c -fmessage-length=0 -fPIC -MMD -MP -MF"source/c_sound.d" -MT"source/c_sound.d" -o"source/c_sound.o" "../source/c_sound.c"
+Finished building: ../source/c_sound.c
+ 
+Building target: libc_sound.so
+Invoking: GCC C Linker
+~/CodeSourcery/Sourcery_G++_Lite/bin/arm-none-linux-gnueabi-gcc -shared -o"libc_sound.so"  ./source/c_sound.o   
+Finished building target: libc_sound.so
+ 
+make --no-print-directory post-build
+cp /home/al/projects/lms2012/c_sound/Linuxlib_AM1808/libc_sound.so /home/al/projects/lms2012/lms2012/Linux_AM1808/sys/lib/libc_sound.so; rm -r /home/al/projects/lms2012/c_sound/Linuxlib_AM1808
+ 

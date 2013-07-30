@@ -1,0 +1,178 @@
+/*
+ * LEGO® MINDSTORMS EV3
+ *
+ * Copyright (C) 2010-2013 The LEGO Group
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
+
+//  TCP 08.04.2013
+//! \page testpowerappcode Power Application
+//!
+//! <hr size="1"/>
+//!
+//! \verbatim
+//**********************************************************************
+define appv 'Power V1.02'                                             //
+//**********************************************************************
+                                                                      //
+                                                                      //
+vmthread  MAIN                                                        //  void    MAIN(void)
+{                                                                     //  {
+  DATA8   ShowVersion                                                 //
+                                                                      //
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //    UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+  JR_FALSE(ShowVersion,DontShowVersion)                               //    if (ShowVersion)
+                                                                      //    {
+  UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)                              //      UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)
+  UI_DRAW(RECT,FG_COLOR,6,52,166,24)                                  //      UI_DRAW(RECT,FG_COLOR,6,52,166,24)
+  UI_DRAW(TEXT,FG_COLOR,13,60,appv)                                   //      UI_DRAW(TEXT,FG_COLOR,13,60,appv)
+  UI_DRAW(UPDATE)                                                     //      UI_DRAW(UPDATE)
+                                                                      //
+ShowVersionWait:                                                      //      do
+                                                                      //      {  
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //        UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+                                                                      //      }
+  JR_TRUE(ShowVersion,ShowVersionWait)                                //      while (ShowVersion)
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //      UI_BUTTON(FLUSH)
+DontShowVersion:                                                      //    }  
+                                                                      //
+  UI_DRAW(RESTORE,0)                                                  //    UI_DRAW(RESTORE,0)
+  UI_DRAW(TOPLINE,0)                                                  //    UI_DRAW(TOPLINE,0)
+  UI_WRITE(LED,LED_GREEN)                                             //    UI_WRITE(LED,LED_GREEN)
+                                                                      //
+  CALL(TestPower)                                                     //    TestPower()
+                                                                      //
+  UI_DRAW(TOPLINE,1)                                                  //    UI_DRAW(TOPLINE,1)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestPower                                                   //  void TestPower(void)
+{                                                                     //  {
+  DATA32  Timer                                                       //
+  DATA8   Tmp                                                         //
+  DATA8   Fwd                                                         //
+  DATA8   Count                                                       //
+                                                                      //
+                                                                      //
+  UI_DRAW(FILLWINDOW,0x00,0,0                                         //    UI_DRAW(FILLWINDOW,0x00,0,0
+  UI_DRAW(SELECT_FONT,SMALL_FONT)                                     //    UI_DRAW(SELECT_FONT,SMALL_FONT)
+  UI_DRAW(TEXT,FG_COLOR,0,1,'Power')                                  //    UI_DRAW(TEXT,FG_COLOR,0,1,'Power')
+  UI_DRAW(LINE,FG_COLOR,0,TOPLINE_HEIGHT,LCD_WIDTH,TOPLINE_HEIGHT)    //    UI_DRAW(LINE,FG_COLOR,0,TOPLINE_HEIGHT,LCD_WIDTH,TOPLINE_HEIGHT)
+  UI_DRAW(SELECT_FONT,NORMAL_FONT)                                    //    UI_DRAW(SELECT_FONT,NORMAL_FONT)
+                                                                      //
+  MOVE8_8(0,Fwd)                                                      //    Fwd     =  0
+  MOVE8_8(20,Count)                                                   //    Count   =  0
+                                                                      //
+  OUTPUT_POWER(0,15,100)                                              //    OUTPUT_POWER(0,15,100)
+  OUTPUT_START(0,15)                                                  //    OUTPUT_START(0,15)
+                                                                      //
+                                                                      //    do
+Loop:                                                                 //    {
+                                                                      //
+  ADD8(Count,1,Count)                                                 //      Count++
+  JR_LT8(Count,20,NoChange)                                           //      if (Count >= 20
+                                                                      //      {
+  MOVE8_8(0,Count)                                                    //        Count  =  0
+  XOR8(1,Fwd,Fwd)                                                     //        Fwd   ^=  1
+                                                                      //
+  JR_FALSE(Fwd,NotFwd)                                                //        if (Fwd)
+                                                                      //        {
+  OUTPUT_POLARITY(0,15,1)                                             //          OUTPUT_POLARITY(0,15,1)
+                                                                      //        
+  JR(EndFwd)                                                          //        }
+                                                                      //        else
+NotFwd:                                                               //        {
+                                                                      //
+  OUTPUT_POLARITY(0,15,-1)                                            //          OUTPUT_POLARITY(0,15,-1)
+                                                                      //
+EndFwd:                                                               //        }
+NoChange:                                                             //      }
+                                                                      //
+  CALL(ShowPower,24,40)                                               //      ShowPower(24,40)
+                                                                      //
+  // Free VM to other stuff                                           //
+  TIMER_WAIT(250,Timer)                                               //      TIMER_WAIT(250,Timer)
+  TIMER_READY(Timer)                                                  //      TIMER_READY(Timer)
+                                                                      //
+  // Loop until "ENTER"                                               //
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+                                                                      //    }
+  JR_FALSE(Tmp,Loop)                                                  //    while (!Tmp)
+                                                                      //  
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   ShowPower                                                   //  void ShowPower(X,Y)
+{                                                                     //  {
+  IN_16   X                                                           //
+  IN_16   Y                                                           //
+                                                                      //
+  DATAF   Tbatt                                                       //
+  DATAF   Vbatt                                                       //
+  DATAF   Ibatt                                                       //
+  DATAF   Pbatt                                                       //
+  DATA16  Xpos                                                        //
+  DATA16  Ypos                                                        //
+                                                                      //
+                                                                      //
+  UI_READ(GET_TBATT,Tbatt)                                            //    UI_READ(GET_TBATT,Tbatt)
+  UI_READ(GET_VBATT,Vbatt)                                            //    UI_READ(GET_VBATT,Vbatt)
+  UI_READ(GET_IBATT,Ibatt)                                            //    UI_READ(GET_IBATT,Ibatt)
+                                                                      //
+  MULF(Vbatt,Ibatt,Pbatt)                                             //    MULF(Vbatt,Ibatt,Pbatt)
+                                                                      //
+  MOVE16_16(X,Xpos)                                                   //    Xpos  =  X
+  MOVE16_16(Y,Ypos)                                                   //    Ypos  =  Y
+                                                                      //
+  UI_DRAW(SELECT_FONT,SMALL_FONT)                                     //    UI_DRAW(SELECT_FONT,SMALL_FONT)
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'BATTERY:')                         //    UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'BATTERY:')
+  UI_DRAW(SELECT_FONT,NORMAL_FONT)                                    //    UI_DRAW(SELECT_FONT,NORMAL_FONT)
+                                                                      //
+  ADD16(Ypos,20,Ypos)                                                 //    Ypos +=  20
+  MOVE16_16(X,Xpos)                                                   //    Xpos  =  X
+                                                                      //
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,Vbatt,5,2)                         //    UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,Vbatt,5,2)
+  ADD16(Xpos,40,Xpos)                                                 //    Xpos +=  40
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'V')                                //    UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'V')
+  ADD16(Xpos,32,Xpos)                                                 //    Xpos +=  32
+                                                                      //
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,Ibatt,5,3)                         //    UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,Ibatt,5,3)
+  ADD16(Xpos,40,Xpos)                                                 //    Xpos +=  40
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'A')                                //    UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'A')
+                                                                      //
+  ADD16(Ypos,20,Ypos)                                                 //    Ypos +=  20
+  MOVE16_16(X,Xpos)                                                   //    Xpos  =  X
+                                                                      //
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,Tbatt,5,1)                         //    UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,Tbatt,5,1)
+  ADD16(Xpos,40,Xpos)                                                 //    Xpos +=  40
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'C')                                //    UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'C')
+                                                                      //
+  ADD16(Xpos,32,Xpos)                                                 //    Xpos +=  32
+                                                                      //
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,Pbatt,5,1)                         //    UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,Pbatt,5,1)
+  ADD16(Xpos,40,Xpos)                                                 //    Xpos +=  40
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'W')                                //    UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'W') 
+                                                                      //
+  // Update display                                                   //
+  UI_DRAW(UPDATE)                                                     //    UI_DRAW(UPDATE)
+                                                                      //
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//! \endverbatim

@@ -1,0 +1,7 @@
+#! /bin/sh
+
+cd /home/root/lms2012/sys
+./init
+./ctrl
+./exit
+

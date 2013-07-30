@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="312" key="DIALOG_WIDTH"/>
+		<item value="127" key="DIALOG_Y_ORIGIN"/>
+		<item value="437" key="DIALOG_HEIGHT"/>
+		<item value="927" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Ubuntu|11.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="true" key="wrap"/>
+		<item value="false" key="isRegEx"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="false" key="wholeword"/>
+		<item value="MODULE_LICENSE" key="selection"/>
+		<list key="findhistory">
+			<item value="MODULE_LICENSE"/>
+			<item value="Tommy Christian Pedersen"/>
+			<item value="pic"/>
+			<item value="printf"/>
+			<item value="i2c"/>
+			<item value="/home/al/projects/lms2012/open_first/ev3_firmware_v104E.bini2c"/>
+			<item value="MODE2_CHIP_INIT"/>
+			<item value="HER_AL"/>
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
+</section>

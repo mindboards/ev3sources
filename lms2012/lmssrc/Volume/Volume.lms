@@ -1,0 +1,162 @@
+/*
+ * LEGO® MINDSTORMS EV3
+ *
+ * Copyright (C) 2010-2013 The LEGO Group
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
+
+//  TCP 08.04.2013
+//! \page volumeappcode Volume Source Code
+//!
+//! <hr size="1"/>
+//!
+//! \verbatim
+//**********************************************************************
+define appv 'Volume V1.02'                                            //
+//**********************************************************************
+                                                                      //
+define    STEPS     10                                                //
+define    VALUES    (STEPS + 1)                                       //
+                                                                      //
+                                                                      //
+vmthread  MAIN                                                        //  void MAIN(void)
+{                                                                     //  {
+  DATAF   Data                                                        //
+  DATA16  Inc                                                         //
+  DATA16  Handle                                                      //
+  DATA8   Value                                                       //
+  DATA8   Index                                                       //
+  DATA8   State                                                       //
+  DATA8   Tmp                                                         //
+  DATAS   Text 16                                                     //
+  DATAS   Name FILENAMESIZE                                           //
+  DATAS   String FILENAMESIZE                                         //
+  ARRAY8  Values VALUES                                               //
+  DATA8   ShowVersion                                                 //
+                                                                      //
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //    UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+  JR_FALSE(ShowVersion,DontShowVersion)                               //    if (ShowVersion)
+                                                                      //    {
+  UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)                              //      UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)
+  UI_DRAW(RECT,FG_COLOR,6,52,166,24)                                  //      UI_DRAW(RECT,FG_COLOR,6,52,166,24)
+  UI_DRAW(TEXT,FG_COLOR,13,60,appv)                                   //      UI_DRAW(TEXT,FG_COLOR,13,60,appv)
+  UI_DRAW(UPDATE)                                                     //      UI_DRAW(UPDATE)
+                                                                      //
+ShowVersionWait:                                                      //      do
+                                                                      //      {  
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //        UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+                                                                      //      }
+  JR_TRUE(ShowVersion,ShowVersionWait)                                //      while (ShowVersion)
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //      UI_BUTTON(FLUSH)
+DontShowVersion:                                                      //    }  
+                                                                      //
+  UI_DRAW(RESTORE,0)                                                  //    UI_DRAW(RESTORE,0)
+  UI_DRAW(TOPLINE,1)                                                  //    UI_DRAW(TOPLINE,1)
+  UI_WRITE(LED,LED_GREEN)                                             //    UI_WRITE(LED,LED_GREEN)
+                                                                      //
+  WRITE8(0,0,Values)                                                  //    Values[0]   =  0
+  WRITE8(10,1,Values)                                                 //    Values[1]   =  10
+  WRITE8(20,2,Values)                                                 //    Values[2]   =  20
+  WRITE8(30,3,Values)                                                 //    Values[3]   =  30
+  WRITE8(40,4,Values)                                                 //    Values[4]   =  40
+  WRITE8(50,5,Values)                                                 //    Values[5]   =  50
+  WRITE8(60,6,Values)                                                 //    Values[6]   =  60
+  WRITE8(70,7,Values)                                                 //    Values[7]   =  70
+  WRITE8(80,8,Values)                                                 //    Values[8]   =  80
+  WRITE8(90,9,Values)                                                 //    Values[9]   =  90
+  WRITE8(100,10,Values)                                               //    Values[10]  =  100
+                                                                      //
+  // Get last Value                                                   //
+  INFO(GET_VOLUME,Value)                                              //    INFO(GET_VOLUME,Value)
+                                                                      //
+  MOVE8_8(0,Index)                                                    //    for (Index = 0;(Values[Index] != Value) && (Index < STEPS);Index++)
+Next:                                                                 //        
+  READ8(Values,Index,Tmp)                                             //
+  JR_EQ8(Tmp,Value,Found)                                             //
+  JR_GTEQ8(Index,STEPS,Next)                                          //    {
+  ADD8(1,Index,Index)                                                 //    }
+  JR(Next)                                                            //    
+Found:                                                                //
+                                                                      //    do
+Loop:                                                                 //    {
+                                                                      //
+  // Show popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,16,50,'144x32_POP1')                       //      Draw bitmap
+  UI_DRAW(BMPFILE,FG_COLOR,24,60,'icon')                              //      Draw bitmap
+                                                                      //
+  // Write text                                                       //                                                                      
+  UI_DRAW(TEXT,FG_COLOR,48,62,'Volume')                               //      UI_DRAW(TEXT,FG_COLOR,48,62,"Volume")
+                                                                      //
+  // Get left and right arrows                                        //
+  UI_BUTTON(GET_HORZ,Inc)                                             //      UI_BUTTON(GET_HORZ,Inc) 
+  MOVE16_8(Inc,Tmp)                                                   //      Tmp    =  Inc
+  ADD8(Tmp,Index,Index)                                               //      Index  =  Index + Tmp
+                                                                      //
+  // Limit steps                                                      // 
+  JR_GTEQ8(Index,0,GreatEnough)                                       //      if (Index < 0)
+                                                                      //      {
+  MOVE8_8(0,Index)                                                    //        Index  =  0
+GreatEnough:                                                          //      }
+  JR_LTEQ8(Index,STEPS,SmallEnough)                                   //      if (Index > STEPS)
+                                                                      //      {
+  MOVE8_8(STEPS,Index)                                                //        Index  =  STEPS
+SmallEnough:                                                          //      }
+                                                                      //
+  // Convert value and show                                           //
+  READ8(Values,Index,Value)                                           //      Value  =  Values[Index]
+  MOVE8_F(Value,Data)                                                 //      Data  =  Value
+  STRINGS(VALUE_TO_STRING,Data,3,0,Text)                              //      STRINGS(VALUE_TO_STRING,Data,3,0,Text)
+  STRINGS(ADD,Text,'%',Text)                                          //      STRINGS(ADD,Text,"%",Text)
+                                                                      //
+  UI_DRAW(TEXT,FG_COLOR,112,62,Text)                                  //      UI_DRAW(TEXT,FG_COLOR,112,62,Text)
+                                                                      //
+  // Draw arrows if valid                                             //
+  JR_LTEQ8(Index,0,NotGreatEnough)                                    //      if (Index > 0)
+                                                                      //      {
+  UI_DRAW(ICON,FG_COLOR,104,60,ARROW_ICON,ICON_LEFT)                  //        Draw bitmap
+                                                                      //
+NotGreatEnough:                                                       //      }
+  JR_GTEQ8(Index,STEPS,NotSmallEnough)                                //      if (Index < STEPS)
+                                                                      //      {
+  UI_DRAW(ICON,FG_COLOR,144,60,ARROW_ICON,ICON_RIGHT)                 //        Draw bitmap
+                                                                      //
+NotSmallEnough:                                                       //      }
+                                                                      //
+  // Update display                                                   //
+  UI_DRAW(UPDATE)                                                     //      UI_DRAW(UPDATE)
+                                                                      //
+  UI_BUTTON(WAIT_FOR_PRESS)                                           //      UI_BUTTON(WAIT_FOR_PRESS)
+                                                                      //
+  // Loop until "ENTER"                                               //                                                                      
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,State)                            //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,State)
+                                                                      //    }
+  JR_FALSE(State,Loop)                                                //    while (!State)
+                                                                      //
+  // Save newsleep settings                                           //                              
+  INFO(SET_VOLUME,Value)                                              //    INFO(SET_VOLUME,Value)
+                                                                      //
+  STRINGS(ADD,SETTINGS_DIR,'/',String)                                //    STRINGS(ADD,SETTINGS_DIR,'/',String)
+  STRINGS(ADD,String,'Volume.rtf',Name)                               //    STRINGS(ADD,String,'Volume.rtf',Name)
+  FILE(OPEN_WRITE,Name,Handle)                                        //    FILE(OPEN_WRITE,Name,Handle)
+  FILE(WRITE_TEXT,Handle,DEL_TAB,Text)                                //    FILE(WRITE_TEXT,Handle,DEL_TAB,Text)
+  FILE(CLOSE,Handle)                                                  //    FILE(CLOSE,Handle)
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//! \endverbatim

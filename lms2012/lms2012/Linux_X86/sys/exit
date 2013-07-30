@@ -1,0 +1,15 @@
+#! /bin/sh
+
+#rmmod d_bt
+#rmmod d_iic
+#rmmod d_sound
+#rmmod d_usbdev
+#rmmod d_usbhost
+#rmmod d_display
+#rmmod d_uart
+#rmmod d_ui
+#sudo rmmod d_analog
+#rmmod d_pwm
+#rmmod d_ppboard
+#rmmod d_power
+

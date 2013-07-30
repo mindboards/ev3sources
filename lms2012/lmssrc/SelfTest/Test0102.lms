@@ -1,0 +1,548 @@
+//! \page test0102app Test 0102 Application
+//!
+//! <hr size="1"/>
+//!
+//! \verbatim
+// 
+//
+//
+//**********************************************************************
+//        TEST0102 
+//**********************************************************************
+                                                                      //
+define    TESTREPORT  'TestReport'                                    //
+define    TESTSLOT    TERM_SLOT                                       //
+define    TESTPRG1    'TestPrg1'                                      //
+define    TESTPRG2    'TestPrg2'                                      //
+define    TESTBLOCKS  'TestPrg4'                                      //
+define    LINE        64                                              //
+                                                                      //
+DATA16    Counter                                                     //
+DATAS     TestFolder FILENAMESIZE                                     //
+                                                                      //
+vmthread  MAIN                                                        //  void    MAIN(void)
+{                                                                     //  {
+  CALL(Test0102)                                                      //    Test0102()
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   Test0102                                                    //  void Test0102(void)
+{                                                                     //  {
+  DATAF   Result                                                      //
+  DATA32  Size                                                        //
+  DATA32  Image                                                       //
+  DATA32  Speed                                                       //
+  DATA32  Timer                                                       //
+  DATA32  Count                                                       //
+  DATA16  Data16                                                      //
+  DATA16  Min                                                         //
+  DATA16  Max                                                         //
+  DATA8   Status                                                      //
+  DATA8   Error                                                       //
+  DATA8   Data8                                                       //
+  DATA8   Volume                                                      //
+  DATA8   Minutes                                                     //
+  DATA8   Layer                                                       //
+  DATA8   Bitfield                                                    //
+  DATA8   Inverted                                                    //
+  DATA8   Port                                                        //
+  DATAS   Text LINE                                                   //
+  DATAS   String LINE                                                 //
+  DATAS   TestPrg FILENAMESIZE                                        //
+                                                                      //
+  // Set success as default                                           //
+	MEMORY_WRITE(GUI_SLOT,4,0,1,0)                                      //    MEMORY_WRITE(GUI_SLOT,4,0,1,0)
+                                                                      //
+  CALL(TestOpen)                                                      //
+                                                                      //
+  CALL(TestWrite,' VM CONTROL')                                       //
+                                                                      //
+  MOVE16_16(0,Counter)                                                //  
+  OBJECT_START(Object1)                                               //
+  TIMER_WAIT(10,Timer)                                                //
+  TIMER_READY(Timer)                                                  //
+  JR_EQ16(0,Counter,Fail1)                                            //
+  STRINGS(DUPLICATE,'Running',String)                                 //
+  JR(EndFail1)                                                        //
+Fail1:                                                                //
+  STRINGS(DUPLICATE,'Stopped',String)                                 //
+EndFail1:                                                             //
+  CALL(TestCheck,'OBJECT_START       ',String,'Running')              //
+                                                                      //
+  OBJECT_STOP(Object1)                                                //
+  MOVE16_16(0,Counter)                                                //  
+  TIMER_WAIT(10,Timer)                                                //
+  TIMER_READY(Timer)                                                  //
+  JR_NEQ16(0,Counter,Fail2)                                           //
+  STRINGS(DUPLICATE,'Stopped',String)                                 //
+  JR(EndFail2)                                                        //
+Fail2:                                                                //
+  STRINGS(DUPLICATE,'Running',String)                                 //
+  OBJECT_STOP(Object1)                                                //
+EndFail2:                                                             //
+  CALL(TestCheck,'OBJECT_STOP        ',String,'Stopped')              //
+                                                                      //
+  MOVE16_16(0,Counter)                                                //  
+  OBJECT_START(Object1)                                               //
+  TIMER_WAIT(10,Timer)                                                //
+  TIMER_READY(Timer)                                                  //
+  JR_EQ16(0,Counter,Fail1b)                                           //
+  STRINGS(DUPLICATE,'Running',String)                                 //
+  JR(EndFail1b)                                                       //
+Fail1b:                                                               //
+  STRINGS(DUPLICATE,'Stopped',String)                                 //
+EndFail1b:                                                            //
+  CALL(TestCheck,'OBJECT_START       ',String,'Running')              //
+                                                                      //
+  OBJECT_STOP(Object1)                                                //
+  MOVE16_16(0,Counter)                                                //  
+  TIMER_WAIT(10,Timer)                                                //
+  TIMER_READY(Timer)                                                  //
+  JR_NEQ16(0,Counter,Fail2b)                                          //
+  STRINGS(DUPLICATE,'Stopped',String)                                 //
+  JR(EndFail2b)                                                       //
+Fail2b:                                                               //
+  STRINGS(DUPLICATE,'Running',String)                                 //
+  OBJECT_STOP(Object1)                                                //
+EndFail2b:                                                            //
+  CALL(TestCheck,'OBJECT_STOP        ',String,'Stopped')              //
+                                                                      //
+  MOVE16_16(0,Counter)                                                //  
+  PROGRAM_INFO(OBJ_START,DEBUG_SLOT,Object1)                          //
+  TIMER_WAIT(10,Timer)                                                //
+  TIMER_READY(Timer)                                                  //
+  JR_EQ16(0,Counter,Fail3)                                            //
+  STRINGS(DUPLICATE,'Running',String)                                 //
+  JR(EndFail3)                                                        //
+Fail3:                                                                //
+  STRINGS(DUPLICATE,'Stopped',String)                                 //
+EndFail3:                                                             //
+  CALL(TestCheck,'OBJ_START          ',String,'Running')              //
+                                                                      //
+  PROGRAM_INFO(OBJ_STOP,DEBUG_SLOT,Object1)                           //
+  MOVE16_16(0,Counter)                                                //  
+  TIMER_WAIT(10,Timer)                                                //
+  TIMER_READY(Timer)                                                  //
+  JR_NEQ16(0,Counter,Fail4)                                           //
+  STRINGS(DUPLICATE,'Stopped',String)                                 //
+  JR(EndFail4)                                                        //
+Fail4:                                                                //
+  STRINGS(DUPLICATE,'Running',String)                                 //
+  PROGRAM_INFO(OBJ_STOP,DEBUG_SLOT,Object1)                           //
+EndFail4:                                                             //
+  CALL(TestCheck,'OBJ_STOP           ',String,'Stopped')              //
+                                                                      //
+  MOVE16_16(0,Counter)                                                //  
+  PROGRAM_INFO(OBJ_START,DEBUG_SLOT,Object1)                          //
+  TIMER_WAIT(10,Timer)                                                //
+  TIMER_READY(Timer)                                                  //
+  JR_EQ16(0,Counter,Fail3b)                                           //
+  STRINGS(DUPLICATE,'Running',String)                                 //
+  JR(EndFail3b)                                                       //
+Fail3b:                                                               //
+  STRINGS(DUPLICATE,'Stopped',String)                                 //
+EndFail3b:                                                            //
+  CALL(TestCheck,'OBJ_START          ',String,'Running')              //
+                                                                      //
+  PROGRAM_INFO(OBJ_STOP,DEBUG_SLOT,Object1)                           //
+  MOVE16_16(0,Counter)                                                //  
+  TIMER_WAIT(10,Timer)                                                //
+  TIMER_READY(Timer)                                                  //
+  JR_NEQ16(0,Counter,Fail4b)                                          //
+  STRINGS(DUPLICATE,'Stopped',String)                                 //
+  JR(EndFail4b)                                                       //
+Fail4b:                                                               //
+  STRINGS(DUPLICATE,'Running',String)                                 //
+  PROGRAM_INFO(OBJ_STOP,DEBUG_SLOT,Object1)                           //
+EndFail4b:                                                            //
+  CALL(TestCheck,'OBJ_STOP           ',String,'Stopped')              //
+                                                                      //
+  FILENAME(GET_FOLDERNAME,FILENAMESIZE,TestFolder)                    //      FILENAME(GET_FOLDERNAME,FILENAMESIZE,TestFolder)
+  FILENAME(MERGE,TestFolder,TESTBLOCKS,EXT_BYTECODE,FILENAMESIZE,TestPrg)//
+  FILE(LOAD_IMAGE,TESTSLOT,TestPrg,Size,Image)                        //
+  PROGRAM_START(TESTSLOT,Size,Image,0)                                //
+  TIMER_WAIT(10,Timer)                                                //
+  TIMER_READY(Timer)                                                  //
+WaitBlocks:                                                           //
+  PROGRAM_INFO(GET_STATUS,TESTSLOT,Status)                            //
+  JR_EQ8(Status,RUNNING,WaitBlocks)                                   //
+
+  INFO(GET_ERROR,Status)                                              //
+  JR_NEQ8(Status,0,Fail14)                                            //
+  STRINGS(DUPLICATE,'Ok',String)                                      //
+  JR(EndFail14)                                                       //
+Fail14:                                                               //
+  STRINGS(DUPLICATE,'Not ok',String)                                  //
+EndFail14:                                                            //
+  CALL(TestCheck,'OBJECT_TRIG/WAIT   ',String,'Ok')                   //
+                                                                      //
+  FILENAME(GET_FOLDERNAME,FILENAMESIZE,TestFolder)                    //      FILENAME(GET_FOLDERNAME,FILENAMESIZE,TestFolder)
+  FILENAME(MERGE,TestFolder,TESTPRG1,EXT_BYTECODE,FILENAMESIZE,TestPrg)//
+  FILE(LOAD_IMAGE,TESTSLOT,TestPrg,Size,Image)                        //
+  PROGRAM_START(TESTSLOT,Size,Image,0)                                //
+  TIMER_WAIT(10,Timer)                                                //
+  TIMER_READY(Timer)                                                  //
+  PROGRAM_INFO(GET_STATUS,TESTSLOT,Status)                            //
+  JR_NEQ8(Status,RUNNING,Fail5)                                       //
+  STRINGS(DUPLICATE,'Running',String)                                 //
+  JR(EndFail5)                                                        //
+Fail5:                                                                //
+  STRINGS(DUPLICATE,'Not running',String)                             //
+EndFail5:                                                             //
+  CALL(TestCheck,'PROGRAM_START      ',String,'Running')              //
+                                                                      //
+  PROGRAM_INFO(GET_PRGRESULT,TESTSLOT,Status)                         //
+  JR_NEQ8(Status,BUSY,Fail7)                                          //
+  STRINGS(DUPLICATE,'Busy',String)                                    //
+  JR(EndFail7)                                                        //
+Fail7:                                                                //
+  STRINGS(DUPLICATE,'Not busy',String)                                //
+EndFail7:                                                             //
+  CALL(TestCheck,'GET_PRGRESULT      ',String,'Busy')                 //
+                                                                      //
+  PROGRAM_STOP(TESTSLOT)                                              //
+  TIMER_WAIT(10,Timer)                                                //
+  TIMER_READY(Timer)                                                  //
+  PROGRAM_INFO(GET_STATUS,TESTSLOT,Status)                            //
+  JR_NEQ8(Status,STOPPED,Fail6)                                       //
+  STRINGS(DUPLICATE,'Stopped',String)                                 //
+  JR(EndFail6)                                                        //
+Fail6:                                                                //
+  STRINGS(DUPLICATE,'Not stopped',String)                             //
+EndFail6:                                                             //
+  CALL(TestCheck,'PROGRAM_STOP       ',String,'Stopped')              //
+                                                                      //
+  PROGRAM_INFO(GET_PRGRESULT,TESTSLOT,Status)                         //
+  JR_NEQ8(Status,OK,Fail8)                                            //
+  STRINGS(DUPLICATE,'Ok',String)                                      //
+  JR(EndFail8)                                                        //
+Fail8:                                                                //
+  STRINGS(DUPLICATE,'Not ok',String)                                  //
+EndFail8:                                                             //
+  CALL(TestCheck,'GET_PRGRESULT      ',String,'Ok')                   //
+                                                                      //
+  FILENAME(GET_FOLDERNAME,FILENAMESIZE,TestFolder)                    //      FILENAME(GET_FOLDERNAME,FILENAMESIZE,TestFolder)
+  FILENAME(MERGE,TestFolder,TESTPRG2,EXT_BYTECODE,FILENAMESIZE,TestPrg)//
+  FILE(LOAD_IMAGE,TESTSLOT,TestPrg,Size,Image)                        //
+  PROGRAM_START(TESTSLOT,Size,Image,0)                                //
+  TIMER_WAIT(10,Timer)                                                //
+  TIMER_READY(Timer)                                                  //
+  PROGRAM_INFO(GET_PRGRESULT,TESTSLOT,Status)                         //
+  JR_NEQ8(Status,FAIL,Fail9)                                          //
+  STRINGS(DUPLICATE,'Fail',String)                                    //
+  INFO(GET_ERROR,Status)                                              //
+  JR(EndFail9)                                                        //
+Fail9:                                                                //
+  STRINGS(DUPLICATE,'Not fail',String)                                //
+EndFail9:                                                             //
+  CALL(TestCheck,'GET_PRGRESULT      ',String,'Fail')                 //
+                                                                      //
+  PROGRAM_INFO(GET_SPEED,TESTSLOT,Speed)                              //
+  JR_LT32(Speed,1000,Fail10)                                          //
+  STRINGS(DUPLICATE,'>=1000',String)                                  //
+  JR(EndFail10)                                                       //
+Fail10:                                                               //
+  STRINGS(DUPLICATE,'<1000',String)                                   //
+EndFail10:                                                            //
+  CALL(TestCheck,'GET_SPEED          ',String,'>=1000')               //
+                                                                      //
+  CALL(TestWrite,' VM INFO')                                          //
+                                                                      //
+  INFO(SET_ERROR,33)                                                  //                            
+  INFO(GET_ERROR,Error)                                               //
+  MOVE8_16(Error,Data16)                                              //
+  STRINGS(NUMBER_TO_STRING,Data16,4,String)                           //
+  CALL(TestCheck,'GET_ERROR          ',String,'0033')                 //
+                                                                      //
+  INFO(ERRORTEXT,Error,LINE,String)                                   //
+  CALL(TestCheck,'ERRORTEXT          ',String,'OUT_OF_MEMORY')        //
+                                                                      //
+  INFO(ERRORTEXT,0,LINE,String)                                       //
+  CALL(TestCheck,'ERRORTEXT          ',String,'')                     //
+                                                                      //
+  INFO(GET_VOLUME,Volume)                                             //
+  INFO(SET_VOLUME,0)                                                  //
+  INFO(GET_VOLUME,Data8)                                              //
+  MOVE8_16(Data8,Data16)                                              //
+  INFO(SET_VOLUME,Volume)                                             //
+  STRINGS(NUMBER_TO_STRING,Data16,4,String)                           //
+  CALL(TestCheck,'GET_VOLUME         ',String,'0000')                 //
+                                                                      //
+  INFO(GET_VOLUME,Volume)                                             //
+  INFO(SET_VOLUME,100)                                                //
+  INFO(GET_VOLUME,Data8)                                              //
+  MOVE8_16(Data8,Data16)                                              //
+  INFO(SET_VOLUME,Volume)                                             //
+  STRINGS(NUMBER_TO_STRING,Data16,4,String)                           //
+  CALL(TestCheck,'GET_VOLUME         ',String,'0100')                 //
+                                                                      //
+  INFO(GET_MINUTES,Minutes)                                           //
+  INFO(SET_MINUTES,0)                                                 //
+  INFO(GET_MINUTES,Data8)                                             //
+  MOVE8_16(Data8,Data16)                                              //
+  INFO(SET_MINUTES,Minutes)                                           //
+  STRINGS(NUMBER_TO_STRING,Data16,4,String)                           //
+  CALL(TestCheck,'GET_MINUTES        ',String,'0000')                 //
+                                                                      //
+  INFO(GET_MINUTES,Minutes)                                           //
+  INFO(SET_MINUTES,120)                                               //
+  INFO(GET_MINUTES,Data8)                                             //
+  MOVE8_16(Data8,Data16)                                              //
+  INFO(SET_MINUTES,Minutes)                                           //
+  STRINGS(NUMBER_TO_STRING,Data16,4,String)                           //
+  CALL(TestCheck,'GET_MINUTES        ',String,'0120')                 //
+                                                                      //
+  CALL(TestWrite,' VM RANDOM')                                        //
+                                                                      //
+  MOVE32_32(0,Count)                                                  //
+Loop1:                                                                //
+  MOVE16_16(10,Min)                                                   //
+  MOVE16_16(20,Max)                                                   //
+  RANDOM(Min,Max,Data16)                                              //
+  JR_LT16(Data16,Min,Fail11)                                          //
+  JR_GT16(Data16,Max,Fail11)                                          //
+  ADD32(Count,1,Count)                                                //
+  JR_LT32(Count,100,Loop1)                                            //
+  STRINGS(DUPLICATE,'Ok',String)                                      //
+  JR(EndFail11)                                                       //
+Fail11:                                                               //
+  STRINGS(NUMBER_TO_STRING,Data16,6,String)                           //
+EndFail11:                                                            //
+  CALL(TestCheck,'>= 10     <= 20    ',String,'Ok')                   //
+                                                                      //
+  MOVE32_32(0,Count)                                                  //
+Loop2:                                                                //
+  MOVE16_16(-20,Min)                                                  //
+  MOVE16_16(-10,Max)                                                  //
+  RANDOM(Min,Max,Data16)                                              //
+  JR_LT16(Data16,Min,Fail12)                                          //
+  JR_GT16(Data16,Max,Fail12)                                          //
+  ADD32(Count,1,Count)                                                //
+  JR_LT32(Count,100,Loop2)                                            //
+  STRINGS(DUPLICATE,'Ok',String)                                      //
+  JR(EndFail12)                                                       //
+Fail12:                                                               //
+  STRINGS(NUMBER_TO_STRING,Data16,6,String)                           //
+EndFail12:                                                            //
+  CALL(TestCheck,'>=-20     <=-10    ',String,'Ok')                   //
+                                                                      //
+  MOVE32_32(0,Count)                                                  //
+Loop3:                                                                //
+  MOVE16_16(0,Min)                                                    //
+  MOVE16_16(1,Max)                                                    //
+  RANDOM(Min,Max,Data16)                                              //
+  JR_LT16(Data16,Min,Fail13)                                          //
+  JR_GT16(Data16,Max,Fail13)                                          //
+  ADD32(Count,1,Count)                                                //
+  JR_LT32(Count,100,Loop3)                                            //
+  STRINGS(DUPLICATE,'Ok',String)                                      //
+  JR(EndFail13)                                                       //
+Fail13:                                                               //
+  STRINGS(NUMBER_TO_STRING,Data16,6,String)                           //
+EndFail13:                                                            //
+  CALL(TestCheck,'>= 0      <= 1     ',String,'Ok')                   //
+                                                                      //
+  CALL(TestWrite,' VM PORT_CNV_OUTPUT')                               //
+                                                                      //
+  PORT_CNV_OUTPUT(101,Layer,Bitfield,Inverted)                        //
+  MOVE8_16(Layer,Data16)                                              //
+  STRINGS(NUMBER_TO_STRING,Data16,4,String)                           //
+  MOVE8_16(Bitfield,Data16)                                           //
+  STRINGS(NUMBER_TO_STRING,Data16,4,Text)                             //
+  STRINGS(ADD,String,Text,String)                                     //
+  MOVE8_16(Inverted,Data16)                                           //
+  STRINGS(NUMBER_TO_STRING,Data16,4,Text)                             //
+  STRINGS(ADD,String,Text,String)                                     //
+  CALL(TestCheck,'101                ',String,'000000010000')         //
+                                                                      //
+  PORT_CNV_OUTPUT(102,Layer,Bitfield,Inverted)                        //
+  MOVE8_16(Layer,Data16)                                              //
+  STRINGS(NUMBER_TO_STRING,Data16,4,String)                           //
+  MOVE8_16(Bitfield,Data16)                                           //
+  STRINGS(NUMBER_TO_STRING,Data16,4,Text)                             //
+  STRINGS(ADD,String,Text,String)                                     //
+  MOVE8_16(Inverted,Data16)                                           //
+  STRINGS(NUMBER_TO_STRING,Data16,4,Text)                             //
+  STRINGS(ADD,String,Text,String)                                     //
+  CALL(TestCheck,'102                ',String,'000000020000')         //
+                                                                      //
+  PORT_CNV_OUTPUT(103,Layer,Bitfield,Inverted)                        //
+  MOVE8_16(Layer,Data16)                                              //
+  STRINGS(NUMBER_TO_STRING,Data16,4,String)                           //
+  MOVE8_16(Bitfield,Data16)                                           //
+  STRINGS(NUMBER_TO_STRING,Data16,4,Text)                             //
+  STRINGS(ADD,String,Text,String)                                     //
+  MOVE8_16(Inverted,Data16)                                           //
+  STRINGS(NUMBER_TO_STRING,Data16,4,Text)                             //
+  STRINGS(ADD,String,Text,String)                                     //
+  CALL(TestCheck,'103                ',String,'000000040000')         //
+                                                                      //
+  PORT_CNV_OUTPUT(104,Layer,Bitfield,Inverted)                        //
+  MOVE8_16(Layer,Data16)                                              //
+  STRINGS(NUMBER_TO_STRING,Data16,4,String)                           //
+  MOVE8_16(Bitfield,Data16)                                           //
+  STRINGS(NUMBER_TO_STRING,Data16,4,Text)                             //
+  STRINGS(ADD,String,Text,String)                                     //
+  MOVE8_16(Inverted,Data16)                                           //
+  STRINGS(NUMBER_TO_STRING,Data16,4,Text)                             //
+  STRINGS(ADD,String,Text,String)                                     //
+  CALL(TestCheck,'104                ',String,'000000080000')         //
+                                                                      //
+  PORT_CNV_OUTPUT(112,Layer,Bitfield,Inverted)                        //
+  MOVE8_16(Layer,Data16)                                              //
+  STRINGS(NUMBER_TO_STRING,Data16,4,String)                           //
+  MOVE8_16(Bitfield,Data16)                                           //
+  STRINGS(NUMBER_TO_STRING,Data16,4,Text)                             //
+  STRINGS(ADD,String,Text,String)                                     //
+  MOVE8_16(Inverted,Data16)                                           //
+  STRINGS(NUMBER_TO_STRING,Data16,4,Text)                             //
+  STRINGS(ADD,String,Text,String)                                     //
+  CALL(TestCheck,'112                ',String,'000000030000')         //
+                                                                      //
+  PORT_CNV_OUTPUT(121,Layer,Bitfield,Inverted)                        //
+  MOVE8_16(Layer,Data16)                                              //
+  STRINGS(NUMBER_TO_STRING,Data16,4,String)                           //
+  MOVE8_16(Bitfield,Data16)                                           //
+  STRINGS(NUMBER_TO_STRING,Data16,4,Text)                             //
+  STRINGS(ADD,String,Text,String)                                     //
+  MOVE8_16(Inverted,Data16)                                           //
+  STRINGS(NUMBER_TO_STRING,Data16,4,Text)                             //
+  STRINGS(ADD,String,Text,String)                                     //
+  CALL(TestCheck,'121                ',String,'000000030001')         //
+                                                                      //
+  PORT_CNV_OUTPUT(110,Layer,Bitfield,Inverted)                        //
+  MOVE8_16(Layer,Data16)                                              //
+  STRINGS(NUMBER_TO_STRING,Data16,4,String)                           //
+  MOVE8_16(Bitfield,Data16)                                           //
+  STRINGS(NUMBER_TO_STRING,Data16,4,Text)                             //
+  STRINGS(ADD,String,Text,String)                                     //
+  MOVE8_16(Inverted,Data16)                                           //
+  STRINGS(NUMBER_TO_STRING,Data16,4,Text)                             //
+  STRINGS(ADD,String,Text,String)                                     //
+  CALL(TestCheck,'110                ',String,'000000010001')         //
+                                                                      //
+  PORT_CNV_OUTPUT(404,Layer,Bitfield,Inverted)                        //
+  MOVE8_16(Layer,Data16)                                              //
+  STRINGS(NUMBER_TO_STRING,Data16,4,String)                           //
+  MOVE8_16(Bitfield,Data16)                                           //
+  STRINGS(NUMBER_TO_STRING,Data16,4,Text)                             //
+  STRINGS(ADD,String,Text,String)                                     //
+  MOVE8_16(Inverted,Data16)                                           //
+  STRINGS(NUMBER_TO_STRING,Data16,4,Text)                             //
+  STRINGS(ADD,String,Text,String)                                     //
+  CALL(TestCheck,'404                ',String,'000300080000')         //
+                                                                      //
+  CALL(TestWrite,' VM PORT_CNV_INPUT')                                //
+                                                                      //
+  PORT_CNV_INPUT(101,Layer,Port)                                      //
+  MOVE8_16(Layer,Data16)                                              //
+  STRINGS(NUMBER_TO_STRING,Data16,4,String)                           //
+  MOVE8_16(Port,Data16)                                               //
+  STRINGS(NUMBER_TO_STRING,Data16,4,Text)                             //
+  STRINGS(ADD,String,Text,String)                                     //
+  CALL(TestCheck,'101                ',String,'00000000')             //
+                                                                      //
+  PORT_CNV_INPUT(404,Layer,Port)                                      //
+  MOVE8_16(Layer,Data16)                                              //
+  STRINGS(NUMBER_TO_STRING,Data16,4,String)                           //
+  MOVE8_16(Port,Data16)                                               //
+  STRINGS(NUMBER_TO_STRING,Data16,4,Text)                             //
+  STRINGS(ADD,String,Text,String)                                     //
+  CALL(TestCheck,'404                ',String,'00030003')             //
+                                                                      //
+  CALL(TestWrite,' VM NOTE_TO_FREQ')                                  //
+                                                                      //
+  NOTE_TO_FREQ('C4',Data16)                                           //
+  STRINGS(NUMBER_TO_STRING,Data16,6,String)                           //
+  CALL(TestCheck,'C4                 ',String,'000262')               //
+                                                                      //
+  NOTE_TO_FREQ('B6',Data16)                                           //
+  STRINGS(NUMBER_TO_STRING,Data16,6,String)                           //
+  CALL(TestCheck,'B6                 ',String,'001976')               //
+                                                                      //
+  NOTE_TO_FREQ('C#4',Data16)                                          //
+  STRINGS(NUMBER_TO_STRING,Data16,6,String)                           //
+  CALL(TestCheck,'C#4                ',String,'000277')               //
+                                                                      //
+  NOTE_TO_FREQ('A#6',Data16)                                          //
+  STRINGS(NUMBER_TO_STRING,Data16,6,String)                           //
+  CALL(TestCheck,'A#6                ',String,'001865')               //
+                                                                      //
+  CALL(TestClose)                                                     //
+}                                                                     //  }
+                                                                      //
+                                                                      //
+vmthread  Object1                                                     //  void    Object1(void)
+{                                                                     //  {
+                                                                      //    do
+Loop:                                                                 //    {
+  ADD16(1,Counter,Counter)                                            //      Counter++
+                                                                      //    }
+  JR(Loop)                                                            //    while (TRUE)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestCheck                                                   //  void TestCheck(Text,IstWert,SollWert)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+  IN_S    IstWert LINE                                                //
+  IN_S    SollWert LINE                                               //
+                                                                      //
+  DATA8   Result                                                      //
+  DATAS   String LINE                                                 //
+                                                                      //
+  STRINGS(COMPARE,IstWert,SollWert,Result)                            //    STRINGS(COMPARE,IstWert,SollWert,Result)
+  JR_FALSE(Result,Error)                                              //    if (Result)
+                                                                      //    {
+  STRINGS(ADD,'  ',Text,String)                                       //      STRINGS(ADD,' ',Text,String)
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  STRINGS(ADD,String,IstWert,String)                                  //      STRINGS(ADD,String,IstWert,String)
+  STRINGS(ADD,String,']',String)                                      //      STRINGS(ADD,String,']',String)
+                                                                      //
+  JR(EndError)                                                        //    }
+                                                                      //    else
+Error:                                                                //    {
+                                                                      //
+  STRINGS(ADD,'# ',Text,String)                                       //      STRINGS(ADD,' ',Text,String) 
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  STRINGS(ADD,String,IstWert,String)                                  //      STRINGS(ADD,String,IstWert,String)
+  STRINGS(ADD,String,'] (',String)                                    //      STRINGS(ADD,String,'] (',String)
+  STRINGS(ADD,String,SollWert,String)                                 //      STRINGS(ADD,String,SollWert,String)
+  STRINGS(ADD,String,')',String)                                      //      STRINGS(ADD,String,')',String)
+                                                                      //
+  // Set failed                                                       //
+	MEMORY_WRITE(GUI_SLOT,4,0,1,1)                                      //      MEMORY_WRITE(GUI_SLOT,4,0,1,1)
+                                                                      //
+EndError:                                                             //    }
+                                                                      //
+  CALL(TestWrite,String)                                              //    CALL(TestWrite,String)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+DATA16    hFile                                                       //
+                                                                      //
+subcall   TestOpen                                                    //  void TestOpen(void)
+{                                                                     //  {
+  DATAS   TestReport FILENAMESIZE                                     //
+                                                                      //
+  STRINGS(ADD,TESTREPORT,EXT_TEXT,TestReport)                         //    STRINGS(ADD,TESTREPORT,EXT_TEXT,TestReport)
+  FILE(OPEN_APPEND,TestReport,hFile)                                  //    FILE(OPEN_APPEND,TestReport,hFile)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestWrite                                                   //  void TestWrite(Text)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+                                                                      //
+  FILE(WRITE_TEXT,hFile,DEL_CRLF,Text)                                //    FILE(WRITE_TEXT,hFile,DEL_CRLF,Text)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestClose                                                   //  void TestClose(void)
+{                                                                     //  {
+  FILE(CLOSE,hFile)                                                   //    FILE(CLOSE,hFile)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//! \endverbatim
+

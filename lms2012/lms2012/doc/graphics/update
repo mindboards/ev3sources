@@ -1,0 +1,1902 @@
+#! /bin/bash
+
+bmpext=".bmp"
+rsoext=".rsf"
+rsfext=".rsf"
+
+#*****************************************************************************
+# COPY GRAPHICS TO c_ui
+#*****************************************************************************
+
+srcpath="BITMAPS/GEN_NAV/"
+dstpath="../../../lmssrc/c_ui/"
+
+srcfile="144x65_POP3"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${srcfile}${bmpext}
+
+srcfile="144x48_POP2"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${srcfile}${bmpext}
+
+srcfile="16x8_TopBar_Icons"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${srcfile}${bmpext}
+
+srcfile="24x22_Yes_No_OFF_FILEOps"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${srcfile}${bmpext}
+
+srcfile="16x12_MenuItems"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${srcfile}${bmpext}
+
+srcfile="24x12_Files_Folders_Settings"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${srcfile}${bmpext}
+
+srcfile="8x12_miniArrows"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${srcfile}${bmpext}
+
+srcfile="brick_font_2011_v1.3-bold"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${srcfile}${bmpext}
+
+srcfile="brick_font_2011_v1.3-regular"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${srcfile}${bmpext}
+
+srcfile="brick_font_LARGE"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${srcfile}${bmpext}
+
+srcfile="small_font"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${srcfile}${bmpext}
+
+srcfile="KEY_CAPCHAR"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${srcfile}${bmpext}
+
+srcfile="KEY_NumSymb"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${srcfile}${bmpext}
+
+srcfile="KEY_SmCHAR"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${srcfile}${bmpext}
+
+srcfile="mindstorms"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${srcfile}${bmpext}
+
+srcfile="Ani1x"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${srcfile}${bmpext}
+
+srcfile="Ani2x"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${srcfile}${bmpext}
+
+srcfile="Ani3x"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${srcfile}${bmpext}
+
+srcfile="Ani4x"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${srcfile}${bmpext}
+
+srcfile="Ani5x"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${srcfile}${bmpext}
+
+srcfile="Ani6x"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${srcfile}${bmpext}
+
+srcfile="24x12_PCApp"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${srcfile}${bmpext}
+
+
+#*****************************************************************************
+# COPY GRAPHICS TO ui
+#*****************************************************************************
+
+srcpath="BITMAPS/GEN_NAV/"
+dstpath="../../../lmssrc/ui/"
+
+srcfile="mindstorms"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${srcfile}${bmpext}
+
+srcfile="Ani1x"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${srcfile}${bmpext}
+
+srcfile="89x178_MainMenuBottom"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${srcfile}${bmpext}
+
+srcfile="178x26_PLAYLAST_TAB"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${srcfile}${bmpext}
+
+srcfile="178x26_FILE_TAB"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${srcfile}${bmpext}
+
+srcfile="178x26_APPS_TAB"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${srcfile}${bmpext}
+
+srcfile="178x26_SETTINGS_TAB"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${srcfile}${bmpext}
+
+srcfile="144x65_POP3"
+echo copy ${srcpath}${srcfile}${bmpext} to "${dstpath}"${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} "${dstpath}"${srcfile}${bmpext}
+
+srcfile="144x82_POP4"
+echo copy ${srcpath}${srcfile}${bmpext} to "${dstpath}"${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} "${dstpath}"${srcfile}${bmpext}
+
+# SOUNDS
+
+srcpath="BITMAPS/SOUNDS/"
+dstpath="../../../lmssrc/ui/"
+
+srcfile="Click"
+echo copy ${srcpath}${srcfile}${rsfext} to "${dstpath}"${srcfile}${rsfext}
+cp ${srcpath}${srcfile}${rsfext} "${dstpath}"${srcfile}${rsfext}
+
+srcfile="DownloadSucces"
+echo copy ${srcpath}${srcfile}${rsfext} to "${dstpath}"${srcfile}${rsfext}
+cp ${srcpath}${srcfile}${rsfext} "${dstpath}"${srcfile}${rsfext}
+
+srcfile="GeneralAlarm"
+echo copy ${srcpath}${srcfile}${rsfext} to "${dstpath}"${srcfile}${rsfext}
+cp ${srcpath}${srcfile}${rsfext} "${dstpath}"${srcfile}${rsfext}
+
+srcfile="OverpowerAlert"
+echo copy ${srcpath}${srcfile}${rsfext} to "${dstpath}"${srcfile}${rsfext}
+cp ${srcpath}${srcfile}${rsfext} "${dstpath}"${srcfile}${rsfext}
+
+srcfile="PowerDown"
+echo copy ${srcpath}${srcfile}${rsfext} to "${dstpath}"${srcfile}${rsfext}
+cp ${srcpath}${srcfile}${rsfext} "${dstpath}"${srcfile}${rsfext}
+
+srcfile="Startup"
+echo copy ${srcpath}${srcfile}${rsfext} to "${dstpath}"${srcfile}${rsfext}
+cp ${srcpath}${srcfile}${rsfext} "${dstpath}"${srcfile}${rsfext}
+
+
+#*****************************************************************************
+# COPY GRAPHICS TO Bluetooth
+#*****************************************************************************
+
+srcpath="BITMAPS/GEN_NAV/"
+dstpath="../../../lmssrc/Bluetooth/"
+
+srcfile="Sep_Span"
+dstfile="BluetoothIcon"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${dstfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${dstfile}${bmpext}
+
+srcfile="144x48_POP2"
+echo copy ${srcpath}${srcfile}${bmpext} to "${dstpath}"${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} "${dstpath}"${srcfile}${bmpext}
+
+srcfile="144x65_POP3"
+echo copy ${srcpath}${srcfile}${bmpext} to "${dstpath}"${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} "${dstpath}"${srcfile}${bmpext}
+
+srcfile="144x82_POP4"
+echo copy ${srcpath}${srcfile}${bmpext} to "${dstpath}"${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} "${dstpath}"${srcfile}${bmpext}
+
+srcfile="144x99_POP5"
+echo copy ${srcpath}${srcfile}${bmpext} to "${dstpath}"${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} "${dstpath}"${srcfile}${bmpext}
+
+srcfile="144x116_POP6"
+echo copy ${srcpath}${srcfile}${bmpext} to "${dstpath}"${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} "${dstpath}"${srcfile}${bmpext}
+
+srcfile="mode2"
+echo copy ${srcpath}${srcfile}${bmpext} to "${dstpath}"${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} "${dstpath}"${srcfile}${bmpext}
+
+# SOUNDS
+
+srcpath="BITMAPS/SOUNDS/"
+
+srcfile="Connect"
+echo copy ${srcpath}${srcfile}${rsfext} to "${dstpath}"${srcfile}${rsfext}
+cp ${srcpath}${srcfile}${rsfext} "${dstpath}"${srcfile}${rsfext}
+
+srcfile="GeneralAlarm"
+echo copy ${srcpath}${srcfile}${rsfext} to "${dstpath}"${srcfile}${rsfext}
+cp ${srcpath}${srcfile}${rsfext} "${dstpath}"${srcfile}${rsfext}
+
+
+#*****************************************************************************
+# COPY GRAPHICS TO WiFi
+#*****************************************************************************
+
+srcpath="BITMAPS/GEN_NAV/"
+dstpath="../../../lmssrc/WiFi/"
+
+srcfile="Sep_Span"
+dstfile="WiFiIcon"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${dstfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${dstfile}${bmpext}
+
+srcfile="144x48_POP2"
+echo copy ${srcpath}${srcfile}${bmpext} to "${dstpath}"${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} "${dstpath}"${srcfile}${bmpext}
+
+srcfile="144x65_POP3"
+echo copy ${srcpath}${srcfile}${bmpext} to "${dstpath}"${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} "${dstpath}"${srcfile}${bmpext}
+
+srcfile="144x82_POP4"
+echo copy ${srcpath}${srcfile}${bmpext} to "${dstpath}"${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} "${dstpath}"${srcfile}${bmpext}
+
+srcfile="144x99_POP5"
+echo copy ${srcpath}${srcfile}${bmpext} to "${dstpath}"${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} "${dstpath}"${srcfile}${bmpext}
+
+srcfile="144x116_POP6"
+echo copy ${srcpath}${srcfile}${bmpext} to "${dstpath}"${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} "${dstpath}"${srcfile}${bmpext}
+
+# SOUNDS
+
+srcpath="BITMAPS/SOUNDS/"
+
+srcfile="Connect"
+echo copy ${srcpath}${srcfile}${rsfext} to "${dstpath}"${srcfile}${rsfext}
+cp ${srcpath}${srcfile}${rsfext} "${dstpath}"${srcfile}${rsfext}
+
+srcfile="GeneralAlarm"
+echo copy ${srcpath}${srcfile}${rsfext} to "${dstpath}"${srcfile}${rsfext}
+cp ${srcpath}${srcfile}${rsfext} "${dstpath}"${srcfile}${rsfext}
+
+
+#*****************************************************************************
+# COPY GRAPHICS TO "Brick Info"
+#*****************************************************************************
+
+srcpath="BITMAPS/GEN_NAV/"
+dstpath="../../../lmssrc/Brick Info/"
+
+srcfile="Sep_Span"
+dstfile="Brick InfoIcon"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="144x116_POP6"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+
+
+#*****************************************************************************
+# COPY GRAPHICS TO Sleep
+#*****************************************************************************
+
+srcpath="BITMAPS/GEN_NAV/"
+dstpath="../../../lmssrc/Sleep/"
+
+srcfile="Sep_Span"
+dstfile="SleepIcon"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${dstfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${dstfile}${bmpext}
+
+srcfile="144x32_POP1"
+echo copy ${srcpath}${srcfile}${bmpext} to "${dstpath}"${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} "${dstpath}"${srcfile}${bmpext}
+
+
+
+#*****************************************************************************
+# COPY GRAPHICS TO Volume
+#*****************************************************************************
+
+srcpath="BITMAPS/GEN_NAV/"
+dstpath="../../../lmssrc/Volume/"
+
+srcfile="Sep_Span"
+dstfile="VolumeIcon"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${dstfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${dstfile}${bmpext}
+
+srcfile="144x32_POP1"
+echo copy ${srcpath}${srcfile}${bmpext} to "${dstpath}"${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} "${dstpath}"${srcfile}${bmpext}
+
+
+
+#*****************************************************************************
+# COPY GRAPHICS TO Test
+#*****************************************************************************
+
+srcpath="BITMAPS/GEN_NAV/"
+dstpath="../../../lmssrc/Test/"
+
+srcfile="Sep_Span"
+dstfile="TestIcon"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${dstfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${dstfile}${bmpext}
+
+srcfile="144x65_POP3"
+echo copy ${srcpath}${srcfile}${bmpext} to "${dstpath}"${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} "${dstpath}"${srcfile}${bmpext}
+
+srcfile="144x116_POP6"
+echo copy ${srcpath}${srcfile}${bmpext} to "${dstpath}"${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} "${dstpath}"${srcfile}${bmpext}
+
+
+
+#*****************************************************************************
+# COPY GRAPHICS TO Debug
+#*****************************************************************************
+
+srcpath="BITMAPS/GEN_NAV/"
+dstpath="../../../lmssrc/Debug/"
+
+srcfile="Sep_Span"
+dstfile="DebugIcon"
+echo copy ${srcpath}${srcfile}${bmpext} to ${dstpath}${dstfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} ${dstpath}${dstfile}${bmpext}
+
+#*****************************************************************************
+# COPY GRAPHICS TO "Port View"
+#*****************************************************************************
+
+srcpath="BITMAPS/GEN_NAV/"
+dstpath="../../../lmssrc/Port View/"
+
+srcpath="BITMAPS/VIEW_BLOCKS/"
+dstpath="../../../lmssrc/Port View/"
+
+
+srcfile="other"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#1
+srcfile="NXT_device"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#2
+srcfile="NXT_device"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#3
+srcfile="NXT_device"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#6 0
+srcfile="temp_c"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#6 1
+srcfile="temp_f"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#7 0
+srcfile="lrg_motor_d"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#7 1
+srcfile="lrg_motor"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#8 0
+srcfile="med_motor_d"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#8 1
+srcfile="med_motor"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#16
+srcfile="touch"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#29 0
+srcfile="color_ref"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#29 1
+srcfile="color_amb"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#29 2
+srcfile="color_col"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#30 0
+srcfile="us_prox"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#32 0
+srcfile="gyro_a"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#32 1
+srcfile="gyro_rate"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#33 0
+srcfile="ir_prox"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#33 1
+srcfile="ir_bpos"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#33 2
+srcfile="ir_bbut"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+
+srcfile="PE_input"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="PE_output"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+
+
+#*****************************************************************************
+# COPY GRAPHICS TO "Motor Control"
+#*****************************************************************************
+
+srcpath="BITMAPS/GEN_NAV/"
+dstpath="../../../lmssrc/Motor Control/"
+
+srcfile="24x12_MotContApp"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+
+srcpath="BITMAPS/NMOTCTL/"
+dstpath="../../../lmssrc/Motor Control/"
+
+srcfile="MotorCtlAD"
+echo copy ${srcpath}${srcfile}${bmpext} to "${dstpath}"${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} "${dstpath}"${srcfile}${bmpext}
+
+srcfile="MotorCtlBC"
+echo copy ${srcpath}${srcfile}${bmpext} to "${dstpath}"${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} "${dstpath}"${srcfile}${bmpext}
+
+
+#*****************************************************************************
+# COPY GRAPHICS TO "IR Control"
+#*****************************************************************************
+
+srcpath="BITMAPS/GEN_NAV/"
+dstpath="../../../lmssrc/IR Control/"
+
+srcfile="24x12_MotContApp"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+
+srcpath="BITMAPS/IRCTL/"
+dstpath="../../../lmssrc/IR Control/"
+
+srcfile="IRCtl12"
+echo copy ${srcpath}${srcfile}${bmpext} to "${dstpath}"${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} "${dstpath}"${srcfile}${bmpext}
+
+srcfile="IRCtl34"
+echo copy ${srcpath}${srcfile}${bmpext} to "${dstpath}"${srcfile}${bmpext}
+cp ${srcpath}${srcfile}${bmpext} "${dstpath}"${srcfile}${bmpext}
+
+
+#*****************************************************************************
+# COPY GRAPHICS TO "Brick Datalog"
+#*****************************************************************************
+
+srcpath="BITMAPS/GEN_NAV/"
+dstpath="../../../lmssrc/Brick Datalog/"
+
+srcfile="24x12_DLApp"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="144x82_POP4"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+
+srcpath="BITMAPS/DLOG/"
+dstpath="../../../lmssrc/Brick Datalog/"
+
+srcfile="dl_PrtDetault"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="dl_Rec"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="dl_Set"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="dl_RecH"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="dl_SetH"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="dl_Prt1"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="dl_Prt2"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="dl_Prt3"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="dl_Prt4"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="dl_PrtA"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="dl_PrtB"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="dl_PrtC"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="dl_PrtD"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="dl_Prt_All"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="dl_Prt_Er"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="dl_Prt_Un"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="dl_count"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="dl_mxave"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="dl_NoDetails"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="dlSetAccept"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="dlSetAcceptH"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+
+srcfile="dl_GR0_1"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="dl_GR0_8"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="dl_GR0_10"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="dl_GR0_100"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="dl_GR0_250"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="dl_GRc100"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="dl_GRc180"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="dl_GRc450"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="dl_GR_TC"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="dl_Highrate"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+
+srcpath="BITMAPS/VIEW_BLOCKS/"
+dstpath="../../../lmssrc/Brick Datalog/"
+
+
+srcfile="other"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#1
+srcfile="NXT_device"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#2
+srcfile="NXT_device"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#3
+srcfile="NXT_device"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#6 0
+srcfile="temp_c"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#6 1
+srcfile="temp_f"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#7 0
+srcfile="lrg_motor_d"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#7 1
+srcfile="lrg_motor"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#8 0
+srcfile="med_motor_d"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#8 1
+srcfile="med_motor"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#16
+srcfile="touch"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#29 0
+srcfile="color_ref"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#29 1
+srcfile="color_amb"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#29 2
+srcfile="color_col"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#30 0
+srcfile="us_prox"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#32 0
+srcfile="gyro_a"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#32 1
+srcfile="gyro_rate"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#33 0
+srcfile="ir_prox"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#33 1
+srcfile="ir_bpos"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+#33 2
+srcfile="ir_bbut"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="PE_input"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="PE_output"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+# SOUNDS
+
+srcpath="BITMAPS/SOUNDS/"
+
+srcfile="GeneralAlarm"
+echo copy ${srcpath}${srcfile}${rsfext} to "${dstpath}"${srcfile}${rsfext}
+cp ${srcpath}${srcfile}${rsfext} "${dstpath}"${srcfile}${rsfext}
+
+
+#*****************************************************************************
+# COPY GRAPHICS TO "Brick Program"
+#*****************************************************************************
+
+srcpath="BITMAPS/GEN_NAV/"
+dstpath="../../../lmssrc/Brick Program/"
+
+srcfile="24x12_ProgApp"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="144x116_POP6"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+
+srcpath="BITMAPS/PROG_BASICS/"
+dstpath="../../../lmssrc/Brick Program/"
+
+
+srcfile="block_bin"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="Blocklink"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="BlockAdd"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="ToLib"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="PrgOpen"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="PrgOpenH"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="PrgSave"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="PrgSaveH"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="ProgNav"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="ProgNavdot"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+
+# LIBRARY
+
+srcfile="LibToProg"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="LIBH1"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="LIBH2"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+
+
+
+
+srcpath="BITMAPS/PROG_BLOCKS/"
+dstpath="../../../lmssrc/Brick Program/"
+
+# STARTBLOCK
+
+srcfile="StartBLKn"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="StartBLKs"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+
+# LOOPBLOCK
+
+srcfile="RepBlkn"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="RepBlks"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="RepBlkh"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_LoopP1"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_LoopP2"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_LoopP3"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_LoopP4"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_LoopP5"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_LoopP6"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_LoopP7"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+
+srcfile="BLKn"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="BLKs"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="BLKh"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="Pn_1"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="Ps_1"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="Ph_1"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="Pn_2"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="Ps_2"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="Ph_2"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="Pn_3"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="Ps_3"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="Ph_3"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="Pn_4"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="Ps_4"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="Ph_4"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="Pn_a"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="Ps_a"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="Ph_a"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="Pn_b"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="Ps_b"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="Ph_b"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="Pn_bc"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="Ps_bc"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="Ph_bc"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="Pn_c"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="Ps_c"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="Ph_c"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="Pn_d"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="Ps_d"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="Ph_d"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+
+srcfile="A_numP1"
+dstfile="A_numP01"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="A_numP2"
+dstfile="A_numP02"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="A_numP3"
+dstfile="A_numP03"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="A_numP4"
+dstfile="A_numP04"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="A_numP5"
+dstfile="A_numP05"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="A_numP6"
+dstfile="A_numP06"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="A_numP7"
+dstfile="A_numP07"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="A_numP8"
+dstfile="A_numP08"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="A_numP9"
+dstfile="A_numP09"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="A_numP10"
+dstfile="A_numP10"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="A_numP11"
+dstfile="A_numP11"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="A_numP12"
+dstfile="A_numP12"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="A_numP13"
+dstfile="A_numP13"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+
+# REFLECTEDBLOCK
+
+srcfile="W_colref"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_BAR_P1"
+dstfile="W_colrefP01"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_BAR_P2"
+dstfile="W_colrefP02"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_BAR_P3"
+dstfile="W_colrefP03"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_BAR_P4"
+dstfile="W_colrefP04"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_BAR_P5"
+dstfile="W_colrefP05"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_BAR_P6"
+dstfile="W_colrefP06"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_BAR_P7"
+dstfile="W_colrefP07"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_BAR_P8"
+dstfile="W_colrefP08"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_BAR_P9"
+dstfile="W_colrefP09"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_BAR_P10"
+dstfile="W_colrefP10"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_BAR_P11"
+dstfile="W_colrefP11"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_BAR_P12"
+dstfile="W_colrefP12"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_BAR_P13"
+dstfile="W_colrefP13"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_BAR_P14"
+dstfile="W_colrefP14"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_BAR_P15"
+dstfile="W_colrefP15"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_BAR_P16"
+dstfile="W_colrefP16"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+
+# PROXIMITYBLOCK
+
+srcfile="W_irprox"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_IR_P1"
+dstfile="W_irproxP01"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_IR_P2"
+dstfile="W_irproxP02"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_IR_P3"
+dstfile="W_irproxP03"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_IR_P4"
+dstfile="W_irproxP04"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_IR_P5"
+dstfile="W_irproxP05"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_IR_P6"
+dstfile="W_irproxP06"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_IR_P7"
+dstfile="W_irproxP07"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_IR_P8"
+dstfile="W_irproxP08"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+
+# BEACONBLOCK
+
+srcfile="W_irrem"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_irremP1"
+dstfile="W_irremP01"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_irremP2"
+dstfile="W_irremP02"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_irremP3"
+dstfile="W_irremP03"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_irremP4"
+dstfile="W_irremP04"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_irremP5"
+dstfile="W_irremP05"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_irremP6"
+dstfile="W_irremP06"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+
+# ULTRASONICBLOCK
+
+srcfile="W_us"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_US_P1"
+dstfile="W_usP01"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_US_P2"
+dstfile="W_usP02"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_US_P3"
+dstfile="W_usP03"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_US_P4"
+dstfile="W_usP04"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_US_P5"
+dstfile="W_usP05"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_US_P6"
+dstfile="W_usP06"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_US_P7"
+dstfile="W_usP07"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_US_P8"
+dstfile="W_usP08"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_US_P9"
+dstfile="W_usP09"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_US_P10"
+dstfile="W_usP10"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_US_P11"
+dstfile="W_usP11"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_US_P12"
+dstfile="W_usP12"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_US_P13"
+dstfile="W_usP13"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_US_P14"
+dstfile="W_usP14"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_US_P15"
+dstfile="W_usP15"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_US_P16"
+dstfile="W_usP16"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+
+# ANGLEBLOCK
+
+srcfile="W_gyro"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_angP1"
+dstfile="W_angP01"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_angP2"
+dstfile="W_angP02"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_angP3"
+dstfile="W_angP03"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_angP4"
+dstfile="W_angP04"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_angP5"
+dstfile="W_angP05"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_angP6"
+dstfile="W_angP06"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_angP7"
+dstfile="W_angP07"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_angP8"
+dstfile="W_angP08"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_angP9"
+dstfile="W_angP09"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_angP10"
+dstfile="W_angP10"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_angP11"
+dstfile="W_angP11"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_angP12"
+dstfile="W_angP12"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+
+# TEMPERATUREBLOCK
+
+srcfile="W_temp"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_TMP_P1"
+dstfile="W_tempP01"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_TMP_P2"
+dstfile="W_tempP02"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_TMP_P3"
+dstfile="W_tempP03"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_TMP_P4"
+dstfile="W_tempP04"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_TMP_P5"
+dstfile="W_tempP05"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_TMP_P6"
+dstfile="W_tempP06"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_TMP_P7"
+dstfile="W_tempP07"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_TMP_P8"
+dstfile="W_tempP08"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_TMP_P9"
+dstfile="W_tempP09"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_TMP_P10"
+dstfile="W_tempP10"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_TMP_P11"
+dstfile="W_tempP11"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_TMP_P12"
+dstfile="W_tempP12"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_TMP_P13"
+dstfile="W_tempP13"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_TMP_P14"
+dstfile="W_tempP14"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_TMP_P15"
+dstfile="W_tempP15"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="W_TMP_P16"
+dstfile="W_tempP16"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+
+# ENCODERBLOCK
+
+srcfile="W_mmot"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+
+# DOUBLEMOTORBLOCK
+
+srcfile="A_Move"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_MoveP1"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_MoveP2"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_MoveP3"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_MoveP4"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_MoveP5"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_MoveP6"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_MoveP7"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_MoveP8"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_MoveP9"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+
+# SINGLEMOTORBLOCK
+
+srcfile="A_Lmot"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_motP1"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_motP2"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_motP3"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_motP4"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_motP5"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_motP6"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_motP7"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_motP8"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_motP9"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+
+# MEDIUMMOTORBLOCK
+
+srcfile="A_Mmot"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+
+# COLORBLOCK
+
+srcfile="W_colcol"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_colcolP1"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_colcolP2"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_colcolP3"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_colcolP4"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_colcolP5"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_colcolP6"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_colcolP7"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_colcolP8"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+
+# LEDBLOCK
+
+srcfile="A_BLit"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_BLitP1"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_BLitP2"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_BLitP3"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_BLitP4"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_BLitP5"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_BLitP6"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="A_BLitP7"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+
+# TOUCHBLOCK
+
+srcfile="W_Touch"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_TouchP1"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_TouchP2"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_TouchP3"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+
+# BUTTONBLOCK
+
+srcfile="W_bbut"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_bbutP1"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_bbutP2"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_bbutP3"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_bbutP4"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_bbutP5"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+
+# DELAYBLOCK
+
+srcfile="W_time"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_timeP1"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_timeP2"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_timeP3"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_timeP4"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_timeP5"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_timeP6"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_timeP7"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcfile="W_timeP8"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+
+# DISPLAYBLOCK
+
+srcfile="A_Disp"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcpath="BITMAPS/IMAGES/"
+dstpath="../../../lmssrc/Brick Program/"
+
+srcfile="1"
+dstfile="OnBrickImage01"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="2"
+dstfile="OnBrickImage02"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="3"
+dstfile="OnBrickImage03"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="4"
+dstfile="OnBrickImage04"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="5"
+dstfile="OnBrickImage05"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="6"
+dstfile="OnBrickImage06"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="7"
+dstfile="OnBrickImage07"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="8"
+dstfile="OnBrickImage08"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="9"
+dstfile="OnBrickImage09"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="10"
+dstfile="OnBrickImage10"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="11"
+dstfile="OnBrickImage11"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+srcfile="12"
+dstfile="OnBrickImage12"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${dstfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${dstfile}""${bmpext}"
+
+
+# SOUNDBLOCK
+
+srcpath="BITMAPS/PROG_BLOCKS/"
+dstpath="../../../lmssrc/Brick Program/"
+
+srcfile="A_Snd"
+echo copy "${srcpath}""${srcfile}""${bmpext}" to "${dstpath}""${srcfile}""${bmpext}"
+cp "${srcpath}""${srcfile}""${bmpext}" "${dstpath}""${srcfile}""${bmpext}"
+
+srcpath="BITMAPS/SOUNDS/"
+dstpath="../../../lmssrc/Brick Program/"
+
+srcfile="1"
+dstfile="OnBrickSound01"
+echo copy "${srcpath}""${srcfile}""${rsoext}" to "${dstpath}""${dstfile}""${rsfext}"
+cp "${srcpath}""${srcfile}""${rsoext}" "${dstpath}""${dstfile}""${rsfext}"
+
+srcfile="2"
+dstfile="OnBrickSound02"
+echo copy "${srcpath}""${srcfile}""${rsoext}" to "${dstpath}""${dstfile}""${rsfext}"
+cp "${srcpath}""${srcfile}""${rsoext}" "${dstpath}""${dstfile}""${rsfext}"
+
+srcfile="3"
+dstfile="OnBrickSound03"
+echo copy "${srcpath}""${srcfile}""${rsoext}" to "${dstpath}""${dstfile}""${rsfext}"
+cp "${srcpath}""${srcfile}""${rsoext}" "${dstpath}""${dstfile}""${rsfext}"
+
+srcfile="4"
+dstfile="OnBrickSound04"
+echo copy "${srcpath}""${srcfile}""${rsoext}" to "${dstpath}""${dstfile}""${rsfext}"
+cp "${srcpath}""${srcfile}""${rsoext}" "${dstpath}""${dstfile}""${rsfext}"
+
+srcfile="5"
+dstfile="OnBrickSound05"
+echo copy "${srcpath}""${srcfile}""${rsoext}" to "${dstpath}""${dstfile}""${rsfext}"
+cp "${srcpath}""${srcfile}""${rsoext}" "${dstpath}""${dstfile}""${rsfext}"
+
+srcfile="6"
+dstfile="OnBrickSound06"
+echo copy "${srcpath}""${srcfile}""${rsoext}" to "${dstpath}""${dstfile}""${rsfext}"
+cp "${srcpath}""${srcfile}""${rsoext}" "${dstpath}""${dstfile}""${rsfext}"
+
+srcfile="7"
+dstfile="OnBrickSound07"
+echo copy "${srcpath}""${srcfile}""${rsoext}" to "${dstpath}""${dstfile}""${rsfext}"
+cp "${srcpath}""${srcfile}""${rsoext}" "${dstpath}""${dstfile}""${rsfext}"
+
+srcfile="8"
+dstfile="OnBrickSound08"
+echo copy "${srcpath}""${srcfile}""${rsoext}" to "${dstpath}""${dstfile}""${rsfext}"
+cp "${srcpath}""${srcfile}""${rsoext}" "${dstpath}""${dstfile}""${rsfext}"
+
+srcfile="9"
+dstfile="OnBrickSound09"
+echo copy "${srcpath}""${srcfile}""${rsoext}" to "${dstpath}""${dstfile}""${rsfext}"
+cp "${srcpath}""${srcfile}""${rsoext}" "${dstpath}""${dstfile}""${rsfext}"
+
+srcfile="10"
+dstfile="OnBrickSound10"
+echo copy "${srcpath}""${srcfile}""${rsoext}" to "${dstpath}""${dstfile}""${rsfext}"
+cp "${srcpath}""${srcfile}""${rsoext}" "${dstpath}""${dstfile}""${rsfext}"
+
+srcfile="11"
+dstfile="OnBrickSound11"
+echo copy "${srcpath}""${srcfile}""${rsoext}" to "${dstpath}""${dstfile}""${rsfext}"
+cp "${srcpath}""${srcfile}""${rsoext}" "${dstpath}""${dstfile}""${rsfext}"
+
+srcfile="12"
+dstfile="OnBrickSound12"
+echo copy "${srcpath}""${srcfile}""${rsoext}" to "${dstpath}""${dstfile}""${rsfext}"
+cp "${srcpath}""${srcfile}""${rsoext}" "${dstpath}""${dstfile}""${rsfext}"
+
+# SOUNDS
+
+srcpath="BITMAPS/SOUNDS/"
+
+srcfile="GeneralAlarm"
+echo copy ${srcpath}${srcfile}${rsfext} to "${dstpath}"${srcfile}${rsfext}
+cp ${srcpath}${srcfile}${rsfext} "${dstpath}"${srcfile}${rsfext}
+
+
+
+
+
+

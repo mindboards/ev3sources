@@ -1,0 +1,61 @@
+//**************************************************************************** 
+// Disassembler Listing 
+//**************************************************************************** 
+  
+UBYTE     prg[] = 
+{ 
+  /*    0 */  PROGRAMHeader(1.01,2,39), 
+  /*   16 */  VMTHREADHeader(40,8),      // Object 1 
+  /*   28 */  VMTHREADHeader(236,44),    // Object 2 
+  
+  /* Object  1 (VMTHREAD) [40..236] */ 
+  
+  /*   40 */  opUI_DRAW,LC0(TOPLINE),LC0(0), 
+  /*   43 */  opUI_DRAW,LC0(FILLWINDOW),LC0(0),LC2(0),LC2(0), 
+  /*   52 */  opUI_DRAW,LC0(BMPFILE),LC0(1),LC2(0),LC2(0),LCS,'.','.','/','a', 
+                        'p','p','s','/','B','r','i','c','k',' ','P','r','o', 
+                        'g','r','a','m','/','O','n','B','r','i','c','k','I', 
+                        'm','a','g','e','1','2',0, 
+  /*   99 */  opUI_DRAW,LC0(UPDATE), 
+  /*  101 */  opUI_WRITE,LC0(LED),LC0(8), 
+  /*  104 */  opSTRINGS,LC0(DUPLICATE),LCS,'.','.','/','a','p','p','s','/', 
+                        'B','r','i','c','k',' ','P','r','o','g','r','a','m', 
+                        '/','O','n','B','r','i','c','k','S','o','u','n','d',0, 
+                        GV0(3), 
+  /*  143 */  opOUTPUT_CLR_COUNT,LC0(0),LC0(2), 
+  /*  146 */  opOUTPUT_CLR_COUNT,LC0(0),LC0(4), 
+  /*  149 */  opMOVE8_8,LC0(0),GV0(0), 
+  /*  152 */  opTIMER_WAIT,LC4(50),LV0(0), 
+  /*  159 */  opMOVE16_8,LC2(2),LV0(6), 
+  /*  164 */  opJR_LT8,GV0(0),LV0(6),LC2(19), 
+  /*  170 */  opMOVE16_8,LC2(2),LV0(7), 
+  /*  175 */  opJR_GT8,GV0(0),LV0(7),LC2(8), 
+  /*  181 */  opMOVE8_16,GV0(0),LV0(4), 
+  /*  184 */  opMOVE8_8,LC0(0),GV0(0), 
+  /*  187 */  opOBJECT_START,LV0(4), 
+  /*  189 */  opJR_FALSE,GV0(1),LC2(11), 
+  /*  194 */  opOUTPUT_SPEED,LC0(0),LC0(2),GV0(1), 
+  /*  198 */  opOUTPUT_START,LC0(0),LC0(2), 
+  /*  201 */  opJR,LC2(4), 
+  /*  205 */  opOUTPUT_STOP,LC0(0),LC0(2),LC0(1), 
+  /*  209 */  opJR_FALSE,GV0(2),LC2(11), 
+  /*  214 */  opOUTPUT_SPEED,LC0(0),LC0(4),GV0(2), 
+  /*  218 */  opOUTPUT_START,LC0(0),LC0(4), 
+  /*  221 */  opJR,LC2(4), 
+  /*  225 */  opOUTPUT_STOP,LC0(0),LC0(4),LC0(1), 
+  /*  229 */  opTIMER_READY,LV0(0), 
+  /*  231 */  opJR,LC2(-83), 
+  /*  235 */  opOBJECT_END, 
+  
+  /* Object  2 (VMTHREAD) [236..257] */ 
+  
+  /*  236 */  opMOVE8_16,LC0(12),LV0(0), 
+  /*  239 */  opSTRINGS,LC0(NUMBER_TO_STRING),LV0(0),LC0(2),LV0(3), 
+  /*  244 */  opSTRINGS,LC0(ADD),GV0(3),LV0(3),LV0(7), 
+  /*  249 */  opINFO,LC0(GET_VOLUME),LV0(2), 
+  /*  252 */  opSOUND,LC0(PLAY),LV0(2),LV0(7), 
+  /*  256 */  opOBJECT_END, 
+}; 
+  
+//**************************************************************************** 
+

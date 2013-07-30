@@ -1,0 +1,22 @@
+#! /bin/bash
+#******************************************************************************************************************
+#     ENVIRONMENT SETUP
+#******************************************************************************************************************
+# as normal user on linux pc terminal:
+
+export AM1808_COMPILER=~/CodeSourcery/Sourcery_G++_Lite/bin
+
+export AM1808_DISTRO=DaVinci-PSP-SDK-03.20.00.13
+export AM1808_LINUX=linux-03.20.00.13
+export AM1808_UBOOT=uboot-03.20.00.13
+
+export AM1808_UBOOT_DIR=~/am1808/${AM1808_DISTRO}/src/u-boot/${AM1808_UBOOT}
+export AM1808_KERNEL=~/am1808/${AM1808_DISTRO}/src/kernel/${AM1808_LINUX}
+
+export AM1808_MODULES=~/projects/lms2012/lms2012/Linux_AM1808/sys/mod
+
+export X86_KERNEL=/lib/modules/$(uname -r)/build
+export X86_MODULES=~/projects/lms2012/lms2012/Linux_X86/sys/mod
+
+
+

@@ -1,0 +1,546 @@
+/*
+ * LEGO® MINDSTORMS EV3
+ *
+ * Copyright (C) 2010-2013 The LEGO Group
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
+
+//  TCP 08.04.2013
+//! \page testsensorsappcode Sensors Application
+//!
+//! <hr size="1"/>
+//!
+//! \verbatim
+//**********************************************************************
+define appv 'Sensors V1.02'                                           //
+//**********************************************************************
+                                                                      //
+/*
+    128 x 112
+    
+    25    12
+    
+    1234567890123456789012345         Ycur    Xcur
+        P1    P2    P3    P4
+    O1 xxxx  xxxx  xxxx  xxxx         0         0     1     2     3
+    I1 xxxx  xxxx  xxxx  xxxx         1
+    O1 xxxx  xxxx  xxxx  xxxx         2
+    I1 xxxx  xxxx  xxxx  xxxx         3
+    O1 xxxx  xxxx  xxxx  xxxx         4
+    I1 xxxx  xxxx  xxxx  xxxx         5
+    O1 xxxx  xxxx  xxxx  xxxx         6
+    I1 xxxx  xxxx  xxxx  xxxx         7
+
+
+*/      
+                                                                      //
+define    TEST_STARTX         16                                      //
+define    TEST_STARTY         11                                      //
+define    SENS_STARTX         34                                      //
+define    SENS_STARTY         31                                      //
+define    SENS_SPACEX         32                                      //
+define    SENS_SPACEY         11                                      //
+                                                                      //
+define    PTEXT_STARTX        SENS_STARTX                             //
+define    PTEXT_STARTY        18                                      //
+define    PTEXT_SPACEX        SENS_SPACEX                             //
+                                                                      //
+define    LTEXT_STARTX        20                                      //
+define    LTEXT_STARTY        SENS_STARTY                             //
+define    LTEXT_SPACEY        SENS_SPACEY                             //
+                                                                      //
+define    SENS_CURSOR_WIDTH   27                                      //
+define    SENS_CURSOR_HEIGHT  9                                       //
+                                                                      //
+                                                                      //
+vmthread  MAIN                                                        //  void    MAIN(void)
+{                                                                     //  {
+  DATA8   ShowVersion                                                 //
+                                                                      //
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //    UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+  JR_FALSE(ShowVersion,DontShowVersion)                               //    if (ShowVersion)
+                                                                      //    {
+  UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)                              //      UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)
+  UI_DRAW(RECT,FG_COLOR,6,52,166,24)                                  //      UI_DRAW(RECT,FG_COLOR,6,52,166,24)
+  UI_DRAW(TEXT,FG_COLOR,13,60,appv)                                   //      UI_DRAW(TEXT,FG_COLOR,13,60,appv)
+  UI_DRAW(UPDATE)                                                     //      UI_DRAW(UPDATE)
+                                                                      //
+ShowVersionWait:                                                      //      do
+                                                                      //      {  
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //        UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+                                                                      //      }
+  JR_TRUE(ShowVersion,ShowVersionWait)                                //      while (ShowVersion)
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //      UI_BUTTON(FLUSH)
+DontShowVersion:                                                      //    }  
+                                                                      //
+  UI_DRAW(RESTORE,0)                                                  //    UI_DRAW(RESTORE,0)
+  UI_DRAW(TOPLINE,0)                                                  //    UI_DRAW(TOPLINE,0)
+  UI_BUTTON(SET_BACK_BLOCK,1)                                         //    UI_BUTTON(SET_BACK_BLOCK,1)
+  UI_WRITE(LED,LED_GREEN)                                             //    UI_WRITE(LED,LED_GREEN)
+                                                                      //
+  CALL(TestSensors)                                                   //    TestSensors()
+                                                                      //
+  UI_DRAW(TOPLINE,1)                                                  //    UI_DRAW(TOPLINE,1)
+  UI_BUTTON(SET_BACK_BLOCK,0)                                         //    UI_BUTTON(SET_BACK_BLOCK,0)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestSensors                                                 //  void TestSensors(void)
+{                                                                     //  {
+  DATA32  Timer                                                       //
+  DATA32  Time                                                        //
+  DATA32  TimeOld                                                     //
+  DATAF   DataF                                                       //
+  DATA16  Xpoi                                                        //
+  DATA16  Ypoi                                                        //
+  DATA16  Xpos                                                        //
+  DATA16  Ypos                                                        //
+  DATA16  Ycur                                                        //
+  DATA16  Xcur                                                        //
+  DATA16  Inc                                                         //
+  DATA8   Tmp                                                         //
+  DATA8   Layer                                                       //
+  DATA8   Port                                                        //
+  DATA8   Figures                                                     //
+  DATA8   Decimals                                                    //
+  DATA8   Update                                                      //
+                                                                      //
+  MOVE16_16(0,Xcur)                                                   //    Xcur    =  0
+  MOVE16_16(0,Ycur)                                                   //    Ycur    =  0
+  MOVE8_8(1,Update)                                                   //    Update  =  1
+                                                                      //
+  TIMER_READ(TimeOld)                                                 //    TIMER_READ(TimeOld)
+                                                                      //
+                                                                      //    do
+Loop:                                                                 //    {
+                                                                      //
+  // Control update                                                   //    
+  TIMER_READ(Timer)                                                   //      TIMER_READ(Timer)
+  SUB32(Timer,TimeOld,Time)                                           //      Time  =  Timer - TimeOld
+  JR_LT32(Time,200,NoTimeout)                                         //      if (Time >= 200)
+                                                                      //      {
+  MOVE32_32(Timer,TimeOld)                                            //        TimeOld   =  Time
+  MOVE8_8(1,Update)                                                   //        Update    =  1
+                                                                      //
+NoTimeout:                                                            //      }
+                                                                      //
+  // Control Xcur                                                     //
+  UI_BUTTON(GET_HORZ,Inc)                                             //      UI_BUTTON(GET_HORZ,Inc)
+  JR_EQ16(Inc,0,NoHorz)                                               //      if (Inc)
+                                                                      //      {
+  MOVE8_8(1,Update)                                                   //        Update  =  1
+                                                                      //      
+NoHorz:                                                               //      }
+                                                                      //
+  ADD16(Xcur,Inc,Xcur)                                                //      Xcur +=  Inc
+  JR_GTEQ16(Xcur,0,NotTooLowX)                                        //      if (Xcur < 0)  
+                                                                      //      {
+  MOVE16_16(0,Xcur)                                                   //        Xcur  =  0
+                                                                      //
+NotTooLowX:                                                           //      }
+                                                                      //
+  JR_LT16(Xcur,4,NotTooHighX)                                         //      if (Xcur >= 4)
+                                                                      //      {
+  MOVE16_16(3,Xcur)                                                   //        Xcur  =  3
+                                                                      //
+NotTooHighX:                                                          //      }
+                                                                      //
+  // Control Ycur                                                     //
+  UI_BUTTON(GET_VERT,Inc)                                             //      UI_BUTTON(GET_VERT,Inc)
+                                                                      //
+  JR_EQ16(Inc,0,NoVert)                                               //      if (Inc)
+                                                                      //      {
+  MOVE8_8(1,Update)                                                   //        Update  =  1
+                                                                      //    
+NoVert:                                                               //      }
+                                                                      //
+  ADD16(Ycur,Inc,Ycur)                                                //      Ycur +=  Inc
+  JR_GTEQ16(Ycur,0,NotTooLowY)                                        //      if (Ycur < 0)
+                                                                      //      {
+  MOVE16_16(0,Ycur)                                                   //        Ycur  =  0
+                                                                      //
+NotTooLowY:                                                           //      }
+                                                                      //
+  JR_LT16(Ycur,8,NotTooHighY)                                         //      if (Ycur >= 8)
+                                                                      //      {
+  MOVE16_16(7,Ycur)                                                   //        Ycur  =  7
+                                                                      //
+NotTooHighY:                                                          //      }
+                                                                      //
+  JR_FALSE(Update,NoUpdate)                                           //      if (Update)
+                                                                      //      {
+  UI_DRAW(FILLWINDOW,0x00,0,0                                         //        UI_DRAW(FILLWINDOW,0x00,0,0
+  UI_DRAW(SELECT_FONT,SMALL_FONT)                                     //        UI_DRAW(SELECT_FONT,SMALL_FONT)
+  UI_DRAW(TEXT,FG_COLOR,0,1,'Sensors')                                //        UI_DRAW(TEXT,FG_COLOR,0,1,'Sensors')
+  UI_DRAW(LINE,FG_COLOR,0,TOPLINE_HEIGHT,LCD_WIDTH,TOPLINE_HEIGHT)    //        UI_DRAW(LINE,FG_COLOR,0,TOPLINE_HEIGHT,LCD_WIDTH,TOPLINE_HEIGHT)
+  UI_DRAW(SELECT_FONT,NORMAL_FONT)                                    //        UI_DRAW(SELECT_FONT,NORMAL_FONT)
+                                                                      //
+  UI_DRAW(SELECT_FONT,TINY_FONT)                                      //        UI_DRAW(SELECT_FONT,TINY_FONT)
+                                                                      //
+  // Show port number                                                 //
+  MOVE16_16(PTEXT_STARTX,Xpos)                                        //        Xpos  =  PTEXT_STARTX
+  UI_DRAW(TEXT,FG_COLOR,Xpos,PTEXT_STARTY,'P1')                       //        UI_DRAW(TEXT,FG_COLOR,Xpos,PTEXT_STARTY,'P1')
+  ADD16(Xpos,PTEXT_SPACEX,Xpos)                                       //        Xpos +=  PTEXT_SPACEX
+  UI_DRAW(TEXT,FG_COLOR,Xpos,PTEXT_STARTY,'P2')                       //        UI_DRAW(TEXT,FG_COLOR,Xpos,PTEXT_STARTY,'P2')
+  ADD16(Xpos,PTEXT_SPACEX,Xpos)                                       //        Xpos +=  PTEXT_SPACEX
+  UI_DRAW(TEXT,FG_COLOR,Xpos,PTEXT_STARTY,'P3')                       //        UI_DRAW(TEXT,FG_COLOR,Xpos,PTEXT_STARTY,'P3')
+  ADD16(Xpos,PTEXT_SPACEX,Xpos)                                       //        Xpos +=  PTEXT_SPACEX
+  UI_DRAW(TEXT,FG_COLOR,Xpos,PTEXT_STARTY,'P4')                       //        UI_DRAW(TEXT,FG_COLOR,Xpos,PTEXT_STARTY,'P4')
+                                                                      //
+  // Show layer number                                                //
+  MOVE16_16(LTEXT_STARTY,Ypos)                                        //        Ypos  =  LTEXT_STARTY
+  UI_DRAW(TEXT,FG_COLOR,LTEXT_STARTX,Ypos,'o1')                       //        UI_DRAW(TEXT,FG_COLOR,LTEXT_STARTX,Ypos,'o1')
+  ADD16(Ypos,LTEXT_SPACEY,Ypos)                                       //        Ypos +=  LTEXT_SPACEY
+  UI_DRAW(TEXT,FG_COLOR,LTEXT_STARTX,Ypos,'i1')                       //        UI_DRAW(TEXT,FG_COLOR,LTEXT_STARTX,Ypos,'i1')
+  ADD16(Ypos,LTEXT_SPACEY,Ypos)                                       //        Ypos +=  LTEXT_SPACEY
+  UI_DRAW(TEXT,FG_COLOR,LTEXT_STARTX,Ypos,'o2')                       //        UI_DRAW(TEXT,FG_COLOR,LTEXT_STARTX,Ypos,'o2')
+  ADD16(Ypos,LTEXT_SPACEY,Ypos)                                       //        Ypos +=  LTEXT_SPACEY
+  UI_DRAW(TEXT,FG_COLOR,LTEXT_STARTX,Ypos,'i2')                       //        UI_DRAW(TEXT,FG_COLOR,LTEXT_STARTX,Ypos,'i2')
+  ADD16(Ypos,LTEXT_SPACEY,Ypos)                                       //        Ypos +=  LTEXT_SPACEY
+  UI_DRAW(TEXT,FG_COLOR,LTEXT_STARTX,Ypos,'o3')                       //        UI_DRAW(TEXT,FG_COLOR,LTEXT_STARTX,Ypos,'o3')
+  ADD16(Ypos,LTEXT_SPACEY,Ypos)                                       //        Ypos +=  LTEXT_SPACEY
+  UI_DRAW(TEXT,FG_COLOR,LTEXT_STARTX,Ypos,'i3')                       //        UI_DRAW(TEXT,FG_COLOR,LTEXT_STARTX,Ypos,'i3')
+  ADD16(Ypos,LTEXT_SPACEY,Ypos)                                       //        Ypos +=  LTEXT_SPACEY
+  UI_DRAW(TEXT,FG_COLOR,LTEXT_STARTX,Ypos,'o4')                       //        UI_DRAW(TEXT,FG_COLOR,LTEXT_STARTX,Ypos,'o4')
+  ADD16(Ypos,LTEXT_SPACEY,Ypos)                                       //        Ypos +=  LTEXT_SPACEY
+  UI_DRAW(TEXT,FG_COLOR,LTEXT_STARTX,Ypos,'i4')                       //        UI_DRAW(TEXT,FG_COLOR,LTEXT_STARTX,Ypos,'i4')
+                                                                      //
+  // Show values                                                      //
+  MOVE16_16(0,Ypoi)                                                   //        Ypoi  =  0
+                                                                      //        do                                                
+UpdateY:                                                              //        {
+  MOVE16_16(0,Xpoi)                                                   //          Xpoi  =  0
+                                                                      //          do
+UpdateX:                                                              //          {
+  MUL16(Xpoi,SENS_SPACEX,Xpos)                                        //            Xpos  =  Xpoi * SENS_SPACEX
+  ADD16(Xpos,SENS_STARTX,Xpos)                                        //            Xpos +=  SENS_STARTX
+  MUL16(Ypoi,SENS_SPACEY,Ypos)                                        //            Ypos  =  Ypoi * SENS_SPACEY
+  ADD16(Ypos,SENS_STARTY,Ypos)                                        //            Ypos +=  SENS_STARTY
+  CALL(SensorMap,Xpoi,Ypoi,Layer,Port)                                //            SensorMap(Xpoi,Ypoi,Layer,Port)
+  CALL(ReadPort,DataF,Layer,Port,Figures,Decimals)                    //            ReadPort(DataF,Layer,Port,Figures,Decimals)
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,Figures,Decimals)            //            UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,Figures,Decimals)
+                                                                      //
+  ADD16(Xpoi,1,Xpoi)                                                  //            Xpoi++
+                                                                      //          }
+  JR_LT16(Xpoi,4,UpdateX)                                             //          while (Xpoi < 4)
+  ADD16(Ypoi,1,Ypoi)                                                  //          Ypoi++
+                                                                      //        }
+  JR_LT16(Ypoi,8,UpdateY)                                             //        while (Ypoi < 8)
+                                                                      //
+  // Show cursor                                                      //
+  MUL16(Xcur,SENS_SPACEX,Xpos)                                        //        Xpos  =  Xcur * SENS_SPACEX,Xpos
+  ADD16(Xpos,SENS_STARTX,Xpos)                                        //        Xpos +=  SENS_STARTX 
+  SUB16(Xpos,1,Xpos)                                                  //        Xpos--
+  MUL16(Ycur,SENS_SPACEY,Ypos)                                        //        Ypos  =  Ycur * SENS_SPACEY
+  ADD16(Ypos,SENS_STARTY,Ypos)                                        //        Ypos +=  SENS_STARTY
+  SUB16(Ypos,1,Ypos)                                                  //        Ypos--
+  UI_DRAW(INVERSERECT,Xpos,Ypos,SENS_CURSOR_WIDTH,SENS_CURSOR_HEIGHT) //        UI_DRAW(INVERSERECT,Xpos,Ypos,SENS_CURSOR_WIDTH,SENS_CURSOR_HEIGHT)
+                                                                      //
+  // Update display                                                   //
+  UI_DRAW(UPDATE)                                                     //        UI_DRAW(UPDATE)
+                                                                      //
+  MOVE8_8(0,Update)                                                   //        Update  =  0                                                                      
+NoUpdate:                                                             //      }
+                                                                      //
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotEnter)                                              //      if (Tmp)
+                                                                      //      {
+  CALL(SensorMap,Xcur,Ycur,Layer,Port)                                //        SensorMap(Xcur,Ycur,Layer,Port)
+  CALL(SensorShow,Layer,Port)                                         //        SensorShow(Layer,Port)
+  MOVE8_8(1,Update)                                                   //        Update  =  1
+                                                                      //
+NotEnter:                                                             //      }
+                                                                      //
+  // Loop until "BACK"                                                //
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+                                                                      //    }
+  JR_FALSE(Tmp,Loop)                                                  //    while (!Tmp)
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   SensorMap                                                   //  void SensorMap(Xcur,Ycur,Layer,Port)
+{                                                                     //  {
+  IN_16   Xcur                                                        //
+  IN_16   Ycur                                                        //
+  OUT_8   Layer                                                       //
+  OUT_8   Port                                                        //
+                                                                      //
+  MOVE16_8(Ycur,Layer)                                                //    Layer  =  Ycur
+  DIV8(Layer,2,Layer)                                                 //    Layer /=  2
+  MOVE16_8(Xcur,Port)                                                 //    Port   =  Xcur
+  AND16(Ycur,1,Ycur)                                                  //    Ycur  &=  1
+  JR_NEQ16(Ycur,0,NotOut)                                             //    if (Ycur == 0)
+                                                                      //    {
+  ADD8(Port,16,Port)                                                  //      Port +=  16
+NotOut:                                                               //    }
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   ReadPort                                                    //  void ReadPort(Data,Layer,Port,Figures,Decimals)
+{                                                                     //  {
+  OUT_F   Data                                                        //
+  IN_8    Layer                                                       //
+  IN_8    Port                                                        //
+  OUT_8   Figures                                                     //
+  OUT_8   Decimals                                                    //
+                                                                      //
+  INPUT_DEVICE(GET_FIGURES,Layer,Port,Figures,Decimals)               //    INPUT_DEVICE(GET_FIGURES,Layer,Port,Figures,Decimals)
+  INPUT_READSI(Layer,Port,0,-1,Data)                                  //    INPUT_READSI(Layer,Port,0,-1,Data)
+                                                                      //
+}                                                                     //  }
+                                                                      //
+                                                                      //
+define    DATA_STARTX         20                                      //
+define    DATA_STARTY         17                                      //
+define    DATA_SPACEX         0                                       //
+define    DATA_SPACEY         9                                       //
+define    DATA_SPACEY2        4                                       //
+                                                                      //
+subcall   SensorShow                                                  //  void SensorShow(Layer,Port)
+{                                                                     //  {
+  IN_8    Layer                                                       //
+  IN_8    Port                                                        //
+                                                                      //
+  DATA8   Tmp                                                         //
+  DATA8   Mode                                                        //
+  DATA32  Timer                                                       //
+  DATA32  Raw                                                         //
+  DATAF   Si                                                          //
+  DATAF   SiMin                                                       //
+  DATAF   SiMax                                                       //
+  DATAF   DataF                                                       //
+  DATA16  Xpos                                                        //
+  DATA16  Ypos                                                        //
+  DATA16  Inc                                                         //
+  DATA8   Pct                                                         //
+  DATA8   Type                                                        //
+  DATA8   Connection                                                  //
+  DATA8   Datasets                                                    //
+  DATA8   Format                                                      //
+  DATA8   SetMode                                                     //
+  DATA8   Modes                                                       //
+  DATA8   Views                                                       //
+  DATA8   Figures                                                     //
+  DATA8   Decimals                                                    //
+                                                                      //
+  DATAS   Name 12                                                     //
+  DATAS   Symbol 5                                                    //
+                                                                      //
+  INPUT_DEVICE(GET_TYPEMODE,Layer,Port,Type,Mode)                     //    INPUT_DEVICE(GET_TYPEMODE,Layer,Port,Type,Mode)
+  MOVE8_8(Mode,SetMode)                                               //    SetMode  =  Mode
+                                                                      //    do
+Loop:                                                                 //    {
+                                                                      //
+  UI_DRAW(FILLWINDOW,0x00,0,0                                         //      UI_DRAW(FILLWINDOW,0x00,0,0
+  UI_DRAW(SELECT_FONT,SMALL_FONT)                                     //      UI_DRAW(SELECT_FONT,SMALL_FONT)
+  UI_DRAW(TEXT,FG_COLOR,0,1,'Sensors')                                //      UI_DRAW(TEXT,FG_COLOR,0,1,'Sensors')
+  UI_DRAW(LINE,FG_COLOR,0,TOPLINE_HEIGHT,LCD_WIDTH,TOPLINE_HEIGHT)    //      UI_DRAW(LINE,FG_COLOR,0,TOPLINE_HEIGHT,LCD_WIDTH,TOPLINE_HEIGHT)
+  UI_DRAW(SELECT_FONT,NORMAL_FONT)                                    //      UI_DRAW(SELECT_FONT,NORMAL_FONT)
+                                                                      //
+  UI_DRAW(SELECT_FONT,TINY_FONT)                                      //      UI_DRAW(SELECT_FONT,TINY_FONT)
+                                                                      //
+  // Get sensor modes                                                 //
+  INPUT_DEVICE(GET_FORMAT,Layer,Port,Datasets,Format,Modes,Views)     //      INPUT_DEVICE(GET_FORMAT,Layer,Port,Datasets,Format,Modes,Views)
+                                                                      //
+  JR_LT8(SetMode,Modes,ModeOk)                                        //      if (SetMode >= Mode)
+                                                                      //      {
+  MOVE8_8(Modes,SetMode)                                              //        SetMode  =  Modes
+  SUB8(SetMode,1,SetMode)                                             //        SetMode--
+                                                                      //
+ModeOk:                                                               //      }
+                                                                      //
+  // Set sensor mode                                                  //
+  INPUT_READ(Layer,Port,0,SetMode,Pct)                                //      INPUT_READ(Layer,Port,0,SetMode,Pct)
+                                                                      //
+  // Get sensor info                                                  //
+  INPUT_DEVICE(GET_TYPEMODE,Layer,Port,Type,Mode)                     //      INPUT_DEVICE(GET_TYPEMODE,Layer,Port,Type,Mode)
+  INPUT_DEVICE(GET_CONNECTION,Layer,Port,Connection)                  //      INPUT_DEVICE(GET_CONNECTION,Layer,Port,Connection)
+  INPUT_DEVICE(GET_NAME,Layer,Port,12,Name)                           //      INPUT_DEVICE(GET_NAME,Layer,Port,12,Name)
+  INPUT_DEVICE(GET_SYMBOL,Layer,Port,5,Symbol)                        //      INPUT_DEVICE(GET_SYMBOL,Layer,Port,5,Symbol)
+  INPUT_DEVICE(GET_FORMAT,Layer,Port,Datasets,Format,Modes,Views)     //      INPUT_DEVICE(GET_FORMAT,Layer,Port,Datasets,Format,Modes,Views)
+  INPUT_DEVICE(GET_RAW,Layer,Port,Raw)                                //      INPUT_DEVICE(GET_RAW,Layer,Port,Raw)
+  INPUT_DEVICE(GET_FIGURES,Layer,Port,Figures,Decimals)               //      INPUT_DEVICE(GET_FIGURES,Layer,Port,Figures,Decimals)
+  INPUT_DEVICE(GET_MINMAX,Layer,Port,SiMin,SiMax)                     //      INPUT_DEVICE(GET_MINMAX,Layer,Port,SiMin,SiMax)
+  INPUT_READSI(Layer,Port,0,SetMode,Si)                               //      INPUT_READSI(Layer,Port,0,SetMode,Si)
+                                                                      //
+/*
+    1234567890123456789012345
+
+1   Name = nnnnnnnnnnn    sss
+2   Type = ttt     Mode   = m
+3   Conn = ccc
+4   Modes    = m   Views  = v
+5   Datasets = d   Format = f
+6   Figures  = f   Dec.   = d
+7
+8   Raw      = rrrrrrrrrrrrr
+9   Pct      = pppp
+10  Si       = f.d
+11
+12  SiMin    = f.d
+13  SiMax    = f.d
+*/      
+                                                                      //
+  // Show sensor info                                                 //
+  MOVE16_16(DATA_STARTX,Xpos)                                         //      Xpos    =  DATA_STARTX
+  MOVE16_16(DATA_STARTY,Ypos)                                         //      Ypos    =  DATA_STARTY
+                                                                      //
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Name = ')                          //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Name = ')
+  ADD16(Xpos,35,Xpos)                                                 //      Xpos   +=  35
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,Name)                               //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,Name)
+  ADD16(Xpos,75,Xpos)                                                 //      Xpos   +=  75
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,Symbol)                             //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,Symbol)
+                                                                      //
+  MOVE16_16(DATA_STARTX,Xpos)                                         //      Xpos    =  DATA_STARTX
+  ADD16(Ypos,DATA_SPACEY,Ypos)                                        //      Ypos   +=  DATA_SPACEY
+                                                                      //
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Type = ')                          //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Type = ')
+  ADD16(Xpos,35,Xpos)                                                 //      Xpos   +=  35
+  MOVE8_F(Type,DataF)                                                 //      DataF   =  Type
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,3,0)                         //      UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,3,0)
+  ADD16(Xpos,40,Xpos)                                                 //      Xpos   +=  16
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Mode   = ')                        //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Mode   = ')
+  ADD16(Xpos,45,Xpos)                                                 //      Xpos   +=  45
+  MOVE8_F(Mode,DataF)                                                 //      DataF   =  Mode
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,1,0)                         //      UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,1,0)
+                                                                      //
+  MOVE16_16(DATA_STARTX,Xpos)                                         //      Xpos    =  DATA_STARTX
+  ADD16(Ypos,DATA_SPACEY,Ypos)                                        //      Ypos   +=  DATA_SPACEY
+                                                                      //
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Conn = ')                          //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Conn = ')
+  ADD16(Xpos,35,Xpos)                                                 //      Xpos   +=  35
+  MOVE8_F(Connection,DataF)                                           //      DataF   =  Connection
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,3,0)                         //      UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,3,0)
+                                                                      //
+  MOVE16_16(DATA_STARTX,Xpos)                                         //      Xpos    =  DATA_STARTX
+  ADD16(Ypos,DATA_SPACEY,Ypos)                                        //      Ypos   +=  DATA_SPACEY
+                                                                      //
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Modes    = ')                      //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Modes    = ')
+  ADD16(Xpos,55,Xpos)                                                 //      Xpos   +=  55
+  MOVE8_F(Modes,DataF)                                                //      DataF   =  Modes
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,1,0)                         //      UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,1,0)
+  ADD16(Xpos,20,Xpos)                                                 //      Xpos   +=  20
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Views  = ')                        //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Views  = ')
+  ADD16(Xpos,45,Xpos)                                                 //      Xpos   +=  45
+  MOVE8_F(Views,DataF)                                                //      DataF   =  Views
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,1,0)                         //      UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,1,0)
+                                                                      //
+  MOVE16_16(DATA_STARTX,Xpos)                                         //      Xpos    =  DATA_STARTX
+  ADD16(Ypos,DATA_SPACEY,Ypos)                                        //      Ypos   +=  DATA_SPACEY
+                                                                      //
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Datasets = ')                      //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Datasets = ')
+  ADD16(Xpos,55,Xpos)                                                 //      Xpos   +=  55
+  MOVE8_F(Datasets,DataF)                                             //      DataF   =  Datasets
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,1,0)                         //      UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,1,0)
+  ADD16(Xpos,20,Xpos)                                                 //      Xpos   +=  20
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Format = ')                        //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Format = ')
+  ADD16(Xpos,45,Xpos)                                                 //      Xpos   +=  45
+  MOVE8_F(Format,DataF)                                               //      DataF   =  Format
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,1,0)                         //      UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,1,0)
+                                                                      //
+  MOVE16_16(DATA_STARTX,Xpos)                                         //      Xpos    =  DATA_STARTX
+  ADD16(Ypos,DATA_SPACEY,Ypos)                                        //      Ypos   +=  DATA_SPACEY
+                                                                      //
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Figures  = ')                      //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Figures  = ')
+  ADD16(Xpos,55,Xpos)                                                 //      Xpos   +=  55
+  MOVE8_F(Figures,DataF)                                              //      DataF   =  Figures
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,1,0)                         //      UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,1,0)
+  ADD16(Xpos,20,Xpos)                                                 //      Xpos   +=  20
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Dec.   = ')                        //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Dec.   = ')
+  ADD16(Xpos,45,Xpos)                                                 //      Xpos   +=  45
+  MOVE8_F(Decimals,DataF)                                             //      DataF   =  Decimals
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,1,0)                         //      UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,1,0)
+                                                                      //
+  MOVE16_16(DATA_STARTX,Xpos)                                         //      Xpos    =  DATA_STARTX
+  ADD16(Ypos,DATA_SPACEY,Ypos)                                        //      Ypos   +=  DATA_SPACEY
+  ADD16(Ypos,DATA_SPACEY2,Ypos)                                       //      Ypos   +=  DATA_SPACEY2
+                                                                      //
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Raw      = ')                      //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Raw      = ')
+  ADD16(Xpos,55,Xpos)                                                 //      Xpos   +=  55
+  MOVE32_F(Raw,DataF)                                                 //      DataF   =  Raw
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,13,0)                        //      UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,13,0)
+                                                                      //
+  MOVE16_16(DATA_STARTX,Xpos)                                         //      Xpos    =  DATA_STARTX
+  ADD16(Ypos,DATA_SPACEY,Ypos)                                        //      Ypos   +=  DATA_SPACEY
+                                                                      //
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Pct      = ')                      //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Pct      = ')
+  ADD16(Xpos,55,Xpos)                                                 //      Xpos   +=  55
+  MOVE8_F(Pct,DataF)                                                  //      DataF   =  Pct
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,4,0)                         //      UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,4,0)
+                                                                      //
+  MOVE16_16(DATA_STARTX,Xpos)                                         //      Xpos    =  DATA_STARTX
+  ADD16(Ypos,DATA_SPACEY,Ypos)                                        //      Ypos   +=  DATA_SPACEY
+                                                                      //
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Si       = ')                      //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Si       = ')
+  ADD16(Xpos,55,Xpos)                                                 //      Xpos   +=  55
+  MOVEF_F(Si,DataF)                                                   //      DataF   =  Si
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,Figures,Decimals)            //      UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,Figures,Decimals)
+                                                                      //
+  MOVE16_16(DATA_STARTX,Xpos)                                         //      Xpos    =  DATA_STARTX
+  ADD16(Ypos,DATA_SPACEY,Ypos)                                        //      Ypos   +=  DATA_SPACEY
+  ADD16(Ypos,DATA_SPACEY2,Ypos)                                       //      Ypos   +=  DATA_SPACEY2
+                                                                      //
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Si min   = ')                      //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Si min   = ')
+  ADD16(Xpos,55,Xpos)                                                 //      Xpos   +=  55
+  MOVEF_F(SiMin,DataF)                                                //      DataF   =  SiMin
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,Figures,Decimals)            //      UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,Figures,Decimals)
+                                                                      //
+  MOVE16_16(DATA_STARTX,Xpos)                                         //      Xpos    =  DATA_STARTX
+  ADD16(Ypos,DATA_SPACEY,Ypos)                                        //      Ypos   +=  DATA_SPACEY
+                                                                      //
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Si max   = ')                      //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Si max   = ')
+  ADD16(Xpos,55,Xpos)                                                 //      Xpos   +=  55
+  MOVEF_F(SiMax,DataF)                                                //      DataF   =  SiMax
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,Figures,Decimals)            //      UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,Figures,Decimals)
+                                                                      //
+  // Update display                                                   //
+  UI_DRAW(UPDATE)                                                     //      UI_DRAW(UPDATE)
+                                                                      //
+  TIMER_WAIT(200,Timer)                                               //      TIMER_WAIT(200,Timer)
+  TIMER_READY(Timer)                                                  //      TIMER_READY(Timer)
+                                                                      //
+  // Control SetMode                                                  //
+  UI_BUTTON(GET_HORZ,Inc)                                             //      UI_BUTTON(GET_HORZ,Inc)
+  MOVE16_8(Inc,Tmp)                                                   //      Tmp     =  Inc
+                                                                      //
+  ADD8(SetMode,Tmp,SetMode)                                           //      SetMode  +=  Tmp
+  JR_GTEQ8(SetMode,0,NotTooLowMode)                                   //      if (SetMode < 0)
+                                                                      //      {
+  MOVE8_8(0,SetMode)                                                  //        SetMode  =  0
+                                                                      //
+NotTooLowMode:                                                        //      }
+                                                                      //
+  JR_LT8(SetMode,Views,NotTooHighMode)                                //      if (SetModes >= Views)
+                                                                      //      {
+  MOVE8_8(Views,SetMode)                                              //        SetMode  =  Views
+  SUB8(SetMode,1,SetMode)                                             //        SetMode--
+                                                                      //
+NotTooHighMode:                                                       //      }
+                                                                      //
+  // Loop until "BACK"                                                //
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+                                                                      //    }
+  JR_FALSE(Tmp,Loop)                                                  //    while (!Tmp)
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//! \endverbatim
+

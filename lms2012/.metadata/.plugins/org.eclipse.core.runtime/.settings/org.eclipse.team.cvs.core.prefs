@@ -1,0 +1,4 @@
+#Wed May 29 07:32:51 CEST 2013
+eclipse.preferences.version=1
+repositories/%extssh%dkandlun@dkacvs.corp.lego.com%%var%local%cvs%cvsroot/location=\:extssh\:dkandlun@dkacvs.corp.lego.com\:/var/local/cvs/cvsroot
+repositories/%extssh%dktochpe@dkacvs.corp.lego.com%%var%local%cvs%cvsroot/location=\:extssh\:dktochpe@dkacvs.corp.lego.com\:/var/local/cvs/cvsroot

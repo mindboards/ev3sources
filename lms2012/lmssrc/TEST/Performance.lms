@@ -1,0 +1,735 @@
+/*
+ * LEGO® MINDSTORMS EV3
+ *
+ * Copyright (C) 2010-2013 The LEGO Group
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
+
+//  TCP 08.04.2013
+//! \page testperformanceappcode Performance Application
+//!
+//! <hr size="1"/>
+//!
+//! \verbatim
+//**********************************************************************
+define appv 'Performance V1.02'                                       //
+//**********************************************************************
+                                                                      //
+define    TIMES 100000
+define    MS    1
+
+DATA32    Ref
+
+DATA32    Counter
+DATA32    Start
+DATA32    Stop
+DATA32    Time
+DATAF     DataF
+DATA32    Data32
+DATA32    Data32_1
+DATA32    Data32_2
+DATA32    Data32_3
+DATA32    Data32_4
+DATA16    hData8
+DATA8     Data8
+ARRAY8    DataS 10
+ARRAY8    Text 36
+
+
+vmthread  MAIN
+{
+  DATA8   ShowVersion                                                 //
+                                                                      //
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //    UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+  JR_FALSE(ShowVersion,DontShowVersion)                               //    if (ShowVersion)
+                                                                      //    {
+  UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)                              //      UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)
+  UI_DRAW(RECT,FG_COLOR,6,52,166,24)                                  //      UI_DRAW(RECT,FG_COLOR,6,52,166,24)
+  UI_DRAW(TEXT,FG_COLOR,13,60,appv)                                   //      UI_DRAW(TEXT,FG_COLOR,13,60,appv)
+  UI_DRAW(UPDATE)                                                     //      UI_DRAW(UPDATE)
+                                                                      //
+ShowVersionWait:                                                      //      do
+                                                                      //      {  
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //        UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+                                                                      //      }
+  JR_TRUE(ShowVersion,ShowVersionWait)                                //      while (ShowVersion)
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //      UI_BUTTON(FLUSH)
+DontShowVersion:                                                      //    }  
+                                                                      //
+  UI_DRAW(RESTORE,0)                                                  //    UI_DRAW(RESTORE,0)
+  UI_DRAW(TOPLINE,0)                                                  //    UI_DRAW(TOPLINE,0)
+  UI_WRITE(LED,LED_GREEN)                                             //    UI_WRITE(LED,LED_GREEN)
+                                                                      //
+
+  MOVE32_F(TIMES,DataF)
+  UI_DRAW(FILLWINDOW,BG_COLOR,0,0)                                    //      UI_DRAW(FILLWINDOW,BG_COLOR,0,0)
+
+  UI_DRAW(SELECT_FONT,TINY_FONT)
+  UI_DRAW(TEXT,FG_COLOR,0,120,'-----------------------------------')
+  UI_DRAW(UPDATE)
+
+  UI_DRAW(SCROLL,8)
+  UI_DRAW(SELECT_FONT,TINY_FONT)
+  UI_DRAW(TEXT,FG_COLOR,0,120,'Performance Test (avr.')
+  UI_DRAW(VALUE,FG_COLOR,110,120,DataF,7,0)
+  UI_DRAW(TEXT,FG_COLOR,145,120,'instr)')
+  UI_DRAW(UPDATE)
+
+  UI_DRAW(SCROLL,8)
+  UI_DRAW(SELECT_FONT,TINY_FONT)
+  UI_DRAW(TEXT,FG_COLOR,0,120,'-----------------------------------')
+  UI_DRAW(UPDATE)
+
+  UI_DRAW(SCROLL,8)
+  UI_DRAW(SELECT_FONT,TINY_FONT)
+  UI_DRAW(TEXT,FG_COLOR,0,120,'Byte Code                      [uS]')
+  UI_DRAW(UPDATE)
+
+  UI_DRAW(SCROLL,8)
+
+  UI_WRITE(PUT_STRING,'\r\n    ---------------------------------------------')
+  UI_WRITE(PUT_STRING,'\r\n    Performance test (average over ')
+  UI_WRITE(VALUE32,TIMES)
+  UI_WRITE(PUT_STRING,' inst.)')
+  UI_WRITE(PUT_STRING,'\r\n    ---------------------------------------------')
+  UI_WRITE(PUT_STRING,'\r\n    Byte code                        Time [uS]\r\n\n')
+  UI_FLUSH()
+
+  CALL(Test_REF)
+
+
+
+  CALL(Test_CALL)
+  CALL(Test_CALL_4x32)
+  CALL(Test_MOVEF_32)
+  CALL(Test_MOVE32_F)
+  CALL(Test_MOVEF_F)
+  CALL(Test_ADD32)
+  CALL(Test_ADDF)
+  CALL(Test_INPUT_READ)
+//  CALL(Test_INPUT_DEVICE_READY_PCT)
+  CALL(Test_ARRAY_READ)
+  CALL(Test_READ8)
+  CALL(Test_UI_BUTTON_SHORTPRESS)
+  CALL(Test_JR)
+  CALL(Test_NOP)
+
+//  CALL(Test_UI_DRAW_CLEAN)
+//  CALL(Test_UI_DRAW_TEXT_10_aligned)
+//  CALL(Test_UI_DRAW_TEXT_10_not_aligned)
+//  CALL(Test_UI_DRAW_ICON)
+//  CALL(Test_UI_DRAW_BMPFILE)
+//  CALL(Test_UI_DRAW_RECT)
+//  CALL(Test_UI_DRAW_PIXEL)
+//  CALL(Test_UI_DRAW_UPDATE)
+  CALL(Test_SLEEP)
+
+
+  UI_WRITE(PUT_STRING,'\r\n    ---------------------------------------------\r\n')
+  UI_FLUSH()
+
+Loop:
+  JR(Loop)
+}
+
+
+subcall Test_REF
+{
+ MOVE32_32(0,Counter)
+  TIMER_READ_US(Start)
+Loop:
+  ADD32(1,Counter,Counter)
+  JR_LT32(Counter,TIMES,Loop)
+  TIMER_READ_US(Stop)
+  SUB32(Stop,Start,Ref)
+}
+
+subcall Test_CALL
+{
+  UI_DRAW(SCROLL,8)
+  UI_DRAW(SELECT_FONT,TINY_FONT)
+  UI_DRAW(TEXT,FG_COLOR,0,120,'CALL() . . . . . . . . . . .       ')
+  UI_DRAW(UPDATE)
+
+  UI_WRITE(PUT_STRING,'    CALL().......................... ')
+  UI_FLUSH()
+  MOVE32_32(0,Counter)
+  TIMER_READ_US(Start)
+Loop1:
+// TEST ***********************************************
+  CALL(CallNoPar)
+// ****************************************************
+  ADD32(1,Counter,Counter)
+  JR_LT32(Counter,TIMES,Loop1)
+  TIMER_READ_US(Stop)
+  SUB32(Stop,Start,Time)
+  SUB32(Time,Ref,Time)
+
+  CALL(ShowResult,Time)
+}
+
+
+subcall   Test_CALL_4x32
+{
+  UI_DRAW(SCROLL,8)
+  UI_DRAW(SELECT_FONT,TINY_FONT)
+  UI_DRAW(TEXT,FG_COLOR,0,120,'CALL(4xDATA32...) . . . . .        ')
+  UI_DRAW(UPDATE)
+
+  UI_WRITE(PUT_STRING,'    CALL(4xDATA32...)............... ')
+  UI_FLUSH()
+  MOVE32_32(0,Counter)
+  TIMER_READ_US(Start)
+Loop2:
+// TEST ***********************************************
+  CALL(Call4Par,Data32_1,Data32_2,Data32_3,Data32_4)
+// ****************************************************
+  ADD32(1,Counter,Counter)
+  JR_LT32(Counter,TIMES,Loop2)
+  TIMER_READ_US(Stop)
+  SUB32(Stop,Start,Time)
+  SUB32(Time,Ref,Time)
+
+  CALL(ShowResult,Time)
+}
+
+
+subcall   Test_MOVEF_32
+{
+  UI_DRAW(SCROLL,8)
+  UI_DRAW(SELECT_FONT,TINY_FONT)
+  UI_DRAW(TEXT,FG_COLOR,0,120,'MOVEF_32 . . . . . . . . . .       ')
+  UI_DRAW(UPDATE)
+
+  UI_WRITE(PUT_STRING,'    MOVEF_32........................ ')
+  UI_FLUSH()
+  MOVE32_32(0,Counter)
+  TIMER_READ_US(Start)
+Loop3:
+// TEST ***********************************************
+  MOVEF_32(DataF,Data32)
+// ****************************************************
+  ADD32(1,Counter,Counter)
+  JR_LT32(Counter,TIMES,Loop3)
+  TIMER_READ_US(Stop)
+  SUB32(Stop,Start,Time)
+  SUB32(Time,Ref,Time)
+
+  CALL(ShowResult,Time)
+}
+
+
+subcall   Test_MOVE32_F
+{
+  UI_DRAW(SCROLL,8)
+  UI_DRAW(SELECT_FONT,TINY_FONT)
+  UI_DRAW(TEXT,FG_COLOR,0,120,'MOVE32_F. . . . . . . . . .        ')
+  UI_DRAW(UPDATE)
+
+  UI_WRITE(PUT_STRING,'    MOVE32_F........................ ')
+  UI_FLUSH()
+  MOVE32_32(0,Counter)
+  TIMER_READ_US(Start)
+Loop4:
+// TEST ***********************************************
+  MOVE32_F(Data32,DataF)
+// ****************************************************
+  ADD32(1,Counter,Counter)
+  JR_LT32(Counter,TIMES,Loop4)
+  TIMER_READ_US(Stop)
+  SUB32(Stop,Start,Time)
+  SUB32(Time,Ref,Time)
+
+  CALL(ShowResult,Time)
+}
+
+
+subcall   Test_MOVEF_F
+{
+  UI_DRAW(SCROLL,8)
+  UI_DRAW(SELECT_FONT,TINY_FONT)
+  UI_DRAW(TEXT,FG_COLOR,0,120,'MOVEF_F. . . . . . . . . . .       ')
+  UI_DRAW(UPDATE)
+
+  UI_WRITE(PUT_STRING,'    MOVEF_F......................... ')
+  UI_FLUSH()
+  MOVE32_32(0,Counter)
+  TIMER_READ_US(Start)
+Loop5:
+// TEST ***********************************************
+  MOVEF_F(DataF,DataF)
+// ****************************************************
+  ADD32(1,Counter,Counter)
+  JR_LT32(Counter,TIMES,Loop5)
+  TIMER_READ_US(Stop)
+  SUB32(Stop,Start,Time)
+  SUB32(Time,Ref,Time)
+
+  CALL(ShowResult,Time)
+}
+
+subcall   Test_ADD32
+{
+  UI_DRAW(SCROLL,8)
+  UI_DRAW(SELECT_FONT,TINY_FONT)
+  UI_DRAW(TEXT,FG_COLOR,0,120,'ADD32 . . . . . . . . . . .        ')
+  UI_DRAW(UPDATE)
+
+  UI_WRITE(PUT_STRING,'    ADD32........................... ')
+  UI_FLUSH()
+  MOVE32_32(0,Counter)
+  TIMER_READ_US(Start)
+Loop6:
+// TEST ***********************************************
+  ADD32(1,Data32,Data32)
+// ****************************************************
+  ADD32(1,Counter,Counter)
+  JR_LT32(Counter,TIMES,Loop6)
+  TIMER_READ_US(Stop)
+  SUB32(Stop,Start,Time)
+  SUB32(Time,Ref,Time)
+
+  CALL(ShowResult,Time)
+}
+
+
+subcall   Test_ADDF
+{
+  UI_DRAW(SCROLL,8)
+  UI_DRAW(SELECT_FONT,TINY_FONT)
+  UI_DRAW(TEXT,FG_COLOR,0,120,'ADDF . . . . . . . . . . . .       ')
+  UI_DRAW(UPDATE)
+
+  UI_WRITE(PUT_STRING,'    ADDF............................ ')
+  UI_FLUSH()
+  MOVE32_32(0,Counter)
+  TIMER_READ_US(Start)
+Loop7:
+// TEST ***********************************************
+  ADDF(1F,DataF,DataF)
+// ****************************************************
+  ADD32(1,Counter,Counter)
+  JR_LT32(Counter,TIMES,Loop7)
+  TIMER_READ_US(Stop)
+  SUB32(Stop,Start,Time)
+  SUB32(Time,Ref,Time)
+
+  CALL(ShowResult,Time)
+}
+
+
+subcall   Test_INPUT_READ
+{
+  UI_DRAW(SCROLL,8)
+  UI_DRAW(SELECT_FONT,TINY_FONT)
+  UI_DRAW(TEXT,FG_COLOR,0,120,'INPUT_READ. . . . . . . . .        ')
+  UI_DRAW(UPDATE)
+
+  UI_WRITE(PUT_STRING,'    INPUT_READ...................... ')
+  UI_FLUSH()
+  MOVE32_32(0,Counter)
+  TIMER_READ_US(Start)
+Loop8:
+// TEST ***********************************************
+  INPUT_READ(0,0,0,-1,Data8)
+// ****************************************************
+  ADD32(1,Counter,Counter)
+  JR_LT32(Counter,TIMES,Loop8)
+  TIMER_READ_US(Stop)
+  SUB32(Stop,Start,Time)
+  SUB32(Time,Ref,Time)
+
+  CALL(ShowResult,Time)
+}
+
+
+subcall   Test_INPUT_DEVICE_READY_PCT
+{
+  UI_DRAW(SCROLL,8)
+  UI_DRAW(SELECT_FONT,TINY_FONT)
+  UI_DRAW(TEXT,FG_COLOR,0,120,'INPUT_DEVICE(READY_PCT...) .       ')
+  UI_DRAW(UPDATE)
+
+  UI_WRITE(PUT_STRING,'    INPUT_DEVICE(READY_PCT...)...... ')
+  UI_FLUSH()
+  MOVE32_32(0,Counter)
+  TIMER_READ_US(Start)
+Loop9:
+// TEST ***********************************************
+  INPUT_DEVICE(READY_PCT,0,0,0,-1,1,Data8)
+// ****************************************************
+  ADD32(1,Counter,Counter)
+  JR_LT32(Counter,TIMES,Loop9)
+  TIMER_READ_US(Stop)
+  SUB32(Stop,Start,Time)
+  SUB32(Time,Ref,Time)
+
+  CALL(ShowResult,Time)
+}
+
+
+subcall   Test_ARRAY_READ
+{
+  UI_DRAW(SCROLL,8)
+  UI_DRAW(SELECT_FONT,TINY_FONT)
+  UI_DRAW(TEXT,FG_COLOR,0,120,'ARRAY_READ(...) . . . . . .        ')
+  UI_DRAW(UPDATE)
+
+  UI_WRITE(PUT_STRING,'    ARRAY_READ(...)................. ')
+  UI_FLUSH()
+  ARRAY(CREATE8,10,hData8)
+  MOVE32_32(0,Counter)
+  TIMER_READ_US(Start)
+Loop10:
+// TEST ***********************************************
+  ARRAY_READ(hData8,5,Data8)
+// ****************************************************
+  ADD32(1,Counter,Counter)
+  JR_LT32(Counter,TIMES,Loop10)
+  TIMER_READ_US(Stop)
+  SUB32(Stop,Start,Time)
+  SUB32(Time,Ref,Time)
+
+  CALL(ShowResult,Time)
+}
+
+
+subcall   Test_READ8
+{
+  UI_DRAW(SCROLL,8)
+  UI_DRAW(SELECT_FONT,TINY_FONT)
+  UI_DRAW(TEXT,FG_COLOR,0,120,'READ8(...) . . . . . . . . .       ')
+  UI_DRAW(UPDATE)
+
+  UI_WRITE(PUT_STRING,'    READ8(...)...................... ')
+  UI_FLUSH()
+  MOVE32_32(0,Counter)
+  TIMER_READ_US(Start)
+Loop11:
+// TEST ***********************************************
+  READ8(DataS,5,Data8)
+// ****************************************************
+  ADD32(1,Counter,Counter)
+  JR_LT32(Counter,TIMES,Loop11)
+  TIMER_READ_US(Stop)
+  SUB32(Stop,Start,Time)
+  SUB32(Time,Ref,Time)
+
+  CALL(ShowResult,Time)
+}
+
+
+subcall   Test_UI_BUTTON_SHORTPRESS
+{
+  UI_DRAW(SCROLL,8)
+  UI_DRAW(SELECT_FONT,TINY_FONT)
+  UI_DRAW(TEXT,FG_COLOR,0,120,'UI_BUTTON(SHORTPRESS...). .        ')
+  UI_DRAW(UPDATE)
+
+  UI_WRITE(PUT_STRING,'    UI_BUTTON(SHORTPRESS...)........ ')
+  UI_FLUSH()
+  MOVE32_32(0,Counter)
+  TIMER_READ_US(Start)
+Loop12:
+// TEST ***********************************************
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Data8)
+// ****************************************************
+  ADD32(1,Counter,Counter)
+  JR_LT32(Counter,TIMES,Loop12)
+  TIMER_READ_US(Stop)
+  SUB32(Stop,Start,Time)
+  SUB32(Time,Ref,Time)
+
+  CALL(ShowResult,Time)
+}
+
+
+subcall   Test_JR
+{
+  UI_DRAW(SCROLL,8)
+  UI_DRAW(SELECT_FONT,TINY_FONT)
+  UI_DRAW(TEXT,FG_COLOR,0,120,'JR(...). . . . . . . . . . .       ')
+  UI_DRAW(UPDATE)
+
+  UI_WRITE(PUT_STRING,'    JR(...)......................... ')
+  UI_FLUSH()
+  MOVE32_32(0,Counter)
+  TIMER_READ_US(Start)
+Loop13:
+// TEST ***********************************************
+  JR(Next)
+Next:
+// ****************************************************
+  ADD32(1,Counter,Counter)
+  JR_LT32(Counter,TIMES,Loop13)
+  TIMER_READ_US(Stop)
+  SUB32(Stop,Start,Time)
+  SUB32(Time,Ref,Time)
+
+  CALL(ShowResult,Time)
+}
+
+
+subcall   Test_NOP
+{
+  UI_DRAW(SCROLL,8)
+  UI_DRAW(SELECT_FONT,TINY_FONT)
+  UI_DRAW(TEXT,FG_COLOR,0,120,'NOP . . . . . . . . . . . .        ')
+  UI_DRAW(UPDATE)
+
+  UI_WRITE(PUT_STRING,'    NOP ............................ ')
+  UI_FLUSH()
+  MOVE32_32(0,Counter)
+  TIMER_READ_US(Start)
+Loop40:
+// TEST ***********************************************
+  NOP
+// ****************************************************
+  ADD32(1,Counter,Counter)
+  JR_LT32(Counter,TIMES,Loop40)
+  TIMER_READ_US(Stop)
+  SUB32(Stop,Start,Time)
+  SUB32(Time,Ref,Time)
+
+  CALL(ShowResult,Time)
+}
+
+
+subcall   Test_SLEEP
+{
+  UI_DRAW(SCROLL,8)
+  UI_DRAW(SELECT_FONT,TINY_FONT)
+  UI_DRAW(TEXT,FG_COLOR,0,120,'SLEEP() . . . . . . . . . .        ')
+  UI_DRAW(UPDATE)
+
+  UI_WRITE(PUT_STRING,'    SLEEP()......................... ')
+  UI_FLUSH()
+  MOVE32_32(0,Counter)
+  TIMER_READ_US(Start)
+Loop39:
+// TEST ***********************************************
+  SLEEP()
+// ****************************************************
+  ADD32(1,Counter,Counter)
+  JR_LT32(Counter,TIMES,Loop39)
+  TIMER_READ_US(Stop)
+  SUB32(Stop,Start,Time)
+  SUB32(Time,Ref,Time)
+
+  CALL(ShowResult,Time)
+}
+
+
+subcall   Test_UI_DRAW_CLEAN
+{
+  UI_WRITE(PUT_STRING,'    UI_DRAW(FILLWINDOW,0,0,0)....... ')
+  UI_FLUSH()
+  MOVE32_32(0,Counter)
+  TIMER_READ_US(Start)
+Loop40:
+// TEST ***********************************************
+  UI_DRAW(FILLWINDOW,0,0,0)
+// ****************************************************
+  ADD32(1,Counter,Counter)
+  JR_LT32(Counter,TIMES,Loop40)
+  TIMER_READ_US(Stop)
+  SUB32(Stop,Start,Time)
+  SUB32(Time,Ref,Time)
+
+  CALL(ShowResult,Time)
+}
+
+
+subcall   Test_UI_DRAW_TEXT_10_aligned
+{
+  UI_WRITE(PUT_STRING,'    UI_DRAW(TEXT,1,0,0,"0123456789") ')
+  UI_FLUSH()
+  MOVE32_32(0,Counter)
+  TIMER_READ_US(Start)
+Loop40:
+// TEST ***********************************************
+  UI_DRAW(TEXT,FG_COLOR,0,0,'0123456789')
+// ****************************************************
+  ADD32(1,Counter,Counter)
+  JR_LT32(Counter,TIMES,Loop40)
+  TIMER_READ_US(Stop)
+  SUB32(Stop,Start,Time)
+  SUB32(Time,Ref,Time)
+
+  CALL(ShowResult,Time)
+}
+
+
+subcall   Test_UI_DRAW_TEXT_10_not_aligned
+{
+  UI_WRITE(PUT_STRING,'    UI_DRAW(TEXT,1,3,0,"0123456789") ')
+  UI_FLUSH()
+  MOVE32_32(0,Counter)
+  TIMER_READ_US(Start)
+Loop40:
+// TEST ***********************************************
+  UI_DRAW(TEXT,FG_COLOR,3,16,'0123456789')
+// ****************************************************
+  ADD32(1,Counter,Counter)
+  JR_LT32(Counter,TIMES,Loop40)
+  TIMER_READ_US(Stop)
+  SUB32(Stop,Start,Time)
+  SUB32(Time,Ref,Time)
+
+  CALL(ShowResult,Time)
+}
+
+
+subcall   Test_UI_DRAW_ICON
+{
+  UI_WRITE(PUT_STRING,'    UI_DRAW(ICON...)................ ')
+  UI_FLUSH()
+  MOVE32_32(0,Counter)
+  TIMER_READ_US(Start)
+Loop40:
+// TEST ***********************************************
+  UI_DRAW(ICON,FG_COLOR,0,28,LARGE_ICON,WARNSIGN)
+// ****************************************************
+  ADD32(1,Counter,Counter)
+  JR_LT32(Counter,TIMES,Loop40)
+  TIMER_READ_US(Stop)
+  SUB32(Stop,Start,Time)
+  SUB32(Time,Ref,Time)
+
+  CALL(ShowResult,Time)
+}
+
+
+subcall   Test_UI_DRAW_BMPFILE
+{
+  UI_WRITE(PUT_STRING,'    UI_DRAW(BMPFILE...)............. ')
+  UI_FLUSH()
+  MOVE32_32(0,Counter)
+  TIMER_READ_US(Start)
+Loop40:
+// TEST ***********************************************
+  UI_DRAW(BMPFILE,FG_COLOR,16,50,'144x65_POP3')
+// ****************************************************
+  ADD32(1,Counter,Counter)
+  JR_LT32(Counter,TIMES,Loop40)
+  TIMER_READ_US(Stop)
+  SUB32(Stop,Start,Time)
+  SUB32(Time,Ref,Time)
+
+  CALL(ShowResult,Time)
+}
+
+
+subcall   Test_UI_DRAW_RECT
+{
+  UI_WRITE(PUT_STRING,'    UI_DRAW(RECT...)................ ')
+  UI_FLUSH()
+  MOVE32_32(0,Counter)
+  TIMER_READ_US(Start)
+Loop40:
+// TEST ***********************************************
+  UI_DRAW(RECT,FG_COLOR,15,49,146,67)
+// ****************************************************
+  ADD32(1,Counter,Counter)
+  JR_LT32(Counter,TIMES,Loop40)
+  TIMER_READ_US(Stop)
+  SUB32(Stop,Start,Time)
+  SUB32(Time,Ref,Time)
+
+  CALL(ShowResult,Time)
+}
+
+
+subcall   Test_UI_DRAW_PIXEL
+{
+  UI_WRITE(PUT_STRING,'    UI_DRAW(PIXEL...)............... ')
+  UI_FLUSH()
+  MOVE32_32(0,Counter)
+  TIMER_READ_US(Start)
+Loop40:
+// TEST ***********************************************
+  UI_DRAW(PIXEL,FG_COLOR,0,120)
+// ****************************************************
+  ADD32(1,Counter,Counter)
+  JR_LT32(Counter,TIMES,Loop40)
+  TIMER_READ_US(Stop)
+  SUB32(Stop,Start,Time)
+  SUB32(Time,Ref,Time)
+
+  CALL(ShowResult,Time)
+}
+
+
+subcall   Test_UI_DRAW_UPDATE
+{
+  UI_WRITE(PUT_STRING,'    UI_DRAW(UPDATE)................. ')
+  UI_FLUSH()
+  MOVE32_32(0,Counter)
+  TIMER_READ_US(Start)
+Loop40:
+// TEST ***********************************************
+  UI_DRAW(UPDATE)
+// ****************************************************
+  ADD32(1,Counter,Counter)
+  JR_LT32(Counter,TIMES,Loop40)
+  TIMER_READ_US(Stop)
+  SUB32(Stop,Start,Time)
+  SUB32(Time,Ref,Time)
+
+  CALL(ShowResult,Time)
+}
+
+
+subcall   ShowResult
+{
+  IN_32   Timer
+
+  DATAF   Tmp1
+  DATAF   Tmp2
+
+  MOVE32_F(Timer,Tmp1)
+  MOVE32_F(MS,Tmp2)
+  MULF(Tmp1,Tmp2,Tmp1)
+  MOVE32_F(TIMES,Tmp2)
+  DIVF(Tmp1,Tmp2,Tmp1)
+  UI_WRITE(FLOATVALUE,Tmp1,6,0)
+  UI_WRITE(PUT_STRING,'\r\n')
+  UI_FLUSH()
+
+  UI_DRAW(SELECT_FONT,TINY_FONT)
+  UI_DRAW(VALUE,FG_COLOR,145,120,Tmp1,6,0);
+  UI_DRAW(UPDATE)
+}
+
+
+subcall   CallNoPar
+{
+}
+
+
+subcall   Call4Par
+{
+  IN_32   Data32_1
+  IN_32   Data32_2
+  OUT_32  Data32_3
+  OUT_32  Data32_4
+}
+
+                                                                      //
+//! \endverbatim
+

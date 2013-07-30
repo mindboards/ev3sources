@@ -1,0 +1,131 @@
+//! \page test0101app Test 0101 Application
+//!
+//! <hr size="1"/>
+//!
+//! \verbatim
+// 
+//
+//
+//**********************************************************************
+//        TEST0101 
+//**********************************************************************
+                                                                      //
+define    TESTREPORT  'TestReport'                                    //
+define    LINE        64                                              //
+                                                                      //
+DATA16    Counter                                                     //
+                                                                      //
+vmthread  MAIN                                                        //  void    MAIN(void)
+{                                                                     //  {
+  CALL(Test0101)                                                      //    Test0101()
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   Test0101                                                    //  void Test0101(void)
+{                                                                     //  {
+  DATAS   String LINE                                                 //
+                                                                      //
+  // Set success as default                                           //
+	MEMORY_WRITE(GUI_SLOT,4,0,1,0)                                      //    MEMORY_WRITE(GUI_SLOT,4,0,1,0)
+                                                                      //
+  CALL(TestOpen)                                                      //
+                                                                      //
+  CALL(TestWrite,' INFO')                                             //
+                                                                      //
+  UI_READ(GET_VERSION,LINE,String)                                    //
+  CALL(TestText,'GET_VERSION        ',String)                         //
+  UI_READ(GET_HW_VERS,LINE,String)                                    //
+  CALL(TestText,'GET_HW_VERS        ',String)                         //
+  UI_READ(GET_FW_VERS,LINE,String)                                    //
+  CALL(TestText,'GET_FW_VERS        ',String)                         //
+  COM_GET(GET_ID,HW_BT,LINE,String)                                   //
+  CALL(TestText,'GET_ID             ',String)                         //
+  UI_READ(GET_OS_VERS,LINE,String)                                    //
+  CALL(TestText,'GET_OS_VERS        ',String)                         //
+  UI_READ(GET_OS_BUILD,LINE,String)                                   //
+  CALL(TestText,'GET_OS_BUILD       ',String)                         //
+                                                                      //
+  CALL(TestClose)                                                     //
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestText                                                    //  void TestText(Text)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+  IN_S    IstWert LINE                                                //
+                                                                      //
+  DATAS   String LINE                                                 //
+                                                                      //
+  STRINGS(ADD,'  ',Text,String)                                       //    STRINGS(ADD,' ',Text,String)
+  STRINGS(ADD,String,' = [',String)                                   //    STRINGS(ADD,String,' = [',String)
+  STRINGS(ADD,String,IstWert,String)                                  //    STRINGS(ADD,String,IstWert,String)
+  STRINGS(ADD,String,']',String)                                      //    STRINGS(ADD,String,']',String)
+                                                                      //
+  CALL(TestWrite,String)                                              //    CALL(TestWrite,String)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestCheck                                                   //  void TestCheck(Text,IstWert,SollWert)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+  IN_S    IstWert LINE                                                //
+  IN_S    SollWert LINE                                               //
+                                                                      //
+  DATA8   Result                                                      //
+  DATAS   String LINE                                                 //
+                                                                      //
+  STRINGS(COMPARE,IstWert,SollWert,Result)                            //    STRINGS(COMPARE,IstWert,SollWert,Result)
+  JR_FALSE(Result,Error)                                              //    if (Result)
+                                                                      //    {
+  STRINGS(ADD,'  ',Text,String)                                       //      STRINGS(ADD,' ',Text,String)
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  STRINGS(ADD,String,IstWert,String)                                  //      STRINGS(ADD,String,IstWert,String)
+  STRINGS(ADD,String,']',String)                                      //      STRINGS(ADD,String,']',String)
+                                                                      //
+  JR(EndError)                                                        //    }
+                                                                      //    else
+Error:                                                                //    {
+                                                                      //
+  STRINGS(ADD,'# ',Text,String)                                       //      STRINGS(ADD,' ',Text,String) 
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  STRINGS(ADD,String,IstWert,String)                                  //      STRINGS(ADD,String,IstWert,String)
+  STRINGS(ADD,String,'] (',String)                                    //      STRINGS(ADD,String,'] (',String)
+  STRINGS(ADD,String,SollWert,String)                                 //      STRINGS(ADD,String,SollWert,String)
+  STRINGS(ADD,String,')',String)                                      //      STRINGS(ADD,String,')',String)
+                                                                      //
+  // Set failed                                                       //
+	MEMORY_WRITE(GUI_SLOT,4,0,1,1)                                      //      MEMORY_WRITE(GUI_SLOT,4,0,1,1)
+                                                                      //
+EndError:                                                             //    }
+                                                                      //
+  CALL(TestWrite,String)                                              //    CALL(TestWrite,String)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+DATA16    hFile                                                       //
+                                                                      //
+subcall   TestOpen                                                    //  void TestOpen(void)
+{                                                                     //  {
+  DATAS   TestReport FILENAMESIZE                                     //
+                                                                      //
+  STRINGS(ADD,TESTREPORT,EXT_TEXT,TestReport)                         //    STRINGS(ADD,TESTREPORT,EXT_TEXT,TestReport)
+  FILE(OPEN_APPEND,TestReport,hFile)                                  //    FILE(OPEN_APPEND,TestReport,hFile)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestWrite                                                   //  void TestWrite(Text)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+                                                                      //
+  FILE(WRITE_TEXT,hFile,DEL_CRLF,Text)                                //    FILE(WRITE_TEXT,hFile,DEL_CRLF,Text)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestClose                                                   //  void TestClose(void)
+{                                                                     //  {
+  FILE(CLOSE,hFile)                                                   //    FILE(CLOSE,hFile)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//! \endverbatim
+

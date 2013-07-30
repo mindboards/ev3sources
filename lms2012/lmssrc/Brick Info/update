@@ -1,0 +1,126 @@
+#! /bin/bash
+
+#*** APPLICATION *************************************************************
+
+path="tools"
+app="Brick Info"
+
+#*** HOST ********************************************************************
+
+lms_to_rbf="../adk/cmp"
+xbm_to_rgf="../adk/bmp"
+bmp_to_xbm="convert"
+
+#*** TARGET ******************************************************************
+
+am1808="../../lms2012/Linux_AM1808"
+x86="../../lms2012/Linux_X86"
+nfs="../../../../am1808/DaVinci-PSP-SDK-03.20.00.13/filesys/home/root/lms2012"
+
+#*** FILES ******************************************************************* 
+
+bmp=".bmp"
+xbm=".xbm"
+
+rbf=".rbf"
+rgf=".rgf"
+rsf=".rsf"
+raf=".raf"
+
+#*** DO CLEAN UP *************************************************************
+
+if [ -e "${app}/*${rbf}" ]
+then
+  rm "${app}"/*"${rbf}"
+fi
+
+if [ -e "${app}/*${rgf}" ]
+then
+  rm "${app}"/*"${rgf}"
+fi
+
+if [ -e "${app}/*${rsf}" ]
+then
+  rm "${app}"/*"${rsf}"
+fi
+
+if [ -e "${x86}/${path}/${app}/*${rbf}" ]
+then
+  rm "${x86}"/"${path}"/"${app}"/*"${rbf}"
+fi
+
+if [ -e "${x86}/${path}/${app}/*${rgf}" ]
+then
+  rm "${x86}"/"${path}"/"${app}"/*"${rgf}"
+fi
+
+if [ -e "${x86}/${path}/${app}/*${rsf}" ]
+then
+  rm "${x86}"/"${path}"/"${app}"/*"${rsf}"
+fi
+
+if [ -e "${nfs}/${path}/${app}/*${rbf}" ]
+then
+  rm "${nfs}"/"${path}"/"${app}"/*"${rbf}"
+fi
+
+if [ -e "${nfs}/${path}/${app}/*${rgf}" ]
+then
+  rm "${nfs}"/"${path}"/"${app}"/*"${rgf}"
+fi
+
+if [ -e "${nfs}/${path}/${app}/*${rsf}" ]
+then
+  rm "${nfs}"/"${path}"/"${app}"/*"${rsf}"
+fi
+
+if [ -e "${am1808}/${path}/${app}/*${rbf}" ]
+then
+  rm "${am1808}"/"${path}"/"${app}"/*"${rbf}"
+fi
+
+if [ -e "${am1808}/${path}/${app}/*${rgf}" ]
+then
+  rm "${am1808}"/"${path}"/"${app}"/*"${rgf}"
+fi
+
+if [ -e "${am1808}/${path}/${app}/*${rsf}" ]
+then
+  rm "${am1808}"/"${path}"/"${app}"/*"${rsf}"
+fi
+
+#*** DO COMPILE **************************************************************
+
+echo -n Compile "  "../${path}/${app}"      "
+${lms_to_rbf} "${app}" "${app}"/"${app}""${rbf}"
+
+#*** DO CONVERT **************************************************************
+
+echo -n Convert and copy
+
+#*** DO CONVERT ICON *********************************************************
+
+srcfile="Brick InfoIcon"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/icon
+
+#*** DO CONVERT GRAPHICS *****************************************************
+
+srcfile="144x116_POP6"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+#*** DO COPY IN PLACE ********************************************************
+
+cp "${app}"/*"${rbf}" "${x86}"/"${path}"/"${app}"/
+cp "${app}"/*"${rgf}" "${x86}"/"${path}"/"${app}"/
+
+cp "${app}"/*"${rbf}" "${nfs}"/"${path}"/"${app}"/
+cp "${app}"/*"${rgf}" "${nfs}"/"${path}"/"${app}"/
+
+cp "${app}"/*"${rbf}" "${am1808}"/"${path}"/"${app}"/
+cp "${app}"/*"${rgf}" "${am1808}"/"${path}"/"${app}"/
+
+#*** DONE ********************************************************************
+
+echo

@@ -1,0 +1,1926 @@
+/*
+ * LEGO® MINDSTORMS EV3
+ *
+ * Copyright (C) 2010-2013 The LEGO Group
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
+
+//  TCP 08.04.2013
+//! \page uiappcode User Interface Source Code
+//!
+//! <hr size="1"/>
+//!
+//! \verbatim
+//**********************************************************************
+define appv 'ui V1.02'                                                //
+//**********************************************************************
+                                                                      //
+define    SCREEN                        'screen'                      //
+                                                                      //
+define    LCDNAMESIZE     12                                          //  Max characters to show on LCD
+                                                                      //
+// Keep track of active screen                                        //
+                                                                      //                                                                        
+DATA16    State                                                       //
+                                                                      //
+define    STATE_PLAYRECENT              1                             //
+define    STATE_FILE                    2                             //
+define    STATE_APPS                    3                             //
+define    STATE_SETTINGS                4                             //                               
+                                                                      //
+define    STATE_FIRST                   1                             //
+define    STATE_LAST                    4                             //                                  
+                                                                      //
+// Result from screen                                                 //
+                                                                      //
+DATA16    SubState                                                    //
+                                                                      //
+define    SUBSTATE_NOT_INIT             0                             //
+define    SUBSTATE_IDLE                 1                             //
+                                                                      //
+DATA8     Event                                                       //
+DATA8     TurnOff                                                     //
+DATA8     Type                                                        //
+DATAS     String                        FILENAMESIZE                  //
+                                                                      //
+define    BROWSER_STARTX                8                             //
+define    BROWSER_STARTY                40                            //
+define    BROWSER_WIDTH                 166                           //
+define    BROWSER_HEIGHT                85                            //
+                                                                      //
+//******************************************************************************************************
+// Main
+//******************************************************************************************************
+                                                                      //
+vmthread Main                                                         //  void Main(void)
+{                                                                     //  {
+  DATA8   ShowVersion                                                 //
+                                                                      //
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //    UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+  JR_FALSE(ShowVersion,DontShowVersion)                               //    if (ShowVersion)
+                                                                      //    {
+  UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)                              //      UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)
+  UI_DRAW(RECT,FG_COLOR,6,52,166,24)                                  //      UI_DRAW(RECT,FG_COLOR,6,52,166,24)
+  UI_DRAW(TEXT,FG_COLOR,13,60,appv)                                   //      UI_DRAW(TEXT,FG_COLOR,13,60,appv)
+  UI_DRAW(UPDATE)                                                     //      UI_DRAW(UPDATE)
+                                                                      //
+ShowVersionWait:                                                      //      do
+                                                                      //      {  
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //        UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+                                                                      //      }
+  JR_TRUE(ShowVersion,ShowVersionWait)                                //      while (ShowVersion)
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //      UI_BUTTON(FLUSH)
+DontShowVersion:                                                      //    }  
+                                                                      //
+  UI_DRAW(TOPLINE,0)                                                  //    UI_DRAW(TOPLINE,0)
+  CALL(StartupScreen)                                                 //    StartupScreen()
+  OBJECT_START(BackgroundTask)                                        //    OBJECT_START(BackgroundTask)
+  CALL(Scheduler)                                                     //    Scheduler()
+}                                                                     //  }
+                                                                      //
+//******************************************************************************************************
+// BackgroundTask
+//******************************************************************************************************
+                                                                      //
+vmthread  BackgroundTask                                              //  void BackgroundTask(void)
+{                                                                     //  {
+  DATA32  pImage                                                      //    DATA32  pImage
+  DATA32  pGlobals                                                    //    DATA32  pGlobals
+  DATA8   CmdSlotStatus                                               //    DATA8   CmdSlotStatus
+  DATA8   UserSlotStatus                                              //    DATA8   UserSlotStatus
+  DATA8   Status                                                      //    DATA8   Status
+  DATA8   Changed                                                     //    DATA8   Changed
+  DATA8   Ready                                                       //    DATA8   Ready
+  DATA8   Blocked                                                     //    DATA8   Blocked
+  DATA8   LongPress                                                   //    DATA8   LongPress
+  DATA8   BackPress                                                   //    DATA8   BackPress
+  DATA8   TmpEvent                                                    //    DATA8   TmpEvent
+  DATA8   Reply                                                       //    DATA8   Reply
+  DATA8   KeyPress                                                    //    DATA8   KeyPress
+  DATA8   Volume                                                      //    DATA8   Volume
+  DATA8   Busy                                                        //    DATA8   Busy
+  DATA8   Shutdown                                                    //    DATA8   Shutdown
+  DATA8   Warning                                                     //    DATA8   Warning
+  DATA8   OldWarning                                                  //    DATA8   OldWarning
+  DATA8   Tmp                                                         //    DATA8   Tmp
+                                                                      //
+  // Initialize                                                       //
+  MOVE8_8(0,OldWarning)                                               //    OldWarning  =  0
+  UI_DRAW(TOPLINE,1)                                                  //    UI_DRAW(TOPLINE,1)
+  UI_DRAW(UPDATE)                                                     //    UI_DRAW(UPDATE)
+  PROGRAM_INFO(GET_STATUS,CMD_SLOT,CmdSlotStatus)                     //    PROGRAM_INFO(GET_STATUS,CMD_SLOT,CmdSlotStatus)
+  PROGRAM_INFO(GET_STATUS,USER_SLOT,UserSlotStatus)                   //    PROGRAM_INFO(GET_STATUS,USER_SLOT,UserSlotStatus)
+                                                                      //
+  // Do forever                                                       //    do
+Loop:                                                                 //    {
+                                                                      //
+  // Check for direct command                                         //
+  PROGRAM_INFO(GET_STATUS,CMD_SLOT,Status)                            //      PROGRAM_INFO(GET_STATUS,CMD_SLOT,Status)
+  JR_EQ8(CmdSlotStatus,Status,NoCmdChange)                            //      if (CmdSlotStatus != Status)
+                                                                      //      {
+  MOVE8_8(Status,CmdSlotStatus)                                       //        CmdSlotStatus  =  Status
+                                                                      //
+  JR_NEQ8(Status,STOPPED,NoCmdStop)                                   //        if (Status == STOPPED)
+                                                                      //        {
+  PROGRAM_INFO(GET_PRGRESULT,CMD_SLOT,Reply)                          //          PROGRAM_INFO(GET_PRGRESULT,CMD_SLOT,Reply)                                                            
+  COM_WRITE (REPLY,pImage,pGlobals,Reply)                             //          COM_WRITE(REPLY,pImage,pGlobals,Reply)
+                                                                      //
+NoCmdStop:                                                            //        }
+NoCmdChange:                                                          //      }
+                                                                      //
+  // Check for direct command reply                                   //
+  JR_NEQ8(Status,STOPPED,CmdBusy)                                     //      if (Status == STOPPED)
+                                                                      //      {
+                                                                      //
+  COM_READ(COMMAND,0,pImage,pGlobals,Ready)                           //        COM_READ(COMMAND,0,pImage,pGlobals,Ready)
+  JR_FALSE(Ready,NoCommand)                                           //        if (Ready)
+                                                                      //        {
+  DO(CMD_SLOT,pImage,pGlobals)                                        //          DO(CMD_SLOT,pImage,pGlobals)
+  MOVE8_8(RUNNING,CmdSlotStatus)                                      //          CmdSlotStatus  =  RUNNING
+                                                                      //
+NoCommand:                                                            //        }
+                                                                      //
+CmdBusy:                                                              //      }
+                                                                      //
+  // Check for abort user program                                     //                                                                      
+  PROGRAM_INFO(GET_STATUS,USER_SLOT,Status)                           //      PROGRAM_INFO(GET_STATUS,USER_SLOT,Status)
+  JR_NEQ8(Status,RUNNING,NotRunning)                                  //      if (Status == RUNNING)
+                                                                      //      {
+  UI_BUTTON(TESTLONGPRESS,BACK_BUTTON,LongPress)                      //        UI_BUTTON(TESTLONGPRESS,BACK_BUTTON,LongPress)
+  UI_BUTTON(GET_BACK_BLOCK,Blocked)                                   //        UI_BUTTON(GET_BACK_BLOCK,Blocked)
+  UI_BUTTON(TESTSHORTPRESS,BACK_BUTTON,BackPress)                     //        UI_BUTTON(TESTSHORTPRESS,BACK_BUTTON,BackPress)
+                                                                      //
+  JR_TRUE(LongPress,StopRunning)                                      //        if (LongPress || (!Blocked && BackPress))
+  JR_TRUE(Blocked,EndRunning)                                         //
+  JR_FALSE(BackPress,EndRunning)                                      //
+StopRunning:                                                          //        {
+                                                                      //
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,BackPress)                         //          UI_BUTTON(SHORTPRESS,BACK_BUTTON,BackPress)
+  PROGRAM_STOP(USER_SLOT)                                             //          PROGRAM_STOP(USER_SLOT)
+                                                                      //
+EndRunning:                                                           //        }
+NotRunning:                                                           //      }
+                                                                      //
+  // Check for user program                                           //
+  PROGRAM_INFO(GET_STATUS,USER_SLOT,Status)                           //      PROGRAM_INFO(GET_STATUS,CMD_SLOT,Status)
+  JR_EQ8(UserSlotStatus,Status,NoUserChange)                          //      if (CmdSlotStatus != Status)
+                                                                      //      {
+  MOVE8_8(Status,UserSlotStatus)                                      //        CmdSlotStatus  =  Status
+                                                                      //
+  JR_NEQ8(Status,STOPPED,NoUserStop)                                  //        if (Status == STOPPED)
+                                                                      //        {
+  INPUT_DEVICE(STOP_ALL,-1)                                           //          INPUT_DEVICE(STOP_ALL,-1)
+  UI_BUTTON(FLUSH)                                                    //          UI_BUTTON(FLUSH)
+  UI_WRITE(LED,LED_GREEN)                                             //          UI_WRITE(LED,LED_GREEN)
+                                                                      //
+NoUserStop:                                                           //        }
+NoUserChange:                                                         //      }
+                                                                      //
+  // Check for events                                                 //                                                                      
+  UI_READ(GET_EVENT,TmpEvent)                                         //      UI_READ(GET_EVENT,TmpEvent)
+  JR_EQ8(TmpEvent,0,NoEvent)                                          //      if (TmpEvent)
+                                                                      //      {
+  MOVE8_8(TmpEvent,Event)                                             //        Event  =  TmpEvent
+  OBJECT_START(EventTask)                                             //        OBJECT_START(EventTask)
+NoEvent:                                                              //      }
+                                                                      //
+  // Check for key click                                              //                                                                      
+  UI_BUTTON(GET_CLICK,KeyPress)                                       //      UI_BUTTON(GET_CLICK,KeyPress)
+  JR_FALSE(KeyPress,NoKeyPress)                                       //      if (KeyPress)
+                                                                      //      {
+  SOUND_TEST(Busy)                                                    //        SOUND_TEST(Busy)
+  JR_TRUE(Busy,SoundBusy)                                             //        if (!Busy)
+                                                                      //        {
+  INFO(GET_VOLUME,Volume)                                             //          INFO(GET_VOLUME,Volume)
+  SOUND(PLAY,Volume,'Click')                                          //          SOUND(PLAY,Volume,'Click')
+SoundBusy:                                                            //        }
+NoKeyPress:                                                           //      }
+                                                                      //
+                                                                      //
+  UI_READ(GET_SHUTDOWN,Shutdown)                                      //      UI_READ(GET_SHUTDOWN,Shutdown)
+  JR_FALSE(Shutdown,NoShutdown)                                       //      if (Shutdown)
+                                                                      //      {
+  CALL(TurnOffExec)                                                   //        CALL(TurnOffExec)
+                                                                      //
+NoShutdown:                                                           //      }
+                                                                      //
+  UI_READ(GET_WARNING,Warning)                                        //      UI_READ(GET_WARNING,Warning)
+  AND8(Warning,WARNINGS,Warning)                                      //      Warning &=  WARNINGS
+  JR_EQ8(Warning,OldWarning,NoChanges)                                //      if (Warning != OldWarning)
+                                                                      //      {
+  XOR8(Warning,OldWarning,Tmp)                                        //        Tmp  =  Warning ^ OldWarning
+  AND8(Tmp,Warning,Tmp)                                               //        Tmp &=  Warning
+  JR_FALSE(Tmp,NoWarning)                                             //        if (Tmp)
+                                                                      //        {
+  INFO(GET_VOLUME,Volume)                                             //          INFO(GET_VOLUME,Volume)
+                                                                      //          
+  AND8(Tmp,WARNING_TEMP,Tmp)                                          //          Tmp &=  WARNING_TEMP
+  JR_EQ8(Tmp,0,GeneralWarning)                                        //          if (Tmp)
+                                                                      //          {
+  SOUND(PLAY,Volume,'OverpowerAlert')                                 //            SOUND(PLAY,Volume,'OverpowerAlert')
+                                                                      // 
+  JR(EndWarning)                                                      //          }
+                                                                      //          else
+GeneralWarning:                                                       //          {
+  SOUND(PLAY,Volume,'GeneralAlarm')                                   //            SOUND(PLAY,Volume,'GeneralAlarm')
+                                                                      // 
+EndWarning:                                                           //          }
+                                                                      // 
+NoWarning:                                                            //        }
+  MOVE8_8(Warning,OldWarning)                                         //        OldWarning  =  Warning
+NoChanges:                                                            //      }  
+                                                                      //    }
+  JR(Loop)                                                            //    while (1)
+}                                                                     //  }
+                                                                      //
+//******************************************************************************************************
+// EventTask
+//******************************************************************************************************
+                                                                      //
+define    EVENT1_STARTX                 16                            //
+define    EVENT1_STARTY                 50                            //
+define    EVENT1_LINE_STARTX            48                            //
+define    EVENT1_LINE_STARTY            60                            //
+define    EVENT1_LINE_SPACEY            17                            //
+define    EVENT1_NOX                    56                            //
+define    EVENT1_NOY                    90                            //
+define    EVENT1_YESX                   96                            //
+define    EVENT1_YESY                   90                            //
+define    EVENT1_LINEX                  21                            //
+define    EVENT1_LINEY1                 72                            //
+define    EVENT1_LINEY2                 89                            //
+define    EVENT1_LINE_ENDX              155                           //
+define    EVENT1_ICON1_STARTX           24                            //
+define    EVENT1_ICON2_STARTX           24                            //
+define    EVENT1_ICON_STARTY            58                            //
+define    EVENT1_ICON_SPACEY            17                            //
+                                                                      //
+vmthread  EventTask                                                   //  void EventTask(void)
+{                                                                     //  {
+  DATA16  Ypos                                                        //
+  DATA16  Xpos                                                        //
+  DATA16  Yipos                                                       //
+  DATA16  Pointer                                                     //
+  DATA16  Inc                                                         //
+  DATA8   Type                                                        //
+  DATA8   EventState                                                  //
+  DATA8   State                                                       //
+  DATAS   Passkey BTPASSKEYSIZE                                       //
+  DATA8   Name BRICKNAMESIZE                                          //
+                                                                      //
+  JR_NEQ8(Event,EVENT_BT_PIN,NotEvent1)                               //    if (Event == EVENT_BT_PIN)
+                                                                      //    {
+  UI_DRAW(POPUP,1)                                                    //      UI_DRAW(POPUP,1)
+  MOVE16_16(0,Pointer)                                                //      Pointer   =  0
+  MOVE16_16(EVENT1_LINE_STARTX,Xpos)                                  //      Xpos      =  EVENT1_LINE_STARTX
+  MOVE16_16(EVENT1_LINE_STARTY,Ypos)                                  //      Ypos      =  EVENT1_LINE_STARTY
+  MOVE16_16(EVENT1_ICON_STARTY,Yipos)                                 //      Yipos     =  EVENT1_ICON_STARTY
+                                                                      //
+  // Show popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,EVENT1_STARTX,EVENT1_STARTY,'144x65_POP3') //      Draw bitmap
+                                                                      //
+  // Show bluetooth icon                                              //
+  UI_DRAW(ICON,FG_COLOR,EVENT1_ICON1_STARTX,EVENT1_ICON_STARTY,NORMAL_ICON,ICON_BLUETOOTH) // UI_DRAW(ICON,FG_COLOR,EVENT1_ICON1_STARTX,EVENT1_ICON_STARTY,NORMAL_ICON,ICON_BLUETOOTH)
+                                                                      //
+  UI_DRAW(SELECT_FONT,1)                                              //      UI_DRAW(SELECT_FONT,1)
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Connect?')                         //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Connect?')
+  UI_DRAW(SELECT_FONT,0)                                              //      UI_DRAW(SELECT_FONT,0)
+                                                                      //
+  // Show separator line                                              //
+  UI_DRAW(LINE,FG_COLOR,EVENT1_LINEX,EVENT1_LINEY1,EVENT1_LINE_ENDX,EVENT1_LINEY1) // UI_DRAW(LINE,FG_COLOR,EVENT1_LINEX,EVENT1_LINEY1,EVENT1_LINE_ENDX,EVENT1_LINEY1)
+                                                                      //
+  ADD16(Ypos,EVENT1_LINE_SPACEY,Ypos)                                 //      Ypos   +=  EVENT1_LINE_SPACEY
+  ADD16(Yipos,EVENT1_ICON_SPACEY,Yipos)                               //      Yipos  +=  EVENT1_ICON_SPACEY
+  SUB16(Xpos,8,Xpos)                                                  //      Xpos   -=  8
+                                                                      //
+  COM_GET(GET_INCOMING,HW_BT,LCDNAMESIZE,Name,Type)                   //      COM_GET(GET_INCOMING,HW_BT,LCDNAMESIZE,Name,Type)
+                                                                      //
+  // Show incomming type                                              //
+  UI_DRAW(ICON,FG_COLOR,EVENT1_ICON2_STARTX,Yipos,MENU_ICON,Type)     //      UI_DRAW(ICON,FG_COLOR,EVENT1_ICON2_STARTX,Yipos,MENU_ICON,Type)
+                                                                      //
+  // Show incomming name                                              //
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,Name)                               //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,Name)
+                                                                      //
+  // Show separator line                                              //
+  UI_DRAW(LINE,FG_COLOR,EVENT1_LINEX,EVENT1_LINEY2,EVENT1_LINE_ENDX,EVENT1_LINEY2) // UI_DRAW(LINE,FG_COLOR,EVENT1_LINEX,EVENT1_LINEY2,EVENT1_LINE_ENDX,EVENT1_LINEY2)
+                                                                      //
+  // Check ENTER                                                      //
+NotEnter:                                                             //      do
+                                                                      //      {
+                                                                      //
+  JR_NEQ16(Pointer,0,Pointer1)                                        //        if (Pointer == 0)
+                                                                      //        {
+  UI_DRAW(ICON,FG_COLOR,EVENT1_NOX,EVENT1_NOY,LARGE_ICON,NO_SEL)      //          UI_DRAW(ICON,FG_COLOR,EVENT1_NOX,EVENT1_NOY,LARGE_ICON,NO_SEL)
+  UI_DRAW(ICON,FG_COLOR,EVENT1_YESX,EVENT1_YESY,LARGE_ICON,YES_NOTSEL)//          UI_DRAW(ICON,FG_COLOR,EVENT1_YESX,EVENT1_YESY,LARGE_ICON,YES_NOTSEL)
+                                                                      //  
+  JR(PointerEnd)                                                      //        }
+                                                                      //        else
+Pointer1:                                                             //        {
+                                                                      //
+  UI_DRAW(ICON,FG_COLOR,EVENT1_NOX,EVENT1_NOY,LARGE_ICON,NO_NOTSEL)   //          UI_DRAW(ICON,FG_COLOR,EVENT1_NOX,EVENT1_NOY,LARGE_ICON,NO_NOTSEL)
+  UI_DRAW(ICON,FG_COLOR,EVENT1_YESX,EVENT1_YESY,LARGE_ICON,YES_SEL)   //          UI_DRAW(ICON,FG_COLOR,EVENT1_YESX,EVENT1_YESY,LARGE_ICON,YES_SEL)
+                                                                      //
+PointerEnd:                                                           //        }                                                                          
+                                                                      //
+  UI_DRAW(UPDATE)                                                     //        UI_DRAW(UPDATE)
+  UI_BUTTON(FLUSH)                                                    //        UI_BUTTON(FLUSH)
+  UI_BUTTON(WAIT_FOR_PRESS)                                           //        UI_BUTTON(WAIT_FOR_PRESS)
+                                                                      //
+  UI_BUTTON(GET_HORZ,Inc)                                             //        UI_BUTTON(GET_HORZ,Inc)
+  ADD16(Pointer,Inc,Pointer)                                          //        Pointer +=  Inc
+                                                                      //
+  JR_LTEQ16(Pointer,1,NotTooHigh)                                     //        if (Pointer > 1)
+                                                                      //        {
+  MOVE16_16(1,Pointer)                                                //          Pointer  =  1
+NotTooHigh:                                                           //        }
+  JR_GTEQ16(Pointer,0,NotTooLow)                                      //        if (Pointer < 0)
+                                                                      //        {
+  MOVE16_16(0,Pointer)                                                //          Pointer  =  0
+NotTooLow:                                                            //        }
+                                                                      //
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,EventState)                       //        UI_BUTTON(SHORTPRESS,ENTER_BUTTON,EventState)
+                                                                      //      }
+  JR_FALSE(EventState,NotEnter)                                       //      while (!EventState)
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //      UI_BUTTON(FLUSH)
+                                                                      //
+  JR_NEQ16(Pointer,1,PointerNot1)                                     //      if (Pointer == 1)
+                                                                      //      {
+  COM_GET(GET_INCOMING,HW_BT,BRICKNAMESIZE,Name,Type)                 //        COM_GET(GET_INCOMING,HW_BT,BRICKNAMESIZE,Name,Type)
+                                                                      //
+  MOVE8_8(CHARSET_BTPASSKEY,State)                                    //        State  =  CHARSET_PASSKEY
+  STRINGS(DUPLICATE,'1234',Passkey)                                   //        STRINGS(DUPLICATE,'1234',Passkey)
+  UI_DRAW(KEYBOARD,FG_COLOR,16,26,ICON_KEY,BTPASSKEYSIZE,'PASSKEY',State,Passkey) // UI_DRAW(KEYBOARD,FG_COLOR,17,26,ICON_KEY,BTPASSKEYSIZE,'PASSKEY',State,Passkey)
+                                                                      //
+  JR_FALSE(Passkey,NoString)                                          //        if (Passkey[0])
+                                                                      //        {
+  COM_SET(SET_PIN,HW_BT,Name,Passkey)                                 //          COM_SET(SET_PIN,HW_BT,Name,Passkey)
+                                                                      //
+NoString:                                                             //        }
+  JR(PointerNot1End)                                                  //      }
+                                                                      //      else
+PointerNot1:                                                          //      {
+  
+  
+  
+  
+  
+PointerNot1End:                                                       //      }        
+  UI_DRAW(POPUP,0)                                                    //      UI_DRAW(POPUP,0)
+                                                                      //
+NotEvent1:                                                            //    }
+                                                                      //
+  JR_NEQ8(Event,EVENT_BT_REQ_CONF,NotEvent2)                          //    if (Event == EVENT_BT_REQ_CONF)
+                                                                      //    {
+  UI_DRAW(POPUP,1)                                                    //      UI_DRAW(POPUP,1)
+  MOVE16_16(0,Pointer)                                                //      Pointer   =  0
+  MOVE16_16(EVENT1_LINE_STARTX,Xpos)                                  //      Xpos      =  EVENT1_LINE_STARTX
+  MOVE16_16(EVENT1_LINE_STARTY,Ypos)                                  //      Ypos      =  EVENT1_LINE_STARTY
+  MOVE16_16(EVENT1_ICON_STARTY,Yipos)                                 //      Yipos     =  EVENT1_ICON_STARTY
+                                                                      //
+  // Show popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,EVENT1_STARTX,EVENT1_STARTY,'144x65_POP3') //      Draw bitmap
+                                                                      //
+  // Show bluetooth icon                                              //
+  UI_DRAW(ICON,FG_COLOR,EVENT1_ICON1_STARTX,EVENT1_ICON_STARTY,NORMAL_ICON,ICON_BLUETOOTH) // UI_DRAW(ICON,FG_COLOR,EVENT1_ICON1_STARTX,EVENT1_ICON_STARTY,NORMAL_ICON,ICON_BLUETOOTH)
+                                                                      //
+  UI_DRAW(SELECT_FONT,1)                                              //      UI_DRAW(SELECT_FONT,1)
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Connect?')                         //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Connect?')
+  UI_DRAW(SELECT_FONT,0)                                              //      UI_DRAW(SELECT_FONT,0)
+                                                                      //
+  // Show separator line                                              //
+  UI_DRAW(LINE,FG_COLOR,EVENT1_LINEX,EVENT1_LINEY1,EVENT1_LINE_ENDX,EVENT1_LINEY1) // UI_DRAW(LINE,FG_COLOR,EVENT1_LINEX,EVENT1_LINEY1,EVENT1_LINE_ENDX,EVENT1_LINEY1)
+                                                                      //
+  ADD16(Ypos,EVENT1_LINE_SPACEY,Ypos)                                 //      Ypos   +=  EVENT1_LINE_SPACEY
+  ADD16(Yipos,EVENT1_ICON_SPACEY,Yipos)                               //      Yipos  +=  EVENT1_ICON_SPACEY
+  SUB16(Xpos,8,Xpos)                                                  //      Xpos   -=  8
+                                                                      //
+  COM_GET(GET_INCOMING,HW_BT,LCDNAMESIZE,Name,Type)                   //      COM_GET(GET_INCOMING,HW_BT,LCDNAMESIZE,Name,Type)
+                                                                      //
+  // Show incomming type                                              //
+  UI_DRAW(ICON,FG_COLOR,EVENT1_ICON2_STARTX,Yipos,MENU_ICON,Type)     //      UI_DRAW(ICON,FG_COLOR,EVENT1_ICON2_STARTX,Yipos,MENU_ICON,Type)
+                                                                      //
+  // Show incomming name                                              //
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,Name)                               //      UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,Name)
+                                                                      //
+  // Show separator line                                              //
+  UI_DRAW(LINE,FG_COLOR,EVENT1_LINEX,EVENT1_LINEY2,EVENT1_LINE_ENDX,EVENT1_LINEY2) // UI_DRAW(LINE,FG_COLOR,EVENT1_LINEX,EVENT1_LINEY2,EVENT1_LINE_ENDX,EVENT1_LINEY2)
+                                                                      //
+  // Check ENTER                                                      //
+NotEnter2:                                                            //      do
+                                                                      //      {
+                                                                      //
+  JR_NEQ16(Pointer,0,Pointer2)                                        //        if (Pointer == 0)
+                                                                      //        {
+  UI_DRAW(ICON,FG_COLOR,EVENT1_NOX,EVENT1_NOY,LARGE_ICON,NO_SEL)      //          UI_DRAW(ICON,FG_COLOR,EVENT1_NOX,EVENT1_NOY,LARGE_ICON,NO_SEL)
+  UI_DRAW(ICON,FG_COLOR,EVENT1_YESX,EVENT1_YESY,LARGE_ICON,YES_NOTSEL)//          UI_DRAW(ICON,FG_COLOR,EVENT1_YESX,EVENT1_YESY,LARGE_ICON,YES_NOTSEL)
+                                                                      //  
+  JR(Pointer2End)                                                     //        }
+                                                                      //        else
+Pointer2:                                                             //        {
+                                                                      //
+  UI_DRAW(ICON,FG_COLOR,EVENT1_NOX,EVENT1_NOY,LARGE_ICON,NO_NOTSEL)   //          UI_DRAW(ICON,FG_COLOR,EVENT1_NOX,EVENT1_NOY,LARGE_ICON,NO_NOTSEL)
+  UI_DRAW(ICON,FG_COLOR,EVENT1_YESX,EVENT1_YESY,LARGE_ICON,YES_SEL)   //          UI_DRAW(ICON,FG_COLOR,EVENT1_YESX,EVENT1_YESY,LARGE_ICON,YES_SEL)
+                                                                      //
+Pointer2End:                                                          //        }                                                                          
+                                                                      //
+  UI_DRAW(UPDATE)                                                     //        UI_DRAW(UPDATE)
+  UI_BUTTON(FLUSH)                                                    //        UI_BUTTON(FLUSH)
+  UI_BUTTON(WAIT_FOR_PRESS)                                           //        UI_BUTTON(WAIT_FOR_PRESS)
+                                                                      //
+  UI_BUTTON(GET_HORZ,Inc)                                             //        UI_BUTTON(GET_HORZ,Inc)
+  ADD16(Pointer,Inc,Pointer)                                          //        Pointer +=  Inc
+                                                                      //
+  JR_LTEQ16(Pointer,1,NotTooHigh2)                                    //        if (Pointer > 1)
+                                                                      //        {
+  MOVE16_16(1,Pointer)                                                //          Pointer  =  1
+NotTooHigh2:                                                          //        }
+  JR_GTEQ16(Pointer,0,NotTooLow2)                                     //        if (Pointer < 0)
+                                                                      //        {
+  MOVE16_16(0,Pointer)                                                //          Pointer  =  0
+NotTooLow2:                                                           //        }
+                                                                      //
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,EventState)                       //        UI_BUTTON(SHORTPRESS,ENTER_BUTTON,EventState)
+                                                                      //      }
+  JR_FALSE(EventState,NotEnter2)                                      //      while (!EventState)
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //      UI_BUTTON(FLUSH)
+                                                                      //
+  JR_NEQ16(Pointer,1,PointerNot2)                                     //      if (Pointer == 1)
+                                                                      //      {
+                                                                      //
+  COM_SET(SET_PASSKEY,HW_BT,1)                                        //        COM_SET(SET_PASSKEY,HW_BT,1)
+                                                                      //
+  JR(PointerNot2End)                                                  //      }
+                                                                      //      else
+PointerNot2:                                                          //      {
+                                                                      //
+  COM_SET(SET_PASSKEY,HW_BT,0)                                        //        COM_SET(SET_PASSKEY,HW_BT,0)
+                                                                      //
+PointerNot2End:                                                       //      }        
+  UI_DRAW(POPUP,0)                                                    //      UI_DRAW(POPUP,0)
+                                                                      //
+NotEvent2:                                                            //    }
+}                                                                     //  }
+                                                                      //
+//******************************************************************************************************
+// StartupScreen
+//******************************************************************************************************
+                                                                      //
+define    STARTUPSCREEN 'startup_screen'                              //
+                                                                      //
+subcall   StartupScreen                                               //  void StartupScreen(void)
+{                                                                     //  {
+  DATA32  Timer                                                       //    DATA32  Timer
+  DATA8   Volume                                                      //    DATA8   Volume
+                                                                      //
+  UI_DRAW(TOPLINE,1)                                                  //
+  UI_WRITE(LED,LED_GREEN)                                             //    UI_WRITE(LED,LED_GREEN)
+                                                                      //
+  INFO(GET_VOLUME,Volume)                                             //    INFO(GET_VOLUME,Volume)
+  SOUND_READY                                                         //    SOUND_READY
+  SOUND(PLAY,Volume,'Startup')                                        //    SOUND(PLAY,Volume,'Startup')
+  SOUND_READY                                                         //    SOUND_READY
+                                                                      //
+}                                                                     //  }
+                                                                      //
+//******************************************************************************************************
+// Scheduler
+//******************************************************************************************************
+                                                                      //
+subcall   Scheduler                                                   //  void Scheduler(void)
+{                                                                     //  {
+  DATA32  Timer                                                       //
+  DATA16  Tmp                                                         //    DATA16  Tmp 
+  DATA16  OldState                                                    //    DATA16  OldState
+                                                                      //
+  MOVE16_16(STATE_PLAYRECENT,State)                                   //    State     =  STATE_PLAYRECENT
+  MOVE16_16(STATE_PLAYRECENT,OldState)                                //    OldState  =  STATE_PLAYRECENT
+  MOVE16_16(SUBSTATE_NOT_INIT,SubState)                               //    SubState  =  SUBSTATE_NOT_INIT
+  MOVE8_8(0,TurnOff)                                                  //    TurnOff   =  0
+                                                                      //
+                                                                      //    do
+Loop:                                                                 //    {
+                                                                      //
+  TIMER_WAIT(50,Timer)                                                //      TIMER_WAIT(50,Timer)
+  TIMER_READY(Timer)                                                  //      TIMER_READY(Timer)
+                                                                      //                                                                      
+                                                                      //      switch (State)
+                                                                      //      {
+SwitchState1:                                                         //                                                                    
+  JR_NEQ16(State,STATE_PLAYRECENT,SwitchState2)                       //        case STATE_PLAYRECENT :
+                                                                      //        {
+  CALL(PlayrecentScreen)                                              //          CALL(PlayrecentScreen)
+                                                                      //        }
+  JR(SwitchStateEnd)                                                  //        break;
+SwitchState2:                                                         //                                                                    
+  JR_NEQ16(State,STATE_FILE,SwitchState3)                             //        case STATE_FILE :
+                                                                      //        {
+  CALL(FileScreen)                                                    //          CALL(FileScreen)
+                                                                      //        }
+  JR(SwitchStateEnd)                                                  //        break;
+SwitchState3:                                                         //                                                                    
+  JR_NEQ16(State,STATE_APPS,SwitchState4)                             //        case STATE_APPS :
+                                                                      //        {
+  CALL(AppsScreen)                                                    //          CALL(AppsScreen)
+                                                                      //        }
+  JR(SwitchStateEnd)                                                  //        break;
+SwitchState4:                                                         //                                                                    
+  JR_NEQ16(State,STATE_SETTINGS,SwitchState5)                         //        case STATE_SETTINGS :
+                                                                      //        {
+  CALL(SettingsScreen)                                                //          CALL(SettingsScreen)
+                                                                      //        }
+  JR(SwitchStateEnd)                                                  //        break;
+SwitchState5:                                                         //                                                                    
+SwitchStateEnd:                                                       //      }
+                                                                      //
+  UI_BUTTON(GET_HORZ,Tmp)                                             //      UI_BUTTON(GET_HORZ,Tmp)
+  ADD16(State,Tmp,State)                                              //      State += Tmp
+  JR_GTEQ16(State,STATE_FIRST,StateGtEqFirst)                         //      if (State < STATE_FIRST)                                                                        
+                                                                      //      {
+  MOVE16_16(STATE_FIRST,State)                                        //        State = STATE_FIRST                   
+                                                                      //
+StateGtEqFirst:                                                       //      }             
+  JR_LTEQ16(State,STATE_LAST,StateLtEqLast)                           //      if (State > STATE_LAST)                                            
+                                                                      //      {
+  MOVE16_16(STATE_LAST,State)                                         //        State = STATE_LAST                  
+                                                                      //
+StateLtEqLast:                                                        //      }            
+                                                                      //
+                                                                      //
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                                                              
+  JR_FALSE(Tmp,NoBackPress)                                           //      if (Tmp)
+                                                                      //      {
+  JR_NEQ16(State,STATE_FIRST,NoTurnOff)                               //        if (State == STATE_FIRST)
+                                                                      //        {                                       
+  CALL(TurnOffPopup)                                                  //          CALL(TurnOffPopup)
+  JR(TurnOffEnd)                                                      //        }
+                                                                      //        else
+NoTurnOff:                                                            //        {
+  MOVE16_16(STATE_FIRST,State)                                        //          State = STATE_FIRST                                                                                                                                                                                                   
+                                                                      //
+  JR(TurnOffEnd)                                                      //        }
+TurnOffEnd:                                                           //
+NoBackPress:                                                          //      }
+                                                                      //  
+  JR_FALSE(TurnOff,NotTurnOff)                                        //      if (TurnOff)
+                                                                      //      {
+  MOVE8_8(0,TurnOff)                                                  //        TurnOff  =  0
+  UI_BUTTON(SET_BACK_BLOCK,0)                                         //        UI_BUTTON(SET_BACK_BLOCK,0)
+  CALL(TurnOffPopup)                                                  //        CALL(TurnOffPopup)
+NotTurnOff:                                                           //      }
+                                                                      //
+  UI_BUTTON(TESTLONGPRESS,BACK_BUTTON,Tmp)                            //      UI_BUTTON(LONGPRESS,BACK_BUTTON,Tmp)                                                              
+  JR_FALSE(Tmp,NoLongBackPress)                                       //      if (Tmp)
+                                                                      //      {
+  UI_BUTTON(LONGPRESS,BACK_BUTTON,Tmp)                                //        UI_BUTTON(LONGPRESS,BACK_BUTTON,Tmp)                                                              
+  CALL(TurnOffPopup)                                                  //        CALL(TurnOffPopup)
+NoLongBackPress:                                                      //      }
+                                                                      //  
+  JR_EQ16(State,OldState,StateNoChange)                               //      if (State != OldState)
+                                                                      //      {
+  MOVE16_16(SUBSTATE_NOT_INIT,SubState)                               //        SubState = SUBSTATE_NOT_INIT                                                                      
+  MOVE16_16(State,OldState)                                           //        OldState = State
+                                                                      //
+StateNoChange:                                                        //      }       
+                                                                      //
+  CALL(ErrorPopup)                                                    //      CALL(ErrorPopup)                                                                
+                                                                      //
+                                                                      //
+                                                                      //    }
+  JR(Loop)                                                            //    while (1)
+}                                                                     //  }
+                                                                      //
+//******************************************************************************************************
+// PlayRecentScreen
+//******************************************************************************************************
+                                                                      //
+define    PLAYRECENTSCREEN 'playrecent_screen'                        //
+                                                                      //
+subcall   PlayrecentScreen                                            //  void PlayRecentScreen(void)
+{                                                                     //  {
+  DATA32  pFile                                                       //    DATA32  pFile
+  DATA32  Size                                                        //    DATA32  Size
+  DATA8   Status1                                                     //    DATA8   Status1
+  DATA8   Status2                                                     //    DATA8   Status2
+  DATA8   Flag                                                        //    DATA8   Flag
+  DATA8   Tmp                                                         //    DATA8   Tmp
+  DATA8   Blocked                                                     //    DATA8   Blocked
+  DATAS   Name FILENAMESIZE                                           //
+                                                                      //
+  JR_NEQ16(SubState,SUBSTATE_NOT_INIT,Initialized)                    //    if (SubState == SUBSTATE_NOT_INIT)
+                                                                      //    {
+  MOVE16_16(SUBSTATE_IDLE,SubState)                                   //      SubState = SUBSTATE_IDLE                                                                      
+                                                                      //
+Initialized:                                                          //    }
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)                                                                      
+  UI_DRAW(FILLWINDOW,BG_COLOR,0,0)                                    //    UI_DRAW(FILLWINDOW,BG_COLOR,0,0)
+  UI_DRAW(BMPFILE,FG_COLOR,0,13,PLAYRECENTSCREEN)                     //
+  UI_DRAW(BMPFILE,FG_COLOR,0,39,SCREEN)                               //
+                                                                      //
+  MOVE8_8(TYPE_RESTART_BROWSER,Type)                                  //    Type = TYPE_RESTART_BROWSER
+  STRINGS(DUPLICATE,'?',String)                                       //    STRINGS(DUPLICATE,PRJS_DIR,String)
+  OR8(BROWSE_CACHE,0x20,Tmp)                                          //    OR8(BROWSE_CACHE,0x20,Tmp)
+  UI_DRAW(BROWSE,Tmp,BROWSER_STARTX,BROWSER_STARTY,BROWSER_WIDTH,BROWSER_HEIGHT,FILENAMESIZE,Type,String) // UI_DRAW(BROWSE,Tmp,BROWSER_STARTX,BROWSER_STARTY,BROWSER_WIDTH,BROWSER_HEIGHT,FILENAMESIZE,Type,String)
+                                                                      //
+  CP_EQ8(Type,TYPE_BYTECODE,Flag)                                     //    if (Type == TYPE_BYTECODE)
+  JR_FALSE(Flag,FileNotBytecode)                                      //    {
+  FILE(PUT_CACHE_FILE,String)                                         //      FILE(PUT_CACHE_FILE,String)
+                                                                      //
+  CALL(RunBytecodefile,USER_SLOT,String)                              //      RunBytecodefile(USER_SLOT,String)
+                                                                      //
+FileNotBytecode:                                                      //    }
+  CP_EQ8(Type,TYPE_PROGRAM,Flag)                                      //    if (Type == TYPE_PROGRAM)
+  JR_FALSE(Flag,FileNotProgram)                                       //    {
+  FILE(PUT_CACHE_FILE,String)                                         //      FILE(PUT_CACHE_FILE,String)
+                                                                      //
+  CALL(RunBytecodefile,USER_SLOT,String)                              //      RunBytecodefile(USER_SLOT,String)
+                                                                      //
+FileNotProgram:                                                       //    }
+}                                                                     //  }
+                                                                      //
+//******************************************************************************************************
+// FileScreen
+//******************************************************************************************************
+                                                                      //
+define    FILESCREEN  'file_screen'                                   //
+                                                                      //
+subcall   FileScreen                                                  //  void FileScreen(void)
+{                                                                     //  {
+  DATA32  pFile                                                       //    DATA32  pFile
+  DATA32  Size                                                        //    DATA32  Size
+  DATA16  hFile                                                       //
+  DATA16  hTextbox                                                    //
+  DATA16  Line                                                        //
+  DATA8   Status1                                                     //    DATA8   Status1
+  DATA8   Status2                                                     //    DATA8   Status2
+  DATA8   Flag                                                        //    DATA8   Flag
+  DATA8   Tmp                                                         //    DATA8   Tmp
+  DATA8   Blocked                                                     //    DATA8   Blocked
+  DATAS   Name FILENAMESIZE                                           //
+                                                                      //
+  JR_NEQ16(SubState,SUBSTATE_NOT_INIT,Initialized)                    //    if (SubState == SUBSTATE_NOT_INIT)
+                                                                      //    {
+  MOVE16_16(SUBSTATE_IDLE,SubState)                                   //      SubState = SUBSTATE_IDLE                                                                      
+  MOVE8_8(0,Type)                                                     //      Type = 0
+  STRINGS(DUPLICATE,PRJS_DIR,String)                                  //      STRINGS(DUPLICATE,PRJS_DIR,String)
+                                                                      //
+Initialized:                                                          //    }
+                                                                      //
+  UI_DRAW(FILLWINDOW,BG_COLOR,0,0)                                    //    UI_DRAW(FILLWINDOW,BG_COLOR,0,0)
+  UI_DRAW(BMPFILE,FG_COLOR,0,13,FILESCREEN)                           //    UI_DRAW(BMPFILE,FG_COLOR,0,13,FILESCREEN)
+  UI_DRAW(BMPFILE,FG_COLOR,0,39,SCREEN)                               //    UI_DRAW(BMPFILE,FG_COLOR,0,39,SCREEN)
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)                                                                      
+  UI_DRAW(BROWSE,BROWSE_FOLDS_FILES,BROWSER_STARTX,BROWSER_STARTY,BROWSER_WIDTH,BROWSER_HEIGHT,FILENAMESIZE,Type,String) // UI_DRAW(BROWSE,BROWSE_FOLDS_FILES,BROWSER_STARTX,BROWSER_STARTY,BROWSER_WIDTH,BROWSER_HEIGHT,FILENAMESIZE,Type,String)
+                                                                      //
+  JR_LTEQ8(Type,0,NoType)                                             //    if (Type)
+                                                                      //    {
+  JR_NEQ8(Type,TYPE_SDCARD,NotSdcard)                                 //      if (Type == TYPE_SDCARD)
+                                                                      //      {
+  MOVE8_8(TYPE_RESTART_BROWSER,Type)                                  //        Type  =  TYPE_RESTART_BROWSER
+                                                                      //
+  JR(EndSdcard)                                                       //      }
+                                                                      //      else
+NotSdcard:                                                            //      {
+                                                                      //
+  JR_NEQ8(Type,TYPE_USBSTICK,NotUsbstick)                             //        if (Type == TYPE_USBSTICK)
+                                                                      //        {
+  MOVE8_8(TYPE_RESTART_BROWSER,Type)                                  //          Type  =  TYPE_RESTART_BROWSER
+                                                                      //
+  JR(EndUsbstick)                                                     //        }
+                                                                      //        else
+NotUsbstick:                                                          //        {
+                                                                      //
+  CALL(ActionPopup,String,Type,Tmp)                                   //          CALL(ActionPopup,string,Type,Tmp)
+                                                                      //
+  JR_FALSE(Tmp,NoRun)                                                 //          {
+                                                                      //
+  CP_EQ8(Type,TYPE_SOUND,Flag)                                        //            if (Type == TYPE_SOUND)
+  JR_FALSE(Flag,FileNotSound)                                         //            {
+                                                                      //
+  SOUND(PLAY,100,String)                                              //              SOUND(PLAY,100,String)
+                                                                      //              do
+FileSound:                                                            //              {
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //                UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+  SOUND_TEST(Flag)                                                    //                SOUND_TEST(Flag)
+                                                                      //              }
+  JR_TRUE(Tmp,FileSoundEnd)                                           //              while ((!Tmp)
+  JR_TRUE(Flag,FileSound)                                             //                   && (Flag)
+FileSoundEnd:                                                         //
+                                                                      //
+  SOUND(BREAK)                                                        //              SOUND(BREAK)
+                                                                      //
+FileNotSound:                                                         //            }
+                                                                      //
+  CP_EQ8(Type,TYPE_GRAPHICS,Flag)                                     //            if (Type == TYPE_GRAPHICS)
+  JR_FALSE(Flag,FileNotGraphics)                                      //            {
+                                                                      //
+  UI_DRAW(TOPLINE,0)                                                  //              UI_DRAW(TOPLINE,0)
+  UI_DRAW(FILLWINDOW,BG_COLOR,0,0)                                    //              UI_DRAW(FILLWINDOW,BG_COLOR,0,0)
+  UI_DRAW(BMPFILE,FG_COLOR,0,0,String)                                //
+  UI_DRAW(UPDATE)                                                     //              UI_DRAW(UPDATE)
+                                                                      //
+                                                                      //              do
+Wait:                                                                 //              {
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Flag)                             //                UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Flag)
+  JR_TRUE(Flag,Skip1)                                                 //                if (!Flag)
+                                                                      //                {
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Flag)                              //                  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Flag)
+                                                                      //
+Skip1:                                                                //                }
+  JR_TRUE(Flag,Skip2)                                                 //              }
+  JR(Wait)                                                            //              while (!Flag)   
+Skip2:                                                                //
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //              UI_BUTTON(FLUSH)
+  UI_DRAW(TOPLINE,1)                                                  //              UI_DRAW(TOPLINE,1)
+                                                                      //
+FileNotGraphics:                                                      //            }
+                                                                      //
+  CP_EQ8(Type,TYPE_BYTECODE,Flag)                                     //            if (Type == TYPE_BYTECODE)
+  JR_FALSE(Flag,FileNotBytecode)                                      //            {
+                                                                      //
+  STRINGS(ADD,String,EXT_BYTECODE,Name)                               //              STRINGS(ADD,String,EXT_BYTECODE,Name)
+  FILE(PUT_CACHE_FILE,Name)                                           //              FILE(PUT_CACHE_FILE,Name)
+                                                                      //
+  CALL(RunBytecodefile,USER_SLOT,Name)                                //              CALL(RunBytecodefile,USER_SLOT,Name)
+                                                                      //
+FileNotBytecode:                                                      //            }
+  CP_EQ8(Type,TYPE_PROGRAM,Flag)                                      //            if (Type == TYPE_PROGRAM)
+  JR_FALSE(Flag,FileNotProgram)                                       //            {
+                                                                      //
+  STRINGS(ADD,String,EXT_PROGRAM,Name)                                //              STRINGS(ADD,String,EXT_PROGRAM,Name)
+  FILE(PUT_CACHE_FILE,Name)                                           //              FILE(PUT_CACHE_FILE,Name)
+                                                                      //
+  CALL(RunBytecodefile,USER_SLOT,Name)                                //              CALL(RunBytecodefile,USER_SLOT,Name)
+                                                                      //
+FileNotProgram:                                                       //            }
+                                                                      //
+  CP_EQ8(Type,TYPE_TEXT,Flag)                                         //            if (Type == TYPE_TEXT)
+  JR_FALSE(Flag,FileNotText)                                          //            {
+                                                                      //
+  STRINGS(ADD,String,EXT_TEXT,Name)                                   //              STRINGS(ADD,String,EXT_TEXT,Name)
+                                                                      //
+  FILE(OPEN_READ,Name,hFile,Size)                                     //              FILE(OPEN_READ,Name,hFile,Size)
+  JR_EQ32(Size,0,NotFound)                                            //              if (Size)
+                                                                      //              {
+  ARRAY(CREATE8,Size,hTextbox)                                        //                ARRAY(CREATE8,Size,hTextbox)
+                                                                      //
+  FILE(READ_BYTES,hFile,Size,@hTextbox)                               //                FILE(READ_BYTES,hFile,Size,@hTextbox)
+                                                                      //
+  FILE(CLOSE,hFile)                                                   //                FILE(CLOSE,hFile)
+                                                                      //
+  UI_DRAW(TOPLINE,0)                                                  //                UI_DRAW(TOPLINE,0)
+  MOVE16_16(-1,Line)                                                  //                Line  = -1
+                                                                      //                do
+Loop:                                                                 //                {
+  UI_DRAW(TEXTBOX,0,0,LCD_WIDTH,LCD_HEIGHT,@hTextbox,Size,DEL_CRLF,Line) //               UI_DRAW(TEXTBOX,0,0,LCD_WIDTH,LCD_HEIGHT,@hTextbox,Size,DEL_CRLF,Line)
+                                                                      //                }
+  JR_GT16(Line,0,Loop)                                                //                while (Line > 0)
+  UI_DRAW(TOPLINE,1)                                                  //                UI_DRAW(TOPLINE,1)
+                                                                      //
+  ARRAY(DELETE,hTextbox)                                              //                ARRAY(DELETE,hTextbox)
+                                                                      //
+NotFound:                                                             //              }
+FileNotText:                                                          //            }
+NoRun:                                                                //          }
+EndUsbstick:                                                          //        }
+EndSdcard:                                                            //      }
+NoType:                                                               //    }
+}                                                                     //  }
+                                                                      //
+//******************************************************************************************************
+// AppsScreen
+//******************************************************************************************************
+                                                                      //
+define    APPSSCREEN 'apps_screen'                                    //
+                                                                      //
+subcall   AppsScreen                                                  //  void AppsScreen(void)
+{                                                                     //  {
+  DATA32  pFile                                                       //    DATA32  pFile
+  DATA32  Size                                                        //    DATA32  Size
+  DATA16  Slot                                                        //    DATA16  Slot
+  DATA8   Status1                                                     //    DATA8   Status1
+  DATA8   Status2                                                     //    DATA8   Status2
+  DATA8   Flag                                                        //    DATA8   Flag
+  DATA8   Tmp                                                         //    DATA8   Tmp
+  DATA8   Blocked                                                     //    DATA8   Blocked
+  DATAS   Name FILENAMESIZE                                           //
+                                                                      //
+  JR_NEQ16(SubState,SUBSTATE_NOT_INIT,AppsInitialized)                //    if (SubState != SUBSTATE_NOT_INIT)
+                                                                      //    {
+  STRINGS(DUPLICATE,APPS_DIR,String)                                  //      STRINGS(DUPLICATE,APPS_DIR,String)                                                              
+  MOVE16_16(SUBSTATE_IDLE,SubState)                                   //      SubState  =  SUBSTATE_IDLE                                                                      
+  MOVE8_8(0,Type)                                                     //      Type      =  0
+                                                                      //
+AppsInitialized:                                                      //    }
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)                                                                      
+  UI_DRAW(FILLWINDOW,BG_COLOR,0,0)                                    //    UI_DRAW(FILLWINDOW,BG_COLOR,0,0)
+  UI_DRAW(BMPFILE,FG_COLOR,0,13,APPSSCREEN)                           //
+  UI_DRAW(BMPFILE,FG_COLOR,0,39,SCREEN)                               //
+                                                                      //
+  STRINGS(DUPLICATE,APPS_DIR,String)                                  //    STRINGS(DUPLICATE,APPS_DIR,String)
+                                                                      //
+  UI_DRAW(BROWSE,BROWSE_FOLDERS,BROWSER_STARTX,BROWSER_STARTY,BROWSER_WIDTH,BROWSER_HEIGHT,FILENAMESIZE,Type,String) // UI_DRAW(BROWSE,BROWSE_FOLDERS,BROWSER_STARTX,BROWSER_STARTY,BROWSER_WIDTH,BROWSER_HEIGHT,FILENAMESIZE,Type,String)
+                                                                      //
+  CP_EQ8(Type,TYPE_BYTECODE,Flag)                                     //    if (Type == TYPE_BYTECODE)
+  JR_FALSE(Flag,AppsNotBytecode)                                      //    {
+  MOVE8_8(0,Type)                                                     //      Type  =  0
+  MOVE16_16(USER_SLOT,Slot)                                           //      Slot  =  USER_SLOT
+                                                                      //  
+  STRINGS(COMPARE,String,'../apps/Debug/Debug',Flag)                  //      STRINGS(COMPARE,String,'../apps/Debug/Debug',Flag)
+  JR_TRUE(Flag,AppsDebug)                                             //
+  STRINGS(COMPARE,String,'../apps/Brick Program/Brick Program',Flag)  //      STRINGS(COMPARE,String,'../apps/Brick Program/Brick Program',Flag)
+  JR_FALSE(Flag,AppsNotDebug)                                         //      if (Flag)
+AppsDebug:                                                            //      {
+  MOVE16_16(DEBUG_SLOT,Slot)                                          //        Slot  =  DEBUG_SLOT
+AppsNotDebug:                                                         //      }  
+                                                                      //
+  STRINGS(ADD,String,EXT_BYTECODE,Name)                               //      STRINGS(ADD,String,EXT_BYTECODE,Name)
+                                                                      //
+  CALL(RunBytecodefile,Slot,Name)                                     //
+                                                                      //
+AppsNotBytecode:                                                      //    }
+                                                                      //
+}                                                                     //  }
+                                                                      //
+//******************************************************************************************************
+// SettingsScreen
+//******************************************************************************************************
+                                                                      //
+define    SETTINGSSCREEN 'settings_screen'                            //
+                                                                      //
+subcall   SettingsScreen                                              //  void SettingsScreen(void)
+{                                                                     //  {
+  DATA32  pFile                                                       //    DATA32  pFile
+  DATA32  Size                                                        //    DATA32  Size
+  DATA16  Slot                                                        //    DATA16  Slot
+  DATA8   Status1                                                     //    DATA8   Status1
+  DATA8   Status2                                                     //    DATA8   Status2
+  DATA8   Flag                                                        //    DATA8   Flag
+  DATA8   Tmp                                                         //    DATA8   Tmp
+  DATAS   Name FILENAMESIZE                                           //
+                                                                      //
+  JR_NEQ16(SubState,SUBSTATE_NOT_INIT,SettingsInitialized)            //    if (SubState == SUBSTATE_NOT_INIT)
+                                                                      //    {
+  MOVE16_16(SUBSTATE_IDLE,SubState)                                   //      SubState = SUBSTATE_IDLE                                                                      
+                                                                      //
+SettingsInitialized:                                                  //    }
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)                                                                      
+  UI_DRAW(FILLWINDOW,BG_COLOR,0,0)                                    //    UI_DRAW(FILLWINDOW,BG_COLOR,0,0)
+  UI_DRAW(BMPFILE,FG_COLOR,0,13,SETTINGSSCREEN)                       //
+  UI_DRAW(BMPFILE,FG_COLOR,0,39,SCREEN)                               //
+                                                                      //
+  MOVE8_8(0,Type)                                                     //    Type = 0
+  STRINGS(DUPLICATE,TOOLS_DIR,String)                                 //    STRINGS(DUPLICATE,TOOLS_DIR,String)
+  OR8(BROWSE_FOLDERS,0x10,Tmp)                                        //    OR8(BROWSE_FOLDERS,0x10,Tmp)
+  UI_DRAW(BROWSE,Tmp,BROWSER_STARTX,BROWSER_STARTY,BROWSER_WIDTH,BROWSER_HEIGHT,FILENAMESIZE,Type,String) // UI_DRAW(BROWSE,Tmp,BROWSER_STARTX,BROWSER_STARTY,BROWSER_WIDTH,BROWSER_HEIGHT,FILENAMESIZE,Type,String)
+                                                                      //
+                                                                      //
+  CP_EQ8(Type,TYPE_BYTECODE,Flag)                                     //    if (Type == TYPE_BYTECODE)
+  JR_FALSE(Flag,SettingsNotBytecode)                                  //    {
+                                                                      //
+  MOVE16_16(USER_SLOT,Slot)                                           //      Slot  =  USER_SLOT
+                                                                      //  
+  STRINGS(COMPARE,String,'../tools/Debug/Debug',Flag)                 //      STRINGS(COMPARE,String,'../tools/Debug/Debug',Flag)
+  JR_FALSE(Flag,AppsNotDebug)                                         //      if (Flag)
+AppsDebug:                                                            //      {
+  MOVE16_16(DEBUG_SLOT,Slot)                                          //        Slot  =  DEBUG_SLOT
+AppsNotDebug:                                                         //      }  
+                                                                      //
+  STRINGS(ADD,String,EXT_BYTECODE,Name)                               //      STRINGS(ADD,String,EXT_BYTECODE,Name)
+                                                                      //
+  CALL(RunBytecodefile,Slot,Name)                                     //      RunBytecodefile(Slot,Name)
+                                                                      //
+SettingsNotBytecode:                                                  //    }
+                                                                      //
+}                                                                     //  }
+                                                                      //
+//******************************************************************************************************
+// TurnOffPopup
+//******************************************************************************************************
+                                                                      //
+                                                                      //
+subcall   TurnOffPopup                                                //  void TurnOffPopup(void)
+{                                                                     //  {
+  DATA8   Stat                                                        //
+  DATA8   Off                                                         //
+                                                                      //
+  MOVE8_8(0,Stat)                                                     //    Stat  =  0
+  MOVE8_8(0,Off)                                                      //    Off   =  0
+  UI_DRAW(QUESTION,FG_COLOR,16,50,OFF,ICON_NONE,'',Stat,Off)          //    UI_DRAW(QUESTION,FG_COLOR,17,52,OFF,ICON_NONE,'',Stat,Off)
+                                                                      //
+  JR_NEQ8(Off,1,NotOff)                                               //    if (Off == 1)
+                                                                      //    {
+                                                                      //
+  CALL(TurnOffExec)                                                   //      TurnOffExec()                                                                      
+                                                                      //
+NotOff:                                                               //    }                                                                      
+  MOVE16_16(SUBSTATE_NOT_INIT,SubState)                               //    SubState = SUBSTATE_NOT_INIT                                                                      
+}                                                                     //  }
+                                                                      //
+//******************************************************************************************************
+// ErrorPopup
+//******************************************************************************************************
+                                                                      //
+subcall   ErrorPopup                                                  //  void ErrorPopup(void)
+{                                                                     //  {
+  DATA32  Icons                                                       //    DATA32  Icons
+  DATA8   Error                                                       //    DATA8   Error
+  DATA8   State                                                       //    DATA8   State
+  DATA8   Volume                                                      //    DATA8   Volume
+  DATAS   Text ERR_STRING_SIZE                                        //    DATA8   Text[ERR_STRING_SIZE]
+                                                                      //
+  INFO(GET_ERROR,Error)                                               //    INFO(GET_ERROR,Error)
+                                                                      //
+  JR_FALSE(Error,NoError)                                             //    if (Error)
+                                                                      //    {
+  INFO(GET_VOLUME,Volume)                                             //      INFO(GET_VOLUME,Volume)
+  SOUND(PLAY,Volume,'GeneralAlarm')                                   //      SOUND(PLAY,Volume,'GeneralAlarm')
+  MOVE8_8(0,State)                                                    //      State   =  0
+  RL32(1,WARNSIGN,Icons)                                              //      Tmp     =  1 << WARNSIGN
+  INFO(ERRORTEXT,Error,ERR_STRING_SIZE,Text)                          //      INFO(ERRORTEXT,Error,ERR_STRING_SIZE,Text)
+  UI_DRAW(NOTIFICATION,FG_COLOR,16,50,WARNSIGN,ICON_NONE,ICON_NONE,Text,State) // UI_DRAW(NOTIFICATION,FG_COLOR,16,50,WARNSIGN,ICON_NONE,ICON_NONE,ErrorText,State)
+  MOVE16_16(SUBSTATE_NOT_INIT,SubState)                               //      SubState = SUBSTATE_NOT_INIT                                                                      
+                                                                      //                                                                      
+NoError:                                                              //    }                                                                                                                                                                                           
+}                                                                     //  }
+                                                                      //
+//******************************************************************************************************
+// ActionPopup
+//******************************************************************************************************
+                                                                      //
+subcall   ActionPopup                                                 //  void ActionPopup(void)
+{                                                                     //  {
+  IN_S    Name FILENAMESIZE                                           //
+  IO_8    FileType                                                    //
+  OUT_8   Run                                                         //
+                                                                      //
+  DATA8   Yes                                                         //    DATA8   Yes
+  DATA8   Init                                                        //    DATA8   Init
+  DATA32  Timer                                                       //    DATA32  Timer    
+  DATA32  Stat                                                        //    DATA32  Stat
+  DATA32  Icons                                                       //    DATA32  Icons
+  DATA32  Total                                                       //
+  DATA32  Tmp                                                         //    DATA32  Tmp
+  DATA8   Flag                                                        //
+  DATA8   Icon                                                        //
+  DATA8   Media                                                       //
+                                                                      //
+  MOVE8_8(0,Run)                                                      //    Run       =  0
+  MOVE8_8(0,Yes)                                                      //    Yes       =  0
+  MOVE32_32(0,Stat)                                                   //    Stat      =  0
+  MOVE8_8(0,Init)                                                     //    Init      =  0
+  AND8(FileType,0xF0,Media)                                           //    Media     =  FileType & 0xF0
+  AND8(FileType,0x0F,FileType)                                        //    FileType  =  FileType & 0x0F
+                                                                      //
+  CALL(AddExt,Name,FileType)                                          //    AddExt(Name,FileType)
+                                                                      //
+  MOVE32_32(0,Icons)                                                  //    Icons   =  0
+                                                                      //
+  // if bluetooth on -> allow folder, OBP and OBD file transfer       //
+  COM_GET(GET_ON_OFF,HW_BT,Flag)                                      //    COM_GET(GET_ON_OFF,HW_BT,Flag)
+  JR_FALSE(Flag,NoBt1)                                                //    if (Flag)
+                                                                      //    {
+  CP_EQ8(FileType,TYPE_FOLDER,Flag)                                   //      if (FileType == TYPE_FOLDER)
+  JR_FALSE(Flag,NotFolder1)                                           //      {
+                                                                      //
+  RL32(1,TO_BLUETOOTH,Tmp)                                            //        Tmp     =  1 << TO_BLUETOOTH
+  OR32(Tmp,Icons,Icons)                                               //        Icons  |=  Tmp
+                                                                      //
+NotFolder1:                                                           //      }
+  CP_EQ8(FileType,TYPE_PROGRAM,Flag)                                  //      if (FileType == TYPE_PROGRAM)
+  JR_FALSE(Flag,NotProgram1)                                          //      {
+                                                                      //
+  RL32(1,TO_BLUETOOTH,Tmp)                                            //        Tmp     =  1 << TO_BLUETOOTH
+  OR32(Tmp,Icons,Icons)                                               //        Icons  |=  Tmp
+                                                                      //
+NotProgram1:                                                          //      }
+  CP_EQ8(FileType,TYPE_DATALOG,Flag)                                  //      if (FileType == TYPE_DATALOG)
+  JR_FALSE(Flag,NotDatalog1)                                          //      {
+                                                                      //
+  RL32(1,TO_BLUETOOTH,Tmp)                                            //        Tmp     =  1 << TO_BLUETOOTH
+  OR32(Tmp,Icons,Icons)                                               //        Icons  |=  Tmp
+                                                                      //
+NotDatalog1:                                                          //      }
+NoBt1:                                                                //    }
+                                                                      //
+  // if sdcard present -> allow folder, OBP and OBD file transfer     //
+  UI_READ(GET_SDCARD,Flag,Total,Tmp)                                  //    UI_READ(GET_SDCARD,Flag,Total,Tmp)
+  JR_FALSE(Flag,NoSdcard2)                                            //    if (Flag)
+                                                                      //    {
+  JR_EQ8(Media,TYPE_SDCARD,Sdcard2)                                   //      if (Media != TYPE_SDCARD)
+                                                                      //      {
+  JR_EQ8(Media,TYPE_USBSTICK,Usbstick2)                               //        if (Media != TYPE_USBSTICK)
+                                                                      //        {
+  CP_EQ8(FileType,TYPE_FOLDER,Flag)                                   //          if (FileType == TYPE_FOLDER)
+  JR_FALSE(Flag,NotFolder2)                                           //          {
+                                                                      //
+  RL32(1,TO_SDCARD,Tmp)                                               //            Tmp     =  1 << TO_SDCARD
+  OR32(Tmp,Icons,Icons)                                               //            Icons  |=  Tmp
+                                                                      //
+NotFolder2:                                                           //          }
+  CP_EQ8(FileType,TYPE_PROGRAM,Flag)                                  //          if (FileType == TYPE_PROGRAM)
+  JR_FALSE(Flag,NotProgram2)                                          //          {
+                                                                      //
+  RL32(1,TO_SDCARD,Tmp)                                               //            Tmp     =  1 << TO_SDCARD
+  OR32(Tmp,Icons,Icons)                                               //            Icons  |=  Tmp
+                                                                      //
+NotProgram2:                                                          //          }
+  CP_EQ8(FileType,TYPE_DATALOG,Flag)                                  //          if (FileType == TYPE_DATALOG)
+  JR_FALSE(Flag,NotDatalog2)                                          //          {
+                                                                      //
+  RL32(1,TO_SDCARD,Tmp)                                               //            Tmp     =  1 << TO_SDCARD
+  OR32(Tmp,Icons,Icons)                                               //            Icons  |=  Tmp
+                                                                      //
+NotDatalog2:                                                          //          }
+Usbstick2:                                                            //        }
+Sdcard2:                                                              //      }
+NoSdcard2:                                                            //    }
+                                                                      //
+  // if usbstick present -> allow folder, OBP and OBD file transfer   //
+  UI_READ(GET_USBSTICK,Flag,Total,Tmp)                                //    UI_READ(GET_USBSTICK,Flag,Total,Tmp)
+  JR_FALSE(Flag,NoUsbstick3)                                          //    if (Flag)
+                                                                      //    {
+  JR_EQ8(Media,TYPE_SDCARD,Sdcard3)                                   //      if (Media != TYPE_SDCARD)
+                                                                      //      {
+  JR_EQ8(Media,TYPE_USBSTICK,Usbstick3)                               //        if (Media != TYPE_USBSTICK)
+                                                                      //        {
+  CP_EQ8(FileType,TYPE_FOLDER,Flag)                                   //          if (FileType == TYPE_FOLDER)
+  JR_FALSE(Flag,NotFolder3)                                           //          {
+                                                                      //
+  RL32(1,TO_USBSTICK,Tmp)                                             //            Tmp     =  1 << TO_USBSTICK
+  OR32(Tmp,Icons,Icons)                                               //            Icons  |=  Tmp
+                                                                      //
+NotFolder3:                                                           //          }
+  CP_EQ8(FileType,TYPE_PROGRAM,Flag)                                  //          if (FileType == TYPE_PROGRAM)
+  JR_FALSE(Flag,NotProgram3)                                          //          {
+                                                                      //
+  RL32(1,TO_USBSTICK,Tmp)                                             //            Tmp     =  1 << TO_USBSTICK
+  OR32(Tmp,Icons,Icons)                                               //            Icons  |=  Tmp
+                                                                      //
+NotProgram3:                                                          //          }
+  CP_EQ8(FileType,TYPE_DATALOG,Flag)                                  //          if (FileType == TYPE_DATALOG)
+  JR_FALSE(Flag,NotDatalog3)                                          //          {
+                                                                      //
+  RL32(1,TO_USBSTICK,Tmp)                                             //            Tmp     =  1 << TO_USBSTICK
+  OR32(Tmp,Icons,Icons)                                               //            Icons  |=  Tmp
+                                                                      //
+NotDatalog3:                                                          //          }
+Usbstick3:                                                            //        }
+Sdcard3:                                                              //      }
+NoUsbstick3:                                                          //    }
+                                                                      //
+  // if sdcard present -> allow folder, OBP and OBD file transfer     //
+  JR_NEQ8(Media,TYPE_SDCARD,NoSdcard4)                                //    if (Media == TYPE_SDCARD)
+                                                                      //    {
+  CP_EQ8(FileType,TYPE_FOLDER,Flag)                                   //      if (FileType == TYPE_FOLDER)
+  JR_FALSE(Flag,NotFolder4)                                           //      {
+                                                                      //
+  RL32(1,TO_BRICK,Tmp)                                                //        Tmp     =  1 << TO_BRICK
+  OR32(Tmp,Icons,Icons)                                               //        Icons  |=  Tmp
+                                                                      //
+NotFolder4:                                                           //      }
+  CP_EQ8(FileType,TYPE_PROGRAM,Flag)                                  //      if (FileType == TYPE_PROGRAM)
+  JR_FALSE(Flag,NotProgram4)                                          //      {
+                                                                      //
+  RL32(1,TO_BRICK,Tmp)                                                //        Tmp     =  1 << TO_BRICK
+  OR32(Tmp,Icons,Icons)                                               //        Icons  |=  Tmp
+                                                                      //
+NotProgram4:                                                          //      }
+  CP_EQ8(FileType,TYPE_DATALOG,Flag)                                  //      if (FileType == TYPE_DATALOG)
+  JR_FALSE(Flag,NotDatalog4)                                          //      {
+                                                                      //
+  RL32(1,TO_BRICK,Tmp)                                                //        Tmp     =  1 << TO_BRICK
+  OR32(Tmp,Icons,Icons)                                               //        Icons  |=  Tmp
+                                                                      //
+NotDatalog4:                                                          //      }
+NoSdcard4:                                                            //    }
+                                                                      //
+  JR_NEQ8(Media,TYPE_USBSTICK,NoUsbstick5)                            //    if (Media == TYPE_USBSTICK)
+                                                                      //    {
+  CP_EQ8(FileType,TYPE_FOLDER,Flag)                                   //      if (FileType == TYPE_FOLDER)
+  JR_FALSE(Flag,NotFolder5)                                           //      {
+                                                                      //
+  RL32(1,TO_BRICK,Tmp)                                                //        Tmp     =  1 << TO_BRICK
+  OR32(Tmp,Icons,Icons)                                               //        Icons  |=  Tmp
+                                                                      //
+NotFolder5:                                                           //      }
+  CP_EQ8(FileType,TYPE_PROGRAM,Flag)                                  //      if (FileType == TYPE_PROGRAM)
+  JR_FALSE(Flag,NotProgram5)                                          //      {
+                                                                      //
+  RL32(1,TO_BRICK,Tmp)                                                //        Tmp     =  1 << TO_BRICK
+  OR32(Tmp,Icons,Icons)                                               //        Icons  |=  Tmp
+                                                                      //
+NotProgram5:                                                          //      }
+  CP_EQ8(FileType,TYPE_DATALOG,Flag)                                  //      if (FileType == TYPE_DATALOG)
+  JR_FALSE(Flag,NotDatalog5)                                          //      {
+                                                                      //
+  RL32(1,TO_BRICK,Tmp)                                                //        Tmp     =  1 << TO_BRICK
+  OR32(Tmp,Icons,Icons)                                               //        Icons  |=  Tmp
+                                                                      //
+NotDatalog5:                                                          //      }
+NoUsbstick5:                                                          //    }
+                                                                      //
+  // if OBP -> allow move to trash                                    //
+  CP_EQ8(FileType,TYPE_PROGRAM,Flag)                                  //    if (FileType == TYPE_PROGRAM)
+  JR_FALSE(Flag,NotProgram6)                                          //    {
+                                                                      //
+  STRINGS(COMPARE,Name,'../prjs/BrkProg_SAVE/Demo.rpf',Flag)          //      STRINGS(COMPARE,Name,'../prjs/BrkProg_SAVE/Demo.rpf',Flag)
+  JR_TRUE(Flag,Demo)                                                  //      if (!Flag)
+                                                                      //      {
+                                                                      //
+  RL32(1,TO_TRASH,Tmp)                                                //        Tmp     =  1 << TO_TRASH
+  OR32(Tmp,Icons,Icons)                                               //        Icons  |=  Tmp
+                                                                      //
+Demo:                                                                 //      }                                                                      
+NotProgram6:                                                          //    }
+                                                                      //
+  // if OBD -> allow move to trash                                    //
+  CP_EQ8(FileType,TYPE_DATALOG,Flag)                                  //    if (FileType == TYPE_DATALOG)
+  JR_FALSE(Flag,NotDatalog6)                                          //    {
+                                                                      //
+  RL32(1,TO_TRASH,Tmp)                                                //      Tmp     =  1 << TO_TRASH
+  OR32(Tmp,Icons,Icons)                                               //      Icons  |=  Tmp
+                                                                      //
+NotDatalog6:                                                          //    }
+                                                                      //
+  // if not folder or OBD file -> allow execute                       //
+  CP_EQ8(FileType,TYPE_FOLDER,Flag)                                   //    if (FileType != TYPE_FOLDER)
+  JR_TRUE(Flag,Folder7)                                               //    {
+                                                                      //
+  CP_EQ8(FileType,TYPE_DATALOG,Flag)                                  //      if (FileType != TYPE_DATALOG)
+  JR_TRUE(Flag,Datalog7)                                              //      {
+                                                                      //
+  RL32(1,TO_EXECUTE,Tmp)                                              //        Tmp     =  1 << TO_EXECUTE
+  OR32(Tmp,Icons,Icons)                                               //        Icons  |=  Tmp
+                                                                      //
+Datalog7:                                                             //      }
+Folder7:                                                              //    }
+                                                                      //
+                                                                      //
+  // if folder and not OBP or OPD folder -> allow move to trash       //
+  CP_EQ8(FileType,TYPE_FOLDER,Flag)                                   //    if (FileType == TYPE_FOLDER)
+  JR_FALSE(Flag,NotFolder8)                                           //    {
+                                                                      //
+  STRINGS(COMPARE,Name,DATALOG_FOLDER,Flag)                           //      if ((Name != DATALOG_FOLDER) &&
+  JR_TRUE(Flag,Protected8)                                            //
+  STRINGS(COMPARE,Name,PROGRAM_FOLDER,Flag)                           //          (Name != PROGRAM_FOLDER))
+  JR_TRUE(Flag,Protected8)                                            //
+                                                                      //      {
+                                                                      //
+  RL32(1,TO_TRASH,Tmp)                                                //        Tmp     =  1 << TO_TRASH
+  OR32(Tmp,Icons,Icons)                                               //        Icons  |=  Tmp
+                                                                      //
+Protected8:                                                           //      }
+NotFolder8:                                                           //    }
+                                                                      //
+  // if only option is execute - don't show popup - just execute      //                                                                      
+  RL32(1,TO_EXECUTE,Tmp)                                              //    Tmp     =  1 << TO_EXECUTE
+  JR_NEQ32(Icons,Tmp,MoreThanRun)                                     //    if (Icons == Tmp)
+                                                                      //    {
+  // Execute                                                          //
+  MOVE8_8(1,Run)                                                      //      Run     =  1
+                                                                      //
+  MOVE32_32(0,Icons)                                                  //      Icons   =  0
+                                                                      //
+MoreThanRun:                                                          //    }                                                                        
+                                                                      //
+  JR_EQ32(Icons,0,Skip)                                               //    if (Icons)
+                                                                      //    {
+  UI_DRAW(ICON_QUESTION,FG_COLOR,16,50,Init,Icons)                    //      UI_DRAW(ICON_QUESTION,FG_COLOR,16,50,Init,Icons)
+                                                                      //
+  RL32(1,TO_TRASH,Tmp)                                                //      Tmp     =  1 << TO_TRASH
+  JR_NEQ32(Icons,Tmp,NotDelete)                                       //      if (Icons == Tmp)
+                                                                      //      {
+  // Move to trash                                                    //
+  MOVE8_8(0,Stat)                                                     //        Stat  =  0
+  MOVE8_8(0,Yes)                                                      //        Yes   =  0
+  UI_DRAW(QUESTION,FG_COLOR,16,50,WARNSIGN,TO_TRASH,'',Stat,Yes)      //        UI_DRAW(QUESTION,FG_COLOR,16,50,WARNSIGN,TO_TRASH,'',Stat,Yes)
+                                                                      //
+  JR_NEQ8(Yes,1,NotYes1)                                              //        if (Yes == 1)
+                                                                      //        {
+                                                                      //
+  FILE(REMOVE,Name)                                                   //          FILE(REMOVE,Name)
+                                                                      //
+  MOVE8_8(TYPE_REFRESH_BROWSER,FileType)                              //          MOVE8_8(TYPE_REFRESH_BROWSER,FileType)                                                                 
+NotYes1:                                                              //        }
+NotDelete:                                                            //      }
+                                                                      //
+  RL32(1,TO_BLUETOOTH,Tmp)                                            //      Tmp     =  1 << TO_BLUETOOTH
+  JR_NEQ32(Icons,Tmp,NotToBluetooth)                                  //      if (Icons == Tmp)
+                                                                      //      {
+  // Move to bluetooth                                                //
+  MOVE8_8(0,Stat)                                                     //        Stat  =  0
+  MOVE8_8(0,Yes)                                                      //        Yes   =  0
+  UI_DRAW(QUESTION,FG_COLOR,16,50,TO_BLUETOOTH,ICON_NONE,'',Stat,Yes) //        UI_DRAW(QUESTION,FG_COLOR,16,50,TO_BLUETOOTH,ICON_NONE,'',Stat,Yes)
+  JR_NEQ8(Yes,1,NotYes2)                                              //        if (Yes == 1)
+                                                                      //        {
+                                                                      //
+  CALL(ConnecScreen,Name)                                             //          ConnecScreen(Name)
+                                                                      //
+NotYes2:                                                              //        }
+NotToBluetooth:                                                       //      }
+                                                                      //
+                                                                      //
+  RL32(1,TO_SDCARD,Tmp)                                               //      Tmp     =  1 << TO_SDCARD
+  JR_NEQ32(Icons,Tmp,NotToSdcard)                                     //      if (Icons == Tmp)
+                                                                      //      {
+  // Move to sdcard                                                   //
+  MOVE8_8(0,Stat)                                                     //        Stat  =  0
+  MOVE8_8(0,Yes)                                                      //        Yes   =  0
+  UI_DRAW(QUESTION,FG_COLOR,16,50,TO_SDCARD,ICON_NONE,'',Stat,Yes)    //        UI_DRAW(QUESTION,FG_COLOR,16,50,TO_SDCARD,ICON_NONE,'',Stat,Yes)
+  JR_NEQ8(Yes,1,NotYes4)                                              //        if (Yes == 1)
+                                                                      //        {
+  CALL(Copy,Name,TYPE_SDCARD,FileType)                                //          CALL(Copy,Name,TYPE_SDCARD,FileType)                                                               
+                                                                      //
+NotYes4:                                                              //        }
+NotToSdcard:                                                          //      }
+                                                                      //
+  RL32(1,TO_USBSTICK,Tmp)                                             //      Tmp     =  1 << TO_USBSTICK
+  JR_NEQ32(Icons,Tmp,NotToUsbstick)                                   //      if (Icons == Tmp)
+                                                                      //      {
+  // Move to usbstick                                                 //
+  MOVE8_8(0,Stat)                                                     //        Stat  =  0
+  MOVE8_8(0,Yes)                                                      //        Yes   =  0
+  UI_DRAW(QUESTION,FG_COLOR,16,50,TO_USBSTICK,ICON_NONE,'',Stat,Yes)  //        UI_DRAW(QUESTION,FG_COLOR,16,50,TO_USBSTICK,ICON_NONE,'',Stat,Yes)
+  JR_NEQ8(Yes,1,NotYes4)                                              //        if (Yes == 1)
+                                                                      //        {
+  CALL(Copy,Name,TYPE_USBSTICK,FileType)                              //          CALL(Copy,Name,TYPE_USBSTICK,Media,FileType)                                                               
+                                                                      //
+NotYes5:                                                              //        }
+NotToUsbstick:                                                        //      }
+                                                                      //
+  RL32(1,TO_BRICK,Tmp)                                                //      Tmp     =  1 << TO_BRICK
+  JR_NEQ32(Icons,Tmp,NotToBrick)                                      //      if (Icons == Tmp)
+                                                                      //      {
+  // Move to brick                                                    //
+  MOVE8_8(0,Stat)                                                     //        Stat  =  0
+  MOVE8_8(0,Yes)                                                      //        Yes   =  0
+  UI_DRAW(QUESTION,FG_COLOR,16,50,TO_BRICK,ICON_NONE,'',Stat,Yes)     //        UI_DRAW(QUESTION,FG_COLOR,16,50,TO_BRICK,ICON_NONE,'',Stat,Yes)
+  JR_NEQ8(Yes,1,NotYes3)                                              //        if (Yes == 1)
+                                                                      //        {
+  CALL(Copy,Name,0,FileType)                                          //          CALL(Copy,Name,0,FileType)                                                               
+                                                                      //
+NotYes3:                                                              //        }
+NotToBrick:                                                           //      }
+                                                                      //
+  RL32(1,TO_EXECUTE,Tmp)                                              //      Tmp     =  1 << TO_EXECUTE
+  JR_NEQ32(Icons,Tmp,NotExecute)                                      //      if (Icons == Tmp)
+                                                                      //      {
+  // Execute                                                          //
+  MOVE8_8(1,Run)                                                      //        Run     =  1
+                                                                      //
+NotExecute:                                                           //      }
+Skip:                                                                 //    }
+}                                                                     //  }
+                                                                      //
+//******************************************************************************************************
+// Copy
+//******************************************************************************************************
+                                                                      //
+subcall   Copy                                                        //  void Copy  
+{                                                                     //  {
+  IN_S    Filename FILENAMESIZE                                       //
+  IN_8    Media                                                       //
+  IN_8    FileType                                                    //
+                                                                      //
+  DATA32  Size                                                        //
+  DATA32  Files                                                       //
+  DATA32  Total                                                       //
+  DATA32  Space                                                       //
+  DATA32  Tmp                                                         //
+  DATAS   Folder FILENAMESIZE                                         //
+  DATAS   Name FILENAMESIZE                                           //
+  DATAS   Ext FILENAMESIZE                                            //
+  DATAS   Dest FILENAMESIZE                                           //
+  DATAS   DestFolder FILENAMESIZE                                     //
+  DATAS   DestName FILENAMESIZE                                       //
+  DATAS   String FILENAMESIZE                                         //
+  DATA8   State                                                       //
+  DATA8   Yes                                                         //
+  DATA8   Volume                                                      //
+                                                                      //
+  FILENAME(TOTALSIZE,Filename,Files,Size)                             //    FILENAME(TOTALSIZE,Filename,Files,Size)
+                                                                      //
+  JR_EQ8(Media,TYPE_SDCARD,Sdcard)                                    //    swithch (Media)
+  JR_EQ8(Media,TYPE_USBSTICK,Usbstick)                                //
+  JR(Brick)                                                           //    {
+                                                                      //
+Sdcard:                                                               //      case TYPE_SDCARD :
+                                                                      //      {
+  STRINGS(DUPLICATE,SDCARD_FOLDER,Dest)                               //        STRINGS(DUPLICATE,SDCARD_FOLDER,Dest)                                                            
+  UI_READ(GET_SDCARD,State,Total,Space)                               //        UI_READ(GET_SDCARD,State,Total,Space)
+                                                                      //      }
+  JR(End)                                                             //      break
+                                                                      //                                                                  
+Usbstick:                                                             //      case TYPE_USBSTICK :
+                                                                      //      {
+  STRINGS(DUPLICATE,USBSTICK_FOLDER,Dest)                             //        STRINGS(DUPLICATE,USBSTICK_FOLDER,Dest)                                                             
+  UI_READ(GET_USBSTICK,State,Total,Space)                             //        UI_READ(GET_USBSTICK,State,Total,Space)
+                                                                      //      }
+  JR(End)                                                             //      break
+                                                                      //                                                                  
+Brick:                                                                //      default :
+                                                                      //      {
+  STRINGS(DUPLICATE,PRJS_DIR,Dest)                                    //        STRINGS(DUPLICATE,PRJS_DIR,Dest)
+  MEMORY_USAGE(Tmp,Space)                                             //        MEMORY_USAGE(Tmp,Space)
+                                                                      //      }
+  JR(End)                                                             //      break
+                                                                      //
+End:                                                                  //    }                                                                      
+                                                                      //
+  FILENAME(SPLIT,Filename,FILENAMESIZE,Folder,Name,Ext)               //    FILENAME(SPLIT,Filename,FILENAMESIZE,Folder,Name,Ext)
+  CP_EQ8(FileType,TYPE_FOLDER,State)                                  //    if (FileType != TYPE_FOLDER)
+  JR_TRUE(State,NotFile)                                              //    {
+                                                                      //
+  STRINGS(SUB,Folder,PRJS_DIR,DestFolder)                             //      STRINGS(SUB,Folder,PRJS_DIR,DestFolder)                                                                 
+  STRINGS(ADD,Dest,DestFolder,String)                                 //      STRINGS(ADD,Dest,DestFolder,String)
+  STRINGS(DUPLICATE,String,Dest)                                      //      STRINGS(DUPLICATE,String,Dest)
+  FILE(MAKE_FOLDER,Dest,State)                                        //      FILE(MAKE_FOLDER,Dest,State)
+                                                                      //
+NotFile:                                                              //    }
+                                                                      //
+  FILENAME(MERGE,Dest,Name,Ext,FILENAMESIZE,DestName)                 //    FILENAME(MERGE,Dest,Name,Ext,FILENAMESIZE,DestName)
+                                                                      //
+  MOVE8_8(1,Yes)                                                      //    Yes      =  1
+  FILENAME(EXIST,DestName,State)                                      //    FILENAME(EXIST,DestName,State) 
+  JR_FALSE(State,ExecCopy)                                            //    if (State)
+                                                                      //    {
+  INFO(GET_VOLUME,Volume)                                             //      INFO(GET_VOLUME,Volume)
+  SOUND(PLAY,Volume,'GeneralAlarm')                                   //      SOUND(PLAY,Volume,'GeneralAlarm')
+  MOVE8_8(0,State)                                                    //      State  =  0
+  MOVE8_8(0,Yes)                                                      //      Yes    =  0
+  UI_DRAW(QUESTION,FG_COLOR,16,50,WARNSIGN,TO_COPY,'',State,Yes)      //      UI_DRAW(QUESTION,FG_COLOR,16,50,WARNSIGN,TO_COPY,'',State,Yes)
+ExecCopy:                                                             //    }                                                                                                                                        
+                                                                      //    
+  JR_NEQ8(Yes,1,NotYes)                                               //    if (Yes == 1)
+                                                                      //    { 
+  JR_LT32(Space,Size,NoSpace)                                         //      if ((Space >= Size) &&
+  JR_GT32(Files,DIR_DEEPT,NoSpace)                                    //          (Files <=  DIR_DEEPT))
+                                                                      //      {                                                                      
+  FILE(MOVE,Filename,DestName)                                        //        FILE(MOVE,Filename,DestName)
+  JR(SpaceEnd)                                                        //      }
+                                                                      //      else
+NoSpace:                                                              //      {
+  MOVE8_8(0,State)                                                    //        State  =  0
+  INFO(GET_VOLUME,Volume)                                             //        INFO(GET_VOLUME,Volume)
+  SOUND(PLAY,Volume,'GeneralAlarm')                                   //        SOUND(PLAY,Volume,'GeneralAlarm')
+  UI_DRAW(NOTIFICATION,FG_COLOR,16,50,WARNSIGN,COPY_ERROR,ICON_NONE,'',State) // UI_DRAW(NOTIFICATION,FG_COLOR,16,50,WARNSIGN,COPY_ERROR,ICON_NONE,'',State)
+                                                                      //
+SpaceEnd:                                                             //      }                                                                      
+                                                                      //
+NotYes:                                                               //    }
+}                                                                     //  }
+                                                                      //
+//******************************************************************************************************
+// AddExt
+//******************************************************************************************************
+                                                                      //
+subcall   AddExt                                                      //  void AddExt
+{                                                                     //  {
+  IO_S    Name FILENAMESIZE                                           //
+  IO_8    FileType                                                    //
+                                                                      //
+  DATAS   AddString FILENAMESIZE                                      //
+  DATA8   Flag                                                        //
+                                                                      //
+  CP_EQ8(FileType,TYPE_FOLDER,Flag)                                   //    if (FileType == TYPE_FOLDER)
+  JR_FALSE(Flag,FileNotFolder)                                        //    {
+                                                                      //
+  STRINGS(DUPLICATE,Name,AddString)                                   //      STRINGS(DUPLICATE,Name,AddString)
+                                                                      //
+FileNotFolder:                                                        //    }
+  CP_EQ8(FileType,TYPE_SOUND,Flag)                                    //    if (FileType == TYPE_SOUND)
+  JR_FALSE(Flag,FileNotSound)                                         //    {
+                                                                      //
+  STRINGS(ADD,Name,EXT_SOUND,AddString)                               //      STRINGS(ADD,Name,EXT_SOUND,AddString)
+                                                                      //
+FileNotSound:                                                         //    }
+  CP_EQ8(FileType,TYPE_GRAPHICS,Flag)                                 //    if (FileType == TYPE_GRAPHICS)
+  JR_FALSE(Flag,FileNotGraphics)                                      //    {
+                                                                      //
+  STRINGS(ADD,Name,EXT_GRAPHICS,AddString)                            //      STRINGS(ADD,Name,EXT_GRAPHICS,AddString)
+                                                                      //
+FileNotGraphics:                                                      //    }
+  CP_EQ8(FileType,TYPE_BYTECODE,Flag)                                 //    if (FileType == TYPE_BYTECODE)
+  JR_FALSE(Flag,FileNotBytecode)                                      //    {
+                                                                      //
+  STRINGS(ADD,Name,EXT_BYTECODE,AddString)                            //      STRINGS(ADD,Name,EXT_BYTECODE,AddString)
+                                                                      //
+FileNotBytecode:                                                      //    }
+  CP_EQ8(FileType,TYPE_PROGRAM,Flag)                                  //    if (FileType == TYPE_PROGRAM)
+  JR_FALSE(Flag,FileNotProgram)                                       //    {
+                                                                      //
+  STRINGS(ADD,Name,EXT_PROGRAM,AddString)                             //      STRINGS(ADD,Name,EXT_PROGRAM,AddString)
+                                                                      //
+FileNotProgram:                                                       //    }
+  CP_EQ8(FileType,TYPE_DATALOG,Flag)                                  //    if (FileType == TYPE_DATALOG)
+  JR_FALSE(Flag,FileNotDatalog)                                       //    {
+                                                                      //
+  STRINGS(ADD,Name,EXT_DATALOG,AddString)                             //      STRINGS(ADD,Name,EXT_DATALOG,AddString)
+                                                                      //
+FileNotDatalog:                                                       //    }
+  STRINGS(DUPLICATE,AddString,Name)                                   //    STRINGS(DUPLICATE,AddString,Name)
+}                                                                     //
+                                                                      //
+//******************************************************************************************************
+// RunBytecodefile
+//******************************************************************************************************
+                                                                      //
+subcall   RunBytecodefile                                             //  void RunBytecodefile
+{                                                                     //  {
+  IN_16   Slot                                                        //
+  IN_S    Name FILENAMESIZE                                           //
+                                                                      //
+  DATA32  Timer                                                       //    DATA32  Timer
+  DATA32  pFile                                                       //    DATA32  pFile
+  DATA32  Size                                                        //    DATA32  Size
+  DATA8   Status                                                      //    DATA8   Status
+  DATA8   Flag                                                        //    DATA8   Flag
+  DATA8   Tmp                                                         //    DATA8   Tmp
+  DATA8   Blocked                                                     //    DATA8   Blocked
+  DATAS   Path FILENAMESIZE                                           //
+  DATAS   Filename FILENAMESIZE                                       //
+  DATAS   Ext FILENAMESIZE                                            //
+                                                                      //
+  UI_DRAW(STORE,0)                                                    //    UI_DRAW(STORE,0)
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Flag)                              //    UI_BUTTON(SHORTPRESS,BACK_BUTTON,Flag)
+  UI_BUTTON(TESTLONGPRESS,BACK_BUTTON,Flag)                           //    UI_BUTTON(TESTLONGPRESS,BACK_BUTTON,Flag)
+                                                                      //  
+  FILENAME(EXIST,Name,Flag)                                           //    FILENAME(EXIST,Name,Flag)
+  JR_TRUE(Flag,FileFound)                                             //    if (!Flag)
+                                                                      //    {
+  FILE(REMOVE,Name)                                                   //      FILE(REMOVE,Name)
+                                                                      //
+  CALL(ShowError)                                                     //      ShowError()
+                                                                      //
+FileFound:                                                            //    }
+                                                                      //
+  FILENAME(SPLIT,Name,FILENAMESIZE,Path,Filename,Ext)                 //    FILENAME(SPLIT,Name,FILENAMESIZE,Path,Filename,Ext)
+  STRINGS(COMPARE,Filename,'Debug',Flag)                              //    STRINGS(COMPARE,Filename,'Debug',Flag)
+                                                                      //
+  JR_FALSE(Flag,NotDebug)                                             //    if (Flag)
+                                                                      //    {
+  MOVE8_8(DEBUG_SLOT,Slot)                                            //      Slot  =  DEBUG_SLOT
+                                                                      //
+NotDebug:                                                             //    }
+                                                                      //
+                                                                      //    do
+StillPressed:                                                         //    {
+  UI_BUTTON(PRESSED,ENTER_BUTTON,Flag)                                //      UI_BUTTON(PRESSED,ENTER_BUTTON,Flag)
+                                                                      //    }
+  JR_TRUE(Flag,StillPressed)                                          //    while (Flag)
+                                                                      //
+  FILE(LOAD_IMAGE,Slot,Name,Size,pFile)                               //    FILE(LOAD_IMAGE,Slot,Name,Size,pFile)
+  PROGRAM_START(Slot,0,pFile,0)                                       //    PROGRAM_START(Slot,0,pFile,0)
+                                                                      //
+  MOVE8_8(0,Tmp)                                                      //      Tmp  =  0
+                                                                      //      do
+FileRunning:                                                          //      {
+  SLEEP()                                                             //        SLEEP
+  UI_BUTTON(TESTLONGPRESS,BACK_BUTTON,Tmp)                            //        UI_BUTTON(TESTLONGPRESS,BACK_BUTTON,Tmp)
+  MOVE8_8(Tmp,TurnOff)                                                //        TurnOff  =  Tmp
+  UI_BUTTON(GET_BACK_BLOCK,Blocked)                                   //        UI_BUTTON(GET_BACK_BLOCK,Blocked)
+  JR_TRUE(Blocked,BackBlocked)                                        //        if (!Blocked)
+                                                                      //        {
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //          UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+BackBlocked:                                                          //        }
+  SLEEP()                                                             //        SLEEP
+  PROGRAM_INFO(GET_STATUS,Slot,Status)                                //        PROGRAM_INFO(GET_STATUS,Slot,Status1)
+                                                                      //
+  CP_EQ8(Status,STOPPED,Flag)                                         //        if (Status == STOPPED)
+  JR_FALSE(Flag,FileNotStopped)                                       //        {
+                                                                      //
+  MOVE8_8(1,Tmp)                                                      //          Tmp = 1
+                                                                      //
+FileNotStopped:                                                       //        }
+                                                                      //      }
+  JR_FALSE(Tmp,FileRunning)                                           //      while (Tmp == 0)
+                                                                      //
+  PROGRAM_STOP(USER_SLOT)                                             //      PROGRAM_STOP(USER_SLOT)
+  PROGRAM_STOP(Slot)                                                  //      PROGRAM_STOP(Slot)
+}                                                                     //  }
+                                                                      //
+//******************************************************************************************************
+// ConnecScreen
+//******************************************************************************************************
+                                                                      //
+define    CONNEC_STARTX         16                                    //
+define    CONNEC_STARTY         31                                    //
+define    CONNEC_LINE_STARTX    40                                    //
+define    CONNEC_LINE_STARTY    41                                    //
+define    CONNEC_LINE_SPACEY    17                                    //
+define    CONNEC_LINES          3                                     //
+define    CONNEC_CURSOR_STARTX  21                                    //
+define    CONNEC_CURSOR_STARTY  55                                    //
+define    CONNEC_CURSOR_WIDTH   127                                   //
+define    CONNEC_CURSOR_HEIGHT  14                                    //
+define    CONNEC_SEPAR_STARTX   21                                    //
+define    CONNEC_SEPAR_ENDX     154                                   //
+define    CONNEC_ICON_STARTX    24                                    //
+define    CONNEC_ICON_STARTY    39                                    //
+define    CONNEC_ICON_SPACEY    17                                    //
+define    CONNEC_BITMAP_STARTX  72                                    //
+define    CONNEC_BITMAP_STARTY  88                                    //
+define    CONNEC_BAR_STARTX     150                                   //
+define    CONNEC_BAR_STARTY     55                                    //
+define    CONNEC_BAR_WIDTH      5                                     //
+define    CONNEC_BAR_HEIGHT     48                                    //
+                                                                      //
+subcall   ConnecScreen                                                //  void ConnecScreen(void)
+{                                                                     //  {
+  IN_S    Name FILENAMESIZE                                           //
+                                                                      //
+  DATA16  Entry                                                       //
+  DATA16  OldEntries                                                  //
+  DATA16  Count                                                       //
+  DATA16  Tmp                                                         //
+  DATA16  TmpY                                                        //
+  DATA16  Ypos                                                        //
+  DATA16  Yipos                                                       //
+                                                                      //
+  DATA16  Entries                                                     //
+  DATA16  Inc                                                         //
+  DATA16  Pointer                                                     //
+  DATA16  Start                                                       //
+  DATA16  ExtPointer                                                  //
+  DATA8   Update                                                      //
+                                                                      //
+  DATA8   Run                                                         //
+  DATA8   BtState                                                     //
+  DATAS   BtString BRICKNAMESIZE                                      //
+  DATA8   Parred                                                      //
+  DATA8   Connected                                                   //
+  DATA8   BtType                                                      //
+  DATA8   Items                                                       //
+  DATA8   Item                                                        //
+                                                                      //
+  MOVE16_16(0,OldEntries)                                             //    OldEntries  =  0
+  MOVE16_16(0,Pointer)                                                //    Pointer     =  0
+  MOVE16_16(0,Start)                                                  //    Start       =  0
+  MOVE8_8(1,Run)                                                      //    Run         =  1
+  MOVE8_8(1,Update)                                                   //    Update      =  1
+                                                                      //    do
+Loop:                                                                 //    {
+                                                                      //
+  // Check menu entries                                               //
+  COM_GET(CONNEC_ITEMS,HW_BT,Items)                                   //
+  MOVE8_16(Items,Entries)                                             //
+  JR_EQ16(Entries,OldEntries,NoChange)                                //      if (Entries != OldEntries)
+                                                                      //      {
+  MOVE16_16(Entries,OldEntries)                                       //        OldEntries  =  Entries
+  MOVE8_8(1,Update)                                                   //        Update      =  1
+NoChange:                                                             //      }
+                                                                      //
+  JR_FALSE(Update,NoUpdate)                                           //      if (Update)
+                                                                      //      {
+  MOVE16_16(CONNEC_LINE_STARTY,Ypos)                                  //        Ypos        =  CONNEC_LINE_STARTY
+  MOVE16_16(CONNEC_ICON_STARTY,Yipos)                                 //        Yipos       =  CONNEC_ICON_STARTY
+                                                                      //
+  // Draw popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,CONNEC_STARTX,CONNEC_STARTY,'144x82_POP4') //        Draw bitmap
+                                                                      //
+  // Draw headline icon                                               //
+  UI_DRAW(ICON,FG_COLOR,CONNEC_ICON_STARTX,Yipos,NORMAL_ICON,ICON_BLUETOOTH) // UI_DRAW(ICON,FG_COLOR,CONNEC_ICON_STARTX,Yipos,NORMAL_ICON,ICON_BLUETOOTH)
+  ADD16(Yipos,CONNEC_ICON_SPACEY,Yipos)                               //        Yipos  +=  CONNEC_ICON_SPACEY
+                                                                      //
+  // Draw headline                                                    //
+  ADD16(8,CONNEC_LINE_STARTX,Tmp)                                     //        Tmp         =  CONNEC_LINE_STARTX + 8
+  UI_DRAW(SELECT_FONT,1)                                              //        UI_DRAW(SELECT_FONT,1)
+  UI_DRAW(TEXT,FG_COLOR,Tmp,Ypos,'Move to:')                          //        UI_DRAW(TEXT,FG_COLOR,Tmp,Ypos,'Move to:')
+  UI_DRAW(SELECT_FONT,0)                                              //        UI_DRAW(SELECT_FONT,0)
+  ADD16(Ypos,CONNEC_LINE_SPACEY,Ypos)                                 //        Ypos       +=  CONNEC_LINE_SPACEY
+                                                                      //
+  // Draw separator line                                              //
+  SUB16(Ypos,5,TmpY)                                                  //        TmpY        =  Ypos - 5
+  ADD16(CONNEC_CURSOR_STARTX,133,Tmp)                                 //        Tmp         =  CONNEC_CURSOR_STARTX + 133
+  UI_DRAW(LINE,FG_COLOR,CONNEC_SEPAR_STARTX,TmpY,CONNEC_SEPAR_ENDX,TmpY) //     UI_DRAW(LINE,FG_COLOR,CONNEC_SEPAR_STARTX,TmpY,CONNEC_SEPAR_ENDX,TmpY)
+                                                                      //
+  // Draw menu items                                                  //
+  MOVE16_16(Start,Entry)                                              //        Entry       =  Start
+  MOVE16_16(0,Count)                                                  //        Count       =  0
+NextEntry:                                                            //        while (Count < CONNEC_LINES)
+  JR_GTEQ16(Count,CONNEC_LINES,EndEntry)                              //        {
+                                                                      //
+  // Get and draw menu item                                           //
+  JR_GTEQ16(Entry,Entries,Skip)                                       //          if (Entry < Entries)
+                                                                      //          {
+  // Draw entry name                                                  //
+  MOVE16_8(Entry,Item)                                                //
+  COM_GET(CONNEC_ITEM,HW_BT,Item,LCDNAMESIZE,BtString,BtType)         //
+  UI_DRAW(TEXT,FG_COLOR,CONNEC_LINE_STARTX,Ypos,BtString)             //            UI_DRAW(TEXT,FG_COLOR,CONNEC_LINE_STARTX,Ypos,BtString)
+                                                                      //
+  // Draw entry icon                                                  //
+  UI_DRAW(ICON,FG_COLOR,CONNEC_ICON_STARTX,Yipos,MENU_ICON,BtType)    //            UI_DRAW(ICON,FG_COLOR,CONNEC_ICON_STARTX,Yipos,MENU_ICON,BtType)
+                                                                      //
+Skip:                                                                 //          }
+  ADD16(Yipos,CONNEC_ICON_SPACEY,Yipos)                               //          Yipos  +=  CONNEC_ICON_SPACEY
+                                                                      //
+  // Draw bar if selected                                             //
+  JR_NEQ16(Pointer,Entry,NotSelected)                                 //          if (Pointer == Entry)
+                                                                      //          {
+  JR_GTEQ16(Pointer,Entries,TooHigh)                                  //            if (Pointer < Entries)
+                                                                      //            {
+  MUL16(Count,CONNEC_LINE_SPACEY,Tmp)                                 //              Tmp   =  Count * CONNEC_LINE_SPACEY
+  ADD16(Tmp,CONNEC_CURSOR_STARTY,Tmp)                                 //              Tmp  +=  CONNEC_CURSOR_STARTY
+  UI_DRAW(INVERSERECT,CONNEC_CURSOR_STARTX,Tmp,CONNEC_CURSOR_WIDTH,CONNEC_CURSOR_HEIGHT) // UI_DRAW(INVERSERECT,CONNEC_CURSOR_STARTX,Tmp,CONNEC_CURSOR_WIDTH,CONNEC_CURSOR_HEIGHT)
+TooHigh:                                                              //            }
+NotSelected:                                                          //          }
+                                                                      //
+  // Next entry                                                       //
+  ADD16(Entry,1,Entry)                                                //          Entry++
+  ADD16(Count,1,Count)                                                //          Count++
+  ADD16(Ypos,CONNEC_LINE_SPACEY,Ypos)                                 //          Ypos     +=  CONNEC_LINE_SPACEY
+                                                                      //
+  JR(NextEntry)                                                       //        }
+EndEntry:                                                             //
+                                                                      //
+  // Draw navigation bar                                              //
+  ADD16(1,Pointer,Tmp)                                                //        Tmp   =  Pointer + 1
+  UI_DRAW(VERTBAR,FG_COLOR,CONNEC_BAR_STARTX,CONNEC_BAR_STARTY,CONNEC_BAR_WIDTH,CONNEC_BAR_HEIGHT,0,Entries,Tmp)//
+                                                                      //
+  // Update screen                                                    //
+  UI_DRAW(UPDATE)                                                     //        UI_DRAW(UPDATE)
+  MOVE8_8(0,Update)                                                   //        Update  =  0
+NoUpdate:                                                             //      }
+                                                                      //
+  UI_BUTTON(GET_VERT,Inc)                                             //      UI_BUTTON(GET_VERT,Inc)
+  CALL(ControlPointer,0,Entries,CONNEC_LINES,Inc,0,Pointer,Start,ExtPointer,Update)//ControlPointer(0,Entries,CONNEC_LINES,Inc,2,Pointer,Start,ExtPointer,Update)
+                                                                      //
+  // Check ENTER                                                      //
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,BtState)                          //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,BtState)
+  JR_FALSE(BtState,NotEnter)                                          //      if (BtState)
+                                                                      //      {
+                                                                      //
+  JR_EQ16(0,Entries,NoEntries)                                        //        if (Entries)                                
+                                                                      //        {
+  MOVE16_8(Pointer,Item)                                              //          Item  =  Pointer
+  COM_GET(CONNEC_ITEM,HW_BT,Item,BRICKNAMESIZE,BtString,BtType)       //          COM_GET(CONNEC_ITEM,HW_BT,Item,BRICKNAMESIZE,BtString,BtType)
+                                                                      //
+  COM_WRITEFILE(HW_BT,BtString,Name,Type)                             //          COM_WRITEFILE(HW_BT,BtString,Name,Type)
+                                                                      //
+  CALL(ShowWait,BtState)                                              //          ShowWait(BtState)
+                                                                      //
+NoEntries:                                                            //        }
+                                                                      //
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+                                                                      //
+NotEnter:                                                             //      }
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,BtState)                           //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,BtState)
+  JR_FALSE(BtState,NotBackButton)                                     //      if (BtState != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+                                                                      //
+NotBackButton:                                                        //      }
+                                                                      //    }
+  JR_TRUE(Run,Loop)                                                   //    while (Run)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// ControlPointer **************************************************************************************
+                                                                      //
+                                                                      //
+subcall   ControlPointer                                              //  ControlPointer
+{                                                                     //  {
+  IN_16   Min                                                         //    Lowest pointer value
+  IN_16   Max                                                         //    Highest pointer value
+  IN_16   Span                                                        //    No of visible items
+  IN_16   Inc                                                         //    Inc / dec
+  IN_16   Extra                                                       //    Extra more than list
+  IO_16   Pointer                                                     //    Pointer
+  IO_16   Start                                                       //    Start of visible
+  OUT_16  ExtraPointer                                                //
+  IO_8    Update                                                      //    Update flag
+                                                                      //
+  DATA16  Tmp                                                         //
+                                                                      //
+  JR_EQ16(Inc,0,NoChange)                                             //    if (Inc != 0)
+                                                                      //    {
+  MOVE8_8(1,Update)                                                   //      Update        =  1
+NoChange:                                                             //    }
+  ADD16(Pointer,Inc,Pointer)                                          //    Pointer      +=  Inc
+                                                                      //
+  JR_GTEQ16(Pointer,Min,HighEnough)                                   //    if (Pointer < Min)
+                                                                      //    {
+  MOVE16_16(Min,Pointer)                                              //      Pointer     =  Min
+  MOVE8_8(0,Update)                                                   //      Update      =  0
+HighEnough:                                                           //    }
+  ADD16(Max,Extra,Tmp)                                                //    Tmp  =  Max + Extra
+  JR_LT16(Pointer,Tmp,LowEnough)                                      //    if (Pointer >= Tmp)
+                                                                      //    {
+  MOVE16_16(Tmp,Pointer)                                              //      Pointer     =  Tmp
+  SUB16(Pointer,1,Pointer)                                            //      Pointer--
+  MOVE8_8(0,Update)                                                   //      Update      =  0
+LowEnough:                                                            //    }
+                                                                      //
+  JR_GTEQ16(Pointer,Start,DoNotLower)                                 //    if (Pointer < Start)
+                                                                      //    {
+  JR_LT16(Pointer,Min,Label1)                                         //      if (Pointer >= Min)
+                                                                      //      {
+  MOVE16_16(Pointer,Start)                                            //        Start     =  Pointer
+Label1:                                                               //      }
+DoNotLower:                                                           //    }
+                                                                      //
+  JR_GTEQ16(Pointer,Max,NotIncStart)                                  //    if (Pointer < Max)
+                                                                      //    {
+  ADD16(Start,Span,Tmp)                                               //      Tmp         =  Start + Span
+  JR_LT16(Pointer,Tmp,Label2)                                         //      if (Pointer >= Tmp)
+                                                                      //      {
+  SUB16(Pointer,Span,Tmp)                                             //        Tmp       =  Pointer - Span
+  ADD16(Start,1,Start)                                                //        Start++
+  MOVE16_16(0,ExtraPointer)                                           //        ExtraPointer  =  0
+                                                                      //
+Label2:                                                               //      }
+  JR(EndIncStart)                                                     //    }
+                                                                      //    else
+NotIncStart:                                                          //    {
+  SUB16(Pointer,Max,ExtraPointer)                                     //      ExtraPointer  =  Pointer - Max
+  ADD16(ExtraPointer,1,ExtraPointer)                                  //      ExtraPointer++
+EndIncStart:                                                          //    }
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// ShowWait ********************************************************************************************
+                                                                      //
+                                                                      //
+define    UPDATE_TIME     500                                         //
+                                                                      //
+subcall   ShowWait                                                    //  ShowWait
+{                                                                     //  {
+  IO_8    Status                                                      //
+                                                                      //
+  DATA8   State                                                       //
+  DATA8   Skip                                                        //
+  DATA8   Align                                                       //
+  DATA32  Timer                                                       //                                                      //
+  DATA32  Tmp                                                         //
+                                                                      //
+                                                                      //
+  UI_DRAW(STORE,2)                                                    //    UI_DRAW(STORE,2)
+  MOVE8_8(0,State)                                                    //    State  =  0
+  TIMER_READ(Timer)                                                   //    TIMER_READ(Timer)
+                                                                      //    while (COM_GET(GET_RESULT,HARDWARE,-1,Result) == BUSY)
+WaitForReady:                                                         //    {
+  COM_GET(GET_RESULT,HW_BT,-1,Status)                                 //      COM_GET(GET_RESULT,HW_BT,-1,Status)
+  JR_NEQ8(Status,BUSY,NotBusy)                                        //      if (Status == BUSY)
+                                                                      //      {
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Skip)                              //        UI_BUTTON(SHORTPRESS,BACK_BUTTON,Skip)   
+  JR_TRUE(Skip,NotBusy2)                                              //        if (!Skip)
+                                                                      //        {
+  TIMER_READ(Tmp)                                                     //          TIMER_READ(Tmp)
+  SUB32(Tmp,Timer,Tmp)                                                //          Tmp  =  Tmp - Timer
+  JR_LT32(Tmp,UPDATE_TIME,NoTimeout)                                  //          if (Tmp >= UPDATE_TIME)
+                                                                      //          {
+  ADD32(UPDATE_TIME,Timer,Timer)                                      //            Timer +=  UPDATE_TIME
+                                                                      //
+  UI_DRAW(RESTORE,2)                                                  //            UI_DRAW(RESTORE,2)
+                                                                      //
+  // Show popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,20,50,'144x48_POP2')                       //            Draw bitmap
+                                                                      //
+  JR_FALSE(State,NotTrue)                                             //            if (State)
+                                                                      //            {
+  MOVE8_8(0,State)                                                    //              State  =  0
+  UI_DRAW(ICON,FG_COLOR,80,64,LARGE_ICON,WAIT_VERT)                   //              Draw bitmap
+                                                                      //
+  JR(EndTrue)                                                         //            }
+                                                                      //            else
+NotTrue:                                                              //            {
+  MOVE8_8(1,State)                                                    //              State  =  1
+  UI_DRAW(ICON,FG_COLOR,80,64,LARGE_ICON,WAIT_HORZ)                   //              Draw bitmap
+                                                                      //
+EndTrue:                                                              //            }
+  // Update screen                                                    //
+  UI_DRAW(UPDATE)                                                     //            UI_DRAW(UPDATE)
+NoTimeout:                                                            //          }
+  JR(WaitForReady)                                                    //        }
+NotBusy2:                                                             //      }  
+NotBusy:                                                              //    }
+                                                                      //
+  JR_NEQ8(Status,FAIL,NoFail)                                         //    if (Status == FAIL)
+                                                                      //    {
+  CALL(ShowError)                                                     //      ShowError()
+                                                                      //
+NoFail:                                                               //    }
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)                                                                      
+  UI_DRAW(RESTORE,2)                                                  //    UI_DRAW(RESTORE,2)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// ShowError *******************************************************************************************
+                                                                      //
+define    ERROR_STARTX                  16                            //
+define    ERROR_STARTY                  50                            //
+define    ERROR_ICONX                   56                            //
+define    ERROR_ICONY                   60                            //
+define    ERROR_TEXTX                   80                            //
+define    ERROR_TEXTY                   68                            //
+define    ERROR_YESX                    72                            //
+define    ERROR_YESY                    90                            //
+define    ERROR_LINEX                   21                            //
+define    ERROR_LINEY                   89                            //
+define    ERROR_LINE_ENDX               155                           //
+                                                                      //
+subcall   ShowError                                                   //  ShowError
+{                                                                     //  {
+  DATA8   State                                                       //
+  DATA8   Volume                                                      //
+                                                                      //
+  // Show popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,ERROR_STARTX,ERROR_STARTY,'144x65_POP3')   //    Draw bitmap
+                                                                      //
+  // Show error icon                                                  //
+  UI_DRAW(ICON,FG_COLOR,ERROR_ICONX,ERROR_ICONY,LARGE_ICON,WARNSIGN)  //    UI_DRAW(ICON,FG_COLOR,ERROR_ICONX,ERROR_ICONY,LARGE_ICON,WARNSIGN)
+                                                                      //
+  // Show error text                                                  //
+  UI_DRAW(SELECT_FONT,1)                                              //    UI_DRAW(SELECT_FONT,1)
+  UI_DRAW(TEXT,FG_COLOR,ERROR_TEXTX,ERROR_TEXTY,'Error!')             //    UI_DRAW(TEXT,FG_COLOR,ERROR_TEXTX,ERROR_TEXTY,'Error!')
+  UI_DRAW(SELECT_FONT,0)                                              //    UI_DRAW(SELECT_FONT,0)
+                                                                      //
+  // SHow separator line                                              //
+  UI_DRAW(LINE,FG_COLOR,ERROR_LINEX,ERROR_LINEY,ERROR_LINE_ENDX,ERROR_LINEY) // UI_DRAW(LINE,FG_COLOR,ERROR_LINEX,ERROR_LINEY,ERROR_LINE_ENDX,ERROR_LINEY)
+                                                                      //
+  // Show yes icon                                                    //
+  UI_DRAW(ICON,FG_COLOR,ERROR_YESX,ERROR_YESY,LARGE_ICON,YES_SEL)     //    UI_DRAW(ICON,FG_COLOR,ERROR_YESX,ERROR_YESY,LARGE_ICON,YES_SEL)
+                                                                      //
+  UI_DRAW(UPDATE)                                                     //    UI_DRAW(UPDATE)
+                                                                      //
+  INFO(GET_VOLUME,Volume)                                             //    INFO(GET_VOLUME,Volume)
+  SOUND(PLAY,Volume,'GeneralAlarm')                                   //    SOUND(PLAY,Volume,'GeneralAlarm')
+                                                                      //
+  // Check ENTER                                                      //
+NotEnter:                                                             //      do
+                                                                      //      {
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,State)                            //        UI_BUTTON(SHORTPRESS,ENTER_BUTTON,State)
+                                                                      //      }
+  JR_FALSE(State,NotEnter)                                            //      while (!State)
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //      UI_BUTTON(FLUSH)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//******************************************************************************************************
+// TurnOffExec 
+//******************************************************************************************************
+                                                                      //
+                                                                      //
+subcall   TurnOffExec                                                 //  void TurnOffExec(void)
+{                                                                     //  {
+  DATA8   Volume                                                      //    DATA8   Volume
+                                                                      //
+  // Stop parallel running tasks                                      //
+  PROGRAM_STOP(USER_SLOT)                                             //    PROGRAM_STOP(USER_SLOT)
+  PROGRAM_STOP(DEBUG_SLOT)                                            //    PROGRAM_STOP(DEBUG_SLOT)
+  INPUT_DEVICE(STOP_ALL,-1)                                           //    INPUT_DEVICE(STOP_ALL,-1)
+  OBJECT_STOP(BackgroundTask)                                         //    OBJECT_STOP(BackgroundTask)                                                               
+  UI_DRAW(UPDATE)                                                     //    UI_DRAW(UPDATE)
+  UI_WRITE(LED,LED_RED)                                               //    UI_WRITE(LED,LED_RED)
+                                                                      //
+  // Give background tasks a chance to finish                         //
+  SLEEP()                                                             //    SLEEP()
+                                                                      //
+  // Show power down screen                                           //
+  UI_WRITE(SCREEN_BLOCK,0)                                            //    UI_WRITE(SCREEN_BLOCK,0)
+  UI_DRAW(TOPLINE,0)                                                  //    UI_DRAW(TOPLINE,0)
+  UI_DRAW(FILLWINDOW,BG_COLOR,0,0)                                    //    UI_DRAW(FILLWINDOW,BG_COLOR,0,0)
+  UI_DRAW(BMPFILE,FG_COLOR,8,39,'mindstorms')                         //    UI_DRAW(BMPFILE,FG_COLOR,8,39,'mindstorms')
+  UI_DRAW(BMPFILE,FG_COLOR,8,65,'Ani1x')                              //    UI_DRAW(BMPFILE,FG_COLOR,8,65,'Ani1x')
+  UI_DRAW(SELECT_FONT,1)                                              //    UI_DRAW(SELECT_FONT,1)
+  UI_DRAW(TEXT,FG_COLOR,8,79,'Shutting Down')                         //    UI_DRAW(TEXT,FG_COLOR,8,79,1,'Shutting Down')
+  UI_DRAW(UPDATE)                                                     //    UI_DRAW(UPDATE)
+  UI_WRITE(SCREEN_BLOCK,1)                                            //    UI_WRITE(SCREEN_BLOCK,1) 
+                                                                      //
+  // Play power down sound                                            //
+  SOUND_READY()                                                       //    SOUND_READY()
+  INFO(GET_VOLUME,Volume)                                             //    INFO(GET_VOLUME,Volume)
+  SOUND(PLAY,Volume,'PowerDown')                                      //    SOUND(PLAY,Volume,'PowerDown')
+  SOUND_READY()                                                       //    SOUND_READY()
+                                                                      //
+  // Do power down                                                    //
+  UI_WRITE(POWER,0)                                                   //    UI_WRITE(POWER,0)
+  PROGRAM_STOP(0)                                                     //    PROGRAM_STOP(0)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//! \endverbatim

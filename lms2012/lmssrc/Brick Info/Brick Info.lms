@@ -1,0 +1,228 @@
+/*
+ * LEGO® MINDSTORMS EV3
+ *
+ * Copyright (C) 2010-2013 The LEGO Group
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
+
+//  TCP 04.04.2013
+//! \page brickinfo Brick Info Source Code
+//!
+//! <hr size="1"/>
+//!
+//! \verbatim
+//**********************************************************************
+define appv 'Brick Info V1.02'                                        //
+//**********************************************************************
+                                                                      //
+define    MACIPSIZE           16                                      //
+define    SIZE                500                                     //
+define    INFO_STARTX         16                                      //
+define    INFO_STARTY         11                                      //
+define    INFO_LINE_STARTX    40                                      //
+define    INFO_LINE_STARTY    21                                      //
+define    INFO_LINE_SPACEY    17                                      //
+define    INFO_LINES          6                                       //
+define    INFO_TEXT_STARTX    24                                      //
+define    INFO_TEXT_STARTY    34                                      //
+define    INFO_TEXT_SIZEX     131                                     //
+define    INFO_TEXT_SIZEY     67                                      //
+define    INFO_TEXT_SPACEY    10                                      //
+define    INFO_CURSOR_STARTX  21                                      //
+define    INFO_CURSOR_STARTY  35                                      //
+define    INFO_CURSOR_WIDTH   127                                     //
+define    INFO_CURSOR_HEIGHT  14                                      //
+define    INFO_ICON_STARTX    24                                      //
+define    INFO_ICON_STARTY    19                                      //
+define    INFO_ICON_SPACEY    17                                      //
+define    INFO_SEPAR_STARTX   21                                      //
+define    INFO_SEPAR_ENDX     154                                     //
+                                                                      //
+vmthread  MAIN                                                        //  void MAIN(void)
+{                                                                     //  {
+  DATAF   DataF                                                       //
+  DATA32  Total                                                       //
+  DATA32  Free                                                        //
+  DATA16  Tmp                                                         //
+  DATA16  TmpY                                                        //
+  DATA16  Line                                                        //
+  DATA16  Ypos                                                        //
+  DATA16  Yipos                                                       //
+  DATA8   Status                                                      //
+  DATAS   Text 24                                                     //
+  DATAS   Text2 24                                                    //
+  DATAS   Textbox SIZE                                                //
+  DATAS   Network MACIPSIZE                                           //
+  DATAS   Mac MACIPSIZE                                               //
+  DATAS   Ip MACIPSIZE                                                //
+                                                                      //
+  DATA8   ShowVersion                                                 //
+                                                                      //
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //    UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+  JR_FALSE(ShowVersion,DontShowVersion)                               //    if (ShowVersion)
+                                                                      //    {
+  UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)                              //      UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)
+  UI_DRAW(RECT,FG_COLOR,6,52,166,24)                                  //      UI_DRAW(RECT,FG_COLOR,6,52,166,24)
+  UI_DRAW(TEXT,FG_COLOR,13,60,appv)                                   //      UI_DRAW(TEXT,FG_COLOR,13,60,appv)
+  UI_DRAW(UPDATE)                                                     //      UI_DRAW(UPDATE)
+                                                                      //
+ShowVersionWait:                                                      //      do
+                                                                      //      {  
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //        UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+                                                                      //      }
+  JR_TRUE(ShowVersion,ShowVersionWait)                                //      while (ShowVersion)
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //      UI_BUTTON(FLUSH)
+DontShowVersion:                                                      //    }  
+                                                                      //
+  UI_DRAW(RESTORE,0)                                                  //    UI_DRAW(RESTORE,0)
+  UI_DRAW(TOPLINE,1)                                                  //    UI_DRAW(TOPLINE,1)
+  UI_WRITE(LED,LED_GREEN)                                             //    UI_WRITE(LED,LED_GREEN)
+                                                                      //
+  // Show popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,INFO_STARTX,INFO_STARTY,'144x116_POP6')    //    Draw bitmap
+                                                                      //
+  MOVE16_16(INFO_LINE_STARTY,Ypos)                                    //    Ypos        =  INFO_LINE_STARTY
+  MOVE16_16(INFO_ICON_STARTY,Yipos)                                   //    Yipos       =  INFO_ICON_STARTY
+                                                                      //
+  // Draw headline icon                                               //
+  UI_DRAW(ICON,FG_COLOR,INFO_ICON_STARTX,Yipos,NORMAL_ICON,ICON_INFO) //    UI_DRAW(ICON,FG_COLOR,INFO_ICON_STARTX,Yipos,NORMAL_ICON,ICON_INFO)
+  ADD16(Yipos,INFO_ICON_SPACEY,Yipos)                                 //    Yipos      +=  INFO_ICON_SPACEY
+                                                                      //
+  // Draw headline                                                    //
+  ADD16(8,INFO_LINE_STARTX,Tmp)                                       //    Tmp         =  INFO_LINE_STARTX + 8
+  UI_DRAW(SELECT_FONT,SMALL_FONT)                                     //    UI_DRAW(SELECT_FONT,SMALL_FONT)
+  UI_DRAW(TEXT,FG_COLOR,Tmp,Ypos,'Brick Info')                        //    UI_DRAW(TEXT,FG_COLOR,Tmp,Ypos,'Brick Info')
+  UI_DRAW(SELECT_FONT,NORMAL_FONT)                                    //    UI_DRAW(SELECT_FONT,NORMAL_FONT)
+  ADD16(Ypos,INFO_LINE_SPACEY,Ypos)                                   //    Ypos       +=  INFO_LINE_SPACEY
+                                                                      //
+  // Draw separator line                                              //
+  SUB16(Ypos,5,TmpY)                                                  //    TmpY        =  Ypos - 5
+  UI_DRAW(LINE,FG_COLOR,INFO_SEPAR_STARTX,TmpY,INFO_SEPAR_ENDX,TmpY)  //    UI_DRAW(LINE,FG_COLOR,INFO_SEPAR_STARTX,TmpY,INFO_SEPAR_ENDX,TmpY)
+                                                                      //
+  MUL16(INFO_LINES,INFO_TEXT_SPACEY,TmpY)                             //    TmpY        =  INFO_LINES * INFO_TEXT_SPACEY
+  ADD16(Ypos,TmpY,Ypos)                                               //    Ypos       +=  TmpY
+  ADD16(Ypos,INFO_TEXT_SPACEY,Ypos)                                   //    Ypos       +=  INFO_TEXT_SPACEY
+                                                                      //
+  // Draw separator line                                              //
+  SUB16(Ypos,7,TmpY)                                                  //    TmpY        =  Ypos - 7
+  UI_DRAW(LINE,FG_COLOR,INFO_SEPAR_STARTX,TmpY,INFO_SEPAR_ENDX,TmpY)  //    UI_DRAW(LINE,FG_COLOR,INFO_SEPAR_STARTX,TmpY,INFO_SEPAR_ENDX,TmpY)
+                                                                      //
+  // Draw yes bitmap                                                  //
+  ADD16(INFO_LINE_STARTX,32,Tmp)                                      //    Tmp         =  INFO_LINE_STARTX + 32
+  SUB16(Ypos,6,TmpY)                                                  //    TmpY        =  Ypos - 6
+                                                                      //
+  UI_DRAW(ICON,FG_COLOR,Tmp,TmpY,LARGE_ICON,YES_SEL)                  //    UI_DRAW(ICON,FG_COLOR,Tmp,TmpY,LARGE_ICON,YES_SEL)
+                                                                      //
+  // Update screen                                                    //
+  UI_DRAW(UPDATE)                                                     //    UI_DRAW(UPDATE)
+                                                                      //
+  UI_DRAW(SELECT_FONT,SMALL_FONT)                                     //    UI_DRAW(SELECT_FONT,SMALL_FONT)       
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Brick HW:')          //    UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Brick HW:')
+  UI_DRAW(SELECT_FONT,NORMAL_FONT)                                    //    UI_DRAW(SELECT_FONT,NORMAL_FONT)
+  UI_READ(GET_HW_VERS,6,Text)                                         //    UI_READ(GET_HW_VERS,6,Text)
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,Text)                 //    UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,Text)
+                                                                      //
+  UI_DRAW(SELECT_FONT,SMALL_FONT)                                     //    UI_DRAW(SELECT_FONT,SMALL_FONT)       
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Brick FW:')          //    UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Brick FW:')
+  UI_DRAW(SELECT_FONT,NORMAL_FONT)                                    //    UI_DRAW(SELECT_FONT,NORMAL_FONT)
+  UI_READ(GET_FW_VERS,7,Text)                                         //    UI_READ(GET_FW_VERS,7,Text)
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,Text)                 //    UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,Text)
+                                                                      //
+  UI_DRAW(SELECT_FONT,SMALL_FONT)                                     //    UI_DRAW(SELECT_FONT,SMALL_FONT)       
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'ID:')                //    UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'ID:')
+  UI_DRAW(SELECT_FONT,NORMAL_FONT)                                    //    UI_DRAW(SELECT_FONT,NORMAL_FONT)
+  COM_GET(GET_ID,HW_BT,13,Text)                                       //    COM_GET(GET_ID,HW_BT,13,Text)
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,Text)                 //    UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,Text)
+                                                                      //
+  UI_DRAW(SELECT_FONT,SMALL_FONT)                                     //    UI_DRAW(SELECT_FONT,SMALL_FONT)       
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Brick OS:')          //    UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Brick OS:')
+  UI_DRAW(SELECT_FONT,NORMAL_FONT)                                    //    UI_DRAW(SELECT_FONT,NORMAL_FONT)
+  UI_READ(GET_OS_VERS,17,Text)                                        //    UI_READ(GET_OS_VERS,17,Text)  
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,Text)                 //    UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,Text)
+                                                                      //
+  UI_DRAW(SELECT_FONT,SMALL_FONT)                                     //    UI_DRAW(SELECT_FONT,SMALL_FONT)       
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Brick OS build:')    //    UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Brick OS build:')
+  UI_DRAW(SELECT_FONT,NORMAL_FONT)                                    //    UI_DRAW(SELECT_FONT,NORMAL_FONT)
+  UI_READ(GET_OS_BUILD,11,Text)                                       //    UI_READ(GET_OS_BUILD,11,Text)
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,Text)                 //    UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,Text)
+                                                                      //
+  UI_DRAW(SELECT_FONT,SMALL_FONT)                                     //    UI_DRAW(SELECT_FONT,SMALL_FONT)       
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'MEMORY Free:')       //    UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'MEMORY Free:')
+  UI_DRAW(SELECT_FONT,NORMAL_FONT)                                    //    UI_DRAW(SELECT_FONT,NORMAL_FONT)
+  MEMORY_USAGE(Total,Free)                                            //    MEMORY_USAGE(Total,Free)
+  MOVE32_F(Free,DataF)                                                //    DataF  =  Free
+  STRINGS(VALUE_TO_STRING,DataF,-8,0,Text)                            //    STRINGS(VALUE_TO_STRING,DataF,-8,0,Text)
+  STRINGS(ADD,Text,' KB'Text2)                                        //    STRINGS(ADD,Text,' KB'Text2)
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,Text2)                //    UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,Text2)
+                                                                      //
+  UI_READ(GET_SDCARD,Status,Total,Free)                               //    UI_READ(GET_SDCARD,Status,Total,Free)
+  JR_FALSE(Status,NoSdcard)                                           //    if (Status)
+                                                                      //    {
+  UI_DRAW(SELECT_FONT,SMALL_FONT)                                     //      UI_DRAW(SELECT_FONT,SMALL_FONT)       
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'SD_CARD Free:')      //      UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'SD_CARD Free:')
+  UI_DRAW(SELECT_FONT,NORMAL_FONT)                                    //      UI_DRAW(SELECT_FONT,NORMAL_FONT)
+  MOVE32_F(Free,DataF)                                                //      DataF  =  FRee
+  STRINGS(VALUE_TO_STRING,DataF,-8,0,Text)                            //      STRINGS(VALUE_TO_STRING,DataF,-8,0,Text)
+  STRINGS(ADD,Text,' KB'Text2)                                        //      STRINGS(ADD,Text,' KB'Text2)
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,Text2)                //      UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,Text2)
+                                                                      //
+NoSdcard:                                                             //    }
+                                                                      //
+  UI_READ(GET_USBSTICK,Status,Total,Free)                             //    UI_READ(GET_USBSTICK,Status,Total,Free)
+  JR_FALSE(Status,NoUsbstick)                                         //    if (Status)
+                                                                      //    {
+  UI_DRAW(SELECT_FONT,SMALL_FONT)                                     //      UI_DRAW(SELECT_FONT,SMALL_FONT)       
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'USB_STICK Free:')    //      UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'USB_STICK Free:')
+  UI_DRAW(SELECT_FONT,NORMAL_FONT)                                    //      UI_DRAW(SELECT_FONT,NORMAL_FONT)
+  MOVE32_F(Free,DataF)                                                //      DataF  =  Free
+  STRINGS(VALUE_TO_STRING,DataF,-8,0,Text)                            //      STRINGS(VALUE_TO_STRING,DataF,-8,0,Text)
+  STRINGS(ADD,Text,' KB'Text2)                                        //      STRINGS(ADD,Text,' KB'Text2)
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,Text2)                //      UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,Text2)
+                                                                      //
+NoUsbstick:                                                           //    }
+                                                                      //
+  MOVE8_8(0,Text)                                                     //    Text  =  0
+  UI_READ(GET_IP,IPSIZE,Text)                                         //    UI_READ(GET_IP,IPSIZE,Text)
+  JR_EQ8(Text,0,NoIp)                                                 //    if (Text)
+                                                                      //    {
+  UI_DRAW(SELECT_FONT,SMALL_FONT)                                     //      UI_DRAW(SELECT_FONT,SMALL_FONT)       
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'IP Address:')        //      UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'IP Address:')
+  UI_DRAW(SELECT_FONT,NORMAL_FONT)                                    //      UI_DRAW(SELECT_FONT,NORMAL_FONT)
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,Text)                 //      UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,Text)
+                                                                      //
+  JR(EndIp)                                                           //    }
+                                                                      //    else                                                                      
+NoIp:                                                                 //    {
+  COM_GET(GET_NETWORK,HW_WIFI,MACIPSIZE,Network,Mac,Ip)               //      COM_GET(GET_NETWORK,HW_WIFI,MACIPSIZE,Network,Mac,Ip) 
+  JR_LT8(Ip,0x30,ErrorIp)                                             //      if ((Ip[0] >= 0x30) &&
+  JR_GT8(Ip,0x39,ErrorIp)                                             //          (Ip[0] <= 0x39))
+                                                                      //      {
+  UI_DRAW(SELECT_FONT,SMALL_FONT)                                     //        UI_DRAW(SELECT_FONT,SMALL_FONT)       
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'IP Address:')        //        UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'IP Address:')
+  UI_DRAW(SELECT_FONT,NORMAL_FONT)                                    //        UI_DRAW(SELECT_FONT,NORMAL_FONT)
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,Ip)                   //        UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,Ip)
+                                                                      //
+ErrorIp:                                                              //      }
+EndIp:                                                                //    }
+                                                                      //
+  MOVE16_16(-1,Line)                                                  //    Line  = -1
+  UI_DRAW(TEXTBOX,INFO_TEXT_STARTX,INFO_TEXT_STARTY,INFO_TEXT_SIZEX,INFO_TEXT_SIZEY,Textbox,SIZE,DEL_CRLF,Line) // UI_DRAW(TEXTBOX,INFO_TEXT_STARTX,INFO_TEXT_STARTY,INFO_TEXT_SIZEX,INFO_TEXT_SIZEY,Textbox,SIZE,DEL_CRLF,Line)
+                                                                      //
+}                                                                     //  }
+                                                                      //
+//! \endverbatim

@@ -1,0 +1,744 @@
+/*
+ * LEGO® MINDSTORMS EV3
+ *
+ * Copyright (C) 2010-2013 The LEGO Group
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
+
+//  TCP 05.04.2013
+//! \page portviewappcode Port View Source Code
+//!
+//! <hr size="1"/>
+//!
+//! \verbatim
+//**********************************************************************
+define appv 'Port View V1.02'                                         //
+//**********************************************************************
+                                                                      //
+define    MAX_PORTS                     (INPUTS + OUTPUTS)            //  Number of ports supported
+define    OUTPUT_OFFSET                 (INPUTS * CHAIN_DEPT)         //  Offset from start of inputs to start of outputs
+                                                                      //
+define    UPDATE_TIME                   100                           //
+define    CONNECTIONS                   8                             //
+                                                                      //
+define    SELECTSCREEN_STARTX           0                             //
+define    SELECTSCREEN_STARTY           10                            //
+                                                                      //
+define    CORE_BITMAP_STARTX            0                             //
+define    CORE_BITMAP_STARTY            40                            //
+                                                                      //
+define    INPUT_BITMAP_STARTX           0                             //
+define    INPUT_BITMAP_STARTY           99                            //
+define    INPUT_VALUE_CHARS             3                             //
+define    INPUT_VALUE_STARTX            16                            //
+define    INPUT_VALUE_STARTY            109                           //
+define    INPUT_VALUE_SPACEX            40                            //
+                                                                      //
+define    OUTPUT_BITMAP_STARTX          0                             //
+define    OUTPUT_BITMAP_STARTY          14                            //
+define    OUTPUT_VALUE_CHARS            3                             //
+define    OUTPUT_VALUE_STARTX           16                            //
+define    OUTPUT_VALUE_STARTY           21                            //
+define    OUTPUT_VALUE_SPACEX           40                            //
+                                                                      //
+define    DEVICE_BITMAP_STARTX          3                             //
+define    DEVICE_BITMAP_STARTY          43                            //
+                                                                      //
+define    LINE_STARTX                   51                            //
+define    LINE_STARTY                   45                            //
+define    LINE_ENDY                     92                            //
+                                                                      //
+define    PORT_STARTX                   64                            //
+define    PORT_STARTY                   48                            //
+                                                                      //
+define    MODES_STARTX                  64                            //
+define    MODES_STARTY                  48                            //
+define    MODES_SPACEY                  17                            //
+define    MODES_SHOWN                   3                             //
+define    MODE_CHARS                    13                            //
+                                                                      //
+define    SELECT_STARTX                 62                            //
+define    SELECT_STARTY                 46                            //
+define    SELECT_WIDTH                  100                           //
+define    SELECT_HEIGHT                 13                            //
+                                                                      //
+define    NAME_STARTX                   80                            //
+define    NAME_STARTY                   48                            //
+                                                                      //
+define    VALUE_STARTX                  64                            //
+define    VALUE_STARTY                  63                            //
+                                                                      //
+define    BAR_STARTX                    64                            //
+define    BAR_STARTY                    84                            //
+define    BAR_WIDTH                     103                           //
+define    BAR_HEIGHT                    6                             //
+                                                                      //
+DATA8     First                                                       //
+DATA8     TmpMode                                                     //
+                                                                      //
+// MAIN ************************************************************************************************
+                                                                      //
+vmthread  MAIN                                                        //  void MAIN(void)
+{                                                                     //  {
+  DATA32  Timer                                                       //
+  DATA16  hModes                                                      //
+  DATA8   Run                                                         //
+  DATA8   Selection                                                   //
+  DATA8   Changing                                                    //
+  DATA8   Tmp                                                         //
+  DATA8   Init                                                        //
+  DATA8   ShowVersion                                                 //
+                                                                      //
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //    UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+  JR_FALSE(ShowVersion,DontShowVersion)                               //    if (ShowVersion)
+                                                                      //    {
+  UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)                              //      UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)
+  UI_DRAW(RECT,FG_COLOR,6,52,166,24)                                  //      UI_DRAW(RECT,FG_COLOR,6,52,166,24)
+  UI_DRAW(TEXT,FG_COLOR,13,60,appv)                                   //      UI_DRAW(TEXT,FG_COLOR,13,60,appv)
+  UI_DRAW(UPDATE)                                                     //      UI_DRAW(UPDATE)
+                                                                      //
+ShowVersionWait:                                                      //      do
+                                                                      //      {  
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //        UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+                                                                      //      }
+  JR_TRUE(ShowVersion,ShowVersionWait)                                //      while (ShowVersion)
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //      UI_BUTTON(FLUSH)
+DontShowVersion:                                                      //    }  
+                                                                      //
+  UI_DRAW(RESTORE,0)                                                  //    UI_DRAW(RESTORE,0)
+  UI_DRAW(TOPLINE,1)                                                  //    UI_DRAW(TOPLINE,1)
+  UI_BUTTON(SET_BACK_BLOCK,1)                                         //    UI_BUTTON(SET_BACK_BLOCK,1)
+  UI_WRITE(LED,LED_GREEN)                                             //    UI_WRITE(LED,LED_GREEN)
+                                                                      //
+  ARRAY(CREATE8,MAX_PORTS,hModes)                                     //    ARRAY(CREATE8,MAX_PORTS,hModes)
+  ARRAY(FILL,hModes,0)                                                //    ARRAY(FILL,hModes,0)
+                                                                      //
+  MOVE8_8(1,Run)                                                      //    Run         =  1
+  MOVE8_8(0,Selection)                                                //    Selection   =  0
+  MOVE8_8(0,Changing)                                                 //    Changing    =  0
+  MOVE8_8(0,First)                                                    //    First       =  0
+  MOVE8_8(0,TmpMode)                                                  //    TmpMode     =  0
+  MOVE8_8(0,Init)                                                     //    Init        =  0
+                                                                      //
+  Loop:                                                               //    do
+                                                                      //    {
+  UI_DRAW(FILLWINDOW,BG_COLOR,TOPLINE_HEIGHT,0)                       //      UI_DRAW(FILLWINDOW,BG_COLOR,TOPLINE_HEIGHT,0)
+                                                                      //                                        
+  CALL(CheckConnections,hModes)                                       //      CheckConnections(hModes)
+  CALL(CheckKeys,Run,Selection,Changing)                              //      CheckKeys(Run,Selection,Changing)
+  CALL(ShowSelectedConnection,hModes,Selection,Changing)              //      ShowSelectedConnection(hModes,Selection,Changing)
+  CALL(ShowAllConnections,hModes,Selection)                           //      ShowAllConnections(hModes,Selection)
+                                                                      //
+  JR_EQ8(Init,1,Skip)                                                 //      if (Init != 1)
+                                                                      //      {
+  INPUT_DEVICE(CLR_ALL,0)                                             //        INPUT_DEVICE(CLR_ALL,0)
+  MOVE8_8(1,Init)                                                     //        Init    =  1 
+Skip:                                                                 //      }  
+                                                                      //  
+  UI_DRAW(UPDATE)                                                     //      UI_DRAW(UPDATE)
+                                                                      //
+  TIMER_WAIT(UPDATE_TIME,Timer)                                       //      TIMER_WAIT(UPDATE_TIME,Timer)
+  TIMER_READY(Timer)                                                  //      TIMER_READY(Timer)
+                                                                      //    } 
+  JR_TRUE(Run,Loop)                                                   //    while (Run)
+                                                                      //
+  UI_BUTTON(SET_BACK_BLOCK,0)                                         //    UI_BUTTON(SET_BACK_BLOCK,0)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// Check connections ***********************************************************************************
+                                                                      //
+                                                                      //
+subcall   CheckConnections                                            //  void CheckConnections(hModes)
+{                                                                     //  {
+  IN_16   hModes                                                      //
+                                                                      //
+  DATA8   Connection                                                  //
+  DATA8   Type                                                        //
+  DATA32  Index                                                       //
+                                                                      //
+  MOVE8_8(0,Connection)                                               //    Connection  =  0
+                                                                      //    do
+Connections:                                                          //    {
+                                                                      //
+  CALL(GetDeviceType,Connection,Type)                                 //      GetDeviceType(Connection,Type)
+                                                                      //
+  JR_LTEQ8(Type,MAX_VALID_TYPE,Connected)                             //      if (Type > MAX_VALID_TYPE)
+                                                                      //      {
+  MOVE8_32(Connection,Index)                                          //        Index           =  Connection
+  ARRAY_WRITE(hModes,Index,0)                                         //        hModes[Index]   =  0
+Connected:                                                            //      }
+  ADD8(1,Connection,Connection)                                       //      Connection++
+                                                                      //    }
+  JR_LT8(Connection,MAX_PORTS,Connections)                            //    while (Connection < MAX_PORTS)
+                                                                      //
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// Check keys ******************************************************************************************
+                                                                      //
+                                                                      //
+subcall   CheckKeys                                                   //  void CheckKeys(Run,Selection,Changing)
+{                                                                     //  {
+  IO_8    Run                                                         //
+  IO_8    Selection                                                   //
+  IO_8    Changing                                                    //
+                                                                      //
+  DATA8   Tmp                                                         //
+  DATA16  Inc                                                         //
+                                                                      //
+  JR_TRUE(Changing,Skip)                                              //    if (!Changing)
+                                                                      //    {
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+                                                                      //
+  JR_FALSE(Tmp,NotBack)                                               //      if (Tmp)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run         =  0
+                                                                      //
+NotBack:                                                              //      }
+  UI_BUTTON(GET_HORZ,Inc)                                             //      UI_BUTTON(GET_HORZ,Inc)
+  MOVE16_8(Inc,Tmp)                                                   //      Tmp           =  Inc
+  ADD8(Tmp,Selection,Selection)                                       //      Tmp          +=  Selection
+                                                                      //
+  JR_GTEQ8(Selection,0,TooLow1)                                       //      if (Selection < 0)
+                                                                      //      {
+  MOVE8_8(MAX_PORTS,Selection)                                        //        Selection   =  MAX_PORTS
+  SUB8(Selection,1,Selection)                                         //        Selection--
+                                                                      //
+TooLow1:                                                              //      }
+                                                                      //
+  JR_LT8(Selection,MAX_PORTS,TooHigh1)                                //      if (Selection >= MAX_PORTS)
+                                                                      //      {
+  MOVE8_8(0,Selection)                                                //        Selection   =  0
+                                                                      //
+TooHigh1:                                                             //      }
+                                                                      //
+  UI_BUTTON(GET_VERT,Inc)                                             //      UI_BUTTON(GET_VERT,Inc)
+  MOVE16_8(Inc,Tmp)                                                   //      Tmp           =  Inc
+  MUL8(Tmp,INPUTS,Tmp)                                                //      Tmp          *=  INPUTS
+  SUB8(Selection,Tmp,Selection)                                       //      Selection    -=  Tmp
+  JR_LT8(Selection,MAX_PORTS,NotTooHigh)                              //      if (Selection >= MAX_PORTS)
+                                                                      //      {
+  ADD8(Selection,Tmp,Selection)                                       //        Selection  +=  Tmp
+NotTooHigh:                                                           //      }
+  JR_GTEQ8(Selection,0,NotTooLow)                                     //      if (Selection < 0)
+                                                                      //      {
+  ADD8(Selection,Tmp,Selection)                                       //        Selection  +=  Tmp
+NotTooLow:                                                            //      }
+Skip:                                                                 //    }
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// Show selected connection ****************************************************************************
+                                                                      //
+                                                                      //
+subcall   ShowSelectedConnection                                      //  void ShowSelectedConnection(hModes,Selection,Changing)
+{                                                                     //  {
+  IN_16   hModes                                                      //
+  IN_8    Selection                                                   //
+  IO_8    Changing                                                    //
+                                                                      //
+  DATA32  Index                                                       //
+  DATA32  Data32                                                      //
+  DATAF   Data                                                        //
+  DATAF   Min                                                         //
+  DATAF   Max                                                         //
+  DATAF   Span                                                        //
+  DATAF   TmpF                                                        //
+  DATA16  X                                                           //
+  DATA16  X0                                                          //
+  DATA16  X1                                                          //
+  DATA16  Y                                                           //
+  DATA16  Y2                                                          //
+  DATA16  Inc                                                         //
+  DATA16  Ypos                                                        //
+  DATA16  SYpos                                                       //
+  DATA8   Tmp                                                         //
+  DATA8   SelectedDevice                                              //
+  DATA8   Type                                                        //
+  DATA8   Mode                                                        //
+  DATA8   Format                                                      //
+  DATA8   Modes                                                       //
+  DATA8   Views                                                       //
+  DATA8   Counter                                                     //
+  DATA8   Shown                                                       //
+  DATA8   Figures                                                     //
+  DATA8   Decimals                                                    //
+  DATAS   DeviceName 13                                               //
+  DATAS   PortName 3                                                  //
+                                                                      //
+  JR_LT8(Selection,INPUTS,NotBot)                                     //    if (Selection >= INPUTS)
+                                                                      //    {  
+  UI_DRAW(BMPFILE,FG_COLOR,INPUT_BITMAP_STARTX,INPUT_BITMAP_STARTY,'ViewBot') // UI_DRAW(BMPFILE,FG_COLOR,INPUT_BITMAP_STARTX,INPUT_BITMAP_STARTY,'ViewBot')                                                       
+NotBot:                                                               //    }
+  JR_NEQ8(Selection,0,NotP1)                                          //    if (Selection == 0)
+                                                                      //    {  
+  UI_DRAW(BMPFILE,FG_COLOR,INPUT_BITMAP_STARTX,INPUT_BITMAP_STARTY,'ViewP1') // UI_DRAW(BMPFILE,FG_COLOR,INPUT_BITMAP_STARTX,INPUT_BITMAP_STARTY,'ViewP1')                                                       
+  STRINGS(DUPLICATE,'1:',PortName)                                    //      STRINGS(DUPLICATE,'1:',PortName)                                                             
+NotP1:                                                                //    }
+  JR_NEQ8(Selection,1,NotP2)                                          //    if (Selection == 1)
+                                                                      //    {  
+  UI_DRAW(BMPFILE,FG_COLOR,INPUT_BITMAP_STARTX,INPUT_BITMAP_STARTY,'ViewP2') // UI_DRAW(BMPFILE,FG_COLOR,INPUT_BITMAP_STARTX,INPUT_BITMAP_STARTY,'ViewP2')                                   
+  STRINGS(DUPLICATE,'2:',PortName)                                    //      STRINGS(DUPLICATE,'2:',PortName)                      
+NotP2:                                                                //    }
+  JR_NEQ8(Selection,2,NotP3)                                          //    if (Selection == 2)
+                                                                      //    {  
+  UI_DRAW(BMPFILE,FG_COLOR,INPUT_BITMAP_STARTX,INPUT_BITMAP_STARTY,'ViewP3') // UI_DRAW(BMPFILE,FG_COLOR,INPUT_BITMAP_STARTX,INPUT_BITMAP_STARTY,'ViewP3')                                                      
+  STRINGS(DUPLICATE,'3:',PortName)                                    //      STRINGS(DUPLICATE,'3:',PortName)                   
+NotP3:                                                                //    }
+  JR_NEQ8(Selection,3,NotP4)                                          //    if (Selection == 3)
+                                                                      //    {  
+  UI_DRAW(BMPFILE,FG_COLOR,INPUT_BITMAP_STARTX,INPUT_BITMAP_STARTY,'ViewP4') // UI_DRAW(BMPFILE,FG_COLOR,INPUT_BITMAP_STARTX,INPUT_BITMAP_STARTY,'ViewP4')                                                  
+  STRINGS(DUPLICATE,'4:',PortName)                                    //      STRINGS(DUPLICATE,'4:',PortName)                       
+NotP4:                                                                //    }
+                                                                      //
+  JR_GTEQ8(Selection,INPUTS,NotTop)                                   //    if (Selection < INPUTS)
+                                                                      //    {  
+  UI_DRAW(BMPFILE,FG_COLOR,OUTPUT_BITMAP_STARTX,OUTPUT_BITMAP_STARTY,'ViewTop') // UI_DRAW(BMPFILE,FG_COLOR,OUTPUT_BITMAP_STARTX,OUTPUT_BITMAP_STARTY,'ViewTop')                                                       
+NotTop:                                                               //    }
+  JR_NEQ8(Selection,4,NotPA)                                          //    if (Selection == 4)
+                                                                      //    {  
+  UI_DRAW(BMPFILE,FG_COLOR,OUTPUT_BITMAP_STARTX,OUTPUT_BITMAP_STARTY,'ViewPA') // UI_DRAW(BMPFILE,FG_COLOR,OUTPUT_BITMAP_STARTX,OUTPUT_BITMAP_STARTY,'ViewPA')                                                   
+  STRINGS(DUPLICATE,'A:',PortName)                                    //      STRINGS(DUPLICATE,'A:',PortName)                                                                       
+NotPA:                                                                //    }
+  JR_NEQ8(Selection,5,NotPB)                                          //    if (Selection == 5)
+                                                                      //    {  
+  UI_DRAW(BMPFILE,FG_COLOR,OUTPUT_BITMAP_STARTX,OUTPUT_BITMAP_STARTY,'ViewPB') // UI_DRAW(BMPFILE,FG_COLOR,OUTPUT_BITMAP_STARTX,OUTPUT_BITMAP_STARTY,'ViewPB')                                                        
+  STRINGS(DUPLICATE,'B:',PortName)                                    //      STRINGS(DUPLICATE,'B:',PortName)                                                                       
+NotPB:                                                                //    }
+  JR_NEQ8(Selection,6,NotPC)                                          //    if (Selection == 6)
+                                                                      //    {  
+  UI_DRAW(BMPFILE,FG_COLOR,OUTPUT_BITMAP_STARTX,OUTPUT_BITMAP_STARTY,'ViewPC') // UI_DRAW(BMPFILE,FG_COLOR,OUTPUT_BITMAP_STARTX,OUTPUT_BITMAP_STARTY,'ViewPC')                                                        
+  STRINGS(DUPLICATE,'C:',PortName)                                    //      STRINGS(DUPLICATE,'C:',PortName)                                                                       
+NotPC:                                                                //    }
+  JR_NEQ8(Selection,7,NotPD)                                          //    if (Selection == 7)
+                                                                      //    {  
+  UI_DRAW(BMPFILE,FG_COLOR,OUTPUT_BITMAP_STARTX,OUTPUT_BITMAP_STARTY,'ViewPD') // UI_DRAW(BMPFILE,FG_COLOR,OUTPUT_BITMAP_STARTX,OUTPUT_BITMAP_STARTY,'ViewPD')                                                        
+  STRINGS(DUPLICATE,'D:',PortName)                                    //      STRINGS(DUPLICATE,'D:',PortName)                                                                       
+NotPD:                                                                //    }
+                                                                      //
+  UI_DRAW(BMPFILE,FG_COLOR,CORE_BITMAP_STARTX,CORE_BITMAP_STARTY,'ViewCore') // UI_DRAW(BMPFILE,FG_COLOR,CORE_BITMAP_STARTX,CORE_BITMAP_STARTY,'ViewCore')                                                        
+                                                                      //
+  MOVE8_8(Selection,SelectedDevice)                                   //    SelectedDevice  =  Selection
+  CALL(Convert,SelectedDevice)                                        //    Convert(SelectedDevice)
+                                                                      //
+  MOVE8_32(Selection,Index)                                           //    Index   =  Selection
+  ARRAY_READ(hModes,Index,Mode)                                       //    Mode    =  hModes[Index]
+                                                                      //
+  JR_NEQ8(Changing,0,Change)                                          //    if (Changing == 0)
+                                                                      //    {
+  // Show port name                                                   //
+  UI_DRAW(TEXT,FG_COLOR,PORT_STARTX,PORT_STARTY,PortName)             //      UI_DRAW(TEXT,FG_COLOR,PORT_STARTX,PORT_STARTY,PortName)
+                                                                      //
+  // Show device name                                                 //
+  INPUT_DEVICE(GET_NAME,0,SelectedDevice,12,DeviceName)               //      INPUT_DEVICE(GET_NAME,0,SelectedDevice,12,DeviceName)
+  UI_DRAW(TEXT,FG_COLOR,NAME_STARTX,NAME_STARTY,DeviceName)           //      UI_DRAW(TEXT,FG_COLOR,NAME_STARTX,NAME_STARTY,DeviceName)
+                                                                      //
+  INPUT_DEVICE(GET_TYPEMODE,0,SelectedDevice,Type,TmpMode)            //      INPUT_DEVICE(GET_TYPEMODE,0,SelectedDevice,Type,TmpMode)
+                                                                      //
+  CALL(ShowDeviceType,0,40,Selection,Mode)                            //      ShowDeviceType(0,40,Selection,Mode)
+                                                                      //
+  JR_GT8(Type,MAX_VALID_TYPE,Empty)                                   //      if (Type <= MAX_VALID_TYPE)
+                                                                      //      {
+  // if device connected                                              //
+                                                                      //
+  // Show large value and unit                                        //
+  CALL(ReadDeviceSI,Data,SelectedDevice,Mode)                         //        ReadDeviceSI(Data,SelectedDevice,Mode)
+  INPUT_DEVICE(GET_SYMBOL,0,SelectedDevice,6,DeviceName)              //        INPUT_DEVICE(GET_SYMBOL,0,SelectedDevice,6,DeviceName)
+  INPUT_DEVICE(GET_FIGURES,0,SelectedDevice,Figures,Decimals)         //        INPUT_DEVICE(GET_FIGURES,0,SelectedDevice,Figures,Decimals)
+  UI_DRAW(VIEW_UNIT,FG_COLOR,VALUE_STARTX,VALUE_STARTY,Data,Figures,Decimals,6,DeviceName) // UI_DRAW(VIEW_UNIT,FG_COLOR,VALUE_STARTX,VALUE_STARTY,Data,Figures,Decimals,6,DeviceName)
+                                                                      //
+//** BAR ******************************************************************************
+                                                                      //
+  // Show bar shape                                                   //
+  UI_DRAW(RECT,FG_COLOR,BAR_STARTX,BAR_STARTY,BAR_WIDTH,BAR_HEIGHT)   //        UI_DRAW(RECT,FG_COLOR,BAR_STARTX,BAR_STARTY,BAR_WIDTH,BAR_HEIGHT)
+                                                                      //
+  INPUT_DEVICE(GET_MINMAX,0,SelectedDevice,Min,Max)                   //        INPUT_DEVICE(GET_MINMAX,0,SelectedDevice,Min,Max)
+  ADDF(Max,Min,Data)                                                  //        Data    =  Max + Min
+  MOVEF_32(Data,Data32)                                               //        Data32  =  Data
+  INPUT_READSI(0,SelectedDevice,0,Mode,Data)                          //        INPUT_READSI(0,SelectedDevice,0,Mode,Data)
+                                                                      //
+  JR_NAN(Data,Invalid)                                                //        if (Data != nan)
+                                                                      //        {
+  JR(EndValid)                                                        //        }
+                                                                      //        else
+Invalid:                                                              //        {
+  MOVE8_F(0,Data)                                                     //          Data  =  0
+EndValid:                                                             //        }
+                                                                      //
+  // Data = ((Data - Min) * (100)) / (Span);                          //
+  SUBF(Max,Min,Span)                                                  //        Span  =  Max - Min          
+  SUBF(Data,Min,Data)                                                 //        Data -=  Min
+  MULF(Data,100.0F,Data)                                              //        Data *=  100
+  DIVF(Data,Span,Data)                                                //        Data /=  Span
+                                                                      //
+  JR_LTEQF(Data,100.F,NotTooHigh)                                     //        if (Data > 100)
+                                                                      //        {
+  MOVEF_F(100.0F,Data)                                                //          Data  =  100
+                                                                      //
+NotTooHigh:                                                           //        }
+                                                                      //
+  JR_GTEQF(Data,0.F,NotTooLow)                                        //        if (Data < 0)
+                                                                      //        {
+  MOVEF_F(0.0F,Data)                                                  //          Data  =  0
+                                                                      //
+NotTooLow:                                                            //        }
+                                                                      //
+  MOVEF_8(Data,Inc)                                                   //        Inc   =  Data
+  ADD16(BAR_STARTX,Inc,X)                                             //        X     =  BAR_STARTX + Inc
+                                                                      //
+  MOVE16_16(BAR_STARTX,X0)                                            //        X0    =  BAR_STARTX
+                                                                      //
+  JR_NEQ32(Data32,0,NotCentered)                                      //        if (Data32 == 0)
+                                                                      //        {
+  // Centered                                                         //
+  ADD8(X0,50,X0)                                                      //          X0 +=  50
+                                                                      //
+  // Show center line                                                 //
+  SUB16(BAR_STARTY,1,Y)                                               //          Y   =  BAR_STARTY - 1
+  ADD16(BAR_STARTY,BAR_HEIGHT,Y2)                                     //          Y2  =  BAR_STARTY + BAR_HEIGHT
+  UI_DRAW(LINE,FG_COLOR,X0,Y,X0,Y2)                                   //          UI_DRAW(LINE,FG_COLOR,X0,Y,X0,Y2)
+                                                                      //
+NotCentered:                                                          //        }
+                                                                      //
+  // Show bar filling                                                 //
+  SUB16(BAR_STARTY,1,Y)                                               //        Y   =  BAR_STARTY - 1
+  ADD16(X0,1,X1)                                                      //        X1  =  X0 + 1
+  ADD16(2,Y,Y)                                                        //        Y  +=  2
+  UI_DRAW(DOTLINE,FG_COLOR,X0,Y,X,Y,1,1)                              //        UI_DRAW(DOTLINE,FG_COLOR,X0,Y,X,Y,1,1)
+  ADD16(1,Y,Y)                                                        //        Y++  
+  UI_DRAW(DOTLINE,FG_COLOR,X1,Y,X,Y,1,1)                              //        UI_DRAW(DOTLINE,FG_COLOR,X1,Y,X,Y,1,1)
+  ADD16(1,Y,Y)                                                        //        Y++  
+  UI_DRAW(DOTLINE,FG_COLOR,X0,Y,X,Y,1,1)                              //        UI_DRAW(DOTLINE,FG_COLOR,X0,Y,X,Y,1,1)
+  ADD16(1,Y,Y)                                                        //        Y++  
+  UI_DRAW(DOTLINE,FG_COLOR,X1,Y,X,Y,1,1)                              //        UI_DRAW(DOTLINE,FG_COLOR,X1,Y,X,Y,1,1)
+                                                                      //
+  // Show bar knob                                                    //
+  SUB16(BAR_STARTY,1,Y)                                               //        Y   =  BAR_STARTY - 1
+  UI_DRAW(FILLRECT,BG_COLOR,X,Y,3,8)                                  //        UI_DRAW(FILLRECT,BG_COLOR,X,Y,3,8)
+  UI_DRAW(RECT,FG_COLOR,X,Y,3,8)                                      //        UI_DRAW(RECT,FG_COLOR,X,Y,3,8)
+                                                                      //
+//*************************************************************************************
+                                                                      //
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //        UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotEnter1)                                             //        if (Tmp)
+                                                                      //        {
+  MOVE8_8(1,Changing)                                                 //          Changing  =  1
+  MOVE8_8(Mode,TmpMode)                                               //          TmpMode   =  Mode
+                                                                      //  
+  JR_GTEQ8(TmpMode,First,NoFirstAdjust)                               //          if (TmpMode < First)
+                                                                      //          {
+  MOVE8_8(TmpMode,First)                                              //            First   =  TmpMode
+NoFirstAdjust:                                                        //          }
+NotEnter1:                                                            //        }
+Empty:                                                                //      }
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)  
+  JR(ChangeEnd)                                                       //    }
+                                                                      //    else
+Change:                                                               //    {
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotEnter2)                                             //      if (Tmp)
+                                                                      //      {
+  MOVE8_8(0,Changing)                                                 //        Changing        =  0
+  MOVE8_8(TmpMode,Mode)                                               //        Mode            =  TmpMode
+                                                                      //
+  // Save mode                                                        //
+  MOVE8_32(Selection,Index)                                           //        Index           =  Selection
+  ARRAY_WRITE(hModes,Index,Mode)                                      //        hModes[Index]   =  Mode
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //        UI_BUTTON(FLUSH)
+                                                                      //  
+NotEnter2:                                                            //      }
+                                                                      //
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotBack)                                               //      if (Tmp)
+                                                                      //      {
+  MOVE8_8(0,Changing)                                                 //        Changing        =  0
+  UI_BUTTON(FLUSH)                                                    //        UI_BUTTON(FLUSH)
+                                                                      //
+NotBack:                                                              //      }
+                                                                      //
+  INPUT_DEVICE(GET_FORMAT,0,SelectedDevice,Tmp,Format,Modes,Views)    //      INPUT_DEVICE(GET_FORMAT,0,SelectedDevice,Tmp,Format,Modes,Views)
+                                                                      //
+  // Inc/dec mode                                                     //
+  UI_BUTTON(GET_VERT,Inc)                                             //      UI_BUTTON(GET_VERT,Inc)
+                                                                      //
+  MOVE16_8(Inc,Tmp)                                                   //      Tmp         =  Inc
+  ADD8(Tmp,TmpMode,TmpMode)                                           //      TmpMode    +=  Tmp
+  MOVE8_8(MODES_SHOWN,Shown)                                          //      Shown       =  MODES_SHOWN
+  JR_GTEQ8(Views,Shown,HighEnough)                                    //      if (Views < Shown)
+                                                                      //      {
+  MOVE8_8(Views,Shown)                                                //        Shown     =  Views
+HighEnough:                                                           //      }
+  JR_GTEQ8(TmpMode,0,poi20)                                           //      if (TmpMode < 0)
+                                                                      //      {
+  MOVE8_8(0,TmpMode)                                                  //        TmpMode   =  0 
+poi20:                                                                //      }
+  JR_LT8(TmpMode,Views,poi30)                                         //      if (TmpMode >= Views)
+                                                                      //      {
+  SUB8(Views,1,TmpMode)                                               //        TmpMode   =  Views - 1
+poi30:                                                                //      }                  
+  JR_GTEQ8(TmpMode,First,poi50)                                       //      if (TmpMode < First)
+                                                                      //      {
+  MOVE8_8(TmpMode,First)                                              //        First     =  TmpMode
+poi50:                                                                //      }
+  ADD8(First,Shown,Tmp)                                               //      Tmp         =  First + Shown
+  JR_LT8(TmpMode,Tmp,poi90)                                           //      if (TmpMode >= Tmp)
+                                                                      //      {
+  SUB8(TmpMode,Shown,First)                                           //        First     =  TmpMode - Shown
+  ADD8(First,1,First)                                                 //        First++
+poi90:                                                                //      }
+                                                                      //
+  MOVE8_8(First,Counter)                                              //      Counter     =  First
+  MOVE16_16(MODES_STARTY,Ypos)                                        //      Ypos        =  MODES_STARTY
+  MOVE16_16(SELECT_STARTY,SYpos)                                      //      SYpos       =  SELECT_STARTY
+                                                                      //      do
+Loop:                                                                 //      {
+                                                                      //
+  // Show mode                                                        //
+  INPUT_DEVICE(GET_MODENAME,0,SelectedDevice,Counter,MODE_CHARS,DeviceName) //  INPUT_DEVICE(GET_MODENAME,0,SelectedDevice,Counter,MODE_CHARS,DeviceName)
+  UI_DRAW(TEXT,FG_COLOR,MODES_STARTX,Ypos,DeviceName)                 //        UI_DRAW(TEXT,FG_COLOR,MODES_STARTX,Ypos,DeviceName)
+                                                                      //
+  JR_NEQ8(Counter,TmpMode,NotSelected)                                //        if (Counter == TmpMode)
+                                                                      //        {
+  UI_DRAW(INVERSERECT,SELECT_STARTX,SYpos,SELECT_WIDTH,SELECT_HEIGHT) //          UI_DRAW(INVERSERECT,SELECT_STARTX,SYpos,SELECT_WIDTH,SELECT_HEIGHT)
+                                                                      //
+NotSelected:                                                          //        }
+                                                                      //
+  ADD16(MODES_SPACEY,Ypos,Ypos)                                       //        Ypos     +=  MODES_SPACEY
+  ADD16(MODES_SPACEY,SYpos,SYpos)                                     //        SYpos    +=  MODES_SPACEY
+                                                                      //
+  ADD8(Counter,1,Counter)                                             //        Counter++
+  ADD8(First,Shown,Tmp)                                               //        Tmp       =  First + Shown
+                                                                      //      }
+  JR_LT8(Counter,Tmp,Loop)                                            //      while (Counter < Tmp)
+                                                                      //
+  CALL(ShowDeviceType,0,40,Selection,TmpMode)                         //      ShowDeviceType(0,40,Selection,TmpMode)
+                                                                      //
+ChangeEnd:                                                            //    }
+  // Draw line                                                        //
+  UI_DRAW(LINE,FG_COLOR,LINE_STARTX,LINE_STARTY,LINE_STARTX,LINE_ENDY) //   UI_DRAW(LINE,FG_COLOR,LINE_STARTX,LINE_STARTY,LINE_STARTX,LINE_ENDY)
+                                                                      //
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// Show all connections ********************************************************************************
+                                                                      //
+                                                                      //
+subcall   ShowAllConnections                                          //  void ShowAllConnections(hModes,Selection)
+{                                                                     //  {
+  IN_16   hModes                                                      //
+  IN_8    Selection                                                   //
+                                                                      //
+  DATA8   Mode                                                        //
+  DATAF   Data                                                        //
+  DATA32  Index                                                       //
+  DATA16  Xpos                                                        //
+  DATA16  Ypos                                                        //
+  DATA8   Tmp                                                         //
+  DATA8   Connection                                                  //
+  DATA8   Type                                                        //
+                                                                      //
+  MOVE16_16(INPUT_VALUE_STARTX,Xpos)                                  //    Xpos        =  INPUT_VALUE_STARTX
+  MOVE16_16(INPUT_VALUE_STARTY,Ypos)                                  //    Ypos        =  INPUT_VALUE_STARTY
+  MOVE8_8(0,Connection)                                               //    Connection  =  0
+                                                                      //
+                                                                      //    do
+Inputs:                                                               //    {
+                                                                      //
+  MOVE8_32(Connection,Index)                                          //      Index     =  Connection
+  ARRAY_READ(hModes,Index,Mode)                                       //      Mode      =  hModes[Index]                                       
+  ADD8(0,Connection,Tmp)                                              //      Tmp       =  Connection
+                                                                      //
+  CALL(ReadDeviceSI,Data,Tmp,Mode)                                    //      ReadDeviceSI(Data,Tmp,Mode)
+                                                                      //
+  JR_EQ8(Connection,Selection,DontShow1)                              //      if (Connection != Selection)
+                                                                      //      {
+  CALL(GetDeviceType,Connection,Type)                                 //        GetDeviceType(Connection,Type)
+  JR_NEQ8(Type,127,NoError1)                                          //        if (Type == 127)
+                                                                      //        {
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'-!-')                              //          UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'-!-')
+  JR(NoError1End)                                                     //        }
+                                                                      //        else
+NoError1:                                                             //        {
+  UI_DRAW(VIEW_VALUE,FG_COLOR,Xpos,Ypos,Data,INPUT_VALUE_CHARS,0)     //          UI_DRAW(VIEW_VALUE,FG_COLOR,Xpos,Ypos,Data,INPUT_VALUE_CHARS,0)
+NoError1End:                                                          //        }
+DontShow1:                                                            //      }
+  ADD16(INPUT_VALUE_SPACEX,Xpos,Xpos)                                 //      Xpos     +=  INPUT_VALUE_SPACEX 
+  ADD8(1,Connection,Connection)                                       //      Connection++
+                                                                      //    }
+  JR_LT8(Connection,INPUTS,Inputs)                                    //    while (Connection < INPUTS)
+                                                                      //
+  MOVE16_16(OUTPUT_VALUE_STARTX,Xpos)                                 //    Xpos        =  OUTPUT_VALUE_STARTX
+  MOVE16_16(OUTPUT_VALUE_STARTY,Ypos)                                 //    Ypos        =  OUTPUT_VALUE_STARTY
+  MOVE8_8(0,Connection)                                               //    Connection  =  0
+                                                                      //
+                                                                      //    do
+Outputs:                                                              //    {
+                                                                      //
+  MOVE8_32(Connection,Index)                                          //      Index     =  Connection
+  ADD32(INPUTS,Index,Index)                                           //      Index    +=  INPUTS
+  ARRAY_READ(hModes,Index,Mode)                                       //      Mode      =  hModes[Index]
+                                                                      //
+  ADD8(16,Connection,Tmp)                                             //      Tmp       =  Connection + 16
+  CALL(ReadDeviceSI,Data,Tmp,Mode)                                    //      ReadDeviceSI(Data,Tmp,Mode)
+                                                                      //
+  ADD8(INPUTS,Connection,Tmp)                                         //      Tmp       =  INPUTS + Connection
+                                                                      //
+  JR_EQ8(Tmp,Selection,DontShow2)                                     //      if (Tmp != Connection)
+                                                                      //      {
+  CALL(GetDeviceType,Tmp,Type)                                        //        GetDeviceType(Tmp,Type)
+  JR_NEQ8(Type,127,NoError2)                                          //        if (Type == 127)
+                                                                      //        {
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'-!-')                              //          UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'-!-')
+  JR(NoError2End)                                                     //        }
+                                                                      //        else
+NoError2:                                                             //        {
+  UI_DRAW(VIEW_VALUE,FG_COLOR,Xpos,Ypos,Data,OUTPUT_VALUE_CHARS,0)    //          UI_DRAW(VIEW_VALUE,FG_COLOR,Xpos,Ypos,Data,OUTPUT_VALUE_CHARS,0)
+NoError2End:                                                          //        }  
+DontShow2:                                                            //      }
+                                                                      //
+  ADD16(OUTPUT_VALUE_SPACEX,Xpos,Xpos)                                //      Xpos     +=  OUTPUT_VALUE_SPACEX
+  ADD8(1,Connection,Connection)                                       //      Connection++
+                                                                      //    }
+  JR_LT8(Connection,OUTPUTS,Outputs)                                  //    while (Connection < OUTPUTS)
+                                                                      //
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// Show device type and mode ***************************************************************************
+                                                                      //
+                                                                      //
+subcall   ShowDeviceType                                              //  ShowDeviceType
+{                                                                     //  {
+  IN_16   X                                                           //
+  IN_16   Y                                                           //
+  IN_8    Selection                                                   //
+  IN_8    Mode                                                        //
+                                                                      //
+  DATA8   Type                                                        //
+  DATA8   Tmp                                                         //
+  DATA8   Char                                                        //
+  DATAS   TypeName 5                                                  //
+  DATAS   BitmapName FILENAMESIZE                                     //
+                                                                      //
+  CALL(GetDeviceType,Selection,Type)                                  //    CALL(GetDeviceType,Selection,Type) 
+                                                                      //
+  JR_LTEQ8(Type,MAX_VALID_TYPE,Device)                                //    if (Type > MAX_VALID_TYPE)
+                                                                      //    {
+  JR_NEQ8(Type,127,NoError)                                           //      if (Type == 127)
+                                                                      //      {
+  JR_GTEQ8(Selection,INPUTS,NotInput)                                 //        if (Selection < INPUTS)
+                                                                      //        {
+  UI_DRAW(BMPFILE,FG_COLOR,DEVICE_BITMAP_STARTX,DEVICE_BITMAP_STARTY,'PE_input')//       Draw bitmap
+                                                                      //
+  JR(EndInput)                                                        //        }
+                                                                      //        else
+NotInput:                                                             //        {
+  UI_DRAW(BMPFILE,FG_COLOR,DEVICE_BITMAP_STARTX,DEVICE_BITMAP_STARTY,'PE_output')//      Draw bitmap
+                                                                      //
+EndInput:                                                             //        }
+NoError:                                                              //      }
+  JR(EndDevice)                                                       //    }
+                                                                      //    else
+Device:                                                               //    {
+                                                                      //
+  WRITE8(0x74,0,TypeName)                                             //      TypeName[0]     =  't'
+                                                                      //
+  DIV8(Type,10,Tmp)                                                   //      Tmp             =  Type / 10
+  ADD8(Tmp,0x30,Char)                                                 //      Char            =  '0' + Tmp
+  WRITE8(Char,1,TypeName)                                             //      TypeName[1]     =  Char
+                                                                      //
+  MUL8(Tmp,10,Tmp)                                                    //      Tmp            *=  10
+  SUB8(Type,Tmp,Tmp)                                                  //      Tmp             =  Type - Tmp
+  ADD8(Tmp,0x30,Char)                                                 //      Char            =  '0' + Tmp
+  WRITE8(Char,2,TypeName)                                             //      TypeName[2]     =  Char
+                                                                      //
+  ADD8(Mode,0x30,Char)                                                //      Char            =  '0' + Mode
+  WRITE8(Char,3,TypeName)                                             //      TypeName[3]     =  Char
+                                                                      //
+  WRITE8(0,4,TypeName)                                                //      TypeName[4]     =  0
+                                                                      //
+  STRINGS(ADD,TypeName,EXT_GRAPHICS,BitmapName)                       //      STRINGS(ADD,TypeName,EXT_GRAPHICS,BitmapName)                                              
+  FILENAME(EXIST,BitmapName,Tmp)                                      //      FILENAME(EXIST,BitmapName,Tmp)
+  JR_TRUE(Tmp,Found1)                                                 //      if (!Tmp)
+                                                                      //      {
+  WRITE8(0x30,3,TypeName)                                             //        TypeName[3]     =  '0'
+  STRINGS(ADD,TypeName,EXT_GRAPHICS,BitmapName)                       //        STRINGS(ADD,TypeName,EXT_GRAPHICS,BitmapName)                                              
+  FILENAME(EXIST,BitmapName,Tmp)                                      //        FILENAME(EXIST,BitmapName,Tmp)
+  JR_TRUE(Tmp,Found2)                                                 //        if (!Tmp)
+                                                                      //        {
+  STRINGS(DUPLICATE,'tdef',TypeName)                                  //          STRINGS(DUPLICATE,'tdef',TypeName)
+Found2:                                                               //        }                                                                    
+Found1:                                                               //      }                                                                    
+  UI_DRAW(BMPFILE,FG_COLOR,DEVICE_BITMAP_STARTX,DEVICE_BITMAP_STARTY,TypeName) // UI_DRAW(BMPFILE,FG_COLOR,X,Y,TypeName)                                                        
+EndDevice:                                                            //    }
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// Get device type *************************************************************************************
+                                                                      //
+                                                                      //
+subcall   GetDeviceType                                               //  GetDeviceType(Connection,Type)
+{                                                                     //  {
+  IN_8    Connection                                                  //
+  OUT_8   Type                                                        //
+                                                                      //
+  DATA8   Mode                                                        //
+                                                                      //
+  CALL(Convert,Connection)                                            //    Convert(Connection)
+  INPUT_DEVICE(GET_TYPEMODE,0,Connection,Type,Mode)                   //    INPUT_DEVICE(GET_TYPEMODE,0,Connection,Type,Mode)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// Read device in SI units *****************************************************************************
+                                                                      //
+                                                                      //
+subcall   ReadDeviceSI                                                //  ReadDeviceSI(Data,Device,Mode)
+{                                                                     //  {
+  OUT_F   Data                                                        //
+  IN_8    Device                                                      //
+  IN_8    Mode                                                        //
+                                                                      //
+  DATA8   Tmp                                                         //
+                                                                      //
+  DIVF(0.0F,0.0F,Data)                                                //    Data  =  NAN
+  INPUT_TEST(0,Device,Tmp)                                            //    INPUT_TEST(0,Device,Tmp)
+  JR_TRUE(Tmp,Invalid)                                                //    if (!Tmp)
+                                                                      //    {
+  INPUT_DEVICE(READY_SI,0,Device,0,Mode,1,Data)                       //      INPUT_DEVICE(READY_SI,0,Device,0,Mode,1,Data)
+Invalid:                                                              //    }
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// Convert *********************************************************************************************
+                                                                      //
+                                                                      //
+subcall   Convert                                                     //  Convert
+{                                                                     //  {
+  IO_8    Port                                                        //
+                                                                      //
+  JR_LT8(Port,INPUTS,Input)                                           //    if (Port >= INPUTS)
+                                                                      //    {
+  ADD8(Port,OUTPUT_OFFSET,Port)                                       //      Port +=  OUTPUT_OFFSET
+  SUB8(Port,INPUTS,Port)                                              //      Port -=  INPUTS
+Input:                                                                //    }
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//! \endverbatim

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+src=$(pwd)
+cd ../adk/lmsasm
+java -jar assembler.jar "$src"/"$1"
+cd "$src"
+cp "$1".rbf "$2"
+rm "$1".rbf

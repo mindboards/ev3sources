@@ -1,0 +1,124 @@
+#! /bin/bash
+
+path="sys"
+app="tst"
+
+#*** GENERIC CONSTANTS *******************************************************
+
+gext=".rgf"
+bext=".rbf"
+am1808="../../lms2012/Linux_AM1808"
+x86="../../lms2012/Linux_X86"
+
+#*** COMPILE *****************************************************************
+
+echo
+echo -------------------------------------------------------------------------
+echo Compiling ../${path}/${app}
+echo
+
+rm "${app}"/*"${bext}"
+
+lms="tst"
+../adk/asm "${lms}"
+cp "${lms}""${bext}" "${app}"/
+rm "${lms}""${bext}"
+
+lms="Performance"
+../adk/asm "${lms}"
+cp "${lms}""${bext}" "${app}"/
+rm "${lms}""${bext}"
+
+lms="tststr"
+../adk/asm "${lms}"
+cp "${lms}""${bext}" "${app}"/
+rm "${lms}""${bext}"
+
+lms="tstmath"
+../adk/asm "${lms}"
+cp "${lms}""${bext}" "${app}"/
+rm "${lms}""${bext}"
+
+lms="us"
+../adk/asm "${lms}"
+cp "${lms}""${bext}" "${app}"/
+rm "${lms}""${bext}"
+
+lms="si"
+../adk/asm "${lms}"
+cp "${lms}""${bext}" "${app}"/
+rm "${lms}""${bext}"
+
+lms="tstlog"
+../adk/asm "${lms}"
+cp "${lms}""${bext}" "${app}"/
+rm "${lms}""${bext}"
+
+lms="tstiic"
+../adk/asm "${lms}"
+cp "${lms}""${bext}" "${app}"/
+rm "${lms}""${bext}"
+
+prg=p0
+../adk/tasm ${prg}  "${app}"/${prg}
+
+prg=p1
+../adk/tasm ${prg}  "${app}"/${prg}
+
+prg=p2
+../adk/tasm ${prg}  "${app}"/${prg}
+
+prg=p3
+../adk/tasm ${prg}  "${app}"/${prg}
+
+prg=p4
+../adk/tasm ${prg}  "${app}"/${prg}
+
+prg=p5
+../adk/tasm ${prg}  "${app}"/${prg}
+
+prg=p6
+../adk/tasm ${prg}  "${app}"/${prg}
+
+prg=p7
+../adk/tasm ${prg}  "${app}"/${prg}
+
+prg=p8
+../adk/tasm ${prg}  "${app}"/${prg}
+
+prg=p9
+../adk/tasm ${prg}  "${app}"/${prg}
+
+prg=p10
+../adk/tasm ${prg}  "${app}"/${prg}
+
+prg=p11
+../adk/tasm ${prg}  "${app}"/${prg}
+
+prg=p12
+../adk/tasm ${prg}  "${app}"/${prg}
+
+prg=p33
+../adk/tasm ${prg}  "${app}"/${prg}
+
+prg=str
+../adk/tasm ${prg}  "${app}"/${prg}
+
+
+
+
+
+#*** COPY IN PLACE ***********************************************************
+
+cp "${app}"/*.r?f "${am1808}"/"${path}"/ui/
+cp "${app}"/*.r?f "${x86}"/"${path}"/ui/
+cp "${app}"/*.r?f ../../../../am1808/DaVinci-PSP-SDK-03.20.00.13/filesys/home/root/lms2012/"${path}"/ui/
+
+#rm -r "${am1808}"/"${path}"/"${app}"
+#cp -r "${app}" "${am1808}"/"${path}"/
+#rm -r "${x86}"/"${path}"/"${app}"
+#cp -r "${app}" "${x86}"/"${path}"/
+
+
+
+

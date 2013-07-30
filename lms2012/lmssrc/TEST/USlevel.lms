@@ -1,0 +1,176 @@
+/*
+ * LEGO® MINDSTORMS EV3
+ *
+ * Copyright (C) 2010-2013 The LEGO Group
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
+
+//  TCP 09.04.2013
+//! \page testuslevelappcode USlevel Application
+//!
+//! <hr size="1"/>
+//!
+//! \verbatim
+//**********************************************************************
+define appv 'USlevel V1.02'                                           //
+//**********************************************************************
+                                                                      //
+define    US_PORT     1                                               //
+define    US_TYPE     30                                              //
+define    US_MODE     2                                               //                                                                      
+                                                                      //
+vmthread  MAIN                                                        //  void    MAIN(void)
+{                                                                     //  {
+  DATA8   ShowVersion                                                 //
+                                                                      //
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //    UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+  JR_FALSE(ShowVersion,DontShowVersion)                               //    if (ShowVersion)
+                                                                      //    {
+  UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)                              //      UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)
+  UI_DRAW(RECT,FG_COLOR,6,52,166,24)                                  //      UI_DRAW(RECT,FG_COLOR,6,52,166,24)
+  UI_DRAW(TEXT,FG_COLOR,13,60,appv)                                   //      UI_DRAW(TEXT,FG_COLOR,13,60,appv)
+  UI_DRAW(UPDATE)                                                     //      UI_DRAW(UPDATE)
+                                                                      //
+ShowVersionWait:                                                      //      do
+                                                                      //      {  
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //        UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+                                                                      //      }
+  JR_TRUE(ShowVersion,ShowVersionWait)                                //      while (ShowVersion)
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //      UI_BUTTON(FLUSH)
+DontShowVersion:                                                      //    }  
+                                                                      //
+  UI_DRAW(RESTORE,0)                                                  //    UI_DRAW(RESTORE,0)
+  UI_DRAW(TOPLINE,0)                                                  //    UI_DRAW(TOPLINE,0)
+  UI_WRITE(LED,LED_GREEN)                                             //    UI_WRITE(LED,LED_GREEN)
+                                                                      //
+  CALL(TestUSlevel)                                                   //    TestUSlevel()
+                                                                      //
+  UI_DRAW(TOPLINE,1)                                                  //    UI_DRAW(TOPLINE,1)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestUSlevel                                                 //  void TestUSlevel(void)
+{                                                                     //  {
+  DATAF   Value                                                       //
+  DATA32  OldTime                                                     //
+  DATA32  NewTime                                                     //
+  DATA32  Time                                                        //
+  DATA8   Run                                                         //
+  DATA8   Tmp                                                         //
+  DATA8   Type                                                        //
+  DATA8   Mode                                                        //
+  DATA8   State                                                       //
+                                                                      //
+  UI_DRAW(TOPLINE,0)                                                  //    UI_DRAW(TOPLINE,0)
+                                                                      //
+  UI_DRAW(FILLWINDOW,0x00,0,0                                         //    UI_DRAW(FILLWINDOW,0x00,0,0
+  UI_DRAW(SELECT_FONT,SMALL_FONT)                                     //    UI_DRAW(SELECT_FONT,SMALL_FONT)
+  UI_DRAW(TEXT,FG_COLOR,0,1,'USlevel')                                //    UI_DRAW(TEXT,FG_COLOR,0,1,'USlevel')
+  UI_DRAW(LINE,FG_COLOR,0,TOPLINE_HEIGHT,LCD_WIDTH,TOPLINE_HEIGHT)    //    UI_DRAW(LINE,FG_COLOR,0,TOPLINE_HEIGHT,LCD_WIDTH,TOPLINE_HEIGHT)
+  UI_DRAW(SELECT_FONT,NORMAL_FONT)                                    //    UI_DRAW(SELECT_FONT,NORMAL_FONT)
+                                                                      //
+  UI_DRAW(TEXT,FG_COLOR,24,20, 'LEFT  -  Low  ')                      //                                              
+  UI_DRAW(TEXT,FG_COLOR,24,36, 'DOWN  -  Mid. ')                      //                                                
+  UI_DRAW(TEXT,FG_COLOR,24,52, 'RIGHT -  High ')                      //                                              
+  UI_DRAW(TEXT,FG_COLOR,24,68, 'BACK  -  quit ')                      //
+                                                                      //                                               
+  UI_DRAW(SELECT_FONT,TINY_FONT)                                      //    UI_DRAW(SELECT_FONT,TINY_FONT)
+  UI_DRAW(UPDATE)                                                     //    UI_DRAW(UPDATE)
+                                                                      //
+  MOVE8_8(1,State)                                                    //    State     =  1
+  MOVE32_32(0,OldTime)                                                //    OldTime   =  0
+                                                                      //
+                                                                      //    do
+CheckType:                                                            // ** { CheckType:
+                                                                      //  
+  TIMER_READ(NewTime)                                                 //      TIMER_READ(NewTime)
+  SUB32(NewTime,OldTime,Time)                                         //      Time      =  NewTime - OldTime
+  JR_LT32(Time,500,NoTimeout)                                         //      if (Time >= 500)
+                                                                      //      {
+  MOVE32_32(NewTime,OldTime)                                          //        OldTime   =  NewTime
+  JR_FALSE(State,NoText)                                              //        if (State)
+                                                                      //        {
+  UI_DRAW(TEXT,FG_COLOR,12,94,'US sensor in port 2')                  //          UI_DRAW(TEXT,FG_COLOR,12,94,'US sensor in port 2')
+                                                                      //
+  JR(EndText)                                                         //        }
+                                                                      //        else
+NoText:                                                               //        {
+                                                                      //
+  UI_DRAW(TEXT,FG_COLOR,12,94,'                   ')                  //          UI_DRAW(TEXT,FG_COLOR,12,94,'                   ')
+                                                                      //
+EndText:                                                              //        }
+                                                                      //
+  UI_DRAW(UPDATE)                                                     //        UI_DRAW(UPDATE)
+  XOR8(State,1,State)                                                 //        State ^=  1
+                                                                      //
+NoTimeout:                                                            //      }
+                                                                      //
+  INPUT_DEVICE(GET_TYPEMODE,0,US_PORT,Type,Mode)                      //      INPUT_DEVICE(GET_TYPEMODE,0,US_PORT,Type,Mode)
+  JR_EQ8(Type,US_TYPE,TypeOk)                                         //
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+  JR_TRUE(Tmp,Stop)                                                   //      if (Tmp) goto Stop    
+                                                                      //    }
+  JR(CheckType)                                                       //    while (Type != US_TYPE)
+TypeOk:                                                               //
+                                                                      //
+  UI_DRAW(TEXT,FG_COLOR,12,94,'                   ')                  //    UI_DRAW(TEXT,FG_COLOR,12,94,'                   ')
+  UI_DRAW(UPDATE)                                                     //    UI_DRAW(UPDATE)
+                                                                      //
+  TIMER_WAIT(1000,Time)                                               //    TIMER_WAIT(1000,Time)
+  TIMER_READY(Time)                                                   //    TIMER_READY(Time)
+                                                                      //
+  INPUT_DEVICE(READY_SI,0,US_PORT,0,US_MODE,1,Value)                  //    INPUT_DEVICE(READY_SI,0,US_PORT,0,US_MODE,1,Value)
+                                                                      //
+  MOVE8_8(1,Run)                                                      //    Run     =  1
+                                                                      //    do
+Loop1:                                                                //    {
+                                                                      //
+  INPUT_DEVICE(GET_TYPEMODE,0,US_PORT,Type,Mode)                      //      INPUT_DEVICE(GET_TYPEMODE,0,US_PORT,Type,Mode)
+  JR_NEQ8(Type,US_TYPE,CheckType)                                     //      if (Type != US_TYPE) goto CheckType
+
+                                                                      //
+  UI_BUTTON(SHORTPRESS,LEFT_BUTTON,Tmp)                               //      UI_BUTTON(PRESSED,LEFT_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotLow)                                                //      if (Tmp)
+                                                                      //      {
+  INPUT_WRITE(0,US_PORT,14,'LEGO-FAC-CAL-1')                          //        INPUT_WRITE(0,US_PORT,14,'LEGO-FAC-CAL-0')
+                                                                      //
+NotLow:                                                               //      }
+                                                                      //
+  UI_BUTTON(SHORTPRESS,DOWN_BUTTON,Tmp)                               //      UI_BUTTON(PRESSED,DOWN_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotMid)                                                //      if (Tmp)
+                                                                      //      {
+  INPUT_WRITE(0,US_PORT,14,'LEGO-FAC-CAL-2')                          //        INPUT_WRITE(0,US_PORT,14,'LEGO-FAC-CAL-1')
+                                                                      //
+NotMid:                                                               //      }
+                                                                      //
+  UI_BUTTON(SHORTPRESS,RIGHT_BUTTON,Tmp)                              //      UI_BUTTON(PRESSED,RIGHT_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotHigh)                                               //      if (Tmp)
+                                                                      //      {
+  INPUT_WRITE(0,US_PORT,14,'LEGO-FAC-CAL-3')                          //        INPUT_WRITE(0,US_PORT,14,'LEGO-FAC-CAL-2')
+                                                                      //
+NotHigh:                                                              //      }
+                                                                      //
+                                                                      //    }
+  JR_TRUE(Run,Loop1)                                                  //    while (Run)
+Stop:                                                                 // ** Stop:
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//! \endverbatim
+

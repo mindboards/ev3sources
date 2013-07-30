@@ -1,0 +1,1137 @@
+#! /bin/bash
+
+#*** APPLICATION *************************************************************
+
+path="apps"
+app="Brick Program"
+
+#*** HOST ********************************************************************
+
+lms_to_rbf="../adk/cmp"
+xbm_to_rgf="../adk/bmp"
+bmp_to_xbm="convert"
+
+#*** TARGET ******************************************************************
+
+am1808="../../lms2012/Linux_AM1808"
+x86="../../lms2012/Linux_X86"
+nfs="../../../../am1808/DaVinci-PSP-SDK-03.20.00.13/filesys/home/root/lms2012"
+
+#*** FILES ******************************************************************* 
+
+bmp=".bmp"
+xbm=".xbm"
+
+rbf=".rbf"
+rgf=".rgf"
+rsf=".rsf"
+raf=".raf"
+
+#*** DO CLEAN UP *************************************************************
+
+if [ -e "${app}/*${rbf}" ]
+then
+  rm "${app}"/*"${rbf}"
+fi
+
+if [ -e "${app}/*${rgf}" ]
+then
+  rm "${app}"/*"${rgf}"
+fi
+
+if [ -e "${app}/*${rsf}" ]
+then
+  rm "${app}"/*"${rsf}"
+fi
+
+if [ -e "${x86}/${path}/${app}/*${rbf}" ]
+then
+  rm "${x86}"/"${path}"/"${app}"/*"${rbf}"
+fi
+
+if [ -e "${x86}/${path}/${app}/*${rgf}" ]
+then
+  rm "${x86}"/"${path}"/"${app}"/*"${rgf}"
+fi
+
+if [ -e "${x86}/${path}/${app}/*${rsf}" ]
+then
+  rm "${x86}"/"${path}"/"${app}"/*"${rsf}"
+fi
+
+if [ -e "${nfs}/${path}/${app}/*${rbf}" ]
+then
+  rm "${nfs}"/"${path}"/"${app}"/*"${rbf}"
+fi
+
+if [ -e "${nfs}/${path}/${app}/*${rgf}" ]
+then
+  rm "${nfs}"/"${path}"/"${app}"/*"${rgf}"
+fi
+
+if [ -e "${nfs}/${path}/${app}/*${rsf}" ]
+then
+  rm "${nfs}"/"${path}"/"${app}"/*"${rsf}"
+fi
+
+if [ -e "${am1808}/${path}/${app}/*${rbf}" ]
+then
+  rm "${am1808}"/"${path}"/"${app}"/*"${rbf}"
+fi
+
+if [ -e "${am1808}/${path}/${app}/*${rgf}" ]
+then
+  rm "${am1808}"/"${path}"/"${app}"/*"${rgf}"
+fi
+
+if [ -e "${am1808}/${path}/${app}/*${rsf}" ]
+then
+  rm "${am1808}"/"${path}"/"${app}"/*"${rsf}"
+fi
+
+#*** DO COMPILE **************************************************************
+
+echo -n Compile "  "../${path}/${app}"    "
+${lms_to_rbf} "${app}" "${app}"/"${app}""${rbf}"
+echo -n Compile "  "../${path}/"template     ""    "
+${lms_to_rbf} "template" "${app}"/"template""${rbf}"
+
+#*** DO CONVERT **************************************************************
+
+echo -n "Convert and copy "
+
+#*** DO CONVERT ICON *********************************************************
+
+srcfile="24x12_ProgApp"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/icon
+
+#*** DO CONVERT GRAPHICS *****************************************************
+
+srcfile="block_bin"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="144x116_POP6"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="Blocklink"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="BlockAdd"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="ToLib"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+
+srcfile="PrgOpen"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="PrgOpenH"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="PrgSave"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="PrgSaveH"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="ProgNav"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="ProgNavdot"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+
+# LIBRARY
+
+srcfile="LibToProg"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="LIBH1"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="LIBH2"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+echo -n .
+
+# STARTBLOCK
+
+srcfile="StartBLKn"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="StartBLKs"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+
+# LOOPBLOCK
+
+srcfile="RepBlkn"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="RepBlks"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="RepBlkh"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_LoopP1"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_LoopP2"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_LoopP3"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_LoopP4"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_LoopP5"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_LoopP6"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_LoopP7"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+
+srcfile="BLKn"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="BLKs"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="BLKh"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="Pn_1"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="Ps_1"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="Ph_1"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="Pn_2"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="Ps_2"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="Ph_2"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="Pn_3"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="Ps_3"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+echo -n .
+
+srcfile="Ph_3"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="Pn_4"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="Ps_4"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="Ph_4"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="Pn_a"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="Ps_a"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="Ph_a"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="Pn_b"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="Ps_b"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="Ph_b"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="Pn_bc"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="Ps_bc"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="Ph_bc"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="Pn_c"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="Ps_c"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="Ph_c"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="Pn_d"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="Ps_d"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="Ph_d"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+
+srcfile="A_numP01"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_numP02"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_numP03"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_numP04"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_numP05"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+echo -n .
+
+srcfile="A_numP06"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_numP07"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_numP08"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_numP09"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_numP10"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_numP11"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_numP12"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_numP13"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+
+# DOUBLEMOTORBLOCK
+
+srcfile="A_Move"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_MoveP1"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_MoveP2"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_MoveP3"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_MoveP4"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_MoveP5"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_MoveP6"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_MoveP7"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_MoveP8"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_MoveP9"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+
+# SINGLEMOTORBLOCK
+
+srcfile="A_Lmot"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_motP1"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_motP2"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_motP3"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_motP4"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+echo -n .
+
+srcfile="A_motP5"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_motP6"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_motP7"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_motP8"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_motP9"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+
+# MEDIUMMOTORBLOCK
+
+srcfile="A_Mmot"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+
+# LEDBLOCK
+
+srcfile="A_BLit"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_BLitP1"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_BLitP2"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_BLitP3"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_BLitP4"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_BLitP5"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_BLitP6"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="A_BLitP7"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+
+# SOUNDBLOCK
+
+srcfile="A_Snd"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+
+# DISPLAYBLOCK
+
+srcfile="A_Disp"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="OnBrickImage01"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="OnBrickImage02"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="OnBrickImage03"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="OnBrickImage04"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="OnBrickImage05"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="OnBrickImage06"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+echo -n .
+
+srcfile="OnBrickImage07"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="OnBrickImage08"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="OnBrickImage09"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="OnBrickImage10"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="OnBrickImage11"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="OnBrickImage12"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+
+# TOUCHBLOCK
+
+srcfile="W_Touch"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_TouchP1"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_TouchP2"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_TouchP3"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+
+# REFLECTEDBLOCK
+
+srcfile="W_colref"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_colrefP01"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_colrefP02"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_colrefP03"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_colrefP04"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_colrefP05"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_colrefP06"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_colrefP07"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_colrefP08"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_colrefP09"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_colrefP10"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_colrefP11"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_colrefP12"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+echo -n .
+
+srcfile="W_colrefP13"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_colrefP14"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_colrefP15"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_colrefP16"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+
+# COLORBLOCK
+
+srcfile="W_colcol"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_colcolP1"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_colcolP2"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_colcolP3"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_colcolP4"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_colcolP5"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_colcolP6"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_colcolP7"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_colcolP8"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+
+# COLORBLOCK
+
+srcfile="W_irprox"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_irproxP01"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_irproxP02"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_irproxP03"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_irproxP04"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_irproxP05"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_irproxP06"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_irproxP07"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_irproxP08"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+
+# BEACONBLOCK
+
+echo -n .
+
+srcfile="W_irrem"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_irremP01"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_irremP02"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_irremP03"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_irremP04"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_irremP05"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_irremP06"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+
+# ULTRASONICBLOCK
+
+srcfile="W_us"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_usP01"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_usP02"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_usP03"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_usP04"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_usP05"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_usP06"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_usP07"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_usP08"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_usP09"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_usP10"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_usP11"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_usP12"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_usP13"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_usP14"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_usP15"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_usP16"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+echo -n .
+
+# ANGLEBLOCK
+
+srcfile="W_gyro"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_angP01"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_angP02"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_angP03"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_angP04"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_angP05"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_angP06"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_angP07"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_angP08"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_angP09"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_angP10"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_angP11"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_angP12"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+
+# ENCODERBLOCK
+
+srcfile="W_mmot"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+
+# TEMPERATUREBLOCK
+
+srcfile="W_temp"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_tempP01"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_tempP02"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_tempP03"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_tempP04"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_tempP05"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_tempP06"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_tempP07"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+echo -n .
+
+srcfile="W_tempP08"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_tempP09"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_tempP10"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_tempP11"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_tempP12"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_tempP13"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_tempP14"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_tempP15"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_tempP16"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+
+
+# BUTTONBLOCK
+
+srcfile="W_bbut"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_bbutP1"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_bbutP2"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_bbutP3"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_bbutP4"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_bbutP5"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+
+# DELAYBLOCK
+
+srcfile="W_time"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_timeP1"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_timeP2"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_timeP3"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_timeP4"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_timeP5"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_timeP6"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+srcfile="W_timeP7"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+echo -n .
+
+srcfile="W_timeP8"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/bitmap"${xbm}"
+${xbm_to_rgf} "${app}"/bitmap "${app}"/"${srcfile}"
+
+#*** DO CONVERT SOUND ********************************************************
+
+srcfile="GeneralAlarm"
+cp "${srcfile}${rsf}" "${app}"/"${srcfile}${rsf}"
+
+srcfile="OnBrickSound01"
+cp "${srcfile}${rsf}" "${app}"/"${srcfile}${rsf}"
+
+srcfile="OnBrickSound02"
+cp "${srcfile}${rsf}" "${app}"/"${srcfile}${rsf}"
+
+srcfile="OnBrickSound03"
+cp "${srcfile}${rsf}" "${app}"/"${srcfile}${rsf}"
+
+srcfile="OnBrickSound04"
+cp "${srcfile}${rsf}" "${app}"/"${srcfile}${rsf}"
+
+srcfile="OnBrickSound05"
+cp "${srcfile}${rsf}" "${app}"/"${srcfile}${rsf}"
+
+srcfile="OnBrickSound06"
+cp "${srcfile}${rsf}" "${app}"/"${srcfile}${rsf}"
+
+srcfile="OnBrickSound07"
+cp "${srcfile}${rsf}" "${app}"/"${srcfile}${rsf}"
+
+srcfile="OnBrickSound08"
+cp "${srcfile}${rsf}" "${app}"/"${srcfile}${rsf}"
+
+srcfile="OnBrickSound09"
+cp "${srcfile}${rsf}" "${app}"/"${srcfile}${rsf}"
+
+srcfile="OnBrickSound10"
+cp "${srcfile}${rsf}" "${app}"/"${srcfile}${rsf}"
+
+srcfile="OnBrickSound11"
+cp "${srcfile}${rsf}" "${app}"/"${srcfile}${rsf}"
+
+srcfile="OnBrickSound12"
+cp "${srcfile}${rsf}" "${app}"/"${srcfile}${rsf}"
+
+
+#*** DO COPY IN PLACE ********************************************************
+
+cp "${app}"/*"${rbf}" "${x86}"/"${path}"/"${app}"/
+cp "${app}"/*"${rgf}" "${x86}"/"${path}"/"${app}"/
+cp "${app}"/*"${rsf}" "${x86}"/"${path}"/"${app}"/
+
+cp "${app}"/*"${rbf}" "${nfs}"/"${path}"/"${app}"/
+cp "${app}"/*"${rgf}" "${nfs}"/"${path}"/"${app}"/
+cp "${app}"/*"${rsf}" "${nfs}"/"${path}"/"${app}"/
+
+cp "${app}"/*"${rbf}" "${am1808}"/"${path}"/"${app}"/
+cp "${app}"/*"${rgf}" "${am1808}"/"${path}"/"${app}"/
+cp "${app}"/*"${rsf}" "${am1808}"/"${path}"/"${app}"/
+
+#*** DONE ********************************************************************
+
+echo
+
+

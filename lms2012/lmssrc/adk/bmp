@@ -1,0 +1,13 @@
+#! /bin/bash
+
+src=$(pwd)
+cd ../adk/lmsbmp
+
+cp "$src"/"$1".xbm bitmap.bmp
+
+gcc -o bitmapconverter bitmapconverter.c
+chmod +x bitmapconverter
+./bitmapconverter
+mv bitmap.rgf "$src"/"$2".rgf
+rm bitmap.bmp
+rm "$src"/"$1".xbm

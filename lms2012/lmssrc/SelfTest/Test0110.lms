@@ -1,0 +1,274 @@
+//! \page test0109app Test 0109 Application
+//!
+//! <hr size="1"/>
+//!
+//! \verbatim
+// 
+//
+//
+//**********************************************************************
+//        TEST0109
+//**********************************************************************
+                                                                      //
+define    TESTREPORT  'TestReport'                                    //
+define    TESTSLOT    TERM_SLOT                                       //
+define    LINE        64                                              //
+                                                                      //
+                                                                      //
+vmthread  MAIN                                                        //  void    MAIN(void)
+{                                                                     //  {
+  CALL(Test0109)                                                      //    Test0109()
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   Test0109                                                    //  void Test0109(void)
+{                                                                     //  {
+  DATAF   DataF                                                       //
+  DATA32  Data32                                                      //
+  DATA16  Data16                                                      //
+  DATA8   Data8                                                       //
+                                                                      //
+  // Set success as default                                           //
+	MEMORY_WRITE(GUI_SLOT,4,0,1,0)                                      //    MEMORY_WRITE(GUI_SLOT,4,0,1,0)
+                                                                      //
+  CALL(TestOpen)                                                      //
+                                                                      //
+  CALL(TestWrite,' VM SELECT8')                                       //
+                                                                      //
+  SELECT8(0,1,2,Data8)                                                //
+  CALL(TestResult8,'SELECT8    0?  1  2',Data8,2)                     //
+  SELECT8(1,1,2,Data8)                                                //
+  CALL(TestResult8,'SELECT8    1?  1  2',Data8,1)                     //
+  SELECT8(-1,1,2,Data8)                                               //
+  CALL(TestResult8,'SELECT8   -1?  1  2',Data8,1)                     //
+                                                                      //
+  CALL(TestWrite,' VM SELECT16')                                      //
+                                                                      //
+  SELECT16(0,1,2,Data16)                                              //
+  CALL(TestResult16,'SELECT16   0?  1  2',Data16,2)                   //
+  SELECT16(1,1,2,Data16)                                              //
+  CALL(TestResult16,'SELECT16   1?  1  2',Data16,1)                   //
+  SELECT16(-1,1,2,Data16)                                             //
+  CALL(TestResult16,'SELECT16  -1?  1  2',Data16,1)                   //
+                                                                      //
+  CALL(TestWrite,' VM SELECT32')                                      //
+                                                                      //
+  SELECT32(0,1,2,Data32)                                              //
+  CALL(TestResult32,'SELECT32   0?  1  2',Data32,2)                   //
+  SELECT32(1,1,2,Data32)                                              //
+  CALL(TestResult32,'SELECT32   1?  1  2',Data32,1)                   //
+  SELECT32(-1,1,2,Data32)                                             //
+  CALL(TestResult32,'SELECT32  -1?  1  2',Data32,1)                   //
+                                                                      //
+  CALL(TestWrite,' VM SELECTF')                                       //
+                                                                      //
+  SELECTF(0,1.0F,2.0F,DataF)                                          //
+  CALL(TestResultF,'SELECTF    0?  1  2',DataF,2.0F)                  //
+  SELECTF(1,1.0F,2.0F,DataF)                                          //
+  CALL(TestResultF,'SELECTF    1?  1  2',DataF,1.0F)                  //
+  SELECTF(-1,1.0F,2.0F,DataF)                                         //
+  CALL(TestResultF,'SELECTF   -1?  1  2',DataF,1.0F)                  //
+                                                                      //
+  CALL(TestClose)                                                     //
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestResult8                                                 //  void TestResult8(Text,IstWert,SollWert)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+  IN_8    IstWert                                                     //
+  IN_8    SollWert                                                    //
+                                                                      //
+  DATAF   DataF                                                       //
+  DATAS   String LINE                                                 //
+  DATAS   Result LINE                                                 //
+                                                                      //
+  JR_NEQ8(IstWert,SollWert,Error)                                     //    if (IstWert == SollWert)
+                                                                      //    {
+  STRINGS(ADD,'  ',Text,String)                                       //      STRINGS(ADD,' ',Text,String)
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  MOVE8_F(IstWert,DataF)                                              //
+  STRINGS(VALUE_TO_STRING,DataF,-11,0,Result)                         //
+  STRINGS(ADD,String,Result,String)                                   //      STRINGS(ADD,String,Result,String)
+  STRINGS(ADD,String,']',String)                                      //      STRINGS(ADD,String,']',String)
+                                                                      //
+  JR(EndError)                                                        //    }
+                                                                      //    else
+Error:                                                                //    {
+                                                                      //
+  STRINGS(ADD,'# ',Text,String)                                       //      STRINGS(ADD,' ',Text,String) 
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  MOVE8_F(IstWert,DataF)                                              //
+  STRINGS(VALUE_TO_STRING,DataF,-11,0,Result)                         //
+  STRINGS(ADD,String,Result,String)                                   //      STRINGS(ADD,String,Result,String)
+  STRINGS(ADD,String,'] (',String)                                    //      STRINGS(ADD,String,'] (',String)
+  MOVE8_F(SollWert,DataF)                                             //
+  STRINGS(VALUE_TO_STRING,DataF,-11,0,Result)                         //
+  STRINGS(ADD,String,Result,String)                                   //      STRINGS(ADD,String,Result,String)
+  STRINGS(ADD,String,')',String)                                      //      STRINGS(ADD,String,')',String)
+                                                                      //
+  // Set failed                                                       //
+	MEMORY_WRITE(GUI_SLOT,4,0,1,1)                                      //      MEMORY_WRITE(GUI_SLOT,4,0,1,1)
+                                                                      //
+EndError:                                                             //    }
+                                                                      //
+  CALL(TestWrite,String)                                              //    CALL(TestWrite,String)
+}                                                                     //  }
+                                                                      //  
+                                                                      //  
+subcall   TestResult16                                                //  void TestResult16(Text,IstWert,SollWert)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+  IN_16   IstWert                                                     //
+  IN_16   SollWert                                                    //
+                                                                      //
+  DATAF   DataF                                                       //
+  DATAS   String LINE                                                 //
+  DATAS   Result LINE                                                 //
+                                                                      //
+  JR_NEQ16(IstWert,SollWert,Error)                                    //    if (IstWert == SollWert)
+                                                                      //    {
+  STRINGS(ADD,'  ',Text,String)                                       //      STRINGS(ADD,' ',Text,String)
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  MOVE16_F(IstWert,DataF)                                             //
+  STRINGS(VALUE_TO_STRING,DataF,-11,0,Result)                         //
+  STRINGS(ADD,String,Result,String)                                   //      STRINGS(ADD,String,Result,String)
+  STRINGS(ADD,String,']',String)                                      //      STRINGS(ADD,String,']',String)
+                                                                      //
+  JR(EndError)                                                        //    }
+                                                                      //    else
+Error:                                                                //    {
+                                                                      //
+  STRINGS(ADD,'# ',Text,String)                                       //      STRINGS(ADD,' ',Text,String) 
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  MOVE16_F(IstWert,DataF)                                             //
+  STRINGS(VALUE_TO_STRING,DataF,-11,0,Result)                         //
+  STRINGS(ADD,String,Result,String)                                   //      STRINGS(ADD,String,Result,String)
+  STRINGS(ADD,String,'] (',String)                                    //      STRINGS(ADD,String,'] (',String)
+  MOVE16_F(SollWert,DataF)                                            //
+  STRINGS(VALUE_TO_STRING,DataF,-11,0,Result)                         //
+  STRINGS(ADD,String,Result,String)                                   //      STRINGS(ADD,String,Result,String)
+  STRINGS(ADD,String,')',String)                                      //      STRINGS(ADD,String,')',String)
+                                                                      //
+  // Set failed                                                       //
+	MEMORY_WRITE(GUI_SLOT,4,0,1,1)                                      //      MEMORY_WRITE(GUI_SLOT,4,0,1,1)
+                                                                      //
+EndError:                                                             //    }
+                                                                      //
+  CALL(TestWrite,String)                                              //    CALL(TestWrite,String)
+}                                                                     //  }
+                                                                      //  
+                                                                      //  
+subcall   TestResult32                                                //  void TestResult32(Text,IstWert,SollWert)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+  IN_32   IstWert                                                     //
+  IN_32   SollWert                                                    //
+                                                                      //
+  DATAF   DataF                                                       //
+  DATAS   String LINE                                                 //
+  DATAS   Result LINE                                                 //
+                                                                      //
+  JR_NEQ32(IstWert,SollWert,Error)                                    //    if (IstWert == SollWert)
+                                                                      //    {
+  STRINGS(ADD,'  ',Text,String)                                       //      STRINGS(ADD,' ',Text,String)
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  MOVE32_F(IstWert,DataF)                                             //
+  STRINGS(VALUE_TO_STRING,DataF,-11,0,Result)                         //
+  STRINGS(ADD,String,Result,String)                                   //      STRINGS(ADD,String,Result,String)
+  STRINGS(ADD,String,']',String)                                      //      STRINGS(ADD,String,']',String)
+                                                                      //
+  JR(EndError)                                                        //    }
+                                                                      //    else
+Error:                                                                //    {
+                                                                      //
+  STRINGS(ADD,'# ',Text,String)                                       //      STRINGS(ADD,' ',Text,String) 
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  MOVE32_F(IstWert,DataF)                                             //
+  STRINGS(VALUE_TO_STRING,DataF,-11,0,Result)                         //
+  STRINGS(ADD,String,Result,String)                                   //      STRINGS(ADD,String,Result,String)
+  STRINGS(ADD,String,'] (',String)                                    //      STRINGS(ADD,String,'] (',String)
+  MOVE32_F(SollWert,DataF)                                            //
+  STRINGS(VALUE_TO_STRING,DataF,-11,0,Result)                         //
+  STRINGS(ADD,String,Result,String)                                   //      STRINGS(ADD,String,Result,String)
+  STRINGS(ADD,String,')',String)                                      //      STRINGS(ADD,String,')',String)
+                                                                      //
+  // Set failed                                                       //
+	MEMORY_WRITE(GUI_SLOT,4,0,1,1)                                      //      MEMORY_WRITE(GUI_SLOT,4,0,1,1)
+                                                                      //
+EndError:                                                             //    }
+                                                                      //
+  CALL(TestWrite,String)                                              //    CALL(TestWrite,String)
+}                                                                     //  }
+                                                                      //  
+                                                                      //  
+subcall   TestResultF                                                 //  void TestResultF(Text,IstWert,SollWert)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+  IN_F    IstWert                                                     //
+  IN_F    SollWert                                                    //
+                                                                      //
+  DATAF   DataF                                                       //
+  DATAS   String LINE                                                 //
+  DATAS   Result LINE                                                 //
+                                                                      //
+  JR_NEQF(IstWert,SollWert,Error)                                     //    if (IstWert == SollWert)
+                                                                      //    {
+  STRINGS(ADD,'  ',Text,String)                                       //      STRINGS(ADD,' ',Text,String)
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  MOVEF_F(IstWert,DataF)                                              //
+  STRINGS(VALUE_TO_STRING,DataF,-11,0,Result)                         //
+  STRINGS(ADD,String,Result,String)                                   //      STRINGS(ADD,String,Result,String)
+  STRINGS(ADD,String,']',String)                                      //      STRINGS(ADD,String,']',String)
+                                                                      //
+  JR(EndError)                                                        //    }
+                                                                      //    else
+Error:                                                                //    {
+                                                                      //
+  STRINGS(ADD,'# ',Text,String)                                       //      STRINGS(ADD,' ',Text,String) 
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  MOVEF_F(IstWert,DataF)                                              //
+  STRINGS(VALUE_TO_STRING,DataF,-11,0,Result)                         //
+  STRINGS(ADD,String,Result,String)                                   //      STRINGS(ADD,String,Result,String)
+  STRINGS(ADD,String,'] (',String)                                    //      STRINGS(ADD,String,'] (',String)
+  MOVEF_F(SollWert,DataF)                                             //
+  STRINGS(VALUE_TO_STRING,DataF,-11,0,Result)                         //
+  STRINGS(ADD,String,Result,String)                                   //      STRINGS(ADD,String,Result,String)
+  STRINGS(ADD,String,')',String)                                      //      STRINGS(ADD,String,')',String)
+                                                                      //
+  // Set failed                                                       //
+	MEMORY_WRITE(GUI_SLOT,4,0,1,1)                                      //      MEMORY_WRITE(GUI_SLOT,4,0,1,1)
+                                                                      //
+EndError:                                                             //    }
+                                                                      //
+  CALL(TestWrite,String)                                              //    CALL(TestWrite,String)
+}                                                                     //  }
+                                                                      //  
+                                                                      //  
+DATA16    hFile                                                       //
+                                                                      //
+subcall   TestOpen                                                    //  void TestOpen(void)
+{                                                                     //  {
+  DATAS   TestReport FILENAMESIZE                                     //
+                                                                      //
+  STRINGS(ADD,TESTREPORT,EXT_TEXT,TestReport)                         //    STRINGS(ADD,TESTREPORT,EXT_TEXT,TestReport)
+  FILE(OPEN_APPEND,TestReport,hFile)                                  //    FILE(OPEN_APPEND,TestReport,hFile)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestWrite                                                   //  void TestWrite(Text)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+                                                                      //
+  FILE(WRITE_TEXT,hFile,DEL_CRLF,Text)                                //    FILE(WRITE_TEXT,hFile,DEL_CRLF,Text)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestClose                                                   //  void TestClose(void)
+{                                                                     //  {
+  FILE(CLOSE,hFile)                                                   //    FILE(CLOSE,hFile)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//! \endverbatim
+

@@ -1,0 +1,14 @@
+#! /bin/sh
+
+./init
+
+if [ -d ${PWD}/lib ]
+then
+  LD_LIBRARY_PATH=${PWD}/lib:$LD_LIBRARY_PATH
+fi
+export LD_LIBRARY_PATH
+
+gdbserver :10000 lms2012
+
+./exit
+

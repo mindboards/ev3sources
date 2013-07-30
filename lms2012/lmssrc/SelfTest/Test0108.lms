@@ -1,0 +1,1101 @@
+//! \page test0108app Test 0108 Application
+//!
+//! <hr size="1"/>
+//!
+//! \verbatim
+// 
+//
+//
+//**********************************************************************
+//        TEST0108
+//**********************************************************************
+                                                                      //
+define    TESTREPORT  'TestReport'                                    //
+define    TESTSLOT    TERM_SLOT                                       //
+define    LINE        64                                              //
+                                                                      //
+                                                                      //
+vmthread  MAIN                                                        //  void    MAIN(void)
+{                                                                     //  {
+  CALL(Test0108)                                                      //    Test0108()
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   Test0108                                                    //  void Test0108(void)
+{                                                                     //  {
+  DATAS   String LINE                                                 //
+  DATAF   DataF                                                       //
+  DATAF   DataFnan                                                    //
+  DATA32  Data32                                                      //
+  DATA32  Data32nan                                                   //
+  DATA16  Data16                                                      //
+  DATA16  Data16nan                                                   //
+  DATA8   Data8                                                       //
+  DATA8   Data8nan                                                    //
+                                                                      //
+  // Set success as default                                           //
+	MEMORY_WRITE(GUI_SLOT,4,0,1,0)                                      //    MEMORY_WRITE(GUI_SLOT,4,0,1,0)
+                                                                      //
+  MATH(SQRT,-4.0F,DataFnan)                                           //
+  MOVEF_32(DataFnan,Data32nan)                                        //
+  MOVEF_16(DataFnan,Data16nan)                                        //
+  MOVEF_8(DataFnan,Data8nan)                                          //
+  CALL(TestOpen)                                                      //
+                                                                      //
+  CALL(TestWrite,' VM JR')                                            //
+                                                                      //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR(Jr)                                                              //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+Jr:                                                                   //
+  CALL(TestCheck,'JR                 ',String,'OK')                   //
+                                                                      //
+  CALL(TestWrite,' VM JR_FALSE')                                      //
+                                                                      //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_FALSE(0,JrFalse)                                                 //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrFalse:                                                              //
+  CALL(TestCheck,'JR_FALSE  0        ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_FALSE(1,NotJrFalse)                                              //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+NotJrFalse:                                                           //
+  CALL(TestCheck,'JR_FALSE  1        ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_FALSE(127,NotJrFalse1)                                           //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+NotJrFalse1:                                                          //
+  CALL(TestCheck,'JR_FALSE  127      ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_FALSE(-127,NotJrFalse2)                                          //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+NotJrFalse2:                                                          //
+  CALL(TestCheck,'JR_FALSE  -127     ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_FALSE(Data8nan,NotJrFalse3)                                      //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+NotJrFalse3:                                                          //
+  CALL(TestCheck,'JR_FALSE  nan      ',String,'OK')                   //
+                                                                      //
+  CALL(TestWrite,' VM JR_TRUE')                                       //
+                                                                      //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_TRUE(1,JrTrue)                                                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrTrue:                                                               //
+  CALL(TestCheck,'JR_TRUE   1        ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_TRUE(0,NotJrTrue)                                                //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+NotJrTrue:                                                            //
+  CALL(TestCheck,'JR_TRUE   0        ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_TRUE(127,JrTrue1)                                                //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrTrue1:                                                              //
+  CALL(TestCheck,'JR_TRUE   127      ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_TRUE(-127,JrTrue2)                                               //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrTrue2:                                                              //
+  CALL(TestCheck,'JR_TRUE   -127     ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_TRUE(Data8nan,JrTrue3)                                           //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrTrue3:                                                              //
+  CALL(TestCheck,'JR_TRUE   nan      ',String,'OK')                   //
+                                                                      //
+  CALL(TestWrite,' VM JR_NAN')                                        //
+                                                                      //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_NAN(DataFnan,JrNan)                                              //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrNan:                                                                //
+  CALL(TestCheck,'JR_NAN    nan      ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_NAN(0.0F,NotJrNan)                                               //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+NotJrNan:                                                             //
+  CALL(TestCheck,'JR_NAN    0        ',String,'OK')                   //
+                                                                      //
+  CALL(TestWrite,' VM JR_LT8')                                        //
+                                                                      //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LT8(1,2,JrLt8_1)                                                 //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLt8_1:                                                              //
+  CALL(TestCheck,'JR_LT8    1 <   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_LT8(2,2,JrLt8_2)                                                 //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrLt8_2:                                                              //
+  CALL(TestCheck,'JR_LT8    2 <   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_LT8(3,2,JrLt8_3)                                                 //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrLt8_3:                                                              //
+  CALL(TestCheck,'JR_LT8    3 <   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LT8(-2,2,JrLt8_4)                                                //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLt8_4:                                                              //
+  CALL(TestCheck,'JR_LT8   -2 <   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_LT8(-1,-2,JrLt8_5)                                               //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrLt8_5:                                                              //
+  CALL(TestCheck,'JR_LT8   -1 <  -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_LT8(-2,-2,JrLt8_6)                                               //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrLt8_6:                                                              //
+  CALL(TestCheck,'JR_LT8   -2 <  -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LT8(-3,-2,JrLt8_7)                                               //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLt8_7:                                                              //
+  CALL(TestCheck,'JR_LT8   -3 <  -2  ',String,'OK')                   //
+                                                                      //
+  CALL(TestWrite,' VM JR_LT16')                                       //
+                                                                      //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LT16(1,2,JrLt16_1)                                               //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLt16_1:                                                             //
+  CALL(TestCheck,'JR_LT16   1 <   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_LT16(2,2,JrLt16_2)                                               //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrLt16_2:                                                             //
+  CALL(TestCheck,'JR_LT16   2 <   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_LT16(3,2,JrLt16_3)                                               //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrLt16_3:                                                             //
+  CALL(TestCheck,'JR_LT16   3 <   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LT16(-2,2,JrLt16_4)                                              //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLt16_4:                                                             //
+  CALL(TestCheck,'JR_LT16  -2 <   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_LT16(-1,-2,JrLt16_5)                                             //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrLt16_5:                                                             //
+  CALL(TestCheck,'JR_LT16  -1 <  -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_LT16(-2,-2,JrLt16_6)                                             //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrLt16_6:                                                             //
+  CALL(TestCheck,'JR_LT16  -2 <  -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LT16(-3,-2,JrLt16_7)                                             //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLt16_7:                                                             //
+  CALL(TestCheck,'JR_LT16  -3 <  -2  ',String,'OK')                   //
+                                                                      //
+  CALL(TestWrite,' VM JR_LT32')                                       //
+                                                                      //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LT32(1,2,JrLt32_1)                                               //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLt32_1:                                                             //
+  CALL(TestCheck,'JR_LT32   1 <   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_LT32(2,2,JrLt32_2)                                               //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrLt32_2:                                                             //
+  CALL(TestCheck,'JR_LT32   2 <   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_LT32(3,2,JrLt32_3)                                               //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrLt32_3:                                                             //
+  CALL(TestCheck,'JR_LT32   3 <   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LT32(-2,2,JrLt32_4)                                              //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLt32_4:                                                             //
+  CALL(TestCheck,'JR_LT32  -2 <   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_LT32(-1,-2,JrLt32_5)                                             //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrLt32_5:                                                             //
+  CALL(TestCheck,'JR_LT32  -1 <  -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_LT32(-2,-2,JrLt32_6)                                             //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrLt32_6:                                                             //
+  CALL(TestCheck,'JR_LT32  -2 <  -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LT32(-3,-2,JrLt32_7)                                             //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLt32_7:                                                             //
+  CALL(TestCheck,'JR_LT32  -3 <  -2  ',String,'OK')                   //
+                                                                      //
+  CALL(TestWrite,' VM JR_LTF')                                        //
+                                                                      //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LTF(1.0F,2.0F,JrLtF_1)                                           //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLtF_1:                                                              //
+  CALL(TestCheck,'JR_LTF    1 <   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_LTF(2.0F,2.0F,JrLtF_2)                                           //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrLtF_2:                                                              //
+  CALL(TestCheck,'JR_LTF    2 <   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_LTF(3.0F,2.0F,JrLtF_3)                                           //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrLtF_3:                                                              //
+  CALL(TestCheck,'JR_LTF    3 <   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LTF(-2.0F,2.0F,JrLtF_4)                                          //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLtF_4:                                                              //
+  CALL(TestCheck,'JR_LTF   -2 <   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_LTF(-1.0F,-2.0F,JrLtF_5)                                         //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrLtF_5:                                                              //
+  CALL(TestCheck,'JR_LTF   -1 <  -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_LTF(-2.0F,-2.0F,JrLtF_6)                                         //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrLtF_6:                                                              //
+  CALL(TestCheck,'JR_LTF   -2 <  -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LTF(-3.0F,-2.0F,JrLtF_7)                                         //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLtF_7:                                                              //
+  CALL(TestCheck,'JR_LTF   -3 <  -2  ',String,'OK')                   //
+                                                                      //
+  CALL(TestWrite,' VM JR_GT8')                                        //
+                                                                      //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GT8(1,2,JrGt8_1)                                                 //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGt8_1:                                                              //
+  CALL(TestCheck,'JR_GT8    1 >   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GT8(2,2,JrGt8_2)                                                 //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGt8_2:                                                              //
+  CALL(TestCheck,'JR_GT8    2 >   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_GT8(3,2,JrGt8_3)                                                 //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrGt8_3:                                                              //
+  CALL(TestCheck,'JR_GT8    3 >   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GT8(-2,2,JrGt8_4)                                                //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGt8_4:                                                              //
+  CALL(TestCheck,'JR_GT8   -2 >   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_GT8(-1,-2,JrGt8_5)                                               //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrGt8_5:                                                              //
+  CALL(TestCheck,'JR_GT8   -1 >  -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GT8(-2,-2,JrGt8_6)                                               //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGt8_6:                                                              //
+  CALL(TestCheck,'JR_GT8   -2 >  -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GT8(-3,-2,JrGt8_7)                                               //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGt8_7:                                                              //
+  CALL(TestCheck,'JR_GT8   -3 >  -2  ',String,'OK')                   //
+                                                                      //
+  CALL(TestWrite,' VM JR_GT16')                                       //
+                                                                      //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GT16(1,2,JrGt16_1)                                               //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGt16_1:                                                             //
+  CALL(TestCheck,'JR_GT16   1 >   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GT16(2,2,JrGt16_2)                                               //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGt16_2:                                                             //
+  CALL(TestCheck,'JR_GT16   2 >   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_GT16(3,2,JrGt16_3)                                               //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrGt16_3:                                                             //
+  CALL(TestCheck,'JR_GT16   3 >   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GT16(-2,2,JrGt16_4)                                              //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGt16_4:                                                             //
+  CALL(TestCheck,'JR_GT16  -2 >   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_GT16(-1,-2,JrGt16_5)                                             //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrGt16_5:                                                             //
+  CALL(TestCheck,'JR_GT16  -1 >  -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GT16(-2,-2,JrGt16_6)                                             //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGt16_6:                                                             //
+  CALL(TestCheck,'JR_GT16  -2 >  -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GT16(-3,-2,JrGt16_7)                                             //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGt16_7:                                                             //
+  CALL(TestCheck,'JR_GT16  -3 >  -2  ',String,'OK')                   //
+                                                                      //
+  CALL(TestWrite,' VM JR_GT32')                                       //
+                                                                      //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GT32(1,2,JrGt32_1)                                               //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGt32_1:                                                             //
+  CALL(TestCheck,'JR_GT32   1 >   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GT32(2,2,JrGt32_2)                                               //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGt32_2:                                                             //
+  CALL(TestCheck,'JR_GT32   2 >   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_GT32(3,2,JrGt32_3)                                               //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrGt32_3:                                                             //
+  CALL(TestCheck,'JR_GT32   3 >   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GT32(-2,2,JrGt32_4)                                              //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGt32_4:                                                             //
+  CALL(TestCheck,'JR_GT32  -2 >   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_GT32(-1,-2,JrGt32_5)                                             //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrGt32_5:                                                             //
+  CALL(TestCheck,'JR_GT32  -1 >  -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GT32(-2,-2,JrGt32_6)                                             //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGt32_6:                                                             //
+  CALL(TestCheck,'JR_GT32  -2 >  -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GT32(-3,-2,JrGt32_7)                                             //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGt32_7:                                                             //
+  CALL(TestCheck,'JR_GT32  -3 >  -2  ',String,'OK')                   //
+                                                                      //
+  CALL(TestWrite,' VM JR_GTF')                                        //
+                                                                      //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GTF(1.0F,2.0F,JrGtF_1)                                           //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGtF_1:                                                              //
+  CALL(TestCheck,'JR_GTF    1 >   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GTF(2.0F,2.0F,JrGtF_2)                                           //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGtF_2:                                                              //
+  CALL(TestCheck,'JR_GTF    2 >   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_GTF(3.0F,2.0F,JrGtF_3)                                           //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrGtF_3:                                                              //
+  CALL(TestCheck,'JR_GTF    3 >   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GTF(-2.0F,2.0F,JrGtF_4)                                          //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGtF_4:                                                              //
+  CALL(TestCheck,'JR_GTF   -2 >   2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_GTF(-1.0F,-2.0F,JrGtF_5)                                         //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrGtF_5:                                                              //
+  CALL(TestCheck,'JR_GTF   -1 >  -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GTF(-2.0F,-2.0F,JrGtF_6)                                         //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGtF_6:                                                              //
+  CALL(TestCheck,'JR_GTF   -2 >  -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GTF(-3.0F,-2.0F,JrGtF_7)                                         //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGtF_7:                                                              //
+  CALL(TestCheck,'JR_GTF   -3 >  -2  ',String,'OK')                   //
+                                                                      //
+  CALL(TestWrite,' VM JR_EQ8')                                        //
+                                                                      //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_EQ8(1,2,JrEq8_1)                                                 //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrEq8_1:                                                              //
+  CALL(TestCheck,'JR_EQ8    1 ==  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_EQ8(2,2,JrEq8_2)                                                 //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrEq8_2:                                                              //
+  CALL(TestCheck,'JR_EQ8    2 ==  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_EQ8(3,2,JrEq8_3)                                                 //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrEq8_3:                                                              //
+  CALL(TestCheck,'JR_EQ8    3 ==  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_EQ8(-2,2,JrEq8_4)                                                //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrEq8_4:                                                              //
+  CALL(TestCheck,'JR_EQ8   -2 ==  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_EQ8(-1,-2,JrEq8_5)                                               //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrEq8_5:                                                              //
+  CALL(TestCheck,'JR_EQ8   -1 == -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_EQ8(-2,-2,JrEq8_6)                                               //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrEq8_6:                                                              //
+  CALL(TestCheck,'JR_EQ8   -2 == -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_EQ8(-3,-2,JrEq8_7)                                               //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrEq8_7:                                                              //
+  CALL(TestCheck,'JR_EQ8   -3 == -2  ',String,'OK')                   //
+                                                                      //
+  CALL(TestWrite,' VM JR_EQ16')                                       //
+                                                                      //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_EQ16(1,2,JrEq16_1)                                               //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrEq16_1:                                                             //
+  CALL(TestCheck,'JR_EQ16   1 ==  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_EQ16(2,2,JrEq16_2)                                               //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrEq16_2:                                                             //
+  CALL(TestCheck,'JR_EQ16   2 ==  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_EQ16(3,2,JrEq16_3)                                               //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrEq16_3:                                                             //
+  CALL(TestCheck,'JR_EQ16   3 ==  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_EQ16(-2,2,JrEq16_4)                                              //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrEq16_4:                                                             //
+  CALL(TestCheck,'JR_EQ16  -2 ==  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_EQ16(-1,-2,JrEq16_5)                                             //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrEq16_5:                                                             //
+  CALL(TestCheck,'JR_EQ16  -1 == -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_EQ16(-2,-2,JrEq16_6)                                             //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrEq16_6:                                                             //
+  CALL(TestCheck,'JR_EQ16  -2 == -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_EQ16(-3,-2,JrEq16_7)                                             //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrEq16_7:                                                             //
+  CALL(TestCheck,'JR_EQ16  -3 == -2  ',String,'OK')                   //
+                                                                      //
+  CALL(TestWrite,' VM JR_EQ32')                                       //
+                                                                      //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_EQ32(1,2,JrEq32_1)                                               //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrEq32_1:                                                             //
+  CALL(TestCheck,'JR_EQ32   1 ==  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_EQ32(2,2,JrEq32_2)                                               //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrEq32_2:                                                             //
+  CALL(TestCheck,'JR_EQ32   2 ==  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_EQ32(3,2,JrEq32_3)                                               //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrEq32_3:                                                             //
+  CALL(TestCheck,'JR_EQ32   3 ==  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_EQ32(-2,2,JrEq32_4)                                              //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrEq32_4:                                                             //
+  CALL(TestCheck,'JR_EQ32  -2 ==  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_EQ32(-1,-2,JrEq32_5)                                             //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrEq32_5:                                                             //
+  CALL(TestCheck,'JR_EQ32  -1 == -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_EQ32(-2,-2,JrEq32_6)                                             //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrEq32_6:                                                             //
+  CALL(TestCheck,'JR_EQ32  -2 == -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_EQ32(-3,-2,JrEq32_7)                                             //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrEq32_7:                                                             //
+  CALL(TestCheck,'JR_EQ32  -3 == -2  ',String,'OK')                   //
+                                                                      //
+  CALL(TestWrite,' VM JR_EQF')                                        //
+                                                                      //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_EQF(1.0F,2.0F,JrEqF_1)                                           //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrEqF_1:                                                              //
+  CALL(TestCheck,'JR_EQF    1 ==  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_EQF(2.0F,2.0F,JrEqF_2)                                           //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrEqF_2:                                                              //
+  CALL(TestCheck,'JR_EQF    2 ==  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_EQF(3.0F,2.0F,JrEqF_3)                                           //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrEqF_3:                                                              //
+  CALL(TestCheck,'JR_EQF    3 ==  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_EQF(-2.0F,2.0F,JrEqF_4)                                          //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrEqF_4:                                                              //
+  CALL(TestCheck,'JR_EQF   -2 ==  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_EQF(-1.0F,-2.0F,JrEqF_5)                                         //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrEqF_5:                                                              //
+  CALL(TestCheck,'JR_EQF   -1 == -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_EQF(-2.0F,-2.0F,JrEqF_6)                                         //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrEqF_6:                                                              //
+  CALL(TestCheck,'JR_EQF   -2 == -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_EQF(-3.0F,-2.0F,JrEqF_7)                                         //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrEqF_7:                                                              //
+  CALL(TestCheck,'JR_EQF   -3 == -2  ',String,'OK')                   //
+                                                                      //
+  CALL(TestWrite,' VM JR_NEQ8')                                       //
+                                                                      //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_NEQ8(1,2,JrNeq8_1)                                               //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrNeq8_1:                                                             //
+  CALL(TestCheck,'JR_NEQ8   1 !=  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_NEQ8(2,2,JrNeq8_2)                                               //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrNeq8_2:                                                             //
+  CALL(TestCheck,'JR_NEQ8   2 !=  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_NEQ8(3,2,JrNeq8_3)                                               //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrNeq8_3:                                                             //
+  CALL(TestCheck,'JR_NEQ8   3 !=  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_NEQ8(-2,2,JrNeq8_4)                                              //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrNeq8_4:                                                             //
+  CALL(TestCheck,'JR_NEQ8  -2 !=  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_NEQ8(-1,-2,JrNeq8_5)                                             //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrNeq8_5:                                                             //
+  CALL(TestCheck,'JR_NEQ8  -1 != -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_NEQ8(-2,-2,JrNeq8_6)                                             //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrNeq8_6:                                                             //
+  CALL(TestCheck,'JR_NEQ8  -2 != -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_NEQ8(-3,-2,JrNeq8_7)                                             //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrNeq8_7:                                                             //
+  CALL(TestCheck,'JR_NEQ8  -3 != -2  ',String,'OK')                   //
+                                                                      //
+  CALL(TestWrite,' VM JR_NEQ16')                                      //
+                                                                      //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_NEQ16(1,2,JrNeq16_1)                                             //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrNeq16_1:                                                            //
+  CALL(TestCheck,'JR_NEQ16  1 !=  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_NEQ16(2,2,JrNeq16_2)                                             //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrNeq16_2:                                                            //
+  CALL(TestCheck,'JR_NEQ16  2 !=  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_NEQ16(3,2,JrNeq16_3)                                             //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrNeq16_3:                                                            //
+  CALL(TestCheck,'JR_NEQ16  3 !=  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_NEQ16(-2,2,JrNeq16_4)                                            //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrNeq16_4:                                                            //
+  CALL(TestCheck,'JR_NEQ16 -2 !=  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_NEQ16(-1,-2,JrNeq16_5)                                           //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrNeq16_5:                                                            //
+  CALL(TestCheck,'JR_NEQ16 -1 != -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_NEQ16(-2,-2,JrNeq16_6)                                           //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrNeq16_6:                                                            //
+  CALL(TestCheck,'JR_NEQ16 -2 != -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_NEQ16(-3,-2,JrNeq16_7)                                           //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrNeq16_7:                                                            //
+  CALL(TestCheck,'JR_NEQ16 -3 != -2  ',String,'OK')                   //
+                                                                      //
+  CALL(TestWrite,' VM JR_NEQ32')                                      //
+                                                                      //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_NEQ32(1,2,JrNeq32_1)                                             //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrNeq32_1:                                                            //
+  CALL(TestCheck,'JR_NEQ32  1 !=  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_NEQ32(2,2,JrNeq32_2)                                             //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrNeq32_2:                                                            //
+  CALL(TestCheck,'JR_NEQ32  2 !=  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_NEQ32(3,2,JrNeq32_3)                                             //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrNeq32_3:                                                            //
+  CALL(TestCheck,'JR_NEQ32  3 !=  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_NEQ32(-2,2,JrNeq32_4)                                            //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrNeq32_4:                                                            //
+  CALL(TestCheck,'JR_NEQ32 -2 !=  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_NEQ32(-1,-2,JrNeq32_5)                                           //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrNeq32_5:                                                            //
+  CALL(TestCheck,'JR_NEQ32 -1 != -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_NEQ32(-2,-2,JrNeq32_6)                                           //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrNeq32_6:                                                            //
+  CALL(TestCheck,'JR_NEQ32 -2 != -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_NEQ32(-3,-2,JrNeq32_7)                                           //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrNeq32_7:                                                            //
+  CALL(TestCheck,'JR_NEQ32 -3 != -2  ',String,'OK')                   //
+                                                                      //
+  CALL(TestWrite,' VM JR_NEQF')                                       //
+                                                                      //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_NEQF(1.0F,2.0F,JrNeqF_1)                                         //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrNeqF_1:                                                             //
+  CALL(TestCheck,'JR_NEQF   1 !=  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_NEQF(2.0F,2.0F,JrNeqF_2)                                         //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrNeqF_2:                                                             //
+  CALL(TestCheck,'JR_NEQF   2 !=  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_NEQF(3.0F,2.0F,JrNeqF_3)                                         //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrNeqF_3:                                                             //
+  CALL(TestCheck,'JR_NEQF   3 !=  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_NEQF(-2.0F,2.0F,JrNeqF_4)                                        //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrNeqF_4:                                                             //
+  CALL(TestCheck,'JR_NEQF  -2 !=  2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_NEQF(-1.0F,-2.0F,JrNeqF_5)                                       //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrNeqF_5:                                                             //
+  CALL(TestCheck,'JR_NEQF  -1 != -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_NEQF(-2.0F,-2.0F,JrNeqF_6)                                       //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrNeqF_6:                                                             //
+  CALL(TestCheck,'JR_NEQF  -2 != -2  ',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_NEQF(-3.0F,-2.0F,JrNeqF_7)                                       //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrNeqF_7:                                                             //
+  CALL(TestCheck,'JR_NEQF  -3 != -2  ',String,'OK')                   //
+                                                                      //
+  CALL(TestWrite,' VM JR_LTEQ8')                                      //
+                                                                      //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LTEQ8(1,2,JrLtEq8_1)                                             //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLtEq8_1:                                                            //
+  CALL(TestCheck,'JR_LTEQ8    1 <=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LTEQ8(2,2,JrLtEq8_2)                                             //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLtEq8_2:                                                            //
+  CALL(TestCheck,'JR_LTEQ8    2 <=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_LTEQ8(3,2,JrLtEq8_3)                                             //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrLtEq8_3:                                                            //
+  CALL(TestCheck,'JR_LTEQ8    3 <=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LTEQ8(-2,2,JrLtEq8_4)                                            //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLtEq8_4:                                                            //
+  CALL(TestCheck,'JR_LTEQ8   -2 <=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_LTEQ8(-1,-2,JrLtEq8_5)                                           //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrLtEq8_5:                                                            //
+  CALL(TestCheck,'JR_LTEQ8   -1 <= -2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LTEQ8(-2,-2,JrLtEq8_6)                                           //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLtEq8_6:                                                            //
+  CALL(TestCheck,'JR_LTEQ8   -2 <= -2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LTEQ8(-3,-2,JrLtEq8_7)                                           //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLtEq8_7:                                                            //
+  CALL(TestCheck,'JR_LTEQ8   -3 <= -2',String,'OK')                   //
+                                                                      //
+  CALL(TestWrite,' VM JR_LTEQ16')                                     //
+                                                                      //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LTEQ16(1,2,JrLtEq16_1)                                           //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLtEq16_1:                                                           //
+  CALL(TestCheck,'JR_LTEQ16   1 <=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LTEQ16(2,2,JrLtEq16_2)                                           //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLtEq16_2:                                                           //
+  CALL(TestCheck,'JR_LTEQ16   2 <=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_LTEQ16(3,2,JrLtEq16_3)                                           //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrLtEq16_3:                                                           //
+  CALL(TestCheck,'JR_LTEQ16   3 <=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LTEQ16(-2,2,JrLtEq16_4)                                          //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLtEq16_4:                                                           //
+  CALL(TestCheck,'JR_LTEQ16  -2 <=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_LTEQ16(-1,-2,JrLtEq16_5)                                         //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrLtEq16_5:                                                           //
+  CALL(TestCheck,'JR_LTEQ16  -1 <= -2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LTEQ16(-2,-2,JrLtEq16_6)                                         //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLtEq16_6:                                                           //
+  CALL(TestCheck,'JR_LTEQ16  -2 <= -2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LTEQ16(-3,-2,JrLtEq16_7)                                         //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLtEq16_7:                                                           //
+  CALL(TestCheck,'JR_LTEQ16  -3 <= -2',String,'OK')                   //
+                                                                      //
+  CALL(TestWrite,' VM JR_LTEQ32')                                     //
+                                                                      //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LTEQ32(1,2,JrLtEq32_1)                                           //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLtEq32_1:                                                           //
+  CALL(TestCheck,'JR_LTEQ32   1 <=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LTEQ32(2,2,JrLtEq32_2)                                           //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLtEq32_2:                                                           //
+  CALL(TestCheck,'JR_LTEQ32   2 <=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_LTEQ32(3,2,JrLtEq32_3)                                           //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrLtEq32_3:                                                           //
+  CALL(TestCheck,'JR_LTEQ32   3 <=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LTEQ32(-2,2,JrLtEq32_4)                                          //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLtEq32_4:                                                           //
+  CALL(TestCheck,'JR_LTEQ32  -2 <=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_LTEQ32(-1,-2,JrLtEq32_5)                                         //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrLtEq32_5:                                                           //
+  CALL(TestCheck,'JR_LTEQ32  -1 <= -2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LTEQ32(-2,-2,JrLtEq32_6)                                         //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLtEq32_6:                                                           //
+  CALL(TestCheck,'JR_LTEQ32  -2 <= -2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LTEQ32(-3,-2,JrLtEq32_7)                                         //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLtEq32_7:                                                           //
+  CALL(TestCheck,'JR_LTEQ32  -3 <= -2',String,'OK')                   //
+                                                                      //
+  CALL(TestWrite,' VM JR_LTEQF')                                      //
+                                                                      //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LTEQF(1.0F,2.0F,JrLtEqF_1)                                       //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLtEqF_1:                                                            //
+  CALL(TestCheck,'JR_LTEQF    1 <=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LTEQF(2.0F,2.0F,JrLtEqF_2)                                       //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLtEqF_2:                                                            //
+  CALL(TestCheck,'JR_LTEQF    2 <=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_LTEQF(3.0F,2.0F,JrLtEqF_3)                                       //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrLtEqF_3:                                                            //
+  CALL(TestCheck,'JR_LTEQF    3 <=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LTEQF(-2.0F,2.0F,JrLtEqF_4)                                      //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLtEqF_4:                                                            //
+  CALL(TestCheck,'JR_LTEQF   -2 <=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_LTEQF(-1.0F,-2.0F,JrLtEqF_5)                                     //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrLtEqF_5:                                                            //
+  CALL(TestCheck,'JR_LTEQF   -1 <= -2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LTEQF(-2.0F,-2.0F,JrLtEqF_6)                                     //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLtEqF_6:                                                            //
+  CALL(TestCheck,'JR_LTEQF   -2 <= -2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_LTEQF(-3.0F,-2.0F,JrLtEqF_7)                                     //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrLtEqF_7:                                                            //
+  CALL(TestCheck,'JR_LTEQF   -3 <= -2',String,'OK')                   //
+                                                                      //
+  CALL(TestWrite,' VM JR_GTEQ8')                                      //
+                                                                      //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GTEQ8(1,2,JrGtEq8_1)                                             //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGtEq8_1:                                                            //
+  CALL(TestCheck,'JR_GTEQ8    1 >=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_GTEQ8(2,2,JrGtEq8_2)                                             //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrGtEq8_2:                                                            //
+  CALL(TestCheck,'JR_GTEQ8    2 >=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_GTEQ8(3,2,JrGtEq8_3)                                             //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrGtEq8_3:                                                            //
+  CALL(TestCheck,'JR_GTEQ8    3 >=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GTEQ8(-2,2,JrGtEq8_4)                                            //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGtEq8_4:                                                            //
+  CALL(TestCheck,'JR_GTEQ8   -2 >=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_GTEQ8(-1,-2,JrGtEq8_5)                                           //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrGtEq8_5:                                                            //
+  CALL(TestCheck,'JR_GTEQ8   -1 >= -2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_GTEQ8(-2,-2,JrGtEq8_6)                                           //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrGtEq8_6:                                                            //
+  CALL(TestCheck,'JR_GTEQ8   -2 >= -2',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GTEQ8(-3,-2,JrGtEq8_7)                                           //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGtEq8_7:                                                            //
+  CALL(TestCheck,'JR_GTEQ8   -3 >= -2',String,'OK')                   //
+                                                                      //
+  CALL(TestWrite,' VM JR_GTEQ16')                                     //
+                                                                      //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GTEQ16(1,2,JrGtEq16_1)                                           //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGtEq16_1:                                                           //
+  CALL(TestCheck,'JR_GTEQ16   1 >=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_GTEQ16(2,2,JrGtEq16_2)                                           //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrGtEq16_2:                                                           //
+  CALL(TestCheck,'JR_GTEQ16   2 >=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_GTEQ16(3,2,JrGtEq16_3)                                           //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrGtEq16_3:                                                           //
+  CALL(TestCheck,'JR_GTEQ16   3 >=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GTEQ16(-2,2,JrGtEq16_4)                                          //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGtEq16_4:                                                           //
+  CALL(TestCheck,'JR_GTEQ16  -2 >=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_GTEQ16(-1,-2,JrGtEq16_5)                                         //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrGtEq16_5:                                                           //
+  CALL(TestCheck,'JR_GTEQ16  -1 >= -2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_GTEQ16(-2,-2,JrGtEq16_6)                                         //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrGtEq16_6:                                                           //
+  CALL(TestCheck,'JR_GTEQ16  -2 >= -2',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GTEQ16(-3,-2,JrGtEq16_7)                                         //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGtEq16_7:                                                           //
+  CALL(TestCheck,'JR_GTEQ16  -3 >= -2',String,'OK')                   //
+                                                                      //
+  CALL(TestWrite,' VM JR_GTEQ32')                                     //
+                                                                      //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GTEQ32(1,2,JrGtEq32_1)                                           //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGtEq32_1:                                                           //
+  CALL(TestCheck,'JR_GTEQ32   1 >=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_GTEQ32(2,2,JrGtEq32_2)                                           //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrGtEq32_2:                                                           //
+  CALL(TestCheck,'JR_GTEQ32   2 >=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_GTEQ32(3,2,JrGtEq32_3)                                           //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrGtEq32_3:                                                           //
+  CALL(TestCheck,'JR_GTEQ32   3 >=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GTEQ32(-2,2,JrGtEq32_4)                                          //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGtEq32_4:                                                           //
+  CALL(TestCheck,'JR_GTEQ32  -2 >=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_GTEQ32(-1,-2,JrGtEq32_5)                                         //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrGtEq32_5:                                                           //
+  CALL(TestCheck,'JR_GTEQ32  -1 >= -2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_GTEQ32(-2,-2,JrGtEq32_6)                                         //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrGtEq32_6:                                                           //
+  CALL(TestCheck,'JR_GTEQ32  -2 >= -2',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GTEQ32(-3,-2,JrGtEq32_7)                                         //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGtEq32_7:                                                           //
+  CALL(TestCheck,'JR_GTEQ32  -3 >= -2',String,'OK')                   //
+                                                                      //
+  CALL(TestWrite,' VM JR_GTEQF')                                      //
+                                                                      //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GTEQF(1.0F,2.0F,JrGtEqF_1)                                       //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGtEqF_1:                                                            //
+  CALL(TestCheck,'JR_GTEQF    1 >=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_GTEQF(2.0F,2.0F,JrGtEqF_2)                                       //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrGtEqF_2:                                                            //
+  CALL(TestCheck,'JR_GTEQF    2 >=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_GTEQF(3.0F,2.0F,JrGtEqF_3)                                       //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrGtEqF_3:                                                            //
+  CALL(TestCheck,'JR_GTEQF    3 >=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GTEQF(-2.0F,2.0F,JrGtEqF_4)                                      //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGtEqF_4:                                                            //
+  CALL(TestCheck,'JR_GTEQF   -2 >=  2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_GTEQF(-1.0F,-2.0F,JrGtEqF_5)                                     //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrGtEqF_5:                                                            //
+  CALL(TestCheck,'JR_GTEQF   -1 >= -2',String,'OK')                   //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+  JR_GTEQF(-2.0F,-2.0F,JrGtEqF_6)                                     //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+JrGtEqF_6:                                                            //
+  CALL(TestCheck,'JR_GTEQF   -2 >= -2',String,'OK')                   //
+  STRINGS(DUPLICATE,'FAIL',String)                                    //
+  JR_GTEQF(-3.0F,-2.0F,JrGtEqF_7)                                     //
+  STRINGS(DUPLICATE,'OK',String)                                      //
+JrGtEqF_7:                                                            //
+  CALL(TestCheck,'JR_GTEQF   -3 >= -2',String,'OK')                   //
+                                                                      //
+  CALL(TestClose)                                                     //
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestCheck                                                   //  void TestCheck(Text,IstWert,SollWert)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+  IN_S    IstWert LINE                                                //
+  IN_S    SollWert LINE                                               //
+                                                                      //
+  DATA8   Result                                                      //
+  DATAS   String LINE                                                 //
+                                                                      //
+  STRINGS(COMPARE,IstWert,SollWert,Result)                            //    STRINGS(COMPARE,IstWert,SollWert,Result)
+  JR_FALSE(Result,Error)                                              //    if (Result)
+                                                                      //    {
+  STRINGS(ADD,'  ',Text,String)                                       //      STRINGS(ADD,' ',Text,String)
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  STRINGS(ADD,String,IstWert,String)                                  //      STRINGS(ADD,String,IstWert,String)
+  STRINGS(ADD,String,']',String)                                      //      STRINGS(ADD,String,']',String)
+                                                                      //
+  JR(EndError)                                                        //    }
+                                                                      //    else
+Error:                                                                //    {
+                                                                      //
+  STRINGS(ADD,'# ',Text,String)                                       //      STRINGS(ADD,' ',Text,String) 
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  STRINGS(ADD,String,IstWert,String)                                  //      STRINGS(ADD,String,IstWert,String)
+  STRINGS(ADD,String,'] (',String)                                    //      STRINGS(ADD,String,'] (',String)
+  STRINGS(ADD,String,SollWert,String)                                 //      STRINGS(ADD,String,SollWert,String)
+  STRINGS(ADD,String,')',String)                                      //      STRINGS(ADD,String,')',String)
+                                                                      //
+  // Set failed                                                       //
+	MEMORY_WRITE(GUI_SLOT,4,0,1,1)                                      //      MEMORY_WRITE(GUI_SLOT,4,0,1,1)
+                                                                      //
+EndError:                                                             //    }
+                                                                      //
+  CALL(TestWrite,String)                                              //    CALL(TestWrite,String)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+DATA16    hFile                                                       //
+                                                                      //
+subcall   TestOpen                                                    //  void TestOpen(void)
+{                                                                     //  {
+  DATAS   TestReport FILENAMESIZE                                     //
+                                                                      //
+  STRINGS(ADD,TESTREPORT,EXT_TEXT,TestReport)                         //    STRINGS(ADD,TESTREPORT,EXT_TEXT,TestReport)
+  FILE(OPEN_APPEND,TestReport,hFile)                                  //    FILE(OPEN_APPEND,TestReport,hFile)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestWrite                                                   //  void TestWrite(Text)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+                                                                      //
+  FILE(WRITE_TEXT,hFile,DEL_CRLF,Text)                                //    FILE(WRITE_TEXT,hFile,DEL_CRLF,Text)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestClose                                                   //  void TestClose(void)
+{                                                                     //  {
+  FILE(CLOSE,hFile)                                                   //    FILE(CLOSE,hFile)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//! \endverbatim
+

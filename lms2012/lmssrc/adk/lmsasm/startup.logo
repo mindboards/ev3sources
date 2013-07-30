@@ -1,0 +1,5 @@
+to startup
+load "assembler
+load "fileread
+app-startup
+end

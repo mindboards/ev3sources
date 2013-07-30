@@ -1,0 +1,342 @@
+//! \page test0105app Test 0105 Application
+//!
+//! <hr size="1"/>
+//!
+//! \verbatim
+// 
+//
+//
+//**********************************************************************
+//        TEST0105 
+//**********************************************************************
+                                                                      //
+define    TESTREPORT  'TestReport'                                    //
+define    LINE        64                                              //
+                                                                      //
+vmthread  MAIN                                                        //  void    MAIN(void)
+{                                                                     //  {
+  CALL(Test0105)                                                      //    Test0105()
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   Test0105                                                    //  void Test0105(void)
+{                                                                     //  {
+  DATA32  Data32                                                      //
+  DATA16  Data16                                                      //
+  DATA8   Data8                                                       //
+  DATAS   String LINE                                                 //
+  DATAS   Text LINE                                                   //
+                                                                      //
+  // Set success as default                                           //
+	MEMORY_WRITE(GUI_SLOT,4,0,1,0)                                      //    MEMORY_WRITE(GUI_SLOT,4,0,1,0)
+                                                                      //
+  CALL(TestOpen)                                                      //
+                                                                      //
+  CALL(TestWrite,' VM LOGIC8')                                        //
+                                                                      //
+  OR8(0x55,0x00,Data8)                                                //
+  CALL(TestResult8,'OR8   0x55 0x00    ',Data8,0x55)                  //
+                                                                      //
+  OR8(0x55,0xAA,Data8)                                                //
+  CALL(TestResult8,'OR8   0x55 0xAA    ',Data8,0xFF)                  //
+                                                                      //
+  OR8(0x55,0x55,Data8)                                                //
+  CALL(TestResult8,'OR8   0x55 0x55    ',Data8,0x55)                  //
+                                                                      //
+  AND8(0x55,0x00,Data8)                                               //
+  CALL(TestResult8,'AND8  0x55 0x00    ',Data8,0x00)                  //
+                                                                      //
+  AND8(0x55,0xAA,Data8)                                               //
+  CALL(TestResult8,'AND8  0x55 0xAA    ',Data8,0x00)                  //
+                                                                      //
+  AND8(0x55,0x55,Data8)                                               //
+  CALL(TestResult8,'AND8  0x55 0x55    ',Data8,0x55)                  //
+                                                                      //
+  XOR8(0x55,0x00,Data8)                                               //
+  CALL(TestResult8,'XOR8  0x55 0x00    ',Data8,0x55)                  //
+                                                                      //
+  XOR8(0x55,0xAA,Data8)                                               //
+  CALL(TestResult8,'XOR8  0x55 0xAA    ',Data8,0xFF)                  //
+                                                                      //
+  XOR8(0x55,0x55,Data8)                                               //
+  CALL(TestResult8,'XOR8  0x55 0x55    ',Data8,0x00)                  //
+                                                                      //
+  RL8(0x55,1,Data8)                                                   //
+  CALL(TestResult8,'RL8   0x55 1       ',Data8,0xAA)                  //
+                                                                      //
+  RL8(0x55,2,Data8)                                                   //
+  CALL(TestResult8,'RL8   0x55 2       ',Data8,0x54)                  //
+                                                                      //
+  RL8(0x55,-1,Data8)                                                  //
+  CALL(TestResult8,'RL8   0x55 -1      ',Data8,0x00)                  //
+                                                                      //
+  CALL(TestWrite,' VM LOGIC16')                                       //
+                                                                      //
+  OR16(0x5555,0x0000,Data16)                                          //
+  CALL(TestResult16,'OR16  0x5555 0x0000',Data16,0x5555)              //
+                                                                      //
+  OR16(0x5555,0xAAAA,Data16)                                          //
+  CALL(TestResult16,'OR16  0x5555 0xAAAA',Data16,0xFFFF)              //
+                                                                      //
+  OR16(0x5555,0x5555,Data16)                                          //
+  CALL(TestResult16,'OR16  0x5555 0x5555',Data16,0x5555)              //
+                                                                      //
+  AND16(0x5555,0x0000,Data16)                                         //
+  CALL(TestResult16,'AND16 0x5555 0x0000',Data16,0x0000)              //
+                                                                      //
+  AND16(0x5555,0xAAAA,Data16)                                         //
+  CALL(TestResult16,'AND16 0x5555 0xAAAA',Data16,0x0000)              //
+                                                                      //
+  AND16(0x5555,0x5555,Data16)                                         //
+  CALL(TestResult16,'AND16 0x5555 0x5555',Data16,0x5555)              //
+                                                                      //
+  XOR16(0x5555,0x0000,Data16)                                         //
+  CALL(TestResult16,'XOR16 0x5555 0x0000',Data16,0x5555)              //
+                                                                      //
+  XOR16(0x5555,0xAAAA,Data16)                                         //
+  CALL(TestResult16,'XOR16 0x5555 0xAAAA',Data16,0xFFFF)              //
+                                                                      //
+  XOR16(0x5555,0x5555,Data16)                                         //
+  CALL(TestResult16,'XOR16 0x5555 0x5555',Data16,0x0000)              //
+                                                                      //
+  RL16(0x5555,1,Data16)                                               //
+  CALL(TestResult16,'RL16  0x5555 1     ',Data16,0xAAAA)              //
+                                                                      //
+  RL16(0x5555,2,Data16)                                               //
+  CALL(TestResult16,'RL16  0x5555 2     ',Data16,0x5554)              //
+                                                                      //
+  RL16(0x5555,-1,Data16)                                              //
+  CALL(TestResult16,'RL16  0x5555 -1    ',Data16,0x0000)              //
+                                                                      //
+  CALL(TestWrite,' VM LOGIC32')                                       //
+                                                                      //
+  OR32(0x55555555,0x00000000,Data32)                                  //
+  CALL(TestResult32,'OR32  8x5 8x0      ',Data32,0x55555555)          //
+                                                                      //
+  OR32(0x55555555,0xAAAAAAAA,Data32)                                  //
+  CALL(TestResult32,'OR32  8x5 8xA      ',Data32,0xFFFFFFFF)          //
+                                                                      //
+  OR32(0x55555555,0x55555555,Data32)                                  //
+  CALL(TestResult32,'OR32  8x5 8x5      ',Data32,0x55555555)          //
+                                                                      //
+  AND32(0x55555555,0x00000000,Data32)                                 //
+  CALL(TestResult32,'AND32 8x5 8x0      ',Data32,0x00000000)          //
+                                                                      //
+  AND32(0x55555555,0xAAAAAAAA,Data32)                                 //
+  CALL(TestResult32,'AND32 8x5 8xA      ',Data32,0x00000000)          //
+                                                                      //
+  AND32(0x55555555,0x55555555,Data32)                                 //
+  CALL(TestResult32,'AND32 8x5 8x5      ',Data32,0x55555555)          //
+                                                                      //
+  XOR32(0x55555555,0x00000000,Data32)                                 //
+  CALL(TestResult32,'XOR32 8x5 8x0      ',Data32,0x55555555)          //
+                                                                      //
+  XOR32(0x55555555,0xAAAAAAAA,Data32)                                 //
+  CALL(TestResult32,'XOR32 8x5 8xA      ',Data32,0xFFFFFFFF)          //
+                                                                      //
+  XOR32(0x55555555,0x55555555,Data32)                                 //
+  CALL(TestResult32,'XOR32 8x5 8x5      ',Data32,0x00000000)          //
+                                                                      //
+  RL32(0x55555555,1,Data32)                                           //
+  CALL(TestResult32,'RL32  0x55555555 1 ',Data32,0xAAAAAAAA)          //
+                                                                      //
+  RL32(0x55555555,2,Data32)                                           //
+  CALL(TestResult32,'RL32  0x55555555 2 ',Data32,0x55555554)          //
+                                                                      //
+  CALL(TestClose)                                                     //
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestResult8                                                 //  void TestResult8(Text,IstWert,SollWert)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+  IN_8    IstWert                                                     //
+  IN_8    SollWert                                                    //
+                                                                      //
+  DATAF   DataF                                                       //
+  DATAS   String LINE                                                 //
+  DATAS   Result LINE                                                 //
+                                                                      //
+  JR_NEQ8(IstWert,SollWert,Error)                                     //    if (IstWert == SollWert)
+                                                                      //    {
+  STRINGS(ADD,'  ',Text,String)                                       //      STRINGS(ADD,' ',Text,String)
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  MOVE8_F(IstWert,DataF)                                              //
+  STRINGS(VALUE_TO_STRING,DataF,-11,0,Result)                         //
+  STRINGS(ADD,String,Result,String)                                   //      STRINGS(ADD,String,Result,String)
+  STRINGS(ADD,String,']',String)                                      //      STRINGS(ADD,String,']',String)
+                                                                      //
+  JR(EndError)                                                        //    }
+                                                                      //    else
+Error:                                                                //    {
+                                                                      //
+  STRINGS(ADD,'# ',Text,String)                                       //      STRINGS(ADD,' ',Text,String) 
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  MOVE8_F(IstWert,DataF)                                              //
+  STRINGS(VALUE_TO_STRING,DataF,-11,0,Result)                         //
+  STRINGS(ADD,String,Result,String)                                   //      STRINGS(ADD,String,Result,String)
+  STRINGS(ADD,String,'] (',String)                                    //      STRINGS(ADD,String,'] (',String)
+  MOVE8_F(SollWert,DataF)                                             //
+  STRINGS(VALUE_TO_STRING,DataF,-11,0,Result)                         //
+  STRINGS(ADD,String,Result,String)                                   //      STRINGS(ADD,String,Result,String)
+  STRINGS(ADD,String,')',String)                                      //      STRINGS(ADD,String,')',String)
+                                                                      //
+  // Set failed                                                       //
+	MEMORY_WRITE(GUI_SLOT,4,0,1,1)                                      //      MEMORY_WRITE(GUI_SLOT,4,0,1,1)
+                                                                      //
+EndError:                                                             //    }
+                                                                      //
+  CALL(TestWrite,String)                                              //    CALL(TestWrite,String)
+}                                                                     //  }
+                                                                      //  
+                                                                      //  
+subcall   TestResult16                                                //  void TestResult16(Text,IstWert,SollWert)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+  IN_16   IstWert                                                     //
+  IN_16   SollWert                                                    //
+                                                                      //
+  DATAF   DataF                                                       //
+  DATAS   String LINE                                                 //
+  DATAS   Result LINE                                                 //
+                                                                      //
+  JR_NEQ16(IstWert,SollWert,Error)                                    //    if (IstWert == SollWert)
+                                                                      //    {
+  STRINGS(ADD,'  ',Text,String)                                       //      STRINGS(ADD,' ',Text,String)
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  MOVE16_F(IstWert,DataF)                                             //
+  STRINGS(VALUE_TO_STRING,DataF,-11,0,Result)                         //
+  STRINGS(ADD,String,Result,String)                                   //      STRINGS(ADD,String,Result,String)
+  STRINGS(ADD,String,']',String)                                      //      STRINGS(ADD,String,']',String)
+                                                                      //
+  JR(EndError)                                                        //    }
+                                                                      //    else
+Error:                                                                //    {
+                                                                      //
+  STRINGS(ADD,'# ',Text,String)                                       //      STRINGS(ADD,' ',Text,String) 
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  MOVE16_F(IstWert,DataF)                                             //
+  STRINGS(VALUE_TO_STRING,DataF,-11,0,Result)                         //
+  STRINGS(ADD,String,Result,String)                                   //      STRINGS(ADD,String,Result,String)
+  STRINGS(ADD,String,'] (',String)                                    //      STRINGS(ADD,String,'] (',String)
+  MOVE16_F(SollWert,DataF)                                            //
+  STRINGS(VALUE_TO_STRING,DataF,-11,0,Result)                         //
+  STRINGS(ADD,String,Result,String)                                   //      STRINGS(ADD,String,Result,String)
+  STRINGS(ADD,String,')',String)                                      //      STRINGS(ADD,String,')',String)
+                                                                      //
+  // Set failed                                                       //
+	MEMORY_WRITE(GUI_SLOT,4,0,1,1)                                      //      MEMORY_WRITE(GUI_SLOT,4,0,1,1)
+                                                                      //
+EndError:                                                             //    }
+                                                                      //
+  CALL(TestWrite,String)                                              //    CALL(TestWrite,String)
+}                                                                     //  }
+                                                                      //  
+                                                                      //  
+subcall   TestResult32                                                //  void TestResult32(Text,IstWert,SollWert)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+  IN_32   IstWert                                                     //
+  IN_32   SollWert                                                    //
+                                                                      //
+  DATAF   DataF                                                       //
+  DATAS   String LINE                                                 //
+  DATAS   Result LINE                                                 //
+                                                                      //
+  JR_NEQ32(IstWert,SollWert,Error)                                    //    if (IstWert == SollWert)
+                                                                      //    {
+  STRINGS(ADD,'  ',Text,String)                                       //      STRINGS(ADD,' ',Text,String)
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  MOVE32_F(IstWert,DataF)                                             //
+  STRINGS(VALUE_TO_STRING,DataF,-11,0,Result)                         //
+  STRINGS(ADD,String,Result,String)                                   //      STRINGS(ADD,String,Result,String)
+  STRINGS(ADD,String,']',String)                                      //      STRINGS(ADD,String,']',String)
+                                                                      //
+  JR(EndError)                                                        //    }
+                                                                      //    else
+Error:                                                                //    {
+                                                                      //
+  STRINGS(ADD,'# ',Text,String)                                       //      STRINGS(ADD,' ',Text,String) 
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  MOVE32_F(IstWert,DataF)                                             //
+  STRINGS(VALUE_TO_STRING,DataF,-11,0,Result)                         //
+  STRINGS(ADD,String,Result,String)                                   //      STRINGS(ADD,String,Result,String)
+  STRINGS(ADD,String,'] (',String)                                    //      STRINGS(ADD,String,'] (',String)
+  MOVE32_F(SollWert,DataF)                                            //
+  STRINGS(VALUE_TO_STRING,DataF,-11,0,Result)                         //
+  STRINGS(ADD,String,Result,String)                                   //      STRINGS(ADD,String,Result,String)
+  STRINGS(ADD,String,')',String)                                      //      STRINGS(ADD,String,')',String)
+                                                                      //
+  // Set failed                                                       //
+	MEMORY_WRITE(GUI_SLOT,4,0,1,1)                                      //      MEMORY_WRITE(GUI_SLOT,4,0,1,1)
+                                                                      //
+EndError:                                                             //    }
+                                                                      //
+  CALL(TestWrite,String)                                              //    CALL(TestWrite,String)
+}                                                                     //  }
+                                                                      //  
+                                                                      //  
+subcall   TestCheck                                                   //  void TestCheck(Text,IstWert,SollWert)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+  IN_S    IstWert LINE                                                //
+  IN_S    SollWert LINE                                               //
+                                                                      //
+  DATA8   Result                                                      //
+  DATAS   String LINE                                                 //
+                                                                      //
+  STRINGS(COMPARE,IstWert,SollWert,Result)                            //    STRINGS(COMPARE,IstWert,SollWert,Result)
+  JR_FALSE(Result,Error)                                              //    if (Result)
+                                                                      //    {
+  STRINGS(ADD,'  ',Text,String)                                       //      STRINGS(ADD,' ',Text,String)
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  STRINGS(ADD,String,IstWert,String)                                  //      STRINGS(ADD,String,IstWert,String)
+  STRINGS(ADD,String,']',String)                                      //      STRINGS(ADD,String,']',String)
+                                                                      //
+  JR(EndError)                                                        //    }
+                                                                      //    else
+Error:                                                                //    {
+                                                                      //
+  STRINGS(ADD,'# ',Text,String)                                       //      STRINGS(ADD,' ',Text,String) 
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  STRINGS(ADD,String,IstWert,String)                                  //      STRINGS(ADD,String,IstWert,String)
+  STRINGS(ADD,String,'] (',String)                                    //      STRINGS(ADD,String,'] (',String)
+  STRINGS(ADD,String,SollWert,String)                                 //      STRINGS(ADD,String,SollWert,String)
+  STRINGS(ADD,String,')',String)                                      //      STRINGS(ADD,String,')',String)
+                                                                      //
+  // Set failed                                                       //
+	MEMORY_WRITE(GUI_SLOT,4,0,1,1)                                      //      MEMORY_WRITE(GUI_SLOT,4,0,1,1)
+                                                                      //
+EndError:                                                             //    }
+                                                                      //
+  CALL(TestWrite,String)                                              //    CALL(TestWrite,String)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+DATA16    hFile                                                       //
+                                                                      //
+subcall   TestOpen                                                    //  void TestOpen(void)
+{                                                                     //  {
+  DATAS   TestReport FILENAMESIZE                                     //
+                                                                      //
+  STRINGS(ADD,TESTREPORT,EXT_TEXT,TestReport)                         //    STRINGS(ADD,TESTREPORT,EXT_TEXT,TestReport)
+  FILE(OPEN_APPEND,TestReport,hFile)                                  //    FILE(OPEN_APPEND,TestReport,hFile)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestWrite                                                   //  void TestWrite(Text)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+                                                                      //
+  FILE(WRITE_TEXT,hFile,DEL_CRLF,Text)                                //    FILE(WRITE_TEXT,hFile,DEL_CRLF,Text)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestClose                                                   //  void TestClose(void)
+{                                                                     //  {
+  FILE(CLOSE,hFile)                                                   //    FILE(CLOSE,hFile)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//! \endverbatim
+

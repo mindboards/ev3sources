@@ -1,0 +1,119 @@
+#! /bin/bash
+
+#*** APPLICATION *************************************************************
+
+path="prjs"
+dir="SelfTest"
+
+#*** HOST ********************************************************************
+
+lms_to_rbf="../adk/cmp"
+xbm_to_rgf="../adk/bmp"
+bmp_to_xbm="convert"
+
+#*** TARGET ******************************************************************
+
+am1808="../../lms2012/Linux_AM1808"
+x86="../../lms2012/Linux_X86"
+nfs="../../../../am1808/DaVinci-PSP-SDK-03.20.00.13/filesys/home/root/lms2012"
+
+#*** FILES ******************************************************************* 
+
+bmp=".bmp"
+xbm=".xbm"
+
+rbf=".rbf"
+rgf=".rgf"
+rsf=".rsf"
+raf=".raf"
+
+#*** DO CLEAN UP *************************************************************
+
+rm "${dir}"/*"${rbf}"
+
+rm "${x86}"/"${path}"/"${dir}"/*"${rbf}"
+
+rm "${nfs}"/"${path}"/"${dir}"/*"${rbf}"
+
+#*** DO COMPILE **************************************************************
+
+app="Run"
+echo -n Compile "  "../${dir}/${app}"          "
+${lms_to_rbf} "${app}" "${dir}"/"${app}""${rbf}"
+
+app="Test0101"
+echo -n Compile "  "../${dir}/${app}"     "
+${lms_to_rbf} "${app}" "${dir}"/"${app}""${rbf}"
+
+app="Test0102"
+echo -n Compile "  "../${dir}/${app}"     "
+${lms_to_rbf} "${app}" "${dir}"/"${app}""${rbf}"
+
+app="TestPrg1"
+echo -n Compile "  "../${dir}/${app}"     "
+${lms_to_rbf} "${app}" "${dir}"/"${app}""${rbf}"
+
+app="TestPrg2"
+echo -n Compile "  "../${dir}/${app}"     "
+${lms_to_rbf} "${app}" "${dir}"/"${app}""${rbf}"
+
+app="TestPrg4"
+echo -n Assemble " "../${dir}/${app}"     "
+../adk/tasm ${app}  "${dir}"/${app}
+
+app="Test0103"
+echo -n Compile "  "../${dir}/${app}"     "
+${lms_to_rbf} "${app}" "${dir}"/"${app}""${rbf}"
+
+app="Test0104"
+echo -n Compile "  "../${dir}/${app}"     "
+${lms_to_rbf} "${app}" "${dir}"/"${app}""${rbf}"
+
+app="Test0105"
+echo -n Compile "  "../${dir}/${app}"     "
+${lms_to_rbf} "${app}" "${dir}"/"${app}""${rbf}"
+
+app="Test0106"
+echo -n Compile "  "../${dir}/${app}"     "
+${lms_to_rbf} "${app}" "${dir}"/"${app}""${rbf}"
+
+app="Test0107"
+echo -n Compile "  "../${dir}/${app}"     "
+${lms_to_rbf} "${app}" "${dir}"/"${app}""${rbf}"
+
+app="Test0108"
+echo -n Compile "  "../${dir}/${app}"     "
+${lms_to_rbf} "${app}" "${dir}"/"${app}""${rbf}"
+
+app="Test0109"
+echo -n Compile "  "../${dir}/${app}"     "
+${lms_to_rbf} "${app}" "${dir}"/"${app}""${rbf}"
+
+app="Test0110"
+echo -n Compile "  "../${dir}/${app}"     "
+${lms_to_rbf} "${app}" "${dir}"/"${app}""${rbf}"
+
+app="Test0201"
+echo -n Compile "  "../${dir}/${app}"     "
+${lms_to_rbf} "${app}" "${dir}"/"${app}""${rbf}"
+
+app="Test0202"
+echo -n Compile "  "../${dir}/${app}"     "
+${lms_to_rbf} "${app}" "${dir}"/"${app}""${rbf}"
+
+#*** DO CONVERT **************************************************************
+
+echo -n Convert and copy
+
+#*** DO COPY IN PLACE ********************************************************
+
+cp "${dir}"/*"${rbf}" "${x86}"/"${path}"/"${dir}"/
+
+cp "${dir}"/*"${rbf}" "${nfs}"/"${path}"/"${dir}"/
+
+#cp "${dir}"/*"${rbf}" "${am1808}"/"${path}"/"${dir}"/
+
+#*** DONE ********************************************************************
+
+echo
+

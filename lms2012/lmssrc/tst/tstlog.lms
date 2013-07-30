@@ -1,0 +1,508 @@
+//! \page tstlogapp opINPUT_SAMPLE Example
+//!
+//! <hr size="1"/>
+//! \anchor cinputsample
+//! \verbatim
+
+//! ******************************************************
+//! SAMPLE FROM SINGLE DEVICE
+//! ******************************************************
+/*
+define    SAMPLETIME    1
+
+DATA32    StartTime
+DATA32    NewTime
+DATA32    Time
+DATA32    SyncTime                                                    
+DATA32    SyncTick                                                    
+DATA16    File
+
+vmthread  MAIN
+{
+  DATA32  Timer
+  DATAF   Value
+  DATA16  Init
+  DATA8   Device
+  DATA8   Type
+  DATA8   Mode
+  DATA8   DataSet
+  
+  DATA8   State
+
+//--------------------------------------------------------
+// INITIALIZE
+//--------------------------------------------------------
+
+  // Init device settings
+  
+  MOVE16_16(-1,Init)
+  MOVE8_8(0,Type)
+  MOVE8_8(-1,Mode)
+  MOVE8_8(0,DataSet)
+  
+  // Select device
+  MOVE8_8(0,Device)
+  
+  // Open file
+  FILE(GET_LOG_SYNC_TIME,SyncTime,SyncTick)
+  FILE(OPEN_LOG,'logfile',SyncTime,SyncTick,0,SAMPLETIME,0,'Time\tDevice\r\n',File)
+  
+  // Get Start time
+  TIMER_READ(StartTime)
+  SUB32(StartTime,SAMPLETIME,Time)
+
+//--------------------------------------------------------
+// LOG
+//--------------------------------------------------------
+Log:  
+
+  // Check time
+  TIMER_READ(NewTime)
+  SUB32(NewTime,Time,NewTime)
+  JR_LT32(NewTime,SAMPLETIME,NotTimeYet)
+
+  // Calculate sample time
+  ADD32(Time,SAMPLETIME,Time)
+  
+  // Make sample
+  INPUT_SAMPLE(SAMPLETIME,1,Init,Device,Type,Mode,DataSet,Value)
+  
+  // Save samples
+  FILE(WRITE_LOG,File,Time,1,Value)
+  
+NotTimeYet:
+
+  // Check stop  
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,State)
+  JR_FALSE(State,Log)
+  
+  
+//--------------------------------------------------------
+// EXIT
+//--------------------------------------------------------
+
+  // Close file
+  FILE(CLOSE_LOG,File,'logfile')
+}
+*/
+//! ******************************************************
+//! SAMPLE FROM MULTIPLE DEVICES
+//! ******************************************************
+/*
+define    SAMPLETIME    1
+define    SAMPLES       2
+
+DATA32    StartTime
+DATA32    NewTime
+DATA32    Time
+DATA32    SyncTime                                                    
+DATA32    SyncTick                                                    
+DATA16    File
+
+vmthread  MAIN
+{
+  DATA32  Timer
+  DATA16  hInits
+  DATA16  hValues
+  DATA16  hDevices
+  DATA16  hTypes
+  DATA16  hModes
+  DATA16  hDataSets
+  
+  DATA32  Pointer
+  DATA8   State
+
+//--------------------------------------------------------
+// INITIALIZE
+//--------------------------------------------------------
+
+  // Init device settings
+  
+  ARRAY(CREATE16,SAMPLES,hInits)
+  ARRAY(FILL ,hInits,-1) 
+  ARRAY(CREATE8,SAMPLES,hDevices)
+  ARRAY(CREATE8,SAMPLES,hTypes)
+  ARRAY(FILL ,hTypes,0) 
+  ARRAY(CREATE8,SAMPLES,hModes)
+  ARRAY(FILL ,hModes,-1) 
+  ARRAY(CREATE8,SAMPLES,hDataSets)
+  ARRAY(FILL ,hDataSets,0) 
+  ARRAY(CREATEF,SAMPLES,hValues)
+  
+  // Select devices
+  ARRAY_WRITE(hDevices,0,0)
+  ARRAY_WRITE(hDevices,1,1)
+
+  // Open file
+  FILE(GET_LOG_SYNC_TIME,SyncTime,SyncTick)
+  FILE(OPEN_LOG,'logfile',SyncTime,SyncTick,0,SAMPLETIME,0,'Time\tDevice1\tDevice2\r\n',File)
+  
+  // Get Start time
+  TIMER_READ(StartTime)
+  SUB32(StartTime,SAMPLETIME,Time)
+
+//--------------------------------------------------------
+// LOG
+//--------------------------------------------------------
+Log:  
+
+  // Check time
+  TIMER_READ(NewTime)
+  SUB32(NewTime,Time,NewTime)
+  JR_LT32(NewTime,SAMPLETIME,NotTimeYet)
+
+  // Calculate sample time
+  ADD32(Time,SAMPLETIME,Time)
+  
+  // Make samples
+  INPUT_SAMPLE(SAMPLETIME,SAMPLES,@hInits,@hDevices,@hTypes,@hModes,@hDataSets,@hValues)
+  
+  // Save samples
+  FILE(WRITE_LOG,File,Time,SAMPLES,@hValues)
+  
+NotTimeYet:
+
+  // Check stop  
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,State)
+  JR_FALSE(State,Log)
+  
+  
+//--------------------------------------------------------
+// EXIT
+//--------------------------------------------------------
+
+  // Close file
+  FILE(CLOSE_LOG,File,'logfile')
+
+  // Delete arrayes  
+  ARRAY(DELETE,hValues)
+  ARRAY(DELETE,hDataSets)
+  ARRAY(DELETE,hModes)
+  ARRAY(DELETE,hTypes)
+  ARRAY(DELETE,hDevices)
+  ARRAY(DELETE,hInits)
+  
+}
+*/
+//! ******************************************************
+//! TWO PARALLEL RUNNING SAMPLE FROM MULTIPLE DEVICES
+//! ******************************************************
+/*
+define    SAMPLES1      2
+define    SAMPLETIME1   100
+define    RUNTIME1      2000
+
+define    SAMPLES2      2
+define    SAMPLETIME2   100
+define    RUNTIME2      2000
+
+
+
+vmthread  MAIN
+{
+
+  OBJECT_START(Datalog1)
+  OBJECT_START(Datalog2)
+
+}
+
+
+
+vmthread  Datalog1
+{
+  DATA32  Timer
+  DATA32  StartTime
+  DATA32  NewTime
+  DATA32  Time
+  DATA32  TmpTime
+  DATA32  LogTime
+  DATA32  SyncTime                                                    
+  DATA32  SyncTick                                                    
+  DATA16  File
+  DATA16  hInits
+  DATA16  hValues
+  DATA16  hDevices
+  DATA16  hTypes
+  DATA16  hModes
+  DATA16  hDataSets
+  
+  DATA32  Pointer
+  DATA8   State
+
+//--------------------------------------------------------
+// INITIALIZE
+//--------------------------------------------------------
+
+  // Init device settings
+  
+  ARRAY(CREATE16,SAMPLES1,hInits)
+  ARRAY(FILL ,hInits,-1) 
+  ARRAY(CREATE8,SAMPLES1,hDevices)
+  ARRAY(CREATE8,SAMPLES1,hTypes)
+  ARRAY(FILL ,hTypes,0) 
+  ARRAY(CREATE8,SAMPLES1,hModes)
+  ARRAY(FILL ,hModes,-1) 
+  ARRAY(CREATE8,SAMPLES1,hDataSets)
+  ARRAY(FILL ,hDataSets,0) 
+  ARRAY(CREATEF,SAMPLES1,hValues)
+  
+  // Select devices
+  ARRAY_WRITE(hDevices,0,0)
+  ARRAY_WRITE(hDevices,1,1)
+
+  // Open file
+  FILE(GET_LOG_SYNC_TIME,SyncTime,SyncTick)
+  FILE(OPEN_LOG,'logfile1',SyncTime,SyncTick,0,SAMPLETIME1,0,'Time\tDevice1\tDevice2\r\n',File)
+  
+  // Get Start time
+  TIMER_READ(StartTime)
+  SUB32(StartTime,SAMPLETIME1,Time)
+
+  MOVE32_32(0,LogTime)
+
+//--------------------------------------------------------
+// LOG
+//--------------------------------------------------------
+Log:  
+
+  // Check time
+  TIMER_READ(NewTime)
+  SUB32(NewTime,Time,TmpTime)
+  JR_LT32(TmpTime,SAMPLETIME1,NotTimeYet)
+
+  // Calculate sample time
+  ADD32(Time,SAMPLETIME1,Time)
+  
+  // Make samples
+  INPUT_SAMPLE(SAMPLETIME1,SAMPLES1,@hInits,@hDevices,@hTypes,@hModes,@hDataSets,@hValues)
+  
+  // Save samples
+  FILE(WRITE_LOG,File,LogTime,SAMPLES1,@hValues)
+  
+  ADD32(LogTime,SAMPLETIME1,LogTime)
+
+NotTimeYet:
+
+  // Check stop  
+  JR_LTEQ32(LogTime,RUNTIME1,Log)
+ 
+  
+//--------------------------------------------------------
+// EXIT
+//--------------------------------------------------------
+
+  // Close file
+  FILE(CLOSE_LOG,File,'logfile1')
+
+  // Delete arrayes  
+  ARRAY(DELETE,hValues)
+  ARRAY(DELETE,hDataSets)
+  ARRAY(DELETE,hModes)
+  ARRAY(DELETE,hTypes)
+  ARRAY(DELETE,hDevices)
+  ARRAY(DELETE,hInits)
+  
+}
+
+
+
+vmthread  Datalog2
+{
+  DATA32  Timer
+  DATA32  StartTime
+  DATA32  NewTime
+  DATA32  Time
+  DATA32  TmpTime
+  DATA32  LogTime
+  DATA32  SyncTime                                                    
+  DATA32  SyncTick                                                    
+  DATA16  File
+  DATA16  hInits
+  DATA16  hValues
+  DATA16  hDevices
+  DATA16  hTypes
+  DATA16  hModes
+  DATA16  hDataSets
+  
+  DATA32  Pointer
+  DATA8   State
+
+//--------------------------------------------------------
+// INITIALIZE
+//--------------------------------------------------------
+
+  // Init device settings
+  
+  ARRAY(CREATE16,SAMPLES2,hInits)
+  ARRAY(FILL ,hInits,-1) 
+  ARRAY(CREATE8,SAMPLES2,hDevices)
+  ARRAY(CREATE8,SAMPLES2,hTypes)
+  ARRAY(FILL ,hTypes,0) 
+  ARRAY(CREATE8,SAMPLES2,hModes)
+  ARRAY(FILL ,hModes,-1) 
+  ARRAY(CREATE8,SAMPLES2,hDataSets)
+  ARRAY(FILL ,hDataSets,0) 
+  ARRAY(CREATEF,SAMPLES2,hValues)
+  
+  // Select devices
+  ARRAY_WRITE(hDevices,0,0)
+  ARRAY_WRITE(hDevices,1,1)
+
+  // Open file
+  FILE(GET_LOG_SYNC_TIME,SyncTime,SyncTick)
+  FILE(OPEN_LOG,'logfile2',SyncTime,SyncTick,0,SAMPLETIME2,0,'Time\tDevice1\tDevice2\r\n',File)
+  
+  // Get Start time
+  TIMER_READ(StartTime)
+  SUB32(StartTime,SAMPLETIME2,Time)
+
+  MOVE32_32(0,LogTime)
+
+//--------------------------------------------------------
+// LOG
+//--------------------------------------------------------
+Log:  
+
+  // Check time
+  TIMER_READ(NewTime)
+  SUB32(NewTime,Time,TmpTime)
+  JR_LT32(TmpTime,SAMPLETIME2,NotTimeYet)
+
+  // Calculate sample time
+  ADD32(Time,SAMPLETIME2,Time)
+  
+  // Make samples
+  INPUT_SAMPLE(SAMPLETIME2,SAMPLES2,@hInits,@hDevices,@hTypes,@hModes,@hDataSets,@hValues)
+  
+  // Save samples
+  FILE(WRITE_LOG,File,LogTime,SAMPLES2,@hValues)
+
+  ADD32(LogTime,SAMPLETIME2,LogTime)
+  
+NotTimeYet:
+
+  // Check stop  
+  JR_LTEQ32(LogTime,RUNTIME2,Log)
+ 
+  
+//--------------------------------------------------------
+// EXIT
+//--------------------------------------------------------
+
+  // Close file
+  FILE(CLOSE_LOG,File,'logfile2')
+
+  // Delete arrayes  
+  ARRAY(DELETE,hValues)
+  ARRAY(DELETE,hDataSets)
+  ARRAY(DELETE,hModes)
+  ARRAY(DELETE,hTypes)
+  ARRAY(DELETE,hDevices)
+  ARRAY(DELETE,hInits)
+  
+}
+*/
+
+//! \endverbatim
+
+
+
+
+
+
+
+
+
+
+
+/*
+define    SAMPLETIME    1
+define    SAMPLES       2
+
+DATA32    StartTime
+DATA32    NewTime
+DATA32    Time
+DATA32    SyncTime                                                    
+DATA32    SyncTick                                                    
+DATA16    File
+
+vmthread  MAIN
+{
+  DATA32  Timer
+  ARRAYF  Values    SAMPLES
+  ARRAY16 Inits     SAMPLES
+  ARRAY8  Devices   SAMPLES
+  ARRAY8  Types     SAMPLES
+  ARRAY8  Modes     SAMPLES
+  ARRAY8  DataSets  SAMPLES
+  
+  DATA8   Pointer
+  DATA8   State
+
+//****************************************
+// INITIALIZE
+//****************************************
+
+  // Init device settings
+  MOVE8_8(0,Pointer)
+Init:
+  WRITE16(-1,Pointer,Inits)
+  WRITE8(0,Pointer,Types)
+  WRITE8(-1,Pointer,Modes)
+  WRITE8(0,Pointer,DataSets)
+
+  ADD8(Pointer,1,Pointer)
+  JR_LT8(Pointer,SAMPLES,Init)  
+
+  // Select devices
+  WRITE8(0,0,Devices)
+  WRITE8(1,1,Devices)
+
+  // Open file
+  FILE(GET_LOG_SYNC_TIME,SyncTime,SyncTick)
+  FILE(OPEN_LOG,'logfile',SyncTime,SyncTick,0,SAMPLETIME,0,'Time\tDevice1\tDevice2\r\n',File)
+  
+  // Get Start time
+  TIMER_READ(StartTime)
+  SUB32(StartTime,SAMPLETIME,Time)
+
+//****************************************
+// LOG
+//****************************************
+Log:  
+
+  // Check time
+  TIMER_READ(NewTime)
+  SUB32(NewTime,Time,NewTime)
+  JR_LT32(NewTime,SAMPLETIME,NotTimeYet)
+
+  UI_WRITE(SET_TESTPIN,1)
+
+  // Calculate sample time
+  ADD32(Time,SAMPLETIME,Time)
+  
+  // Make samples
+  INPUT_SAMPLE(SAMPLETIME,SAMPLES,Inits,Devices,Types,Modes,DataSets,Values)
+  
+  // Save samples
+  FILE(WRITE_LOG,File,Time,SAMPLES,Values)
+  
+  UI_WRITE(SET_TESTPIN,0)
+NotTimeYet:
+
+  // Check stop  
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,State)
+  JR_FALSE(State,Log)
+  
+  
+//****************************************
+// EXIT
+//****************************************
+
+  // Close file
+  FILE(CLOSE_LOG,File,'logfile')
+}
+*/
+
+
+

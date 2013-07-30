@@ -1,0 +1,106 @@
+/*
+ * LEGO® MINDSTORMS EV3
+ *
+ * Copyright (C) 2010-2013 The LEGO Group
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
+
+//  TCP 08.04.2013
+//! \page testdisplayappcode Display Application
+//!
+//! <hr size="1"/>
+//!
+//! \verbatim
+//**********************************************************************
+define appv 'Display V1.02'                                           //
+//**********************************************************************
+                                                                      //
+vmthread  MAIN                                                        //  void    MAIN(void)
+{                                                                     //  {
+  DATA8   ShowVersion                                                 //
+                                                                      //
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //    UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+  JR_FALSE(ShowVersion,DontShowVersion)                               //    if (ShowVersion)
+                                                                      //    {
+  UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)                              //      UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)
+  UI_DRAW(RECT,FG_COLOR,6,52,166,24)                                  //      UI_DRAW(RECT,FG_COLOR,6,52,166,24)
+  UI_DRAW(TEXT,FG_COLOR,13,60,appv)                                   //      UI_DRAW(TEXT,FG_COLOR,13,60,appv)
+  UI_DRAW(UPDATE)                                                     //      UI_DRAW(UPDATE)
+                                                                      //
+ShowVersionWait:                                                      //      do
+                                                                      //      {  
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //        UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+                                                                      //      }
+  JR_TRUE(ShowVersion,ShowVersionWait)                                //      while (ShowVersion)
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //      UI_BUTTON(FLUSH)
+DontShowVersion:                                                      //    }  
+                                                                      //
+  UI_DRAW(RESTORE,0)                                                  //    UI_DRAW(RESTORE,0)
+  UI_DRAW(TOPLINE,0)                                                  //    UI_DRAW(TOPLINE,0)
+  UI_WRITE(LED,LED_GREEN)                                             //    UI_WRITE(LED,LED_GREEN)
+                                                                      //
+  CALL(TestDisplay)                                                   //    TestDisplay()
+                                                                      //
+  UI_DRAW(TOPLINE,1)                                                  //    UI_DRAW(TOPLINE,1)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestDisplay                                                 //  void TestDisplay(void)
+{                                                                     //  {
+  DATA8   Run                                                         //
+  DATA8   Tmp                                                         //
+                                                                      //
+  UI_DRAW(FILLWINDOW,0x55,0,0                                         //    UI_DRAW(FILLWINDOW,0x55,0,0
+  UI_DRAW(UPDATE)                                                     //    UI_DRAW(UPDATE)
+                                                                      //
+  MOVE8_8(1,Run)                                                      //    Run     =  1
+                                                                      //    do
+Loop1:                                                                //    {
+  UI_BUTTON(SHORTPRESS,LEFT_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,LEFT_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotLeftButton)                                         //      if (Tmp != FALSE)
+                                                                      //      {
+  UI_DRAW(FILLWINDOW,0x55,0,0                                         //        UI_DRAW(FILLWINDOW,0x55,0,0
+  UI_DRAW(UPDATE)                                                     //        I_DRAW(UPDATE)
+NotLeftButton:                                                        //      }
+                                                                      //
+  UI_BUTTON(SHORTPRESS,RIGHT_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,RIGHT_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotRightButton)                                        //      if (Tmp != FALSE)
+                                                                      //      {
+  UI_DRAW(FILLWINDOW,0xAA,0,0                                         //        UI_DRAW(FILLWINDOW,0xAA,0,0
+  UI_DRAW(UPDATE)                                                     //        UI_DRAW(UPDATE)
+NotRightButton:                                                       //      }
+                                                                      //
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotBackButton)                                         //      if (Tmp != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotBackButton:                                                        //      }
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotEnterButton)                                        //      if (Tmp != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotEnterButton:                                                       //      }
+                                                                      //    }
+  JR_TRUE(Run,Loop1)                                                  //    while (Run)
+Stop:                                                                 //
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//! \endverbatim
+

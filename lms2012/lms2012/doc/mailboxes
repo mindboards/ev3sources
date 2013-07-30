@@ -1,0 +1,40 @@
+
+MAILBOX BYTE CODE COMMANDS
+----------------------------------------------------
+
+opMAILBOX_OPEN,  NO, HARDWARE, BOXNAME, TYPE, VALUES            // Opens mailbox "NO" and saves "HARDWARE", "BOXNAME", "TYPE" and "VALUES"
+
+opMAILBOX_WRITE, BRICKNAME, BOXNAME, VALUES, VALUE1, ....       // Writes "VALUES" number of "TYPE" values (VALUE1) to "BRICKNAME"'s "BOXNAME"
+
+opMAILBOX_READ,  NO, VALUES, VALUE1, ....                       // Reads "VALUES" number of "TYPE" values "VALUE1" from mailbox "NO" 
+
+opMAILBOX_TEST,  NO, BUSY                                       // Returns last operation status "BUSY" on mailbox "NO"
+
+opMAILBOX_READY, NO                                             // Halts VMthread until mailbox "NO" is not busy
+
+opMAILBOX_CLOSE, NO                                             // Closes mailbox "NO"
+
+
+
+NO          [0..9]
+            allocation number: the compiler needs to know how many mail boxes it has allocated
+
+HARDWARE    [HW_BT]
+            hardware to transmit to
+            
+BOXNAME     [0..31 chars]
+            user friendly mailbox name
+
+TYPE        [DATA8, DATA16, DATA32, DATAF, DATAS 250]
+            when read and write: the VM needs to know what type to take from and put to the byte code stream
+
+VALUES      [1..4]
+            number of values to support (of same type)
+
+BRICKNAME   [1..120 chars]
+            destination brick name
+
+VALUE1      [TYPE]
+            first value to read/write
+
+BUSY        [0=OK, 1=BUSY, 2=FAIL]

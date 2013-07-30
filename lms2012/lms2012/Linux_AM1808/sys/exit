@@ -1,0 +1,19 @@
+#! /bin/sh
+
+rmmod d_bt
+# d_analog removes buffering for linux prompt
+rmmod d_analog
+# d_uart must be removed after d_analog
+rmmod d_uart
+rmmod d_pwm
+rmmod d_usbdev
+rmmod d_usbhost
+rmmod d_sound
+rmmod d_iic
+rm ../prjs/SD_Card &> /dev/null
+rm ../prjs/USB_Stick &> /dev/null
+sync
+/etc/init.d/store.sh write
+rmmod d_ui
+rmmod d_power
+

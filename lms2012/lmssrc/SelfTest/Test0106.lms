@@ -1,0 +1,862 @@
+//! \page test0106app Test 0106 Application
+//!
+//! <hr size="1"/>
+//!
+//! \verbatim
+// 
+//
+//
+//**********************************************************************
+//        TEST0106
+//**********************************************************************
+                                                                      //
+define    TESTREPORT  'TestReport'                                    //
+define    TESTSLOT    TERM_SLOT                                       //
+define    LINE        64                                              //
+                                                                      //
+                                                                      //
+vmthread  MAIN                                                        //  void    MAIN(void)
+{                                                                     //  {
+  CALL(Test0106)                                                      //    Test0106()
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   Test0106                                                    //  void Test0106(void)
+{                                                                     //  {
+  DATAF   Result                                                      //
+  DATAF   DataF                                                       //
+  DATAF   DataFnan                                                    //
+  DATA32  Data32                                                      //
+  DATA32  Data32nan                                                   //
+  DATA16  Data16                                                      //
+  DATA16  Data16nan                                                   //
+  DATA8   Data8                                                       //
+  DATA8   Data8nan                                                    //
+  DATAS   Text LINE                                                   //
+  DATAS   String LINE                                                 //
+  DATAS   TestPrg FILENAMESIZE                                        //
+                                                                      //
+  // Set success as default                                           //
+	MEMORY_WRITE(GUI_SLOT,4,0,1,0)                                      //    MEMORY_WRITE(GUI_SLOT,4,0,1,0)
+                                                                      //
+  MATH(SQRT,-4.0F,DataFnan)                                           //
+  MOVEF_32(DataFnan,Data32nan)                                        //
+  MOVEF_16(DataFnan,Data16nan)                                        //
+  MOVEF_8(DataFnan,Data8nan)                                          //
+  CALL(TestOpen)                                                      //
+                                                                      //
+  CALL(TestWrite,' VM MOVE8_8')                                       //
+                                                                      //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE8_8(0x55,Data8)                                                 //
+  MOVE8_8(0,Data8)                                                    //*
+  MOVE8_F(Data8,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE8_8    0       ',String,'     0')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE8_8(0x55,Data8)                                                 //
+  MOVE8_8(127,Data8)                                                  //*
+  MOVE8_F(Data8,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE8_8    127     ',String,'   127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE8_8(0x55,Data8)                                                 //
+  MOVE8_8(-127,Data8)                                                 //*
+  MOVE8_F(Data8,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE8_8    -127    ',String,'  -127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE8_8(0x55,Data8)                                                 //
+  MOVE8_8(Data8nan,Data8)                                             //*
+  MOVE8_F(Data8,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE8_8    nan     ',String,'         ----')        //
+                                                                      //
+  CALL(TestWrite,' VM MOVE16_8')                                      //
+                                                                      //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0,Data16)                                                 //
+  MOVE8_8(0x55,Data8)                                                 //
+  MOVE16_8(Data16,Data8)                                              //*
+  MOVE8_F(Data8,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_8   0       ',String,'     0')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(127,Data16)                                               //
+  MOVE8_8(0x55,Data8)                                                 //
+  MOVE16_8(Data16,Data8)                                              //*
+  MOVE8_F(Data8,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_8   127     ',String,'   127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(-127,Data16)                                              //
+  MOVE8_8(0x55,Data8)                                                 //
+  MOVE16_8(Data16,Data8)                                              //*
+  MOVE8_F(Data8,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_8   -127    ',String,'  -127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(128,Data16)                                               //
+  MOVE8_8(0x55,Data8)                                                 //
+  MOVE16_8(Data16,Data8)                                              //*
+  MOVE8_F(Data8,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_8   128     ',String,'   127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(-128,Data16)                                              //
+  MOVE8_8(0x55,Data8)                                                 //
+  MOVE16_8(Data16,Data8)                                              //*
+  MOVE8_F(Data8,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_8   -128    ',String,'  -127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE8_8(0x55,Data8)                                                 //
+  MOVE16_8(Data16nan,Data8)                                           //*
+  MOVE8_F(Data8,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_8   nan     ',String,'         ----')        //
+                                                                      //
+  CALL(TestWrite,' VM MOVE32_8')                                      //
+                                                                      //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0,Data32)                                                 //
+  MOVE8_8(0x55,Data8)                                                 //
+  MOVE32_8(Data32,Data8)                                              //
+  MOVE8_F(Data8,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_8   0       ',String,'     0')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(127,Data32)                                               //
+  MOVE8_8(0x55,Data8)                                                 //
+  MOVE32_8(Data32,Data8)                                              //*
+  MOVE8_F(Data8,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_8   127     ',String,'   127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(-127,Data32)                                              //
+  MOVE8_8(0x55,Data8)                                                 //
+  MOVE32_8(Data32,Data8)                                              //*
+  MOVE8_F(Data8,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_8   -127    ',String,'  -127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(128,Data32)                                               //
+  MOVE8_8(0x55,Data8)                                                 //
+  MOVE32_8(Data32,Data8)                                              //*
+  MOVE8_F(Data8,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_8   128     ',String,'   127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(-128,Data32)                                              //
+  MOVE8_8(0x55,Data8)                                                 //
+  MOVE32_8(Data32,Data8)                                              //*
+  MOVE8_F(Data8,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_8   -128    ',String,'  -127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE8_8(0x55,Data8)                                                 //
+  MOVE32_8(Data32nan,Data8)                                           //*
+  MOVE8_F(Data8,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_8   nan     ',String,'         ----')        //
+                                                                      //
+  CALL(TestWrite,' VM MOVEF_8')                                       //
+                                                                      //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVEF_F(0.0F,DataF)                                                 //
+  MOVE8_8(0x55,Data8)                                                 //
+  MOVEF_8(DataF,Data8)                                                //*
+  MOVE8_F(Data8,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_8    0       ',String,'     0')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVEF_F(127.0F,DataF)                                               //
+  MOVE8_8(0x55,Data8)                                                 //
+  MOVEF_8(DataF,Data8)                                                //*
+  MOVE8_F(Data8,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_8    127     ',String,'   127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVEF_F(-127.0F,DataF)                                              //
+  MOVE8_8(0x55,Data8)                                                 //
+  MOVEF_8(DataF,Data8)                                                //*
+  MOVE8_F(Data8,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_8    -127    ',String,'  -127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVEF_F(128.0F,DataF)                                               //
+  MOVE8_8(0x55,Data8)                                                 //
+  MOVEF_8(DataF,Data8)                                                //*
+  MOVE8_F(Data8,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_8    128     ',String,'   127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVEF_F(-128.0F,DataF)                                              //
+  MOVE8_8(0x55,Data8)                                                 //
+  MOVEF_8(DataF,Data8)                                                //*
+  MOVE8_F(Data8,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_8    -128    ',String,'  -127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE8_8(0x55,Data8)                                                 //
+  MOVEF_8(DataFnan,Data8)                                             //*
+  MOVE8_F(Data8,Result)                                               //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_8    nan     ',String,'         ----')        //
+                                                                      //
+  CALL(TestWrite,' VM MOVE8_16')                                      //
+                                                                      //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVE8_16(0,Data16)                                                  //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE8_16   0       ',String,'     0')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVE8_16(127,Data16)                                                //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE8_16   127     ',String,'   127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVE8_16(-127,Data16)                                               //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE8_16   -127    ',String,'  -127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVE8_16(Data8nan,Data16)                                           //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE8_16   nan     ',String,'         ----')        //
+                                                                      //
+  CALL(TestWrite,' VM MOVE16_16')                                     //
+                                                                      //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVE16_16(0,Data16)                                                 //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_16  0       ',String,'     0')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVE16_16(127,Data16)                                               //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_16  127     ',String,'   127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVE16_16(-127,Data16)                                              //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_16  -127    ',String,'  -127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVE16_16(128,Data16)                                               //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_16  128     ',String,'   128')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVE16_16(-128,Data16)                                              //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_16  -128    ',String,'  -128')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVE16_16(32767,Data16)                                             //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_16  32767   ',String,' 32767')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVE16_16(-32767,Data16)                                            //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_16  -32767  ',String,'-32767')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVE16_16(Data16nan,Data16)                                         //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_16  nan     ',String,'         ----')        //
+                                                                      //
+  CALL(TestWrite,' VM MOVE32_16')                                     //
+                                                                      //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVE32_16(0,Data16)                                                 //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_16  0       ',String,'     0')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVE32_16(127,Data16)                                               //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_16  127     ',String,'   127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVE32_16(-127,Data16)                                              //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_16  -127    ',String,'  -127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVE32_16(128,Data16)                                               //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_16  128     ',String,'   128')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVE32_16(-128,Data16)                                              //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_16  -128    ',String,'  -128')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVE32_16(32767,Data16)                                             //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_16  32767   ',String,' 32767')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVE32_16(-32767,Data16)                                            //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_16  -32767  ',String,'-32767')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVE32_16(32768,Data16)                                             //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_16  32768   ',String,' 32767')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVE32_16(-32768,Data16)                                            //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_16  -32768  ',String,'-32767')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVE32_16(Data32nan,Data16)                                         //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_16  nan     ',String,'         ----')        //
+                                                                      //
+  CALL(TestWrite,' VM MOVEF_16')                                      //
+                                                                      //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVEF_16(0.0F,Data16)                                               //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_16   0       ',String,'     0')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVEF_16(127.0F,Data16)                                             //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_16   127     ',String,'   127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVEF_16(-127.0F,Data16)                                            //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_16   -127    ',String,'  -127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVEF_16(128.0F,Data16)                                             //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_16   128     ',String,'   128')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVEF_16(-128.0F,Data16)                                            //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_16   -128    ',String,'  -128')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVEF_16(32767.0F,Data16)                                           //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_16   32767   ',String,' 32767')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVEF_16(-32767.0F,Data16)                                          //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_16   -32767  ',String,'-32767')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVEF_16(32768.0F,Data16)                                           //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_16   32768   ',String,' 32767')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVEF_16(-32768.0F,Data16)                                          //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_16   -32768  ',String,'-32767')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_16(0x5555,Data16)                                            //
+  MOVEF_16(DataFnan,Data16)                                           //*
+  MOVE16_F(Data16,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_16   nan     ',String,'         ----')        //
+                                                                      //
+  CALL(TestWrite,' VM MOVE8_32')                                      //
+                                                                      //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVE8_32(0,Data32)                                                  //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE8_32   0       ',String,'     0')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVE8_32(127,Data32)                                                //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE8_32   127     ',String,'   127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVE8_32(-127,Data32)                                               //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE8_32   -127    ',String,'  -127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVE8_32(Data8nan,Data32)                                           //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE8_32   nan     ',String,'         ----')        //
+                                                                      //
+  CALL(TestWrite,' VM MOVE16_32')                                     //
+                                                                      //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVE16_32(0,Data32)                                                 //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_32  0       ',String,'     0')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVE16_32(127,Data32)                                               //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_32  127     ',String,'   127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVE16_32(-127,Data32)                                              //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_32  -127    ',String,'  -127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVE16_32(128,Data32)                                               //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_32  128     ',String,'   128')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVE16_32(-128,Data32)                                              //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_32  -128    ',String,'  -128')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVE16_32(32767,Data32)                                             //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_32  32767   ',String,' 32767')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVE16_32(-32767,Data32)                                            //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_32  -32767  ',String,'-32767')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVE16_32(Data16nan,Data32)                                         //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_32  nan     ',String,'         ----')        //
+                                                                      //
+  CALL(TestWrite,' VM MOVE32_32')                                     //
+                                                                      //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVE32_32(0,Data32)                                                 //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_32  0       ',String,'     0')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVE32_32(127,Data32)                                               //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_32  127     ',String,'   127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVE32_32(-127,Data32)                                              //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_32  -127    ',String,'  -127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVE32_32(128,Data32)                                               //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_32  128     ',String,'   128')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVE32_32(-128,Data32)                                              //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_32  -128    ',String,'  -128')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVE32_32(32767,Data32)                                             //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_32  32767   ',String,' 32767')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVE32_32(-32767,Data32)                                            //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_32  -32767  ',String,'-32767')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVE32_32(32768,Data32)                                             //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_32  32768   ',String,' 32768')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVE32_32(-32768,Data32)                                            //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_32  -32768  ',String,'-32768')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVE32_32(2147483647,Data32)                                        //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_32  max     ',String,'2147483648')           //rounding
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVE32_32(-2147483647,Data32)                                       //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_32  min     ',String,'-2147483648')          //rounding
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVE32_32(Data32nan,Data32)                                         //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_32  nan     ',String,'         ----')        //
+                                                                      //
+  CALL(TestWrite,' VM MOVEF_32')                                      //
+                                                                      //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVEF_32(0.0F,Data32)                                               //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_32   0       ',String,'     0')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVEF_32(127.0F,Data32)                                             //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_32   127     ',String,'   127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVEF_32(-127.0F,Data32)                                            //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_32   -127    ',String,'  -127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVEF_32(128.0F,Data32)                                             //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_32   128     ',String,'   128')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVEF_32(-128.0F,Data32)                                            //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_32   -128    ',String,'  -128')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVEF_32(32767.0F,Data32)                                           //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_32   32767   ',String,' 32767')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVEF_32(-32767.0F,Data32)                                          //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_32   -32767  ',String,'-32767')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVEF_32(32768.0F,Data32)                                           //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_32   32768   ',String,' 32768')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVEF_32(-32768.0F,Data32)                                          //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_32   -32768  ',String,'-32768')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVEF_32(2147483000.0F,Data32)                                      //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_32   max     ',String,'2147483008')           //rounding
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVEF_32(-2147483000.0F,Data32)                                     //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_32   min     ',String,'-2147483008')          //rounding
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_32(0x55555555,Data32)                                        //
+  MOVEF_32(DataFnan,Data32)                                           //*
+  MOVE32_F(Data32,Result)                                             //
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_32   nan     ',String,'         ----')        //
+                                                                      //
+  CALL(TestWrite,' VM MOVE8_F')                                       //
+                                                                      //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE8_F(0,Result)                                                   //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE8_F    0       ',String,'     0')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE8_F(127,Result)                                                 //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE8_F    127     ',String,'   127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE8_F(-127,Result)                                                //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE8_F    -127    ',String,'  -127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE8_F(Data8nan,Result)                                            //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE8_F    nan     ',String,'         ----')        //
+                                                                      //
+  CALL(TestWrite,' VM MOVE16_F')                                      //
+                                                                      //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_F(0,Result)                                                  //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_F   0       ',String,'     0')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_F(127,Result)                                                //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_F   127     ',String,'   127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_F(-127,Result)                                               //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_F   -127    ',String,'  -127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_F(128,Result)                                                //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_F   128     ',String,'   128')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_F(-128,Result)                                               //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_F   -128    ',String,'  -128')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_F(32767,Result)                                              //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_F   32767   ',String,' 32767')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_F(-32767,Result)                                             //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_F   -32767  ',String,'-32767')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE16_F(Data16nan,Result)                                          //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE16_F   nan     ',String,'         ----')        //
+                                                                      //
+  CALL(TestWrite,' VM MOVE32_F')                                      //
+                                                                      //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_F(0,Result)                                                  //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_F   0       ',String,'     0')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_F(127,Result)                                                //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_F   127     ',String,'   127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_F(-127,Result)                                               //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_F   -127    ',String,'  -127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_F(128,Result)                                                //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_F   128     ',String,'   128')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_F(-128,Result)                                               //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_F   -128    ',String,'  -128')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_F(32767,Result)                                              //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_F   32767   ',String,' 32767')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_F(-32767,Result)                                             //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_F   -32767  ',String,'-32767')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_F(32768,Result)                                              //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_F   32768   ',String,' 32768')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_F(-32768,Result)                                             //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_F   -32768  ',String,'-32768')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_F(2147483647,Result)                                         //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_F   max     ',String,'2147483648')           //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_F(-2147483647,Result)                                        //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_F   min     ',String,'-2147483648')          //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVE32_F(Data32nan,Result)                                          //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVE32_F   nan     ',String,'         ----')        //
+                                                                      //
+  CALL(TestWrite,' VM MOVEF_F')                                       //
+                                                                      //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVEF_F(0.0F,Result)                                                //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_F    0       ',String,'     0')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVEF_F(127.0F,Result)                                              //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_F    127     ',String,'   127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVEF_F(-127.0F,Result)                                             //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_F    -127    ',String,'  -127')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVEF_F(128.0F,Result)                                              //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_F    128     ',String,'   128')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVEF_F(-128.0F,Result)                                             //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_F    -128    ',String,'  -128')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVEF_F(32767.0F,Result)                                            //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_F    32767   ',String,' 32767')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVEF_F(-32767.0F,Result)                                           //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_F    -32767  ',String,'-32767')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVEF_F(32768.0F,Result)                                            //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_F    32768   ',String,' 32768')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVEF_F(-32768.0F,Result)                                           //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_F    -32768  ',String,'-32768')               //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVEF_F(2147483647.0F,Result)                                       //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_F    max     ',String,'2147483648')           //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVEF_F(-2147483647.0F,Result)                                      //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_F    min     ',String,'-2147483648')          //
+  MOVE32_32(0x55555555,Result)                                        //
+  MOVEF_F(DataFnan,Result)                                            //*
+  STRINGS(VALUE_TO_STRING,Result,13,6,String)                         //
+  CALL(TestCheck,'MOVEF_F    nan     ',String,'         ----')        //
+                                                                      //
+  CALL(TestClose)                                                     //
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestCheck                                                   //  void TestCheck(Text,IstWert,SollWert)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+  IN_S    IstWert LINE                                                //
+  IN_S    SollWert LINE                                               //
+                                                                      //
+  DATA8   Result                                                      //
+  DATAS   String LINE                                                 //
+                                                                      //
+  STRINGS(COMPARE,IstWert,SollWert,Result)                            //    STRINGS(COMPARE,IstWert,SollWert,Result)
+  JR_FALSE(Result,Error)                                              //    if (Result)
+                                                                      //    {
+  STRINGS(ADD,'  ',Text,String)                                       //      STRINGS(ADD,' ',Text,String)
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  STRINGS(ADD,String,IstWert,String)                                  //      STRINGS(ADD,String,IstWert,String)
+  STRINGS(ADD,String,']',String)                                      //      STRINGS(ADD,String,']',String)
+                                                                      //
+  JR(EndError)                                                        //    }
+                                                                      //    else
+Error:                                                                //    {
+                                                                      //
+  STRINGS(ADD,'# ',Text,String)                                       //      STRINGS(ADD,' ',Text,String) 
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  STRINGS(ADD,String,IstWert,String)                                  //      STRINGS(ADD,String,IstWert,String)
+  STRINGS(ADD,String,'] (',String)                                    //      STRINGS(ADD,String,'] (',String)
+  STRINGS(ADD,String,SollWert,String)                                 //      STRINGS(ADD,String,SollWert,String)
+  STRINGS(ADD,String,')',String)                                      //      STRINGS(ADD,String,')',String)
+                                                                      //
+  // Set failed                                                       //
+	MEMORY_WRITE(GUI_SLOT,4,0,1,1)                                      //      MEMORY_WRITE(GUI_SLOT,4,0,1,1)
+                                                                      //
+EndError:                                                             //    }
+                                                                      //
+  CALL(TestWrite,String)                                              //    CALL(TestWrite,String)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+DATA16    hFile                                                       //
+                                                                      //
+subcall   TestOpen                                                    //  void TestOpen(void)
+{                                                                     //  {
+  DATAS   TestReport FILENAMESIZE                                     //
+                                                                      //
+  STRINGS(ADD,TESTREPORT,EXT_TEXT,TestReport)                         //    STRINGS(ADD,TESTREPORT,EXT_TEXT,TestReport)
+  FILE(OPEN_APPEND,TestReport,hFile)                                  //    FILE(OPEN_APPEND,TestReport,hFile)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestWrite                                                   //  void TestWrite(Text)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+                                                                      //
+  FILE(WRITE_TEXT,hFile,DEL_CRLF,Text)                                //    FILE(WRITE_TEXT,hFile,DEL_CRLF,Text)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestClose                                                   //  void TestClose(void)
+{                                                                     //  {
+  FILE(CLOSE,hFile)                                                   //    FILE(CLOSE,hFile)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//! \endverbatim
+

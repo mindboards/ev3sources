@@ -1,0 +1,138 @@
+#! /bin/bash
+
+#*** APPLICATION *************************************************************
+
+path="../../c_ui/source"
+app="c_ui"
+
+#*** HOST ********************************************************************
+
+lms_to_rbf="../adk/cmp"
+xbm_to_rgf="../adk/bmp"
+bmp_to_xbm="convert"
+
+#*** TARGET ******************************************************************
+
+am1808="../../lms2012/Linux_AM1808"
+x86="../../lms2012/Linux_X86"
+nfs="../../../../am1808/DaVinci-PSP-SDK-03.20.00.13/filesys/home/root/lms2012"
+
+#*** FILES ******************************************************************* 
+
+bmp=".bmp"
+xbm=".xbm"
+
+rbf=".rbf"
+rgf=".rgf"
+rsf=".rsf"
+raf=".raf"
+
+#*** DO CLEAN UP *************************************************************
+
+if [ -e "${path}/*${xbm}" ]
+then
+  rm "${path}"/*"${xbm}"
+fi  
+
+#*** DO CONVERT **************************************************************
+
+echo -n Convert and copy
+
+#*** DO CONVERT GRAPHICS *****************************************************
+
+srcfile="16x8_TopBar_Icons"
+dstfile="small_icons"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/"${dstfile}""${xbm}"
+
+srcfile="16x12_MenuItems"
+dstfile="menu_icons"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/"${dstfile}""${xbm}"
+
+srcfile="24x12_Files_Folders_Settings"
+dstfile="normal_icons"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/"${dstfile}""${xbm}"
+
+srcfile="24x22_Yes_No_OFF_FILEOps"
+dstfile="large_icons"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/"${dstfile}""${xbm}"
+
+srcfile="8x12_miniArrows"
+dstfile="arrow_icons"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/"${dstfile}""${xbm}"
+
+srcfile="brick_font_2011_v1.3-bold"
+dstfile="small_font"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/"${dstfile}""${xbm}"
+
+srcfile="brick_font_2011_v1.3-regular"
+dstfile="normal_font"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/"${dstfile}""${xbm}"
+
+srcfile="brick_font_LARGE"
+dstfile="large_font"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/"${dstfile}""${xbm}"
+
+srcfile="small_font"
+dstfile="tiny_font"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/"${dstfile}""${xbm}"
+
+srcfile="KEY_CAPCHAR"
+dstfile="keyboardc"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/"${dstfile}""${xbm}"
+
+srcfile="KEY_NumSymb"
+dstfile="keyboardn"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/"${dstfile}""${xbm}"
+
+srcfile="KEY_SmCHAR"
+dstfile="keyboards"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/"${dstfile}""${xbm}"
+
+srcfile="mindstorms"
+dstfile="mindstorms"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/"${dstfile}""${xbm}"
+
+srcfile="Ani1x"
+dstfile="Ani1x"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/"${dstfile}""${xbm}"
+
+srcfile="Ani2x"
+dstfile="Ani2x"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/"${dstfile}""${xbm}"
+
+srcfile="Ani3x"
+dstfile="Ani3x"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/"${dstfile}""${xbm}"
+
+srcfile="Ani4x"
+dstfile="Ani4x"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/"${dstfile}""${xbm}"
+
+srcfile="Ani5x"
+dstfile="Ani5x"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/"${dstfile}""${xbm}"
+
+srcfile="Ani6x"
+dstfile="Ani6x"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/"${dstfile}""${xbm}"
+
+srcfile="144x48_POP2"
+dstfile="POP2"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/"${dstfile}""${xbm}"
+
+srcfile="144x65_POP3"
+dstfile="POP3"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/"${dstfile}""${xbm}"
+
+srcfile="24x12_PCApp"
+dstfile="PCApp"
+${bmp_to_xbm} "${srcfile}${bmp}" "${app}"/"${dstfile}""${xbm}"
+
+#*** DO COPY IN PLACE ********************************************************
+
+cp "${app}"/*"${xbm}" "${path}"/
+
+#*** DONE ********************************************************************
+
+echo
+

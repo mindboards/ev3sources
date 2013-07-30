@@ -1,0 +1,8 @@
+#!/bin/bash
+
+src=$(pwd)
+cd ..
+java -jar assembler.jar "$src"/$1
+cd "$src"
+scp $1.rbf root@$2:"/mnt/ramdisk/prjs/BrkProg_SAVE/"$1.rbf
+

@@ -1,0 +1,113 @@
+/*
+ * LEGO® MINDSTORMS EV3
+ *
+ * Copyright (C) 2010-2013 The LEGO Group
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
+
+//  TCP 09.04.2013
+//! \page testsoundappcode Sound Application
+//!
+//! <hr size="1"/>
+//!
+//! \verbatim
+//**********************************************************************
+define appv 'Sound V1.02'                                             //
+//**********************************************************************
+                                                                      //
+vmthread  MAIN                                                        //  void    MAIN(void)
+{                                                                     //  {
+  DATA8   ShowVersion                                                 //
+                                                                      //
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //    UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+  JR_FALSE(ShowVersion,DontShowVersion)                               //    if (ShowVersion)
+                                                                      //    {
+  UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)                              //      UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)
+  UI_DRAW(RECT,FG_COLOR,6,52,166,24)                                  //      UI_DRAW(RECT,FG_COLOR,6,52,166,24)
+  UI_DRAW(TEXT,FG_COLOR,13,60,appv)                                   //      UI_DRAW(TEXT,FG_COLOR,13,60,appv)
+  UI_DRAW(UPDATE)                                                     //      UI_DRAW(UPDATE)
+                                                                      //
+ShowVersionWait:                                                      //      do
+                                                                      //      {  
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //        UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+                                                                      //      }
+  JR_TRUE(ShowVersion,ShowVersionWait)                                //      while (ShowVersion)
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //      UI_BUTTON(FLUSH)
+DontShowVersion:                                                      //    }  
+                                                                      //
+  UI_DRAW(RESTORE,0)                                                  //    UI_DRAW(RESTORE,0)
+  UI_DRAW(TOPLINE,0)                                                  //    UI_DRAW(TOPLINE,1)
+  UI_WRITE(LED,LED_GREEN)                                             //    UI_WRITE(LED,LED_GREEN)
+                                                                      //
+  CALL(TestSound)                                                     //    TestSound()
+                                                                      //
+  UI_DRAW(TOPLINE,1)                                                  //    UI_DRAW(TOPLINE,1)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestSound                                                   //  void TestSound(void)
+{                                                                     //  {
+  DATA8   Run                                                         //
+  DATA8   Tmp                                                         //
+  DATA8   Busy                                                        //
+                                                                      //
+                                                                      //
+  UI_DRAW(FILLWINDOW,0x00,0,0                                         //    UI_DRAW(FILLWINDOW,0x00,0,0
+  UI_DRAW(SELECT_FONT,SMALL_FONT)                                     //    UI_DRAW(SELECT_FONT,SMALL_FONT)
+  UI_DRAW(TEXT,FG_COLOR,0,1,'Sound')                                  //    UI_DRAW(TEXT,FG_COLOR,0,1,'Sound')
+  UI_DRAW(LINE,FG_COLOR,0,TOPLINE_HEIGHT,LCD_WIDTH,TOPLINE_HEIGHT)    //    UI_DRAW(LINE,FG_COLOR,0,TOPLINE_HEIGHT,LCD_WIDTH,TOPLINE_HEIGHT)
+  UI_DRAW(SELECT_FONT,NORMAL_FONT)                                    //    UI_DRAW(SELECT_FONT,NORMAL_FONT)
+                                                                      //
+  UI_DRAW(TEXT,FG_COLOR,24,20,'A sound should')                       //                                              
+  UI_DRAW(TEXT,FG_COLOR,24,40,'be played and')                        //                                                
+  UI_DRAW(TEXT,FG_COLOR,24,60,'when finished')                        //                                              
+  UI_DRAW(TEXT,FG_COLOR,24,80,'a tone for 1/2')                       //                                             
+  UI_DRAW(TEXT,FG_COLOR,24,100,'second : repeat')                     //                                           
+  UI_DRAW(UPDATE)                                                     //
+                                                                      //
+  MOVE8_8(1,Run)                                                      //    Run     =  1
+                                                                      //    do
+Loop1:                                                                //    {
+                                                                      //
+  SOUND(PLAY,100,'Test')                                              //      SOUND(PLAY,100,"Test")
+                                                                      //      do
+Loop2:                                                                //      {                                                                      
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //        UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_TRUE(Tmp,Stop)                                                   //        break out and goto stop
+  SOUND_TEST(Busy)                                                    //        SOUND_TEST(Busy)
+                                                                      //      }
+  JR_TRUE(Busy,Loop2)                                                 //      while (Busy)            
+                                                                      //
+  SOUND(TONE,30,470,500)                                              //      SOUND(TONE,30,470,500)
+                                                                      //      do
+Loop3:                                                                //      {
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //        UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_TRUE(Tmp,Stop)                                                   //        break out and goto stop
+  SOUND_TEST(Busy)                                                    //        SOUND_TEST(Busy)
+                                                                      //      }
+  JR_TRUE(Busy,Loop3)                                                 //      while (Busy)
+                                                                      //
+                                                                      //    }
+  JR(Loop1)                                                           //    while (TRUE)
+Stop:                                                                 //
+  SOUND(BREAK)                                                        //    SOUND(BREAK)
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//! \endverbatim

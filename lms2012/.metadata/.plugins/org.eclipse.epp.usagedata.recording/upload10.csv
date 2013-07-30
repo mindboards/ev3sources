@@ -1,0 +1,250 @@
+what,kind,bundleId,bundleVersion,description,time
+activated,view,org.eclipse.ui.navigator.resources,3.4.202.M20101124-0800,"org.eclipse.ui.navigator.ProjectExplorer",1369641617192
+activated,editor,org.eclipse.cdt.ui,5.2.2.201102110609,"org.eclipse.cdt.ui.editor.CEditor",1369641619290
+activated,view,org.eclipse.ui.navigator.resources,3.4.202.M20101124-0800,"org.eclipse.ui.navigator.ProjectExplorer",1369641619305
+activated,editor,org.eclipse.cdt.ui,5.2.2.201102110609,"org.eclipse.cdt.ui.editor.CEditor",1369641620875
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.edit.delete",1369641621805
+executed,command,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui.file.save",1369641624100
+activated,view,org.eclipse.ui.navigator.resources,3.4.202.M20101124-0800,"org.eclipse.ui.navigator.ProjectExplorer",1369641627135
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1369641633035
+executed,command,org.eclipse.team.cvs.ui,3.3.302.R36x_v20110203-1036,"org.eclipse.team.cvs.ui.commit",1369641634514
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1369641634523
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1369641684486
+started,bundle,org.eclipse.cdt.mylyn.ui,1.1.4.v20110204-0100-e3x,"org.eclipse.cdt.mylyn.ui",1369641686377
+closed,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1369641686420
+stopped,bundle,org.eclipse.epp.mpc.ui,1.0.1.v20100826-2143,"org.eclipse.epp.mpc.ui",1369641686671
+stopped,bundle,org.eclipse.equinox.p2.ui.sdk,1.0.100.v20100513,"org.eclipse.equinox.p2.ui.sdk",1369641686674
+stopped,bundle,org.eclipse.equinox.p2.ui.sdk.scheduler,1.0.0.v20100507-1815,"org.eclipse.equinox.p2.ui.sdk.scheduler",1369641686674
+stopped,bundle,org.eclipse.equinox.p2.ui,2.0.0.v20100518,"org.eclipse.equinox.p2.ui",1369641686680
+stopped,bundle,org.eclipse.equinox.security.ui,1.0.200.v20100503,"org.eclipse.equinox.security.ui",1369641686693
+stopped,bundle,org.eclipse.jsch.ui,1.1.300.I20100505-1245,"org.eclipse.jsch.ui",1369641686693
+stopped,bundle,org.eclipse.cdt.debug.ui.memory.search,1.2.0.201102110609,"org.eclipse.cdt.debug.ui.memory.search",1369641686695
+stopped,bundle,org.eclipse.cdt.debug.ui.memory.traditional,1.2.0.201102110609,"org.eclipse.cdt.debug.ui.memory.traditional",1369641686699
+stopped,bundle,org.eclipse.cdt.debug.mi.ui,6.1.0.201102110609,"org.eclipse.cdt.debug.mi.ui",1369641686702
+stopped,bundle,org.eclipse.cdt.debug.ui.memory.memorybrowser,1.2.1.201102110609,"org.eclipse.cdt.debug.ui.memory.memorybrowser",1369641686704
+stopped,bundle,org.eclipse.cdt.dsf.gdb.ui,2.1.0.201102110609,"org.eclipse.cdt.dsf.gdb.ui",1369641686706
+activated,perspective,org.eclipse.team.ui,,"org.eclipse.team.ui.TeamSynchronizingPerspective",1369652043789
+started,bundle,org.eclipse.osgi,3.6.2.R36x_v20110210,"org.eclipse.osgi",1369652043790
+started,bundle,org.eclipse.equinox.simpleconfigurator,1.0.200.v20100503,"org.eclipse.equinox.simpleconfigurator",1369652043792
+started,bundle,com.ibm.icu,4.2.1.v20100412,"com.ibm.icu",1369652043796
+started,bundle,org.eclipse.core.contenttype,3.4.100.v20100505-1235,"org.eclipse.core.contenttype",1369652043797
+started,bundle,org.eclipse.core.databinding.observable,1.3.0.I20100601-0800,"org.eclipse.core.databinding.observable",1369652043798
+started,bundle,org.eclipse.core.expressions,3.4.200.v20100505,"org.eclipse.core.expressions",1369652043799
+started,bundle,org.eclipse.core.filebuffers,3.5.100.v20100520-0800,"org.eclipse.core.filebuffers",1369652043800
+started,bundle,org.eclipse.core.filesystem,1.3.1.R36x_v20100727-0745,"org.eclipse.core.filesystem",1369652043801
+started,bundle,org.eclipse.core.jobs,3.5.1.R36x_v20100824,"org.eclipse.core.jobs",1369652043802
+started,bundle,org.eclipse.core.net,1.2.100.I20100511-0800,"org.eclipse.core.net",1369652043802
+started,bundle,org.eclipse.core.runtime,3.6.0.v20100505,"org.eclipse.core.runtime",1369652043803
+started,bundle,org.eclipse.core.runtime.compatibility,3.2.100.v20100505,"org.eclipse.core.runtime.compatibility",1369652043804
+started,bundle,org.eclipse.core.runtime.compatibility.auth,3.2.200.v20100517,"org.eclipse.core.runtime.compatibility.auth",1369652043805
+started,bundle,org.eclipse.core.variables,3.2.400.v20100505,"org.eclipse.core.variables",1369652043805
+started,bundle,org.eclipse.debug.core,3.6.0.v20100519,"org.eclipse.debug.core",1369652043806
+started,bundle,org.eclipse.equinox.app,1.3.1.R36x_v20100803,"org.eclipse.equinox.app",1369652043807
+started,bundle,org.eclipse.equinox.common,3.6.0.v20100503,"org.eclipse.equinox.common",1369652043808
+started,bundle,org.eclipse.equinox.ds,1.2.1.R36x_v20100803,"org.eclipse.equinox.ds",1369652043810
+started,bundle,org.eclipse.equinox.event,1.2.0.v20100503,"org.eclipse.equinox.event",1369652043811
+started,bundle,org.eclipse.equinox.p2.metadata.repository,1.1.0.v20100513,"org.eclipse.equinox.p2.metadata.repository",1369652043811
+started,bundle,org.eclipse.equinox.p2.operations,2.0.0.v20100510,"org.eclipse.equinox.p2.operations",1369652043812
+started,bundle,org.eclipse.equinox.p2.ui.sdk.scheduler,1.0.0.v20100507-1815,"org.eclipse.equinox.p2.ui.sdk.scheduler",1369652043812
+started,bundle,org.eclipse.equinox.p2.updatechecker,1.1.101.R36x_v20100823,"org.eclipse.equinox.p2.updatechecker",1369652043812
+started,bundle,org.eclipse.equinox.preferences,3.3.0.v20100503,"org.eclipse.equinox.preferences",1369652043813
+started,bundle,org.eclipse.equinox.registry,3.5.0.v20100503,"org.eclipse.equinox.registry",1369652043814
+started,bundle,org.eclipse.equinox.security,1.0.200.v20100503,"org.eclipse.equinox.security",1369652043814
+started,bundle,org.eclipse.equinox.util,1.0.200.v20100503,"org.eclipse.equinox.util",1369652043815
+started,bundle,org.eclipse.help,3.5.0.v20100524,"org.eclipse.help",1369652043817
+started,bundle,org.eclipse.jsch.core,1.1.200.I20100505-1245,"org.eclipse.jsch.core",1369652043817
+started,bundle,org.eclipse.ltk.ui.refactoring,3.5.0.v20100526-0800,"org.eclipse.ltk.ui.refactoring",1369652043818
+started,bundle,org.eclipse.mylyn.bugzilla.core,3.4.2.v20100902-0100-e3x,"org.eclipse.mylyn.bugzilla.core",1369652043819
+started,bundle,org.eclipse.mylyn.commons.net,3.4.1.v20100625-2100-e3x,"org.eclipse.mylyn.commons.net",1369652043819
+started,bundle,org.eclipse.mylyn.commons.ui,3.4.0.v20100608-0100-e3x,"org.eclipse.mylyn.commons.ui",1369652043820
+started,bundle,org.eclipse.mylyn.context.core,3.4.1.v20100909-0100-e3x,"org.eclipse.mylyn.context.core",1369652043821
+started,bundle,org.eclipse.search,3.6.0.v20100520-0800,"org.eclipse.search",1369652043830
+started,bundle,org.eclipse.team.cvs.ssh2,3.2.300.I20100526-0800,"org.eclipse.team.cvs.ssh2",1369652043831
+started,bundle,org.eclipse.ui.console,3.5.0.v20100526,"org.eclipse.ui.console",1369652043832
+started,bundle,org.eclipse.ui.editors,3.6.1.r361_v20100825-0800,"org.eclipse.ui.editors",1369652043832
+started,bundle,org.eclipse.ui.forms,3.5.2.r36_v20100702,"org.eclipse.ui.forms",1369652043833
+started,bundle,org.eclipse.ui.navigator,3.5.0.I20100601-0800,"org.eclipse.ui.navigator",1369652043834
+started,bundle,org.eclipse.ui.net,1.2.100.I20100505-1245,"org.eclipse.ui.net",1369652043835
+started,bundle,org.eclipse.ui.workbench.texteditor,3.6.1.r361_v20100714-0800,"org.eclipse.ui.workbench.texteditor",1369652043836
+started,bundle,org.eclipse.update.configurator,3.3.100.v20100512,"org.eclipse.update.configurator",1369652043837
+started,bundle,org.eclipse.update.core,3.2.402.R36x_v20100629,"org.eclipse.update.core",1369652043840
+started,bundle,org.eclipse.update.scheduler,3.2.300.v20100512,"org.eclipse.update.scheduler",1369652043842
+started,bundle,org.eclipse.cdt.core,5.2.1.201102110609,"org.eclipse.cdt.core",1369652043842
+started,bundle,org.eclipse.cdt.make.core,7.0.1.201102110609,"org.eclipse.cdt.make.core",1369652043843
+started,bundle,org.eclipse.cdt.make.ui,7.0.0.201102110609,"org.eclipse.cdt.make.ui",1369652043844
+started,bundle,org.eclipse.cdt.managedbuilder.core,7.0.2.201102110609,"org.eclipse.cdt.managedbuilder.core",1369652043853
+started,bundle,org.eclipse.cdt.ui,5.2.2.201102110609,"org.eclipse.cdt.ui",1369652043853
+started,bundle,org.eclipse.compare,3.5.101.R36x_v20100929-0800,"org.eclipse.compare",1369652043855
+started,bundle,org.eclipse.compare.core,3.5.101.R36x_v20100929-0800,"org.eclipse.compare.core",1369652043855
+started,bundle,org.eclipse.core.resources,3.6.1.R36x_v20110131-1630,"org.eclipse.core.resources",1369652043857
+started,bundle,org.eclipse.epp.usagedata.gathering,1.3.1.R201102081640,"org.eclipse.epp.usagedata.gathering",1369652043857
+started,bundle,org.eclipse.epp.usagedata.recording,1.3.1.R201102081640,"org.eclipse.epp.usagedata.recording",1369652043857
+started,bundle,org.eclipse.equinox.p2.core,2.0.3.R36x_v20110111,"org.eclipse.equinox.p2.core",1369652043858
+started,bundle,org.eclipse.equinox.p2.directorywatcher,1.0.203.R36x_v20101220,"org.eclipse.equinox.p2.directorywatcher",1369652043859
+started,bundle,org.eclipse.equinox.p2.engine,2.0.1.R36x_v20110201,"org.eclipse.equinox.p2.engine",1369652043860
+started,bundle,org.eclipse.equinox.p2.metadata,2.0.1.R36x_v20101202,"org.eclipse.equinox.p2.metadata",1369652043861
+started,bundle,org.eclipse.equinox.p2.reconciler.dropins,1.1.2.R36x_v20110114,"org.eclipse.equinox.p2.reconciler.dropins",1369652043862
+started,bundle,org.eclipse.equinox.p2.repository,2.0.2.R36x_v20110111-1500,"org.eclipse.equinox.p2.repository",1369652043863
+started,bundle,org.eclipse.jface,3.6.2.M20110210-1200,"org.eclipse.jface",1369652043864
+started,bundle,org.eclipse.ltk.core.refactoring,3.5.101.r362_v20101117-0800,"org.eclipse.ltk.core.refactoring",1369652043865
+started,bundle,org.eclipse.mylyn.bugzilla.ui,3.4.3.v20110131-0100-e3x,"org.eclipse.mylyn.bugzilla.ui",1369652043866
+started,bundle,org.eclipse.mylyn.context.ui,3.4.2.v20110131-0100-e3x,"org.eclipse.mylyn.context.ui",1369652043867
+started,bundle,org.eclipse.mylyn.monitor.ui,3.4.1.v20110131-0100-e3x,"org.eclipse.mylyn.monitor.ui",1369652043867
+started,bundle,org.eclipse.mylyn.tasks.ui,3.4.3.v20110131-0100-e3x,"org.eclipse.mylyn.tasks.ui",1369652043868
+started,bundle,org.eclipse.mylyn.team.ui,3.4.3.v20110131-0100-e3x,"org.eclipse.mylyn.team.ui",1369652043869
+started,bundle,org.eclipse.team.core,3.5.101.R36x_v20110203-1036,"org.eclipse.team.core",1369652043870
+started,bundle,org.eclipse.team.cvs.core,3.3.301.R36x_v20110119-0815,"org.eclipse.team.cvs.core",1369652043871
+started,bundle,org.eclipse.team.cvs.ui,3.3.302.R36x_v20110203-1036,"org.eclipse.team.cvs.ui",1369652043874
+started,bundle,org.eclipse.team.ui,3.5.102.R36x_v20110203-1036,"org.eclipse.team.ui",1369652043875
+started,bundle,org.eclipse.ui,3.6.2.M20110203-1100,"org.eclipse.ui",1369652043877
+started,bundle,org.eclipse.ui.ide,3.6.2.M20101201-0800,"org.eclipse.ui.ide",1369652043880
+started,bundle,org.eclipse.ui.navigator.resources,3.4.202.M20101124-0800,"org.eclipse.ui.navigator.resources",1369652043881
+started,bundle,org.eclipse.ui.views,3.5.1.M20110202-0800,"org.eclipse.ui.views",1369652043882
+started,bundle,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"org.eclipse.ui.workbench",1369652043883
+os,sysinfo,,,"linux",1369652043885
+arch,sysinfo,,,"x86",1369652043885
+ws,sysinfo,,,"gtk",1369652043885
+locale,sysinfo,,,"en_US",1369652043885
+processors,sysinfo,,,"2",1369652043885
+java.runtime.name,sysinfo,,,"OpenJDK Runtime Environment",1369652043885
+java.runtime.version,sysinfo,,,"1.6.0_27-b27",1369652043885
+java.specification.name,sysinfo,,,"Java Platform API Specification",1369652043885
+java.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1369652043885
+java.specification.version,sysinfo,,,"1.6",1369652043885
+java.vendor,sysinfo,,,"Sun Microsystems Inc.",1369652043885
+java.version,sysinfo,,,"1.6.0_27",1369652043885
+java.vm.info,sysinfo,,,"mixed mode, sharing",1369652043885
+java.vm.name,sysinfo,,,"OpenJDK Client VM",1369652043885
+java.vm.specification.name,sysinfo,,,"Java Virtual Machine Specification",1369652043885
+java.vm.specification.vendor,sysinfo,,,"Sun Microsystems Inc.",1369652043885
+java.vm.specification.version,sysinfo,,,"1.0",1369652043885
+java.vm.vendor,sysinfo,,,"Sun Microsystems Inc.",1369652043885
+java.vm.version,sysinfo,,,"20.0-b12",1369652043885
+executed,command,org.eclipse.team.cvs.ui,3.3.302.R36x_v20110203-1036,"org.eclipse.team.cvs.ui.sync",1369652071408
+started,bundle,org.eclipse.jsch.ui,1.1.300.I20100505-1245,"org.eclipse.jsch.ui",1369652071830
+opened,view,org.eclipse.team.ui,3.5.102.R36x_v20110203-1036,"org.eclipse.team.sync.views.SynchronizeView",1369652071938
+activated,view,org.eclipse.team.ui,3.5.102.R36x_v20110203-1036,"org.eclipse.team.sync.views.SynchronizeView",1369652071978
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1369652072112
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1369652081261
+activated,view,org.eclipse.ui.navigator.resources,3.4.202.M20101124-0800,"org.eclipse.ui.navigator.ProjectExplorer",1369652084466
+closed,view,org.eclipse.team.ui,3.5.102.R36x_v20110203-1036,"org.eclipse.team.sync.views.SynchronizeView",1369652084478
+executed,command,org.eclipse.team.cvs.ui,3.3.302.R36x_v20110203-1036,"org.eclipse.team.cvs.ui.sync",1369652095714
+opened,view,org.eclipse.team.ui,3.5.102.R36x_v20110203-1036,"org.eclipse.team.sync.views.SynchronizeView",1369652096164
+activated,view,org.eclipse.team.ui,3.5.102.R36x_v20110203-1036,"org.eclipse.team.sync.views.SynchronizeView",1369652096186
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1369652096372
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/TEST/TEST/Display.rbf'.",1369652115570
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/TEST/TEST/Performance.rbf'.",1369652115571
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/Brick Info/Brick Info/Brick Info.rbf'.",1369652115579
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/SelfTest/SelfTest/Test0102.rbf'.",1369652115579
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/Brick Program/Brick Program/Brick Program.rbf'.",1369652115579
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/SelfTest/SelfTest/Test0201.rbf'.",1369652115580
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/ui/ui/ui.rbf'.",1369652115580
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/adk/lmststasm/bytecodes.h'.",1369652115581
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/TEST/TEST/Motors.rbf'.",1369652115581
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/TEST/TEST/Sound.rbf'.",1369652115581
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/SelfTest/SelfTest/Test0105.rbf'.",1369652115582
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/adk/lmsasm/bytecodes.h'.",1369652115582
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/SelfTest/SelfTest/Test0104.rbf'.",1369652115583
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/TEST/TEST/Debug.rbf'.",1369652115583
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/SelfTest/SelfTest/Test0109.rbf'.",1369652115583
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/SelfTest/SelfTest/TestPrg2.rbf'.",1369652115584
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/SelfTest/SelfTest/TestPrg1.rbf'.",1369652115584
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/TEST/TEST/USlevel.rbf'.",1369652115584
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/Sleep/Sleep/Sleep.rbf'.",1369652115585
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/Volume/Volume/Volume.rbf'.",1369652115585
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/WiFi/WiFi/WiFi.rbf'.",1369652115586
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/SelfTest/SelfTest/Test0101.rbf'.",1369652115586
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/Motor Control/Motor Control/Motor Control.rbf'.",1369652115587
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/SelfTest/SelfTest/Test0103.rbf'.",1369652115587
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/TEST/TEST/UnlockDatalog.rbf'.",1369652115588
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/Bluetooth/Bluetooth/Bluetooth.rbf'.",1369652115588
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/SelfTest/SelfTest/Test0108.rbf'.",1369652115589
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/TEST/TEST/SDCard.rbf'.",1369652115589
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/TEST/TEST/Leds.rbf'.",1369652115590
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/TEST/TEST/Change Name.rbf'.",1369652115590
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/Port View/Port View/Port View.rbf'.",1369652115591
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/Brick Datalog/Brick Datalog/Brick Datalog.rbf'.",1369652115591
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/IR Control/IR Control/IR Control.rbf'.",1369652115592
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/Brick Datalog/Brick Datalog.raf'.",1369652115592
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/TEST/TEST/Sensors.rbf'.",1369652115593
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/Brick Program/Brick Program/template.rbf'.",1369652115593
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/adk/lmststasm/bytecodeassembler'.",1369652115594
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/SelfTest/SelfTest/Test0110.rbf'.",1369652115594
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/adk/lmsbmp/bitmapconverter'.",1369652115595
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/SelfTest/SelfTest/Test0107.rbf'.",1369652115596
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/SelfTest/SelfTest/TestPrg4.rbf'.",1369652115596
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/TEST/TEST/NoDebug.rbf'.",1369652115596
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/TEST/TEST/Power.rbf'.",1369652115597
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/SelfTest/SelfTest/Test0106.rbf'.",1369652115597
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/SelfTest/SelfTest/Run.rbf'.",1369652115597
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/SelfTest/SelfTest/Test0202.rbf'.",1369652115598
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1369652117524
+activated,view,org.eclipse.ui.navigator.resources,3.4.202.M20101124-0800,"org.eclipse.ui.navigator.ProjectExplorer",1369652123156
+closed,view,org.eclipse.team.ui,3.5.102.R36x_v20110203-1036,"org.eclipse.team.sync.views.SynchronizeView",1369652123163
+opened,editor,org.eclipse.compare,3.5.101.R36x_v20100929-0800,"org.eclipse.compare.CompareEditor",1369652135335
+activated,editor,org.eclipse.compare,3.5.101.R36x_v20100929-0800,"org.eclipse.compare.CompareEditor",1369652135351
+executed,command,org.eclipse.team.cvs.ui,3.3.302.R36x_v20110203-1036,"org.eclipse.team.cvs.ui.compareWithRemote",1369652135363
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1369652135839
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1369652140542
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1369652140547
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1369652140591
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1369652140594
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1369652141028
+activated,editor,org.eclipse.cdt.ui,5.2.2.201102110609,"org.eclipse.cdt.ui.editor.CEditor",1369652143126
+closed,editor,org.eclipse.compare,3.5.101.R36x_v20100929-0800,"org.eclipse.compare.CompareEditor",1369652143126
+activated,view,org.eclipse.ui.navigator.resources,3.4.202.M20101124-0800,"org.eclipse.ui.navigator.ProjectExplorer",1369652145527
+opened,editor,org.eclipse.compare,3.5.101.R36x_v20100929-0800,"org.eclipse.compare.CompareEditor",1369652149555
+activated,editor,org.eclipse.compare,3.5.101.R36x_v20100929-0800,"org.eclipse.compare.CompareEditor",1369652149572
+executed,command,org.eclipse.team.cvs.ui,3.3.302.R36x_v20110203-1036,"org.eclipse.team.cvs.ui.compareWithRemote",1369652149579
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1369652150097
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1369652154505
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1369652154507
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1369652154612
+activated,editor,org.eclipse.cdt.ui,5.2.2.201102110609,"org.eclipse.cdt.ui.editor.CEditor",1369652156649
+closed,editor,org.eclipse.compare,3.5.101.R36x_v20100929-0800,"org.eclipse.compare.CompareEditor",1369652156649
+activated,view,org.eclipse.ui.navigator.resources,3.4.202.M20101124-0800,"org.eclipse.ui.navigator.ProjectExplorer",1369652166560
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1369652171371
+executed,command,org.eclipse.team.cvs.ui,3.3.302.R36x_v20110203-1036,"org.eclipse.team.cvs.ui.replace",1369652174580
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1369652174596
+activated,editor,org.eclipse.cdt.ui,5.2.2.201102110609,"org.eclipse.cdt.ui.editor.CEditor",1369652176722
+opened,editor,org.eclipse.cdt.ui,5.2.2.201102110609,"org.eclipse.cdt.ui.editor.CEditor",1369652176778
+activated,editor,org.eclipse.cdt.ui,5.2.2.201102110609,"org.eclipse.cdt.ui.editor.CEditor",1369652176795
+closed,editor,org.eclipse.cdt.ui,5.2.2.201102110609,"org.eclipse.cdt.ui.editor.CEditor",1369652176796
+started,bundle,org.eclipse.cdt.mylyn.ui,1.1.4.v20110204-0100-e3x,"org.eclipse.cdt.mylyn.ui",1369652176815
+activated,view,org.eclipse.ui.navigator.resources,3.4.202.M20101124-0800,"org.eclipse.ui.navigator.ProjectExplorer",1369652179964
+closed,editor,org.eclipse.cdt.ui,5.2.2.201102110609,"org.eclipse.cdt.ui.editor.CEditor",1369652179965
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1369652188260
+executed,command,org.eclipse.team.cvs.ui,3.3.302.R36x_v20110203-1036,"org.eclipse.team.cvs.ui.replace",1369652196570
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1369652196576
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1369652205878
+executed,command,org.eclipse.team.cvs.ui,3.3.302.R36x_v20110203-1036,"org.eclipse.team.cvs.ui.replace",1369652207933
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1369652207938
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1369652424872
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1369652497355
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1369652500437
+activated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1369653080171
+executed,command,org.eclipse.team.cvs.ui,3.3.302.R36x_v20110203-1036,"org.eclipse.team.cvs.ui.sync",1369653084570
+opened,view,org.eclipse.team.ui,3.5.102.R36x_v20110203-1036,"org.eclipse.team.sync.views.SynchronizeView",1369653084954
+activated,view,org.eclipse.team.ui,3.5.102.R36x_v20110203-1036,"org.eclipse.team.sync.views.SynchronizeView",1369653084973
+deactivated,workbench,org.eclipse.ui.workbench,3.6.2.M20110210-1200,"",1369653085113
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/TEST/TEST/Display.rbf'.",1369653085344
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/TEST/TEST/Performance.rbf'.",1369653085344
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/Brick Info/Brick Info/Brick Info.rbf'.",1369653085345
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/SelfTest/SelfTest/Test0102.rbf'.",1369653085345
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/Brick Program/Brick Program/Brick Program.rbf'.",1369653085345
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/SelfTest/SelfTest/Test0201.rbf'.",1369653085345
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/ui/ui/ui.rbf'.",1369653085346
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/adk/lmststasm/bytecodes.h'.",1369653085346
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/TEST/TEST/Motors.rbf'.",1369653085346
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/TEST/TEST/Sound.rbf'.",1369653085347
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/SelfTest/SelfTest/Test0105.rbf'.",1369653085347
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/adk/lmsasm/bytecodes.h'.",1369653085347
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/SelfTest/SelfTest/Test0104.rbf'.",1369653085349
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/TEST/TEST/Debug.rbf'.",1369653085350
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/SelfTest/SelfTest/Test0109.rbf'.",1369653085350
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/SelfTest/SelfTest/TestPrg2.rbf'.",1369653085351
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/SelfTest/SelfTest/TestPrg1.rbf'.",1369653085351
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/TEST/TEST/USlevel.rbf'.",1369653085351
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/Sleep/Sleep/Sleep.rbf'.",1369653085352
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/Volume/Volume/Volume.rbf'.",1369653085352
+error,log,,,"Resource is out of sync with the file system: '/lmssrc/WiFi/WiFi/WiFi.rbf'.",1369653085352

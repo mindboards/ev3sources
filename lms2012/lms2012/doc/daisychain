@@ -1,0 +1,97 @@
+DEVICE INFO FROM FIRST SLAVE
+============================
+
+cInputUpdate(UWORD Time)
+|
+cInputDcmUpdate(UWORD Time)
+|
+cInputComGetDeviceInfo(DATA8 Length,UBYTE *pInfo)
+|
+cComGetDeviceInfo(DATA8 Length,UBYTE *pInfo)
+|
+cDaisyGetDeviceInfo(DATA8 Length,UBYTE *pInfo)
+|
+
+-------------------- USB DAISYCHAIN --------------------
+
+^
+(cDaisySetDeviceInfo(DATA8 Length,UBYTE *pInfo))
+^
+cComSetDeviceInfo(DATA8 Length,UBYTE *pInfo)
+^
+cInputComSetDeviceInfo(DATA8 Length,UBYTE *pInfo)
+^
+cInputCheckUartInfo(UBYTE Port)
+^
+cInputDcmUpdate(UWORD Time)
+
+
+
+
+CHANGE MODE ON FIRST SLAVE
+==============================
+
+opINPUT_DEVICE(READY_SI,1,..)
+|
+cInputSetDeviceType(DATA8 Device,DATA8 Type, DATA8 Mode)
+|
+cInputComSetDeviceType(DATA8 Layer,DATA8 Port,DATA8 Type,DATA8 Mode)
+|
+cComSetDeviceType(DATA8 Layer,DATA8 Port,DATA8 Type,DATA8 Mode)
+|
+cDaisySetDeviceType(DATA8 Layer,DATA8 Port,DATA8 Type,DATA8 Mode)
+|
+
+-------------------- USB DAISYCHAIN --------------------
+
+|
+cInputSetChainedDeviceType(DATA8 Layer,DATA8 Port,DATA8 Type,DATA8 Mode)
+|
+cInputSetDeviceType(DATA8 Device,DATA8 Type, DATA8 Mode)
+
+
+
+
+
+READ SENSOR VALUE FROM FIRST SLAVE
+==================================
+
+opINPUT_DEVICE(READY_SI,1,..)
+|
+cInputReadDeviceSi(DATA8 Device,DATA8 Index,DATA16 Time,DATA16 *pInit)
+|
+cInputReadDeviceRaw(DATA8 Device,DATA8 Index,DATA16 Time,DATA16 *pInit)
+|
+cInputGetData(DATA8 Layer,DATA8 Port,DATA16 Time,DATA16 *pInit,DATA8 Length,DATA8 *pType,DATA8 *pMode,DATA8 *pData)
+|
+cInputComGetDeviceData(DATA8 Layer,DATA8 Port,DATA8 Length,DATA8 *pType,DATA8 *pMode,DATA8 *pData)
+|
+cComGetDeviceData(DATA8 Layer,DATA8 Port,DATA8 Length,DATA8 *pType,DATA8 *pMode,DATA8 *pData)
+|
+cDaisyGetDownstreamData(DATA8 Layer,DATA8 Sensor,DATA8 Length,DATA8 *pType,DATA8 *pMode,DATA8 *pData)
+|
+
+-------------------- USB DAISYCHAIN --------------------
+
+|
+cDaisyPushUpStream(void)
+|
+cInputGetDeviceData(DATA8 Layer,DATA8 Port,DATA8 Length,DATA8 *pType,DATA8 *pMode,DATA8 *pData)
+|
+cInputGetData(DATA8 Layer,DATA8 Port,DATA16 Time,DATA16 *pInit,DATA8 Length,DATA8 *pType,DATA8 *pMode,DATA8 *pData)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

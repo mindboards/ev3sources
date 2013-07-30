@@ -1,0 +1,24 @@
+===================================================
+DAISY CHAIN TWO BRICKS                    120821TCP
+===================================================
+
+1.  Connect master and slave with a USB cable
+
+2.  Insert V0.573 into slave and V0.574 into master
+
+3.  Remove all sensors from the slave
+
+4.  Turn on slave
+
+5.  Wait 20 seconds
+
+6.  Turn on master
+
+7.  Wait until master is running the application
+
+8.  Insert sensors into slave again
+
+9.  Ready to go
+
+===================================================
+

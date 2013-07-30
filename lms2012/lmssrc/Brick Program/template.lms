@@ -1,0 +1,1425 @@
+/*
+ * LEGO® MINDSTORMS EV3
+ *
+ * Copyright (C) 2010-2013 The LEGO Group
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
+
+//  TCP 04.04.2013
+//! \page brickprogramtemplateapp Brick Program Template Source Code
+//!
+//! <hr size="1"/>
+//!
+//! \verbatim
+//**********************************************************************
+define appv 'template V1.02'                                          //
+//**********************************************************************
+                                                                      //
+define    MOVE_PORT           6                                       // B + C
+define    LMOT_PORT           8                                       // C
+define    MMOT_PORT           1                                       // A
+define    MMOT_DEVICE         16                                      // A (-> 16)
+define    TOUCH_PORT          0                                       // 1
+define    COLREF_PORT         2                                       // 3
+define    COLCOL_PORT         2                                       // 3
+define    IRPROX_PORT         3                                       // 4
+define    IRREM_PORT          3                                       // 4
+define    US_PORT             3                                       // 4
+define    GYRO_PORT           1                                       // 2
+define    TEMP_PORT           1                                       // 2
+                                                                      //
+define    SOUNDFILE           '../apps/Brick Program/OnBrickSound'    //
+define    IMAGEFILE           '../apps/Brick Program/OnBrickImage'    //
+                                                                      //
+DATA16    Counter                                                     //
+                                                                      //
+vmthread  MAIN                                                        //  void MAIN()
+{                                                                     //  {
+  CALL(StartBlock,10000,10000)                                        //    Placeholder for startblock
+                                                                      //    do
+Loop:                                                                 //    {
+  CALL(EmptyBlock,10000,10000)                                        //      Placeholder for block
+  CALL(EmptyBlock,10000,10000)                                        //      Placeholder for block
+  CALL(EmptyBlock,10000,10000)                                        //      Placeholder for block
+  CALL(EmptyBlock,10000,10000)                                        //      Placeholder for block
+  CALL(EmptyBlock,10000,10000)                                        //      Placeholder for block
+  CALL(EmptyBlock,10000,10000)                                        //      Placeholder for block
+  CALL(EmptyBlock,10000,10000)                                        //      Placeholder for block
+  CALL(EmptyBlock,10000,10000)                                        //      Placeholder for block
+  CALL(EmptyBlock,10000,10000)                                        //      Placeholder for block
+  CALL(EmptyBlock,10000,10000)                                        //      Placeholder for block
+  CALL(EmptyBlock,10000,10000)                                        //      Placeholder for block
+  CALL(EmptyBlock,10000,10000)                                        //      Placeholder for block
+  CALL(EmptyBlock,10000,10000)                                        //      Placeholder for block
+  CALL(EmptyBlock,10000,10000)                                        //      Placeholder for block
+  CALL(EmptyBlock,10000,10000)                                        //      Placeholder for block
+  CALL(EmptyBlock,10000,10000)                                        //      Placeholder for block
+  CALL(EmptyBlock,10000,10000)                                        //      Placeholder for block
+                                                                      //    }
+  JR_NEQ16(Counter,0,Loop)                                            //    while (Counter != 0)
+  INPUT_DEVICE(STOP_ALL,0)                                            //    INPUT_DEVICE(STOP_ALL,0)
+}                                                                     //
+                                                                      //
+// 2 STARTBLOCK ****************************************************************************************
+                                                                      //
+subcall   StartBlock                                                  //  void StartBlock(Par1,Par2)
+{                                                                     //  {
+  IN_16   Par1                                                        //
+  IN_16   Par2                                                        //
+                                                                      //
+  MOVE16_16(0,Counter)                                                //    Counter  =  0
+  INPUT_DEVICE(CLR_ALL,0)                                             //    INPUT_DEVICE(CLR_ALL,0)
+}                                                                     //  }
+                                                                      //
+// 3 LOOPBLOCK *****************************************************************************************
+                                                                      //
+subcall   LoopBlock                                                   //  void LoopBlock(Par1,Par2)
+{                                                                     //  {
+  IN_16   Par1                                                        //
+  IN_16   Par2                                                        //
+                                                                      //
+  JR_NEQ16(Counter,0,NotZero)                                         //    if (Counter == 0)
+                                                                      //    {
+  MOVE16_16(Par1,Counter)                                             //      Counter  =  Par1
+                                                                      //
+  JR_NEQ16(Par1,6,Not6)                                               //      if (Par1 == 6)
+                                                                      //      {
+  MOVE16_16(10,Counter)                                               //        Counter  =  10
+                                                                      //
+Not6:                                                                 //      }
+                                                                      //
+  JR_NEQ16(Par1,7,Not7)                                               //      if (Par1 == 7)
+                                                                      //      {
+  MOVE16_16(-1,Counter)                                               //        Counter  =  -1
+                                                                      //
+Not7:                                                                 //      }
+NotZero:                                                              //    }
+                                                                      //
+  JR_LTEQ16(Counter,0,NotDec)                                         //    if (Counter > 0)
+                                                                      //    {
+  SUB16(Counter,1,Counter)                                            //      Counter--
+                                                                      //
+NotDec:                                                               //    }
+}                                                                     //  }
+                                                                      //
+// 4 EMPTYBLOCK ****************************************************************************************
+                                                                      //
+subcall   EmptyBlock                                                  //  void EmptyBlock(Par1,Par2)
+{                                                                     //  {
+  IN_16   Par1                                                        //
+  IN_16   Par2                                                        //
+}                                                                     //  }
+                                                                      //
+// 5 MOVEBLOCK *****************************************************************************************
+                                                                      //
+subcall   MoveBlock                                                   //  void MoveBlock(Par1,Par2)
+{                                                                     //  {
+  IN_16   Par1                                                        //
+  IN_16   Par2                                                        //
+                                                                      //
+  DATA32  Timer                                                       //
+                                                                      //
+  OUTPUT_RESET(0,MOVE_PORT)                                           //    OUTPUT_RESET(0,MOVE_PORT)
+  JR_NEQ16(Par1,1,Not1)                                               //    if (Par1 == 1)
+                                                                      //    {
+  OUTPUT_STOP(0,MOVE_PORT,1)                                          //      OUTPUT_STOP(0,MOVE_PORT,1)
+  TIMER_WAIT(75,Timer)                                                //      TIMER_WAIT(75,Timer)
+  TIMER_READY(Timer)                                                  //      TIMER_READY(Timer)
+                                                                      //
+                                                                      //
+  Not1:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,2,Not2)                                               //    if (Par1 == 2)
+                                                                      //    {
+  OUTPUT_STEP_SYNC(0,MOVE_PORT,-50,200,0,0)                           //      OUTPUT_STEP_SYNC(0,MOVE_PORT,-50,200,0,0)
+                                                                      //
+  Not2:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,3,Not3)                                               //    if (Par1 == 3)
+                                                                      //    {
+  OUTPUT_STEP_SYNC(0,MOVE_PORT,-50,100,0,0)                           //      OUTPUT_STEP_SYNC(0,MOVE_PORT,-50,100,0,0)
+                                                                      //
+  Not3:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,4,Not4)                                               //    if (Par1 == 4)
+                                                                      //    {
+  OUTPUT_STEP_SYNC(0,MOVE_PORT,50,-100,0,0)                           //      OUTPUT_STEP_SYNC(0,MOVE_PORT,50,-100,0,0)
+                                                                      //
+  Not4:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,5,Not5)                                               //    if (Par1 == 5)
+                                                                      //    {
+  OUTPUT_STEP_SYNC(0,MOVE_PORT,70,0,0,0)                              //      OUTPUT_STEP_SYNC(0,MOVE_PORT,70,0,0,0)
+                                                                      //
+  Not5:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,6,Not6)                                               //    if (Par1 == 6)
+                                                                      //    {
+  OUTPUT_STEP_SYNC(0,MOVE_PORT,50,100,0,0)                            //      OUTPUT_STEP_SYNC(0,MOVE_PORT,50,100,0,0)
+                                                                      //
+  Not6:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,7,Not7)                                               //    if (Par1 == 7)
+                                                                      //    {
+  OUTPUT_STEP_SYNC(0,MOVE_PORT,-50,-100,0,0)                          //      OUTPUT_STEP_SYNC(0,MOVE_PORT,-50,-100,0,0)
+                                                                      //
+  Not7:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,8,Not8)                                               //    if (Par1 == 8)
+                                                                      //    {
+  OUTPUT_STEP_SYNC(0,MOVE_PORT,50,200,0,0)                            //      OUTPUT_STEP_SYNC(0,MOVE_PORT,50,200,0,0)
+                                                                      //
+  Not8:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,9,Not9)                                               //    if (Par1 == 9)
+                                                                      //    {
+  OUTPUT_STEP_SYNC(0,MOVE_PORT,-70,0,0,0)                             //      OUTPUT_STEP_SYNC(0,MOVE_PORT,-70,0,0,0)
+                                                                      //
+  Not9:                                                               //    }
+}                                                                     //  }
+                                                                      //
+// 6 MOTORBLOCK ****************************************************************************************
+                                                                      //
+subcall   MotorBlock                                                  //  void MotorBlock(Par1,Par2)
+{                                                                     //  {
+  IN_16   Par1                                                        //
+  IN_16   Par2                                                        //
+                                                                      //
+  DATA8   Speed                                                       //
+                                                                      //
+  MOVE16_8(Par1,Speed)                                                //    Speed  =  Par1
+  SUB8(Speed,5,Speed)                                                 //    Speed -=  5
+  MUL8(Speed,25,Speed)                                                //    Speed *= 25
+                                                                      //
+  JR_EQ8(Speed,0,Stop)                                                //    if (Speed != 0)
+                                                                      //    {
+  OUTPUT_POWER(0,LMOT_PORT,Speed)                                     //      OUTPUT_POWER(0,LMOT_PORT,Speed)
+  OUTPUT_START(0,LMOT_PORT)                                           //      OUTPUT_START(0,LMOT_PORT)
+                                                                      //
+  JR(End)                                                             //    }
+                                                                      //    else
+Stop:                                                                 //    {
+  OUTPUT_STOP(0,LMOT_PORT,1)                                          //      OUTPUT_STOP(0,LMOT_PORT,1)
+                                                                      //
+End:                                                                  //    }
+}                                                                     //  }
+                                                                      //
+// 7 MEDIUMMOTORBLOCK **********************************************************************************
+                                                                      //
+subcall   MediumMotorBlock                                            //  void MediumMotorBlock(Par1,Par2)
+{                                                                     //  {
+  IN_16   Par1                                                        //
+  IN_16   Par2                                                        //
+                                                                      //
+  DATA8   Speed                                                       //
+                                                                      //
+  MOVE16_8(Par1,Speed)                                                //    Speed  =  Par1
+  SUB8(Speed,5,Speed)                                                 //    Speed -=  5
+  MUL8(Speed,25,Speed)                                                //    Speed *= 25
+                                                                      //
+  JR_EQ8(Speed,0,Stop)                                                //    if (Speed != 0)
+                                                                      //    {
+  OUTPUT_POWER(0,MMOT_PORT,Speed)                                     //      OUTPUT_POWER(0,MMOT_PORT,Speed)
+  OUTPUT_START(0,MMOT_PORT)                                           //      OUTPUT_START(0,MMOT_PORT)
+                                                                      //
+  JR(End)                                                             //    }
+                                                                      //    else
+Stop:                                                                 //    {
+  OUTPUT_STOP(0,MMOT_PORT,1)                                          //      OUTPUT_STOP(0,MMOT_PORT,1)
+                                                                      //
+End:                                                                  //    }
+}                                                                     //  }
+                                                                      //
+// 8 SOUNDBLOCK ****************************************************************************************
+                                                                      //
+subcall   SoundBlock                                                  //  void SoundBlock(Par1,Par2)
+{                                                                     //  {
+  IN_16   Par1                                                        //
+  IN_16   Par2                                                        //
+                                                                      //
+  DATA16  Sound                                                       //
+  DATA8   Tmp                                                         //
+  DATA8   Flag                                                        //
+  DATA8   Volume                                                      //
+  DATAS   Filename FILENAMESIZE                                       //
+  DATAS   String FILENAMESIZE                                         //
+                                                                      //
+  SOUND(BREAK)                                                        //    SOUND(BREAK)
+  JR_EQ16(Par1,1,StopSound)                                           //    if (Par1 != 1)
+                                                                      //    {
+  SUB16(Par1,1,Sound)                                                 //      Sound  =  Par1 - 1
+                                                                      //
+  STRINGS(NUMBER_TO_STRING,Sound,2,String)                            //      STRINGS(NUMBER_TO_STRING,Sound,2,String)
+  STRINGS(ADD,SOUNDFILE,String,Filename)                              //      STRINGS(ADD,SOUNDFILE,String,Filename)
+                                                                      //
+  INFO(GET_VOLUME,Volume)                                             //      INFO(GET_VOLUME,Volume)
+  SOUND(PLAY,Volume,Filename)                                         //      SOUND(PLAY,Volume,Filename)
+                                                                      //
+StopSound:                                                            //    }
+}                                                                     //  }
+                                                                      //
+// 9 DISPLAYBLOCK **************************************************************************************
+                                                                      //
+subcall   DisplayBlock                                                //  void DisplayBlock(Par1,Par2)
+{                                                                     //  {
+  IN_16   Par1                                                        //
+  IN_16   Par2                                                        //
+                                                                      //
+  DATA16  Image                                                       //
+  DATAS   Filename FILENAMESIZE                                       //
+  DATAS   String FILENAMESIZE                                         //
+                                                                      //
+  UI_DRAW(TOPLINE,0)                                                  //    UI_DRAW(TOPLINE,0)
+                                                                      //
+  UI_DRAW(FILLWINDOW,BG_COLOR,0,0)                                    //    UI_DRAW(FILLWINDOW,BG_COLOR,0,0)
+  JR_EQ16(Par1,1,DontShowImage)                                       //    if (Par1 != 1)
+                                                                      //    {
+  SUB16(Par1,1,Image)                                                 //
+                                                                      //
+  STRINGS(NUMBER_TO_STRING,Image,2,String)                            //      STRINGS(NUMBER_TO_STRING,Image,2,String)
+  STRINGS(ADD,IMAGEFILE,String,Filename)                              //      STRINGS(ADD,IMAGEFILE,String,Filename)
+                                                                      //
+  UI_DRAW(BMPFILE,FG_COLOR,0,0,Filename)                              //      UI_DRAW(BMPFILE,FG_COLOR,0,0,Filename)
+DontShowImage:                                                        //    }
+  UI_DRAW(UPDATE)                                                     //    UI_DRAW(UPDATE)
+}                                                                     //  }
+                                                                      //
+// 10 LEDBLOCK *****************************************************************************************
+                                                                      //
+subcall   LedBlock                                                    //  void LedBlock(Par1,Par2)
+{                                                                     //  {
+  IN_16   Par1                                                        //
+  IN_16   Par2                                                        //
+                                                                      //
+  UI_WRITE(LED,LED_BLACK)                                             //    UI_WRITE(LED,LED_BLACK)
+  JR_NEQ16(Par1,2,Not2)                                               //    if (Par1 == 2)
+                                                                      //    {
+  UI_WRITE(LED,LED_GREEN)                                             //      UI_WRITE(LED,LED_GREEN)
+                                                                      //
+  Not2:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,3,Not3)                                               //    if (Par1 == 3)
+                                                                      //    {
+  UI_WRITE(LED,LED_ORANGE)                                            //      UI_WRITE(LED,LED_ORANGE)
+                                                                      //
+  Not3:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,4,Not4)                                               //    if (Par1 == 4)
+                                                                      //    {
+  UI_WRITE(LED,LED_RED)                                               //      UI_WRITE(LED,LED_RED)
+                                                                      //
+  Not4:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,5,Not5)                                               //    if (Par1 == 5)
+                                                                      //    {
+  UI_WRITE(LED,LED_GREEN_FLASH)                                       //      UI_WRITE(LED,LED_GREEN_FLASH)
+                                                                      //
+  Not5:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,6,Not6)                                               //    if (Par1 == 6)
+                                                                      //    {
+  UI_WRITE(LED,LED_ORANGE_FLASH)                                      //      UI_WRITE(LED,LED_ORANGE_FLASH)
+                                                                      //
+  Not6:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,7,Not7)                                               //    if (Par1 == 7)
+                                                                      //    {
+  UI_WRITE(LED,LED_RED_FLASH)                                         //      UI_WRITE(LED,LED_RED_FLASH)
+                                                                      //
+  Not7:                                                               //    }
+                                                                      //
+}                                                                     //  }
+                                                                      //
+// 11 TOUCHBLOCK ***************************************************************************************
+                                                                      //
+subcall   TouchBlock                                                  //  void TouchBlock(Par1,Par2)
+{                                                                     //  {
+  IN_16   Par1                                                        //
+  IN_16   Par2                                                        //
+                                                                      //
+  DATAF   DataF                                                       //
+  DATA8   Data8                                                       //
+                                                                      //
+  JR_NEQ16(Par1,1,Not1)                                               //    if (Par1 == 1)
+                                                                      //    {
+                                                                      //      do
+Loop1:                                                                //      {
+  INPUT_DEVICE(READY_SI,0,TOUCH_PORT,0,0,1,DataF)                     //        INPUT_DEVICE(READY_SI,0,TOUCH_PORT,0,0,1,DataF)
+  MOVEF_8(DataF,Data8)                                                //        Data8  =  DataF
+                                                                      //      }
+  JR_NEQ8(Data8,1,Loop1)                                              //      while (Data8 != 1)
+                                                                      //
+  Not1:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,2,Not2)                                               //    if (Par1 == 2)
+                                                                      //    {
+                                                                      //      do
+Loop2:                                                                //      {
+  INPUT_DEVICE(READY_SI,0,TOUCH_PORT,0,0,1,DataF)                     //        INPUT_DEVICE(READY_SI,0,TOUCH_PORT,0,0,1,DataF)
+  MOVEF_8(DataF,Data8)                                                //        Data8  =  DataF
+                                                                      //      }
+  JR_NEQ8(Data8,0,Loop2)                                              //      while (Data8 != 0)
+                                                                      //
+  Not2:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,3,Not3)                                               //    if (Par1 == 3)
+                                                                      //    {
+                                                                      //      do
+Loop31:                                                               //      {
+  INPUT_DEVICE(READY_SI,0,TOUCH_PORT,0,0,1,DataF)                     //        INPUT_DEVICE(READY_SI,0,TOUCH_PORT,0,0,1,DataF)
+  MOVEF_8(DataF,Data8)                                                //        Data8  =  DataF
+                                                                      //      }
+  JR_NEQ8(Data8,1,Loop31)                                             //      while (Data8 != 1)
+                                                                      //      do
+Loop32:                                                               //      {
+  INPUT_DEVICE(READY_SI,0,TOUCH_PORT,0,0,1,DataF)                     //        INPUT_DEVICE(READY_SI,0,TOUCH_PORT,0,0,1,DataF)
+  MOVEF_8(DataF,Data8)                                                //        Data8  =  DataF
+                                                                      //      }
+  JR_NEQ8(Data8,0,Loop32)                                             //      while (Data8 != 0)
+                                                                      //
+  Not3:                                                               //    }
+                                                                      //
+}                                                                     //  }
+                                                                      //
+// 12 REFLECTEDBLOCK ***********************************************************************************
+                                                                      //
+subcall   ReflectedBlock                                              //  void ReflectedBlock(Par1,Par2)
+{                                                                     //  {
+  IN_16   Par1                                                        //
+  IN_16   Par2                                                        //
+                                                                      //
+  DATAF   Tmp                                                         //
+  DATA16  Value                                                       //
+  DATA16  Threshold                                                   //
+                                                                      //
+// Par1   Wait until                                                  //    White = wait
+// 1      Value < 5                                                   //    Black = go
+// 2            < 10                                                  //
+// 3            < 25                                                  //
+// 4            < 35                                                  //
+// 5            < 50                                                  //
+// 6            < 65                                                  //
+// 7            < 75                                                  //
+// 8            < 90                                                  //
+// 9      Value < 100                                                 //
+// 10           > 9                                                   //
+// 11           > 24                                                  //
+// 12           > 34                                                  //
+// 13           > 49                                                  //
+// 14           > 64                                                  //
+// 15           > 74                                                  //
+// 16           > 89                                                  //
+                                                                      //
+  JR_NEQ16(Par1,1,Not1)                                               //    if (Par1 == 1)
+                                                                      //    {
+  MOVE16_16(5,Threshold)                                              //      MOVE16_16(5,Threshold)
+                                                                      //
+  Not1:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,2,Not2)                                               //    if (Par1 == 2)
+                                                                      //    {
+  MOVE16_16(10,Threshold)                                             //      MOVE16_16(10,Threshold)
+                                                                      //
+  Not2:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,3,Not3)                                               //    if (Par1 == 3)
+                                                                      //    {
+  MOVE16_16(25,Threshold)                                             //      MOVE16_16(25,Threshold)
+                                                                      //
+  Not3:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,4,Not4)                                               //    if (Par1 == 4)
+                                                                      //    {
+  MOVE16_16(35,Threshold)                                             //      MOVE16_16(35,Threshold)
+                                                                      //
+  Not4:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,5,Not5)                                               //    if (Par1 == 5)
+                                                                      //    {
+  MOVE16_16(50,Threshold)                                             //      MOVE16_16(50,Threshold)
+                                                                      //
+  Not5:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,6,Not6)                                               //    if (Par1 == 6)
+                                                                      //    {
+  MOVE16_16(65,Threshold)                                             //      MOVE16_16(65,Threshold)
+                                                                      //
+  Not6:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,7,Not7)                                               //    if (Par1 == 7)
+                                                                      //    {
+  MOVE16_16(75,Threshold)                                             //      MOVE16_16(75,Threshold)
+                                                                      //
+  Not7:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,8,Not8)                                               //    if (Par1 == 8)
+                                                                      //    {
+  MOVE16_16(90,Threshold)                                             //      MOVE16_16(90,Threshold)
+                                                                      //
+  Not8:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,9,Not9)                                               //    if (Par1 == 9)
+                                                                      //    {
+  MOVE16_16(100,Threshold)                                            //      MOVE16_16(100,Threshold)
+                                                                      //
+  Not9:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,10,Not10)                                             //    if (Par1 == 10)
+                                                                      //    {
+  MOVE16_16(9,Threshold)                                              //      MOVE16_16(9,Threshold)
+                                                                      //
+  Not10:                                                              //    }
+                                                                      //
+  JR_NEQ16(Par1,11,Not11)                                             //    if (Par1 == 11)
+                                                                      //    {
+  MOVE16_16(24,Threshold)                                             //      MOVE16_16(24,Threshold)
+                                                                      //
+  Not11:                                                              //    }
+                                                                      //
+  JR_NEQ16(Par1,12,Not12)                                             //    if (Par1 == 12)
+                                                                      //    {
+  MOVE16_16(34,Threshold)                                             //      MOVE16_16(34,Threshold)
+                                                                      //
+  Not12:                                                              //    }
+                                                                      //
+  JR_NEQ16(Par1,13,Not13)                                             //    if (Par1 == 13)
+                                                                      //    {
+  MOVE16_16(49,Threshold)                                             //      MOVE16_16(49,Threshold)
+                                                                      //
+  Not13:                                                              //    }
+                                                                      //
+  JR_NEQ16(Par1,14,Not14)                                             //    if (Par1 == 14)
+                                                                      //    {
+  MOVE16_16(64,Threshold)                                             //      MOVE16_16(64,Threshold)
+                                                                      //
+  Not14:                                                              //    }
+                                                                      //
+  JR_NEQ16(Par1,15,Not15)                                             //    if (Par1 == 15)
+                                                                      //    {
+  MOVE16_16(74,Threshold)                                             //      MOVE16_16(74,Threshold)
+                                                                      //
+  Not15:                                                              //    }
+                                                                      //
+  JR_NEQ16(Par1,16,Not16)                                             //    if (Par1 == 16)
+                                                                      //    {
+  MOVE16_16(89,Threshold)                                             //      MOVE16_16(89,Threshold)
+                                                                      //
+  Not16:                                                              //    }
+                                                                      //
+                                                                      //
+  JR_GTEQ16(Par1,10,NotWait1)                                         //    if (Par1 < 10)
+                                                                      //    {
+                                                                      //
+  Wait1:                                                              //      do
+                                                                      //      {
+  INPUT_DEVICE(READY_SI,0,COLREF_PORT,29,0,1,Tmp)                     //        INPUT_DEVICE(READY_SI,0,COLREF_PORT,29,0,1,Tmp)
+  MOVEF_16(Tmp,Value)                                                 //        Value  =  Tmp
+                                                                      //      }
+  JR_GTEQ16(Value,Threshold,Wait1)                                    //      while (Value >= Threshold)
+                                                                      //
+  JR(EndWait)                                                         //    }
+                                                                      //    else
+NotWait1:                                                             //    {
+                                                                      //
+  Wait2:                                                              //      do
+                                                                      //      {
+  INPUT_DEVICE(READY_SI,0,COLREF_PORT,29,0,1,Tmp)                     //        INPUT_DEVICE(READY_SI,0,COLREF_PORT,29,0,1,Tmp)
+  MOVEF_16(Tmp,Value)                                                 //        Value  =  Tmp
+                                                                      //      }
+  JR_LTEQ16(Value,Threshold,Wait2)                                    //      while (Value < Threshold)
+                                                                      //
+EndWait:                                                              //    }
+}                                                                     //  }
+                                                                      //
+// 13 COLORBLOCK ***************************************************************************************
+                                                                      //
+subcall   COLORBlock                                                  //  void ColorBlock(Par1,Par2)
+{                                                                     //  {
+  IN_16   Par1                                                        //
+  IN_16   Par2                                                        //
+                                                                      //
+  DATAF   Value                                                       //
+  DATA16  Color                                                       //
+                                                                      //
+  SUB16(Par1,1,Par1)                                                  //    Par1--
+                                                                      //    do
+Loop:                                                                 //    {
+  INPUT_DEVICE(READY_SI,0,COLCOL_PORT,29,2,1,Value)                   //      INPUT_DEVICE(READY_SI,0,COLCOL_PORT,29,2,1,Value)
+  MOVEF_16(Value,Color)                                               //      Color  =  Value
+                                                                      //    }
+  JR_NEQ16(Color,Par1,Loop)                                           //    while (Color != Par1)
+}                                                                     //  }
+                                                                      //
+// 14 BEACONBLOCK **************************************************************************************
+                                                                      //
+subcall   BeaconBlock                                                 //  void BeaconBlock(Par1,Par2)
+{                                                                     //  {
+  IN_16   Par1                                                        //
+  IN_16   Par2                                                        //
+                                                                      //
+  DATAF   Tmp                                                         //
+  DATA8   State                                                       //
+                                                                      //
+  JR_NEQ16(Par1,1,Not1)                                               //    if (Par1 == 1)
+                                                                      //    {
+                                                                      //      do
+Wait1:                                                                //      {
+                                                                      //
+  INPUT_DEVICE(READY_SI,0,IRREM_PORT,33,2,1,Tmp)                      //        INPUT_DEVICE(READY_SI,0,IRREM_PORT,33,2,1,Tmp)
+  MOVEF_8(Tmp,State)                                                  //        State  =  Tmp
+                                                                      //      }
+  JR_NEQ8(State,0,Wait1)                                              //      while (State != 0)
+                                                                      //
+Not1:                                                                 //    }
+                                                                      //
+  JR_NEQ16(Par1,2,Not2)                                               //    if (Par1 == 2)
+                                                                      //    {
+                                                                      //      do
+Wait2:                                                                //      {
+                                                                      //
+  INPUT_DEVICE(READY_SI,0,IRREM_PORT,33,2,1,Tmp)                      //        INPUT_DEVICE(READY_SI,0,IRREM_PORT,33,2,1,Tmp)
+  MOVEF_8(Tmp,State)                                                  //        State  =  Tmp
+                                                                      //      }
+  JR_NEQ8(State,1,Wait2)                                              //      while (State != 1)
+                                                                      //
+Not2:                                                                 //    }
+                                                                      //
+  JR_NEQ16(Par1,3,Not3)                                               //    if (Par1 == 3)
+                                                                      //    {
+                                                                      //      do
+Wait3:                                                                //      {
+                                                                      //
+  INPUT_DEVICE(READY_SI,0,IRREM_PORT,33,2,1,Tmp)                      //        INPUT_DEVICE(READY_SI,0,IRREM_PORT,33,2,1,Tmp)
+  MOVEF_8(Tmp,State)                                                  //        State  =  Tmp
+                                                                      //      }
+  JR_NEQ8(State,2,Wait3)                                              //      while (State != 2)
+                                                                      //
+Not3:                                                                 //    }
+                                                                      //
+  JR_NEQ16(Par1,4,Not4)                                               //    if (Par1 == 4)
+                                                                      //    {
+                                                                      //      do
+Wait4:                                                                //      {
+                                                                      //
+  INPUT_DEVICE(READY_SI,0,IRREM_PORT,33,2,1,Tmp)                      //        INPUT_DEVICE(READY_SI,0,IRREM_PORT,33,2,1,Tmp)
+  MOVEF_8(Tmp,State)                                                  //        State  =  Tmp
+                                                                      //      }
+  JR_NEQ8(State,3,Wait4)                                              //      while (State != 3)
+                                                                      //
+Not4:                                                                 //    }
+                                                                      //
+  JR_NEQ16(Par1,5,Not5)                                               //    if (Par1 == 5)
+                                                                      //    {
+                                                                      //      do
+Wait5:                                                                //      {
+                                                                      //
+  INPUT_DEVICE(READY_SI,0,IRREM_PORT,33,2,1,Tmp)                      //        INPUT_DEVICE(READY_SI,0,IRREM_PORT,33,2,1,Tmp)
+  MOVEF_8(Tmp,State)                                                  //        State  =  Tmp
+                                                                      //      }
+  JR_NEQ8(State,4,Wait5)                                              //      while (State != 4)
+                                                                      //
+Not5:                                                                 //    }
+                                                                      //
+  JR_NEQ16(Par1,6,Not6)                                               //    if (Par1 == 6)
+                                                                      //    {
+                                                                      //      do
+Wait6:                                                                //      {
+                                                                      //
+  INPUT_DEVICE(READY_SI,0,IRREM_PORT,33,2,1,Tmp)                      //        INPUT_DEVICE(READY_SI,0,IRREM_PORT,33,2,1,Tmp)
+  MOVEF_8(Tmp,State)                                                  //        State  =  Tmp
+                                                                      //      }
+  JR_NEQ8(State,9,Wait6)                                              //      while (State != 9)
+                                                                      //
+Not6:                                                                 //    }
+                                                                      //
+}                                                                     //  }
+                                                                      //
+// 15 PROXIMITYBLOCK ***********************************************************************************
+                                                                      //
+subcall   ProximityBlock                                              //  void ProximityBlock(Par1,Par2)
+{                                                                     //  {
+  IN_16   Par1                                                        //
+  IN_16   Par2                                                        //
+  DATAF   Tmp                                                         //
+  DATA16  Value                                                       //
+  DATA16  Threshold                                                   //
+                                                                      //
+// Par1   Wait until                                                  //
+// 1      Value < 5                                                   //
+// 2            < 25                                                  //
+// 3            < 50                                                  //
+// 4            < 75                                                  //
+// 5            < 100                                                 //
+// 6            > 24                                                  //
+// 7            > 49                                                  //
+// 8            > 74                                                  //
+                                                                      //
+  JR_NEQ16(Par1,1,Not1)                                               //    if (Par1 == 1)
+                                                                      //    {
+  MOVE16_16(5,Threshold)                                              //      MOVE16_16(5,Threshold)
+                                                                      //
+  Not1:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,2,Not2)                                               //    if (Par1 == 2)
+                                                                      //    {
+  MOVE16_16(25,Threshold)                                             //      MOVE16_16(25,Threshold)
+                                                                      //
+  Not2:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,3,Not3)                                               //    if (Par1 == 3)
+                                                                      //    {
+  MOVE16_16(50,Threshold)                                             //      MOVE16_16(50,Threshold)
+                                                                      //
+  Not3:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,4,Not4)                                               //    if (Par1 == 4)
+                                                                      //    {
+  MOVE16_16(75,Threshold)                                             //      MOVE16_16(75,Threshold)
+                                                                      //
+  Not4:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,5,Not5)                                               //    if (Par1 == 5)
+                                                                      //    {
+  MOVE16_16(100,Threshold)                                            //      MOVE16_16(100,Threshold)
+                                                                      //
+  Not5:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,6,Not6)                                               //    if (Par1 == 6)
+                                                                      //    {
+  MOVE16_16(24,Threshold)                                             //      MOVE16_16(24,Threshold)
+                                                                      //
+  Not6:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,7,Not7)                                               //    if (Par1 == 7)
+                                                                      //    {
+  MOVE16_16(49,Threshold)                                             //      MOVE16_16(49,Threshold)
+                                                                      //
+  Not7:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,8,Not8)                                               //    if (Par1 == 8)
+                                                                      //    {
+  MOVE16_16(74,Threshold)                                             //      MOVE16_16(74,Threshold)
+                                                                      //
+  Not8:                                                               //    }
+                                                                      //
+                                                                      //
+  JR_GTEQ16(Par1,6,NotWait1)                                          //    if (Par1 < 6)
+                                                                      //    {
+                                                                      //
+  Wait1:                                                              //      do
+                                                                      //      {
+  INPUT_DEVICE(READY_SI,0,IRPROX_PORT,33,0,1,Tmp)                     //        INPUT_DEVICE(READY_SI,0,IRPROX_PORT,33,0,1,Tmp)
+  MOVEF_16(Tmp,Value)                                                 //        Value  =  Tmp
+                                                                      //      }
+  JR_GTEQ16(Value,Threshold,Wait1)                                    //      while (Value >= Threshold)
+                                                                      //
+  JR(EndWait)                                                         //    }
+                                                                      //    else
+NotWait1:                                                             //    {
+                                                                      //
+  Wait2:                                                              //      do
+                                                                      //      {
+  INPUT_DEVICE(READY_SI,0,IRPROX_PORT,33,0,1,Tmp)                     //        INPUT_DEVICE(READY_SI,0,IRPROX_PORT,33,0,1,Tmp)
+  MOVEF_16(Tmp,Value)                                                 //        Value  =  Tmp
+                                                                      //      }
+  JR_LTEQ16(Value,Threshold,Wait2)                                    //      while (Value < Threshold)
+                                                                      //
+EndWait:                                                              //    }
+}                                                                     //  }
+                                                                      //
+// 16 TEMPERATUREBLOCK *********************************************************************************
+                                                                      //
+subcall   TemperatureBlock                                            //  void TemperatureBlock(Par1,Par2)
+{                                                                     //  {
+  IN_16   Par1                                                        //    TEMP_PORT
+  IN_16   Par2                                                        //
+                                                                      //
+  DATAF   Tmp                                                         //
+  DATA16  Value                                                       //
+  DATA16  Threshold                                                   //
+                                                                      //
+// Par1   Wait until                                                  //
+// 1      value <= -11                                                //
+// 2      Value <= -1                                                 //
+// 3      Value <= 19                                                 //
+// 4      Value <= 39                                                 //
+// 5      Value <= 59                                                 //
+// 6      Value <= 79                                                 //
+// 7      Value <= 89                                                 //
+// 8      Value <= 99                                                 //
+// 9      Value <= 109                                                //
+// 10     Value >= 0                                                  //
+// 11     Value >= 20                                                 //
+// 12     Value >= 40                                                 //
+// 13     Value >= 60                                                 //
+// 14     Value >= 80                                                 //
+// 15     Value >= 90                                                 //
+// 16     Value >= 100                                                //
+                                                                      //
+  JR_NEQ16(Par1,1,Not1)                                               //      if (Par1 == 1)
+                                                                      //      {
+  MOVE16_16(-11,Threshold)                                            //        MOVE16_16(-11,Threshold)
+                                                                      //
+  JR(End1)                                                            //      }
+                                                                      //      else
+  Not1:                                                               //      {
+                                                                      //
+  JR_NEQ16(Par1,2,Not2)                                               //      if (Par1 == 2)
+                                                                      //      {
+  MOVE16_16(-1,Threshold)                                             //        MOVE16_16(-1,Threshold)
+                                                                      //
+  Not2:                                                               //      }
+                                                                      //
+  JR_NEQ16(Par1,3,Not3)                                               //      if (Par1 == 3)
+                                                                      //      {
+  MOVE16_16(19,Threshold)                                             //        MOVE16_16(19,Threshold)
+                                                                      //
+  Not3:                                                               //      }
+                                                                      //
+  JR_NEQ16(Par1,4,Not4)                                               //      if (Par1 == 4)
+                                                                      //      {
+  MOVE16_16(39,Threshold)                                             //        MOVE16_16(39,Threshold)
+                                                                      //
+  Not4:                                                               //      }
+                                                                      //
+  JR_NEQ16(Par1,5,Not5)                                               //      if (Par1 == 5)
+                                                                      //      {
+  MOVE16_16(59,Threshold)                                             //        MOVE16_16(59,Threshold)
+                                                                      //
+  Not5:                                                               //      }
+                                                                      //
+  JR_NEQ16(Par1,6,Not6)                                               //      if (Par1 == 6)
+                                                                      //      {
+  MOVE16_16(79,Threshold)                                             //        MOVE16_16(79,Threshold)
+                                                                      //
+  Not6:                                                               //      }
+                                                                      //
+  JR_NEQ16(Par1,7,Not7)                                               //      if (Par1 == 7)
+                                                                      //      {
+  MOVE16_16(89,Threshold)                                             //        MOVE16_16(89,Threshold)
+                                                                      //
+  Not7:                                                               //      }
+                                                                      //
+  JR_NEQ16(Par1,8,Not8)                                               //      if (Par1 == 8)
+                                                                      //      {
+  MOVE16_16(99,Threshold)                                             //        MOVE16_16(99,Threshold)
+                                                                      //
+  Not8:                                                               //      }
+                                                                      //
+  JR_NEQ16(Par1,9,Not9)                                               //      if (Par1 == 9)
+                                                                      //      {
+  MOVE16_16(109,Threshold)                                            //        MOVE16_16(109,Threshold)
+                                                                      //
+  Not9:                                                               //      }
+                                                                      //
+  JR_NEQ16(Par1,10,Not10)                                             //      if (Par1 == 10)
+                                                                      //      {
+  MOVE16_16(0,Threshold)                                              //        MOVE16_16(0,Threshold)
+                                                                      //
+  Not10:                                                              //      }
+                                                                      //
+  JR_NEQ16(Par1,11,Not11)                                             //      if (Par1 == 11)
+                                                                      //      {
+  MOVE16_16(20,Threshold)                                             //        MOVE16_16(20,Threshold)
+                                                                      //
+  Not11:                                                              //      }
+                                                                      //
+  JR_NEQ16(Par1,12,Not12)                                             //      if (Par1 == 12)
+                                                                      //      {
+  MOVE16_16(40,Threshold)                                             //        MOVE16_16(40,Threshold)
+                                                                      //
+  Not12:                                                              //      }
+                                                                      //
+  JR_NEQ16(Par1,13,Not13)                                             //      if (Par1 == 13)
+                                                                      //      {
+  MOVE16_16(60,Threshold)                                             //        MOVE16_16(60,Threshold)
+                                                                      //
+  Not13:                                                              //      }
+                                                                      //
+  JR_NEQ16(Par1,14,Not14)                                             //      if (Par1 == 14)
+                                                                      //      {
+  MOVE16_16(80,Threshold)                                             //        MOVE16_16(80,Threshold)
+                                                                      //
+  Not14:                                                              //      }
+                                                                      //
+  JR_NEQ16(Par1,15,Not15)                                             //      if (Par1 == 15)
+                                                                      //      {
+  MOVE16_16(90,Threshold)                                             //        MOVE16_16(90,Threshold)
+                                                                      //
+  Not15:                                                              //      }
+                                                                      //
+  JR_NEQ16(Par1,16,Not16)                                             //      if (Par1 == 16)
+                                                                      //      {
+  MOVE16_16(100,Threshold)                                            //        MOVE16_16(100,Threshold)
+                                                                      //
+  Not16:                                                              //      }
+                                                                      //
+                                                                      //
+  JR_GTEQ16(Par1,10,NotWait1)                                         //      if (Par1 < 10)
+                                                                      //      {
+                                                                      //
+  Wait1:                                                              //        do
+                                                                      //        {
+  INPUT_DEVICE(READY_SI,0,TEMP_PORT,6,0,1,Tmp)                        //          INPUT_DEVICE(READY_SI,0,TEMP_PORT,6,0,1,Tmp)
+  MOVEF_16(Tmp,Value)                                                 //          Value  =  Tmp
+                                                                      //        }
+  JR_GT16(Value,Threshold,Wait1)                                      //        while (Value > Threshold)
+                                                                      //
+  JR(EndWait)                                                         //      }
+                                                                      //      else
+NotWait1:                                                             //      {
+                                                                      //
+  Wait2:                                                              //        do
+                                                                      //        {
+  INPUT_DEVICE(READY_SI,0,TEMP_PORT,6,0,1,Tmp)                        //          INPUT_DEVICE(READY_SI,0,TEMP_PORT,6,0,1,Tmp)
+  MOVEF_16(Tmp,Value)                                                 //          Value  =  Tmp
+                                                                      //        }
+  JR_LT16(Value,Threshold,Wait2)                                      //        while (Value < Threshold)
+                                                                      //
+EndWait:                                                              //      }
+End1:                                                                 //    }
+}                                                                     //  }
+                                                                      //
+// 17 ULTRASONICBLOCK **********************************************************************************
+                                                                      //
+subcall   UltrasonicBlock                                             //  void UltrasonicBlock(Par1,Par2)
+{                                                                     //  {
+  IN_16   Par1                                                        //
+  IN_16   Par2                                                        //
+                                                                      //
+  DATAF   Tmp                                                         //
+  DATA16  Value                                                       //
+  DATA16  Threshold                                                   //
+                                                                      //
+// Par1   Wait until                                                  //
+// 1      Value < 5                                                   //
+// 2      Value < 30                                                  //
+// 3      Value < 60                                                  //
+// 4      Value < 90                                                  //
+// 5      Value < 120                                                 //
+// 6      Value < 150                                                 //
+// 7      Value < 180                                                 //
+// 8      Value < 210                                                 //
+// 9      Value < 240                                                 //
+// 10     Value > 29                                                  //
+// 11     Value > 59                                                  //
+// 12     Value > 89                                                  //
+// 13     Value > 119                                                 //
+// 14     Value > 149                                                 //
+// 15     Value > 179                                                 //
+// 16     Value > 209                                                 //
+                                                                      //
+  JR_NEQ16(Par1,1,Not1)                                               //      if (Par1 == 1)
+                                                                      //      {
+  MOVE16_16(5,Threshold)                                              //        MOVE16_16(5,Threshold)
+                                                                      //
+  Not1:                                                               //      }
+                                                                      //
+  JR_NEQ16(Par1,2,Not2)                                               //      if (Par1 == 2)
+                                                                      //      {
+  MOVE16_16(30,Threshold)                                             //        MOVE16_16(30,Threshold)
+                                                                      //
+  Not2:                                                               //      }
+                                                                      //
+  JR_NEQ16(Par1,3,Not3)                                               //      if (Par1 == 3)
+                                                                      //      {
+  MOVE16_16(60,Threshold)                                             //        MOVE16_16(60,Threshold)
+                                                                      //
+  Not3:                                                               //      }
+                                                                      //
+  JR_NEQ16(Par1,4,Not4)                                               //      if (Par1 == 4)
+                                                                      //      {
+  MOVE16_16(90,Threshold)                                             //        MOVE16_16(90,Threshold)
+                                                                      //
+  Not4:                                                               //      }
+                                                                      //
+  JR_NEQ16(Par1,5,Not5)                                               //      if (Par1 == 5)
+                                                                      //      {
+  MOVE16_16(120,Threshold)                                            //        MOVE16_16(120,Threshold)
+                                                                      //
+  Not5:                                                               //      }
+                                                                      //
+  JR_NEQ16(Par1,6,Not6)                                               //      if (Par1 == 6)
+                                                                      //      {
+  MOVE16_16(150,Threshold)                                            //        MOVE16_16(150,Threshold)
+                                                                      //
+  Not6:                                                               //      }
+                                                                      //
+  JR_NEQ16(Par1,7,Not7)                                               //      if (Par1 == 7)
+                                                                      //      {
+  MOVE16_16(180,Threshold)                                            //        MOVE16_16(180,Threshold)
+                                                                      //
+  Not7:                                                               //      }
+                                                                      //
+  JR_NEQ16(Par1,8,Not8)                                               //      if (Par1 == 8)
+                                                                      //      {
+  MOVE16_16(210,Threshold)                                            //        MOVE16_16(210,Threshold)
+                                                                      //
+  Not8:                                                               //      }
+                                                                      //
+  JR_NEQ16(Par1,9,Not9)                                               //      if (Par1 == 9)
+                                                                      //      {
+  MOVE16_16(240,Threshold)                                            //        MOVE16_16(240,Threshold)
+                                                                      //
+  Not9:                                                               //      }
+                                                                      //
+  JR_NEQ16(Par1,10,Not10)                                             //      if (Par1 == 10)
+                                                                      //      {
+  MOVE16_16(29,Threshold)                                             //        MOVE16_16(29,Threshold)
+                                                                      //
+  Not10:                                                              //      }
+                                                                      //
+  JR_NEQ16(Par1,11,Not11)                                             //      if (Par1 == 11)
+                                                                      //      {
+  MOVE16_16(59,Threshold)                                             //        MOVE16_16(59,Threshold)
+                                                                      //
+  Not11:                                                              //      }
+                                                                      //
+  JR_NEQ16(Par1,12,Not12)                                             //      if (Par1 == 12)
+                                                                      //      {
+  MOVE16_16(89,Threshold)                                             //        MOVE16_16(89,Threshold)
+                                                                      //
+  Not12:                                                              //      }
+                                                                      //
+  JR_NEQ16(Par1,13,Not13)                                             //      if (Par1 == 13)
+                                                                      //      {
+  MOVE16_16(119,Threshold)                                            //        MOVE16_16(119,Threshold)
+                                                                      //
+  Not13:                                                              //      }
+                                                                      //
+  JR_NEQ16(Par1,14,Not14)                                             //      if (Par1 == 14)
+                                                                      //      {
+  MOVE16_16(149,Threshold)                                            //        MOVE16_16(149,Threshold)
+                                                                      //
+  Not14:                                                              //      }
+                                                                      //
+  JR_NEQ16(Par1,15,Not15)                                             //      if (Par1 == 15)
+                                                                      //      {
+  MOVE16_16(179,Threshold)                                            //        MOVE16_16(179,Threshold)
+                                                                      //
+  Not15:                                                              //      }
+                                                                      //
+  JR_NEQ16(Par1,16,Not16)                                             //      if (Par1 == 16)
+                                                                      //      {
+  MOVE16_16(209,Threshold)                                            //        MOVE16_16(209,Threshold)
+                                                                      //
+  Not16:                                                              //      }
+                                                                      //
+                                                                      //
+  JR_GTEQ16(Par1,10,NotWait1)                                         //      if (Par1 < 10)
+                                                                      //      {
+                                                                      //
+  Wait1:                                                              //        do
+                                                                      //        {
+  INPUT_DEVICE(READY_SI,0,US_PORT,30,0,1,Tmp)                         //          INPUT_DEVICE(READY_SI,0,US_PORT,30,0,1,Tmp)
+  MOVEF_16(Tmp,Value)                                                 //          Value  =  Tmp
+                                                                      //        }
+  JR_GTEQ16(Value,Threshold,Wait1)                                    //        while (Value >= Threshold)
+                                                                      //
+  JR(EndWait)                                                         //      }
+                                                                      //      else
+NotWait1:                                                             //      {
+                                                                      //
+  Wait2:                                                              //        do
+                                                                      //        {
+  INPUT_DEVICE(READY_SI,0,US_PORT,30,0,1,Tmp)                         //          INPUT_DEVICE(READY_SI,0,US_PORT,30,0,1,Tmp)
+  MOVEF_16(Tmp,Value)                                                 //          Value  =  Tmp
+                                                                      //        }
+  JR_LTEQ16(Value,Threshold,Wait2)                                    //        while (Value < Threshold)
+                                                                      //
+EndWait:                                                              //      }
+}                                                                     //  }
+                                                                      //
+// 18 ANGLEBLOCK ***************************************************************************************
+                                                                      //
+subcall   AngleBlock                                                  //  void AngleBlock(Par1,Par2)
+{                                                                     //  {
+  IN_16   Par1                                                        //
+  IN_16   Par2                                                        //
+                                                                      //
+  DATA32  Timer                                                       //                                                                      
+  DATAF   Tmp                                                         //
+  DATA16  Value                                                       //
+  DATA16  Threshold                                                   //
+                                                                      //
+// Par1   Wait until                                                  //
+// 1      Value <  -360                                               //
+// 2      Value <  -270                                               //
+// 3      Value <  -180                                               //
+// 4      Value <  -90                                                //
+// 5      Value <  -45                                                //
+// 6      Value <  -10                                                //
+// 7      Value >= 10                                                 //
+// 8      Value >= 45                                                 //
+// 9      Value >= 90                                                 //
+// 10     Value >= 180                                                //
+// 11     Value >= 270                                                //
+// 12     Value >= 360                                                //
+                                                                      //
+  JR_NEQ16(Par1,1,Not1)                                               //    if (Par1 == 1)
+                                                                      //    {
+  MOVE16_16(-360,Threshold)                                           //      MOVE16_16(-360,Threshold)
+                                                                      //
+  Not1:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,2,Not2)                                               //    if (Par1 == 2)
+                                                                      //    {
+  MOVE16_16(-270,Threshold)                                           //      MOVE16_16(-270,Threshold)
+                                                                      //
+  Not2:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,3,Not3)                                               //    if (Par1 == 3)
+                                                                      //    {
+  MOVE16_16(-180,Threshold)                                           //      MOVE16_16(-180,Threshold)
+                                                                      //
+  Not3:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,4,Not4)                                               //    if (Par1 == 4)
+                                                                      //    {
+  MOVE16_16(-90,Threshold)                                            //      MOVE16_16(-90,Threshold)
+                                                                      //
+  Not4:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,5,Not5)                                               //    if (Par1 == 5)
+                                                                      //    {
+  MOVE16_16(-45,Threshold)                                            //      MOVE16_16(-45,Threshold)
+                                                                      //
+  Not5:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,6,Not6)                                               //    if (Par1 == 6)
+                                                                      //    {
+  MOVE16_16(-10,Threshold)                                            //      MOVE16_16(-10,Threshold)
+                                                                      //
+  Not6:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,7,Not7)                                               //    if (Par1 == 7)
+                                                                      //    {
+  MOVE16_16(10,Threshold)                                             //      MOVE16_16(10,Threshold)
+                                                                      //
+  Not7:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,8,Not8)                                               //    if (Par1 == 8)
+                                                                      //    {
+  MOVE16_16(45,Threshold)                                             //      MOVE16_16(45,Threshold)
+                                                                      //
+  Not8:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,9,Not9)                                               //    if (Par1 == 9)
+                                                                      //    {
+  MOVE16_16(90,Threshold)                                             //      MOVE16_16(90,Threshold)
+                                                                      //
+  Not9:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,10,Not10)                                             //    if (Par1 == 10)
+                                                                      //    {
+  MOVE16_16(180,Threshold)                                            //      MOVE16_16(180,Threshold)
+                                                                      //
+  Not10:                                                              //    }
+                                                                      //
+  JR_NEQ16(Par1,11,Not11)                                             //    if (Par1 == 11)
+                                                                      //    {
+  MOVE16_16(270,Threshold)                                            //      MOVE16_16(270,Threshold)
+                                                                      //
+  Not11:                                                              //    }
+                                                                      //
+  JR_NEQ16(Par1,12,Not12)                                             //    if (Par1 == 12)
+                                                                      //    {
+  MOVE16_16(360,Threshold)                                            //      MOVE16_16(360,Threshold)
+                                                                      //
+  Not12:                                                              //    }
+                                                                      //
+  INPUT_WRITE(0,GYRO_PORT,1,DEVCMD_RESET)                             //    INPUT_WRITE(0,GYRO_PORT,1,DEVCMD_RESET)
+                                                                      //
+  TIMER_WAIT(50,Timer)                                                //    Wait 50mS
+  TIMER_READY(Timer)                                                  //
+                                                                      //
+  JR_GTEQ16(Threshold,0,Positive)                                     //    if (Threshold < 0)
+                                                                      //    {
+                                                                      //
+  Wait1:                                                              //      do
+                                                                      //      {
+  INPUT_DEVICE(READY_SI,0,GYRO_PORT,32,0,1,Tmp)                       //        INPUT_DEVICE(READY_SI,0,GYRO_PORT,32,0,1,Tmp)
+  MOVEF_16(Tmp,Value)                                                 //        Value  =  Tmp
+                                                                      //      }
+  JR_GTEQ16(Value,Threshold,Wait1)                                    //      while (Value >= Threshold)
+                                                                      //
+  JR(EndPositive)                                                     //    }
+                                                                      //    else
+Positive:                                                             //    {
+                                                                      //
+  Wait2:                                                              //      do
+                                                                      //      {
+  INPUT_DEVICE(READY_SI,0,GYRO_PORT,32,0,1,Tmp)                       //        INPUT_DEVICE(READY_SI,0,GYRO_PORT,32,0,1,Tmp)
+  MOVEF_16(Tmp,Value)                                                 //        Value  =  Tmp
+                                                                      //      }
+  JR_LT16(Value,Threshold,Wait2)                                      //      while (Value < Threshold)
+                                                                      //
+EndPositive:                                                          //    }
+}                                                                     //  }
+                                                                      //
+// 19 ENCODERBLOCK *************************************************************************************
+                                                                      //
+subcall   EncoderBlock                                                //  void EncoderBlock(Par1,Par2)
+{                                                                     //  {
+  IN_16   Par1                                                        //
+  IN_16   Par2                                                        //
+                                                                      //
+  DATAF   Tmp                                                         //
+  DATA32  Data32                                                      //
+  DATA16  Value                                                       //
+  DATA16  Threshold                                                   //
+  DATA8   Data8                                                       //
+                                                                      //
+// Par1   Wait until                                                  //
+// 1      Value <  -360                                               //
+// 2      Value <  -270                                               //
+// 3      Value <  -180                                               //
+// 4      Value <  -90                                                //
+// 5      Value <  -45                                                //
+// 6      Value <  -10                                                //
+// 7      Value >= 10                                                 //
+// 8      Value >= 45                                                 //
+// 9      Value >= 90                                                 //
+// 10     Value >= 180                                                //
+// 11     Value >= 270                                                //
+// 12     Value >= 360                                                //
+                                                                      //
+  JR_NEQ16(Par1,1,Not1)                                               //    if (Par1 == 1)
+                                                                      //    {
+  MOVE16_16(-360,Threshold)                                           //      MOVE16_16(-360,Threshold)
+                                                                      //
+  Not1:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,2,Not2)                                               //    if (Par1 == 2)
+                                                                      //    {
+  MOVE16_16(-270,Threshold)                                           //      MOVE16_16(-270,Threshold)
+                                                                      //
+  Not2:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,3,Not3)                                               //    if (Par1 == 3)
+                                                                      //    {
+  MOVE16_16(-180,Threshold)                                           //      MOVE16_16(-180,Threshold)
+                                                                      //
+  Not3:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,4,Not4)                                               //    if (Par1 == 4)
+                                                                      //    {
+  MOVE16_16(-90,Threshold)                                            //      MOVE16_16(-90,Threshold)
+                                                                      //
+  Not4:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,5,Not5)                                               //    if (Par1 == 5)
+                                                                      //    {
+  MOVE16_16(-45,Threshold)                                            //      MOVE16_16(-45,Threshold)
+                                                                      //
+  Not5:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,6,Not6)                                               //    if (Par1 == 6)
+                                                                      //    {
+  MOVE16_16(-10,Threshold)                                            //      MOVE16_16(-10,Threshold)
+                                                                      //
+  Not6:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,7,Not7)                                               //    if (Par1 == 7)
+                                                                      //    {
+  MOVE16_16(10,Threshold)                                             //      MOVE16_16(10,Threshold)
+                                                                      //
+  Not7:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,8,Not8)                                               //    if (Par1 == 8)
+                                                                      //    {
+  MOVE16_16(45,Threshold)                                             //      MOVE16_16(45,Threshold)
+                                                                      //
+  Not8:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,9,Not9)                                               //    if (Par1 == 9)
+                                                                      //    {
+  MOVE16_16(90,Threshold)                                             //      MOVE16_16(90,Threshold)
+                                                                      //
+  Not9:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,10,Not10)                                             //    if (Par1 == 10)
+                                                                      //    {
+  MOVE16_16(180,Threshold)                                            //      MOVE16_16(180,Threshold)
+                                                                      //
+  Not10:                                                              //    }
+                                                                      //
+  JR_NEQ16(Par1,11,Not11)                                             //    if (Par1 == 11)
+                                                                      //    {
+  MOVE16_16(270,Threshold)                                            //      MOVE16_16(270,Threshold)
+                                                                      //
+  Not11:                                                              //    }
+                                                                      //
+  JR_NEQ16(Par1,12,Not12)                                             //    if (Par1 == 12)
+                                                                      //    {
+  MOVE16_16(360,Threshold)                                            //      MOVE16_16(360,Threshold)
+                                                                      //
+  Not12:                                                              //    }
+                                                                      //
+  OUTPUT_CLR_COUNT(0,MMOT_PORT)                                       //    OUTPUT_CLR_COUNT(0,MMOT_PORT)
+                                                                      //
+  JR_GTEQ16(Threshold,0,Positive)                                     //    if (Threshold < 0)
+                                                                      //    {
+                                                                      //
+  Wait1:                                                              //      do
+                                                                      //      {
+  INPUT_DEVICE(READY_SI,0,MMOT_DEVICE,8,0,1,Tmp)                      //        INPUT_DEVICE(READY_SI,0,MMOT_DEVICE,8,0,1,Tmp)
+  MOVEF_16(Tmp,Value)                                                 //        Value  =  Tmp
+                                                                      //      }
+  JR_GTEQ16(Value,Threshold,Wait1)                                    //      while (Value >= Threshold)
+                                                                      //
+  JR(EndPositive)                                                     //    }
+                                                                      //    else
+Positive:                                                             //    {
+                                                                      //
+  Wait2:                                                              //      do
+                                                                      //      {
+  INPUT_DEVICE(READY_SI,0,MMOT_DEVICE,8,0,1,Tmp)                      //        INPUT_DEVICE(READY_SI,0,MMOT_DEVICE,8,0,1,Tmp)
+  MOVEF_16(Tmp,Value)                                                 //        Value  =  Tmp
+                                                                      //      }
+  JR_LT16(Value,Threshold,Wait2)                                      //      while (Value < Threshold)
+                                                                      //
+EndPositive:                                                          //    }
+}                                                                     //  }
+                                                                      //
+// 20 BUTTONBLOCK **************************************************************************************
+                                                                      //
+subcall   ButtonBlock                                                 //  void ButtonBlock(Par1,Par2)
+{                                                                     //  {
+  IN_16   Par1                                                        //
+  IN_16   Par2                                                        //
+                                                                      //
+  DATA8   State                                                       //
+                                                                      //
+  JR_NEQ16(Par1,1,Not1)                                               //    if (Par1 == 1)
+                                                                      //    {
+                                                                      //      do
+Wait1:                                                                //      {
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,State)                            //        UI_BUTTON(SHORTPRESS,ENTER_BUTTON,State)
+                                                                      //      }
+  JR_FALSE(State,Wait1)                                               //      while (!State)
+                                                                      //
+  Not1:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,2,Not2)                                               //    if (Par1 == 2)
+                                                                      //    {
+                                                                      //      do
+Wait2:                                                                //      {
+  UI_BUTTON(SHORTPRESS,UP_BUTTON,State)                               //        UI_BUTTON(SHORTPRESS,UP_BUTTON,State)
+                                                                      //      }
+  JR_FALSE(State,Wait2)                                               //      while (!State)
+                                                                      //
+  Not2:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,3,Not3)                                               //    if (Par1 == 3)
+                                                                      //    {
+                                                                      //      do
+Wait3:                                                                //      {
+  UI_BUTTON(SHORTPRESS,DOWN_BUTTON,State)                             //        UI_BUTTON(SHORTPRESS,DOWN_BUTTON,State)
+                                                                      //      }
+  JR_FALSE(State,Wait3)                                               //      while (!State)
+                                                                      //
+  Not3:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,4,Not4)                                               //    if (Par1 == 4)
+                                                                      //    {
+                                                                      //      do
+Wait4:                                                                //      {
+  UI_BUTTON(SHORTPRESS,LEFT_BUTTON,State)                             //        UI_BUTTON(SHORTPRESS,LEFT_BUTTON,State)
+                                                                      //      }
+  JR_FALSE(State,Wait4)                                               //      while (!State)
+                                                                      //
+  Not4:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,5,Not5)                                               //    if (Par1 == 5)
+                                                                      //    {
+                                                                      //      do
+Wait5:                                                                //      {
+  UI_BUTTON(SHORTPRESS,RIGHT_BUTTON,State)                            //        UI_BUTTON(SHORTPRESS,RIGHT_BUTTON,State)
+                                                                      //      }
+  JR_FALSE(State,Wait5)                                               //      while (!State)
+                                                                      //
+  Not5:                                                               //    }
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  }
+                                                                      //
+// 21 DELAYBLOCK ***************************************************************************************
+                                                                      //
+subcall   DelayBlock                                                  //  void DelayBlock()
+{                                                                     //  {
+  IN_16   Par1                                                        //
+  IN_16   Par2                                                        //
+                                                                      //
+  DATA32  Timer                                                       //
+  DATA32  Time                                                        //
+                                                                      //
+  MOVE32_32(0,Time)                                                   //    Time    =  0
+                                                                      //
+  JR_NEQ16(Par1,1,Not1)                                               //    if (Par1 == 1)
+                                                                      //    {
+  MOVE32_32(250,Time)                                                 //      Time  =  250
+                                                                      //
+  Not1:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,2,Not2)                                               //    if (Par1 == 2)
+                                                                      //    {
+  MOVE32_32(500,Time)                                                 //      Time  =  500
+                                                                      //
+  Not2:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,3,Not3)                                               //    if (Par1 == 3)
+                                                                      //    {
+  MOVE32_32(1000,Time)                                                //      Time  =  1000
+                                                                      //
+  Not3:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,4,Not4)                                               //    if (Par1 == 4)
+                                                                      //    {
+  MOVE32_32(2000,Time)                                                //      Time  =  2000
+                                                                      //
+  Not4:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,5,Not5)                                               //    if (Par1 == 5)
+                                                                      //    {
+  MOVE32_32(5000,Time)                                                //      Time  =  5000
+                                                                      //
+  Not5:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,6,Not6)                                               //    if (Par1 == 6)
+                                                                      //    {
+  MOVE32_32(10000,Time)                                               //      Time  =  10000
+                                                                      //
+  Not6:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,7,Not7)                                               //    if (Par1 == 7)
+                                                                      //    {
+  MOVE32_32(20000,Time)                                               //      Time  =  20000
+                                                                      //
+  Not7:                                                               //    }
+                                                                      //
+  JR_NEQ16(Par1,8,Not8)                                               //    if (Par1 == 8)
+                                                                      //    {
+  MOVE32_32(60000,Time)                                               //      Time  =  60000
+                                                                      //
+  Not8:                                                               //    }
+                                                                      //
+  TIMER_WAIT(Time,Timer)                                              //    TIMER_WAIT(Time,Timer)
+  TIMER_READY(Timer)                                                  //    TIMER_READY(Timer)
+}                                                                     //  }
+                                                                      //
+//! \endverbatim

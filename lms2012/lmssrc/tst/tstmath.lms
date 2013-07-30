@@ -1,0 +1,341 @@
+/*
+
+r../projects/lms2012/lms2012/Linux_X86/sys/ui/tstmath.rbf
+*/
+
+define    TRUNC0        32
+define    TRUNC2        33
+define    TRUNC9        34
+
+define    POW10         50
+
+
+vmthread  MAIN
+{
+  DATAF   LOW_POS
+  DATAF   HIGH_POS
+  DATAF   LOW_NEG
+  DATAF   HIGH_NEG
+  DATAF   ZERO
+  DATAF   ONE
+  DATAF   HUNDRED
+  DATAF   THOUSIND
+  DATAF   PI
+
+
+  UI_WRITE(PUT_STRING,'\r\n')
+  UI_WRITE(PUT_STRING,'          opMATH TEST V0.44\r\n')
+  UI_WRITE(PUT_STRING,'    ------------------------------\r\n')
+  UI_WRITE(PUT_STRING,'\r\n')
+  UI_WRITE(WRITE_FLUSH)
+
+  MOVEF_F(0.0F,ZERO)
+  MOVEF_F(1.0F,ONE)
+  MOVEF_F(100.0F,HUNDRED)
+  MOVEF_F(1000.0F,THOUSIND)
+  MOVEF_F(5.499F,LOW_POS)
+  MOVEF_F(5.500F,HIGH_POS)
+  SUBF(ZERO,LOW_POS,LOW_NEG)
+  SUBF(ZERO,HIGH_POS,HIGH_NEG)
+  DIVF(22.0F,7.0F,PI)
+
+  // EXP
+  CALL(Math,ONE,EXP)
+
+  UI_WRITE(PUT_STRING,'\r\n')
+
+  // POW
+  CALL(Math,4.0F,POW)
+  CALL(Math,2.0F,POW10)
+  CALL(Math,10.0F,POW10)
+  CALL(Math,20.0F,POW10)
+
+  UI_WRITE(PUT_STRING,'\r\n')
+
+  // MOD
+//  CALL(Math,HIGH_POS,MOD)
+  CALL(Math,12.0F,MOD8)
+  CALL(Math,302.0F,MOD16)
+  CALL(Math,100001.0F,MOD32)
+  CALL(Math,5.5F,MOD)
+
+  UI_WRITE(PUT_STRING,'\r\n')
+
+  // FLOOR
+  CALL(Math,LOW_POS,FLOOR)
+  CALL(Math,HIGH_POS,FLOOR)
+  CALL(Math,LOW_NEG,FLOOR)
+  CALL(Math,HIGH_NEG,FLOOR)
+
+  UI_WRITE(PUT_STRING,'\r\n')
+
+  // CEIL
+  CALL(Math,LOW_POS,CEIL)
+  CALL(Math,HIGH_POS,CEIL)
+  CALL(Math,LOW_NEG,CEIL)
+  CALL(Math,HIGH_NEG,CEIL)
+
+  UI_WRITE(PUT_STRING,'\r\n')
+
+  // ROUND
+  CALL(Math,LOW_POS,ROUND)
+  CALL(Math,HIGH_POS,ROUND)
+  CALL(Math,LOW_NEG,ROUND)
+  CALL(Math,HIGH_NEG,ROUND)
+
+  UI_WRITE(PUT_STRING,'\r\n')
+
+  // ABS
+  CALL(Math,LOW_POS,ABS)
+  CALL(Math,LOW_NEG,ABS)
+
+  UI_WRITE(PUT_STRING,'\r\n')
+
+  // NEGATE
+  CALL(Math,LOW_POS,NEGATE)
+  CALL(Math,LOW_NEG,NEGATE)
+
+  UI_WRITE(PUT_STRING,'\r\n')
+
+  // TRUNC
+  CALL(Math,PI,TRUNC0)
+  CALL(Math,PI,TRUNC2)
+  CALL(Math,PI,TRUNC9)
+  SUBF(0.0F,PI,PI)
+  CALL(Math,PI,TRUNC0)
+  CALL(Math,PI,TRUNC2)
+  CALL(Math,PI,TRUNC9)
+
+  UI_WRITE(PUT_STRING,'\r\n')
+
+  // SQRT
+  CALL(Math,HUNDRED,SQRT)
+  CALL(Math,LOW_NEG,SQRT)
+  CALL(Math,ZERO,SQRT)
+
+  UI_WRITE(PUT_STRING,'\r\n')
+
+  // LOG
+  CALL(Math,ONE,LOG)
+  CALL(Math,HUNDRED,LOG)
+  CALL(Math,THOUSIND,LOG)
+  CALL(Math,LOW_NEG,LOG)
+  CALL(Math,ZERO,LOG)
+
+  UI_WRITE(PUT_STRING,'\r\n')
+
+  // LN
+  CALL(Math,ONE,LN)
+  CALL(Math,HUNDRED,LN)
+  CALL(Math,THOUSIND,LN)
+  CALL(Math,LOW_NEG,LN)
+  CALL(Math,ZERO,LN)
+
+  UI_WRITE(PUT_STRING,'\r\n')
+
+  // SIN
+  CALL(Math,ONE,SIN)
+  CALL(Math,LOW_NEG,SIN)
+  CALL(Math,ZERO,SIN)
+
+  UI_WRITE(PUT_STRING,'\r\n')
+
+  // COS
+  CALL(Math,ONE,COS)
+  CALL(Math,LOW_NEG,COS)
+  CALL(Math,ZERO,COS)
+
+  UI_WRITE(PUT_STRING,'\r\n')
+
+  // TAN
+  CALL(Math,ONE,TAN)
+  CALL(Math,LOW_NEG,TAN)
+  CALL(Math,ZERO,TAN)
+
+  UI_WRITE(PUT_STRING,'\r\n')
+
+  // ASIN
+  CALL(Math,ONE,ASIN)
+  CALL(Math,LOW_NEG,ASIN)
+  CALL(Math,ZERO,ASIN)
+
+  UI_WRITE(PUT_STRING,'\r\n')
+
+  // ACOS
+  CALL(Math,ONE,ACOS)
+  CALL(Math,LOW_NEG,ACOS)
+  CALL(Math,ZERO,ACOS)
+
+  UI_WRITE(PUT_STRING,'\r\n')
+
+  // ATAN
+  CALL(Math,ONE,ATAN)
+  CALL(Math,LOW_NEG,ATAN)
+  CALL(Math,ZERO,ATAN)
+
+  UI_WRITE(PUT_STRING,'\r\n')
+
+
+
+}
+
+
+subcall   Math
+{
+  IN_F    X
+  IN_8    Cmd
+
+  DATA8   Dummy1
+  DATA16  Dummy2
+  DATAF   R
+  DATAF   Y
+
+  UI_WRITE(PUT_STRING,'        ')
+
+  JR_NEQ8(Cmd,EXP,NotExp)
+  MATH(EXP,X,R)
+  UI_WRITE(PUT_STRING,'EXP     ')
+NotExp:
+
+  JR_NEQ8(Cmd,POW,NotPow)
+  MOVE8_F(2,Y)
+  MATH(POW,X,Y,R)
+  UI_WRITE(PUT_STRING,'EXP 2   ')
+NotPow:
+
+  JR_NEQ8(Cmd,POW10,NotPow10)
+  MOVE8_F(10,Y)
+  MATH(POW,X,Y,R)
+  UI_WRITE(PUT_STRING,'EXP 10  ')
+NotPow10:
+
+  JR_NEQ8(Cmd,MOD8,NotMod8)
+  MOVEF_8(X,X)
+  MOVE16_8(5,Y)
+  MATH(MOD8,X,Y,R)
+  MOVE8_F(X,X)
+  MOVE8_F(R,R)
+  UI_WRITE(PUT_STRING,'MOD8 5  ')
+NotMod8:
+
+  JR_NEQ8(Cmd,MOD16,NotMod16)
+  MOVEF_16(X,X)
+  MOVE16_16(5,Y)
+  MATH(MOD16,X,Y,R)
+  MOVE16_F(X,X)
+  MOVE16_F(R,R)
+  UI_WRITE(PUT_STRING,'MOD16 5 ')
+NotMod16:
+
+  JR_NEQ8(Cmd,MOD32,NotMod32)
+  MOVEF_32(X,X)
+  MOVE16_32(5,Y)
+  MATH(MOD32,X,Y,R)
+  MOVE32_F(X,X)
+  MOVE32_F(R,R)
+  UI_WRITE(PUT_STRING,'MOD32 5 ')
+NotMod32:
+
+  JR_NEQ8(Cmd,MOD,NotMod)
+  MOVE16_F(5,Y)
+  MATH(MOD,X,Y,R)
+  UI_WRITE(PUT_STRING,'MOD 5   ')
+NotMod:
+
+  JR_NEQ8(Cmd,FLOOR,NotFloor)
+  MATH(FLOOR,X,R)
+  UI_WRITE(PUT_STRING,'FLOOR   ')
+NotFloor:
+
+  JR_NEQ8(Cmd,CEIL,NotCeil)
+  MATH(CEIL,X,R)
+  UI_WRITE(PUT_STRING,'CEIL    ')
+NotCeil:
+
+  JR_NEQ8(Cmd,ROUND,NotRound)
+  MATH(ROUND,X,R)
+  UI_WRITE(PUT_STRING,'ROUND   ')
+NotRound:
+
+  JR_NEQ8(Cmd,ABS,NotAbs)
+  MATH(ABS,X,R)
+  UI_WRITE(PUT_STRING,'ABS     ')
+NotAbs:
+
+  JR_NEQ8(Cmd,NEGATE,NotNegate)
+  MATH(NEGATE,X,R)
+  UI_WRITE(PUT_STRING,'NEGATE')
+NotNegate:
+
+  JR_NEQ8(Cmd,TRUNC0,NotTrunc0)
+  MATH(TRUNC,X,0,R)
+  UI_WRITE(PUT_STRING,'TRUNC 0 ')
+NotTrunc0:
+
+  JR_NEQ8(Cmd,TRUNC2,NotTrunc2)
+  MATH(TRUNC,X,2,R)
+  UI_WRITE(PUT_STRING,'TRUNC 2 ')
+NotTrunc2:
+
+  JR_NEQ8(Cmd,TRUNC9,NotTrunc9)
+  MATH(TRUNC,X,4,R)
+  UI_WRITE(PUT_STRING,'TRUNC 9 ')
+NotTrunc9:
+
+  JR_NEQ8(Cmd,SQRT,NotSqrt)
+  MATH(SQRT,X,R)
+  UI_WRITE(PUT_STRING,'SQRT    ')
+NotSqrt:
+
+  JR_NEQ8(Cmd,LOG,NotLog)
+  MATH(LOG,X,R)
+  UI_WRITE(PUT_STRING,'LOG     ')
+NotLog:
+
+  JR_NEQ8(Cmd,LN,NotLn)
+  MATH(LN,X,R)
+  UI_WRITE(PUT_STRING,'LN      ')
+NotLn:
+
+  JR_NEQ8(Cmd,SIN,NotSin)
+  MATH(SIN,X,R)
+  UI_WRITE(PUT_STRING,'SIN     ')
+NotSin:
+
+  JR_NEQ8(Cmd,COS,NotCos)
+  MATH(COS,X,R)
+  UI_WRITE(PUT_STRING,'COS     ')
+NotCos:
+
+  JR_NEQ8(Cmd,TAN,NotTan)
+  MATH(TAN,X,R)
+  UI_WRITE(PUT_STRING,'TAN     ')
+NotTan:
+
+  JR_NEQ8(Cmd,ASIN,NotASin)
+  MATH(ASIN,X,R)
+  UI_WRITE(PUT_STRING,'ASIN    ')
+NotASin:
+
+  JR_NEQ8(Cmd,ACOS,NotACos)
+  MATH(ACOS,X,R)
+  UI_WRITE(PUT_STRING,'ACOS    ')
+NotACos:
+
+  JR_NEQ8(Cmd,ATAN,NotATan)
+  MATH(ATAN,X,R)
+  UI_WRITE(PUT_STRING,'ATAN    ')
+NotATan:
+
+
+
+
+
+  UI_WRITE(PUT_STRING,'(')
+  UI_WRITE(FLOATVALUE,X,28,10)
+  UI_WRITE(PUT_STRING,')')
+  UI_WRITE(PUT_STRING,' = ')
+  UI_WRITE(FLOATVALUE,R,28,10)
+  UI_WRITE(PUT_STRING,'\r\n')
+  UI_WRITE(WRITE_FLUSH)
+}

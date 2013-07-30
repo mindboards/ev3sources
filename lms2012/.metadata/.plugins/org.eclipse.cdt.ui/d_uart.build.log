@@ -1,0 +1,15 @@
+
+**** Build of configuration Linuxmod_AM1808 for project d_uart ****
+
+/home/al/projects/lms2012/d_uart/Linuxmod_AM1808/buildmod d_uart all 
+make: Entering directory `/home/al/am1808/DaVinci-PSP-SDK-03.20.00.13/src/kernel/linux-03.20.00.13'
+  LD      /home/al/projects/lms2012/d_uart/Linuxmod_AM1808/built-in.o
+  CC [M]  /home/al/projects/lms2012/d_uart/Linuxmod_AM1808/d_uart_new.o
+  CC [M]  /home/al/projects/lms2012/d_uart/Linuxmod_AM1808/lego_ti_omapl_pru_suart.o
+  LD [M]  /home/al/projects/lms2012/d_uart/Linuxmod_AM1808/d_uart.o
+  Building modules, stage 2.
+  MODPOST 1 modules
+  CC      /home/al/projects/lms2012/d_uart/Linuxmod_AM1808/d_uart.mod.o
+  LD [M]  /home/al/projects/lms2012/d_uart/Linuxmod_AM1808/d_uart.ko
+make: Leaving directory `/home/al/am1808/DaVinci-PSP-SDK-03.20.00.13/src/kernel/linux-03.20.00.13'
+rm: cannot remove `..': Is a directory

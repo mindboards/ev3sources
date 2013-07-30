@@ -1,0 +1,12 @@
+#! /bin/bash
+
+# Setup directories
+source env_setup
+
+#cp ${AM1808_KERNEL}/drivers/usb/gadget/g_hid.ko ~/projects/lms2012/lms2012/Linux_AM1808/mod/g_hid.ko
+
+cp -r ~/projects/lms2012/lms2012/Linux_AM1808/* ~/am1808/${AM1808_DISTRO}/filesys/home/root/lms2012
+
+
+
+

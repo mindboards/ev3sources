@@ -1,0 +1,2975 @@
+//! \page test Test
+//!
+//!
+//! \verbatim
+//
+//
+define    DEVICENAMESIZE      120                                     //  Max characters for device name
+define    SIZE                500
+//
+// MAIN ************************************************************************************************
+                                                                      //
+define    TEST_STARTX         16                                      //
+define    TEST_STARTY         11                                      //
+define    TEST_LINE_STARTX    40                                      //
+define    TEST_LINE_STARTY    21                                      //
+define    TEST_LINE_SPACEY    17                                      //
+define    TEST_TEXT_STARTX    24                                      //
+define    TEST_TEXT_STARTY    36                                      //
+define    TEST_TEXT_SIZEX     131                                     //
+define    TEST_TEXT_SIZEY     86                                      //
+define    TEST_TEXT_SPACEY    10                                      //
+define    TEST_CURSOR_STARTX  21                                      //
+define    TEST_CURSOR_STARTY  35                                      //
+define    TEST_CURSOR_WIDTH   127                                     //
+define    TEST_CURSOR_HEIGHT  14                                      //
+define    TEST_ICON_STARTX    24                                      //
+define    TEST_ICON_STARTY    19                                      //
+define    TEST_ICON_SPACEY    17                                      //
+define    TEST_SEPAR_STARTX   21                                      //
+define    TEST_SEPAR_ENDX     154                                     //
+                                                                      //
+vmthread  MAIN                                                        //  void MAIN(void)
+{                                                                     //  {
+  DATA16  Tmp                                                         //
+  DATA16  TmpY                                                        //
+  DATA16  Line                                                        //
+  DATA16  Ypos                                                        //
+  DATA16  Yipos                                                       //
+  DATAS   Text 24                                                     //
+  DATAS   Textbox SIZE                                                //
+                                                                      //
+  UI_DRAW(TOPLINE,1)                                                  //    UI_DRAW(TOPLINE,1)
+  UI_WRITE(LED,LED_GREEN)                                             //    UI_WRITE(LED,LED_GREEN)
+  UI_BUTTON(SET_BACK_BLOCK,1)                                         //    UI_BUTTON(SET_BACK_BLOCK,1)
+                                                                      //
+  UI_DRAW(SELECT_FONT,NORMAL_FONT)                                    //    UI_DRAW(SELECT_FONT,NORMAL_FONT)
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Sound')              //    UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Text')
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Leds')               //    UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Text')
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Motors')             //    UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Text')
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Power')              //    UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Text')
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Sensors')            //    UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Text')
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Gyro')               //    UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Text')
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'IR seeker')          //    UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Text')
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Calibrate')          //    UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Text')
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Change Name')        //    UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Text')
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'IR remote')          //    UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Text')
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'IR channel')         //    UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Text')
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'IR ch Beacon')       //    UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Text')
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'IR seek new ')       //    UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Text')
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Display     ')       //    UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Text')
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Performance ')       //    UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Text')
+  UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'DaisyChain  ')       //    UI_WRITE(TEXTBOX_APPEND,Textbox,SIZE,DEL_CRLF,'Text')
+                                                                      //
+                                                                      //    do
+Loop:                                                                 //    {
+                                                                      //
+  // Show popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,TEST_STARTX,TEST_STARTY,'144x116_POP6')    //      Draw bitmap
+                                                                      //
+  MOVE16_16(TEST_LINE_STARTY,Ypos)                                    //      Ypos        =  TEST_LINE_STARTY
+  MOVE16_16(TEST_ICON_STARTY,Yipos)                                   //      Yipos       =  TEST_ICON_STARTY
+                                                                      //
+  // Draw headline icon                                               //
+  UI_DRAW(ICON,FG_COLOR,TEST_ICON_STARTX,Yipos,NORMAL_ICON,ICON_SETTINGS)//   UI_DRAW(ICON,FG_COLOR,TEST_ICON_STARTX,Yipos,NORMAL_ICON,ICON_SETTINGS)
+  ADD16(Yipos,TEST_ICON_SPACEY,Yipos)                                 //      Yipos      +=  TEST_ICON_SPACEY
+                                                                      //
+  // Draw headline                                                    //
+  ADD16(8,TEST_LINE_STARTX,Tmp)                                       //      Tmp         =  TEST_LINE_STARTX + 8
+  UI_DRAW(SELECT_FONT,SMALL_FONT)                                     //      UI_DRAW(SELECT_FONT,SMALL_FONT)
+  UI_DRAW(TEXT,FG_COLOR,Tmp,Ypos,'Test')                              //      UI_DRAW(TEXT,FG_COLOR,Tmp,Ypos,'Test')
+  UI_DRAW(SELECT_FONT,NORMAL_FONT)                                    //      UI_DRAW(SELECT_FONT,NORMAL_FONT)
+  ADD16(Ypos,TEST_LINE_SPACEY,Ypos)                                   //      Ypos       +=  TEST_LINE_SPACEY
+                                                                      //
+  // Draw separator line                                              //
+  SUB16(Ypos,5,TmpY)                                                  //      TmpY        =  Ypos - 5
+  UI_DRAW(LINE,FG_COLOR,TEST_SEPAR_STARTX,TmpY,TEST_SEPAR_ENDX,TmpY)  //      UI_DRAW(LINE,FG_COLOR,TEST_SEPAR_STARTX,TmpY,TEST_SEPAR_ENDX,TmpY)
+                                                                      //
+  MOVE16_16(-1,Line)                                                  //      Line  = -1
+  UI_DRAW(TEXTBOX,TEST_TEXT_STARTX,TEST_TEXT_STARTY,TEST_TEXT_SIZEX,= //      UI_DRAW(TEXTBOX,TEST_TEXT_STARTX,TEST_TEXT_STARTY,TEST_TEXT_SIZEX,TEST_TEXT_SIZEY,Textbox,SIZE,DEL_CRLF,Line)
+         TEST_TEXT_SIZEY,Textbox,SIZE,DEL_CRLF,Line)                  //
+                                                                      //
+  JR_NEQ16(Line,1,Not1)                                               //      if (Line == 1)
+                                                                      //      {
+  CALL(TestSound)                                                     //        CALL(TestSound)
+                                                                      //
+Not1:                                                                 //      }
+                                                                      //
+  JR_NEQ16(Line,2,Not2)                                               //      if (Line == 2)
+                                                                      //      {
+  CALL(TestLeds)                                                      //        CALL(TestLeds)
+                                                                      //
+Not2:                                                                 //      }
+                                                                      //
+  JR_NEQ16(Line,3,Not3)                                               //      if (Line == 3)
+                                                                      //      {
+  CALL(TestMotors)                                                    //        CALL(TestMotors)
+                                                                      //
+Not3:                                                                 //      }
+                                                                      //
+  JR_NEQ16(Line,4,Not4)                                               //      if (Line == 4)
+                                                                      //      {
+  CALL(TestPower)                                                     //        CALL(TestPower)
+                                                                      //
+Not4:                                                                 //      }
+                                                                      //
+  JR_NEQ16(Line,5,Not5)                                               //      if (Line == 5)
+                                                                      //      {
+  CALL(TestSensors)                                                   //        CALL(TestSensors)
+                                                                      //
+Not5:                                                                 //      }
+                                                                      //
+  JR_NEQ16(Line,6,Not6)                                               //      if (Line == 6)
+                                                                      //      {
+  CALL(TestGyro)                                                      //        CALL(TestGyro)
+                                                                      //
+Not6:                                                                 //      }
+                                                                      //
+  JR_NEQ16(Line,7,Not7)                                               //      if (Line == 7)
+                                                                      //      {
+  CALL(TestIRseek)                                                    //        CALL(TestIRseek)
+                                                                      //
+Not7:                                                                 //      }
+                                                                      //
+  JR_NEQ16(Line,8,Not8)                                               //      if (Line == 8)
+                                                                      //      {
+  CALL(CalibScreen)                                                   //        CALL(CalibScreen)
+                                                                      //
+Not8:                                                                 //      }
+                                                                      //
+  JR_NEQ16(Line,9,Not9)                                               //      if (Line == 9)
+                                                                      //      {
+  CALL(ChangeBrickname)                                               //        CALL(ChangeBrickname)
+                                                                      //
+Not9:                                                                 //      }
+                                                                      //
+  JR_NEQ16(Line,10,Not10)                                             //      if (Line == 10)
+                                                                      //      {
+  CALL(TestIRseekRemote)                                              //        CALL(TestIRseek)
+                                                                      //
+Not10:                                                                //      }
+                                                                      //
+  JR_NEQ16(Line,11,Not11)                                             //      if (Line == 11)
+                                                                      //      {
+  CALL(TestIRRemote)                                                  //        CALL(TestIRseek)
+                                                                      //
+Not11:                                                                //      }
+                                                                      //
+  JR_NEQ16(Line,12,Not12)                                             //      if (Line == 12)
+                                                                      //      {
+  CALL(TestIRbeacon)                                                  //        CALL(TestIRbeacon)
+                                                                      //
+Not12:                                                                //      }
+                                                                      //
+  JR_NEQ16(Line,13,Not13)                                             //      if (Line == 13)
+                                                                      //      {
+  CALL(TestIRseekNew)                                                 //        CALL(TestIRseekNew)
+                                                                      //
+Not13:                                                                //      }
+                                                                      //
+  JR_NEQ16(Line,14,Not14)                                             //      if (Line == 14)
+                                                                      //      {
+  CALL(TestDisplay)                                                   //        CALL(TestDisplay)
+                                                                      //
+Not14:                                                                //      }
+                                                                      //
+  JR_NEQ16(Line,15,Not15)                                             //      if (Line == 15)
+                                                                      //      {
+  CALL(TestPerformance)                                               //        CALL(TestPerformance)
+                                                                      //
+Not15:                                                                //      }
+                                                                      //
+  JR_NEQ16(Line,16,Not16)                                             //      if (Line == 16)
+                                                                      //      {
+  CALL(TestDaisy)                                                     //        CALL(TestDaisy)
+                                                                      //
+Not16:                                                                //      }
+                                                                      //
+                                                                      //    }
+  JR_NEQ16(Line,-1,Loop)                                              //    while (Line != -1)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// Test Sound ******************************************************************************************
+                                                                      //
+define    SOUND_STARTX        17                                      //                                        
+define    SOUND_STARTY        10                                      //
+define    SOUND_TEXTX         24                                      //
+define    SOUND_TEXTY         18                                      //
+define    SOUND_SPACEY        14                                      //
+                                                                      //
+subcall   TestSound                                                   //  void TestSound(void)
+{                                                                     //  {
+  DATA32  Timer                                                       //
+  DATA16  Ypos                                                        //
+  DATA8   Run                                                         //
+  DATA8   Tmp                                                         //
+  DATA8   Busy                                                        //
+                                                                      //
+                                                                      //
+  // Show popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,TEST_STARTX,TEST_STARTY,'144x116_POP6')    //      Draw bitmap
+                                                                      //
+  MOVE16_16(SOUND_TEXTY,Ypos)                                         //
+  UI_DRAW(SELECT_FONT,1)                                              //       
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'TESTING SOUND:')            //                                               
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //                            
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //                            
+  UI_DRAW(SELECT_FONT,0)                                              //       
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'A sound should')            //                                              
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //                            
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'be played and')             //                                                
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //                            
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'when finished')             //                                              
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //                            
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'a tone for 1/2')            //                                             
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //                            
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'second : repeat')           //                                           
+  UI_DRAW(UPDATE)                                                     //
+                                                                      //
+  MOVE8_8(1,Run)                                                      //    Run     =  1
+                                                                      //    do
+Loop1:                                                                //    {
+                                                                      //
+  SOUND(PLAY,100,'Test')                                              //      SOUND(PLAY,100,"Test")
+                                                                      //      do
+Loop2:                                                                //      {                                                                      
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //        UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_TRUE(Tmp,Stop)                                                   //        break out and goto stop
+  SOUND_TEST(Busy)                                                    //        SOUND_TEST(Busy)
+                                                                      //      }
+  JR_TRUE(Busy,Loop2)                                                 //      while (Busy)            
+                                                                      //
+  SOUND(TONE,30,470,500)                                              //      SOUND(TONE,30,470,500)
+                                                                      //
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotEnterButton)                                        //      if (Tmp != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotEnterButton:                                                       //      }
+                                                                      //      do
+Loop3:                                                                //      {
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //        UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_TRUE(Tmp,Stop)                                                   //        break out and goto stop
+  SOUND_TEST(Busy)                                                    //        SOUND_TEST(Busy)
+                                                                      //      }
+  JR_TRUE(Busy,Loop3)                                                 //      while (Busy)
+                                                                      //
+                                                                      //    }
+  JR_TRUE(Run,Loop1)                                                  //    while (Run)
+Stop:                                                                 //
+  SOUND(BREAK)                                                        //    SOUND(BREAK)
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  } 
+                                                                      //
+                                                                      //
+// Test Leds *******************************************************************************************
+                                                                      //
+define    LEDS_STARTX         17                                      //                                        
+define    LEDS_STARTY         10                                      //
+define    LEDS_TEXTX          24                                      //
+define    LEDS_TEXTY          18                                      //
+define    LEDS_SPACEY         14                                      //
+                                                                      //
+define    LEDS_DELAY          40                                      //
+                                                                      //
+subcall   TestLeds                                                    //  void TestLeds(void)
+{                                                                     //  {
+  DATA32  Timer                                                       //
+  DATA16  Ypos                                                        //
+  DATA8   Run                                                         //
+  DATA8   Tmp                                                         //
+  DATA8   Red                                                         //
+  DATA8   Green                                                       //
+  DATA8   State                                                       //
+                                                                      //
+                                                                      //
+  // Show popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,TEST_STARTX,TEST_STARTY,'144x116_POP6')    //      Draw bitmap
+                                                                      //
+  MOVE16_16(LEDS_TEXTY,Ypos)                                          //
+  UI_DRAW(SELECT_FONT,1)                                              //       
+  UI_DRAW(TEXT,FG_COLOR,LEDS_TEXTX,Ypos,'TESTING LEDS:  ')            //
+  ADD16(Ypos,LEDS_SPACEY,Ypos)                                        //
+  ADD16(Ypos,LEDS_SPACEY,Ypos)                                        //
+  UI_DRAW(SELECT_FONT,0)                                              //
+  UI_DRAW(TEXT,FG_COLOR,LEDS_TEXTX,Ypos,'LEFT  -   Green')            //
+  ADD16(Ypos,LEDS_SPACEY,Ypos)                                        //
+  UI_DRAW(TEXT,FG_COLOR,LEDS_TEXTX,Ypos,'RIGHT -   Red  ')            //
+  ADD16(Ypos,LEDS_SPACEY,Ypos)                                        //
+  UI_DRAW(TEXT,FG_COLOR,LEDS_TEXTX,Ypos,'               ')            //
+  ADD16(Ypos,LEDS_SPACEY,Ypos)                                        //
+  UI_DRAW(TEXT,FG_COLOR,LEDS_TEXTX,Ypos,'               ')            //
+  ADD16(Ypos,LEDS_SPACEY,Ypos)                                        //
+  UI_DRAW(TEXT,FG_COLOR,LEDS_TEXTX,Ypos,'               ')            //
+  UI_DRAW(UPDATE)                                                     //
+                                                                      //
+  MOVE8_8(1,Run)                                                      //    Run     =  1
+                                                                      //    do
+Loop1:                                                                //    {
+                                                                      //
+  UI_BUTTON(PRESSED,LEFT_BUTTON,State)                                //
+  JR_FALSE(State,NotGreen)                                            //      if (State)
+                                                                      //      {
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,State)                               //
+  JR_FALSE(State,NotRed1)                                             //        if (State)
+                                                                      //        {
+  UI_WRITE(LED,LED_ORANGE)                                            //
+                                                                      //
+  JR(EndRed1)                                                         //        }
+                                                                      //        else
+NotRed1:                                                              //        {
+                                                                      //
+  UI_WRITE(LED,LED_GREEN)                                             //
+                                                                      //
+EndRed1:                                                              //        }
+                                                                      //
+  JR(EndGreen)                                                        //      }
+                                                                      //      else
+NotGreen:                                                             //      {
+                                                                      //
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,State)                               //
+  JR_FALSE(State,NotRed2)                                             //        if (State)
+                                                                      //        {
+  UI_WRITE(LED,LED_RED)                                               //
+                                                                      //
+  JR(EndRed2)                                                         //        }
+                                                                      //        else
+NotRed2:                                                              //        {
+                                                                      //
+  UI_WRITE(LED,LED_BLACK)                                             //
+                                                                      //
+EndRed2:                                                              //        }
+                                                                      //
+EndGreen:                                                             //      }
+                                                                      //
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotEnterButton)                                        //      if (Tmp != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotEnterButton:                                                       //      }
+                                                                      //    }
+  JR_TRUE(Run,Loop1)                                                  //    while (Run)
+  UI_WRITE(LED,LED_GREEN)                                             //    UI_WRITE(LED,LED_GREEN)
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+                                                                      //
+}                                                                     //  }                                                                      
+                                                                      //
+                                                                      //
+// Test Motors *****************************************************************************************
+                                                                      //
+define    MOTORS_STARTX         17                                    //                                        
+define    MOTORS_STARTY         10                                    //
+define    MOTORS_TEXTX          24                                    //
+define    MOTORS_TEXTY          18                                    //
+define    MOTORS_SPACEY         14                                    //
+                                                                      //
+subcall   TestMotors                                                  //  void TestMotors(void)
+{                                                                     //  {
+  DATA32  Timer                                                       //
+  DATA16  Ypos                                                        //
+  DATA8   Tmp                                                         //
+  DATA8   Busy                                                        //
+                                                                      //
+                                                                      //
+  // Show popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,TEST_STARTX,TEST_STARTY,'144x116_POP6')    //      Draw bitmap
+                                                                      //
+  MOVE16_16(MOTORS_TEXTY,Ypos)                                        //
+  UI_DRAW(SELECT_FONT,1)                                              //       
+  UI_DRAW(TEXT,FG_COLOR,MOTORS_TEXTX,Ypos,'TESTING MOTORS:')                 //                                               
+  ADD16(Ypos,MOTORS_SPACEY,Ypos)                                      //                            
+  ADD16(Ypos,MOTORS_SPACEY,Ypos)                                      //                            
+  UI_DRAW(SELECT_FONT,0)                                              //       
+  UI_DRAW(TEXT,FG_COLOR,MOTORS_TEXTX,Ypos,'4 motors plugged')                //                                              
+  ADD16(Ypos,MOTORS_SPACEY,Ypos)                                      //                            
+  UI_DRAW(TEXT,FG_COLOR,MOTORS_TEXTX,Ypos,'Motors should')                   //                                              
+  ADD16(Ypos,MOTORS_SPACEY,Ypos)                                      //                            
+  UI_DRAW(TEXT,FG_COLOR,MOTORS_TEXTX,Ypos,'ramp up and down')                //                                                
+  ADD16(Ypos,MOTORS_SPACEY,Ypos)                                      //                            
+  UI_DRAW(TEXT,FG_COLOR,MOTORS_TEXTX,Ypos,'forward and back')                //                                              
+  ADD16(Ypos,MOTORS_SPACEY,Ypos)                                      //                            
+  UI_DRAW(TEXT,FG_COLOR,MOTORS_TEXTX,Ypos,'ward one by one')                 //                                             
+  UI_DRAW(UPDATE)                                                     //
+                                                                      //
+                                                                      //
+  OUTPUT_STEP_POWER(0,1,100,360,0,360,1)                              //    OUTPUT_STEP_POWER(0,1,100,360,0,360,1)
+                                                                      //    do
+Loop11:                                                               //    {
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_TRUE(Tmp,Stop)                                                   //      break out and goto stop
+  OUTPUT_TEST(0,1,Busy)                                               //      OUTPUT_TEST(0,1,Busy)
+                                                                      //    }
+  JR_TRUE(Busy,Loop11)                                                //    while (Busy)
+                                                                      //
+  OUTPUT_STEP_POWER(0,1,-100,360,0,360,1)                             //    OUTPUT_STEP_POWER(0,1,-100,360,0,360,1)
+                                                                      //    do
+Loop12:                                                               //    {
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_TRUE(Tmp,Stop)                                                   //      break out and goto stop
+  OUTPUT_TEST(0,1,Busy)                                               //      OUTPUT_TEST(0,1,Busy)
+                                                                      //    }
+  JR_TRUE(Busy,Loop12)                                                //    while (Busy)
+                                                                      //
+                                                                      //
+  OUTPUT_STEP_POWER(0,2,100,360,0,360,1)                              //    OUTPUT_STEP_POWER(0,2,100,360,0,360,1)
+                                                                      //    do
+Loop21:                                                               //    {
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_TRUE(Tmp,Stop)                                                   //      break out and goto stop
+  OUTPUT_TEST(0,2,Busy)                                               //      OUTPUT_TEST(0,2,Busy)
+                                                                      //    }
+  JR_TRUE(Busy,Loop21)                                                //    while (Busy)
+                                                                      //
+  OUTPUT_STEP_POWER(0,2,-100,360,0,360,1)                             //    OUTPUT_STEP_POWER(0,2,-100,360,0,360,1)
+                                                                      //    do
+Loop22:                                                               //    {
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_TRUE(Tmp,Stop)                                                   //      break out and goto stop
+  OUTPUT_TEST(0,2,Busy)                                               //      OUTPUT_TEST(0,2,Busy)
+                                                                      //    }
+  JR_TRUE(Busy,Loop22)                                                //    while (Busy)
+                                                                      //
+                                                                      //
+  OUTPUT_STEP_POWER(0,4,100,360,0,360,1)                              //    OUTPUT_STEP_POWER(0,4,100,360,0,360,1)
+                                                                      //    do
+Loop31:                                                               //    {
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_TRUE(Tmp,Stop)                                                   //      break out and goto stop
+  OUTPUT_TEST(0,4,Busy)                                               //      OUTPUT_TEST(0,4,Busy)
+                                                                      //    }
+  JR_TRUE(Busy,Loop31)                                                //    while (Busy)
+                                                                      //
+  OUTPUT_STEP_POWER(0,4,-100,360,0,360,1)                             //    OUTPUT_STEP_POWER(0,4,-100,360,0,360,1)
+                                                                      //    do
+Loop32:                                                               //    {
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_TRUE(Tmp,Stop)                                                   //      break out and goto stop
+  OUTPUT_TEST(0,4,Busy)                                               //      OUTPUT_TEST(0,4,Busy)
+                                                                      //    }
+  JR_TRUE(Busy,Loop32)                                                //    while (Busy)
+                                                                      //
+                                                                      //
+  OUTPUT_STEP_POWER(0,8,100,360,0,360,1)                              //    OUTPUT_STEP_POWER(0,8,100,360,0,360,1)
+                                                                      //    do
+Loop41:                                                               //    {
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_TRUE(Tmp,Stop)                                                   //      break out and goto stop
+  OUTPUT_TEST(0,8,Busy)                                               //      OUTPUT_TEST(0,8,Busy)
+                                                                      //    }
+  JR_TRUE(Busy,Loop41)                                                //    while (Busy)
+                                                                      //
+  OUTPUT_STEP_POWER(0,8,-100,360,0,360,1)                             //    OUTPUT_STEP_POWER(0,8,-100,360,0,360,1)
+                                                                      //    do
+Loop42:                                                               //    {
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_TRUE(Tmp,Stop)                                                   //      break out and goto stop
+  OUTPUT_TEST(0,8,Busy)                                               //      OUTPUT_TEST(0,8,Busy)
+                                                                      //    }
+  JR_TRUE(Busy,Loop42)                                                //    while (Busy)
+Stop:                                                                 //  
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  } 
+                                                                      //
+// Test Power ******************************************************************************************
+                                                                      //
+define    POWER_STARTX         17                                     //
+define    POWER_STARTY         10                                     //
+define    POWER_TEXTX          24                                     //
+define    POWER_TEXTY          18                                     //
+                                                                      //
+subcall   TestPower                                                   //  void TestPower(void)
+{                                                                     //  {
+  DATA32  Timer                                                       //
+  DATA16  Ypos                                                        //
+  DATA8   Tmp                                                         //
+  DATA8   Fwd                                                         //
+  DATA8   Count                                                       //
+                                                                      //
+                                                                      //
+  // Show popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,TEST_STARTX,TEST_STARTY,'144x116_POP6')    //      Draw bitmap
+                                                                      //
+  MOVE8_8(0,Fwd)                                                      //
+  MOVE8_8(20,Count)
+                                                                      //
+  OUTPUT_POWER(0,15,100)
+  OUTPUT_START(0,15)
+                                                                      //    do
+Loop:                                                                 //    {
+
+  ADD8(Count,1,Count)
+  JR_LT8(Count,20,NoChange)
+
+  MOVE8_8(0,Count)
+  XOR8(1,Fwd,Fwd)
+
+  JR_FALSE(Fwd,NotFwd)
+
+  OUTPUT_POLARITY(0,15,1)
+
+  JR(EndFwd)
+NotFwd:
+
+  OUTPUT_POLARITY(0,15,-1)
+
+EndFwd:
+NoChange:
+                                                                      //
+                                                                      //
+                                                                      //
+  CALL(ShowPower,POWER_TEXTX,POWER_TEXTY)                             //
+                                                                      //
+  // Free VM to other stuff                                           //
+  TIMER_WAIT(250,Timer)                                               //      TIMER_WAIT(250,Timer)
+  TIMER_READY(Timer)                                                  //      TIMER_READY(Timer)
+                                                                      //
+  // Loop until "ENTER"                                               //
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+                                                                      //    }
+  JR_FALSE(Tmp,Loop)                                                  //    while (!Tmp)
+                                                                      //
+  OUTPUT_STOP(0,15,0)
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// Test Power ******************************************************************************************
+                                                                      //
+subcall   ShowPower                                                   //  void ShowPower(X,Y)
+{                                                                     //  {
+  IN_16   X
+  IN_16   Y
+
+  DATAF   Tbatt
+  DATAF   Vbatt
+  DATAF   Isys
+  DATAF   Iout
+  DATAF   Ibatt
+  DATAF   Iint
+  DATAF   Pbatt
+  DATA16  Xpos
+  DATA16  Ypos
+
+
+  UI_READ(GET_TBATT,Tbatt)
+  UI_READ(GET_VBATT,Vbatt)
+  UI_READ(GET_IBATT,Isys)
+  UI_READ(GET_IINT,Iint)
+  UI_READ(GET_IMOTOR,Iout)
+
+  ADDF(Isys,Iout,Ibatt)
+  MULF(Vbatt,Ibatt,Pbatt)
+
+  MOVE16_16(X,Xpos)
+  MOVE16_16(Y,Ypos)
+
+  UI_DRAW(SELECT_FONT,1)
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'BATTERY:')                       //
+  UI_DRAW(SELECT_FONT,0)
+
+
+  ADD16(Ypos,15,Ypos)
+  MOVE16_16(X,Xpos)
+
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,Vbatt,5,2)
+  ADD16(Xpos,40,Xpos)
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'V')                       //
+  ADD16(Xpos,32,Xpos)
+
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,Ibatt,5,3)
+  ADD16(Xpos,40,Xpos)
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'A')                       //
+
+
+  ADD16(Ypos,15,Ypos)
+  MOVE16_16(X,Xpos)
+
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,Iint,5,1)
+  ADD16(Xpos,40,Xpos)
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'I')                       //
+  ADD16(Xpos,32,Xpos)
+
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,Pbatt,5,1)
+  ADD16(Xpos,40,Xpos)
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'W')                       //
+
+
+  ADD16(Ypos,15,Ypos)
+  MOVE16_16(X,Xpos)
+
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,Tbatt,5,1)
+  ADD16(Xpos,40,Xpos)
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'C')                       //
+
+  ADD16(Ypos,7,Ypos)
+  ADD16(Ypos,15,Ypos)
+  MOVE16_16(X,Xpos)
+
+  UI_DRAW(SELECT_FONT,1)
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'MOTORS:')                       //
+  UI_DRAW(SELECT_FONT,0)
+
+  ADD16(Ypos,15,Ypos)
+  MOVE16_16(X,Xpos)
+
+  ADD16(Xpos,72,Xpos)
+
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,Iout,5,3)
+  ADD16(Xpos,40,Xpos)
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'A')                       //
+
+
+
+  // Update display                                                   //
+  UI_DRAW(UPDATE)                                                     //        UI_DRAW(UPDATE)
+                                                                      //
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// Test Sensors ****************************************************************************************
+                                                                      //
+/*
+    128 x 112
+    
+    25    12
+    
+    1234567890123456789012345         Ycur    Xcur
+        P1    P2    P3    P4
+    O1 xxxx  xxxx  xxxx  xxxx         0         0     1     2     3
+    I1 xxxx  xxxx  xxxx  xxxx         1
+    O1 xxxx  xxxx  xxxx  xxxx         2
+    I1 xxxx  xxxx  xxxx  xxxx         3
+    O1 xxxx  xxxx  xxxx  xxxx         4
+    I1 xxxx  xxxx  xxxx  xxxx         5
+    O1 xxxx  xxxx  xxxx  xxxx         6
+    I1 xxxx  xxxx  xxxx  xxxx         7
+
+
+*/      
+
+
+subcall   SensorMap
+{
+  IN_16   Xcur
+  IN_16   Ycur
+  OUT_8   Layer
+  OUT_8   Port
+
+  MOVE16_8(Ycur,Layer)
+  DIV8(Layer,2,Layer)
+  MOVE16_8(Xcur,Port)
+  AND16(Ycur,1,Ycur)
+  JR_NEQ16(Ycur,0,NotOut)
+  ADD8(Port,16,Port)
+NotOut:
+}
+
+
+
+
+define    SENS_STARTX         34
+define    SENS_STARTY         31
+define    SENS_SPACEX         32
+define    SENS_SPACEY         11
+
+define    PTEXT_STARTX        SENS_STARTX
+define    PTEXT_STARTY        18
+define    PTEXT_SPACEX        SENS_SPACEX
+
+define    LTEXT_STARTX        20
+define    LTEXT_STARTY        SENS_STARTY
+define    LTEXT_SPACEY        SENS_SPACEY
+
+define    SENS_CURSOR_WIDTH   27
+define    SENS_CURSOR_HEIGHT  9
+
+                                                                
+subcall   TestSensors                                                 //  void TestSensors(void)
+{                                                                     //  {
+  DATA32  Timer                                                       //
+  DATA32  Time
+  DATA32  TimeOld
+  DATAF   DataF
+  DATA16  Xpoi
+  DATA16  Ypoi
+  DATA16  Xpos
+  DATA16  Ypos
+  DATA16  Ycur
+  DATA16  Xcur
+  DATA16  Inc
+  DATA8   Tmp
+  DATA8   Layer
+  DATA8   Port
+  DATA8   Figures
+  DATA8   Decimals
+  DATA8   Update
+
+  MOVE16_16(0,Xcur)
+  MOVE16_16(0,Ycur)
+  MOVE8_8(1,Update)
+  
+  TIMER_READ(TimeOld)
+                                                                      //    do
+Loop:                                                                 //    {
+    
+  TIMER_READ(Timer)
+    
+  SUB32(Timer,TimeOld,Time)
+  
+  JR_LT32(Time,200,NoTimeout)
+  
+  MOVE32_32(Timer,TimeOld)  
+    
+  MOVE8_8(1,Update)
+  
+NoTimeout:  
+  
+  // Control Xcur
+  UI_BUTTON(GET_HORZ,Inc)
+  
+  JR_EQ16(Inc,0,NoHorz)
+  
+  MOVE8_8(1,Update)
+  
+NoHorz:  
+
+  ADD16(Xcur,Inc,Xcur)
+  JR_GTEQ16(Xcur,0,NotTooLowX)
+
+  MOVE16_16(0,Xcur)
+
+NotTooLowX:  
+
+  JR_LT16(Xcur,4,NotTooHighX)
+
+  MOVE16_16(3,Xcur)
+
+NotTooHighX:  
+
+  // Control Ycur
+  UI_BUTTON(GET_VERT,Inc)
+
+  JR_EQ16(Inc,0,NoVert)
+  
+  MOVE8_8(1,Update)
+  
+NoVert:  
+
+  ADD16(Ycur,Inc,Ycur)
+  JR_GTEQ16(Ycur,0,NotTooLowY)
+
+  MOVE16_16(0,Ycur)
+
+NotTooLowY:  
+
+  JR_LT16(Ycur,8,NotTooHighY)
+
+  MOVE16_16(7,Ycur)
+
+NotTooHighY:  
+
+  JR_FALSE(Update,NoUpdate)
+  
+  // Show popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,TEST_STARTX,TEST_STARTY,'144x116_POP6')    //      Draw bitmap
+                                                                      //
+  UI_DRAW(SELECT_FONT,TINY_FONT)
+                                                                        
+  // Show port number
+  MOVE16_16(PTEXT_STARTX,Xpos)
+  UI_DRAW(TEXT,FG_COLOR,Xpos,PTEXT_STARTY,'P1')
+  ADD16(Xpos,PTEXT_SPACEX,Xpos)
+  UI_DRAW(TEXT,FG_COLOR,Xpos,PTEXT_STARTY,'P2')
+  ADD16(Xpos,PTEXT_SPACEX,Xpos)
+  UI_DRAW(TEXT,FG_COLOR,Xpos,PTEXT_STARTY,'P3')
+  ADD16(Xpos,PTEXT_SPACEX,Xpos)
+  UI_DRAW(TEXT,FG_COLOR,Xpos,PTEXT_STARTY,'P4')
+
+  // Show layer number
+  MOVE16_16(LTEXT_STARTY,Ypos)
+  UI_DRAW(TEXT,FG_COLOR,LTEXT_STARTX,Ypos,'o1')
+  ADD16(Ypos,LTEXT_SPACEY,Ypos)
+  UI_DRAW(TEXT,FG_COLOR,LTEXT_STARTX,Ypos,'i1')
+  ADD16(Ypos,LTEXT_SPACEY,Ypos)
+  UI_DRAW(TEXT,FG_COLOR,LTEXT_STARTX,Ypos,'o2')
+  ADD16(Ypos,LTEXT_SPACEY,Ypos)
+  UI_DRAW(TEXT,FG_COLOR,LTEXT_STARTX,Ypos,'i2')
+  ADD16(Ypos,LTEXT_SPACEY,Ypos)
+  UI_DRAW(TEXT,FG_COLOR,LTEXT_STARTX,Ypos,'o3')
+  ADD16(Ypos,LTEXT_SPACEY,Ypos)
+  UI_DRAW(TEXT,FG_COLOR,LTEXT_STARTX,Ypos,'i3')
+  ADD16(Ypos,LTEXT_SPACEY,Ypos)
+  UI_DRAW(TEXT,FG_COLOR,LTEXT_STARTX,Ypos,'o4')
+  ADD16(Ypos,LTEXT_SPACEY,Ypos)
+  UI_DRAW(TEXT,FG_COLOR,LTEXT_STARTX,Ypos,'i4')
+
+  // Show values                                                      //
+  MOVE16_16(0,Ypoi)  
+UpdateY:
+  MOVE16_16(0,Xpoi)
+UpdateX:
+  MUL16(Xpoi,SENS_SPACEX,Xpos)
+  ADD16(Xpos,SENS_STARTX,Xpos)
+  MUL16(Ypoi,SENS_SPACEY,Ypos)
+  ADD16(Ypos,SENS_STARTY,Ypos)
+  CALL(SensorMap,Xpoi,Ypoi,Layer,Port)
+  CALL(ReadPort,DataF,Layer,Port,Figures,Decimals)
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,Figures,Decimals)
+  ADD16(Xpoi,1,Xpoi)
+  JR_LT16(Xpoi,4,UpdateX)
+  ADD16(Ypoi,1,Ypoi)
+  JR_LT16(Ypoi,8,UpdateY)
+
+  // Show cursor
+  MUL16(Xcur,SENS_SPACEX,Xpos)
+  ADD16(Xpos,SENS_STARTX,Xpos)
+  SUB16(Xpos,1,Xpos)
+  MUL16(Ycur,SENS_SPACEY,Ypos)
+  ADD16(Ypos,SENS_STARTY,Ypos)
+  SUB16(Ypos,1,Ypos)
+  UI_DRAW(INVERSERECT,Xpos,Ypos,SENS_CURSOR_WIDTH,SENS_CURSOR_HEIGHT)
+  
+
+  // Update display                                                   //
+  UI_DRAW(UPDATE)                                                     //      UI_DRAW(UPDATE)
+                                                                      //
+  MOVE8_8(0,Update)                                                                      
+NoUpdate:
+
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotEnter)
+
+  CALL(SensorMap,Xcur,Ycur,Layer,Port)
+  CALL(SensorShow,Layer,Port)
+  MOVE8_8(1,Update)
+
+NotEnter:
+                                                                      //
+  // Loop until "BACK"                                                //
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+                                                                      //    }
+  JR_FALSE(Tmp,Loop)                                                  //    while (!Tmp)
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   ReadPort
+{
+  OUT_F   Data
+  IN_8    Layer
+  IN_8    Port
+  OUT_8   Figures
+  OUT_8   Decimals
+
+  INPUT_DEVICE(GET_FIGURES,Layer,Port,Figures,Decimals)
+  INPUT_READSI(Layer,Port,0,-1,Data)
+
+}
+
+
+define    DATA_STARTX         20
+define    DATA_STARTY         17
+define    DATA_SPACEX         0
+define    DATA_SPACEY         9
+define    DATA_SPACEY2        4
+
+subcall   SensorShow
+{
+  IN_8    Layer
+  IN_8    Port
+
+  DATA8   Tmp
+  DATA8   Mode
+  DATA32  Timer                                                       //
+  DATA32  Raw
+  DATAF   Si
+  DATAF   SiMin
+  DATAF   SiMax
+  DATAF   DataF
+  DATA16  Xpos
+  DATA16  Ypos
+  DATA16  Inc
+  DATA8   Pct
+  DATA8   Type
+  DATA8   Connection
+  DATA8   Datasets
+  DATA8   Format
+  DATA8   SetMode
+  DATA8   Modes
+  DATA8   Views
+  DATA8   Figures
+  DATA8   Decimals
+  
+  DATAS   Name 12
+  DATAS   Symbol 5
+
+  INPUT_DEVICE(GET_TYPEMODE,Layer,Port,Type,Mode)                   
+  MOVE8_8(Mode,SetMode)
+                                                                      //    do
+Loop:                                                                 //    {
+  
+  // Show popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,TEST_STARTX,TEST_STARTY,'144x116_POP6')    //      Draw bitmap
+                                                                      //
+  UI_DRAW(SELECT_FONT,TINY_FONT)
+                                                                        
+
+  // Get sensor modes
+  INPUT_DEVICE(GET_FORMAT,Layer,Port,Datasets,Format,Modes,Views)
+
+  JR_LT8(SetMode,Modes,ModeOk)
+
+  MOVE8_8(Modes,SetMode)
+  SUB8(SetMode,1,SetMode)
+
+ModeOk:
+
+  // Set sensor mode
+  INPUT_READ(Layer,Port,0,SetMode,Pct)
+
+  // Get sensor info
+  INPUT_DEVICE(GET_TYPEMODE,Layer,Port,Type,Mode)
+  INPUT_DEVICE(GET_CONNECTION,Layer,Port,Connection)
+  INPUT_DEVICE(GET_NAME,Layer,Port,12,Name)
+  INPUT_DEVICE(GET_SYMBOL,Layer,Port,5,Symbol)
+  INPUT_DEVICE(GET_FORMAT,Layer,Port,Datasets,Format,Modes,Views)
+  INPUT_DEVICE(GET_RAW,Layer,Port,Raw)
+  INPUT_DEVICE(GET_FIGURES,Layer,Port,Figures,Decimals)
+  INPUT_DEVICE(GET_MINMAX,Layer,Port,SiMin,SiMax)
+  INPUT_READSI(Layer,Port,0,SetMode,Si)
+
+/*
+    1234567890123456789012345
+
+1   Name = nnnnnnnnnnn    sss
+2   Type = ttt     Mode   = m
+3   Conn = ccc
+4   Modes    = m   Views  = v
+5   Datasets = d   Format = f
+6   Figures  = f   Dec.   = d
+7
+8   Raw      = rrrrrrrrrrrrr
+9   Pct      = pppp
+10  Si       = f.d
+11
+12  SiMin    = f.d
+13  SiMax    = f.d
+*/      
+  
+  // Show sensor info
+  MOVE16_16(DATA_STARTX,Xpos)
+  MOVE16_16(DATA_STARTY,Ypos)
+
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Name = ')
+  ADD16(Xpos,35,Xpos)
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,Name)
+  ADD16(Xpos,75,Xpos)
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,Symbol)
+
+  MOVE16_16(DATA_STARTX,Xpos)
+  ADD16(Ypos,DATA_SPACEY,Ypos)
+
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Type = ')
+  ADD16(Xpos,35,Xpos)
+  MOVE8_F(Type,DataF)
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,3,0)
+  ADD16(Xpos,40,Xpos)
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Mode   = ')
+  ADD16(Xpos,45,Xpos)
+  MOVE8_F(Mode,DataF)
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,1,0)
+
+  MOVE16_16(DATA_STARTX,Xpos)
+  ADD16(Ypos,DATA_SPACEY,Ypos)
+
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Conn = ')
+  ADD16(Xpos,35,Xpos)
+  MOVE8_F(Connection,DataF)
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,3,0)
+
+  MOVE16_16(DATA_STARTX,Xpos)
+  ADD16(Ypos,DATA_SPACEY,Ypos)
+
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Modes    = ')
+  ADD16(Xpos,55,Xpos)
+  MOVE8_F(Modes,DataF)
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,1,0)
+  ADD16(Xpos,20,Xpos)
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Views  = ')
+  ADD16(Xpos,45,Xpos)
+  MOVE8_F(Views,DataF)
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,1,0)
+
+  MOVE16_16(DATA_STARTX,Xpos)
+  ADD16(Ypos,DATA_SPACEY,Ypos)
+
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Datasets = ')
+  ADD16(Xpos,55,Xpos)
+  MOVE8_F(Datasets,DataF)
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,1,0)
+  ADD16(Xpos,20,Xpos)
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Format = ')
+  ADD16(Xpos,45,Xpos)
+  MOVE8_F(Format,DataF)
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,1,0)
+
+  MOVE16_16(DATA_STARTX,Xpos)
+  ADD16(Ypos,DATA_SPACEY,Ypos)
+
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Figures  = ')
+  ADD16(Xpos,55,Xpos)
+  MOVE8_F(Figures,DataF)
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,1,0)
+  ADD16(Xpos,20,Xpos)
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Dec.   = ')
+  ADD16(Xpos,45,Xpos)
+  MOVE8_F(Decimals,DataF)
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,1,0)
+
+  MOVE16_16(DATA_STARTX,Xpos)
+  ADD16(Ypos,DATA_SPACEY,Ypos)
+  ADD16(Ypos,DATA_SPACEY2,Ypos)
+
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Raw      = ')
+  ADD16(Xpos,55,Xpos)
+  MOVE32_F(Raw,DataF)
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,13,0)
+
+  MOVE16_16(DATA_STARTX,Xpos)
+  ADD16(Ypos,DATA_SPACEY,Ypos)
+
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Pct      = ')
+  ADD16(Xpos,55,Xpos)
+  MOVE8_F(Pct,DataF)
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,4,0)
+
+  MOVE16_16(DATA_STARTX,Xpos)
+  ADD16(Ypos,DATA_SPACEY,Ypos)
+
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Si       = ')
+  ADD16(Xpos,55,Xpos)
+  MOVEF_F(Si,DataF)
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,Figures,Decimals)
+
+  MOVE16_16(DATA_STARTX,Xpos)
+  ADD16(Ypos,DATA_SPACEY,Ypos)
+  ADD16(Ypos,DATA_SPACEY2,Ypos)
+
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Si min   = ')
+  ADD16(Xpos,55,Xpos)
+  MOVEF_F(SiMin,DataF)
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,Figures,Decimals)
+
+  MOVE16_16(DATA_STARTX,Xpos)
+  ADD16(Ypos,DATA_SPACEY,Ypos)
+
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Si max   = ')
+  ADD16(Xpos,55,Xpos)
+  MOVEF_F(SiMax,DataF)
+  UI_DRAW(VALUE,FG_COLOR,Xpos,Ypos,DataF,Figures,Decimals)
+
+  // Update display                                                   //
+  UI_DRAW(UPDATE)                                                     //      UI_DRAW(UPDATE)
+                                                                      //
+  TIMER_WAIT(200,Timer)
+  TIMER_READY(Timer)
+
+  // Control SetMode
+  UI_BUTTON(GET_HORZ,Inc)
+  MOVE16_8(Inc,Tmp)
+
+  ADD8(SetMode,Tmp,SetMode)
+  JR_GTEQ8(SetMode,0,NotTooLowMode)
+
+  MOVE8_8(0,SetMode)
+
+NotTooLowMode:  
+
+  JR_LT8(SetMode,Views,NotTooHighMode)
+
+  MOVE8_8(Views,SetMode)
+  SUB8(SetMode,1,SetMode)
+
+NotTooHighMode:  
+
+  // Loop until "BACK"                                                //
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+                                                                      //    }
+  JR_FALSE(Tmp,Loop)                                                  //    while (!Tmp)
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  }
+
+
+
+// Test Gyro *******************************************************************************************
+                                                                      //
+subcall   TestGyro                                                    //
+{                                                                     //
+  DATA32  Timer                                                       //
+  DATAF   Tmp1
+  DATAF   Tmp2
+  DATA16  Ypos                                                        //
+  DATA8   Run                                                         //
+  DATA8   Tmp                                                         //
+  DATA8   Busy                                                        //
+                                                                      //
+                                                                      //
+  // Show popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,TEST_STARTX,TEST_STARTY,'144x116_POP6')    //      Draw bitmap
+  MOVE16_16(SOUND_TEXTY,Ypos)                                         //
+  UI_DRAW(SELECT_FONT,1)                                              //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'TESTING GYRO:')                    //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(SELECT_FONT,0)                                              //
+                                                                      //
+  MOVE8_8(1,Run)                                                      //    Run     =  1
+                                                                      //    do
+Loop1:                                                                //    {
+  INPUT_DEVICE(READY_SI,0,0,0,3,2,Tmp1,Tmp2)
+
+  UI_DRAW(VALUE,FG_COLOR,40,Ypos,Tmp1,5,0)
+  UI_DRAW(VALUE,FG_COLOR,96,Ypos,Tmp2,5,0)
+  UI_DRAW(UPDATE)
+
+  TIMER_WAIT(200,Timer)
+  TIMER_READY(Timer)
+                                                                      //
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotBackButton)                                         //      if (Tmp != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotBackButton:                                                        //      }
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotEnterButton)                                        //      if (Tmp != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotEnterButton:                                                       //      }
+                                                                      //    }
+  JR_TRUE(Run,Loop1)                                                  //    while (Run)
+Stop:                                                                 //
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// Test IRseek *****************************************************************************************
+                                                                      //
+subcall   TestIRseek                                                  //
+{                                                                     //
+  DATA32  Timer                                                       //
+  DATAF   Tmp1
+  DATAF   Tmp2
+  DATA16  Ypos                                                        //
+  DATA8   Run                                                         //
+  DATA8   Tmp                                                         //
+  DATA8   Busy                                                        //
+                                                                      //
+                                                                      //
+  // Show popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,TEST_STARTX,TEST_STARTY,'144x116_POP6')    //      Draw bitmap
+  MOVE16_16(SOUND_TEXTY,Ypos)                                         //
+  UI_DRAW(SELECT_FONT,1)                                              //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'TESTING IR SEEK:')                    //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(SELECT_FONT,0)                                              //
+                                                                      //
+  MOVE8_8(1,Run)                                                      //    Run     =  1
+                                                                      //    do
+Loop1:                                                                //    {
+  INPUT_DEVICE(READY_SI,0,0,0,1,2,Tmp1,Tmp2)
+
+  UI_DRAW(VALUE,FG_COLOR,40,Ypos,Tmp1,5,0)
+  UI_DRAW(VALUE,FG_COLOR,96,Ypos,Tmp2,5,0)
+  UI_DRAW(UPDATE)
+
+  TIMER_WAIT(200,Timer)
+  TIMER_READY(Timer)
+                                                                      //
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotBackButton)                                         //      if (Tmp != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotBackButton:                                                        //      }
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotEnterButton)                                        //      if (Tmp != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotEnterButton:                                                       //      }
+                                                                      //    }
+  JR_TRUE(Run,Loop1)                                                  //    while (Run)
+Stop:                                                                 //
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// Test IRseek remote **********************************************************************************
+                                                                      //
+subcall   TestIRseekRemote                                            //
+{                                                                     //
+  DATA32  Timer                                                       //
+  DATAF   Tmp1
+  DATAF   Tmp2
+  DATAF   Tmp3
+  DATA16  Ypos                                                        //
+  DATA8   Run                                                         //
+  DATA8   Tmp                                                         //
+  DATA8   Busy                                                        //
+  DATA8   Channel                                                     //
+  ARRAY8  Data 3
+                                                                      //
+                                                                      //
+  // Show popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,TEST_STARTX,TEST_STARTY,'144x116_POP6')    //      Draw bitmap
+  MOVE16_16(SOUND_TEXTY,Ypos)                                         //
+  UI_DRAW(SELECT_FONT,1)                                              //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'TESTING IR SEEK:')                    //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(SELECT_FONT,0)                                              //
+                                                                      //
+  MOVE8_8(1,Run)                                                      //    Run       =  1
+  MOVE8_8(1,Channel)                                                  //    Channel   =  1
+  
+  WRITE8(DEVCMD_CHANNEL,0,Data)
+  WRITE8(Channel,1,Data)
+  INPUT_WRITE(0,0,2,Data)                        
+                                                                      //    do
+Loop1:                                                                //    {
+  INPUT_DEVICE(READY_SI,0,0,0,1,3,Tmp1,Tmp2,Tmp3)
+
+  UI_DRAW(VALUE,FG_COLOR,20,Ypos,Tmp1,5,0)
+  UI_DRAW(VALUE,FG_COLOR,60,Ypos,Tmp2,5,0)
+  UI_DRAW(VALUE,FG_COLOR,100,Ypos,Tmp3,5,0)
+
+  MOVE8_F(Channel,Tmp3)
+  UI_DRAW(VALUE,FG_COLOR,100,90,Tmp3,5,0)
+  
+  UI_DRAW(UPDATE)
+
+  TIMER_WAIT(200,Timer)
+  TIMER_READY(Timer)
+                                                                      //
+  UI_BUTTON(SHORTPRESS,UP_BUTTON,Tmp)                                 //      UI_BUTTON(SHORTPRESS,UP_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotUpButton)                                           //      if (Tmp != FALSE)
+                                                                      //      {
+  JR_GTEQ8(Channel,4,HighEnough)
+  
+  ADD8(Channel,1,Channel)
+  
+  WRITE8(DEVCMD_CHANNEL,0,Data)
+  WRITE8(Channel,1,Data)
+  INPUT_WRITE(0,0,2,Data)                        
+  
+  
+HighEnough:
+  
+                                                                        
+NotUpButton:                                                          //      }
+  UI_BUTTON(SHORTPRESS,DOWN_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,DOWN_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotDownButton)                                         //      if (Tmp != FALSE)
+                                                                      //      {
+  JR_LTEQ8(Channel,1,LowEnough)
+  
+  SUB8(Channel,1,Channel)
+  WRITE8(DEVCMD_CHANNEL,0,Data)
+  WRITE8(Channel,1,Data)
+  INPUT_WRITE(0,0,2,Data)                        
+  
+LowEnough:
+  
+NotDownButton:                                                        //      }
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotBackButton)                                         //      if (Tmp != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotBackButton:                                                        //      }
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotEnterButton)                                        //      if (Tmp != FALSE)
+                                                                      //      {
+  WRITE8(DEVCMD_CHANNEL,0,Data)
+  WRITE8(Channel,1,Data)
+  INPUT_WRITE(0,0,2,Data)                        
+NotEnterButton:                                                       //      }
+                                                                      //    }
+  JR_TRUE(Run,Loop1)                                                  //    while (Run)
+Stop:                                                                 //
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// Test IRseek remote **********************************************************************************
+                                                                      //
+subcall   TestIRRemote                                                //
+{                                                                     //
+  DATA32  Timer                                                       //
+  DATAF   Tmp1
+  DATAF   Tmp2
+  DATAF   Tmp3
+  DATA16  Ypos                                                        //
+  DATA8   Run                                                         //
+  DATA8   Tmp                                                         //
+  DATA8   Busy                                                        //
+  DATA8   Channel                                                     //
+  ARRAY8  Data 3
+                                                                      //
+                                                                      //
+  // Show popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,TEST_STARTX,TEST_STARTY,'144x116_POP6')    //      Draw bitmap
+  MOVE16_16(SOUND_TEXTY,Ypos)                                         //
+  UI_DRAW(SELECT_FONT,1)                                              //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'TEST IR CHANNEL:')                    //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(SELECT_FONT,0)                                              //
+                                                                      //
+  MOVE8_8(1,Run)                                                      //    Run       =  1
+  MOVE8_8(1,Channel)                                                  //    Channel   =  1
+  
+  WRITE8(DEVCMD_CHANNEL,0,Data)
+  WRITE8(Channel,1,Data)
+  INPUT_WRITE(0,0,2,Data)                        
+                                                                      //    do
+Loop1:                                                                //    {
+  INPUT_DEVICE(READY_SI,0,0,0,2,2,Tmp1,Tmp2)
+
+  UI_DRAW(VALUE,FG_COLOR,20,Ypos,Tmp1,5,0)
+  UI_DRAW(VALUE,FG_COLOR,60,Ypos,Tmp2,5,0)
+
+  MOVE8_F(Channel,Tmp3)
+  UI_DRAW(VALUE,FG_COLOR,100,90,Tmp3,5,0)
+  
+  UI_DRAW(UPDATE)
+
+  TIMER_WAIT(200,Timer)
+  TIMER_READY(Timer)
+                                                                      //
+  UI_BUTTON(SHORTPRESS,UP_BUTTON,Tmp)                                 //      UI_BUTTON(SHORTPRESS,UP_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotUpButton)                                           //      if (Tmp != FALSE)
+                                                                      //      {
+  JR_GTEQ8(Channel,4,HighEnough)
+  
+  ADD8(Channel,1,Channel)
+  
+  WRITE8(DEVCMD_CHANNEL,0,Data)
+  WRITE8(Channel,1,Data)
+  INPUT_WRITE(0,0,2,Data)                        
+  
+  
+HighEnough:
+  
+                                                                        
+NotUpButton:                                                          //      }
+  UI_BUTTON(SHORTPRESS,DOWN_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,DOWN_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotDownButton)                                         //      if (Tmp != FALSE)
+                                                                      //      {
+  JR_LTEQ8(Channel,1,LowEnough)
+  
+  SUB8(Channel,1,Channel)
+  WRITE8(DEVCMD_CHANNEL,0,Data)
+  WRITE8(Channel,1,Data)
+  INPUT_WRITE(0,0,2,Data)                        
+  
+LowEnough:
+  
+NotDownButton:                                                        //      }
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotBackButton)                                         //      if (Tmp != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotBackButton:                                                        //      }
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotEnterButton)                                        //      if (Tmp != FALSE)
+                                                                      //      {
+  WRITE8(DEVCMD_CHANNEL,0,Data)
+  WRITE8(Channel,1,Data)
+  INPUT_WRITE(0,0,2,Data)                        
+NotEnterButton:                                                       //      }
+                                                                      //    }
+  JR_TRUE(Run,Loop1)                                                  //    while (Run)
+Stop:                                                                 //
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// Test IR beacon **************************************************************************************
+                                                                      //
+subcall   TestIRbeacon                                                //
+{                                                                     //
+  DATA32  Timer                                                       //
+  DATAF   Tmp1
+  DATAF   Tmp2
+  DATAF   Tmp3
+  DATA16  Ypos                                                        //
+  DATA8   Run                                                         //
+  DATA8   Tmp                                                         //
+  DATA8   Busy                                                        //
+  DATA8   Channel                                                     //
+  ARRAY8  Data 3
+                                                                      //
+                                                                      //
+  // Show popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,TEST_STARTX,TEST_STARTY,'144x116_POP6')    //      Draw bitmap
+  MOVE16_16(SOUND_TEXTY,Ypos)                                         //
+  UI_DRAW(SELECT_FONT,1)                                              //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'TEST IR CHANNEL:')                    //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(SELECT_FONT,0)                                              //
+                                                                      //
+  MOVE8_8(1,Run)                                                      //    Run       =  1
+  MOVE8_8(1,Channel)                                                  //    Channel   =  1
+  
+  WRITE8(DEVCMD_CHANNEL,0,Data)
+  WRITE8(Channel,1,Data)
+  INPUT_WRITE(0,0,2,Data)                        
+                                                                      //    do
+Loop1:                                                                //    {
+  INPUT_DEVICE(READY_SI,0,0,0,1,2,Tmp1,Tmp2)
+
+  UI_DRAW(VALUE,FG_COLOR,20,Ypos,Tmp1,5,0)
+  UI_DRAW(VALUE,FG_COLOR,60,Ypos,Tmp2,5,0)
+
+  MOVE8_F(Channel,Tmp3)
+  UI_DRAW(VALUE,FG_COLOR,100,90,Tmp3,5,0)
+  
+  UI_DRAW(UPDATE)
+
+  TIMER_WAIT(200,Timer)
+  TIMER_READY(Timer)
+                                                                      //
+  UI_BUTTON(SHORTPRESS,UP_BUTTON,Tmp)                                 //      UI_BUTTON(SHORTPRESS,UP_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotUpButton)                                           //      if (Tmp != FALSE)
+                                                                      //      {
+  JR_GTEQ8(Channel,4,HighEnough)
+  
+  ADD8(Channel,1,Channel)
+  
+  WRITE8(DEVCMD_CHANNEL,0,Data)
+  WRITE8(Channel,1,Data)
+  INPUT_WRITE(0,0,2,Data)                        
+  
+  
+HighEnough:
+  
+                                                                        
+NotUpButton:                                                          //      }
+  UI_BUTTON(SHORTPRESS,DOWN_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,DOWN_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotDownButton)                                         //      if (Tmp != FALSE)
+                                                                      //      {
+  JR_LTEQ8(Channel,1,LowEnough)
+  
+  SUB8(Channel,1,Channel)
+  WRITE8(DEVCMD_CHANNEL,0,Data)
+  WRITE8(Channel,1,Data)
+  INPUT_WRITE(0,0,2,Data)                        
+  
+LowEnough:
+  
+NotDownButton:                                                        //      }
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotBackButton)                                         //      if (Tmp != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotBackButton:                                                        //      }
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotEnterButton)                                        //      if (Tmp != FALSE)
+                                                                      //      {
+  WRITE8(DEVCMD_CHANNEL,0,Data)
+  WRITE8(Channel,1,Data)
+  INPUT_WRITE(0,0,2,Data)                        
+NotEnterButton:                                                       //      }
+                                                                      //    }
+  JR_TRUE(Run,Loop1)                                                  //    while (Run)
+Stop:                                                                 //
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// Test IRseekNew **************************************************************************************
+                                                                      //
+subcall   TestIRseekNew                                               //
+{                                                                     //
+  DATA32  Timer                                                       //
+  DATAF   Tmp1
+  DATAF   Tmp2
+  DATAF   Tmp3
+  DATAF   Tmp4
+  DATAF   Tmp5
+  DATAF   Tmp6
+  DATAF   Tmp7
+  DATAF   Tmp8
+  DATA16  Ypos                                                        //
+  DATA16  YposSave
+  DATA8   Run                                                         //
+  DATA8   Tmp                                                         //
+  DATA8   Busy                                                        //
+                                                                      //
+                                                                      //
+  // Show popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,TEST_STARTX,TEST_STARTY,'144x116_POP6')    //      Draw bitmap
+  MOVE16_16(SOUND_TEXTY,Ypos)                                         //
+  UI_DRAW(SELECT_FONT,1)                                              //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'TEST IRseek New:')                    //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(SELECT_FONT,0)                                              //
+                                                                      //
+  MOVE16_16(Ypos,YposSave)                                                                      
+  MOVE8_8(1,Run)                                                      //    Run     =  1
+                                                                      //    do
+Loop1:                                                                //    {
+  MOVE16_16(YposSave,Ypos)
+
+  INPUT_DEVICE(READY_SI,0,0,0,1,8,Tmp1,Tmp2,Tmp3,Tmp4,Tmp5,Tmp6,Tmp7,Tmp8)
+
+  UI_DRAW(VALUE,FG_COLOR,40,Ypos,Tmp1,5,0)
+  UI_DRAW(VALUE,FG_COLOR,96,Ypos,Tmp2,5,0)
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(VALUE,FG_COLOR,40,Ypos,Tmp3,5,0)
+  UI_DRAW(VALUE,FG_COLOR,96,Ypos,Tmp4,5,0)
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(VALUE,FG_COLOR,40,Ypos,Tmp5,5,0)
+  UI_DRAW(VALUE,FG_COLOR,96,Ypos,Tmp6,5,0)
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(VALUE,FG_COLOR,40,Ypos,Tmp7,5,0)
+  UI_DRAW(VALUE,FG_COLOR,96,Ypos,Tmp8,5,0)
+  UI_DRAW(UPDATE)
+
+  TIMER_WAIT(200,Timer)
+  TIMER_READY(Timer)
+                                                                      //
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotBackButton)                                         //      if (Tmp != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotBackButton:                                                        //      }
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotEnterButton)                                        //      if (Tmp != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotEnterButton:                                                       //      }
+                                                                      //    }
+  JR_TRUE(Run,Loop1)                                                  //    while (Run)
+Stop:                                                                 //
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// TestDisplay *****************************************************************************************
+                                                                      //
+                                                                      //
+subcall   TestDisplay                                                 //  void TestDisplay(void)
+{                                                                     //  {
+  DATA16  Ypos                                                        //
+  DATA8   Run                                                         //
+  DATA8   Tmp                                                         //
+
+  // Show popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,TEST_STARTX,TEST_STARTY,'144x116_POP6')    //      Draw bitmap
+                                                                      //
+  MOVE16_16(LEDS_TEXTY,Ypos)                                          //
+  UI_DRAW(SELECT_FONT,1)                                              //       
+  UI_DRAW(TEXT,FG_COLOR,LEDS_TEXTX,Ypos,'TEST DISPLAY:  ')            //
+  ADD16(Ypos,LEDS_SPACEY,Ypos)                                        //
+  ADD16(Ypos,LEDS_SPACEY,Ypos)                                        //
+  UI_DRAW(SELECT_FONT,0)                                              //
+  UI_DRAW(TEXT,FG_COLOR,LEDS_TEXTX,Ypos,'LEFT  -   B-W  ')            //
+  ADD16(Ypos,LEDS_SPACEY,Ypos)                                        //
+  UI_DRAW(TEXT,FG_COLOR,LEDS_TEXTX,Ypos,'RIGHT -   W-B  ')            //
+  UI_DRAW(UPDATE)
+
+  UI_DRAW(TOPLINE,0)
+  MOVE8_8(1,Run)                                                      //    Run     =  1
+                                                                      //    do
+Loop1:                                                                //    {
+  UI_BUTTON(SHORTPRESS,LEFT_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,LEFT_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotLeftButton)                                         //      if (Tmp != FALSE)
+                                                                      //      {
+  UI_DRAW(FILLWINDOW,0x00,0,0
+  UI_DRAW(FILLWINDOW,0x55,0,0
+  UI_DRAW(UPDATE)
+NotLeftButton:                                                        //      }
+
+  UI_BUTTON(SHORTPRESS,RIGHT_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,RIGHT_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotRightButton)                                        //      if (Tmp != FALSE)
+                                                                      //      {
+  UI_DRAW(FILLWINDOW,0x00,0,0
+  UI_DRAW(FILLWINDOW,0xAA,0,0
+  UI_DRAW(UPDATE)
+NotRightButton:                                                       //      }
+
+
+
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotBackButton)                                         //      if (Tmp != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotBackButton:                                                        //      }
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotEnterButton)                                        //      if (Tmp != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotEnterButton:                                                       //      }
+                                                                      //    }
+  JR_TRUE(Run,Loop1)                                                  //    while (Run)
+Stop:                                                                 //
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+  UI_DRAW(RESTORE,0)                                                  //    UI_DRAW(RESTORE,0)
+  UI_DRAW(TOPLINE,1)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// ChangeBrickname *************************************************************************************
+                                                                      //
+define    NAME_STARTX         16                                      //
+define    NAME_STARTY         19                                      //
+                                                                      //
+subcall   ChangeBrickname                                             //  void ChangeBrickname(void)
+{                                                                     //  {
+  DATA8   State                                                       //
+  DATAS   String BRICKNAMESIZE                                       //
+
+  COM_GET(GET_BRICKNAME,BRICKNAMESIZE,String)
+  MOVE8_8(CHARSET_NAME,State)                                         //          State  =  CHARSET_NAME
+  UI_DRAW(KEYBOARD,FG_COLOR,NAME_STARTX,NAME_STARTY,ICON_NONE,BRICKNAMESIZE,'Brick Name',State,String)//      UI_DRAW(KEYBOARD,FG_COLOR,KEYBOARD_STARTX,KEYBOARD_STARTY,ICON_KEY,BRICKNAMESIZE,'Brick Name',State,String)
+
+
+  JR_FALSE(String,NoString)
+  COM_SET(SET_BRICKNAME,String)
+NoString:
+
+
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// CalibScreen *****************************************************************************************
+                                                                      //
+define    CALIB_STARTX        17                                      //
+define    CALIB_STARTY        12                                      //
+define    CALIB_LINE_STARTX   24                                      //
+define    CALIB_LINE_STARTY   20                                      //
+define    CALIB_LINE_SPACEY   13                                      //
+define    CALIB_LINES         8                                       //
+define    CALIB_CURSOR_STARTX 23                                      //
+define    CALIB_CURSOR_STARTY 19                                      //
+define    CALIB_CURSOR_WIDTH  132                                     //
+define    CALIB_CURSOR_HEIGHT 11                                      //
+                                                                      //
+subcall   CalibScreen                                                 //  void CalibScreen(void)
+{                                                                     //  {
+  DATA16  Xpos                                                        //
+  DATA16  Ypos                                                        //
+  DATA16  Line                                                        //
+  DATA16  Cursor                                                      //
+  DATA16  CursorX                                                     //
+  DATA16  CursorY                                                     //
+  DATA16  Inc                                                         //
+  DATA8   Run                                                         //
+  DATA8   Tmp                                                         //
+                                                                      //
+  MOVE8_8(1,Run)                                                      //    Run     =  1
+  MOVE16_16(0,Cursor)                                                 //    Cursor  =  0
+                                                                      //    do
+Loop:                                                                 //    {
+  UI_BUTTON(FLUSH)                                                    //      UI_BUTTON(FLUSH)
+  UI_DRAW(RESTORE,0)                                                  //      UI_DRAW(RESTORE,0)
+                                                                      //
+  // Show popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,TEST_STARTX,TEST_STARTY,'144x116_POP6')    //      Draw bitmap
+                                                                      //
+  // Show lines                                                       //
+  MOVE16_16(CALIB_LINE_STARTX,Xpos)                                   //
+  MOVE16_16(CALIB_LINE_STARTY,Ypos)                                   //
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Gyro            ')                        //
+  ADD16(Ypos,CALIB_LINE_SPACEY,Ypos)                                  //
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Color           ')                        //
+  ADD16(Ypos,CALIB_LINE_SPACEY,Ypos)                                  //
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Nxt Color       ')                        //
+  ADD16(Ypos,CALIB_LINE_SPACEY,Ypos)                                  //
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'IR seeker       ')                        //
+  ADD16(Ypos,CALIB_LINE_SPACEY,Ypos)                                  //
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Gyro Turntable  ')                        //
+  ADD16(Ypos,CALIB_LINE_SPACEY,Ypos)                                  //
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'                ')                        //
+  ADD16(Ypos,CALIB_LINE_SPACEY,Ypos)                                  //
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Device          ')                        //
+  ADD16(Ypos,CALIB_LINE_SPACEY,Ypos)                                  //
+  UI_DRAW(TEXT,FG_COLOR,Xpos,Ypos,'Test US ping    ')                        //
+                                                                      //
+  // Show cursor                                                      //
+  MUL16(Cursor,CALIB_LINE_SPACEY,CursorY)                             //
+  ADD16(CursorY,CALIB_CURSOR_STARTY,CursorY)                          //
+  UI_DRAW(INVERSERECT,CALIB_CURSOR_STARTX,CursorY,CALIB_CURSOR_WIDTH,CALIB_CURSOR_HEIGHT) //
+                                                                      //
+  // Update display                                                   //
+  UI_DRAW(UPDATE)                                                     //      UI_DRAW(UPDATE)
+                                                                      //
+  UI_BUTTON(WAIT_FOR_PRESS)                                           //      UI_BUTTON(WAIT_FOR_PRESS)
+                                                                      //
+  UI_BUTTON(GET_VERT,Inc)                                             //
+  ADD16(Cursor,Inc,Cursor)                                            //
+  JR_GTEQ16(Cursor,0,HighEnough)                                      //
+  MOVE16_16(CALIB_LINES,Cursor)                                       //
+  SUB16(Cursor,1,Cursor)                                              //
+HighEnough:                                                           //
+  JR_LT16(Cursor,CALIB_LINES,LowEnough)                               //
+  MOVE16_16(0,Cursor)                                                 //
+LowEnough:                                                            //
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotBackButton)                                         //      if (Tmp != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotBackButton:                                                        //      }
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotEnterButton)                                        //      if (Tmp != FALSE)
+                                                                      //      {
+  JR_NEQ16(Cursor,0,Not0)                                             //        if (Cursor == 0)
+                                                                      //        {
+  CALL(CalibGyro)                                                     //          CALL(CalibGyro)
+Not0:                                                                 //        }
+  JR_NEQ16(Cursor,1,Not1)                                             //        if (Cursor == 1)
+                                                                      //        {
+  CALL(CalibColor)                                                    //          CALL(CalibColor)
+Not1:                                                                 //        }
+  JR_NEQ16(Cursor,2,Not2)                                             //        if (Cursor == 2)
+                                                                      //        {
+  CALL(TestNxtColor)                                                  //          CALL(TestNxtColor)
+Not2:                                                                 //        }
+  JR_NEQ16(Cursor,3,Not3)                                             //        if (Cursor == 3)
+                                                                      //        {
+  CALL(CalibIRseeker)                                                 //          CALL(CalibIRseeker)
+Not3:                                                                 //        }
+  JR_NEQ16(Cursor,4,Not4)                                             //        if (Cursor == 4)
+                                                                      //        {
+  CALL(CalibTurntable)                                                //          CALL(CalibTurntable)                                                         
+Not4:                                                                 //        }
+  JR_NEQ16(Cursor,5,Not5)                                             //        if (Cursor == 5)
+                                                                      //        {
+Not5:                                                                 //        }
+  JR_NEQ16(Cursor,6,Not6)                                             //        if (Cursor == 6)
+                                                                      //        {
+  CALL(CalibDevice)                                                   //          CALL(CalibDevice)
+Not6:                                                                 //        }
+  JR_NEQ16(Cursor,7,Not7)                                             //        if (Cursor == 7)
+                                                                      //        {
+  CALL(TestUSPing)                                                    //          CALL(TestUSPing)
+Not7:                                                                 //        }
+NotEnterButton:                                                       //      }
+                                                                      //    }
+  JR_TRUE(Run,Loop)                                                   //    while (Run)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// CalibGyro *******************************************************************************************
+                                                                      //
+define    GYRO_TYPE           32                                      //
+define    GYRO_NORMAL         0                                       //
+define    GYRO_CALIB          4                                       //
+define    GYRO_PORT           0                                       //
+                                                                      //
+                                                                      //
+subcall   CalibGyro                                                   //  void CalibGyro(void)
+{                                                                     //  {
+  DATA32  Timer                                                       //
+  DATAF   Value1                                                      //
+  DATAF   Value2                                                      //
+  DATAF   Value3                                                      //
+  DATAF   Value4                                                      //
+  DATA16  Ypos                                                        //
+  DATA8   Run                                                         //
+  DATA8   Tmp                                                         //
+  DATA8   Type                                                        //
+  DATA8   Mode                                                        //
+  DATA8   Calibrating                                                 //
+                                                                      //
+                                                                      //
+  // Show popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,TEST_STARTX,TEST_STARTY,'144x116_POP6')    //      Draw bitmap
+                                                                      //
+  MOVE16_16(SOUND_TEXTY,Ypos)                                         //
+  UI_DRAW(SELECT_FONT,1)                                              //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'CALIBRATE GYRO: ')                  //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(SELECT_FONT,0)                                              //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'Sensor in port 1')                 //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'LEFT  backward')                   //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'RIGHT forward')                    //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'BACK  quit   ')                    //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+                                                                      //
+CheckType:                                                            //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'----- BUSY -----')                 //
+  UI_DRAW(UPDATE)                                                     //
+  INPUT_DEVICE(GET_TYPEMODE,0,GYRO_PORT,Type,Mode)                    //    INPUT_DEVICE(GET_TYPEMODE,0,GYRO_PORT,Type,Mode)
+  JR_EQ8(Type,GYRO_TYPE,TypeOk)                                       //
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //
+  JR_TRUE(Tmp,Stop)                                                   //
+  JR(CheckType)                                                       //
+TypeOk:
+
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'- CALIB. MODE - ')                 //
+  UI_DRAW(UPDATE)                                                     //
+  TIMER_WAIT(1000,Timer)
+  TIMER_READY(Timer)
+
+  INPUT_DEVICE(READY_SI,0,GYRO_PORT,0,GYRO_CALIB,4,Value1,Value2,Value3,Value4)
+
+CheckBusy:
+  INPUT_TEST(0,GYRO_PORT,Tmp)
+  JR_FALSE(Tmp,Ready)
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+  JR_TRUE(Tmp,Stop)
+  JR(CheckBusy)
+Ready:
+
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'                ')                 //
+  UI_DRAW(UPDATE)                                                     //
+
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+                                                                      //
+  MOVE8_8(1,Run)                                                      //    Run     =  1
+                                                                      //    do
+Loop1:                                                                //    {
+                                                                      //
+  UI_BUTTON(SHORTPRESS,LEFT_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,LEFT_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotLeftButton)                                         //      if (Tmp != FALSE)
+                                                                      //      {
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'                ')                 //
+  UI_DRAW(UPDATE)                                                     //
+  INPUT_WRITE(0,GYRO_PORT,14,'LEGO-FAC-CAL-1')                        //
+  MOVE8_8(1,Calibrating)
+NotLeftButton:                                                        //      }
+                                                                      //
+                                                                      //
+  UI_BUTTON(SHORTPRESS,RIGHT_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,RIGHT_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotRightButton)                                        //      if (Tmp != FALSE)
+                                                                      //      {
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'                ')                 //
+  UI_DRAW(UPDATE)                                                     //
+  INPUT_WRITE(0,GYRO_PORT,14,'LEGO-FAC-CAL-2')                        //
+  MOVE8_8(1,Calibrating)
+NotRightButton:                                                       //      }
+                                                                     //
+//  JR_FALSE(Calibrating,NotCalib)
+
+//  INPUT_TEST(0,GYRO_PORT,Tmp)
+//  JR_TRUE(Tmp,Waiting)
+
+  TIMER_WAIT(100,Timer)
+  TIMER_READY(Timer)
+  INPUT_DEVICE(READY_SI,0,GYRO_PORT,0,GYRO_CALIB,4,Value1,Value2,Value3,Value4)
+
+  UI_DRAW(VALUE,FG_COLOR,24,Ypos,Value1,4,0)
+  UI_DRAW(VALUE,FG_COLOR,64,Ypos,Value2,4,0)
+  UI_DRAW(VALUE,FG_COLOR,104,Ypos,Value3,4,0)
+  UI_DRAW(UPDATE)                                                     //
+
+  MOVE8_8(0,Calibrating)
+
+Waiting:
+NotCalib:
+                                                                      //
+  INPUT_DEVICE(GET_TYPEMODE,0,GYRO_PORT,Type,Mode)                    //    INPUT_DEVICE(GET_TYPEMODE,0,GYRO_PORT,Type,Mode)
+  JR_NEQ8(Type,GYRO_TYPE,CheckType)
+
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotBackButton)                                         //      if (Tmp != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotBackButton:                                                        //      }
+                                                                      //
+                                                                      //    }
+  JR_TRUE(Run,Loop1)                                                  //    while (Run)
+Stop:                                                                 //
+  INPUT_DEVICE(GET_TYPEMODE,0,GYRO_PORT,Type,Mode)                    //    INPUT_DEVICE(GET_TYPEMODE,0,GYRO_PORT,Type,Mode)
+  JR_NEQ8(Type,GYRO_TYPE,Skip)
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'- NORMAL MODE - ')                 //
+  UI_DRAW(UPDATE)                                                     //
+  INPUT_DEVICE(READY_RAW,0,GYRO_PORT,0,GYRO_NORMAL,1,Value1)  //
+  TIMER_WAIT(1000,Timer)
+  TIMER_READY(Timer)
+Skip:
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// CalibColor ******************************************************************************************
+                                                                      //
+define    COLOR_TYPE           29                                     //
+define    COLOR_NORMAL         0                                      //
+define    COLOR_CALIB          5                                      //
+define    COLOR_PORT           1                                      //
+                                                                      //
+                                                                      //
+subcall   CalibColor                                                  //  void CalibColor(void)
+{                                                                     //  {
+  DATA32  Timer                                                       //
+  DATAF   Value1                                                      //
+  DATAF   Value2                                                      //
+  DATAF   Value3                                                      //
+  DATAF   Value4                                                      //
+  DATA16  Ypos                                                        //
+  DATA8   Run                                                         //
+  DATA8   Tmp                                                         //
+  DATA8   Type                                                        //
+  DATA8   Mode                                                        //
+  DATA8   Calibrating                                                 //
+  DATA8   Calib                                                       //
+                                                                      //
+                                                                      //
+  MOVE8_8(0,Calibrating)
+  // Show popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,TEST_STARTX,TEST_STARTY,'144x116_POP6')    //      Draw bitmap
+                                                                      //
+  MOVE16_16(SOUND_TEXTY,Ypos)                                         //
+  UI_DRAW(SELECT_FONT,1)                                              //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'CALIBRATE COLOR:')                 //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(SELECT_FONT,0)                                              //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'Sensor in port 2')                 //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'LEFT calibrate')                   //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'             ')                    //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'BACK  quit   ')                    //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+                                                                      //
+CheckType:                                                            //
+  MOVE8_8(1,Calib)
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'----- BUSY -----')                 //
+  UI_DRAW(UPDATE)                                                     //
+  INPUT_DEVICE(GET_TYPEMODE,0,COLOR_PORT,Type,Mode)                   //    INPUT_DEVICE(GET_TYPEMODE,0,COLOR_PORT,Type,Mode)
+  JR_EQ8(Type,COLOR_TYPE,TypeOk)                                      //
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //
+  JR_TRUE(Tmp,Stop)                                                   //
+  JR(CheckType)                                                       //
+TypeOk:
+
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'- CALIB. MODE - ')                 //
+  UI_DRAW(UPDATE)                                                     //
+  TIMER_WAIT(1000,Timer)
+  TIMER_READY(Timer)
+
+  INPUT_DEVICE(READY_SI,0,COLOR_PORT,0,COLOR_CALIB,4,Value1,Value2,Value3,Value4)
+
+CheckBusy:
+  INPUT_TEST(0,COLOR_PORT,Tmp)
+  JR_FALSE(Tmp,Ready)
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+  JR_TRUE(Tmp,Stop)
+  JR(CheckBusy)
+Ready:
+
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'                ')                 //
+  UI_DRAW(UPDATE)                                                     //
+  TIMER_WAIT(100,Timer)
+  TIMER_READY(Timer)
+
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+                                                                      //
+  MOVE8_8(1,Run)                                                      //    Run     =  1
+                                                                      //    do
+Loop1:                                                                //    {
+                                                                      //
+  UI_BUTTON(SHORTPRESS,LEFT_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,LEFT_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotLeftButton)                                         //      if (Tmp != FALSE)
+//  JR_FALSE(Calib,NotLeftButton)
+                                                                      //      {
+  MOVE8_8(0,Calib)                                                                      
+  UI_WRITE(SET_TESTPIN,1)
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'  CALIBRATING   ')                 //
+  UI_DRAW(UPDATE)                                                     //
+  INPUT_WRITE(0,COLOR_PORT,14,'LEGO-FAC-CAL-1')                        //
+  UI_WRITE(SET_TESTPIN,0)
+  MOVE8_8(1,Calibrating)
+NotLeftButton:                                                        //      }
+                                                                      //
+  JR_FALSE(Calibrating,NotCalib)
+
+  INPUT_TEST(0,COLOR_PORT,Tmp)
+  JR_TRUE(Tmp,Waiting)
+
+  TIMER_WAIT(1000,Timer)
+  TIMER_READY(Timer)
+  INPUT_DEVICE(READY_SI,0,COLOR_PORT,0,COLOR_CALIB,4,Value1,Value2,Value3,Value4)
+
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'                ')                 //
+  UI_DRAW(VALUE,FG_COLOR,24,Ypos,Value1,4,0)
+  UI_DRAW(VALUE,FG_COLOR,72,Ypos,Value2,4,0)
+  UI_DRAW(VALUE,FG_COLOR,120,Ypos,Value3,4,0)
+  UI_DRAW(UPDATE)                                                     //
+
+  MOVE8_8(0,Calibrating)
+
+Waiting:
+NotCalib:
+
+  INPUT_DEVICE(GET_TYPEMODE,0,COLOR_PORT,Type,Mode)                   //    INPUT_DEVICE(GET_TYPEMODE,0,COLOR_PORT,Type,Mode)
+  JR_NEQ8(Type,COLOR_TYPE,CheckType)
+
+                                                                      //
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotBackButton)                                         //      if (Tmp != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotBackButton:                                                        //      }
+                                                                      //
+                                                                      //    }
+  JR_TRUE(Run,Loop1)                                                  //    while (Run)
+Stop:                                                                 //
+  INPUT_DEVICE(GET_TYPEMODE,0,COLOR_PORT,Type,Mode)                   //    INPUT_DEVICE(GET_TYPEMODE,0,COLOR_PORT,Type,Mode)
+  JR_NEQ8(Type,COLOR_TYPE,Skip)
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'- NORMAL MODE - ')                 //
+  UI_DRAW(UPDATE)                                                     //
+  INPUT_DEVICE(READY_RAW,0,COLOR_PORT,0,COLOR_NORMAL,1,Value1)  //
+  TIMER_WAIT(1000,Timer)
+  TIMER_READY(Timer)
+Skip:
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// CalibIRseeker ***************************************************************************************
+                                                                      //
+define    SEEK_TYPE           33                                      //
+define    SEEK_NORMAL         0                                       //
+define    SEEK_CALIB          5                                       //
+define    SEEK_PORT           1                                       //
+                                                                      //
+                                                                      //
+subcall   CalibIRseeker                                               //  void CalibIRseeker(void)
+{                                                                     //  {
+  DATA32  Timer                                                       //
+  DATAF   Value1                                                      //
+  DATAF   Value2                                                      //
+  DATAF   Value3                                                      //
+  DATAF   Value4                                                      //
+  DATA16  Ypos                                                        //
+  DATA8   Run                                                         //
+  DATA8   Tmp                                                         //
+  DATA8   Type                                                        //
+  DATA8   Mode                                                        //
+  DATA8   Calibrating                                                 //
+                                                                      //
+                                                                      //
+  // Show popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,TEST_STARTX,TEST_STARTY,'144x116_POP6')    //      Draw bitmap
+                                                                      //
+  MOVE16_16(SOUND_TEXTY,Ypos)                                         //
+  UI_DRAW(SELECT_FONT,1)                                              //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'CALIB IRseeker:')           //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(SELECT_FONT,0)                                              //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'Sensor in port 2')          //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'LEFT  backward')            //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'RIGHT forward')             //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'BACK  quit   ')             //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+                                                                      //
+CheckType:                                                            //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'----- BUSY -----')          //
+  UI_DRAW(UPDATE)                                                     //
+  INPUT_DEVICE(GET_TYPEMODE,0,SEEK_PORT,Type,Mode)                    //    INPUT_DEVICE(GET_TYPEMODE,0,SEEK_PORT,Type,Mode)
+  JR_EQ8(Type,SEEK_TYPE,TypeOk)                                       //
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //
+  JR_TRUE(Tmp,Stop)                                                   //
+  JR(CheckType)                                                       //
+TypeOk:
+
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'- CALIB. MODE - ')          //
+  UI_DRAW(UPDATE)                                                     //
+  TIMER_WAIT(1000,Timer)
+  TIMER_READY(Timer)
+
+  INPUT_DEVICE(READY_SI,0,SEEK_PORT,0,SEEK_CALIB,2,Value1,Value2)
+
+CheckBusy:
+  INPUT_TEST(0,SEEK_PORT,Tmp)
+  JR_FALSE(Tmp,Ready)
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+  JR_TRUE(Tmp,Stop)
+  JR(CheckBusy)
+Ready:
+
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'                ')          //
+  UI_DRAW(UPDATE)                                                     //
+
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+                                                                      //
+  MOVE8_8(0,Calibrating)
+  MOVE8_8(1,Run)                                                      //    Run     =  1
+                                                                      //    do
+Loop1:                                                                //    {
+                                                                      //
+  JR_TRUE(Calibrating,SecondTime)                                                                      
+  UI_BUTTON(SHORTPRESS,LEFT_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,LEFT_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotLeftButton)                                         //      if (Tmp != FALSE)
+                                                                      //      {
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'                ')                 //
+  UI_DRAW(UPDATE)                                                     //
+  INPUT_WRITE(0,SEEK_PORT,14,'LEGO-FAC-CAL-1')                        //
+  MOVE8_8(1,Calibrating)
+NotLeftButton:                                                        //      }
+SecondTime:
+                                                                      //
+                                                                      //
+                                                                     //
+  TIMER_WAIT(100,Timer)
+  TIMER_READY(Timer)
+  INPUT_DEVICE(READY_SI,0,SEEK_PORT,0,SEEK_CALIB,2,Value1,Value2)
+
+  UI_DRAW(VALUE,FG_COLOR,24,Ypos,Value1,4,0)
+  UI_DRAW(VALUE,FG_COLOR,64,Ypos,Value2,4,0)
+  UI_DRAW(UPDATE)                                                     //
+
+Waiting:
+                                                                      //
+  INPUT_DEVICE(GET_TYPEMODE,0,SEEK_PORT,Type,Mode)                    //    INPUT_DEVICE(GET_TYPEMODE,0,SEEK_PORT,Type,Mode)
+  JR_NEQ8(Type,SEEK_TYPE,CheckType)
+
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotBackButton)                                         //      if (Tmp != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotBackButton:                                                        //      }
+                                                                      //
+                                                                      //    }
+  JR_TRUE(Run,Loop1)                                                  //    while (Run)
+Stop:                                                                 //
+  INPUT_DEVICE(GET_TYPEMODE,0,SEEK_PORT,Type,Mode)                    //    INPUT_DEVICE(GET_TYPEMODE,0,SEEK_PORT,Type,Mode)
+  JR_NEQ8(Type,SEEK_TYPE,Skip)
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'- NORMAL MODE - ')                 //
+  UI_DRAW(UPDATE)                                                     //
+  INPUT_DEVICE(READY_RAW,0,SEEK_PORT,0,SEEK_NORMAL,1,Value1)  //
+  TIMER_WAIT(1000,Timer)
+  TIMER_READY(Timer)
+Skip:
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// CalibTurntable **************************************************************************************
+/*
+
+Control program for turntable testing the MS gyro sensor.
+
+Ports:                  Input1  = Gyro sensor under test
+                        Input2  = Touch sensor for starting the test
+                             
+                        OutputA = Brake actuator and ON-relay
+                        OutputB = Start-relay and Reverse-relay
+                        OutputD = PASS and FAIL lamps
+
+
+Time                    EV3 action           
+---------------------------------------------------------------------------------------
+
+- Wait for touch sensor on Input2
+
+0                       OutputB = OFF (FLOAT)                                        
+                        OutputD = OFF (FLOAT)
+        BRAKE           OutputA = FW 100%                                                                                                                    
+                        Wait 1.0 sec (to be sure that the turntable is completely stopped)
+
+1       ZEROING         Send init calibration to gyro sensor
+                        Wait 1.0 sec
+                             
+1.5     ON              OutputA = BW 100%
+                        Wait 0.5 sec
+
+2       ACTIVATE CW     OutputB = FW 100%
+                        Wait 0.5 sec
+
+2.5     RELEASE CW      OutputB = FLOAT      
+
+        CALIB CW        Send calib command                                                                           
+                        Wait 2.0 sec
+
+4.5     ACTIVATE CCW    OutputB = BW 100%                            
+                        Wait 0.5 sec
+
+5       RELEASE CCW     OutputB = FLOAT 
+
+        CALIB  CCW      Send calib command                                                                           
+                        Wait 0.5 sec
+
+5.5     READ CALIB      Wait until result not equal zero or 1.7 sec
+
+7       ACTIVATE STOP   OutputB = FW 100%
+                        Wait 0.5 sec
+
+7.5     RELEASE STOP    OutputB = FLOAT
+                        Wait 0.5 sec                                                        
+
+8       OFF             OutputA = FLOAT                                           
+
+
+If sensor is OK then OutputD = FW 100%         PASS light is on                                                         
+If sensor is not OK then OutputD = BW 100%     FAIL light is on
+
+*/                                                                    
+//
+define    TT_GYRO_PORT                  0                             //
+define    TT_TOUCH_PORT                 1                             //
+define    TT_BRAKE_PORT                 1                             //
+define    TT_MOTOR_PORT                 2                             //
+define    TT_LAMP_PORT                  8                             //
+                                                                      //
+define    TT_GYRO_TYPE                  32                            //                                                                                          
+define    TT_GYRO_NORMAL                0                             //
+define    TT_GYRO_CALIB                 4                             //
+                                                                      //
+subcall   CalibTurntable                                              //  void CalibTurntable(void)
+{                                                                     //  {
+  DATA32  Timer                                                       //
+  DATA32  Time                                                        //
+  DATAF   Value1                                                      //
+  DATAF   Value2                                                      //
+  DATAF   Value3                                                      //
+  DATA32  Data32                                                      //
+  DATA16  Ypos                                                        //
+  DATA8   Run                                                         //
+  DATA8   Type                                                        //
+  DATA8   Mode                                                        //
+  DATA8   State                                                       //
+  DATA8   Tmp                                                         //
+                                                                      //
+                                                                      //
+  OUTPUT_STOP(0,TT_LAMP_PORT,0)                                       //
+Repeat:                                                               //
+  // Stop all outputs                                                 //
+  OUTPUT_STOP(0,TT_BRAKE_PORT,0)                                      //
+  OUTPUT_STOP(0,TT_MOTOR_PORT,0)                                      //
+                                                                      //
+  // Show popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,TEST_STARTX,TEST_STARTY,'144x116_POP6')    //      Draw bitmap
+                                                                      //
+  MOVE16_16(SOUND_TEXTY,Ypos)                                         //
+  UI_DRAW(SELECT_FONT,1)                                              //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'CALIBRATE GYRO: ')          //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(SELECT_FONT,0)                                              //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'1.Connect sensor')          //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'2.Press button  ')          //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'3.Do not touch  ')          //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,' turntable while')          //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,' calibrating    ')          //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  ADD16(Ypos,8,Ypos)                                                  //
+                                                                      //
+CheckType:                                                            //
+  UI_DRAW(SELECT_FONT,1)                                              //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'----- BUSY -----')          //
+  UI_DRAW(UPDATE)                                                     //
+  INPUT_DEVICE(GET_TYPEMODE,0,TT_GYRO_PORT,Type,Mode)                 //    INPUT_DEVICE(GET_TYPEMODE,0,TT_GYRO_PORT,Type,Mode)
+  JR_EQ8(Type,TT_GYRO_TYPE,TypeOk)                                    //
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //
+  JR_TRUE(Tmp,Stop)                                                   //
+  JR(CheckType)                                                       //
+TypeOk:                                                               //
+                                                                      //
+  UI_DRAW(SELECT_FONT,1)                                              //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'- PRESS BUTTON -')          //
+  UI_DRAW(UPDATE)                                                     //
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+                                                                      //
+  MOVE8_8(0,State)                                                    //    State   =  0                                                                      
+  MOVE8_8(1,Run)                                                      //    Run     =  1
+                                                                      //
+                                                                      //    do
+Loop:                                                                 //    {
+  JR_NEQ8(0,State,Not0)                                               //      if (State == 0)
+                                                                      //      {
+  // Wait for touch sensor on Input2                                  //
+  INPUT_DEVICE(READY_PCT,0,TT_TOUCH_PORT,0,0,1,Tmp)                   //        INPUT_DEVICE(READY_PCT,0,TT_TOUCH_PORT,0,0,1,Tmp)
+  JR_EQ8(Tmp,0,NoStart)                                               //        if (Tmp)
+                                                                      //        {
+  // Show state text                                                  //
+  UI_DRAW(SELECT_FONT,1)                                              //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'- CALIB. MODE  -')          //
+  UI_DRAW(UPDATE)                                                     //
+                                                                      //
+  // BRAKE                                                            //
+                                                                      //                                                                      
+  // Motor off                                                        //
+  OUTPUT_STOP(0,TT_MOTOR_PORT,0)                                      //
+  // Lamp off                                                         //
+  OUTPUT_STOP(0,TT_LAMP_PORT,0)                                       //
+  // Brake on                                                         //
+  OUTPUT_POWER(0,TT_BRAKE_PORT,100)                                   //
+  OUTPUT_START(0,TT_BRAKE_PORT)                                       //
+  // Wait 1000 mS                                                     //
+  TIMER_WAIT(1000,Timer)                                              //
+  TIMER_READY(Timer)                                                  //
+                                                                      //
+  // ZEROING                                                          //
+                                                                      //                                                                        
+  // Select calibration mode                                          //
+  INPUT_DEVICE(READY_SI,0,TT_GYRO_PORT,0,TT_GYRO_CALIB,2,Value1,Value2)//
+  // Wait 1000 mS                                                     //
+  TIMER_WAIT(1000,Timer)                                              //
+  TIMER_READY(Timer)                                                  //  
+                                                                      //
+  MOVE8_8(1,State)                                                    //          State  =  1
+                                                                      //
+NoStart:                                                              //        }
+Not0:                                                                 //      }
+                                                                      //
+  JR_NEQ8(1,State,Not1)                                               //      if (State == 1)
+                                                                      //      {
+  UI_DRAW(SELECT_FONT,1)                                              //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'--- TURN CW  ---')          //
+  UI_DRAW(UPDATE)                                                     //
+                                                                      //
+  // ON                                                               //                                                                      
+                                                                      //
+  // Brake off                                                        //
+  OUTPUT_POWER(0,TT_BRAKE_PORT,-100)                                  //
+  OUTPUT_START(0,TT_BRAKE_PORT)                                       //
+  // Wait 500 mS                                                      //
+  TIMER_WAIT(500,Timer)                                               //
+  TIMER_READY(Timer)                                                  //
+                                                                      //
+  // ACTIVATE CW                                                      //
+                                                                      //                                                                        
+  // Turntable CW                                                     //
+  OUTPUT_POWER(0,TT_MOTOR_PORT,100)                                   //
+  OUTPUT_START(0,TT_MOTOR_PORT)                                       //
+  // Wait 500 mS                                                      //
+  TIMER_WAIT(500,Timer)                                               //
+  TIMER_READY(Timer)                                                  //
+                                                                      //
+  // RELEASE CW                                                       //
+                                                                      //                                                                        
+  // Turntable CW                                                     //
+  OUTPUT_STOP(0,TT_MOTOR_PORT,0)                                      //
+                                                                      //
+  // CALIB CW                                                         //                                                                      
+                                                                      //
+  // Show state text                                                  //
+  UI_DRAW(SELECT_FONT,1)                                              //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'- CALIBRATE CW -')          //
+  UI_DRAW(UPDATE)                                                     //
+  // Send calib command                                               //
+  INPUT_WRITE(0,TT_GYRO_PORT,14,'LEGO-FAC-CAL-1')                     //
+  // Wait 50 mS                                                       //
+  TIMER_WAIT(50,Timer)                                                //
+  TIMER_READY(Timer)                                                  //  
+                                                                      //
+  // Send calib command                                               //
+  INPUT_WRITE(0,TT_GYRO_PORT,14,'LEGO-FAC-CAL-1')                     //
+  // Wait 2000 mS                                                     //
+  TIMER_WAIT(2000,Timer)                                              //
+  TIMER_READY(Timer)                                                  //  
+                                                                      //
+  MOVE8_8(2,State)                                                    //          State  =  2
+                                                                      //
+Not1:                                                                 //      }
+                                                                      //
+  JR_NEQ8(2,State,Not2)                                               //      if (State == 2)
+                                                                      //      {
+  UI_DRAW(SELECT_FONT,1)                                              //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'--- TURN CCW ---')          //
+  UI_DRAW(UPDATE)                                                     //
+                                                                      //
+  // ACTIVATE CCW                                                     //                                                                      
+                                                                      //
+  // Turntable CCW                                                    //
+  OUTPUT_POWER(0,TT_MOTOR_PORT,-100)                                  //
+  OUTPUT_START(0,TT_MOTOR_PORT)                                       //
+  // Wait 500 mS                                                      //
+  TIMER_WAIT(500,Timer)                                               //
+  TIMER_READY(Timer)                                                  //
+                                                                      //
+  // RELEASE CCW                                                      //                                                                      
+                                                                      //
+  // Turntable CCW                                                    //
+  OUTPUT_STOP(0,TT_MOTOR_PORT,0)                                      //
+                                                                      //
+   // CALIB CCW                                                       //
+                                                                      //
+  // Show state text                                                  //
+  UI_DRAW(SELECT_FONT,1)                                              //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'- CALIBRATE CCW-')          //
+  UI_DRAW(UPDATE)                                                     //
+  // Send calib command                                               //
+  INPUT_WRITE(0,TT_GYRO_PORT,14,'LEGO-FAC-CAL-2')                     //
+  // Wait 50 mS                                                       //
+  TIMER_WAIT(50,Timer)                                                //
+  TIMER_READY(Timer)                                                  //
+                                                                      //
+  // Send calib command                                               //
+  INPUT_WRITE(0,TT_GYRO_PORT,14,'LEGO-FAC-CAL-2')                     //
+  // Wait 500 mS                                                      //
+  TIMER_WAIT(500,Timer)                                               //
+  TIMER_READY(Timer)                                                  //
+                                                                      //
+  // READ CALIB                                                       //
+                                                                      //
+  TIMER_READ(Time)
+ReadLoop:  
+  // Read values                                                      //
+  INPUT_DEVICE(READY_SI,0,TT_GYRO_PORT,0,TT_GYRO_CALIB,3,Value1,Value2,Value3)     //
+  
+  TIMER_READ(Timer)
+  SUB32(Timer,Time,Timer)
+  JR_GTEQ32(Timer,1700,ReadEnd)
+  
+  MOVEF_32(Value1,Data32)
+  JR_EQ32(Data32,0,ReadLoop)  
+  MOVEF_32(Value2,Data32)
+  JR_EQ32(Data32,0,ReadLoop)
+    
+Wait:    
+  TIMER_READ(Timer)
+  SUB32(Timer,Time,Timer)
+  JR_LT32(Timer,1700,Wait)
+  
+ReadEnd:
+    
+  // Show values                                                      //
+  UI_DRAW(SELECT_FONT,1)                                              //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'                ')          //
+  UI_DRAW(VALUE,FG_COLOR,24,Ypos,Value1,4,0)                          //
+  UI_DRAW(VALUE,FG_COLOR,64,Ypos,Value2,4,0)                          //
+  UI_DRAW(VALUE,FG_COLOR,104,Ypos,Value3,4,0)                         //
+  UI_DRAW(UPDATE)                                                     //
+                                                                      //
+  MOVE8_8(3,State)                                                    //          State  =  3
+Not2:                                                                 //      }
+                                                                      //
+  JR_NEQ8(3,State,Not3)                                               //      if (State == 3)
+                                                                      //      {
+  // ACTIVATE STOP                                                    //
+                                                                      //                                                  
+  // Turntable stop                                                   //
+  OUTPUT_POWER(0,TT_MOTOR_PORT,100)                                   //
+  OUTPUT_START(0,TT_MOTOR_PORT)                                       //
+  // Wait 500 mS                                                      //
+  TIMER_WAIT(500,Timer)                                               //
+  TIMER_READY(Timer)                                                  //
+                                                                      //      
+  // RELEASE STOP                                                     //
+                                                                      //                                                  
+  // Turntable stop                                                   //
+  OUTPUT_STOP(0,TT_MOTOR_PORT,0)                                      //
+  // Wait 500 mS                                                      //
+  TIMER_WAIT(500,Timer)                                               //
+  TIMER_READY(Timer)                                                  //
+                                                                      //
+  // OFF                                                              //
+                                                                      //                                                                      
+  // Brake float                                                      //
+  OUTPUT_STOP(0,TT_BRAKE_PORT,0)                                      //
+                                                                      //
+  // EVALUATE RESULT                                                  //
+                                                                      //                                                                      
+  JR_LTF(Value1,940.0F,NotOk)
+  JR_GTF(Value1,1060.0F,NotOk)
+  JR_LTF(Value2,940.0F,NotOk)
+  JR_GTF(Value2,1060.0F,NotOk)
+  JR_LTF(Value3,403.0F,NotOk)
+  JR_GTF(Value3,470.0F,NotOk)
+
+Ok:
+
+  // Green lamp on                                                    //
+  OUTPUT_POWER(0,TT_LAMP_PORT,100)                                    //
+  OUTPUT_START(0,TT_LAMP_PORT)                                        //
+
+  JR(OkEnd)
+
+NotOk:
+
+  // Red lamp on                                                      //
+  OUTPUT_POWER(0,TT_LAMP_PORT,-100)                                   //
+  OUTPUT_START(0,TT_LAMP_PORT)                                        //
+
+OkEnd:
+                                                                      //
+  MOVE8_8(4,State)                                                    //        State  =  4
+
+Not3:                                                                 //      }
+                                                                      //
+  JR_NEQ8(4,State,Not4)                                               //      if (State == 4)
+                                                                      //      {
+  // Wait for touch sensor on Input2                                  //
+  INPUT_DEVICE(READY_PCT,0,TT_TOUCH_PORT,0,0,1,Tmp)                   //        INPUT_DEVICE(READY_PCT,0,TT_TOUCH_PORT,0,0,1,Tmp)
+  JR_NEQ8(Tmp,0,Repeat)                                               //        if (Tmp)
+                                                                      //
+Not4:                                                                 //      }                                                                      
+                                                                      //
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+  JR_FALSE(Tmp,NoEscape)                                              //      if (TmP)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+                                                                      //
+NoEscape:                                                             //      }  
+                                                                      //    }
+  JR_TRUE(Run,Loop)                                                   //    while (Run)
+                                                                      //
+Stop:                                                                 //
+                                                                      //
+  // Stop all outputs                                                 //
+  OUTPUT_STOP(0,TT_BRAKE_PORT,0)                                      //
+  OUTPUT_STOP(0,TT_MOTOR_PORT,0)                                      //
+  OUTPUT_STOP(0,TT_LAMP_PORT,0)                                       //
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// TestUSPing ******************************************************************************************
+                                                                      //
+                                                                      //
+define    US_TYPE               30                                    //
+define    US_NORMAL             0                                     //
+define    US_PING               3                                     //
+define    US_PORT               1                                     //
+                                                                      //
+                                                                      //
+subcall   TestUSPing                                                  //  void TestUSPing
+{                                                                     //  {
+  DATAF   Tmp
+  DATAF   Count
+  DATA32  Timer
+  DATA8   Busy
+  DATA8   State
+
+  MOVE8_F(0,Count)
+  INPUT_READSI(0,US_PORT,US_TYPE,US_PING,Tmp)
+
+  UI_DRAW(FILLWINDOW,BG_COLOR,0,0)                                    //      UI_DRAW(FILLWINDOW,BG_COLOR,0,0)
+  UI_DRAW(SELECT_FONT,1)
+  UI_DRAW(TEXT,FG_COLOR,0,20,' ULTRASONIC PING TEST')
+  UI_DRAW(SELECT_FONT,0)
+  UI_DRAW(TEXT,FG_COLOR,0,40,'Actual')
+  UI_DRAW(TEXT,FG_COLOR,0,60,'Changes')
+  UI_DRAW(TEXT,FG_COLOR,0,80,'Fired')
+  UI_DRAW(TEXT,FG_COLOR,0,110,'Press a button to fire')
+  UI_DRAW(UPDATE)
+
+Loop:
+
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,State)
+  JR_TRUE(State,Stop)
+
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,State)
+  JR_FALSE(State,Loop)
+
+  INPUT_WRITE(0,US_PORT,1,DEVCMD_FIRE)
+
+Wait:
+  INPUT_TEST(0,US_PORT,Busy)
+  JR_TRUE(Busy,Wait)
+
+  TIMER_WAIT(330,Timer)
+  TIMER_READY(Timer)
+
+  INPUT_READSI(0,US_PORT,US_TYPE,US_PING,Tmp)
+  UI_DRAW(VALUE,FG_COLOR,64,40,Tmp,6,1)
+
+  INPUT_DEVICE(GET_CHANGES,0,US_PORT,Tmp)
+  UI_DRAW(VALUE,FG_COLOR,64,60,Tmp,6,1)
+
+  MOVE8_F(1,Tmp)
+  ADDF(Tmp,Count,Count)
+  UI_DRAW(VALUE,FG_COLOR,64,80,Count,6,1)
+
+  UI_DRAW(UPDATE)
+
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,State)                             //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,State)
+  JR_FALSE(State,Loop)
+Stop:
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// CalibDevice *****************************************************************************************
+                                                                      //
+define    DEVICE_TYPE           0                                     //
+define    DEVICE_NORMAL         0                                     //
+define    DEVICE_PORT           1                                     //
+define    DATA32_MAX            (2147483647)                          //
+                                                                      //
+                                                                      //
+subcall   CalibDevice                                                 //  void CalibDevice(void)
+{                                                                     //  {
+  DATA32  Timer                                                       //
+  DATA32  Min                                                         //
+  DATA32  Max                                                         //
+  DATAF   Value1                                                      //
+  DATAF   Value2                                                      //
+  DATA16  Ypos                                                        //
+  DATA8   Run                                                         //
+  DATA8   Pct                                                         //
+  DATA8   Tmp                                                         //
+  DATA8   Type                                                        //
+  DATA8   Mode                                                        //
+  DATAS   Symbol 4                                                    //
+                                                                      //
+                                                                      //
+  // Show popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,TEST_STARTX,TEST_STARTY,'144x116_POP6')    //      Draw bitmap
+                                                                      //
+  MOVE16_16(SOUND_TEXTY,Ypos)                                         //
+  UI_DRAW(SELECT_FONT,1)                                              //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'CALIBRATE-DEVICE')          //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(SELECT_FONT,0)                                              //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'Sensor in port 2')          //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'LEFT  minimum')             //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'RIGHT maximum')             //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'ENTER default')             //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'BACK  quit   ')             //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  ADD16(Ypos,6,Ypos)                                                  //
+                                                                      //
+CheckType:                                                            //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'----- BUSY -----')          //    UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'----- BUSY -----')
+  UI_DRAW(UPDATE)                                                     //    UI_DRAW(UPDATE)
+  INPUT_TEST(0,DEVICE_PORT,Tmp)                                       //
+  JR_FALSE(Tmp,TypeOk)                                                //
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //
+  JR_TRUE(Tmp,Stop)                                                   //
+  JR(CheckType)                                                       //
+TypeOk:                                                               //
+                                                                      //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'- CALIB. MODE - ')          //    UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'- CALIB. MODE - ')
+  UI_DRAW(UPDATE)                                                     //    UI_DRAW(UPDATE)
+  MOVE32_32(DATA32_MAX,Min)                                           //    Min  =  DATA32_MAX
+  MOVE32_32(DATA32_MAX,Max)                                           //    Max  =  DATA32_MAX
+  TIMER_WAIT(1000,Timer)                                              //    wait(1000)
+  TIMER_READY(Timer)                                                  //
+                                                                      //
+  INPUT_DEVICE(GET_TYPEMODE,0,DEVICE_PORT,Type,Mode)                  //    INPUT_DEVICE(GET_TYPEMODE,0,DEVICE_PORT,Type,Mode)
+                                                                      //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'                ')          //    UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'                ')
+  UI_DRAW(UPDATE)                                                     //    UI_DRAW(UPDATE)
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+                                                                      //
+  MOVE8_8(1,Run)                                                      //    Run     =  1
+                                                                      //    do
+Loop1:                                                                //    {
+                                                                      //
+//! \endverbatim
+//! \anchor input_device_cal_minmax
+//! \verbatim
+//  CALIBRATE MIN AND MAX EXAMPLE
+  UI_BUTTON(SHORTPRESS,LEFT_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,LEFT_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotLeftButton)                                         //      if (Tmp != FALSE)
+                                                                      //      {
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'                ')          //        UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'                ')
+  UI_DRAW(UPDATE)                                                     //        UI_DRAW(UPDATE)
+                                                                      //
+  INPUT_DEVICE(READY_SI,0,DEVICE_PORT,Type,Mode,1,Value1)             //
+  MOVEF_32(Value1,Min)                                                //
+                                                                      //
+  INPUT_DEVICE(CAL_MIN,Type,Mode,Min)                                 //        INPUT_DEVICE(CAL_MIN,Type,Mode,Min)
+NotLeftButton:                                                        //      }
+                                                                      //
+  UI_BUTTON(SHORTPRESS,RIGHT_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,RIGHT_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotRightButton)                                        //      if (Tmp != FALSE)
+                                                                      //      {
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'                ')          //        UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'                ')
+  UI_DRAW(UPDATE)                                                     //        UI_DRAW(UPDATE)
+                                                                      //
+  INPUT_DEVICE(READY_SI,0,DEVICE_PORT,Type,Mode,1,Value1)             //
+  MOVEF_32(Value1,Max)                                                //
+                                                                      //
+  INPUT_DEVICE(CAL_MAX,Type,Mode,Max)                                 //        INPUT_DEVICE(CAL_MAX,Type,Mode,Max)
+                                                                      //
+NotRightButton:                                                       //      }
+                                                                      //
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotEnterButton)                                        //      if (Tmp != FALSE)
+                                                                      //      {
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'                ')          //        UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'                ')
+  UI_DRAW(UPDATE)                                                     //        UI_DRAW(UPDATE)
+                                                                      //
+//! \endverbatim
+//! \anchor input_device_cal_default
+//! \verbatim
+//  CALIBRATE DEFAULT EXAMPLE
+                                                                      //
+  INPUT_DEVICE(CAL_DEFAULT,Type,Mode)                                 //        INPUT_DEVICE(CAL_DEFAULT,Type,Mode)
+NotEnterButton:                                                       //      }
+                                                                      //
+  TIMER_WAIT(100,Timer)                                               //      wait(100)
+  TIMER_READY(Timer)                                                  //
+                                                                      //
+  INPUT_DEVICE(READY_PCT,0,DEVICE_PORT,Type,Mode,1,Pct)               //      INPUT_DEVICE(READY_PCT,0,DEVICE_PORT,Type,Mode,1,Pct)
+  MOVE8_F(Pct,Value1)                                                 //      Value1  =  Pct
+  UI_DRAW(VALUE,FG_COLOR,24,Ypos,Value1,3,0)                          //
+  UI_DRAW(TEXT,FG_COLOR,48,Ypos,'pct')                                //      UI_DRAW(TEXT,FG_COLOR,48,Ypos,'pct')
+                                                                      //
+  INPUT_DEVICE(GET_SYMBOL,0,DEVICE_PORT,4,Symbol)                     //      INPUT_DEVICE(GET_SYMBOL,0,DEVICE_PORT,4,Symbol)
+  INPUT_DEVICE(READY_SI,0,DEVICE_PORT,Type,Mode,1,Value2)             //      INPUT_DEVICE(READY_SI,0,DEVICE_PORT,Type,Mode,1,Value2)
+  UI_DRAW(VALUE,FG_COLOR,80,Ypos,Value2,6,0)                          //      UI_DRAW(VALUE,FG_COLOR,80,Ypos,Value2,6,0)
+  UI_DRAW(TEXT,FG_COLOR,128,Ypos,Symbol)                              //      UI_DRAW(TEXT,FG_COLOR,128,Ypos,Symbol)
+                                                                      //
+  UI_DRAW(UPDATE)                                                     //      UI_DRAW(UPDATE)
+                                                                      //
+  INPUT_TEST(0,DEVICE_PORT,Tmp)                                       //      INPUT_TEST(0,DEVICE_PORT,Tmp)
+  JR_TRUE(Tmp,CheckType)                                              //      if (Tmp) goto CheckType
+                                                                      //
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotBackButton)                                         //      if (Tmp != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotBackButton:                                                        //      }
+                                                                      //
+                                                                      //    }
+  JR_TRUE(Run,Loop1)                                                  //    while (Run)
+Stop:                                                                 //
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+// Test NxtColor ***************************************************************************************
+                                                                      //
+subcall   TestNxtColor                                                //
+{                                                                     //
+  DATA32  Timer                                                       //
+  DATAF   Tmp1
+  DATAF   Tmp2
+  DATAF   Tmp3
+  DATAF   Tmp4
+  DATA32  Dat1
+  DATA32  Dat2
+  DATA32  Dat3
+  DATA32  Dat4
+  DATA16  Ypos                                                        //
+  DATA8   Run                                                         //
+  DATA8   Tmp                                                         //
+  DATA8   Busy                                                        //
+                                                                      //
+                                                                      //
+  // Show popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,TEST_STARTX,TEST_STARTY,'144x116_POP6')    //      Draw bitmap
+  MOVE16_16(SOUND_TEXTY,Ypos)                                         //
+  UI_DRAW(SELECT_FONT,1)                                              //
+  UI_DRAW(TEXT,FG_COLOR,SOUND_TEXTX,Ypos,'TESTING NXTCOLOR')                //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  ADD16(Ypos,SOUND_SPACEY,Ypos)                                       //
+  UI_DRAW(SELECT_FONT,0)                                              //
+                                                                      //
+  UI_DRAW(TEXT,FG_COLOR,24,50,'Red')
+  UI_DRAW(TEXT,FG_COLOR,24,65,'Green')
+  UI_DRAW(TEXT,FG_COLOR,24,80,'Blue')
+  UI_DRAW(TEXT,FG_COLOR,24,95,'BackGround')
+  MOVE8_8(1,Run)                                                      //    Run     =  1
+                                                                      //    do
+Loop1:                                                                //    {
+/*
+  INPUT_DEVICE(READY_SI,0,1,0,5,4,Tmp1,Tmp2,Tmp3,Tmp4)
+*/
+  INPUT_DEVICE(READY_RAW,0,1,0,5,4,Dat1,Dat2,Dat3,Dat4)
+
+  MOVE32_F(Dat1,Tmp1)
+  MOVE32_F(Dat2,Tmp2)
+  MOVE32_F(Dat3,Tmp3)
+  MOVE32_F(Dat4,Tmp4)
+
+  UI_DRAW(VALUE,FG_COLOR,112,50,Tmp1,5,0)
+  UI_DRAW(VALUE,FG_COLOR,112,65,Tmp2,5,0)
+  UI_DRAW(VALUE,FG_COLOR,112,80,Tmp3,5,0)
+  UI_DRAW(VALUE,FG_COLOR,112,95,Tmp4,5,0)
+  UI_DRAW(UPDATE)
+
+  TIMER_WAIT(200,Timer)
+  TIMER_READY(Timer)
+                                                                      //
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotBackButton)                                         //      if (Tmp != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotBackButton:                                                        //      }
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotEnterButton)                                        //      if (Tmp != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotEnterButton:                                                       //      }
+                                                                      //    }
+  JR_TRUE(Run,Loop1)                                                  //    while (Run)
+Stop:                                                                 //
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+
+
+
+
+
+
+// Test Performance ************************************************************************************
+                                                                      //
+define    ROTATION_PORT         1                                     //
+define    REFLECTED_PORT        2                                     //
+define    SONAR_PORT            3                                     //
+                                                                      //
+define    LOOPTIME              60000                                 //                                                                     
+                                                                      //
+subcall   TestPerformance                                             //  TestPerformance(void)
+{                                                                     //  {
+  DATA32  Time                                                        //
+  DATA32  OldTime                                                     //
+  DATA32  LoopCount                                                   //
+  DATA32  Data32                                                      //
+  DATAF   DataF                                                       //
+  DATAF   Rotation                                                    //
+  DATAF   Reflected                                                   //
+  DATAF   Sonar                                                       //
+  DATAF   SensorSum                                                   //
+  DATAF   Random                                                      //
+  DATAF   IDisplay                                                    //
+  DATA8   Speed                                                       //
+  DATA8   SpeedA                                                      //
+                                                                      //
+  MOVE8_8(0,SpeedA)                                                   //
+  MOVE32_32(0,LoopCount)                                              //    LoopCount  =  0
+  OUTPUT_START(0,7)
+  TIMER_READ(OldTime)                                                 //    TIMER_READ(OldTime)
+
+  UI_DRAW(TOPLINE,0)
+                                                                      //
+Loop:
+  TIMER_READ(Time)
+  SUB32(Time,OldTime,Time)
+  JR_GTEQ32(Time,LOOPTIME,LoopEnd)
+                                                                      
+
+  INPUT_DEVICE(READY_SI,0,ROTATION_PORT,0,0,1,Rotation)                                                                      
+  INPUT_DEVICE(READY_SI,0,REFLECTED_PORT,0,0,1,Reflected)                                                                      
+  INPUT_DEVICE(READY_SI,0,SONAR_PORT,0,0,1,Sonar)                                                                      
+
+                                                                      
+  RANDOM(0,100,Data32)                                                  
+  MOVE32_F(Data32,Random)
+  MOVE32_8(Data32,Speed)
+  
+  ADDF(Rotation,Reflected,SensorSum)
+  ADDF(SensorSum,Sonar,SensorSum)                    
+
+  MULF(SensorSum,100.0F,IDisplay)
+  DIVF(IDisplay,Random,IDisplay)
+
+                                                                      
+  OUTPUT_SPEED(0,6,Speed)
+
+  JR_LTEQ8(Speed,50,NotGt)
+
+  ADD8(SpeedA,1,SpeedA)
+
+NotGt:
+
+  JR_GTEQ8(Speed,50,NotLt)
+
+  SUB8(SpeedA,1,SpeedA)
+
+NotLt:
+
+  MOVE8_F(SpeedA,DataF)
+
+  UI_DRAW(FILLWINDOW,BG_COLOR,0,0)
+  UI_DRAW(VALUE,FG_COLOR,12,60,Reflected,-4,0)
+  UI_DRAW(VALUE,FG_COLOR,0,30,IDisplay,-6,0)
+  UI_DRAW(VALUE,FG_COLOR,12,45,DataF,-4,0)
+
+  OUTPUT_SPEED(0,1,SpeedA)
+
+  ADD32(LoopCount,1,LoopCount)
+  MOVE32_F(LoopCount,DataF)
+  UI_DRAW(VALUE,FG_COLOR,0,15,DataF,-6,0)
+                                                                        
+  UI_DRAW(UPDATE)
+                                                                      
+  JR(Loop)                                                                      
+LoopEnd:                                                                     
+
+  OUTPUT_STOP(0,7,0)
+
+  UI_BUTTON(WAIT_FOR_PRESS)
+  UI_BUTTON(FLUSH)
+
+  UI_DRAW(TOPLINE,1)
+  UI_DRAW(RESTORE,0)
+
+}                                                                     //  
+                                                                      //
+                                                                      //
+// Test Daisy ******************************************************************************************
+                                                                      //
+define    SENSOR_LAYER          1                                     //                                                                      
+define    SENSOR_PORT           1                                     //
+                                                                      //
+                                                                      //
+subcall   TestDaisy                                                   //  TestDaisy(void)
+{                                                                     //  {
+  DATAF   Value1
+  DATAF   Value2
+  DATAF   Value3
+  DATA8   Tmp
+  DATA8   Run                                                         //
+
+  // Show popup                                                       //
+  UI_DRAW(BMPFILE,FG_COLOR,TEST_STARTX,TEST_STARTY,'144x116_POP6')    //      Draw bitmap
+  UI_DRAW(UPDATE)
+
+  MOVE8_8(1,Run)                                                      //    Run     =  1
+                                                                      //    do
+Loop:                                                                 //    {
+  INPUT_DEVICE(READY_SI,SENSOR_LAYER,SENSOR_PORT,0,0,1,Value1)
+  INPUT_DEVICE(READY_SI,SENSOR_LAYER,SENSOR_PORT,0,1,1,Value2)
+  INPUT_DEVICE(READY_SI,SENSOR_LAYER,SENSOR_PORT,0,2,1,Value3)
+  
+  UI_DRAW(SELECT_FONT,LARGE_FONT)
+  UI_DRAW(VALUE,1,30,40,Value1,5,0)  
+  UI_DRAW(VALUE,1,30,60,Value2,5,0)  
+  UI_DRAW(VALUE,1,30,80,Value3,5,0)  
+  UI_DRAW(UPDATE)
+                                                                      //
+  UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)                               //      UI_BUTTON(SHORTPRESS,BACK_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotBackButton)                                         //      if (Tmp != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotBackButton:                                                        //      }
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotEnterButton)                                        //      if (Tmp != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotEnterButton:                                                       //      }
+                                                                      //    }
+  JR_TRUE(Run,Loop)                                                   //    while (Run)
+Stop:                                                                 //
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  }
+                                                                      //
+// *****************************************************************************************************
+//
+/* \endverbatim
+*/

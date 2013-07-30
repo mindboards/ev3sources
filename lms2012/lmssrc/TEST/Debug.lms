@@ -1,0 +1,496 @@
+/*
+ * LEGO® MINDSTORMS EV3
+ *
+ * Copyright (C) 2010-2013 The LEGO Group
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
+
+//  TCP 08.04.2013
+//! \page testdebugappcode Debug Application
+//!
+//! <hr size="1"/>
+//!
+//! \verbatim
+//**********************************************************************
+define appv 'Debug V1.02'                                             //
+//**********************************************************************
+                                                                      //
+define    MAX_COMMAND_BYTECODES         64                            //
+define    MAX_COMMAND_GLOBALS           64                            //
+                                                                      //
+DATA32    pDirectGlobals                                              //
+DATA32    pDirectImage                                                //
+DATA16    hDirectImage                                                //
+DATA8     OldStatus                                                   //
+DATA8     OldTermStatus                                               //
+                                                                      //
+//******************************************************************************************************
+// Main
+//******************************************************************************************************
+                                                                      //
+vmthread Main                                                         //  void Main(void)
+{                                                                     //  {
+  DATA8   ShowVersion                                                 //
+                                                                      //
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //    UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+  JR_FALSE(ShowVersion,DontShowVersion)                               //    if (ShowVersion)
+                                                                      //    {
+  UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)                              //      UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)
+  UI_DRAW(RECT,FG_COLOR,6,52,166,24)                                  //      UI_DRAW(RECT,FG_COLOR,6,52,166,24)
+  UI_DRAW(TEXT,FG_COLOR,13,60,appv)                                   //      UI_DRAW(TEXT,FG_COLOR,13,60,appv)
+  UI_DRAW(UPDATE)                                                     //      UI_DRAW(UPDATE)
+                                                                      //
+ShowVersionWait:                                                      //      do
+                                                                      //      {  
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //        UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+                                                                      //      }
+  JR_TRUE(ShowVersion,ShowVersionWait)                                //      while (ShowVersion)
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //      UI_BUTTON(FLUSH)
+DontShowVersion:                                                      //    }  
+                                                                      //
+  UI_DRAW(RESTORE,0)                                                  //    UI_DRAW(RESTORE,0)
+                                                                      //
+  CALL(StartupScreen)                                                 //    StartupScreen()
+  OBJECT_START(BackgroundTask)                                        //    OBJECT_START(BackgroundTask)
+  CALL(Scheduler)                                                     //    Scheduler()
+}                                                                     //  }
+                                                                      //
+//******************************************************************************************************
+// BackgroundTask
+//******************************************************************************************************
+                                                                      //
+vmthread  BackgroundTask                                              //  void BackgroundTask(void)
+{                                                                     //  {
+  DATA8   TermStatus                                                  //    DATA8   TermStatus
+  DATA8   Reply                                                       //    DATA8   Reply
+                                                                      //
+  PROGRAM_INFO(GET_STATUS,TERM_SLOT,TermStatus)                       //    PROGRAM_INFO(GET_STATUS,TERM_SLOT,TermStatus)
+  MOVE8_8(TermStatus,OldTermStatus)                                   //    OldTermStatus  =  TermStatus
+                                                                      //    do
+Loop:                                                                 //    {
+  PROGRAM_INFO(GET_STATUS,TERM_SLOT,TermStatus)                       //      PROGRAM_INFO(GET_STATUS,TERM_SLOT,TermStatus)
+  JR_EQ8(TermStatus,OldTermStatus,NoChange)                           //      if (TermStatus != OldTermsStatus)
+                                                                      //      {
+  MOVE8_8(TermStatus,OldTermStatus)                                   //        OldTermStatus  =  TermStatus
+  JR_NEQ8(TermStatus,STOPPED,NotStopped)                              //        if (TermStatus == STOPPED)
+                                                                      //        {
+  PROGRAM_INFO(GET_PRGRESULT,TERM_SLOT,Reply)                         //          PROGRAM_INFO(GET_PRGRESULT,TERM_SLOT,Reply)
+  JR_NEQ8(Reply,FAIL,Ok)                                              //          if (Reply == FAIL)
+                                                                      //          {              
+  UI_WRITE(PUT_STRING,'FAIL\r\n')                                     //            UI_WRITE(PUT_STRING,'FAIL\r\n')
+Ok:                                                                   //          }
+  UI_WRITE(CODE,pDirectGlobals,MAX_COMMAND_GLOBALS)                   //          UI_WRITE(CODE,pDirectGlobals,MAX_COMMAND_GLOBALS)
+  UI_WRITE(PUT_STRING,'\r\n')                                         //          UI_WRITE(PUT_STRING,'\r\n')
+  UI_WRITE(WRITE_FLUSH)                                               //          UI_WRITE(WRITE_FLUSH)
+                                                                      //
+NotStopped:                                                           //        }
+NoChange:                                                             //      }
+                                                                      //    }
+  JR(Loop)                                                            //    while (1)
+}                                                                     //  }
+                                                                      //
+//******************************************************************************************************
+// StartupScreen
+//******************************************************************************************************
+                                                                      //
+define    STARTUPSCREEN 'startup_screen'                              //
+                                                                      //
+subcall   StartupScreen                                               //  void StartupScreen(void)
+{                                                                     //  {
+  UI_WRITE(LED,LED_GREEN)                                             //    UI_WRITE(LED,LED_GREEN)
+  UI_DRAW(FILLWINDOW,BG_COLOR,0,0)                                    //    UI_DRAW(FILLWINDOW,BG_COLOR,0,0)
+  UI_DRAW(TEXT,FG_COLOR,48,45,'Debug Mode')                           //    UI_DRAW(TEXT,FG_COLOR,48,30,'Debug Mode')
+  UI_DRAW(TEXT,FG_COLOR,40,65,'use terminal')                         //    UI_DRAW(TEXT,FG_COLOR,40,50,'use terminal')
+  UI_DRAW(UPDATE)                                                     //    UI_DRAW(UPDATE)
+}                                                                     //  }
+                                                                      //
+//******************************************************************************************************
+// Scheduler
+//******************************************************************************************************
+                                                                      //
+subcall   Scheduler                                                   //  void Scheduler(void)
+{                                                                     //  {
+  DATA32  Ips                                                         //
+  DATA8   Status                                                      //
+  DATA8   Key                                                         //
+                                                                      //
+  UI_WRITE(TERMINAL,1)                                                //    UI_WRITE(TERMINAL,1)
+  FILE(GET_POOL,MAX_COMMAND_BYTECODES,hDirectImage,pDirectImage)      //    FILE(GET_POOL,MAX_COMMAND_BYTECODES,hDirectImage,pDirectImage)
+  PROGRAM_INFO(GET_STATUS,USER_SLOT,Status)                           //    PROGRAM_INFO(GET_STATUS,USER_SLOT,Status)
+  MOVE8_8(Status,OldStatus)                                           //    OldStatus  =  Status
+  CALL(Help)                                                          //    Help()
+                                                                      //
+                                                                      //    do
+Loop:                                                                 //    {
+                                                                      //
+  UI_READ(KEY,Key)                                                    //      UI_READ(KEY,Key)
+                                                                      //
+  JR_NEQ8(Key,'h',NotHelp)                                            //      if (Key == 'h')
+                                                                      //      {
+  CALL(Help)                                                          //        Help()
+NotHelp:                                                              //      }
+                                                                      //
+  JR_NEQ8(Key,'f',NotFilenameHelp)                                    //      if (Key == 'h')
+                                                                      //      {
+  CALL(FilenameHelp)                                                  //        FilenameHelp()
+NotFilenameHelp:                                                      //      }
+                                                                      //
+  JR_NEQ8(Key,'w',NotDebugHelp)                                       //      if (Key == 'w')
+                                                                      //      {
+  CALL(DebugHelp)                                                     //        DebugHelp()
+NotDebugHelp:                                                         //      }
+                                                                      //
+  JR_NEQ8(Key,'q',NotQuit)                                            //      if (Key == 'q')
+                                                                      //      {
+  CALL(ExitToLinux)                                                   //        ExitToLinux()
+NotQuit:                                                              //      }
+                                                                      //
+  JR_NEQ8(Key,'s',NotStop)                                            //      if (Key == 's')
+                                                                      //      {
+  CALL(StopUserProgram)                                               //        StopUserProgram()
+NotStop:                                                              //      }
+                                                                      //
+  JR_NEQ8(Key,'r',NotRun)                                             //      if (Key == 'r')
+                                                                      //      {
+  CALL(RunUserProgram)                                                //        RunUserProgram()
+NotRun:                                                               //      }
+                                                                      //
+  JR_NEQ8(Key,'x',NotTst)                                             //      if (Key == 'x')
+                                                                      //      {
+  CALL(RunTstProgram)                                                 //        RunTstProgram()
+NotTst:                                                               //      }
+                                                                      //
+  JR_NEQ8(Key,'b',NotBreakPoint)                                      //      if (Key == 'b')
+                                                                      //      {
+  CALL(SetBreakPoint)                                                 //        SetBreakPoint()
+NotBreakPoint:                                                        //      }
+                                                                      //
+  JR_NEQ8(Key,'c',NotCommand)                                         //      if (Key == 'c')
+                                                                      //      {
+  CALL(DirectCommand)                                                 //        DirectCommand()
+NotCommand:                                                           //      }
+                                                                      //
+  JR_NEQ8(Key,'p',NotProbe)                                           //      if (Key == 'p')
+                                                                      //      {
+  CALL(Probe)                                                         //        Probe()
+NotProbe:                                                             //      }
+                                                                      //
+  JR_NEQ8(Key,'d',NotDebug)                                           //      if (Key == 'd')
+                                                                      //      {
+  CALL(Debug)                                                         //        Debug()
+NotDebug:                                                             //      }
+                                                                      //
+  JR_NEQ8(Key,'t',NotTrig)                                            //      if (Key == 't')
+                                                                      //      {
+  CALL(SetTrigger)                                                    //        SetTrigger()
+NotTrig:                                                              //      }
+                                                                      //
+  PROGRAM_INFO(GET_STATUS,USER_SLOT,Status)                           //      PROGRAM_INFO(GET_STATUS,USER_SLOT,Status)
+                                                                      //
+  JR_EQ8(Status,OldStatus,NoChange)                                   //      if (Status != OldStatus)
+                                                                      //      {
+  MOVE8_8(Status,OldStatus)                                           //        OldStatus  =  Status
+                                                                      //
+  JR_NEQ8(Status,STOPPED,NotStopped)                                  //        if (Status == STOPPED)
+                                                                      //        {
+  UI_WRITE(PUT_STRING,'\r  }\r\n  [')                                 //          UI_WRITE(PUT_STRING,'\r  }\r\n  [')
+  PROGRAM_INFO(GET_SPEED,USER_SLOT,Ips)                               //          PROGRAM_INFO(GET_SPEED,USER_SLOT,Ips)
+  UI_WRITE(VALUE32,Ips)                                               //          UI_WRITE(VALUE32,Ips)
+  UI_WRITE(PUT_STRING,' IPS]\r\n')                                    //          UI_WRITE(PUT_STRING,' IPS]\r\n')
+                                                                      //
+  UI_WRITE(WRITE_FLUSH)                                               //          UI_WRITE(WRITE_FLUSH)
+  CALL(StartupScreen)                                                 //          StartupScreen()
+                                                                      //
+                                                                      //
+NotStopped:                                                           //        }
+NoChange:                                                             //      }
+                                                                      //    }
+  JR(Loop)                                                            //    while (1)
+}                                                                     //  }
+                                                                      //
+//******************************************************************************************************
+// Help
+//******************************************************************************************************
+                                                                      //
+                                                                      //
+subcall   Help                                                        //  void Help(void)
+{                                                                     //  {
+  DATAS   Version 40                                                  //
+                                                                      //
+  UI_READ(GET_VERSION,40,Version)                                     //
+  UI_WRITE(PUT_STRING,'\r\n')                                         //
+  UI_WRITE(PUT_STRING,Version)                                        //
+  UI_WRITE(PUT_STRING,'\r\n\n\n')                                     //
+  UI_WRITE(PUT_STRING,'      BYTECODE DEBUGGER      \r\n')            //
+  UI_WRITE(PUT_STRING,'  -------------------------  \r\n')            //
+  UI_WRITE(PUT_STRING,'  h      - this help screen  \r\n')            //
+  UI_WRITE(PUT_STRING,'  f      - help on file/path \r\n')            //
+  UI_WRITE(PUT_STRING,'  w      - help on debugging \r\n')            //
+  UI_WRITE(PUT_STRING,'                             \r\n')            //
+  UI_WRITE(PUT_STRING,'  rFILE  - run file          \r\n')            //
+  UI_WRITE(PUT_STRING,'  dFILE  - debug file        \r\n')            //
+  UI_WRITE(PUT_STRING,'  s      - stop              \r\n')            //
+  UI_WRITE(PUT_STRING,'                             \r\n')            //
+  UI_WRITE(PUT_STRING,'  bADDR  - set breakpoint    \r\n')            //
+  UI_WRITE(PUT_STRING,'  p      - probe             \r\n')            //
+  UI_WRITE(PUT_STRING,'  tADDR  - set triggerpoint  \r\n')            //
+  UI_WRITE(PUT_STRING,'                             \r\n')            //
+  UI_WRITE(PUT_STRING,'  cCODE  - direct command    \r\n')            //
+  UI_WRITE(PUT_STRING,'  q      - quit to Linux     \r\n')            //
+  UI_WRITE(PUT_STRING,'  -------------------------  \r\n\n')          //
+  UI_WRITE(WRITE_FLUSH)                                               //
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//******************************************************************************************************
+// FilenameHelp
+//******************************************************************************************************
+                                                                      //
+                                                                      //
+subcall   FilenameHelp                                                //  void FilenameHelp(void)
+{                                                                     //  {
+  UI_WRITE(PUT_STRING,'\r\n\n\n')                                     //
+  UI_WRITE(PUT_STRING,'  FILENAME / PATH HELP                    \r\n')//
+  UI_WRITE(PUT_STRING,'  ----------------------------------------\r\n')//
+  UI_WRITE(PUT_STRING,'  Run file located in specific folder use:\r\n')//
+  UI_WRITE(PUT_STRING,'                                          \r\n')//
+  UI_WRITE(PUT_STRING,'    r../prjs/prg1/prg1.rbf                \r\n')//
+  UI_WRITE(PUT_STRING,'                                          \r\n')//
+  UI_WRITE(PUT_STRING,'  Run file located in  sys/ui  folder use:\r\n')//
+  UI_WRITE(PUT_STRING,'                                          \r\n')//
+  UI_WRITE(PUT_STRING,'    rprg1                                 \r\n')//
+  UI_WRITE(PUT_STRING,'                                          \r\n')//
+  UI_WRITE(PUT_STRING,'  ----------------------------------------\r\n\n')//
+  UI_WRITE(WRITE_FLUSH)                                               //
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//******************************************************************************************************
+// DebugHelp
+//******************************************************************************************************
+                                                                      //
+                                                                      //
+subcall   DebugHelp                                                   //  void DebugHelp(void)
+{                                                                     //  {
+  UI_WRITE(PUT_STRING,'\r\n\n\n')                                     //
+  UI_WRITE(PUT_STRING,'  DEBUGGING HELP                          \r\n') //
+  UI_WRITE(PUT_STRING,'  ----------------------------------------\r\n') //
+  UI_WRITE(PUT_STRING,'  Run file with the  d   command and the  \r\n') //
+  UI_WRITE(PUT_STRING,'   file will load and be ready to single  \r\n') //
+  UI_WRITE(PUT_STRING,'   step, run or breakpoint set.           \r\n') //
+  UI_WRITE(PUT_STRING,'                                          \r\n') //
+  UI_WRITE(PUT_STRING,'  spacebar - will step one byte code      \r\n') //
+  UI_WRITE(PUT_STRING,'  bADDR    - insert break point at ADDR   \r\n') //
+  UI_WRITE(PUT_STRING,'  <        - run the program              \r\n') //
+  UI_WRITE(PUT_STRING,'  s        - stop and terminate           \r\n') //
+  UI_WRITE(PUT_STRING,'  ----------------------------------------\r\n\n') //
+  UI_WRITE(WRITE_FLUSH)                                               //
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//******************************************************************************************************
+// Exit to Linux
+//******************************************************************************************************
+                                                                      //
+                                                                      //
+subcall   ExitToLinux                                                 //  void ExitToLinux(void)
+{                                                                     //  {
+  UI_DRAW(TOPLINE,0)                                                  //    UI_DRAW(TOPLINE,0)
+  UI_DRAW(FILLWINDOW,BG_COLOR,0,0)                                    //    UI_DRAW(FILLWINDOW,BG_COLOR,0,0)
+  UI_DRAW(TEXT,FG_COLOR,48,30,'Linux Mode')                           //    UI_DRAW(TEXT,FG_COLOR,48,30,'Linux Mode')
+  UI_DRAW(TEXT,FG_COLOR,40,50,'use terminal')                         //    UI_DRAW(TEXT,FG_COLOR,40,50,'use terminal')
+  UI_DRAW(UPDATE)                                                     //    UI_DRAW(UPDATE)
+                                                                      //
+  FILE(CLOSE,hDirectImage)                                            //    FILE(CLOSE,hDirectImage)
+                                                                      //
+  PROGRAM_STOP(GUI_SLOT)                                              //    PROGRAM_STOP(GUI_SLOT)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//******************************************************************************************************
+// Stop user program
+//******************************************************************************************************
+                                                                      //
+                                                                      //
+subcall   StopUserProgram                                             //  void StopUserProgram(void)
+{                                                                     //  {
+  DATA8   Status                                                      //
+                                                                      //
+  PROGRAM_INFO(GET_STATUS,USER_SLOT,Status)                           //    PROGRAM_INFO(GET_STATUS,USER_SLOT,Status)
+                                                                      //
+  JR_EQ8(Status,STOPPED,Stopped)                                      //    if (Status != STOPPED)
+                                                                      //    {
+  PROGRAM_STOP(USER_SLOT)                                             //      PROGRAM_STOP(USER_SLOT)
+                                                                      //
+Stopped:                                                              //    }
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//******************************************************************************************************
+// Run user program
+//******************************************************************************************************
+                                                                      //
+                                                                      //
+subcall   RunUserProgram                                              //  void RunUserProgram(void)
+{                                                                     //  {
+  DATA32  ISize                                                       //
+  DATA32  Image                                                       //
+  DATA8   Status                                                      //
+  DATAS   Filename FILENAMESIZE                                       //
+                                                                      //
+  UI_READ(GET_STRING,FILENAMESIZE,Filename)                           //    UI_READ(GET_STRING,FILENAMESIZE,Filename)
+                                                                      //
+  PROGRAM_INFO(GET_STATUS,USER_SLOT,Status)                           //    PROGRAM_INFO(GET_STATUS,USER_SLOT,Status)
+                                                                      //
+  JR_NEQ8(Status,STOPPED,NotStopped)                                  //    if (Status == STOPPED)
+                                                                      //    {
+  UI_WRITE(PUT_STRING,'\r\n  Starting "')                             //      UI_WRITE(PUT_STRING,'\r\n  Starting "')
+  UI_WRITE(PUT_STRING,Filename)                                       //      UI_WRITE(PUT_STRING,Filename)
+  UI_WRITE(PUT_STRING,'"\r\n  {\r\n')                                 //      UI_WRITE(PUT_STRING,'"\r\n  {\r\n')
+                                                                      //
+  FILE(LOAD_IMAGE,USER_SLOT,Filename,ISize,Image)                     //      FILE(LOAD_IMAGE,USER_SLOT,Filename,ISize,Image)
+  PROGRAM_START(USER_SLOT,0,Image,0)                                  //      PROGRAM_START(USER_SLOT,0,Image,0)
+  MOVE8_8(RUNNING,OldStatus)                                          //      OldStatus  =  RUNNING
+                                                                      //
+  UI_WRITE(WRITE_FLUSH)                                               //      UI_WRITE(WRITE_FLUSH)
+                                                                      //
+NotStopped:                                                           //    }
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//******************************************************************************************************
+// Run tst program
+//******************************************************************************************************
+                                                                      //
+                                                                      //
+subcall   RunTstProgram                                               //  void RunTstProgram(void)
+{                                                                     //  {
+  DATA32  ISize                                                       //
+  DATA32  Image                                                       //
+  DATA8   Status                                                      //
+                                                                      //
+  PROGRAM_INFO(GET_STATUS,USER_SLOT,Status)                           //    PROGRAM_INFO(GET_STATUS,USER_SLOT,Status)
+                                                                      //
+  JR_NEQ8(Status,STOPPED,NotStopped)                                  //    if (Status == STOPPED)
+                                                                      //    {
+  UI_WRITE(PUT_STRING,'\r\n  Starting "')                             //      UI_WRITE(PUT_STRING,'\r\n  Starting "')
+  UI_WRITE(PUT_STRING,'performance')                                  //      UI_WRITE(PUT_STRING,'performance')
+  UI_WRITE(PUT_STRING,'"\r\n  {\r\n')                                 //      UI_WRITE(PUT_STRING,'"\r\n  {\r\n')
+                                                                      //
+  FILE(LOAD_IMAGE,USER_SLOT,'performance',ISize,Image)                //      FILE(LOAD_IMAGE,USER_SLOT,'performance',ISize,Image)
+  PROGRAM_START(USER_SLOT,0,Image,0)                                  //      PROGRAM_START(USER_SLOT,0,Image,0)
+  MOVE8_8(RUNNING,OldStatus)                                          //      OldStatus  =  RUNNING
+                                                                      //
+  UI_WRITE(WRITE_FLUSH)                                               //      UI_WRITE(WRITE_FLUSH)
+                                                                      //
+NotStopped:                                                           //    }
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//******************************************************************************************************
+// Set break point
+//******************************************************************************************************
+                                                                      //
+                                                                      //
+subcall   SetBreakPoint                                               //  void SetBreakPoint(void)
+{                                                                     //  {
+  DATA32  Address                                                     //
+                                                                      //
+  UI_READ(GET_ADDRESS,Address)                                        //    UI_READ(GET_ADDRESS,Address)
+  BP_SET(USER_SLOT,0,Address)                                         //    BP_SET(USER_SLOT,0,Address)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//******************************************************************************************************
+// Direct command
+//******************************************************************************************************
+                                                                      //
+                                                                      //
+subcall   DirectCommand                                               //  void DirectCommand(void)
+{                                                                     //  {
+  DATA8   Ready                                                       //
+                                                                      //
+  UI_READ(GET_CODE,MAX_COMMAND_BYTECODES,pDirectImage,pDirectGlobals,Ready) // UI_READ(GET_CODE,MAX_COMMAND_BYTECODES,pDirectImage,pDirectGlobals,Ready)
+                                                                      //
+  JR_FALSE(Ready,NotReady)                                            //    if (Ready)
+                                                                      //    {
+  DO(TERM_SLOT,pDirectImage,pDirectGlobals)                           //      DO(TERM_SLOT,pDirectImage,pDirectGlobals)
+  MOVE8_8(RUNNING,OldTermStatus)                                      //      OldTermStatus  =  RUNNING
+                                                                      //
+NotReady:                                                             //    }
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//******************************************************************************************************
+// Probe
+//******************************************************************************************************
+                                                                      //
+                                                                      //
+subcall   Probe                                                       //  void Probe(void)
+{                                                                     //  {
+  PROBE(USER_SLOT,0,0,0)                                              //    PROBE(USER_SLOT,0,0,0)
+  PROBE(USER_SLOT,1,0,0)                                              //    PROBE(USER_SLOT,1,0,0)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//******************************************************************************************************
+// Debug
+//******************************************************************************************************
+                                                                      //
+                                                                      //
+subcall   Debug                                                       //  void Debug(void)
+{                                                                     //  {
+  DATA32  ISize                                                       //
+  DATA32  Image                                                       //
+  DATA8   Status                                                      //
+  DATAS   Filename FILENAMESIZE                                       //
+                                                                      //
+  UI_READ(GET_STRING,FILENAMESIZE,Filename)                           //    UI_READ(GET_STRING,FILENAMESIZE,Filename)
+                                                                      //
+  PROGRAM_INFO(GET_STATUS,USER_SLOT,Status)                           //    PROGRAM_INFO(GET_STATUS,USER_SLOT,Status)
+                                                                      //
+  JR_NEQ8(Status,STOPPED,NotStopped)                                  //    if (Status == STOPPED)
+                                                                      //    {
+  UI_WRITE(PUT_STRING,'\r\n  Debugging "')                            //      UI_WRITE(PUT_STRING,'\r\n  Debugging "')
+  UI_WRITE(PUT_STRING,Filename)                                       //      UI_WRITE(PUT_STRING,Filename)
+  UI_WRITE(PUT_STRING,'"\r\n  {\r\n')                                 //      UI_WRITE(PUT_STRING,'"\r\n  {\r\n')
+                                                                      //
+  UI_WRITE(WRITE_FLUSH)                                               //      UI_WRITE(WRITE_FLUSH)
+                                                                      //
+  FILE(LOAD_IMAGE,USER_SLOT,Filename,ISize,Image)                     //      FILE(LOAD_IMAGE,USER_SLOT,Filename,ISize,Image)
+  PROGRAM_START(USER_SLOT,0,Image,1)                                  //      PROGRAM_START(USER_SLOT,0,Image,1)
+                                                                      //
+NotStopped:                                                           //    }
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//******************************************************************************************************
+// Set trigger
+//******************************************************************************************************
+                                                                      //
+                                                                      //
+subcall   SetTrigger                                                  //  void SetTrigger(void)
+{                                                                     //  {
+  DATA32  Address                                                     //
+                                                                      //
+  UI_READ(GET_ADDRESS,Address)                                        //    UI_READ(GET_ADDRESS,Address)
+  BP_SET(USER_SLOT,3,Address)                                         //    BP_SET(USER_SLOT,3,Address)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//! \endverbatim

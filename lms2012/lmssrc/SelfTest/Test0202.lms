@@ -1,0 +1,600 @@
+//! \page test0202app Test 0202 Application
+//!
+//! <hr size="1"/>
+//!
+//! \verbatim
+// 
+//
+//
+//**********************************************************************
+//        TEST0202 FILE TEST
+//**********************************************************************
+                                                                      //
+define    TESTREPORT  'TestReport'                                    //
+define    LINE        128                                             //
+                                                                      //
+define    TESTFOLDER  'Testfolder'                                    //
+define    TESTFILE    'Testfile'                                      //
+define    TEXTFILE    'Textfile'                                      //
+define    VALUEFILE   'Valuefile'                                     //
+define    BYTESFILE   'Bytesfile'                                     //
+define    MOVEFILE    'Movefile'                                      //
+define    LOGFILE     'Logfile'                                       //
+define    RAMFILE     'Ramfile'                                       //
+define    CACHEFILE   'Cachefile'                                     //
+define    TESTEXT     '.rtf'                                          //
+define    TESTTEXT    'testtext'                                      //
+define    TESTBYTES   'testbytes'                                     //
+define    TESTAPPEND  'testappend'                                    //
+                                                                      //
+DATAS     Testfolder FILENAMESIZE                                     //
+                                                                      //
+vmthread  MAIN                                                        //  void    MAIN(void)
+{                                                                     //  {
+  CALL(Test0202)                                                      //    Test0202()
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   Test0202                                                    //  void Test0202(void)
+{                                                                     //  {
+  DATAF   Result                                                      //
+  DATAF   DataF                                                       //
+  DATA32  Files                                                       //
+  DATA32  Size                                                        //
+  DATA32  Data32                                                      //
+  DATA32  Time                                                        //
+  DATA32  Tick                                                        //
+  DATA16  hFile                                                       //
+  DATA16  hArray                                                      //
+  DATA16  Data16                                                      //
+  DATA16  Textsize                                                    //
+  DATA8   Data8                                                       //
+  DATAS   Testfile FILENAMESIZE                                       //
+  DATAS   Testext FILENAMESIZE                                        //
+  DATAS   Testname FILENAMESIZE                                       //
+  DATAS   String FILENAMESIZE                                         //
+  DATAS   Text FILENAMESIZE                                           //
+                                                                      //
+  // Set success as default                                           //
+	MEMORY_WRITE(GUI_SLOT,4,0,1,0)                                      //    MEMORY_WRITE(GUI_SLOT,4,0,1,0)
+                                                                      //
+  CALL(TestOpen)                                                      //
+                                                                      //
+  CALL(TestWrite,' MEMORY FILE/FILENAME')                             //
+                                                                      //
+  // Compose test test folder                                         //
+  FILENAME(GET_FOLDERNAME,FILENAMESIZE,Testfolder)                    //
+  STRINGS(ADD,Testfolder,'/',Testfolder)                              //
+  STRINGS(ADD,Testfolder,TESTFOLDER,Testfolder)                       //
+                                                                      //
+  // Check opFILENAME MERGE                                           //
+  FILENAME(MERGE,Testfolder,TESTFILE,TESTEXT,FILENAMESIZE,String)     //
+  STRINGS(DUPLICATE,Testfolder,Testname)                              //
+  STRINGS(ADD,Testname,'/',Testname)                                  //
+  STRINGS(ADD,Testname,TESTFILE,Testname)                             //
+  STRINGS(ADD,Testname,TESTEXT,Testname)                              //
+  CALL(TestCheck,'FILENAME MERGE     ',String,Testname)               //
+                                                                      //
+  // Check opFILENAME SPLIT                                           //
+  FILENAME(SPLIT,Testname,FILENAMESIZE,Text,Testfile,Testext)         //
+  STRINGS(ADD,Testfolder,'/',String)                                  //
+  CALL(TestCheck,'FILENAME SPLIT     ',Text,String)                   //
+  CALL(TestCheck,'FILENAME SPLIT     ',Testfile,TESTFILE)             //
+  CALL(TestCheck,'FILENAME SPLIT     ',Testext,TESTEXT)               //
+                                                                      //
+  FILENAME(TOTALSIZE,Testfolder,Files,Size)                           //
+  MOVE32_F(Files,Result)                                              //
+  CALL(TestRange,'TOTALSIZE files    ',Result,0.0F,0.0F)              //
+  MOVE32_F(Size,Result)                                               //
+  CALL(TestRange,'TOTALSIZE size [KB]',Result,0.0F,0.0F)              //
+                                                                      //
+  // Check opFILE MAKE_FOLDER                                         //
+  FILE(REMOVE,Testfolder)                                             //
+  FILE(MAKE_FOLDER,Testfolder,Data8)                                  //
+  JR_FALSE(Data8,FailFolder)                                          //
+                                                                      //    {
+  CALL(TestCheck,'FILE MAKE_FOLDER   ','Ok','Ok')                     //
+                                                                      //
+  // Check opFILE OPEN_WRITE + WRITE_TEXT                             //
+  STRINGS(DUPLICATE,Testfolder,Testname)                              //
+  STRINGS(ADD,Testname,'/',Testname)                                  //
+  STRINGS(ADD,Testname,TEXTFILE,Testname)                             //
+  STRINGS(ADD,Testname,TESTEXT,Testname)                              //
+  FILE(OPEN_WRITE,Testname,hFile)                                     //
+  FILE(WRITE_TEXT,hFile,DEL_NONE,TESTTEXT)                            //
+  FILE(CLOSE,hFile)                                                   //
+  MOVE16_F(hFile,Result)                                              //
+  CALL(TestRange,'FILE OPEN_WRITE    ',Result,0.0F,249.0F)            //
+                                                                      //
+  // Check opFILE OPEN_READ + READ_TEXT                               //
+  FILE(OPEN_READ,Testname,hFile,Size)                                 //
+  MOVE16_F(hFile,Result)                                              //
+  CALL(TestRange,'FILE OPEN_READ     ',Result,0.0F,249.0F)            //
+  STRINGS(GET_SIZE,TESTTEXT,Data16)                                   //
+  MOVE16_16(Data16,Textsize)                                          //
+  MOVE16_F(Data16,DataF)                                              //
+  MOVE32_F(Size,Result)                                               //
+  CALL(TestRange,'FILE OPEN_READ size',Result,DataF,DataF)            //
+  FILE(READ_TEXT,hFile,DEL_NONE,FILENAMESIZE,String)                  //
+  CALL(TestCheck,'FILE READ_TEXT     ',String,TESTTEXT)               //
+  FILE(CLOSE,hFile)                                                   //
+                                                                      //
+  // Check opFILE OPEN_APPEND                                         //
+  FILE(OPEN_APPEND,Testname,hFile)                                    //
+  FILE(WRITE_TEXT,hFile,DEL_NONE,TESTAPPEND)                          //
+  FILE(CLOSE,hFile)                                                   //
+  STRINGS(GET_SIZE,TESTAPPEND,Data16)                                 //
+  ADD16(Data16,Textsize,Textsize)                                     //
+  FILE(OPEN_READ,Testname,hFile,Size)                                 //
+  FILE(READ_TEXT,hFile,DEL_NONE,FILENAMESIZE,String)                  //
+  FILE(CLOSE,hFile)                                                   //
+  STRINGS(GET_SIZE,String,Data16)                                     //
+  MOVE16_F(Data16,Result)                                             //
+  MOVE16_F(Textsize,DataF)                                            //
+  CALL(TestRange,'FILE OPEN_APPEND   ',Result,DataF,DataF)            //
+                                                                      //
+  // Check opFILENAME TOTALSIZE                                       //
+  FILENAME(TOTALSIZE,Testfolder,Files,Size)                           //
+  MOVE32_F(Files,Result)                                              //
+  CALL(TestRange,'TOTALSIZE files    ',Result,3.0F,3.0F)              //
+  //!\todo TOTALSIZE change min limit when byte code is rounding up   //
+  MOVE32_F(Size,Result)                                               //
+  CALL(TestRange,'TOTALSIZE size [KB]',Result,0.0F,16.0F)             //
+                                                                      //
+  // Check opFILE WRITE_VALUE                                         //
+  MOVE8_F(0,DataF)                                                    //
+  STRINGS(DUPLICATE,Testfolder,Testname)                              //
+  STRINGS(ADD,Testname,'/',Testname)                                  //
+  STRINGS(ADD,Testname,VALUEFILE,Testname)                            //
+  STRINGS(ADD,Testname,TESTEXT,Testname)                              //
+  FILE(OPEN_WRITE,Testname,hFile)                                     //
+  FILE(WRITE_VALUE,hFile,DEL_CRLF,0.12345F,13,6)                      //
+  FILE(CLOSE,hFile)                                                   //
+                                                                      //
+  // Check opFILE READ_VALUE                                          //
+  FILE(OPEN_READ,Testname,hFile,Size)                                 //
+  FILE(READ_VALUE,hFile,DEL_CRLF,DataF)                               //
+  FILE(CLOSE,hFile)                                                   //
+  MOVEF_F(DataF,Result)                                               //
+  CALL(TestRange,'FILE READ_VALUE    ',Result,0.12345F,0.12345F)      //
+                                                                      //
+  // Check opFILE WRITE_BYTES                                         //
+  STRINGS(GET_SIZE,TESTBYTES,Data16)                                  //
+  STRINGS(DUPLICATE,Testfolder,Testname)                              //
+  STRINGS(ADD,Testname,'/',Testname)                                  //
+  STRINGS(ADD,Testname,BYTESFILE,Testname)                            //
+  STRINGS(ADD,Testname,TESTEXT,Testname)                              //
+  FILE(OPEN_WRITE,Testname,hFile)                                     //
+  FILE(WRITE_BYTES,hFile,Data16,TESTBYTES)                            //
+  FILE(CLOSE,hFile)                                                   //
+                                                                      //
+  // Check opFILE READ_BYTES                                          //
+  MOVE8_32(0,Size)                                                    //
+  STRINGS(DUPLICATE,'',String)                                        //
+  FILE(OPEN_READ,Testname,hFile,Size)                                 //
+  MOVE32_16(Size,Data16)                                              //
+  FILE(READ_BYTES,hFile,Data16,String)                                //
+  FILE(CLOSE,hFile)                                                   //
+  MOVE32_8(Size,Data8)                                                //
+  WRITE8(0,Data8,String)                                              //
+  CALL(TestCheck,'FILE READ_BYTES    ',String,TESTBYTES)              //
+                                                                      //
+  // Check opFILE MOVE                                                //
+  STRINGS(DUPLICATE,Testname,String)                                  //
+  STRINGS(DUPLICATE,Testfolder,Testname)                              //
+  STRINGS(ADD,Testname,'/',Testname)                                  //
+  STRINGS(ADD,Testname,MOVEFILE,Testname)                             //
+  STRINGS(ADD,Testname,TESTEXT,Testname)                              //
+  FILE(MOVE,String,Testname)                                          //
+  MOVE8_32(0,Size)                                                    //
+  STRINGS(DUPLICATE,'',String)                                        //
+  FILE(OPEN_READ,Testname,hFile,Size)                                 //
+  MOVE32_16(Size,Data16)                                              //
+  FILE(READ_BYTES,hFile,Data16,String)                                //
+  FILE(CLOSE,hFile)                                                   //
+  MOVE32_8(Size,Data8)                                                //
+  WRITE8(0,Data8,String)                                              //
+  CALL(TestCheck,'FILE MOVE          ',String,TESTBYTES)              //
+                                                                      //
+  // Check opFILE SET/GET_LOG_SYNC_TIME                               //
+  MOVE32_32(1234,Time)                                                //
+  MOVE32_32(5678,Tick)                                                //
+  FILE(SET_LOG_SYNC_TIME,Time,Tick)                                   //
+  MOVE32_32(0,Time)                                                   //
+  MOVE32_32(0,Tick)                                                   //
+  FILE(GET_LOG_SYNC_TIME,Time,Tick)                                   //
+  MOVE32_F(Time,Result)                                               //
+  CALL(TestRange,'GET_LOG_SYNC_TIME  ',Result,1234.0F,1234.0F)        //
+  MOVE32_F(Tick,Result)                                               //
+  CALL(TestRange,'GET_LOG_SYNC_TIME  ',Result,5678.0F,5678.0F)        //
+                                                                      //
+  CALL(TestWrite,' MEMORY FILE LOG INTO FILE')                        //
+                                                                      //
+  // Check opFILE OPEN_LOG                                            //
+  ARRAY(CREATEF,2,hArray)                                             //
+  STRINGS(DUPLICATE,Testfolder,Testname)                              //
+  STRINGS(ADD,Testname,'/',Testname)                                  //
+  STRINGS(ADD,Testname,LOGFILE,Testname)                              //
+  STRINGS(ADD,Testname,TESTEXT,Testname)                              //
+  FILE(OPEN_LOG,Testname,123,456,789,100,200,'Time\tSensor1\tSensor2\t\r\n',hFile) //
+  MOVE16_F(hFile,Result)                                              //
+  CALL(TestRange,'FILE OPEN_LOG      ',Result,0.0F,249.0F)            //
+                                                                      //
+  // Check opFILE WRITE_LOG                                           //
+  ARRAY_WRITE(hArray,0,1.1F)                                          //
+  ARRAY_WRITE(hArray,1,1.2F)                                          //
+  FILE(WRITE_LOG,hFile,0,2,@hArray)                                   //
+  ARRAY_WRITE(hArray,0,2.1F)                                          //
+  ARRAY_WRITE(hArray,1,2.2F)                                          //
+  FILE(WRITE_LOG,hFile,100,2,@hArray)                                 //
+                                                                      //
+  // Check opFILE GET_LOG_NAME                                        //
+  STRINGS(DUPLICATE,'',String)                                        //
+  FILE(GET_LOG_NAME,FILENAMESIZE,String)                              //
+  CALL(TestCheck,'FILE GET_LOG_NAME  ',String,Testname)               //
+                                                                      //
+  // Check opFILE GET_HANDLE                                          //
+  FILE(GET_HANDLE,Testname,Data16,Data8)                              //
+  MOVE16_F(Data16,Result)                                             //
+  MOVE16_F(hFile,DataF)                                               //
+  CALL(TestRange,'FILE GET_HANDLE    ',Result,DataF,DataF)            //
+  MOVE8_F(Data8,Result)                                               //
+  CALL(TestRange,'FILE GET_HANDLE    ',Result,1.0F,1.0F)              //
+                                                                      //
+  // Check opFILE CLOSE_LOG                                           //
+  FILE(CLOSE_LOG,hFile,Testname)                                      //
+  STRINGS(DUPLICATE,Testfolder,Testname)                              //
+  STRINGS(ADD,Testname,'/',Testname)                                  //
+  STRINGS(ADD,Testname,LOGFILE,Testname)                              //
+  STRINGS(ADD,Testname,TESTEXT,Testname)                              //
+  FILE(OPEN_READ,Testname,hFile,Size)                                 //
+  MOVE32_F(Size,Result)                                               //
+  CALL(TestRange,'LOGFILE size       ',Result,29.0F,200.0F)           //
+                                                                      //
+  // Check log file content                                           //
+  STRINGS(DUPLICATE,'',String)                                        //
+  FILE(READ_TEXT,hFile,DEL_TAB,FILENAMESIZE,String)                   //
+  CALL(TestCheck,'LOG header         ',String,'Sync data')            //
+  FILE(READ_TEXT,hFile,DEL_TAB,FILENAMESIZE,String)                   //
+  CALL(TestCheck,'LOG header         ',String,'123')                  //
+  FILE(READ_TEXT,hFile,DEL_TAB,FILENAMESIZE,String)                   //
+  CALL(TestCheck,'LOG header         ',String,'456')                  //
+  FILE(READ_TEXT,hFile,DEL_TAB,FILENAMESIZE,String)                   //
+  CALL(TestCheck,'LOG header         ',String,'789')                  //
+  FILE(READ_TEXT,hFile,DEL_TAB,FILENAMESIZE,String)                   //
+  CALL(TestCheck,'LOG header         ',String,'100')                  //
+  FILE(READ_TEXT,hFile,DEL_CRLF,FILENAMESIZE,String)                  //
+  STRINGS(GET_SIZE,String,Data16)                                     //
+  SUB16(Data16,1,Data16)                                              //
+  MOVE16_8(Data16,Data8)                                              //
+  WRITE8(0,Data8,String)                                              //
+  CALL(TestCheck,'LOG header         ',String,'200')                  //
+  FILE(READ_TEXT,hFile,DEL_TAB,FILENAMESIZE,String)                   //
+  CALL(TestCheck,'LOG header         ',String,'Time')                 //
+  FILE(READ_TEXT,hFile,DEL_TAB,FILENAMESIZE,String)                   //
+  CALL(TestCheck,'LOG header         ',String,'Sensor1')              //
+  FILE(READ_TEXT,hFile,DEL_TAB,FILENAMESIZE,String)                   //
+  CALL(TestCheck,'LOG header         ',String,'Sensor2')              //
+  FILE(READ_TEXT,hFile,DEL_CRLF,FILENAMESIZE,String)                  //
+  FILE(READ_BYTES,hFile,4,Result)                                     //
+  CALL(TestRange,'LOG sample         ',Result,0.0F,0.0F)              //
+  FILE(READ_BYTES,hFile,4,Result)                                     //
+  CALL(TestRange,'LOG sample         ',Result,1.1F,1.1F)              //
+  FILE(READ_BYTES,hFile,4,Result)                                     //
+  CALL(TestRange,'LOG sample         ',Result,1.2F,1.2F)              //
+  FILE(READ_BYTES,hFile,4,Result)                                     //                                 
+  CALL(TestRange,'LOG sample         ',Result,100.0F,100.0F)          //
+  FILE(READ_BYTES,hFile,4,Result)                                     //
+  CALL(TestRange,'LOG sample         ',Result,2.1F,2.1F)              //
+  FILE(READ_BYTES,hFile,4,Result)                                     //
+  CALL(TestRange,'LOG sample         ',Result,2.2F,2.2F)              //
+  FILE(READ_BYTES,hFile,4,Data32)                                     //
+  XOR32(Data32,0xFFFFFFFF,Data32)                                     //
+  MOVE32_F(Data32,Result)                                             //
+  CALL(TestRange,'LOG trailer        ',Result,0.0F,0.0F)              //
+  FILE(READ_BYTES,hFile,4,Data32)                                     //
+  XOR32(Data32,0xFFFFFFFF,Data32)                                     //
+  MOVE32_F(Data32,Result)                                             //
+  CALL(TestRange,'LOG trailer        ',Result,0.0F,0.0F)              //
+  FILE(READ_BYTES,hFile,4,Data32)                                     //
+  XOR32(Data32,0xFFFFFFFF,Data32)                                     //
+  MOVE32_F(Data32,Result)                                             //
+  CALL(TestRange,'LOG trailer        ',Result,-1.0F,-1.0F)            //
+                                                                      //
+  // Check opFILE GET_HANDLE                                          //
+  FILE(GET_HANDLE,Testname,Data16,Data8)                              //
+  MOVE16_F(Data16,Result)                                             //
+  MOVE16_F(hFile,DataF)                                               //
+  CALL(TestRange,'FILE GET_HANDLE    ',Result,DataF,DataF)            //
+  MOVE8_F(Data8,Result)                                               //
+  CALL(TestRange,'FILE GET_HANDLE    ',Result,0.0F,0.0F)              //
+  FILE(CLOSE,hFile)                                                   //
+                                                                      //
+  // Check opFILE GET_HANDLE                                          //
+  FILE(GET_HANDLE,Testname,Data16,Data8)                              //
+  MOVE16_F(Data16,Result)                                             //
+  MOVE16_F(hFile,DataF)                                               //
+  CALL(TestRange,'FILE GET_HANDLE    ',Result,-1.0F,-1.0F)            //
+  MOVE8_F(Data8,Result)                                               //
+  CALL(TestRange,'FILE GET_HANDLE    ',Result,0.0F,0.0F)              //
+                                                                      //
+  CALL(TestWrite,' MEMORY FILE LOG INTO RAM')                         //
+                                                                      //
+  // Check opFILE OPEN_LOG                                            //
+  ARRAY(CREATEF,2,hArray)                                             //
+  STRINGS(DUPLICATE,Testfolder,Testname)                              //
+  STRINGS(ADD,Testname,'/',Testname)                                  //
+  STRINGS(ADD,Testname,RAMFILE,Testname)                              //
+  STRINGS(ADD,Testname,TESTEXT,Testname)                              //
+  FILE(OPEN_LOG,Testname,123,456,789,1,2,'Time\tSensor1\tSensor2\t\r\n',hFile) //
+  MOVE16_F(hFile,Result)                                              //
+  CALL(TestRange,'FILE OPEN_LOG ram  ',Result,0.0F,249.0F)            //
+                                                                      //
+  // Check opFILE WRITE_LOG                                           //
+  ARRAY_WRITE(hArray,0,1.1F)                                          //
+  ARRAY_WRITE(hArray,1,1.2F)                                          //
+  FILE(WRITE_LOG,hFile,0,2,@hArray)                                   //
+  ARRAY_WRITE(hArray,0,2.1F)                                          //
+  ARRAY_WRITE(hArray,1,2.2F)                                          //
+  FILE(WRITE_LOG,hFile,1,2,@hArray)                                   //
+                                                                      //
+  // Check opFILE GET_LOG_NAME                                        //
+  STRINGS(DUPLICATE,'',String)                                        //
+  FILE(GET_LOG_NAME,FILENAMESIZE,String)                              //
+  CALL(TestCheck,'FILE GET_LOG_NAME  ',String,Testname)               //
+                                                                      //
+  // Check opFILE GET_HANDLE                                          //
+  FILE(GET_HANDLE,Testname,Data16,Data8)                              //
+  // Handle 1 too low                                                 //
+  ADD16(Data16,1,Data16)                                              //
+  MOVE16_F(Data16,Result)                                             //
+  MOVE16_F(hFile,DataF)                                               //
+  CALL(TestRange,'FILE GET_HANDLE    ',Result,DataF,DataF)            //
+  MOVE8_F(Data8,Result)                                               //
+  CALL(TestRange,'FILE GET_HANDLE    ',Result,1.0F,1.0F)              //
+                                                                      //
+  // Check opFILE CLOSE_LOG                                           //
+  FILE(CLOSE_LOG,hFile,Testname)                                      //
+  STRINGS(DUPLICATE,Testfolder,Testname)                              //
+  STRINGS(ADD,Testname,'/',Testname)                                  //
+  STRINGS(ADD,Testname,RAMFILE,Testname)                              //
+  STRINGS(ADD,Testname,TESTEXT,Testname)                              //
+  FILE(OPEN_READ,Testname,hFile,Size)                                 //
+  MOVE32_F(Size,Result)                                               //
+  CALL(TestRange,'RAMFILE size       ',Result,29.0F,200.0F)           //
+                                                                      //
+  // Check log file content                                           //
+  STRINGS(DUPLICATE,'',String)                                        //
+  FILE(READ_TEXT,hFile,DEL_TAB,FILENAMESIZE,String)                   //
+  CALL(TestCheck,'LOG header         ',String,'Sync data')            //
+  FILE(READ_TEXT,hFile,DEL_TAB,FILENAMESIZE,String)                   //
+  CALL(TestCheck,'LOG header         ',String,'123')                  //
+  FILE(READ_TEXT,hFile,DEL_TAB,FILENAMESIZE,String)                   //
+  CALL(TestCheck,'LOG header         ',String,'456')                  //
+  FILE(READ_TEXT,hFile,DEL_TAB,FILENAMESIZE,String)                   //
+  CALL(TestCheck,'LOG header         ',String,'789')                  //
+  FILE(READ_TEXT,hFile,DEL_TAB,FILENAMESIZE,String)                   //
+  CALL(TestCheck,'LOG header         ',String,'1')                    //
+  FILE(READ_TEXT,hFile,DEL_CRLF,FILENAMESIZE,String)                  //
+  STRINGS(GET_SIZE,String,Data16)                                     //
+  SUB16(Data16,1,Data16)                                              //
+  MOVE16_8(Data16,Data8)                                              //
+  WRITE8(0,Data8,String)                                              //
+  CALL(TestCheck,'LOG header         ',String,'2')                    //
+  FILE(READ_TEXT,hFile,DEL_TAB,FILENAMESIZE,String)                   //
+  CALL(TestCheck,'LOG header         ',String,'Time')                 //
+  FILE(READ_TEXT,hFile,DEL_TAB,FILENAMESIZE,String)                   //
+  CALL(TestCheck,'LOG header         ',String,'Sensor1')              //
+  FILE(READ_TEXT,hFile,DEL_TAB,FILENAMESIZE,String)                   //
+  CALL(TestCheck,'LOG header         ',String,'Sensor2')              //
+  FILE(READ_TEXT,hFile,DEL_CRLF,FILENAMESIZE,String)                  //
+  FILE(READ_BYTES,hFile,4,Result)                                     //
+  CALL(TestRange,'LOG sample         ',Result,0.0F,0.0F)              //
+  FILE(READ_BYTES,hFile,4,Result)                                     //
+  CALL(TestRange,'LOG sample         ',Result,1.1F,1.1F)              //
+  FILE(READ_BYTES,hFile,4,Result)                                     //
+  CALL(TestRange,'LOG sample         ',Result,1.2F,1.2F)              //
+  FILE(READ_BYTES,hFile,4,Result)                                     //                                 
+  CALL(TestRange,'LOG sample         ',Result,1.0F,1.0F)              //
+  FILE(READ_BYTES,hFile,4,Result)                                     //
+  CALL(TestRange,'LOG sample         ',Result,2.1F,2.1F)              //
+  FILE(READ_BYTES,hFile,4,Result)                                     //
+  CALL(TestRange,'LOG sample         ',Result,2.2F,2.2F)              //
+  FILE(READ_BYTES,hFile,4,Data32)                                     //
+  XOR32(Data32,0xFFFFFFFF,Data32)                                     //
+  MOVE32_F(Data32,Result)                                             //
+  CALL(TestRange,'LOG trailer        ',Result,0.0F,0.0F)              //
+  FILE(READ_BYTES,hFile,4,Data32)                                     //
+  XOR32(Data32,0xFFFFFFFF,Data32)                                     //
+  MOVE32_F(Data32,Result)                                             //
+  CALL(TestRange,'LOG trailer        ',Result,0.0F,0.0F)              //
+  FILE(READ_BYTES,hFile,4,Data32)                                     //
+  XOR32(Data32,0xFFFFFFFF,Data32)                                     //
+  MOVE32_F(Data32,Result)                                             //
+  CALL(TestRange,'LOG trailer        ',Result,-1.0F,-1.0F)            //
+                                                                      //
+  // Check opFILE GET_HANDLE                                          //
+  FILE(GET_HANDLE,Testname,Data16,Data8)                              //
+  MOVE16_F(Data16,Result)                                             //
+  MOVE16_F(hFile,DataF)                                               //
+  CALL(TestRange,'FILE GET_HANDLE    ',Result,DataF,DataF)            //
+  MOVE8_F(Data8,Result)                                               //
+  CALL(TestRange,'FILE GET_HANDLE    ',Result,0.0F,0.0F)              //
+  FILE(CLOSE,hFile)                                                   //
+                                                                      //
+  // Check opFILE GET_HANDLE                                          //
+  FILE(GET_HANDLE,Testname,Data16,Data8)                              //
+  MOVE16_F(Data16,Result)                                             //
+  MOVE16_F(hFile,DataF)                                               //
+  CALL(TestRange,'FILE GET_HANDLE    ',Result,-1.0F,-1.0F)            //
+  MOVE8_F(Data8,Result)                                               //
+  CALL(TestRange,'FILE GET_HANDLE    ',Result,0.0F,0.0F)              //
+                                                                      //
+                                                                      //
+  CALL(TestWrite,' MEMORY FILE')                                      //
+                                                                      //
+  // Check opFILE GET_POOL                                            //
+  FILE(GET_POOL,1000,Data16,Data32)                                   //
+  MOVE16_F(Data16,Result)                                             //
+  CALL(TestRange,'FILE GET_POOL      ',Result,0.0F,249.0F)            //
+  MOVE32_F(Data32,Result)                                             //
+  CALL(TestRange,'FILE GET_POOL      ',Result,1.0F,200000000.0F)      //
+  FILE(CLOSE,Data16)                                                  //
+                                                                      //
+  // Check opFILE PUT_CACHE_FILE                                      //
+  STRINGS(DUPLICATE,Testfolder,Testname)                              //
+  STRINGS(ADD,Testname,'/',Testname)                                  //
+  STRINGS(ADD,Testname,CACHEFILE,Testname)                            //
+  STRINGS(ADD,Testname,TESTEXT,Testname)                              //
+  FILE(PUT_CACHE_FILE,Testname)                                       //
+                                                                      //
+  // Check opFILE GET_CACHE_FILES                                     //
+  FILE(GET_CACHE_FILES,Data8)                                         //
+  MOVE8_F(Data8,Result)                                               //
+  CALL(TestRange,'GET_CACHE_FILES    ',Result,1.0F,10.0F)             //
+                                                                      //
+  // Check opFILE GET_CACHE_FILE                                      //
+  FILE(GET_CACHE_FILE,1,FILENAMESIZE,String)                          //
+  CALL(TestCheck,'GET_CACHE_FILE     ',String,Testname)               //
+                                                                      //
+  // Check opFILE DEL_CACHE_FILE                                      //
+  FILE(DEL_CACHE_FILE,Testname)                                       //
+  FILE(GET_CACHE_FILE,1,FILENAMESIZE,String)                          //
+  STRINGS(COMPARE,String,Testname,Data8)                              //
+  MOVE8_F(Data8,Result)                                               //
+  CALL(TestRange,'DEL_CACHE_FILE     ',Result,0.0F,0.0F)              //
+                                                                      //
+  // Check opFILE GET_IMAGE                                           //
+                                                                      //
+  // Check opFILE GET_ITEM                                            //
+                                                                      //
+  // Check opFILE GET_FOLDERS                                         //
+                                                                      //
+  // Check opFILE GET_SUBFOLDER_NAME                                  //
+                                                                      //
+  // Check opFILE DEL_SUBFOLDER                                       //
+                                                                      //
+  // Check opFILE REMOVE                                              //
+  FILE(REMOVE,Testfolder)                                             //
+  FILENAME(TOTALSIZE,Testfolder,Files,Size)                           //
+  MOVE32_F(Files,Result)                                              //
+  CALL(TestRange,'FILE REMOVE        ',Result,0.0F,0.0F)              //
+                                                                      //
+  JR(EndFolder)                                                       //    }
+                                                                      //    else
+FailFolder:                                                           //    {
+                                                                      //
+  CALL(TestCheck,'FILE MAKE_FOLDER   ','Fail','Ok')                   //
+                                                                      //
+EndFolder:                                                            //    }
+  CALL(TestClose)                                                     //
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestRange                                                   //  void TestRange(Text,IstWert,Min,Max)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+  IN_F    IstWert                                                     //
+  IN_F    Min                                                         //
+  IN_F    Max                                                         //
+                                                                      //
+  DATAS   String LINE                                                 //
+  DATAS   Result LINE                                                 //
+                                                                      //
+  JR_LT32(IstWert,Min,Error)                                          //    if ((IstWert >= Min) &&
+  JR_GT32(IstWert,Max,Error)                                          //        (IstWert <= Max))
+                                                                      //    {
+  STRINGS(ADD,'  ',Text,String)                                       //      STRINGS(ADD,'  ',Text,String)
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  STRINGS(VALUE_TO_STRING,IstWert,-13,6,Result)                       //      STRINGS(VALUE_TO_STRING,IstWert,-13,6,Result)
+  STRINGS(ADD,String,Result,String)                                   //      STRINGS(ADD,String,Result,String)
+  STRINGS(ADD,String,']',String)                                      //      STRINGS(ADD,String,']',String)
+                                                                      //
+  JR(EndError)                                                        //    }
+                                                                      //    else
+Error:                                                                //    {
+  STRINGS(ADD,'# ',Text,String)                                       //      STRINGS(ADD,'# ',Text,String)
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  STRINGS(VALUE_TO_STRING,IstWert,-13,6,Result)                       //      STRINGS(VALUE_TO_STRING,IstWert,-13,6,Result)
+  STRINGS(ADD,String,Result,String)                                   //      STRINGS(ADD,String,Result,String)
+  STRINGS(ADD,String,'] (',String)                                    //      STRINGS(ADD,String,'] (',String)
+  STRINGS(VALUE_TO_STRING,Min,-13,6,Result)                           //      STRINGS(VALUE_TO_STRING,Min,-13,6,Result)
+  STRINGS(ADD,String,Result,String)                                   //      STRINGS(ADD,String,Result,String)
+  STRINGS(ADD,String,'<=X<=',String)                                  //      STRINGS(ADD,String,'<=X<=',String)
+  STRINGS(VALUE_TO_STRING,Max,-13,6,Result)                           //      STRINGS(VALUE_TO_STRING,Max,-13,6,Result)
+  STRINGS(ADD,String,Result,String)                                   //      STRINGS(ADD,String,Result,String)
+  STRINGS(ADD,String,')',String)                                      //      STRINGS(ADD,String,')',String)
+                                                                      //
+  // Set failed                                                       //
+	MEMORY_WRITE(GUI_SLOT,4,0,1,1)                                      //      MEMORY_WRITE(GUI_SLOT,4,0,1,1)
+                                                                      //
+EndError:                                                             //    }
+                                                                      //
+  CALL(TestWrite,String)                                              //    CALL(TestWrite,String)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestCheck                                                   //  void TestCheck(Text,IstWert,SollWert)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+  IN_S    IstWert LINE                                                //
+  IN_S    SollWert LINE                                               //
+                                                                      //
+  DATA8   Result                                                      //
+  DATAS   String LINE                                                 //
+                                                                      //
+  STRINGS(COMPARE,IstWert,SollWert,Result)                            //    STRINGS(COMPARE,IstWert,SollWert,Result)
+  JR_FALSE(Result,Error)                                              //    if (Result)
+                                                                      //    {
+  STRINGS(ADD,'  ',Text,String)                                       //      STRINGS(ADD,' ',Text,String)
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  STRINGS(ADD,String,IstWert,String)                                  //      STRINGS(ADD,String,IstWert,String)
+  STRINGS(ADD,String,']',String)                                      //      STRINGS(ADD,String,']',String)
+                                                                      //
+  JR(EndError)                                                        //    }
+                                                                      //    else
+Error:                                                                //    {
+                                                                      //
+  STRINGS(ADD,'# ',Text,String)                                       //      STRINGS(ADD,' ',Text,String) 
+  STRINGS(ADD,String,' = [',String)                                   //      STRINGS(ADD,String,' = [',String)
+  STRINGS(ADD,String,IstWert,String)                                  //      STRINGS(ADD,String,IstWert,String)
+  STRINGS(ADD,String,'] (',String)                                    //      STRINGS(ADD,String,'] (',String)
+  STRINGS(ADD,String,SollWert,String)                                 //      STRINGS(ADD,String,SollWert,String)
+  STRINGS(ADD,String,')',String)                                      //      STRINGS(ADD,String,')',String)
+                                                                      //
+  // Set failed                                                       //
+	MEMORY_WRITE(GUI_SLOT,4,0,1,1)                                      //      MEMORY_WRITE(GUI_SLOT,4,0,1,1)
+                                                                      //
+EndError:                                                             //    }
+                                                                      //
+  CALL(TestWrite,String)                                              //    CALL(TestWrite,String)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+DATA16    hRFile                                                      //
+                                                                      //
+subcall   TestOpen                                                    //  void TestOpen(void)
+{                                                                     //  {
+  DATAS   TestReport FILENAMESIZE                                     //
+                                                                      //
+  STRINGS(ADD,TESTREPORT,EXT_TEXT,TestReport)                         //    STRINGS(ADD,TESTREPORT,EXT_TEXT,TestReport)
+  FILE(OPEN_APPEND,TestReport,hRFile)                                 //    FILE(OPEN_APPEND,TestReport,hRFile)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestWrite                                                   //  void TestWrite(Text)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+                                                                      //
+  FILE(WRITE_TEXT,hRFile,DEL_CRLF,Text)                               //    FILE(WRITE_TEXT,hRFile,DEL_CRLF,Text)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestClose                                                   //  void TestClose(void)
+{                                                                     //  {
+  FILE(CLOSE,hRFile)                                                  //    FILE(CLOSE,hRFile)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//! \endverbatim
+

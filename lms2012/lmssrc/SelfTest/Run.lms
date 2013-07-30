@@ -1,0 +1,265 @@
+/*
+ * LEGO® MINDSTORMS EV3
+ *
+ * Copyright (C) 2010-2013 The LEGO Group
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ */
+
+
+//  TCP 09.04.2013
+//! \page selftestappcode SelfTest Application
+//!
+//! <hr size="1"/>
+//!
+//! \verbatim
+//**********************************************************************
+define appv 'SelfTest V1.02'                                          //
+//**********************************************************************
+                                                                      //
+define    TESTREPORT  'TestReport'                                    //
+                                                                      //
+define    SIZE                30000	  	                              //
+define    LINE                32                                      //
+                                                                      //
+DATAS     TestFolder FILENAMESIZE                                     //
+DATAS     Textbox SIZE                                                //
+                                                                      //
+                                                                      //
+                                                                      //
+vmthread  MAIN                                                        //  void    MAIN(void)
+{                                                                     //  {
+  DATA8   ShowVersion                                                 //
+                                                                      //
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //    UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+  JR_FALSE(ShowVersion,DontShowVersion)                               //    if (ShowVersion)
+                                                                      //    {
+  UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)                              //      UI_DRAW(FILLRECT,BG_COLOR,4,50,170,28)
+  UI_DRAW(RECT,FG_COLOR,6,52,166,24)                                  //      UI_DRAW(RECT,FG_COLOR,6,52,166,24)
+  UI_DRAW(TEXT,FG_COLOR,13,60,appv)                                   //      UI_DRAW(TEXT,FG_COLOR,13,60,appv)
+  UI_DRAW(UPDATE)                                                     //      UI_DRAW(UPDATE)
+                                                                      //
+ShowVersionWait:                                                      //      do
+                                                                      //      {  
+  UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)                         //        UI_BUTTON(PRESSED,RIGHT_BUTTON,ShowVersion)
+                                                                      //      }
+  JR_TRUE(ShowVersion,ShowVersionWait)                                //      while (ShowVersion)
+                                                                      //
+  UI_BUTTON(FLUSH)                                                    //      UI_BUTTON(FLUSH)
+DontShowVersion:                                                      //    }  
+                                                                      //
+  UI_DRAW(RESTORE,0)                                                  //    UI_DRAW(RESTORE,0)
+  UI_DRAW(TOPLINE,0)                                                  //    UI_DRAW(TOPLINE,0)
+  UI_WRITE(LED,LED_GREEN)                                             //    UI_WRITE(LED,LED_GREEN)
+                                                                      //
+  CALL(TestSequencer)                                                 //    TestSequencer()
+                                                                      //
+  UI_DRAW(TOPLINE,1)                                                  //    UI_DRAW(TOPLINE,1)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestSequencer                                               //  void TestSequencer(void)
+{                                                                     //  {
+  DATA32  Size                                                        //
+  DATA32  Image                                                       //
+  DATA32  Timer                                                       //
+  DATA16  Line                                                        //
+  DATA16  TestNo                                                      //
+  DATA16  TestSub                                                     //
+  DATA8   Run                                                         //
+  DATA8   Failed                                                      //
+  DATA8   Tmp                                                         //
+  DATA8   Fail                                                        //
+  DATAS   TextNo  3                                                   //
+  DATAS   TextSub 3                                                   //
+  DATAS   TestName 32                                                 //
+  DATAS   TestFile FILENAMESIZE                                       //
+  DATAS   String LINE                                                 //
+                                                                      //
+  // Init screen                                                      //
+  UI_DRAW(FILLWINDOW,0x00,0,0)                                        //    UI_DRAW(FILLWINDOW,0x00,0,0)
+  UI_DRAW(UPDATE)                                                     //    UI_DRAW(UPDATE)
+                                                                      //
+  // Init report                                                      //
+  CALL(TestClear)                                                     //    CALL(TestClear)
+  CALL(TestOpen)                                                      //    CALL(TestOpen)
+  CALL(TestWrite,TESTREPORT)                                          //    CALL(TestWrite,TESTREPORT)
+  CALL(TestWrite,'---------------------')                             //    CALL(TestWrite,'---------------------')
+                                                                      //
+  // Init test                                                        //
+  MOVE8_8(0,Failed)                                                   //    Failed    =  0
+  MOVE8_8(1,Run)                                                      //    Run       =  1
+  MOVE16_16(1,TestNo)                                                 //    TestNo    =  1
+  MOVE16_16(1,TestSub)                                                //    TestSub   =  1
+                                                                      //
+  // do tests                                                         //
+                                                                      //    do
+Loop1:                                                                //    {
+                                                                      //
+  // Set failed as default                                            //
+	MEMORY_WRITE(GUI_SLOT,4,0,1,1)                                      //      MEMORY_WRITE(GUI_SLOT,4,0,1,1)
+                                                                      //
+  // Compose test name                                                //
+  STRINGS(NUMBER_TO_STRING,TestNo,2,TextNo)                           //      STRINGS(NUMBER_TO_STRING,TestNo,2,TextNo) 
+  STRINGS(NUMBER_TO_STRING,TestSub,2,TextSub)                         //      STRINGS(NUMBER_TO_STRING,TestSub,2,TextSub)
+  STRINGS(DUPLICATE,'Test',TestName)                                  //      STRINGS(DUPLICATE,'Test',TestName)
+  STRINGS(ADD,TestName,TextNo,TestName)                               //      STRINGS(ADD,TestName,TextNo,TestName) 
+  STRINGS(ADD,TestName,TextSub,TestName)                              //      STRINGS(ADD,TestName,TextSub,TestName)
+                                                                      //
+  // Compose test filename                                            //
+  FILENAME(GET_FOLDERNAME,FILENAMESIZE,TestFolder)                    //      FILENAME(GET_FOLDERNAME,FILENAMESIZE,TestFolder)
+  FILENAME(MERGE,TestFolder,TestName,EXT_BYTECODE,FILENAMESIZE,TestFile) //   FILENAME(MERGE,TestFolder,TestName,EXT_BYTECODE,FILENAMESIZE,TestFile)
+                                                                      //
+  // Do test if it exist                                              //
+  FILENAME(EXIST,TestFile,Tmp)                                        //      FILENAME(EXIST,TestFile,Tmp)
+  JR_FALSE(Tmp,TestDoNotExist)                                        //      if (Tmp)
+TestExist:                                                            //      {
+                                                                      //
+  // Write test name on screen                                        //
+  UI_DRAW(SCROLL,12)                                                  //        UI_DRAW(SCROLL,12)
+  UI_DRAW(TEXT,FG_COLOR,0,116,TestName)                               //        UI_DRAW(TEXT,FG_COLOR,0,116,TestName)
+  UI_DRAW(TEXT,FG_COLOR,80,116,'running')                             //        UI_DRAW(TEXT,FG_COLOR,80,116,'running')
+  UI_DRAW(UPDATE)                                                     //        UI_DRAW(UPDATE)
+                                                                      //
+  // Write test name in report                                        //
+  CALL(TestWrite,TestName)                                            //        CALL(TestWrite,TestName)
+                                                                      //
+  // Start test                                                       //
+  PROGRAM_STOP(DEBUG_SLOT)                                            //        PROGRAM_STOP(DEBUG_SLOT)
+  FILE(LOAD_IMAGE,DEBUG_SLOT,TestFile,Size,Image)                     //        FILE(LOAD_IMAGE,DEBUG_SLOT,TestFile,Size,Image)
+  PROGRAM_START(DEBUG_SLOT,Size,Image,0)                              //        PROGRAM_START(DEBUG_SLOT,Size,Image,0)
+                                                                      //
+                                                                      //        do
+WaitForStop:                                                          //        {
+                                                                      //
+  PROGRAM_INFO(GET_STATUS,DEBUG_SLOT,Tmp)                             //          PROGRAM_INFO(GET_STATUS,DEBUG_SLOT,Tmp)
+                                                                      //        }
+  JR_EQ8(Tmp,RUNNING,WaitForStop)                                     //        while (Tmp == RUNNING)
+                                                                      //
+  // Read result                                                      //
+	MEMORY_READ(GUI_SLOT,4,0,1,Fail)                                    //        MEMORY_READ(GUI_SLOT,4,0,1,Fail)
+  JR_FALSE(Fail,Success)                                              //        if (Fail)
+                                                                      //        {
+  // Write failed on screen                                           //
+  UI_DRAW(TEXT,FG_COLOR,80,116,'FAILED!')                             //          UI_DRAW(TEXT,FG_COLOR,80,116,'FAILED!')
+  UI_DRAW(UPDATE)                                                     //          UI_DRAW(UPDATE)
+                                                                      //
+  MOVE8_8(1,Failed)                                                   //          Failed  =  1
+                                                                      //
+  JR(EndSuccess)                                                      //        }
+                                                                      //        else
+Success:                                                              //        {
+                                                                      //
+  // Write success on screen                                          //
+  UI_DRAW(TEXT,FG_COLOR,80,116,'       ')                             //          UI_DRAW(TEXT,FG_COLOR,80,116,'       ')
+  UI_DRAW(UPDATE)                                                     //          UI_DRAW(UPDATE)
+                                                                      //
+EndSuccess:                                                           //        }
+                                                                      //
+  // Next sub test                                                    //
+  ADD16(1,TestSub,TestSub)                                            //        TestSub++
+                                                                      //
+  JR(EndTestExist)                                                    //      }
+                                                                      //      else
+TestDoNotExist:                                                       //      {
+                                                                      //
+  JR_NEQ16(TestSub,1,NotStop)                                         //        if (TestSub == 1)
+                                                                      //        {
+  MOVE8_8(0,Run)                                                      //          Run  =  0
+                                                                      //
+  JR(EndStop)                                                         //        }
+                                                                      //        else
+NotStop:                                                              //        {
+                                                                      //            
+  ADD16(1,TestNo,TestNo)                                              //          TestNo++
+  MOVE16_16(1,TestSub)                                                //          TestSub  =  1
+                                                                      //
+EndStop:                                                              //        }
+EndTestExist:                                                         //      }
+                                                                      //
+  // Test for break out                                               //
+  UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)                              //      UI_BUTTON(SHORTPRESS,ENTER_BUTTON,Tmp)
+  JR_FALSE(Tmp,NotEnterButton)                                        //      if (Tmp != FALSE)
+                                                                      //      {
+  MOVE8_8(0,Run)                                                      //        Run  =  0
+NotEnterButton:                                                       //      }
+                                                                      //    }
+  JR_TRUE(Run,Loop1)                                                  //    while (Run)
+                                                                      //
+  JR_TRUE(Failed,NotSuccess2)                                         //    if (!Failed)
+                                                                      //    {
+  STRINGS(DUPLICATE,'Success',String)                                 //      STRINGS(DUPLICATE,'Success',String)
+                                                                      //
+  JR(EndSuccess2)                                                     //    }
+                                                                      //    else
+NotSuccess2:                                                          //    {
+  STRINGS(DUPLICATE,'Fail !!',String)                                 //      STRINGS(DUPLICATE,'Fail !!',String)
+                                                                      //
+EndSuccess2:                                                          //    }
+  CALL(TestWrite,'---------------------')                             //    CALL(TestWrite,'---------------------')
+  CALL(TestWrite,String)                                              //    CALL(TestWrite,String)
+  CALL(TestClose)                                                     //    CALL(TestClose)
+                                                                      //
+  UI_DRAW(FILLWINDOW,0x00,0,0)                                        //    UI_DRAW(FILLWINDOW,0x00,0,0)
+  UI_DRAW(SELECT_FONT,LARGE_FONT)                                     //    UI_DRAW(SELECT_FONT,LARGE_FONT)
+  UI_DRAW(TEXT,FG_COLOR,32,50,String)                                 //    UI_DRAW(TEXT,FG_COLOR,32,50,String)
+  UI_DRAW(UPDATE)                                                     //    UI_DRAW(UPDATE)
+                                                                      //
+  // Wait for button press                                            //
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+  UI_BUTTON(WAIT_FOR_PRESS)                                           //    UI_BUTTON(WAIT_FOR_PRESS)
+                                                                      //
+  // Clean up                                                         //
+  UI_BUTTON(FLUSH)                                                    //    UI_BUTTON(FLUSH)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+DATA16    hFile                                                       //
+                                                                      //
+subcall   TestClear                                                   //  void TestClear(void)
+{                                                                     //  {
+  DATAS   TestReport FILENAMESIZE                                     //
+                                                                      //
+  STRINGS(ADD,TESTREPORT,EXT_TEXT,TestReport)                         //    STRINGS(ADD,TESTREPORT,EXT_TEXT,TestReport)
+  FILE(OPEN_WRITE,TestReport,hFile)                                   //    FILE(OPEN_WRITE,TestReport,hFile)
+  FILE(CLOSE,hFile)                                                   //    FILE(CLOSE,hFile)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestOpen                                                    //  void TestOpen(void)
+{                                                                     //  {
+  DATAS   TestReport FILENAMESIZE                                     //
+                                                                      //
+  STRINGS(ADD,TESTREPORT,EXT_TEXT,TestReport)                         //    STRINGS(ADD,TESTREPORT,EXT_TEXT,TestReport)
+  FILE(OPEN_APPEND,TestReport,hFile)                                  //    FILE(OPEN_APPEND,TestReport,hFile)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestWrite                                                   //  void TestWrite(Text)
+{                                                                     //  {
+  IN_S    Text LINE                                                   //
+                                                                      //
+  FILE(WRITE_TEXT,hFile,DEL_CRLF,Text)                                //    FILE(WRITE_TEXT,hFile,DEL_CRLF,Text)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+subcall   TestClose                                                   //  void TestClose(void)
+{                                                                     //  {
+  FILE(CLOSE,hFile)                                                   //    FILE(CLOSE,hFile)
+}                                                                     //  }
+                                                                      //
+                                                                      //
+//! \endverbatim
+
