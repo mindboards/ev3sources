@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/troff">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Troff document</comment>
+  <comment xml:lang="az">Troff sənədi</comment>
+  <comment xml:lang="be@latin">Dakument Troff</comment>
+  <comment xml:lang="bg">Документ — Troff</comment>
+  <comment xml:lang="ca">document Troff</comment>
+  <comment xml:lang="cs">Dokument troff</comment>
+  <comment xml:lang="cy">Dogfen troff</comment>
+  <comment xml:lang="da">Troff-dokument</comment>
+  <comment xml:lang="de">Troff-Dokument</comment>
+  <comment xml:lang="el">έγγραφο troff</comment>
+  <comment xml:lang="en_GB">Troff document</comment>
+  <comment xml:lang="eo">Troff-dokumento</comment>
+  <comment xml:lang="es">documento troff</comment>
+  <comment xml:lang="eu">Troff dokumentua</comment>
+  <comment xml:lang="fi">Troff-asiakirja</comment>
+  <comment xml:lang="fr">document Troff</comment>
+  <comment xml:lang="ga">cáipéis Troff</comment>
+  <comment xml:lang="hu">Troff-dokumentum</comment>
+  <comment xml:lang="id">Dokumen Troff</comment>
+  <comment xml:lang="it">Documento Troff</comment>
+  <comment xml:lang="ja">Troff 入力ドキュメント</comment>
+  <comment xml:lang="ko">Troff 문서</comment>
+  <comment xml:lang="lt">Troff dokumentas</comment>
+  <comment xml:lang="ms">Dokumen Troff</comment>
+  <comment xml:lang="nb">Troff-dokument</comment>
+  <comment xml:lang="nl">Troff-document</comment>
+  <comment xml:lang="nn">Troff-dokument</comment>
+  <comment xml:lang="pl">Dokument troff</comment>
+  <comment xml:lang="pt">documento Troff</comment>
+  <comment xml:lang="pt_BR">Documento troff</comment>
+  <comment xml:lang="sq">Dokument Troff</comment>
+  <comment xml:lang="sr">Troff документ</comment>
+  <comment xml:lang="sv">Troff-dokument</comment>
+  <comment xml:lang="uk">Документ Troff</comment>
+  <comment xml:lang="vi">Tài liệu Troff</comment>
+  <comment xml:lang="zh_CN">Troff 文档</comment>
+  <comment xml:lang="zh_TW">Troff 文件</comment>
+  <sub-class-of type="text/plain"/>
+  <alias type="application/x-troff"/>
+  <alias type="text/x-troff"/>
+</mime-type>

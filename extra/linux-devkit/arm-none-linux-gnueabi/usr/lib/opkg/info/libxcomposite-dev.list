@@ -1,0 +1,4 @@
+/usr/lib/libXcomposite.la
+/usr/lib/libXcomposite.so
+/usr/include/X11/extensions/Xcomposite.h
+/usr/lib/pkgconfig/xcomposite.pc

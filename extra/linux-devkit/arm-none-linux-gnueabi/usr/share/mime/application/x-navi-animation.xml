@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-navi-animation">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Windows animated cursor</comment>
+  <comment xml:lang="be@latin">Animavany kursor Windows</comment>
+  <comment xml:lang="ca">cursor animat de Windows</comment>
+  <comment xml:lang="fr">curseur animé Windows</comment>
+  <comment xml:lang="ga">cúrsóir beo Windows</comment>
+  <comment xml:lang="nl">geanimeerde Windows-muisaanwijzer</comment>
+</mime-type>

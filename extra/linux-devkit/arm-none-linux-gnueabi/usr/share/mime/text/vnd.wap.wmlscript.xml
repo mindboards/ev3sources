@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/vnd.wap.wmlscript">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>WMLScript program</comment>
+  <comment xml:lang="be@latin">Prahrama WMLScript</comment>
+  <comment xml:lang="bg">Програма — WMLScript</comment>
+  <comment xml:lang="ca">programa WMLScript</comment>
+  <comment xml:lang="cs">Program WMLScript</comment>
+  <comment xml:lang="es">programa en WMLScript</comment>
+  <comment xml:lang="eu">WMLScript programa</comment>
+  <comment xml:lang="fi">WMLScript-ohjelma</comment>
+  <comment xml:lang="fr">programme WMLScript</comment>
+  <comment xml:lang="ga">ríomhchlár WMLScript</comment>
+  <comment xml:lang="hu">WMLScript program</comment>
+  <comment xml:lang="id">Program WMLScript</comment>
+  <comment xml:lang="it">Programma WMLScript</comment>
+  <comment xml:lang="ko">WML스크립트 프로그램</comment>
+  <comment xml:lang="lt">WMLScript programa</comment>
+  <comment xml:lang="nb">WMLScript-program</comment>
+  <comment xml:lang="nl">WMLScript-programma</comment>
+  <comment xml:lang="pt_BR">Programa WMLScript</comment>
+  <comment xml:lang="sv">WMLScript-program</comment>
+  <comment xml:lang="uk">Програма на мові WMLScript</comment>
+  <comment xml:lang="vi">Chương trình WMLScript</comment>
+</mime-type>

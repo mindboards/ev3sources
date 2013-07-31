@@ -1,0 +1,13 @@
+/usr/lib/libtheoraenc.la
+/usr/lib/libtheora.la
+/usr/lib/pkgconfig/theoraenc.pc
+/usr/include/theora/theoraenc.h
+/usr/lib/libtheoraenc.so
+/usr/include/theora/theoradec.h
+/usr/include/theora/theora.h
+/usr/lib/libtheora.so
+/usr/lib/libtheoradec.la
+/usr/lib/pkgconfig/theora.pc
+/usr/include/theora/codec.h
+/usr/lib/pkgconfig/theoradec.pc
+/usr/lib/libtheoradec.so

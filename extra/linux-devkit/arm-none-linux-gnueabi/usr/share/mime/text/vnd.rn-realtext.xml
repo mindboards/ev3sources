@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/vnd.rn-realtext">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>RealText document</comment>
+  <comment xml:lang="be@latin">Dakument RealText</comment>
+  <comment xml:lang="bg">Документ — RealText</comment>
+  <comment xml:lang="ca">document RealText</comment>
+  <comment xml:lang="cs">Dokument RealText</comment>
+  <comment xml:lang="de">RealText-Dokument</comment>
+  <comment xml:lang="en_GB">RealText document</comment>
+  <comment xml:lang="es">documento RealText</comment>
+  <comment xml:lang="eu">RealText dokumentua</comment>
+  <comment xml:lang="fi">RealText-asiakirja</comment>
+  <comment xml:lang="fr">document RealText</comment>
+  <comment xml:lang="ga">cáipéis RealText</comment>
+  <comment xml:lang="hu">RealText dokumentum</comment>
+  <comment xml:lang="id">Dokumen RealText</comment>
+  <comment xml:lang="it">Documento RealText</comment>
+  <comment xml:lang="ko">RealText 문서</comment>
+  <comment xml:lang="lt">RealText dokumentas</comment>
+  <comment xml:lang="nb">RealText-dokument</comment>
+  <comment xml:lang="nl">RealText-document</comment>
+  <comment xml:lang="nn">RealText-dokument</comment>
+  <comment xml:lang="pl">Dokument RealText</comment>
+  <comment xml:lang="pt_BR">Documento RealText</comment>
+  <comment xml:lang="sv">RealText-dokument</comment>
+  <comment xml:lang="uk">Документ RealText</comment>
+  <comment xml:lang="vi">Tài liệu văn bản RealText</comment>
+</mime-type>

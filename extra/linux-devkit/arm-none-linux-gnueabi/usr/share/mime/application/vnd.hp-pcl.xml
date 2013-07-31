@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.hp-pcl">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>PCL file</comment>
+  <comment xml:lang="be@latin">Fajł PCL</comment>
+  <comment xml:lang="bg">Файл — PCL</comment>
+  <comment xml:lang="ca">fitxer PCL</comment>
+  <comment xml:lang="cs">Soubor PCL</comment>
+  <comment xml:lang="de">PCL-Datei</comment>
+  <comment xml:lang="en_GB">PCL file</comment>
+  <comment xml:lang="es">archivo PCL</comment>
+  <comment xml:lang="eu">PCL fitxategia</comment>
+  <comment xml:lang="fi">PCL-tiedosto</comment>
+  <comment xml:lang="fr">fichier PCL</comment>
+  <comment xml:lang="ga">comhad PCL</comment>
+  <comment xml:lang="hu">PCL fájl</comment>
+  <comment xml:lang="id">Berkas PCL</comment>
+  <comment xml:lang="it">File PCL</comment>
+  <comment xml:lang="ko">PCL 파일</comment>
+  <comment xml:lang="lt">PCL rinkmena</comment>
+  <comment xml:lang="nb">PCL-fil</comment>
+  <comment xml:lang="nl">PCL-bestand</comment>
+  <comment xml:lang="nn">PCL-fil</comment>
+  <comment xml:lang="pl">Plik PCL</comment>
+  <comment xml:lang="pt_BR">Arquivo PCL</comment>
+  <comment xml:lang="sv">PCL-fil</comment>
+  <comment xml:lang="uk">Файл PCL</comment>
+  <comment xml:lang="vi">Tập tin PCL</comment>
+  <acronym>PCL</acronym>
+  <expanded-acronym>HP Printer Control Language</expanded-acronym>
+  <generic-icon name="image-x-generic"/>
+</mime-type>

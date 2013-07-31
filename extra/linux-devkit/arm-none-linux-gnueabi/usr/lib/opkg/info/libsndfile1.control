@@ -1,0 +1,12 @@
+Package: libsndfile1
+Version: 1.0.21-r1.6
+Description: An audio format Conversion library
+Section: libs/multimedia
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPL
+Architecture: armv5te
+OE: libsndfile1
+Homepage: http://www.mega-nerd.com/libsndfile
+Depends: libc6, libgcc1
+Source: http://www.mega-nerd.com/libsndfile/files/libsndfile-1.0.21.tar.gz;name=libsndfile1021targz

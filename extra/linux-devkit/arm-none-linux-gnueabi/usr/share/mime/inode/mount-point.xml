@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="inode/mount-point">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>mount point</comment>
+  <comment xml:lang="be@latin">punkt mantavańnia</comment>
+  <comment xml:lang="bg">Точка на монтиране</comment>
+  <comment xml:lang="ca">punt de muntatge</comment>
+  <comment xml:lang="cs">Místo připojení</comment>
+  <comment xml:lang="da">monteringspunkt</comment>
+  <comment xml:lang="de">Einbindepunkt</comment>
+  <comment xml:lang="el">σημείο προσάρτησης</comment>
+  <comment xml:lang="en_GB">mount point</comment>
+  <comment xml:lang="eo">surmetingo</comment>
+  <comment xml:lang="es">punto de montaje</comment>
+  <comment xml:lang="eu">muntatze-puntua</comment>
+  <comment xml:lang="fi">liitospiste</comment>
+  <comment xml:lang="fr">point d'accès</comment>
+  <comment xml:lang="ga">pointe feistithe</comment>
+  <comment xml:lang="hu">csatlakoztatási pont</comment>
+  <comment xml:lang="id">titik mount</comment>
+  <comment xml:lang="it">Punto di mount</comment>
+  <comment xml:lang="ja">マウントポイント</comment>
+  <comment xml:lang="ko">마운트 위치</comment>
+  <comment xml:lang="lt">prijungimo taškas</comment>
+  <comment xml:lang="ms">Titik lekapan</comment>
+  <comment xml:lang="nb">monteringspunkt</comment>
+  <comment xml:lang="nl">aankoppelingspunt</comment>
+  <comment xml:lang="nn">monteringspunkt</comment>
+  <comment xml:lang="pl">punkt montowania</comment>
+  <comment xml:lang="pt">ponto de montagem</comment>
+  <comment xml:lang="pt_BR">ponto de montagem</comment>
+  <comment xml:lang="ru">точка монтирования</comment>
+  <comment xml:lang="sq">pikë montimi</comment>
+  <comment xml:lang="sr">тачка прикључења</comment>
+  <comment xml:lang="sv">monteringspunkt</comment>
+  <comment xml:lang="uk">точка монутвання</comment>
+  <comment xml:lang="vi">điểm lắp</comment>
+  <comment xml:lang="zh_CN">挂载点</comment>
+  <comment xml:lang="zh_TW">掛載點</comment>
+  <sub-class-of type="inode/directory"/>
+</mime-type>

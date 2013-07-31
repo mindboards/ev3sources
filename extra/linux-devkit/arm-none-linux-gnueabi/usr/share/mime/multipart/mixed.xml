@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="multipart/mixed">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>compound documents</comment>
+  <comment xml:lang="be@latin">składanyja dakumenty</comment>
+  <comment xml:lang="bg">Съставни документи</comment>
+  <comment xml:lang="ca">documents composats</comment>
+  <comment xml:lang="cs">Složené dokumenty</comment>
+  <comment xml:lang="da">sammensatte dokumenter</comment>
+  <comment xml:lang="de">Verbunddokumente</comment>
+  <comment xml:lang="el">σύνθετα έγγραφα</comment>
+  <comment xml:lang="en_GB">compound documents</comment>
+  <comment xml:lang="eo">parentezaj dokumentoj</comment>
+  <comment xml:lang="es">documentos compuestos</comment>
+  <comment xml:lang="eu">konposatutako dokumentuak</comment>
+  <comment xml:lang="fi">yhdisteasiakirjat</comment>
+  <comment xml:lang="fr">documents composés</comment>
+  <comment xml:lang="ga">cáipéisí comhshuite</comment>
+  <comment xml:lang="hu">összetett dokumentumok</comment>
+  <comment xml:lang="id">dokumen kompon</comment>
+  <comment xml:lang="it">Documenti composti</comment>
+  <comment xml:lang="ja">複合ドキュメント</comment>
+  <comment xml:lang="ko">복합 문서</comment>
+  <comment xml:lang="lt">sudurtiniai dokumentai</comment>
+  <comment xml:lang="ms">Dokumen halaman</comment>
+  <comment xml:lang="nb">sammensatte dokumenter</comment>
+  <comment xml:lang="nl">samengestelde documenten</comment>
+  <comment xml:lang="nn">samansette dokument</comment>
+  <comment xml:lang="pl">dokumenty złożone</comment>
+  <comment xml:lang="pt">documentos compostos</comment>
+  <comment xml:lang="pt_BR">documentos compostos</comment>
+  <comment xml:lang="sq">dokumente të përbërë</comment>
+  <comment xml:lang="sr">сједињени документи</comment>
+  <comment xml:lang="sv">sammansatta dokument</comment>
+  <comment xml:lang="uk">складні документи</comment>
+  <comment xml:lang="vi">tài liệu ghép</comment>
+  <comment xml:lang="zh_CN">组合文档</comment>
+  <comment xml:lang="zh_TW">複合文件</comment>
+</mime-type>

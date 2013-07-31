@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-gzdvi">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>TeX DVI document (gzip-compressed)</comment>
+  <comment xml:lang="be@latin">Dakument TeX DVI (gzip-skampresavany)</comment>
+  <comment xml:lang="bg">Документ — TeX DVI, компресиран с gzip</comment>
+  <comment xml:lang="ca">document TeX DVI (comprimit amb gzip)</comment>
+  <comment xml:lang="cs">Dokument TeX DVI (komprimovaný pomocí gzip)</comment>
+  <comment xml:lang="de">TeX-DVI-Dokument (gzip-komprimiert)</comment>
+  <comment xml:lang="es">documento DVI de TeX (comprimido con gzip)</comment>
+  <comment xml:lang="eu">TeX DVI dokumentua (gzip-ekin konprimitua)</comment>
+  <comment xml:lang="fi">TeX DVI -asiakirja (gzip-pakattu)</comment>
+  <comment xml:lang="fr">document DVI TeX (compressé gzip)</comment>
+  <comment xml:lang="ga">cáipéis DVI TeX (comhbhrúite le gzip)</comment>
+  <comment xml:lang="hu">TeX DVI dokumentum (gzip-tömörítésű)</comment>
+  <comment xml:lang="id">Dokumen TeX DVI (terkompresi gzip)</comment>
+  <comment xml:lang="it">Documento Tex DVI (compresso con gzip)</comment>
+  <comment xml:lang="ko">TeX DVI 문서 (gzip으로 압축)</comment>
+  <comment xml:lang="lt">TeX DVI dokumentas (suglaudintas su gzip)</comment>
+  <comment xml:lang="nb">TeX DVI-dokument (gzip-komprimert)</comment>
+  <comment xml:lang="nl">TeX DVI-document (ingepakt met gzip)</comment>
+  <comment xml:lang="pl">Dokument TeX DVI (kompresja gzip)</comment>
+  <comment xml:lang="pt_BR">Documento DVI TeX (compactado com gzip)</comment>
+  <comment xml:lang="ru">документ TeX DVI (сжатый gzip)</comment>
+  <comment xml:lang="sv">TeX DVI-dokument (gzip-komprimerat)</comment>
+  <comment xml:lang="uk">Документ TeX DVI (стиснений gzip)</comment>
+  <comment xml:lang="vi">Tài liệu DVI TeX (đã nén gzip)</comment>
+  <sub-class-of type="application/x-gzip"/>
+  <generic-icon name="x-office-document"/>
+</mime-type>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-ace">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>ACE archive</comment>
+  <comment xml:lang="be@latin">Archiŭ ACE</comment>
+  <comment xml:lang="bg">Архив — ACE</comment>
+  <comment xml:lang="ca">arxiu ACE</comment>
+  <comment xml:lang="cs">Archiv ACE</comment>
+  <comment xml:lang="de">ACE-Archiv</comment>
+  <comment xml:lang="es">archivador ACE</comment>
+  <comment xml:lang="eu">ACE artxiboa</comment>
+  <comment xml:lang="fi">ACE-arkisto</comment>
+  <comment xml:lang="fr">archive ACE</comment>
+  <comment xml:lang="ga">cartlann ACE</comment>
+  <comment xml:lang="hu">ACE archívum</comment>
+  <comment xml:lang="id">Arsip ACE</comment>
+  <comment xml:lang="it">Archivio ACE</comment>
+  <comment xml:lang="ko">ACE 묶음파일</comment>
+  <comment xml:lang="lt">ACE archyvas</comment>
+  <comment xml:lang="nb">ACE-arkiv</comment>
+  <comment xml:lang="nl">ACE-archief</comment>
+  <comment xml:lang="pl">Archiwum ACE</comment>
+  <comment xml:lang="pt_BR">Pacote ACE</comment>
+  <comment xml:lang="ru">архив ACE</comment>
+  <comment xml:lang="sv">ACE-arkiv</comment>
+  <comment xml:lang="uk">Архів ACE</comment>
+  <comment xml:lang="vi">Kho nén ACE</comment>
+  <generic-icon name="package-x-generic"/>
+</mime-type>

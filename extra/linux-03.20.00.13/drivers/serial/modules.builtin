@@ -1,0 +1,2 @@
+kernel/drivers/serial/serial_core.ko
+kernel/drivers/serial/8250.ko

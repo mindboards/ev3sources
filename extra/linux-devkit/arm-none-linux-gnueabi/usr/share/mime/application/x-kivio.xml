@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-kivio">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Kivio flowchart</comment>
+  <comment xml:lang="be@latin">Blok-schiema Kivio</comment>
+  <comment xml:lang="bg">Диаграма — Kivio</comment>
+  <comment xml:lang="ca">diagrama de flux de Kivio</comment>
+  <comment xml:lang="cs">Vývojový diagram Kivio</comment>
+  <comment xml:lang="da">Kivio-rutediagram</comment>
+  <comment xml:lang="de">Kivio-Flussdiagramm</comment>
+  <comment xml:lang="el">διάγραμμα ροής Kivio</comment>
+  <comment xml:lang="en_GB">Kivio flowchart</comment>
+  <comment xml:lang="eo">Kivo-fluskemo</comment>
+  <comment xml:lang="es">diagrama de flujo de Kivio</comment>
+  <comment xml:lang="eu">Kivio diagrama</comment>
+  <comment xml:lang="fi">Kivio-vuokaavio</comment>
+  <comment xml:lang="fr">diagramme de flux Kivio</comment>
+  <comment xml:lang="ga">sreabhchairt Kivio</comment>
+  <comment xml:lang="hu">Kivio-folyamatábra</comment>
+  <comment xml:lang="id">Bagan Kivio</comment>
+  <comment xml:lang="it">Diagramma di flusso Kivio</comment>
+  <comment xml:lang="ja">Kivio 流れ図</comment>
+  <comment xml:lang="ko">Kivio 흐름도</comment>
+  <comment xml:lang="lt">Kivio eigos diagrama</comment>
+  <comment xml:lang="ms">Cartalir Kivio</comment>
+  <comment xml:lang="nb">Kivio-flytdiagram</comment>
+  <comment xml:lang="nl">Kivio-stroomschema</comment>
+  <comment xml:lang="nn">Kivio-flytdiagram</comment>
+  <comment xml:lang="pl">Diagram przepływów Kivio</comment>
+  <comment xml:lang="pt">gráfico de fluxo Kivio</comment>
+  <comment xml:lang="pt_BR">Fluxograma do Kivio</comment>
+  <comment xml:lang="ru">рисунок Kivio</comment>
+  <comment xml:lang="sq">Diagramë Kivio</comment>
+  <comment xml:lang="sr">Kivio дијаграм</comment>
+  <comment xml:lang="sv">Kivio-flödesschema</comment>
+  <comment xml:lang="uk">Діаграма потоків Kivio</comment>
+  <comment xml:lang="vi">Lược đồ Kivio</comment>
+  <comment xml:lang="zh_CN">Kivio 流程图</comment>
+  <comment xml:lang="zh_TW">Kivio 圖表</comment>
+  <generic-icon name="x-office-document"/>
+</mime-type>

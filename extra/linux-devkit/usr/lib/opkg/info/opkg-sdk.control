@@ -1,0 +1,12 @@
+Package: opkg-sdk
+Version: 0.1.8+svnr587-r3.6
+Description: Opkg Package Manager
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2
+Architecture: i686-armv5te-sdk
+OE: opkg-sdk
+Homepage: unknown
+Depends: libc6
+Source: svn://opkg.googlecode.com/svn;module=trunk;proto=http file://configure

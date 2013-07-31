@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-canon-crw">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Canon CRW raw image</comment>
+  <comment xml:lang="be@latin">Suvoraja vyjava Canon CRW</comment>
+  <comment xml:lang="bg">Изображение — Canon CRW raw</comment>
+  <comment xml:lang="ca">imatge en cru de Canon CRW</comment>
+  <comment xml:lang="cs">Surový obrázek Canon CRW</comment>
+  <comment xml:lang="es">imagen en bruto CRW de Canon</comment>
+  <comment xml:lang="eu">Canon CRW irudi gordina</comment>
+  <comment xml:lang="fi">Canon-CRW-raakakuva</comment>
+  <comment xml:lang="fr">image brute CRW Canon</comment>
+  <comment xml:lang="ga">amhíomhá Canon CRW</comment>
+  <comment xml:lang="hu">Canon CRW nyers kép</comment>
+  <comment xml:lang="id">Citra mentah Canon CRW</comment>
+  <comment xml:lang="it">Immagine raw Canon CRW</comment>
+  <comment xml:lang="ko">캐논 CRW raw 이미지</comment>
+  <comment xml:lang="lt">Canon CRW neapdorotas paveikslėlis</comment>
+  <comment xml:lang="nb">Canon CRW raw-bilde</comment>
+  <comment xml:lang="nl">onbewerkt Canon CRW-beeld</comment>
+  <comment xml:lang="pt_BR">Imagem bruta CRW da Canon</comment>
+  <comment xml:lang="sv">Canon CRW-råbild</comment>
+  <comment xml:lang="vi">Ảnh thô Canon CRW</comment>
+  <acronym>CRW</acronym>
+  <expanded-acronym>Canon RaW</expanded-acronym>
+  <sub-class-of type="image/x-dcraw"/>
+</mime-type>

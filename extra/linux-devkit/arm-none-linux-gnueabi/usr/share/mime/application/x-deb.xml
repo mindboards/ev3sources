@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-deb">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Debian package</comment>
+  <comment xml:lang="az">Debian paketi</comment>
+  <comment xml:lang="be@latin">Pakunak Debian</comment>
+  <comment xml:lang="bg">Пакет — Debian</comment>
+  <comment xml:lang="ca">paquet Debian</comment>
+  <comment xml:lang="cs">Balíček Debianu</comment>
+  <comment xml:lang="cy">Pecyn Debian</comment>
+  <comment xml:lang="da">Debianpakke</comment>
+  <comment xml:lang="de">Debian-Paket</comment>
+  <comment xml:lang="el">πακέτο Debian</comment>
+  <comment xml:lang="en_GB">Debian package</comment>
+  <comment xml:lang="eo">Debian-pakaĵo</comment>
+  <comment xml:lang="es">paquete Debian</comment>
+  <comment xml:lang="eu">Debian paketea</comment>
+  <comment xml:lang="fi">Debian-paketti</comment>
+  <comment xml:lang="fr">paquet Debian</comment>
+  <comment xml:lang="ga">pacáiste Debian</comment>
+  <comment xml:lang="hu">Debian-csomag</comment>
+  <comment xml:lang="id">Paket Debian</comment>
+  <comment xml:lang="it">Pacchetto Debian</comment>
+  <comment xml:lang="ja">Debian パッケージ</comment>
+  <comment xml:lang="ko">데비안 꾸러미</comment>
+  <comment xml:lang="lt">Debian paketas</comment>
+  <comment xml:lang="ms">Pakej Debian</comment>
+  <comment xml:lang="nb">Debian pakke</comment>
+  <comment xml:lang="nl">Debian-pakket</comment>
+  <comment xml:lang="nn">Debian pakke</comment>
+  <comment xml:lang="pl">Pakiet Debiana</comment>
+  <comment xml:lang="pt">pacote Debian</comment>
+  <comment xml:lang="pt_BR">Pacote Debian</comment>
+  <comment xml:lang="ru">пакет Debian</comment>
+  <comment xml:lang="sq">Paketë Debian</comment>
+  <comment xml:lang="sr">Debian пакет</comment>
+  <comment xml:lang="sv">Debianpaket</comment>
+  <comment xml:lang="uk">Пакет Debian</comment>
+  <comment xml:lang="vi">Gói Debian</comment>
+  <comment xml:lang="zh_CN">Debian 软件包</comment>
+  <comment xml:lang="zh_TW">Debian 套件</comment>
+  <alias type="application/x-debian-package"/>
+  <generic-icon name="package-x-generic"/>
+</mime-type>

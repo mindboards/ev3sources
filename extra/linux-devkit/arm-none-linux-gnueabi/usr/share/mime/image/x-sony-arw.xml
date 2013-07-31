@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-sony-arw">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Sony ARW raw image</comment>
+  <comment xml:lang="be@latin">Suvoraja vyjava Sony ARW</comment>
+  <comment xml:lang="bg">Изображение — Sony ARW raw</comment>
+  <comment xml:lang="ca">imatge en cru de Sony ARW</comment>
+  <comment xml:lang="cs">Surový obrázek Sony ARW</comment>
+  <comment xml:lang="es">imagen en bruto ARW de Sony</comment>
+  <comment xml:lang="eu">Sony ARW irudi gordina</comment>
+  <comment xml:lang="fi">Sony-ARW-raakakuva</comment>
+  <comment xml:lang="fr">image brute ARW Sony</comment>
+  <comment xml:lang="ga">amhíomhá Sony ARW</comment>
+  <comment xml:lang="hu">Sony ARW nyers kép</comment>
+  <comment xml:lang="id">Citra mentah Sony ARW</comment>
+  <comment xml:lang="it">Immagine raw Sony ARW</comment>
+  <comment xml:lang="ko">소니 ARW raw 이미지</comment>
+  <comment xml:lang="lt">Sony ARW neapdorotas paveikslėlis</comment>
+  <comment xml:lang="nb">Sony ARW raw-bilde</comment>
+  <comment xml:lang="nl">onbewerkt Sony ARW-beeld</comment>
+  <comment xml:lang="pt_BR">Imagem bruta ARW da Sony</comment>
+  <comment xml:lang="sv">Sony ARW-råbild</comment>
+  <comment xml:lang="vi">Ảnh thô Sony ARW</comment>
+  <acronym>ARW</acronym>
+  <expanded-acronym>Alpha Raw format</expanded-acronym>
+  <sub-class-of type="image/x-dcraw"/>
+  <sub-class-of type="image/tiff"/>
+</mime-type>

@@ -1,0 +1,13 @@
+Package: libxdmcp-dev
+Version: 1:1.1.0-r9.0.6
+Description: X Display Manager Control Protocol library
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT-X
+Architecture: armv5te
+OE: libxdmcp
+Homepage: http://www.x.org
+Depends: libxdmcp6, libxdmcp6, xproto-dev
+Recommends: util-macros-dev, xproto-dev, libgcc1-dev, libc6-dev, libxdmcp-dev
+Source: http://xorg.freedesktop.org/releases/individual/lib/libXdmcp-1.1.0.tar.bz2;name=archive

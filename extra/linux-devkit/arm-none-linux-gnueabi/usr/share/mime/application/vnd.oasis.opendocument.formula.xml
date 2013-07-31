@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.oasis.opendocument.formula">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>ODF formula</comment>
+  <comment xml:lang="be@latin">Formuła ODF</comment>
+  <comment xml:lang="bg">Формула — ODF</comment>
+  <comment xml:lang="ca">fórmula ODF</comment>
+  <comment xml:lang="cs">Vzorec ODF</comment>
+  <comment xml:lang="de">ODF-Formel</comment>
+  <comment xml:lang="en_GB">ODF formula</comment>
+  <comment xml:lang="es">fórmula ODF</comment>
+  <comment xml:lang="eu">ODF formula</comment>
+  <comment xml:lang="fi">ODF-kaava</comment>
+  <comment xml:lang="fr">formule ODF</comment>
+  <comment xml:lang="ga">foirmle ODF</comment>
+  <comment xml:lang="hu">ODF képlet</comment>
+  <comment xml:lang="id">Formula ODF</comment>
+  <comment xml:lang="it">Formula ODF</comment>
+  <comment xml:lang="ko">ODF 수식</comment>
+  <comment xml:lang="lt">ODF formulė</comment>
+  <comment xml:lang="nb">ODF-formel</comment>
+  <comment xml:lang="nl">ODF-formule</comment>
+  <comment xml:lang="nn">ODF-formel</comment>
+  <comment xml:lang="pl">Formuła ODF</comment>
+  <comment xml:lang="pt_BR">Fórmula ODF</comment>
+  <comment xml:lang="ru">формула ODF</comment>
+  <comment xml:lang="sv">ODF-formel</comment>
+  <comment xml:lang="uk">Формула ODF</comment>
+  <comment xml:lang="vi">Công thức ODF</comment>
+  <acronym>ODF</acronym>
+  <expanded-acronym>OpenDocument Formula</expanded-acronym>
+  <sub-class-of type="application/zip"/>
+  <generic-icon name="x-office-document"/>
+</mime-type>

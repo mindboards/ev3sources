@@ -1,0 +1,13 @@
+Package: curl-dev
+Version: 7.21.2-r4.0-arago1.6
+Description: Command line tool and library for client-side URL transfers.
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT
+Architecture: armv5te
+OE: curl
+Homepage: unknown
+Depends: curl, libcurl4
+Recommends: libz-dev, libcurl-dev, libc6-dev, libgcc1-dev
+Source: http://curl.haxx.se/download/curl-7.21.2.tar.bz2 file://off_t_abi_fix.patch;striplevel=0

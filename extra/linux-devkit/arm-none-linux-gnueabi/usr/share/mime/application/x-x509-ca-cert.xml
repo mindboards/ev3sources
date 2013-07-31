@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-x509-ca-cert">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>DER/PEM/Netscape-encoded X.509 certificate</comment>
+  <comment xml:lang="be@latin">Sertyfikat X.509, zakadavany ŭ DER/PEM/Netscape</comment>
+  <comment xml:lang="bg">Сертификат — кодиран във формат DER/PEM/Netscape X.509</comment>
+  <comment xml:lang="ca">certificat X.509 codificat com DER/PEM/Netscape</comment>
+  <comment xml:lang="cs">Certifikát X.509 kódovaný jako DER/PEM/Netscape</comment>
+  <comment xml:lang="da">DER/PEM/Netscape-encoded X.509-certifikat</comment>
+  <comment xml:lang="de">DER/PEM/Netscape-kodiertes X.509-Zertifikat</comment>
+  <comment xml:lang="el">ψηφιακό πιστοποιητικό X.509 κωδικοποιημένο κατά DER/PEM/Netscape</comment>
+  <comment xml:lang="en_GB">DER/PEM/Netscape-encoded X.509 certificate</comment>
+  <comment xml:lang="eo">DER/PEM/Netscape-kodigita X.509-certigilo</comment>
+  <comment xml:lang="es">certificado X.509 codificado con DER/PEM/Netscape</comment>
+  <comment xml:lang="eu">X.509rekin kodetutako DER, PEM edo Netscape zertifikatua</comment>
+  <comment xml:lang="fi">DER/PEM/Netscape-koodattu X.509-varmenne</comment>
+  <comment xml:lang="fr">certificat X.509 codé DER/PEM/Netscape</comment>
+  <comment xml:lang="ga">teastas X.509 ionchódaithe le DER/PEM/Netscape</comment>
+  <comment xml:lang="hu">DER/PEM/Netscape formátumú X.509-tanúsítvány</comment>
+  <comment xml:lang="id">Sertifikat DER/PEM/Netscape-tersandi X.509</comment>
+  <comment xml:lang="it">Certificato DER/PEM/Netscape-encoded X.509</comment>
+  <comment xml:lang="ja">DER/PEM/Netscape エンコード X.509 証明書</comment>
+  <comment xml:lang="ko">DER/PEM/X.509로 인코드된 넷스케이프 인증서</comment>
+  <comment xml:lang="lt">DER/PEM/Netscape-encoded X.509 sertifikatas</comment>
+  <comment xml:lang="ms">Sijil X.509 dienkod /DER/PEM/Netscape</comment>
+  <comment xml:lang="nb">DER/PEM/Netscape-kodet X.509-sertifikat</comment>
+  <comment xml:lang="nl">DER/PEM/Netscape-gecodeerd X.509-certificaat</comment>
+  <comment xml:lang="nn">DER/PEM/Netscape-koda X.509-sertifikat</comment>
+  <comment xml:lang="pl">Certyfikat X.509 DER/PEM/Netscape-zakodowany</comment>
+  <comment xml:lang="pt">certificado X.509 codificado com DER/PEM/Netscape</comment>
+  <comment xml:lang="pt_BR">Certificado X.509 codificado com DER/PEM/Netscape</comment>
+  <comment xml:lang="ru">DER/PEM/Netscape-шифрованый сертификат X.509</comment>
+  <comment xml:lang="sq">Çertifikatë DER/PEM/Netscape-encoded X.509</comment>
+  <comment xml:lang="sr">DER, PEM или Нетскејп кодирани сертификат X.509</comment>
+  <comment xml:lang="sv">DER/PEM/Netscape-kodat X.509-certifikat</comment>
+  <comment xml:lang="uk">Сертифікат X.509 у форматі DER/PEM/Netscape</comment>
+  <comment xml:lang="vi">Chứng nhận X.509 mã hoá bằng Netscape/PEM/DER</comment>
+  <comment xml:lang="zh_CN">DER/PEM/Netscape-encoded X.509 证书</comment>
+  <generic-icon name="text-x-generic"/>
+</mime-type>

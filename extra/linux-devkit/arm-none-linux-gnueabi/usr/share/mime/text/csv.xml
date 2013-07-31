@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/csv">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>CSV document</comment>
+  <comment xml:lang="be@latin">Dakument CSV</comment>
+  <comment xml:lang="bg">Документ — CSV</comment>
+  <comment xml:lang="ca">document CSV</comment>
+  <comment xml:lang="cs">Dokument CSV</comment>
+  <comment xml:lang="de">CSV-Dokument</comment>
+  <comment xml:lang="en_GB">CSV document</comment>
+  <comment xml:lang="es">documento CSV</comment>
+  <comment xml:lang="eu">CSV dokumentua</comment>
+  <comment xml:lang="fi">CSV-asiakirja</comment>
+  <comment xml:lang="fr">document CSV</comment>
+  <comment xml:lang="ga">cáipéis CSV</comment>
+  <comment xml:lang="hu">CSV dokumentum</comment>
+  <comment xml:lang="id">Dokumen CSV</comment>
+  <comment xml:lang="it">Documento CSV</comment>
+  <comment xml:lang="ko">CSV 문서</comment>
+  <comment xml:lang="lt">CSV dokumentas</comment>
+  <comment xml:lang="nb">CSV-dokument</comment>
+  <comment xml:lang="nl">CSV-document</comment>
+  <comment xml:lang="nn">CSV-dokument</comment>
+  <comment xml:lang="pl">Dokument CSV</comment>
+  <comment xml:lang="pt_BR">Documento CSV</comment>
+  <comment xml:lang="ru">документ CSV</comment>
+  <comment xml:lang="sv">CSV-dokument</comment>
+  <comment xml:lang="uk">Документ CSV</comment>
+  <comment xml:lang="vi">Tài liệu CSV</comment>
+  <alias type="text/x-comma-separated-values"/>
+  <sub-class-of type="text/plain"/>
+</mime-type>

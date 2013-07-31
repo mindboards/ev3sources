@@ -1,0 +1,13 @@
+Package: libvorbisidec-dev
+Version: 20041119-r2.6
+Description: tremor is a fixed point implementation of the vorbis codec.
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: BSD
+Architecture: armv5te
+OE: tremor
+Homepage: unknown
+Depends: libvorbisidec1, libvorbisidec1
+Recommends: libogg-dev, libgcc1-dev, libc6-dev, libvorbisidec-dev
+Source: svn://svn.xiph.org/trunk;module=Tremor;rev=4573;proto=http file://pkgconfig.patch

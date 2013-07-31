@@ -1,0 +1,12 @@
+Package: pam-plugin-unix
+Version: 1.1.1-r1.6
+Description: PAM plugin for -unix
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2
+Architecture: armv5te
+OE: libpam
+Homepage: http://kernel.org/pub/linux/libs/pam
+Depends: libc6, libpam, libc6, libgcc1
+Source: http://kernel.org/pub/linux/libs/pam/library/Linux-PAM-1.1.1.tar.bz2 file://pam-nodocs.patch file://define-HAVE_DBM.patch

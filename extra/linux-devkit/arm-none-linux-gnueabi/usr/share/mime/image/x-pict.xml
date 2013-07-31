@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-pict">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Macintosh Quickdraw/PICT drawing</comment>
+  <comment xml:lang="be@latin">Rysunak Macintosh Quickdraw/PICT</comment>
+  <comment xml:lang="bg">Чертеж — Macintosh Quickdraw/PICT</comment>
+  <comment xml:lang="ca">dibuix Quickdraw/PICT de Macintosh</comment>
+  <comment xml:lang="cs">Kresba Macintosh Quickdraw/PICT</comment>
+  <comment xml:lang="da">Macintosh Quickdraw/PICT-tegning</comment>
+  <comment xml:lang="de">Macintosh Quickdraw/PICT-Zeichnung</comment>
+  <comment xml:lang="el">σχέδιο Macintosh Quickdraw/PICT</comment>
+  <comment xml:lang="en_GB">Macintosh Quickdraw/PICT drawing</comment>
+  <comment xml:lang="eo">Quickdraw/PICT-grafikaĵo de Macintosh</comment>
+  <comment xml:lang="es">dibujo de Macintosh Quickdraw/PICT</comment>
+  <comment xml:lang="eu">Macintosh Quickdraw/PICT marrazkia</comment>
+  <comment xml:lang="fi">Macintosh Quickdraw/PICT -piirros</comment>
+  <comment xml:lang="fr">dessin Macintosh Quickdraw/PICT</comment>
+  <comment xml:lang="ga">líníocht Macintosh Quickdraw/PICT</comment>
+  <comment xml:lang="hu">Macintosh Quickdraw/PICT-rajz</comment>
+  <comment xml:lang="id">Gambar Macintosh Quickdraw/PICT</comment>
+  <comment xml:lang="it">Disegno Macintosh Quickdraw/PICT</comment>
+  <comment xml:lang="ja">Macintosh Quickdraw/PICT 絵</comment>
+  <comment xml:lang="ko">맥킨토시 Quickdraw/PICT 그림</comment>
+  <comment xml:lang="lt">Macintosh Quickdraw/PICT piešinys</comment>
+  <comment xml:lang="ms">Lukisan Macintosh Quickdraw/PICT</comment>
+  <comment xml:lang="nb">Macintosh Quickdraw/PICT-tegning</comment>
+  <comment xml:lang="nl">Macintosh Quickdraw/PICT-tekening</comment>
+  <comment xml:lang="nn">Macintosh Quickdraw/PICT-teikning</comment>
+  <comment xml:lang="pl">Rysunek Quickdraw/PICT Macintosha</comment>
+  <comment xml:lang="pt">desenho Quickdraw/PICT de Macintosh</comment>
+  <comment xml:lang="pt_BR">Desenho do Macintosh Quickdraw/PICT</comment>
+  <comment xml:lang="ru">изображение Macintosh Quickdraw/PICT</comment>
+  <comment xml:lang="sq">Vizatim Macintosh Quickdraw/PICT</comment>
+  <comment xml:lang="sr">Мекинтош Quickdraw/PICT цртеж</comment>
+  <comment xml:lang="sv">Macintosh Quickdraw/PICT-teckning</comment>
+  <comment xml:lang="uk">Малюнок Macintosh Quickdraw/PICT</comment>
+  <comment xml:lang="vi">Bản vẽ Quickdraw/PICT của Macintosh</comment>
+  <comment xml:lang="zh_CN">Macintosh Quickdraw/PICT 绘图</comment>
+  <comment xml:lang="zh_TW">Macintosh Quickdraw/PICT 繪圖</comment>
+</mime-type>

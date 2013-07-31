@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-dbf">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Xbase document</comment>
+  <comment xml:lang="be@latin">Dakument Xbase</comment>
+  <comment xml:lang="bg">Документ — Xbase</comment>
+  <comment xml:lang="ca">document Xbase</comment>
+  <comment xml:lang="cs">Dokument Xbase</comment>
+  <comment xml:lang="de">Xbase-Dokument</comment>
+  <comment xml:lang="en_GB">Xbase document</comment>
+  <comment xml:lang="es">documento Xbase</comment>
+  <comment xml:lang="eu">Xbase dokumentua</comment>
+  <comment xml:lang="fi">Xbase-asiakirja</comment>
+  <comment xml:lang="fr">document Xbase</comment>
+  <comment xml:lang="ga">cáipéis Xbase</comment>
+  <comment xml:lang="hu">Xbase dokumentum</comment>
+  <comment xml:lang="id">Dokumen Xbase</comment>
+  <comment xml:lang="it">Documento Xbase</comment>
+  <comment xml:lang="ko">Xbase 문서</comment>
+  <comment xml:lang="lt">Xbase dokumentas</comment>
+  <comment xml:lang="nb">Xbase-dokument</comment>
+  <comment xml:lang="nl">Xbase-document</comment>
+  <comment xml:lang="nn">Xbase-dokument</comment>
+  <comment xml:lang="pl">Dokument Xbase</comment>
+  <comment xml:lang="pt_BR">Documento do Xbase</comment>
+  <comment xml:lang="ru">документ Xbase</comment>
+  <comment xml:lang="sv">Xbase-dokument</comment>
+  <comment xml:lang="uk">Документ Xbase</comment>
+  <comment xml:lang="vi">Tài liệu Xbase</comment>
+  <generic-icon name="x-office-document"/>
+  <alias type="application/x-dbase"/>
+  <alias type="application/dbf"/>
+  <alias type="application/dbase"/>
+</mime-type>

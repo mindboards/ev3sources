@@ -1,0 +1,872 @@
+Package: kernel-2.6.33-rc4
+Version: 2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6
+Section: kernel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 4ca6524a04965ad1a08e4d7664f89dbb
+Size: 1148
+Filename: kernel-2.6.33-rc4_2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/linux-omapl1.git;protocol=git;branch=master file://defconfig file://0001-DA850-OMAP-L138-Enable-UART1-RTS-CTS-line-pinmuxing.patch file://0002-DA8xx-Force-DaVinci-UART-s-to-be-of-AR7-port-type.patch file://0003-Serial_8250-Modify-check-to-enable-AFE-for-AR7-port-.patch file://0004-DA850-OMAP-L138-Disable-modem-status-interrupts.patch file://0005-Serial_8250-Modify-the-AR7-port-RX-fifo-threshold.patch file://0006-da850-omap-l138-Correct-a-bug-while-checking-for-MMC.patch file://0007-da850-omap-l138-Configure-GP0-11-only-when-UI-card-i.patch file://0001-uio_pruss1-Core-driver-addition.patch file://0002-uio_pruss2-Platform-changes.patch file://0003-uio_pruss3-Workarounds-put-into-core-code.patch file://0001-Supported-MMC2-interface-on-AM1808-board.patch file://0002-Supporting-Standard-SDIO-For-WL1271-DC-on-AM1808-EVM.patch file://0003-Added-wilink-driver-for-WL1271-on-AM1808-EVM.patch file://0004-Supported-AFE-for-UART1-on-AM1808-platform.patch file://0005-Modified-defconfig-for-WL1271-DC-support-on-AM1808.patch
+Description: Linux kernel for OMAPL1 EVM from PSP, based on linux-omapl1 kernel
+OE: linux-omapl1
+HomePage: unknown
+Priority: optional
+
+
+Package: kernel-image-2.6.33-rc4
+Version: 2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6
+Section: kernel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: e3430d70d6f71738ce736332b7260327
+Size: 2168452
+Filename: kernel-image-2.6.33-rc4_2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/linux-omapl1.git;protocol=git;branch=master file://defconfig file://0001-DA850-OMAP-L138-Enable-UART1-RTS-CTS-line-pinmuxing.patch file://0002-DA8xx-Force-DaVinci-UART-s-to-be-of-AR7-port-type.patch file://0003-Serial_8250-Modify-check-to-enable-AFE-for-AR7-port-.patch file://0004-DA850-OMAP-L138-Disable-modem-status-interrupts.patch file://0005-Serial_8250-Modify-the-AR7-port-RX-fifo-threshold.patch file://0006-da850-omap-l138-Correct-a-bug-while-checking-for-MMC.patch file://0007-da850-omap-l138-Configure-GP0-11-only-when-UI-card-i.patch file://0001-uio_pruss1-Core-driver-addition.patch file://0002-uio_pruss2-Platform-changes.patch file://0003-uio_pruss3-Workarounds-put-into-core-code.patch file://0001-Supported-MMC2-interface-on-AM1808-board.patch file://0002-Supporting-Standard-SDIO-For-WL1271-DC-on-AM1808-EVM.patch file://0003-Added-wilink-driver-for-WL1271-on-AM1808-EVM.patch file://0004-Supported-AFE-for-UART1-on-AM1808-platform.patch file://0005-Modified-defconfig-for-WL1271-DC-support-on-AM1808.patch
+Description: Linux kernel for OMAPL1 EVM from PSP, based on linux-omapl1 kernel
+OE: linux-omapl1
+HomePage: unknown
+Priority: optional
+
+
+Package: kernel-module-atkbd
+Version: 2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6
+Depends: update-modules, kernel-2.6.33-rc4
+Section: kernel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 7ae1a9878775d729eb3a1e892d8c546c
+Size: 11578
+Filename: kernel-module-atkbd_2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/linux-omapl1.git;protocol=git;branch=master file://defconfig file://0001-DA850-OMAP-L138-Enable-UART1-RTS-CTS-line-pinmuxing.patch file://0002-DA8xx-Force-DaVinci-UART-s-to-be-of-AR7-port-type.patch file://0003-Serial_8250-Modify-check-to-enable-AFE-for-AR7-port-.patch file://0004-DA850-OMAP-L138-Disable-modem-status-interrupts.patch file://0005-Serial_8250-Modify-the-AR7-port-RX-fifo-threshold.patch file://0006-da850-omap-l138-Correct-a-bug-while-checking-for-MMC.patch file://0007-da850-omap-l138-Configure-GP0-11-only-when-UI-card-i.patch file://0001-uio_pruss1-Core-driver-addition.patch file://0002-uio_pruss2-Platform-changes.patch file://0003-uio_pruss3-Workarounds-put-into-core-code.patch file://0001-Supported-MMC2-interface-on-AM1808-board.patch file://0002-Supporting-Standard-SDIO-For-WL1271-DC-on-AM1808-EVM.patch file://0003-Added-wilink-driver-for-WL1271-on-AM1808-EVM.patch file://0004-Supported-AFE-for-UART1-on-AM1808-platform.patch file://0005-Modified-defconfig-for-WL1271-DC-support-on-AM1808.patch
+Description: atkbd kernel module; AT and PS/2 keyboard driver
+OE: linux-omapl1
+HomePage: unknown
+Priority: optional
+
+
+Package: kernel-module-autofs4
+Version: 2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6
+Depends: update-modules, kernel-2.6.33-rc4
+Section: kernel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 924d62f167d335ee901f37a327bebccb
+Size: 16196
+Filename: kernel-module-autofs4_2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/linux-omapl1.git;protocol=git;branch=master file://defconfig file://0001-DA850-OMAP-L138-Enable-UART1-RTS-CTS-line-pinmuxing.patch file://0002-DA8xx-Force-DaVinci-UART-s-to-be-of-AR7-port-type.patch file://0003-Serial_8250-Modify-check-to-enable-AFE-for-AR7-port-.patch file://0004-DA850-OMAP-L138-Disable-modem-status-interrupts.patch file://0005-Serial_8250-Modify-the-AR7-port-RX-fifo-threshold.patch file://0006-da850-omap-l138-Correct-a-bug-while-checking-for-MMC.patch file://0007-da850-omap-l138-Configure-GP0-11-only-when-UI-card-i.patch file://0001-uio_pruss1-Core-driver-addition.patch file://0002-uio_pruss2-Platform-changes.patch file://0003-uio_pruss3-Workarounds-put-into-core-code.patch file://0001-Supported-MMC2-interface-on-AM1808-board.patch file://0002-Supporting-Standard-SDIO-For-WL1271-DC-on-AM1808-EVM.patch file://0003-Added-wilink-driver-for-WL1271-on-AM1808-EVM.patch file://0004-Supported-AFE-for-UART1-on-AM1808-platform.patch file://0005-Modified-defconfig-for-WL1271-DC-support-on-AM1808.patch
+Description: autofs4 kernel module
+OE: linux-omapl1
+HomePage: unknown
+Priority: optional
+
+
+Package: kernel-module-crc-ccitt
+Version: 2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6
+Depends: update-modules, kernel-2.6.33-rc4
+Section: kernel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 43b0c86299ce08da0389f256944e1ae9
+Size: 3104
+Filename: kernel-module-crc-ccitt_2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/linux-omapl1.git;protocol=git;branch=master file://defconfig file://0001-DA850-OMAP-L138-Enable-UART1-RTS-CTS-line-pinmuxing.patch file://0002-DA8xx-Force-DaVinci-UART-s-to-be-of-AR7-port-type.patch file://0003-Serial_8250-Modify-check-to-enable-AFE-for-AR7-port-.patch file://0004-DA850-OMAP-L138-Disable-modem-status-interrupts.patch file://0005-Serial_8250-Modify-the-AR7-port-RX-fifo-threshold.patch file://0006-da850-omap-l138-Correct-a-bug-while-checking-for-MMC.patch file://0007-da850-omap-l138-Configure-GP0-11-only-when-UI-card-i.patch file://0001-uio_pruss1-Core-driver-addition.patch file://0002-uio_pruss2-Platform-changes.patch file://0003-uio_pruss3-Workarounds-put-into-core-code.patch file://0001-Supported-MMC2-interface-on-AM1808-board.patch file://0002-Supporting-Standard-SDIO-For-WL1271-DC-on-AM1808-EVM.patch file://0003-Added-wilink-driver-for-WL1271-on-AM1808-EVM.patch file://0004-Supported-AFE-for-UART1-on-AM1808-platform.patch file://0005-Modified-defconfig-for-WL1271-DC-support-on-AM1808.patch
+Description: crc-ccitt kernel module; CRC-CCITT calculations
+OE: linux-omapl1
+HomePage: unknown
+Priority: optional
+
+
+Package: kernel-module-crc-t10dif
+Version: 2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6
+Depends: update-modules, kernel-2.6.33-rc4
+Section: kernel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 50e9f393b280ed91518bdf64b1281d2f
+Size: 3056
+Filename: kernel-module-crc-t10dif_2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/linux-omapl1.git;protocol=git;branch=master file://defconfig file://0001-DA850-OMAP-L138-Enable-UART1-RTS-CTS-line-pinmuxing.patch file://0002-DA8xx-Force-DaVinci-UART-s-to-be-of-AR7-port-type.patch file://0003-Serial_8250-Modify-check-to-enable-AFE-for-AR7-port-.patch file://0004-DA850-OMAP-L138-Disable-modem-status-interrupts.patch file://0005-Serial_8250-Modify-the-AR7-port-RX-fifo-threshold.patch file://0006-da850-omap-l138-Correct-a-bug-while-checking-for-MMC.patch file://0007-da850-omap-l138-Configure-GP0-11-only-when-UI-card-i.patch file://0001-uio_pruss1-Core-driver-addition.patch file://0002-uio_pruss2-Platform-changes.patch file://0003-uio_pruss3-Workarounds-put-into-core-code.patch file://0001-Supported-MMC2-interface-on-AM1808-board.patch file://0002-Supporting-Standard-SDIO-For-WL1271-DC-on-AM1808-EVM.patch file://0003-Added-wilink-driver-for-WL1271-on-AM1808-EVM.patch file://0004-Supported-AFE-for-UART1-on-AM1808-platform.patch file://0005-Modified-defconfig-for-WL1271-DC-support-on-AM1808.patch
+Description: crc-t10dif kernel module; T10 DIF CRC calculation
+OE: linux-omapl1
+HomePage: unknown
+Priority: optional
+
+
+Package: kernel-module-exportfs
+Version: 2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6
+Depends: update-modules, kernel-2.6.33-rc4
+Section: kernel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 9e4938bd8273de7c3c69d31631f26607
+Size: 4388
+Filename: kernel-module-exportfs_2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/linux-omapl1.git;protocol=git;branch=master file://defconfig file://0001-DA850-OMAP-L138-Enable-UART1-RTS-CTS-line-pinmuxing.patch file://0002-DA8xx-Force-DaVinci-UART-s-to-be-of-AR7-port-type.patch file://0003-Serial_8250-Modify-check-to-enable-AFE-for-AR7-port-.patch file://0004-DA850-OMAP-L138-Disable-modem-status-interrupts.patch file://0005-Serial_8250-Modify-the-AR7-port-RX-fifo-threshold.patch file://0006-da850-omap-l138-Correct-a-bug-while-checking-for-MMC.patch file://0007-da850-omap-l138-Configure-GP0-11-only-when-UI-card-i.patch file://0001-uio_pruss1-Core-driver-addition.patch file://0002-uio_pruss2-Platform-changes.patch file://0003-uio_pruss3-Workarounds-put-into-core-code.patch file://0001-Supported-MMC2-interface-on-AM1808-board.patch file://0002-Supporting-Standard-SDIO-For-WL1271-DC-on-AM1808-EVM.patch file://0003-Added-wilink-driver-for-WL1271-on-AM1808-EVM.patch file://0004-Supported-AFE-for-UART1-on-AM1808-platform.patch file://0005-Modified-defconfig-for-WL1271-DC-support-on-AM1808.patch
+Description: exportfs kernel module
+OE: linux-omapl1
+HomePage: unknown
+Priority: optional
+
+
+Package: kernel-module-ipv6
+Version: 2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6
+Depends: update-modules, kernel-2.6.33-rc4
+Section: kernel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 3e27fdcc632a774190ac08e3b6378cb1
+Size: 131038
+Filename: kernel-module-ipv6_2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/linux-omapl1.git;protocol=git;branch=master file://defconfig file://0001-DA850-OMAP-L138-Enable-UART1-RTS-CTS-line-pinmuxing.patch file://0002-DA8xx-Force-DaVinci-UART-s-to-be-of-AR7-port-type.patch file://0003-Serial_8250-Modify-check-to-enable-AFE-for-AR7-port-.patch file://0004-DA850-OMAP-L138-Disable-modem-status-interrupts.patch file://0005-Serial_8250-Modify-the-AR7-port-RX-fifo-threshold.patch file://0006-da850-omap-l138-Correct-a-bug-while-checking-for-MMC.patch file://0007-da850-omap-l138-Configure-GP0-11-only-when-UI-card-i.patch file://0001-uio_pruss1-Core-driver-addition.patch file://0002-uio_pruss2-Platform-changes.patch file://0003-uio_pruss3-Workarounds-put-into-core-code.patch file://0001-Supported-MMC2-interface-on-AM1808-board.patch file://0002-Supporting-Standard-SDIO-For-WL1271-DC-on-AM1808-EVM.patch file://0003-Added-wilink-driver-for-WL1271-on-AM1808-EVM.patch file://0004-Supported-AFE-for-UART1-on-AM1808-platform.patch file://0005-Modified-defconfig-for-WL1271-DC-support-on-AM1808.patch
+Description: ipv6 kernel module; IPv6 protocol stack for Linux
+OE: linux-omapl1
+HomePage: unknown
+Priority: optional
+
+
+Package: kernel-module-loop
+Version: 2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6
+Depends: update-modules, kernel-2.6.33-rc4
+Section: kernel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: a3c28347e69d5ec3a8d89f9500de1e80
+Size: 11174
+Filename: kernel-module-loop_2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/linux-omapl1.git;protocol=git;branch=master file://defconfig file://0001-DA850-OMAP-L138-Enable-UART1-RTS-CTS-line-pinmuxing.patch file://0002-DA8xx-Force-DaVinci-UART-s-to-be-of-AR7-port-type.patch file://0003-Serial_8250-Modify-check-to-enable-AFE-for-AR7-port-.patch file://0004-DA850-OMAP-L138-Disable-modem-status-interrupts.patch file://0005-Serial_8250-Modify-the-AR7-port-RX-fifo-threshold.patch file://0006-da850-omap-l138-Correct-a-bug-while-checking-for-MMC.patch file://0007-da850-omap-l138-Configure-GP0-11-only-when-UI-card-i.patch file://0001-uio_pruss1-Core-driver-addition.patch file://0002-uio_pruss2-Platform-changes.patch file://0003-uio_pruss3-Workarounds-put-into-core-code.patch file://0001-Supported-MMC2-interface-on-AM1808-board.patch file://0002-Supporting-Standard-SDIO-For-WL1271-DC-on-AM1808-EVM.patch file://0003-Added-wilink-driver-for-WL1271-on-AM1808-EVM.patch file://0004-Supported-AFE-for-UART1-on-AM1808-platform.patch file://0005-Modified-defconfig-for-WL1271-DC-support-on-AM1808.patch
+Description: loop kernel module
+OE: linux-omapl1
+HomePage: unknown
+Priority: optional
+
+
+Package: kernel-module-minix
+Version: 2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6
+Depends: update-modules, kernel-2.6.33-rc4
+Section: kernel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 873c9748464f9435d29719c2779fbf8a
+Size: 16316
+Filename: kernel-module-minix_2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/linux-omapl1.git;protocol=git;branch=master file://defconfig file://0001-DA850-OMAP-L138-Enable-UART1-RTS-CTS-line-pinmuxing.patch file://0002-DA8xx-Force-DaVinci-UART-s-to-be-of-AR7-port-type.patch file://0003-Serial_8250-Modify-check-to-enable-AFE-for-AR7-port-.patch file://0004-DA850-OMAP-L138-Disable-modem-status-interrupts.patch file://0005-Serial_8250-Modify-the-AR7-port-RX-fifo-threshold.patch file://0006-da850-omap-l138-Correct-a-bug-while-checking-for-MMC.patch file://0007-da850-omap-l138-Configure-GP0-11-only-when-UI-card-i.patch file://0001-uio_pruss1-Core-driver-addition.patch file://0002-uio_pruss2-Platform-changes.patch file://0003-uio_pruss3-Workarounds-put-into-core-code.patch file://0001-Supported-MMC2-interface-on-AM1808-board.patch file://0002-Supporting-Standard-SDIO-For-WL1271-DC-on-AM1808-EVM.patch file://0003-Added-wilink-driver-for-WL1271-on-AM1808-EVM.patch file://0004-Supported-AFE-for-UART1-on-AM1808-platform.patch file://0005-Modified-defconfig-for-WL1271-DC-support-on-AM1808.patch
+Description: minix kernel module
+OE: linux-omapl1
+HomePage: unknown
+Priority: optional
+
+
+Package: kernel-module-nfsd
+Version: 2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6
+Depends: update-modules, kernel-2.6.33-rc4, kernel-module-exportfs
+Section: kernel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 6d305b6025e120a72c2dfcef5d89da4b
+Size: 48750
+Filename: kernel-module-nfsd_2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/linux-omapl1.git;protocol=git;branch=master file://defconfig file://0001-DA850-OMAP-L138-Enable-UART1-RTS-CTS-line-pinmuxing.patch file://0002-DA8xx-Force-DaVinci-UART-s-to-be-of-AR7-port-type.patch file://0003-Serial_8250-Modify-check-to-enable-AFE-for-AR7-port-.patch file://0004-DA850-OMAP-L138-Disable-modem-status-interrupts.patch file://0005-Serial_8250-Modify-the-AR7-port-RX-fifo-threshold.patch file://0006-da850-omap-l138-Correct-a-bug-while-checking-for-MMC.patch file://0007-da850-omap-l138-Configure-GP0-11-only-when-UI-card-i.patch file://0001-uio_pruss1-Core-driver-addition.patch file://0002-uio_pruss2-Platform-changes.patch file://0003-uio_pruss3-Workarounds-put-into-core-code.patch file://0001-Supported-MMC2-interface-on-AM1808-board.patch file://0002-Supporting-Standard-SDIO-For-WL1271-DC-on-AM1808-EVM.patch file://0003-Added-wilink-driver-for-WL1271-on-AM1808-EVM.patch file://0004-Supported-AFE-for-UART1-on-AM1808-platform.patch file://0005-Modified-defconfig-for-WL1271-DC-support-on-AM1808.patch
+Description: nfsd kernel module
+OE: linux-omapl1
+HomePage: unknown
+Priority: optional
+
+
+Package: kernel-module-nls-ascii
+Version: 2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6
+Depends: update-modules, kernel-2.6.33-rc4
+Section: kernel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 00b9f591d4c25319cf0bd41e373f349c
+Size: 3066
+Filename: kernel-module-nls-ascii_2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/linux-omapl1.git;protocol=git;branch=master file://defconfig file://0001-DA850-OMAP-L138-Enable-UART1-RTS-CTS-line-pinmuxing.patch file://0002-DA8xx-Force-DaVinci-UART-s-to-be-of-AR7-port-type.patch file://0003-Serial_8250-Modify-check-to-enable-AFE-for-AR7-port-.patch file://0004-DA850-OMAP-L138-Disable-modem-status-interrupts.patch file://0005-Serial_8250-Modify-the-AR7-port-RX-fifo-threshold.patch file://0006-da850-omap-l138-Correct-a-bug-while-checking-for-MMC.patch file://0007-da850-omap-l138-Configure-GP0-11-only-when-UI-card-i.patch file://0001-uio_pruss1-Core-driver-addition.patch file://0002-uio_pruss2-Platform-changes.patch file://0003-uio_pruss3-Workarounds-put-into-core-code.patch file://0001-Supported-MMC2-interface-on-AM1808-board.patch file://0002-Supporting-Standard-SDIO-For-WL1271-DC-on-AM1808-EVM.patch file://0003-Added-wilink-driver-for-WL1271-on-AM1808-EVM.patch file://0004-Supported-AFE-for-UART1-on-AM1808-platform.patch file://0005-Modified-defconfig-for-WL1271-DC-support-on-AM1808.patch
+Description: nls-ascii kernel module
+OE: linux-omapl1
+HomePage: unknown
+Priority: optional
+
+
+Package: kernel-module-nls-utf8
+Version: 2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6
+Depends: update-modules, kernel-2.6.33-rc4
+Section: kernel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 9ec51bfa2c2c43644243c7f3899e74ce
+Size: 2662
+Filename: kernel-module-nls-utf8_2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/linux-omapl1.git;protocol=git;branch=master file://defconfig file://0001-DA850-OMAP-L138-Enable-UART1-RTS-CTS-line-pinmuxing.patch file://0002-DA8xx-Force-DaVinci-UART-s-to-be-of-AR7-port-type.patch file://0003-Serial_8250-Modify-check-to-enable-AFE-for-AR7-port-.patch file://0004-DA850-OMAP-L138-Disable-modem-status-interrupts.patch file://0005-Serial_8250-Modify-the-AR7-port-RX-fifo-threshold.patch file://0006-da850-omap-l138-Correct-a-bug-while-checking-for-MMC.patch file://0007-da850-omap-l138-Configure-GP0-11-only-when-UI-card-i.patch file://0001-uio_pruss1-Core-driver-addition.patch file://0002-uio_pruss2-Platform-changes.patch file://0003-uio_pruss3-Workarounds-put-into-core-code.patch file://0001-Supported-MMC2-interface-on-AM1808-board.patch file://0002-Supporting-Standard-SDIO-For-WL1271-DC-on-AM1808-EVM.patch file://0003-Added-wilink-driver-for-WL1271-on-AM1808-EVM.patch file://0004-Supported-AFE-for-UART1-on-AM1808-platform.patch file://0005-Modified-defconfig-for-WL1271-DC-support-on-AM1808.patch
+Description: nls-utf8 kernel module
+OE: linux-omapl1
+HomePage: unknown
+Priority: optional
+
+
+Package: kernel-module-rng-core
+Version: 2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6
+Depends: update-modules, kernel-2.6.33-rc4
+Section: kernel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: a9b0090b042be298c89abb04d20841cb
+Size: 4460
+Filename: kernel-module-rng-core_2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/linux-omapl1.git;protocol=git;branch=master file://defconfig file://0001-DA850-OMAP-L138-Enable-UART1-RTS-CTS-line-pinmuxing.patch file://0002-DA8xx-Force-DaVinci-UART-s-to-be-of-AR7-port-type.patch file://0003-Serial_8250-Modify-check-to-enable-AFE-for-AR7-port-.patch file://0004-DA850-OMAP-L138-Disable-modem-status-interrupts.patch file://0005-Serial_8250-Modify-the-AR7-port-RX-fifo-threshold.patch file://0006-da850-omap-l138-Correct-a-bug-while-checking-for-MMC.patch file://0007-da850-omap-l138-Configure-GP0-11-only-when-UI-card-i.patch file://0001-uio_pruss1-Core-driver-addition.patch file://0002-uio_pruss2-Platform-changes.patch file://0003-uio_pruss3-Workarounds-put-into-core-code.patch file://0001-Supported-MMC2-interface-on-AM1808-board.patch file://0002-Supporting-Standard-SDIO-For-WL1271-DC-on-AM1808-EVM.patch file://0003-Added-wilink-driver-for-WL1271-on-AM1808-EVM.patch file://0004-Supported-AFE-for-UART1-on-AM1808-platform.patch file://0005-Modified-defconfig-for-WL1271-DC-support-on-AM1808.patch
+Description: rng-core kernel module; H/W Random Number Generator (RNG) driver
+OE: linux-omapl1
+HomePage: unknown
+Priority: optional
+
+
+Package: kernel-module-scsi-wait-scan
+Version: 2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6
+Depends: update-modules, kernel-2.6.33-rc4
+Section: kernel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: fdb9b10092c878a0c6a696c6bb7aa9dd
+Size: 2432
+Filename: kernel-module-scsi-wait-scan_2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/linux-omapl1.git;protocol=git;branch=master file://defconfig file://0001-DA850-OMAP-L138-Enable-UART1-RTS-CTS-line-pinmuxing.patch file://0002-DA8xx-Force-DaVinci-UART-s-to-be-of-AR7-port-type.patch file://0003-Serial_8250-Modify-check-to-enable-AFE-for-AR7-port-.patch file://0004-DA850-OMAP-L138-Disable-modem-status-interrupts.patch file://0005-Serial_8250-Modify-the-AR7-port-RX-fifo-threshold.patch file://0006-da850-omap-l138-Correct-a-bug-while-checking-for-MMC.patch file://0007-da850-omap-l138-Configure-GP0-11-only-when-UI-card-i.patch file://0001-uio_pruss1-Core-driver-addition.patch file://0002-uio_pruss2-Platform-changes.patch file://0003-uio_pruss3-Workarounds-put-into-core-code.patch file://0001-Supported-MMC2-interface-on-AM1808-board.patch file://0002-Supporting-Standard-SDIO-For-WL1271-DC-on-AM1808-EVM.patch file://0003-Added-wilink-driver-for-WL1271-on-AM1808-EVM.patch file://0004-Supported-AFE-for-UART1-on-AM1808-platform.patch file://0005-Modified-defconfig-for-WL1271-DC-support-on-AM1808.patch
+Description: scsi-wait-scan kernel module; SCSI wait for scans
+OE: linux-omapl1
+HomePage: unknown
+Priority: optional
+
+
+Package: kernel-module-sdio
+Version: 2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6
+Depends: update-modules, kernel-2.6.33-rc4
+Section: kernel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: d03a732d2e553cc1a08633120e3f5a1d
+Size: 6516
+Filename: kernel-module-sdio_2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/linux-omapl1.git;protocol=git;branch=master file://defconfig file://0001-DA850-OMAP-L138-Enable-UART1-RTS-CTS-line-pinmuxing.patch file://0002-DA8xx-Force-DaVinci-UART-s-to-be-of-AR7-port-type.patch file://0003-Serial_8250-Modify-check-to-enable-AFE-for-AR7-port-.patch file://0004-DA850-OMAP-L138-Disable-modem-status-interrupts.patch file://0005-Serial_8250-Modify-the-AR7-port-RX-fifo-threshold.patch file://0006-da850-omap-l138-Correct-a-bug-while-checking-for-MMC.patch file://0007-da850-omap-l138-Configure-GP0-11-only-when-UI-card-i.patch file://0001-uio_pruss1-Core-driver-addition.patch file://0002-uio_pruss2-Platform-changes.patch file://0003-uio_pruss3-Workarounds-put-into-core-code.patch file://0001-Supported-MMC2-interface-on-AM1808-board.patch file://0002-Supporting-Standard-SDIO-For-WL1271-DC-on-AM1808-EVM.patch file://0003-Added-wilink-driver-for-WL1271-on-AM1808-EVM.patch file://0004-Supported-AFE-for-UART1-on-AM1808-platform.patch file://0005-Modified-defconfig-for-WL1271-DC-support-on-AM1808.patch
+Description: sdio kernel module; TI WLAN 1271 SDIO interface
+OE: linux-omapl1
+HomePage: unknown
+Priority: optional
+
+
+Package: kernel-module-sit
+Version: 2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6
+Depends: update-modules, kernel-2.6.33-rc4, kernel-module-tunnel4, kernel-module-ipv6
+Section: kernel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 43642e22f81d9ce1dcd5f7727098997a
+Size: 8824
+Filename: kernel-module-sit_2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/linux-omapl1.git;protocol=git;branch=master file://defconfig file://0001-DA850-OMAP-L138-Enable-UART1-RTS-CTS-line-pinmuxing.patch file://0002-DA8xx-Force-DaVinci-UART-s-to-be-of-AR7-port-type.patch file://0003-Serial_8250-Modify-check-to-enable-AFE-for-AR7-port-.patch file://0004-DA850-OMAP-L138-Disable-modem-status-interrupts.patch file://0005-Serial_8250-Modify-the-AR7-port-RX-fifo-threshold.patch file://0006-da850-omap-l138-Correct-a-bug-while-checking-for-MMC.patch file://0007-da850-omap-l138-Configure-GP0-11-only-when-UI-card-i.patch file://0001-uio_pruss1-Core-driver-addition.patch file://0002-uio_pruss2-Platform-changes.patch file://0003-uio_pruss3-Workarounds-put-into-core-code.patch file://0001-Supported-MMC2-interface-on-AM1808-board.patch file://0002-Supporting-Standard-SDIO-For-WL1271-DC-on-AM1808-EVM.patch file://0003-Added-wilink-driver-for-WL1271-on-AM1808-EVM.patch file://0004-Supported-AFE-for-UART1-on-AM1808-platform.patch file://0005-Modified-defconfig-for-WL1271-DC-support-on-AM1808.patch
+Description: sit kernel module
+OE: linux-omapl1
+HomePage: unknown
+Priority: optional
+
+
+Package: kernel-module-smbfs
+Version: 2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6
+Depends: update-modules, kernel-2.6.33-rc4
+Section: kernel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 82073dc7f07280929c6ab764f251242c
+Size: 36420
+Filename: kernel-module-smbfs_2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/linux-omapl1.git;protocol=git;branch=master file://defconfig file://0001-DA850-OMAP-L138-Enable-UART1-RTS-CTS-line-pinmuxing.patch file://0002-DA8xx-Force-DaVinci-UART-s-to-be-of-AR7-port-type.patch file://0003-Serial_8250-Modify-check-to-enable-AFE-for-AR7-port-.patch file://0004-DA850-OMAP-L138-Disable-modem-status-interrupts.patch file://0005-Serial_8250-Modify-the-AR7-port-RX-fifo-threshold.patch file://0006-da850-omap-l138-Correct-a-bug-while-checking-for-MMC.patch file://0007-da850-omap-l138-Configure-GP0-11-only-when-UI-card-i.patch file://0001-uio_pruss1-Core-driver-addition.patch file://0002-uio_pruss2-Platform-changes.patch file://0003-uio_pruss3-Workarounds-put-into-core-code.patch file://0001-Supported-MMC2-interface-on-AM1808-board.patch file://0002-Supporting-Standard-SDIO-For-WL1271-DC-on-AM1808-EVM.patch file://0003-Added-wilink-driver-for-WL1271-on-AM1808-EVM.patch file://0004-Supported-AFE-for-UART1-on-AM1808-platform.patch file://0005-Modified-defconfig-for-WL1271-DC-support-on-AM1808.patch
+Description: smbfs kernel module
+OE: linux-omapl1
+HomePage: unknown
+Priority: optional
+
+
+Package: kernel-module-tiwlan-drv
+Version: 2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6
+Depends: update-modules, kernel-2.6.33-rc4, kernel-module-sdio
+Section: kernel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 9640f0a50e1bb8fe361b93b74fbc6967
+Size: 350156
+Filename: kernel-module-tiwlan-drv_2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/linux-omapl1.git;protocol=git;branch=master file://defconfig file://0001-DA850-OMAP-L138-Enable-UART1-RTS-CTS-line-pinmuxing.patch file://0002-DA8xx-Force-DaVinci-UART-s-to-be-of-AR7-port-type.patch file://0003-Serial_8250-Modify-check-to-enable-AFE-for-AR7-port-.patch file://0004-DA850-OMAP-L138-Disable-modem-status-interrupts.patch file://0005-Serial_8250-Modify-the-AR7-port-RX-fifo-threshold.patch file://0006-da850-omap-l138-Correct-a-bug-while-checking-for-MMC.patch file://0007-da850-omap-l138-Configure-GP0-11-only-when-UI-card-i.patch file://0001-uio_pruss1-Core-driver-addition.patch file://0002-uio_pruss2-Platform-changes.patch file://0003-uio_pruss3-Workarounds-put-into-core-code.patch file://0001-Supported-MMC2-interface-on-AM1808-board.patch file://0002-Supporting-Standard-SDIO-For-WL1271-DC-on-AM1808-EVM.patch file://0003-Added-wilink-driver-for-WL1271-on-AM1808-EVM.patch file://0004-Supported-AFE-for-UART1-on-AM1808-platform.patch file://0005-Modified-defconfig-for-WL1271-DC-support-on-AM1808.patch
+Description: tiwlan-drv kernel module; TI WLAN Embedded Station Driver
+OE: linux-omapl1
+HomePage: unknown
+Priority: optional
+
+
+Package: kernel-module-tunnel4
+Version: 2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6
+Depends: update-modules, kernel-2.6.33-rc4
+Section: kernel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 8922a7365f8e91331b809f7a3a72ec50
+Size: 3556
+Filename: kernel-module-tunnel4_2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/linux-omapl1.git;protocol=git;branch=master file://defconfig file://0001-DA850-OMAP-L138-Enable-UART1-RTS-CTS-line-pinmuxing.patch file://0002-DA8xx-Force-DaVinci-UART-s-to-be-of-AR7-port-type.patch file://0003-Serial_8250-Modify-check-to-enable-AFE-for-AR7-port-.patch file://0004-DA850-OMAP-L138-Disable-modem-status-interrupts.patch file://0005-Serial_8250-Modify-the-AR7-port-RX-fifo-threshold.patch file://0006-da850-omap-l138-Correct-a-bug-while-checking-for-MMC.patch file://0007-da850-omap-l138-Configure-GP0-11-only-when-UI-card-i.patch file://0001-uio_pruss1-Core-driver-addition.patch file://0002-uio_pruss2-Platform-changes.patch file://0003-uio_pruss3-Workarounds-put-into-core-code.patch file://0001-Supported-MMC2-interface-on-AM1808-board.patch file://0002-Supporting-Standard-SDIO-For-WL1271-DC-on-AM1808-EVM.patch file://0003-Added-wilink-driver-for-WL1271-on-AM1808-EVM.patch file://0004-Supported-AFE-for-UART1-on-AM1808-platform.patch file://0005-Modified-defconfig-for-WL1271-DC-support-on-AM1808.patch
+Description: tunnel4 kernel module
+OE: linux-omapl1
+HomePage: unknown
+Priority: optional
+
+
+Package: kernel-module-uio-pru
+Version: 2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6
+Depends: update-modules, kernel-2.6.33-rc4
+Section: kernel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 3b68cfee26bbcccc3400387193fb08c3
+Size: 4230
+Filename: kernel-module-uio-pru_2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/linux-omapl1.git;protocol=git;branch=master file://defconfig file://0001-DA850-OMAP-L138-Enable-UART1-RTS-CTS-line-pinmuxing.patch file://0002-DA8xx-Force-DaVinci-UART-s-to-be-of-AR7-port-type.patch file://0003-Serial_8250-Modify-check-to-enable-AFE-for-AR7-port-.patch file://0004-DA850-OMAP-L138-Disable-modem-status-interrupts.patch file://0005-Serial_8250-Modify-the-AR7-port-RX-fifo-threshold.patch file://0006-da850-omap-l138-Correct-a-bug-while-checking-for-MMC.patch file://0007-da850-omap-l138-Configure-GP0-11-only-when-UI-card-i.patch file://0001-uio_pruss1-Core-driver-addition.patch file://0002-uio_pruss2-Platform-changes.patch file://0003-uio_pruss3-Workarounds-put-into-core-code.patch file://0001-Supported-MMC2-interface-on-AM1808-board.patch file://0002-Supporting-Standard-SDIO-For-WL1271-DC-on-AM1808-EVM.patch file://0003-Added-wilink-driver-for-WL1271-on-AM1808-EVM.patch file://0004-Supported-AFE-for-UART1-on-AM1808-platform.patch file://0005-Modified-defconfig-for-WL1271-DC-support-on-AM1808.patch
+Description: uio-pru kernel module
+OE: linux-omapl1
+HomePage: unknown
+Priority: optional
+
+
+Package: kernel-module-xfrm6-mode-beet
+Version: 2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6
+Depends: update-modules, kernel-2.6.33-rc4, kernel-module-ipv6
+Section: kernel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 205d9d2a1e88373fa16294c8414c57d2
+Size: 3290
+Filename: kernel-module-xfrm6-mode-beet_2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/linux-omapl1.git;protocol=git;branch=master file://defconfig file://0001-DA850-OMAP-L138-Enable-UART1-RTS-CTS-line-pinmuxing.patch file://0002-DA8xx-Force-DaVinci-UART-s-to-be-of-AR7-port-type.patch file://0003-Serial_8250-Modify-check-to-enable-AFE-for-AR7-port-.patch file://0004-DA850-OMAP-L138-Disable-modem-status-interrupts.patch file://0005-Serial_8250-Modify-the-AR7-port-RX-fifo-threshold.patch file://0006-da850-omap-l138-Correct-a-bug-while-checking-for-MMC.patch file://0007-da850-omap-l138-Configure-GP0-11-only-when-UI-card-i.patch file://0001-uio_pruss1-Core-driver-addition.patch file://0002-uio_pruss2-Platform-changes.patch file://0003-uio_pruss3-Workarounds-put-into-core-code.patch file://0001-Supported-MMC2-interface-on-AM1808-board.patch file://0002-Supporting-Standard-SDIO-For-WL1271-DC-on-AM1808-EVM.patch file://0003-Added-wilink-driver-for-WL1271-on-AM1808-EVM.patch file://0004-Supported-AFE-for-UART1-on-AM1808-platform.patch file://0005-Modified-defconfig-for-WL1271-DC-support-on-AM1808.patch
+Description: xfrm6-mode-beet kernel module
+OE: linux-omapl1
+HomePage: unknown
+Priority: optional
+
+
+Package: kernel-module-xfrm6-mode-transport
+Version: 2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6
+Depends: update-modules, kernel-2.6.33-rc4
+Section: kernel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: d54e49d157f55e84b35dd159a795e36f
+Size: 2836
+Filename: kernel-module-xfrm6-mode-transport_2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/linux-omapl1.git;protocol=git;branch=master file://defconfig file://0001-DA850-OMAP-L138-Enable-UART1-RTS-CTS-line-pinmuxing.patch file://0002-DA8xx-Force-DaVinci-UART-s-to-be-of-AR7-port-type.patch file://0003-Serial_8250-Modify-check-to-enable-AFE-for-AR7-port-.patch file://0004-DA850-OMAP-L138-Disable-modem-status-interrupts.patch file://0005-Serial_8250-Modify-the-AR7-port-RX-fifo-threshold.patch file://0006-da850-omap-l138-Correct-a-bug-while-checking-for-MMC.patch file://0007-da850-omap-l138-Configure-GP0-11-only-when-UI-card-i.patch file://0001-uio_pruss1-Core-driver-addition.patch file://0002-uio_pruss2-Platform-changes.patch file://0003-uio_pruss3-Workarounds-put-into-core-code.patch file://0001-Supported-MMC2-interface-on-AM1808-board.patch file://0002-Supporting-Standard-SDIO-For-WL1271-DC-on-AM1808-EVM.patch file://0003-Added-wilink-driver-for-WL1271-on-AM1808-EVM.patch file://0004-Supported-AFE-for-UART1-on-AM1808-platform.patch file://0005-Modified-defconfig-for-WL1271-DC-support-on-AM1808.patch
+Description: xfrm6-mode-transport kernel module
+OE: linux-omapl1
+HomePage: unknown
+Priority: optional
+
+
+Package: kernel-module-xfrm6-mode-tunnel
+Version: 2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6
+Depends: update-modules, kernel-2.6.33-rc4, kernel-module-ipv6
+Section: kernel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: c56760735cee94b2b3fc83b41e679c8a
+Size: 3202
+Filename: kernel-module-xfrm6-mode-tunnel_2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/linux-omapl1.git;protocol=git;branch=master file://defconfig file://0001-DA850-OMAP-L138-Enable-UART1-RTS-CTS-line-pinmuxing.patch file://0002-DA8xx-Force-DaVinci-UART-s-to-be-of-AR7-port-type.patch file://0003-Serial_8250-Modify-check-to-enable-AFE-for-AR7-port-.patch file://0004-DA850-OMAP-L138-Disable-modem-status-interrupts.patch file://0005-Serial_8250-Modify-the-AR7-port-RX-fifo-threshold.patch file://0006-da850-omap-l138-Correct-a-bug-while-checking-for-MMC.patch file://0007-da850-omap-l138-Configure-GP0-11-only-when-UI-card-i.patch file://0001-uio_pruss1-Core-driver-addition.patch file://0002-uio_pruss2-Platform-changes.patch file://0003-uio_pruss3-Workarounds-put-into-core-code.patch file://0001-Supported-MMC2-interface-on-AM1808-board.patch file://0002-Supporting-Standard-SDIO-For-WL1271-DC-on-AM1808-EVM.patch file://0003-Added-wilink-driver-for-WL1271-on-AM1808-EVM.patch file://0004-Supported-AFE-for-UART1-on-AM1808-platform.patch file://0005-Modified-defconfig-for-WL1271-DC-support-on-AM1808.patch
+Description: xfrm6-mode-tunnel kernel module
+OE: linux-omapl1
+HomePage: unknown
+Priority: optional
+
+
+Package: kernel-module-xtkbd
+Version: 2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6
+Depends: update-modules, kernel-2.6.33-rc4
+Section: kernel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 6e7a1024b9c02d53e5668a47e01fda5a
+Size: 3778
+Filename: kernel-module-xtkbd_2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/linux-omapl1.git;protocol=git;branch=master file://defconfig file://0001-DA850-OMAP-L138-Enable-UART1-RTS-CTS-line-pinmuxing.patch file://0002-DA8xx-Force-DaVinci-UART-s-to-be-of-AR7-port-type.patch file://0003-Serial_8250-Modify-check-to-enable-AFE-for-AR7-port-.patch file://0004-DA850-OMAP-L138-Disable-modem-status-interrupts.patch file://0005-Serial_8250-Modify-the-AR7-port-RX-fifo-threshold.patch file://0006-da850-omap-l138-Correct-a-bug-while-checking-for-MMC.patch file://0007-da850-omap-l138-Configure-GP0-11-only-when-UI-card-i.patch file://0001-uio_pruss1-Core-driver-addition.patch file://0002-uio_pruss2-Platform-changes.patch file://0003-uio_pruss3-Workarounds-put-into-core-code.patch file://0001-Supported-MMC2-interface-on-AM1808-board.patch file://0002-Supporting-Standard-SDIO-For-WL1271-DC-on-AM1808-EVM.patch file://0003-Added-wilink-driver-for-WL1271-on-AM1808-EVM.patch file://0004-Supported-AFE-for-UART1-on-AM1808-platform.patch file://0005-Modified-defconfig-for-WL1271-DC-support-on-AM1808.patch
+Description: xtkbd kernel module; XT keyboard driver
+OE: linux-omapl1
+HomePage: unknown
+Priority: optional
+
+
+Package: kernel-modules
+Version: 2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6
+Recommends: kernel-module-crc-ccitt, kernel-module-crc-t10dif, kernel-module-xfrm6-mode-transport, kernel-module-sit, kernel-module-xfrm6-mode-beet, kernel-module-xfrm6-mode-tunnel, kernel-module-autofs4, kernel-module-smbfs, kernel-module-minix, kernel-module-nfsd, kernel-module-nls-utf8, kernel-module-nls-ascii, kernel-module-rng-core, kernel-module-loop, kernel-module-tiwlan-drv, kernel-module-atkbd, kernel-module-xtkbd, kernel-module-uio-pru, kernel-module-scsi-wait-scan
+Section: kernel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 77a588c7046b039034cec62319ab677d
+Size: 1264
+Filename: kernel-modules_2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/linux-omapl1.git;protocol=git;branch=master file://defconfig file://0001-DA850-OMAP-L138-Enable-UART1-RTS-CTS-line-pinmuxing.patch file://0002-DA8xx-Force-DaVinci-UART-s-to-be-of-AR7-port-type.patch file://0003-Serial_8250-Modify-check-to-enable-AFE-for-AR7-port-.patch file://0004-DA850-OMAP-L138-Disable-modem-status-interrupts.patch file://0005-Serial_8250-Modify-the-AR7-port-RX-fifo-threshold.patch file://0006-da850-omap-l138-Correct-a-bug-while-checking-for-MMC.patch file://0007-da850-omap-l138-Configure-GP0-11-only-when-UI-card-i.patch file://0001-uio_pruss1-Core-driver-addition.patch file://0002-uio_pruss2-Platform-changes.patch file://0003-uio_pruss3-Workarounds-put-into-core-code.patch file://0001-Supported-MMC2-interface-on-AM1808-board.patch file://0002-Supporting-Standard-SDIO-For-WL1271-DC-on-AM1808-EVM.patch file://0003-Added-wilink-driver-for-WL1271-on-AM1808-EVM.patch file://0004-Supported-AFE-for-UART1-on-AM1808-platform.patch file://0005-Modified-defconfig-for-WL1271-DC-support-on-AM1808.patch
+Description: Kernel modules meta package
+OE: linux-omapl1
+HomePage: unknown
+Priority: optional
+
+
+Package: kernel-vmlinux
+Version: 2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6
+Section: kernel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 90edc025d7b18475c4f5876a27c82753
+Size: 2707496
+Filename: kernel-vmlinux_2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/linux-omapl1.git;protocol=git;branch=master file://defconfig file://0001-DA850-OMAP-L138-Enable-UART1-RTS-CTS-line-pinmuxing.patch file://0002-DA8xx-Force-DaVinci-UART-s-to-be-of-AR7-port-type.patch file://0003-Serial_8250-Modify-check-to-enable-AFE-for-AR7-port-.patch file://0004-DA850-OMAP-L138-Disable-modem-status-interrupts.patch file://0005-Serial_8250-Modify-the-AR7-port-RX-fifo-threshold.patch file://0006-da850-omap-l138-Correct-a-bug-while-checking-for-MMC.patch file://0007-da850-omap-l138-Configure-GP0-11-only-when-UI-card-i.patch file://0001-uio_pruss1-Core-driver-addition.patch file://0002-uio_pruss2-Platform-changes.patch file://0003-uio_pruss3-Workarounds-put-into-core-code.patch file://0001-Supported-MMC2-interface-on-AM1808-board.patch file://0002-Supporting-Standard-SDIO-For-WL1271-DC-on-AM1808-EVM.patch file://0003-Added-wilink-driver-for-WL1271-on-AM1808-EVM.patch file://0004-Supported-AFE-for-UART1-on-AM1808-platform.patch file://0005-Modified-defconfig-for-WL1271-DC-support-on-AM1808.patch
+Description: Linux kernel for OMAPL1 EVM from PSP, based on linux-omapl1 kernel
+OE: linux-omapl1
+HomePage: unknown
+Priority: optional
+
+
+Package: kernel
+Version: 2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6
+Depends: kernel-2.6.33-rc4
+Section: kernel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: e8b045f0869f47fff9a68ab1a50d55ac
+Size: 1260
+Filename: kernel_2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52.6_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/linux-omapl1.git;protocol=git;branch=master file://defconfig file://0001-DA850-OMAP-L138-Enable-UART1-RTS-CTS-line-pinmuxing.patch file://0002-DA8xx-Force-DaVinci-UART-s-to-be-of-AR7-port-type.patch file://0003-Serial_8250-Modify-check-to-enable-AFE-for-AR7-port-.patch file://0004-DA850-OMAP-L138-Disable-modem-status-interrupts.patch file://0005-Serial_8250-Modify-the-AR7-port-RX-fifo-threshold.patch file://0006-da850-omap-l138-Correct-a-bug-while-checking-for-MMC.patch file://0007-da850-omap-l138-Configure-GP0-11-only-when-UI-card-i.patch file://0001-uio_pruss1-Core-driver-addition.patch file://0002-uio_pruss2-Platform-changes.patch file://0003-uio_pruss3-Workarounds-put-into-core-code.patch file://0001-Supported-MMC2-interface-on-AM1808-board.patch file://0002-Supporting-Standard-SDIO-For-WL1271-DC-on-AM1808-EVM.patch file://0003-Added-wilink-driver-for-WL1271-on-AM1808-EVM.patch file://0004-Supported-AFE-for-UART1-on-AM1808-platform.patch file://0005-Modified-defconfig-for-WL1271-DC-support-on-AM1808.patch
+Description: Linux kernel for OMAPL1 EVM from PSP, based on linux-omapl1 kernel
+OE: linux-omapl1
+HomePage: unknown
+Priority: optional
+
+
+Package: linux-omapl1-src
+Version: 2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52
+Section: kernel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: d21fe9f22a8120ee43d8c85cca6162c6
+Size: 89839176
+Filename: linux-omapl1-src_2.6.32+2.6.33-rc4-psp03.20.00.14.sdk-r52_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/linux-omapl1.git;protocol=git;branch=master 	file://defconfig      file://0001-DA850-OMAP-L138-Enable-UART1-RTS-CTS-line-pinmuxing.patch     file://0002-DA8xx-Force-DaVinci-UART-s-to-be-of-AR7-port-type.patch     file://0003-Serial_8250-Modify-check-to-enable-AFE-for-AR7-port-.patch     file://0004-DA850-OMAP-L138-Disable-modem-status-interrupts.patch     file://0005-Serial_8250-Modify-the-AR7-port-RX-fifo-threshold.patch     file://0006-da850-omap-l138-Correct-a-bug-while-checking-for-MMC.patch     file://0007-da850-omap-l138-Configure-GP0-11-only-when-UI-card-i.patch       	file://0001-uio_pruss1-Core-driver-addition.patch 	file://0002-uio_pruss2-Platform-changes.patch 	file://0003-uio_pruss3-Workarounds-put-into-core-code.patch 	  	file://0001-Supported-MMC2-interface-on-AM1808-board.patch 	file://0002-Supporting-Standard-SDIO-For-WL1271-DC-on-AM1808-EVM.patch 	file://0003-Added-wilink-driver-for-WL1271-on-AM1808-EVM.patch 	file://0004-Supported-AFE-for-UART1-on-AM1808-platform.patch 	file://0005-Modified-defconfig-for-WL1271-DC-support-on-AM1808.patch
+Description: Patched sources for linux-omapl1
+Priority: Optional
+
+
+Package: matrix-gui-common
+Version: 1.4-r7.6.6
+Recommends: am-sysinfo
+Section: multimedia
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 4c4bca5cb0883ce3a159e43ff8d74c4e
+Size: 1283416
+Filename: matrix-gui-common_1.4-r7.6.6_am180x-evm.ipk
+Source: svn://gforge.ti.com/svn/matrix_gui/;module=trunk;proto=https;user=anonymous;pswd=''
+Description: Common files for all versions of Matrix GUI
+OE: matrix-gui-common
+HomePage: https://gforge.ti.com/gf/project/matrix_gui/
+Priority: optional
+
+
+Package: matrix-gui-e
+Version: 1.3-r21.5.6
+Depends: matrix-gui-common, update-rc.d, libpng12-0, libfreetype6, libz1, libgthread-2.0-0, libqtwebkite4, libphonone4, libqtdbuse4, libqtxmle4, libqtguie4, libqtnetworke4, libqtcoree4, libglib-2.0-0, libc6, libstdc++6, libgcc1
+Recommends: qt4-embedded-plugin-mousedriver-tslib, qt4-embedded-fonts
+Section: multimedia
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: da83e5adfc77fc9ae830639e066a7796
+Size: 24198
+Filename: matrix-gui-e_1.3-r21.5.6_am180x-evm.ipk
+Source: svn://gforge.ti.com/svn/matrix_gui/;module=trunk;proto=https;user=anonymous;pswd=''
+Description: Matrix GUI for Qt Embedded
+OE: matrix-gui-e
+HomePage: https://gforge.ti.com/gf/project/matrix_gui/
+Priority: optional
+
+
+Package: pinmux-utility
+Version: 1.1.3.0-r1.1.6
+Section: base
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 68416ff6cbc8f586e1d83c0a63e2aa70
+Size: 40286
+Filename: pinmux-utility_1.1.3.0-r1.1.6_am180x-evm.ipk
+Source: https://gforge.ti.com/gf/download/frsrelease/461/4210/Pin_Setup_AM18xx_01_00_1076_03.zip;name=omapl138
+Description: Texas Instruments Pinmux Utility
+OE: pinmux-utility
+HomePage: unknown
+Priority: optional
+
+
+Package: pointercal
+Version: 0.0-r22.6
+Section: base
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 7412ce9010947b71b7b8a04dd8c24a6c
+Size: 644
+Filename: pointercal_0.0-r22.6_am180x-evm.ipk
+Source: file://pointercal
+Description: Touchscreen calibration data
+OE: pointercal
+HomePage: unknown
+Priority: optional
+
+
+Package: task-arago-tisdk-addons
+Version: 1.0-r7.6
+Depends: am-sysinfo, am-benchmarks, ti-pru-sw-examples, matrix-tui
+Section: base
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 0ed91168f9733cb5cc609e91fb5773cd
+Size: 750
+Filename: task-arago-tisdk-addons_1.0-r7.6_am180x-evm.ipk
+Source: file:///home/schuyler_2/am_builds/arago/recipes/tasks/task-arago-tisdk-addons.bb
+Description: Task to install additional utilities/demos for SDKs
+OE: task-arago-tisdk-addons
+HomePage: unknown
+Priority: optional
+
+
+Package: task-arago-tisdk-bsp
+Version: 1.0-r17.6
+Depends: bluez4, bluez4-agent, libasound-module-bluez, bluez-hcidump, libopenobex1, openobex-apps, obexftp, ussp-push
+Recommends: kernel-modules, kernel-image-2.6.33-rc4, kernel-vmlinux, u-boot
+Section: base
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 3b62cae0b526bfd9e37f45eb14a1ba90
+Size: 812
+Filename: task-arago-tisdk-bsp_1.0-r17.6_am180x-evm.ipk
+Source: file:///home/schuyler_2/am_builds/arago/recipes/tasks/task-arago-tisdk-bsp.bb
+Description: Task to install Board Support Package binaries on am180x-evm
+OE: task-arago-tisdk-bsp
+HomePage: unknown
+Priority: optional
+
+
+Package: task-arago-tisdk-crypto
+Version: 1.0-r5.6
+Depends: openssl, wpa-supplicant, dropbear, openssh-sftp-server, openssl-misc, wpa-gui-e, wl1271-bt-cli, wl1271-wlan-cli
+Section: base
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: b4b5a56712ba95b4bb7fc9758b0a1046
+Size: 770
+Filename: task-arago-tisdk-crypto_1.0-r5.6_am180x-evm.ipk
+Source: file:///home/schuyler_2/am_builds/arago/recipes/tasks/task-arago-tisdk-crypto.bb
+Description: Task to install crypto packages into target FS
+OE: task-arago-tisdk-crypto
+HomePage: unknown
+Priority: optional
+
+
+Package: task-arago-tisdk-graphics
+Version: 1.0-r10.6
+Depends: task-arago-qte, qt4-embedded-plugin-phonon-backend-gstreamer, qt4-embedded-plugin-imageformat-gif, qt4-embedded-plugin-imageformat-jpeg, libxml2, matrix-gui-e, qt-embedded-widgets-demo
+Section: base
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 8dfbffd9245011faf75e3074af0e632d
+Size: 784
+Filename: task-arago-tisdk-graphics_1.0-r10.6_am180x-evm.ipk
+Source: file:///home/schuyler_2/am_builds/arago/recipes/tasks/task-arago-tisdk-graphics.bb
+Description: Task to install graphics binaries on am180x-evm
+OE: task-arago-tisdk-graphics
+HomePage: unknown
+Priority: optional
+
+
+Package: task-arago-toolchain-tisdk-addons-host
+Version: 1.0-r7.6
+Depends: am-sysinfo-src, am-benchmarks-src, ti-pru-sw-examples-src
+Section: base
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 431d8367854b0c1b54ccae7ed74c3d85
+Size: 762
+Filename: task-arago-toolchain-tisdk-addons-host_1.0-r7.6_am180x-evm.ipk
+Source: file:///home/schuyler_2/am_builds/arago/recipes/tasks/task-arago-toolchain-tisdk-addons-host.bb
+Description: Task to install sources for additional utilities/demos for SDKs
+OE: task-arago-toolchain-tisdk-addons-host
+HomePage: unknown
+Priority: optional
+
+
+Package: task-arago-toolchain-tisdk-bsp-host
+Version: 1.0-r33.6
+Recommends: ti-tisdk-licenses-src, u-boot-src, ti-tisdk-setup, ti-tisdk-mksdboot, linux-omapl1-src, pinmux-utility
+Section: base
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 52e929cfff58c37b5936f4b5ce042da2
+Size: 796
+Filename: task-arago-toolchain-tisdk-bsp-host_1.0-r33.6_am180x-evm.ipk
+Source: file:///home/schuyler_2/am_builds/arago/recipes/tasks/task-arago-toolchain-tisdk-bsp-host.bb
+Description: Task to build and install Board Support Package sources (or development header) packages on host
+OE: task-arago-toolchain-tisdk-bsp-host
+HomePage: unknown
+Priority: optional
+
+
+Package: task-arago-toolchain-tisdk-crypto-host
+Version: 1.0-r1.6
+Depends: wl1271-wlan-cli-src
+Section: base
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 38a92e5e014503397e45a610c5c55f60
+Size: 726
+Filename: task-arago-toolchain-tisdk-crypto-host_1.0-r1.6_am180x-evm.ipk
+Source: file:///home/schuyler_2/am_builds/arago/recipes/tasks/task-arago-toolchain-tisdk-crypto-host.bb
+Description: Task to install crypto sources in SDK
+OE: task-arago-toolchain-tisdk-crypto-host
+HomePage: unknown
+Priority: optional
+
+
+Package: task-arago-toolchain-tisdk-crypto-target
+Version: 1.0-r2.6
+Depends: openssl-dev, wpa-supplicant-dev, ocf-linux-dev
+Section: base
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 91c7211c095be62a33fb832cdd21fd4a
+Size: 744
+Filename: task-arago-toolchain-tisdk-crypto-target_1.0-r2.6_am180x-evm.ipk
+Source: file:///home/schuyler_2/am_builds/arago/recipes/tasks/task-arago-toolchain-tisdk-crypto-target.bb
+Description: Task to install crypto dev packages in SDK
+OE: task-arago-toolchain-tisdk-crypto-target
+HomePage: unknown
+Priority: optional
+
+
+Package: task-arago-toolchain-tisdk-graphics-host
+Version: 1.0-r6.6
+Depends: matrix-gui-e-src
+Section: base
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 1044df3f4062010c1335f0137e1d65d3
+Size: 728
+Filename: task-arago-toolchain-tisdk-graphics-host_1.0-r6.6_am180x-evm.ipk
+Source: file:///home/schuyler_2/am_builds/arago/recipes/tasks/task-arago-toolchain-tisdk-graphics-host.bb
+Description: Task to install graphics application sources on host
+OE: task-arago-toolchain-tisdk-graphics-host
+HomePage: unknown
+Priority: optional
+
+
+Package: task-arago-toolchain-tisdk-graphics-target
+Version: 1.0-r5.6
+Depends: qt4-embedded-dev, qt4-embedded-mkspecs, libphonone-dev, libqt3supporte-dev, libqtassistantcliente-dev, libqtclucenee-dev, libqtcoree-dev, libqtdbuse-dev, libqtdesignercomponentse-dev, libqtdesignere-dev, libqt-embeddeduitools4-dev, libqtguie-dev, libqthelpe-dev, libqtnetworke-dev, libqtscripte-dev, libqtscripttoolse-dev, libqtsvge-dev, libqtteste-dev, libqtwebkite-dev, libqtxmle-dev
+Section: base
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 907b5ea9d101e9b43f346b44e79a7d33
+Size: 850
+Filename: task-arago-toolchain-tisdk-graphics-target_1.0-r5.6_am180x-evm.ipk
+Source: file:///home/schuyler_2/am_builds/arago/recipes/tasks/task-arago-toolchain-tisdk-graphics-target.bb
+Description: Task to install graphics binaries on sdk target
+OE: task-arago-toolchain-tisdk-graphics-target
+HomePage: unknown
+Priority: optional
+
+
+Package: ti-pru-sw-edma-driver
+Version: 1.00.00-r52.6
+Depends: kernel, update-modules
+Section: base
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 3075c23e4f1a3c2d4c4a9b9b1105aa96
+Size: 3936
+Filename: ti-pru-sw-edma-driver_1.00.00-r52.6_am180x-evm.ipk
+Source: svn://gforge.ti.com/svn/pru_sw/;module=trunk;proto=https;user=anonymous;pswd=''
+Description: Builds eDMA module used by eDMA libraries for PRU sw example applications
+OE: ti-pru-sw-edma-driver
+HomePage: https://gforge.ti.com/gf/project/pru_sw/
+Priority: optional
+
+
+Package: ti-tisdk-makefile
+Version: 1.0-r74.6
+Section: base
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 259fb3d2e56cbb6649007b8cf4608052
+Size: 1346
+Filename: ti-tisdk-makefile_1.0-r74.6_am180x-evm.ipk
+Source: file://Makefile file://Rules.make
+Description: Package contain Makefile and Rule.make used for building DVSDK components
+OE: ti-tisdk-makefile
+HomePage: unknown
+Priority: optional
+
+
+Package: ti-tisdk-mksdboot
+Version: 1.0-r28.6
+Section: base
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: eb030683c8fc511a38d466cfb58e2f41
+Size: 411710
+Filename: ti-tisdk-mksdboot_1.0-r28.6_am180x-evm.ipk
+Source: file://mksdboot.sh file://setup.htm file://top_am180x_evm.png file://README.boot.scr file://windows_users.htm
+Description: Scripts to create bootable SD card for am180x-evm
+OE: ti-tisdk-mksdboot
+HomePage: unknown
+Priority: optional
+
+
+Package: ti-tisdk-setup
+Version: 1.0-r27.6
+Section: base
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 521481087d323e567a989a9948eee1d4
+Size: 5962
+Filename: ti-tisdk-setup_1.0-r27.6_am180x-evm.ipk
+Source: file://setup.sh file://common.sh file://setup-host-check.sh file://setup-minicom.sh file://setup-package-install.sh file://setup-targetfs-nfs.sh file://setup-tftp.sh file://setup-uboot-env-am18x.sh
+Description: Package containing scripts to setup the development host and target board
+OE: ti-tisdk-setup
+HomePage: unknown
+Priority: optional
+
+
+Package: u-boot-src
+Version: 2009.11-psp03.20.00.13-r3
+Section: bootloaders
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 06b6614dbb50df1b8613ba480c0a3740
+Size: 12384034
+Filename: u-boot-src_2009.11-psp03.20.00.13-r3_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/u-boot-omapl1.git;protocol=git;branch=master
+Description: Patched sources for u-boot
+Priority: Optional
+
+
+Package: u-boot
+Version: 2009.11-psp03.20.00.13-r3.6
+Section: bootloaders
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 1283ff22e0ab05b8b2ebcfa4c3ed9119
+Size: 94708
+Filename: u-boot_2009.11-psp03.20.00.13-r3.6_am180x-evm.ipk
+Source: git://arago-project.org/git/projects/u-boot-omapl1.git;protocol=git;branch=master
+Description: u-boot bootloader for OMAPL1 devices
+OE: u-boot
+HomePage: http://www.denx.de/wiki/U-Boot/WebHome
+Priority: optional
+
+
+Package: wl1271-bt-cli
+Version: 1.0-r1.6
+Depends: bluez4, libopenobex1, ussp-push, obexftp, bluez-hcidump, wl1271-bt-enable, libopenobex1, bluez4, libgcc1, libc6
+Section: network
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 01f2521770d495c76ec7e7c624eb369a
+Size: 23467688
+Filename: wl1271-bt-cli_1.0-r1.6_am180x-evm.ipk
+Source: http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/ecs/WL1271_Linux_SDK/Demos/wl1271-demos_v1.tar
+Description: A demo application for bluetooth on WL1271 chipset
+OE: wl1271-bt-cli
+HomePage: unknown
+Priority: optional
+
+
+Package: wl1271-bt-enable
+Version: 1.0-r52c.6
+Depends: kernel, update-modules
+Section: network
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 3003fea4c051d8d6ae9413988358c7de
+Size: 2084
+Filename: wl1271-bt-enable_1.0-r52c.6_am180x-evm.ipk
+Source: http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/ecs/WL1271_Linux_SDK/Demos/wl1271-demos_v1.tar
+Description: Bluetooth enable for WL1271 chipset
+OE: wl1271-bt-enable
+HomePage: unknown
+Priority: optional
+
+
+Package: wl1271-wlan-cli
+Version: 1.0-r1.6
+Depends: wpa-supplicant, openssl
+Section: network
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 5781741e5bf68e0186733180d5628728
+Size: 694952
+Filename: wl1271-wlan-cli_1.0-r1.6_am180x-evm.ipk
+Source: http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/ecs/WL1271_Linux_SDK/Demos/wl1271-demos_v1.tar
+Description: A demo application for wilink on WL1271 chipset
+OE: wl1271-wlan-cli
+HomePage: unknown
+Priority: optional
+
+
+Package: wpa-supplicant-dev
+Version: 0.5.7-r3-arago1.6
+Depends: wpa-supplicant
+Replaces: wpa-supplicant-cli
+Recommends: openssl-dev, libcrypto-dev, libgcc1-dev, libc6-dev, wpa-supplicant-dev
+Section: devel
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: d3280d33d017c141a8c34f557290a0ee
+Size: 25374
+Filename: wpa-supplicant-dev_0.5.7-r3-arago1.6_am180x-evm.ipk
+Source: http://hostap.epitest.fi/releases/wpa_supplicant-0.5.7.tar.gz file://wpa_suppl.diff file://defconfig-openssl file://ifupdown.sh file://functions.sh
+Description: A Client for Wi-Fi Protected Access (WPA).
+OE: wpa-supplicant
+HomePage: http://hostap.epitest.fi/wpa_supplicant/
+Priority: optional
+
+
+Package: wpa-supplicant-passphrase
+Version: 0.5.7-r3-arago1.6
+Depends: libcrypto1.0.0, libgcc1, libc6
+Replaces: wpa-supplicant-cli
+Section: network
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 0d07d3bc5d418e9ac2d4b7f5712ee292
+Size: 8520
+Filename: wpa-supplicant-passphrase_0.5.7-r3-arago1.6_am180x-evm.ipk
+Source: http://hostap.epitest.fi/releases/wpa_supplicant-0.5.7.tar.gz file://wpa_suppl.diff file://defconfig-openssl file://ifupdown.sh file://functions.sh
+Description: A Client for Wi-Fi Protected Access (WPA).
+OE: wpa-supplicant
+HomePage: http://hostap.epitest.fi/wpa_supplicant/
+Priority: optional
+
+
+Package: wpa-supplicant
+Version: 0.5.7-r3-arago1.6
+Depends: libgcc1, libc6
+Replaces: wpa-supplicant-cli
+Recommends: wpa-supplicant-passphrase
+Section: network
+Architecture: am180x-evm
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 100048d9692230109b7cd824aca2bcc7
+Size: 928544
+Filename: wpa-supplicant_0.5.7-r3-arago1.6_am180x-evm.ipk
+Source: http://hostap.epitest.fi/releases/wpa_supplicant-0.5.7.tar.gz file://wpa_suppl.diff file://defconfig-openssl file://ifupdown.sh file://functions.sh
+Description: A Client for Wi-Fi Protected Access (WPA).
+OE: wpa-supplicant
+HomePage: http://hostap.epitest.fi/wpa_supplicant/
+Priority: optional
+
+

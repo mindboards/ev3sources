@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-hwt">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Haansoft Hangul document template</comment>
+  <comment xml:lang="be@latin">Šablon dakumentu Haansoft Hangul</comment>
+  <comment xml:lang="bg">Шаблон за документ — Haansoft Hangul</comment>
+  <comment xml:lang="ca">plantilla de document Haansoft Hangul</comment>
+  <comment xml:lang="cs">Šablona dokumentu Haansoft Hangul</comment>
+  <comment xml:lang="de">Haansoft Hangul-Dokumentenvorlage</comment>
+  <comment xml:lang="es">plantilla de documento de Haansoft Hangul</comment>
+  <comment xml:lang="eu">Haansoft Hangul dokumentuaren txantiloia</comment>
+  <comment xml:lang="fi">Haansoft Hanglu -asiakirjamalli</comment>
+  <comment xml:lang="fr">modèle de document Haansoft Hangul</comment>
+  <comment xml:lang="ga">teimpléad cháipéis Haansoft Hangul</comment>
+  <comment xml:lang="hu">Haansoft hangul dokumentumsablon</comment>
+  <comment xml:lang="id">Templat dokumen Haansoft Hangul</comment>
+  <comment xml:lang="it">Modello documento Haansoft Hangul</comment>
+  <comment xml:lang="ko">한소프트 한글 문서 틀</comment>
+  <comment xml:lang="lt">Haansoft Hangul dokumento šablonas</comment>
+  <comment xml:lang="nb">Haansoft Hangul-dokumentmal</comment>
+  <comment xml:lang="nl">Haansoft Hangul-documentsjabloon</comment>
+  <comment xml:lang="pl">Szablon dokumentu Haansoft Hangul</comment>
+  <comment xml:lang="pt_BR">Modelo de documento do Haansoft Hangul</comment>
+  <comment xml:lang="ru">шаблон документа Haansoft Hangul</comment>
+  <comment xml:lang="sv">Haansoft Hangul-dokumentmall</comment>
+  <comment xml:lang="uk">Шаблон документу Haansoft Hangul</comment>
+  <comment xml:lang="vi">Mẫu tài liệu Hangul Haansoft</comment>
+  <generic-icon name="x-office-document"/>
+  <alias type="application/vnd.haansoft-hwt"/>
+</mime-type>

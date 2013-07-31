@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-7z-compressed">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>7-zip archive</comment>
+  <comment xml:lang="be@latin">Archiŭ 7-zip</comment>
+  <comment xml:lang="ca">arxiu 7-zip</comment>
+  <comment xml:lang="cs">Archiv 7-zip</comment>
+  <comment xml:lang="es">archivador 7-zip</comment>
+  <comment xml:lang="fi">7-zip-arkisto</comment>
+  <comment xml:lang="fr">archive 7-zip</comment>
+  <comment xml:lang="ga">cartlann 7-zip</comment>
+  <comment xml:lang="hu">7-zip archívum</comment>
+  <comment xml:lang="id">Arsip 7-zip</comment>
+  <comment xml:lang="it">Archivio 7-zip</comment>
+  <comment xml:lang="ko">7-Zip 압축파일</comment>
+  <comment xml:lang="lt">7-zip archyvas</comment>
+  <comment xml:lang="nb">7-zip-arkiv</comment>
+  <comment xml:lang="nl">7-zip-archief</comment>
+  <comment xml:lang="pt_BR">Pacote 7-zip</comment>
+  <comment xml:lang="ru">архив 7-zip</comment>
+  <comment xml:lang="sv">7-zip-arkiv</comment>
+  <comment xml:lang="vi">Kho nén 7-zip</comment>
+  <generic-icon name="package-x-generic"/>
+</mime-type>

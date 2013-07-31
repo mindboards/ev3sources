@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/javascript">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>JavaScript program</comment>
+  <comment xml:lang="be@latin">Prahrama JavaScript</comment>
+  <comment xml:lang="bg">Програма на JavaScript</comment>
+  <comment xml:lang="ca">programa JavaScript</comment>
+  <comment xml:lang="cs">Program v JavaScriptu</comment>
+  <comment xml:lang="da">JavaScript-program</comment>
+  <comment xml:lang="de">JavaScript-Programm</comment>
+  <comment xml:lang="el">πρόγραμμα JavaScript</comment>
+  <comment xml:lang="es">programa en JavaScript</comment>
+  <comment xml:lang="eu">JavaScript programa</comment>
+  <comment xml:lang="fi">JavaScript-ohjelma</comment>
+  <comment xml:lang="fr">programme JavaScript</comment>
+  <comment xml:lang="ga">ríomhchlár JavaScript</comment>
+  <comment xml:lang="hu">JavaScript-program</comment>
+  <comment xml:lang="id">Program JavaScript</comment>
+  <comment xml:lang="it">Programma JavaScript</comment>
+  <comment xml:lang="ja">JavaScript プログラム</comment>
+  <comment xml:lang="ko">자바스크립트 프로그램</comment>
+  <comment xml:lang="lt">JavaScript programa</comment>
+  <comment xml:lang="ms">Program JavaScript</comment>
+  <comment xml:lang="nb">JavaScript-program</comment>
+  <comment xml:lang="nl">JavaScript-programma</comment>
+  <comment xml:lang="pl">Pogram JavaScript</comment>
+  <comment xml:lang="pt_BR">Programa JavaScript</comment>
+  <comment xml:lang="ru">программа JavaScript</comment>
+  <comment xml:lang="sv">JavaScript-program</comment>
+  <comment xml:lang="uk">Програма на мові JavaScript</comment>
+  <comment xml:lang="vi">Chương trình JavaScript</comment>
+  <alias type="application/x-javascript"/>
+  <alias type="text/javascript"/>
+  <sub-class-of type="text/plain"/>
+  <generic-icon name="text-x-script"/>
+</mime-type>

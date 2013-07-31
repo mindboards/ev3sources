@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/zip">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Zip archive</comment>
+  <comment xml:lang="az">Zip arxivi</comment>
+  <comment xml:lang="be@latin">Archiŭ zip</comment>
+  <comment xml:lang="bg">Архив — zip</comment>
+  <comment xml:lang="ca">arxiu zip</comment>
+  <comment xml:lang="cs">Archiv ZIP</comment>
+  <comment xml:lang="cy">Archif ZIP</comment>
+  <comment xml:lang="es">archivador Zip</comment>
+  <comment xml:lang="eu">Zip artxiboa</comment>
+  <comment xml:lang="fi">Zip-arkisto</comment>
+  <comment xml:lang="fr">archive zip</comment>
+  <comment xml:lang="ga">cartlann Zip</comment>
+  <comment xml:lang="hu">Zip archívum</comment>
+  <comment xml:lang="id">Arsip Zip</comment>
+  <comment xml:lang="it">Archivio zip</comment>
+  <comment xml:lang="ko">zip 압축파일</comment>
+  <comment xml:lang="lt">Zip archyvas</comment>
+  <comment xml:lang="nb">Zip-arkiv</comment>
+  <comment xml:lang="nl">Zip-archief</comment>
+  <comment xml:lang="pt_BR">Pacote Zip</comment>
+  <comment xml:lang="ru">архив Zip</comment>
+  <comment xml:lang="sv">Zip-arkiv</comment>
+  <comment xml:lang="vi">Kho nén zip</comment>
+  <alias type="application/x-zip-compressed"/>
+  <generic-icon name="package-x-generic"/>
+</mime-type>

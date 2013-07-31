@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/x-aifc">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>AIFC audio</comment>
+  <comment xml:lang="az">AIFC audio faylı</comment>
+  <comment xml:lang="be@latin">Aŭdyjo AIFC</comment>
+  <comment xml:lang="bg">Аудио — AIFC</comment>
+  <comment xml:lang="ca">àudio AIFC</comment>
+  <comment xml:lang="cs">Zvuk AIFC</comment>
+  <comment xml:lang="cy">Sain AIFC</comment>
+  <comment xml:lang="da">AIFC-lyd</comment>
+  <comment xml:lang="de">AIFC-Audio</comment>
+  <comment xml:lang="el">ήχος AIFC</comment>
+  <comment xml:lang="en_GB">AIFC audio</comment>
+  <comment xml:lang="eo">AIFC-aŭdio</comment>
+  <comment xml:lang="es">audio AIFC</comment>
+  <comment xml:lang="eu">AIFC audioa</comment>
+  <comment xml:lang="fi">AIFC-ääni</comment>
+  <comment xml:lang="fr">audio AIFC</comment>
+  <comment xml:lang="ga">fuaim AIFC</comment>
+  <comment xml:lang="hu">AIFC hang</comment>
+  <comment xml:lang="id">Audio AIFC</comment>
+  <comment xml:lang="it">Audio AIFC</comment>
+  <comment xml:lang="ja">AIFC オーディオ</comment>
+  <comment xml:lang="ko">AIFC 오디오</comment>
+  <comment xml:lang="lt">AIFC garsas</comment>
+  <comment xml:lang="ms">Audio AIFC</comment>
+  <comment xml:lang="nb">AIFC-lyd</comment>
+  <comment xml:lang="nl">AIFC-audio</comment>
+  <comment xml:lang="nn">AIFC-lyd</comment>
+  <comment xml:lang="pl">Plik dźwiękowy AIFC</comment>
+  <comment xml:lang="pt">áudio AIFC</comment>
+  <comment xml:lang="pt_BR">Áudio AIFC</comment>
+  <comment xml:lang="ru">AIFC аудио</comment>
+  <comment xml:lang="sq">Audio AIFC</comment>
+  <comment xml:lang="sr">AIFC звучни запис</comment>
+  <comment xml:lang="sv">AIFC-ljud</comment>
+  <comment xml:lang="uk">Звук AIFC</comment>
+  <comment xml:lang="vi">Âm thanh AIFC</comment>
+  <comment xml:lang="zh_CN">AIFC 音频</comment>
+  <comment xml:lang="zh_TW">AIFC 音效</comment>
+</mime-type>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-uri">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>resource location</comment>
+  <comment xml:lang="be@latin">pałažeńnie resursu</comment>
+  <comment xml:lang="bg">Местоположение на ресурс</comment>
+  <comment xml:lang="ca">localització de recurs</comment>
+  <comment xml:lang="cs">Umístění zdroje</comment>
+  <comment xml:lang="da">resurseplacering</comment>
+  <comment xml:lang="de">Ressourcenort</comment>
+  <comment xml:lang="el">τοποθεσία πόρου</comment>
+  <comment xml:lang="en_GB">resource location</comment>
+  <comment xml:lang="eo">loko de risurco</comment>
+  <comment xml:lang="es">ubicación del recurso</comment>
+  <comment xml:lang="eu">baliabidearen kokalekua</comment>
+  <comment xml:lang="fi">resurssisijainti</comment>
+  <comment xml:lang="fr">localisation de ressource</comment>
+  <comment xml:lang="ga">suíomh acmhainne</comment>
+  <comment xml:lang="hu">erőforrás-hely</comment>
+  <comment xml:lang="id">lokasi sumber daya</comment>
+  <comment xml:lang="it">Posizione risorsa</comment>
+  <comment xml:lang="ja">リソース場所</comment>
+  <comment xml:lang="ko">자원 위치</comment>
+  <comment xml:lang="lt">resurso vieta</comment>
+  <comment xml:lang="ms">Lokasi sumber</comment>
+  <comment xml:lang="nb">ressurslokasjon</comment>
+  <comment xml:lang="nl">bronlocatie</comment>
+  <comment xml:lang="nn">ressursplassering</comment>
+  <comment xml:lang="pl">położenie zasobu</comment>
+  <comment xml:lang="pt">localização de recurso</comment>
+  <comment xml:lang="pt_BR">localização de recurso</comment>
+  <comment xml:lang="sq">vendodhja e materialit</comment>
+  <comment xml:lang="sr">путања ресурса</comment>
+  <comment xml:lang="sv">resursplats</comment>
+  <comment xml:lang="uk">розташування ресурсу</comment>
+  <comment xml:lang="vi">địa điểm tài nguyên</comment>
+  <comment xml:lang="zh_CN">资源位置</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/x-aiffc">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>AIFF audio</comment>
+  <comment xml:lang="az">AIFF audio faylı</comment>
+  <comment xml:lang="be@latin">Aŭdyjo AIFF</comment>
+  <comment xml:lang="bg">Аудио — AIFF</comment>
+  <comment xml:lang="ca">àudio AIFF</comment>
+  <comment xml:lang="cs">Zvuk AIFF</comment>
+  <comment xml:lang="cy">Sain AIFF</comment>
+  <comment xml:lang="da">AIFC-lyd</comment>
+  <comment xml:lang="de">AIFF-Audio</comment>
+  <comment xml:lang="el">Ήχος AIFF</comment>
+  <comment xml:lang="en_GB">AIFF audio</comment>
+  <comment xml:lang="eo">AIFF-aŭdio</comment>
+  <comment xml:lang="es">audio AIFF</comment>
+  <comment xml:lang="eu">AIFF audioa</comment>
+  <comment xml:lang="fi">AIFF-ääni</comment>
+  <comment xml:lang="fr">audio AIFF</comment>
+  <comment xml:lang="ga">fuaim AIFF</comment>
+  <comment xml:lang="hu">AIFF hang</comment>
+  <comment xml:lang="id">Audio AIFF</comment>
+  <comment xml:lang="it">Audio AIFF</comment>
+  <comment xml:lang="ja">AIFF オーディオ</comment>
+  <comment xml:lang="ko">AIFF 오디오</comment>
+  <comment xml:lang="lt">AIFF garsas</comment>
+  <comment xml:lang="ms">Audio AIFF</comment>
+  <comment xml:lang="nb">AIFF-lyd</comment>
+  <comment xml:lang="nl">AIFF-audio</comment>
+  <comment xml:lang="nn">AIFF-lyd</comment>
+  <comment xml:lang="pl">Plik dźwiękowy AIFF</comment>
+  <comment xml:lang="pt">áudio AIFF</comment>
+  <comment xml:lang="pt_BR">Áudio AIFF</comment>
+  <comment xml:lang="ru">AIFF аудио</comment>
+  <comment xml:lang="sq">Audio AIFF</comment>
+  <comment xml:lang="sr">AIFF звучни запис</comment>
+  <comment xml:lang="sv">AIFF-ljud</comment>
+  <comment xml:lang="uk">Звук AIFF</comment>
+  <comment xml:lang="vi">Âm thanh AIFF</comment>
+  <comment xml:lang="zh_CN">AIFF 音频</comment>
+  <comment xml:lang="zh_TW">AIFF 音效</comment>
+</mime-type>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-rgb">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>RGB image</comment>
+  <comment xml:lang="az">RGB rəsmi</comment>
+  <comment xml:lang="be@latin">Vyjava RGB</comment>
+  <comment xml:lang="bg">Изображение — RGB</comment>
+  <comment xml:lang="ca">imatge RGB</comment>
+  <comment xml:lang="cs">Obrázek RGB</comment>
+  <comment xml:lang="cy">Delwedd RGB</comment>
+  <comment xml:lang="da">RGB-billede</comment>
+  <comment xml:lang="de">RGB-Bild</comment>
+  <comment xml:lang="el">εικόνα RGB</comment>
+  <comment xml:lang="en_GB">RGB image</comment>
+  <comment xml:lang="eo">RGB-bildo</comment>
+  <comment xml:lang="es">imagen RGB</comment>
+  <comment xml:lang="eu">RGB irudia</comment>
+  <comment xml:lang="fi">RGB-kuva</comment>
+  <comment xml:lang="fr">image RGB</comment>
+  <comment xml:lang="ga">íomhá RGB</comment>
+  <comment xml:lang="hu">RGB-kép</comment>
+  <comment xml:lang="id">Citra RGB</comment>
+  <comment xml:lang="it">Immagine RGB</comment>
+  <comment xml:lang="ja">RGB 画像</comment>
+  <comment xml:lang="ko">RGB 그림</comment>
+  <comment xml:lang="lt">RGB paveikslėlis</comment>
+  <comment xml:lang="ms">Imej RGB</comment>
+  <comment xml:lang="nb">RGB-bilde</comment>
+  <comment xml:lang="nl">RGB-afbeelding</comment>
+  <comment xml:lang="nn">RGB-bilete</comment>
+  <comment xml:lang="pl">Obraz RGB</comment>
+  <comment xml:lang="pt">imagem RGB</comment>
+  <comment xml:lang="pt_BR">Imagem RGB</comment>
+  <comment xml:lang="sq">Figurë RGB</comment>
+  <comment xml:lang="sr">RGB слика</comment>
+  <comment xml:lang="sv">RGB-bild</comment>
+  <comment xml:lang="uk">Зображення RGB</comment>
+  <comment xml:lang="vi">Ảnh kiểu RGB</comment>
+  <comment xml:lang="zh_CN">RGB 图像</comment>
+  <comment xml:lang="zh_TW">RGB 圖片</comment>
+</mime-type>

@@ -1,0 +1,12 @@
+Package: libpthread-stubs0
+Version: 0.2-r2.0.6
+Description: This library provides weak aliases for pthread functions not provided in libc or otherwise available by default.
+Section: x11/libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT-X
+Architecture: armv5te
+OE: libpthread-stubs
+Homepage: http://xcb.freedesktop.org
+Depends: libgcc1, libc6
+Source: http://xcb.freedesktop.org/dist/libpthread-stubs-0.2.tar.bz2

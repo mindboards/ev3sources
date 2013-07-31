@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-zerosize">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>empty document</comment>
+  <comment xml:lang="be@latin">pusty dakument</comment>
+  <comment xml:lang="bg">Празен документ</comment>
+  <comment xml:lang="ca">document buit</comment>
+  <comment xml:lang="cs">Prázdný dokument</comment>
+  <comment xml:lang="da">tomt dokument</comment>
+  <comment xml:lang="de">leeres Dokument</comment>
+  <comment xml:lang="el">κενό έγγραφο</comment>
+  <comment xml:lang="en_GB">empty document</comment>
+  <comment xml:lang="eo">malplena dokumento</comment>
+  <comment xml:lang="es">documento vacío</comment>
+  <comment xml:lang="eu">dokumentu hutsa</comment>
+  <comment xml:lang="fi">tyhjä asiakirja</comment>
+  <comment xml:lang="fr">document vide</comment>
+  <comment xml:lang="ga">cáipéis fholamh</comment>
+  <comment xml:lang="hu">üres dokumentum</comment>
+  <comment xml:lang="id">dokumen kosong</comment>
+  <comment xml:lang="it">Documento vuoto</comment>
+  <comment xml:lang="ja">空のドキュメント</comment>
+  <comment xml:lang="ko">빈 문서</comment>
+  <comment xml:lang="lt">tuščias dokumentas</comment>
+  <comment xml:lang="ms">Dokumen kosong</comment>
+  <comment xml:lang="nb">tomt dokument</comment>
+  <comment xml:lang="nl">leeg document</comment>
+  <comment xml:lang="nn">tomt dokument</comment>
+  <comment xml:lang="pl">pusty dokument</comment>
+  <comment xml:lang="pt">documento vazio</comment>
+  <comment xml:lang="pt_BR">documento vazio</comment>
+  <comment xml:lang="ru">пустой документ</comment>
+  <comment xml:lang="sq">dokument bosh</comment>
+  <comment xml:lang="sr">празан документ</comment>
+  <comment xml:lang="sv">tomt dokument</comment>
+  <comment xml:lang="uk">порожній документ</comment>
+  <comment xml:lang="vi">tài liệu rỗng</comment>
+  <comment xml:lang="zh_CN">空文档</comment>
+  <comment xml:lang="zh_TW">空白文件</comment>
+</mime-type>

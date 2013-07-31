@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="model/vrml">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>VRML document</comment>
+  <comment xml:lang="az">VRML sənədi</comment>
+  <comment xml:lang="be@latin">Dakument VRML</comment>
+  <comment xml:lang="bg">Документ — VRML</comment>
+  <comment xml:lang="ca">document VRML</comment>
+  <comment xml:lang="cs">Dokument VRML</comment>
+  <comment xml:lang="cy">Dogfen VRML</comment>
+  <comment xml:lang="da">VRML-dokument</comment>
+  <comment xml:lang="de">VRML-Dokument</comment>
+  <comment xml:lang="el">έγγραφο VRML</comment>
+  <comment xml:lang="en_GB">VRML document</comment>
+  <comment xml:lang="eo">VRML-dokumento</comment>
+  <comment xml:lang="es">documento VRML</comment>
+  <comment xml:lang="eu">VRML dokumentua</comment>
+  <comment xml:lang="fi">VRML-asiakirja</comment>
+  <comment xml:lang="fr">document VRML</comment>
+  <comment xml:lang="ga">cáipéis VRML</comment>
+  <comment xml:lang="hu">VRML-dokumentum</comment>
+  <comment xml:lang="id">Dokumen VRML</comment>
+  <comment xml:lang="it">Documento VRML</comment>
+  <comment xml:lang="ja">VRML ドキュメント</comment>
+  <comment xml:lang="ko">VRML 문서</comment>
+  <comment xml:lang="lt">VRML dokumentas</comment>
+  <comment xml:lang="ms">Dokumen VRML</comment>
+  <comment xml:lang="nb">VRML-dokument</comment>
+  <comment xml:lang="nl">VRML-document</comment>
+  <comment xml:lang="nn">VRML-dokument</comment>
+  <comment xml:lang="pl">Dokument VRML</comment>
+  <comment xml:lang="pt">documento VRML</comment>
+  <comment xml:lang="pt_BR">Documento VRML</comment>
+  <comment xml:lang="ru">документ VRML</comment>
+  <comment xml:lang="sq">Dokument VRML</comment>
+  <comment xml:lang="sr">VRML документ</comment>
+  <comment xml:lang="sv">VRML-dokument</comment>
+  <comment xml:lang="uk">Документ VRML</comment>
+  <comment xml:lang="vi">Tài liệu VRML</comment>
+  <comment xml:lang="zh_CN">VRML 文档</comment>
+  <comment xml:lang="zh_TW">VRML 文件</comment>
+  <generic-icon name="x-office-document"/>
+  <sub-class-of type="text/plain"/>
+</mime-type>

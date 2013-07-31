@@ -1,0 +1,13 @@
+Package: kbproto-dev
+Version: 1:1.0.5-r2.0.6
+Description: X protocol headers: kbproto
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT-X
+Architecture: armv5te
+OE: kbproto
+Homepage: http://www.x.org
+Depends: kbproto
+Recommends: util-macros-dev, kbproto-dev
+Source: http://xorg.freedesktop.org/releases/individual/proto/kbproto-1.0.5.tar.bz2;name=archive

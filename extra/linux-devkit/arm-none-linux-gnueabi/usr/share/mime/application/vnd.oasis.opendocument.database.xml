@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.oasis.opendocument.database">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>ODB database</comment>
+  <comment xml:lang="be@latin">Baza źviestak ODB</comment>
+  <comment xml:lang="bg">База от данни — ODB</comment>
+  <comment xml:lang="ca">base de dades ODB</comment>
+  <comment xml:lang="cs">Databáze ODB</comment>
+  <comment xml:lang="de">ODB-Datenbank</comment>
+  <comment xml:lang="en_GB">ODB database</comment>
+  <comment xml:lang="es">base de datos ODB</comment>
+  <comment xml:lang="eu">ODB datubasea</comment>
+  <comment xml:lang="fi">ODB-tietokanta</comment>
+  <comment xml:lang="fr">base de données ODB</comment>
+  <comment xml:lang="ga">bunachar sonraí ODB</comment>
+  <comment xml:lang="hu">ODB adatbázis</comment>
+  <comment xml:lang="id">Basis data ODB</comment>
+  <comment xml:lang="it">Database ODB</comment>
+  <comment xml:lang="ko">ODB 데이터베이스</comment>
+  <comment xml:lang="lt">ODB duomenų bazė</comment>
+  <comment xml:lang="nb">ODB-database</comment>
+  <comment xml:lang="nl">ODB-gegevensbank</comment>
+  <comment xml:lang="nn">ODB-database</comment>
+  <comment xml:lang="pl">Baza danych ODB</comment>
+  <comment xml:lang="pt_BR">Banco de dados ODB</comment>
+  <comment xml:lang="ru">база данных ODB</comment>
+  <comment xml:lang="sv">ODB-databas</comment>
+  <comment xml:lang="uk">База даних ODB</comment>
+  <comment xml:lang="vi">Cơ sở dữ liệu ODB</comment>
+  <acronym>ODB</acronym>
+  <expanded-acronym>OpenOffice.org Database</expanded-acronym>
+  <sub-class-of type="application/zip"/>
+  <generic-icon name="x-office-document"/>
+</mime-type>

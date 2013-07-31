@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.wordperfect">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>WordPerfect document</comment>
+  <comment xml:lang="az">WordPerfect sənədi</comment>
+  <comment xml:lang="be@latin">Dakument WordPerfect</comment>
+  <comment xml:lang="bg">Документ — WordPerfect</comment>
+  <comment xml:lang="ca">document de WordPerfect</comment>
+  <comment xml:lang="cs">Dokument WordPerfect</comment>
+  <comment xml:lang="cy">Dogfen WordPerfect</comment>
+  <comment xml:lang="da">WordPerfect-dokument</comment>
+  <comment xml:lang="de">WordPerfect-Dokument</comment>
+  <comment xml:lang="el">έγγραφο WordPerfect</comment>
+  <comment xml:lang="en_GB">WordPerfect document</comment>
+  <comment xml:lang="eo">WordPerfect-dokumento</comment>
+  <comment xml:lang="es">documento de WordPerfect</comment>
+  <comment xml:lang="eu">WordPerfect dokumentua</comment>
+  <comment xml:lang="fi">WordPerfect-asiakirja</comment>
+  <comment xml:lang="fr">document WordPerfect</comment>
+  <comment xml:lang="ga">cáipéis WordPerfect</comment>
+  <comment xml:lang="hu">WordPerfect-dokumentum</comment>
+  <comment xml:lang="id">Dokumen WordPerfect</comment>
+  <comment xml:lang="it">Documento WordPerfect</comment>
+  <comment xml:lang="ja">WordPerfect ドキュメント</comment>
+  <comment xml:lang="ko">워드퍼펙트 문서</comment>
+  <comment xml:lang="lt">WordPerfect dokumentas</comment>
+  <comment xml:lang="ms">Dokumen WordPerfect</comment>
+  <comment xml:lang="nb">WordPerfect-dokument</comment>
+  <comment xml:lang="nl">WordPerfect-document</comment>
+  <comment xml:lang="nn">WordPerfect-dokument</comment>
+  <comment xml:lang="pl">Dokument WordPerfect</comment>
+  <comment xml:lang="pt">documento do WordPerfect</comment>
+  <comment xml:lang="pt_BR">Documento do WordPerfect</comment>
+  <comment xml:lang="ru">документ WordPerfect</comment>
+  <comment xml:lang="sq">Dokument WordPerfect</comment>
+  <comment xml:lang="sr">WordPerfect документ</comment>
+  <comment xml:lang="sv">WordPerfect-dokument</comment>
+  <comment xml:lang="uk">документ WordPerfect</comment>
+  <comment xml:lang="vi">Tài liệu WordPerfect</comment>
+  <comment xml:lang="zh_CN">WordPerfect 文档</comment>
+  <comment xml:lang="zh_TW">WordPerfect 文件</comment>
+  <alias type="application/x-wordperfect"/>
+  <alias type="application/wordperfect"/>
+  <generic-icon name="x-office-document"/>
+</mime-type>

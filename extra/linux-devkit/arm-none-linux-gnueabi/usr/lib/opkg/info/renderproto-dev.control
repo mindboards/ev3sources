@@ -1,0 +1,13 @@
+Package: renderproto-dev
+Version: 1:0.11.1-r2.0.6
+Description: X protocol headers: renderproto
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT-X
+Architecture: armv5te
+OE: renderproto
+Homepage: http://www.x.org
+Depends: renderproto
+Recommends: util-macros-dev, renderproto-dev
+Source: http://xorg.freedesktop.org/releases/individual/proto/renderproto-0.11.1.tar.bz2;name=archive

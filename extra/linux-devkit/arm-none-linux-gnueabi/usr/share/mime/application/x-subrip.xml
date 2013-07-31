@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-subrip">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>SubRip subtitles</comment>
+  <comment xml:lang="be@latin">Subtytry SubRip</comment>
+  <comment xml:lang="bg">Субтитри — SubRip</comment>
+  <comment xml:lang="ca">subtítols SubRip</comment>
+  <comment xml:lang="cs">Titulky SubRip</comment>
+  <comment xml:lang="es">Subtítulos SubRip</comment>
+  <comment xml:lang="eu">SubRip azpitituluak</comment>
+  <comment xml:lang="fi">SubRip-tekstitykset</comment>
+  <comment xml:lang="fr">sous-titres SubRip</comment>
+  <comment xml:lang="ga">fotheidil SubRip</comment>
+  <comment xml:lang="hu">SubRip feliratok</comment>
+  <comment xml:lang="id">Subjudul SubRip</comment>
+  <comment xml:lang="it">Sottotitoli SubRip</comment>
+  <comment xml:lang="ko">SubRip 자막파일</comment>
+  <comment xml:lang="lt">SubRip subtitrai</comment>
+  <comment xml:lang="nb">SubRip undertekst</comment>
+  <comment xml:lang="nl">SubRip-ondertitels</comment>
+  <comment xml:lang="pt_BR">Legendas SubRip</comment>
+  <comment xml:lang="sv">SubRip-undertexter</comment>
+  <comment xml:lang="vi">Phụ đề SubRip</comment>
+  <alias type="application/x-srt"/>
+  <sub-class-of type="text/plain"/>
+  <generic-icon name="text-x-generic"/>
+</mime-type>

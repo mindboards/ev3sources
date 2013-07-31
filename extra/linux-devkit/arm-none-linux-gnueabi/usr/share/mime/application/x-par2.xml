@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-par2">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Parchive archive</comment>
+  <comment xml:lang="be@latin">Archiŭ Parchive</comment>
+  <comment xml:lang="ca">arxiu Parchive</comment>
+  <comment xml:lang="cs">Archiv Parchive</comment>
+  <comment xml:lang="es">archivador Parchive</comment>
+  <comment xml:lang="fi">Parchive-arkisto</comment>
+  <comment xml:lang="fr">archive Parchive</comment>
+  <comment xml:lang="ga">cartlann Parchive</comment>
+  <comment xml:lang="hu">Parchive archívum</comment>
+  <comment xml:lang="id">Arsip Parchive</comment>
+  <comment xml:lang="it">Archivio Parchive</comment>
+  <comment xml:lang="ko">Parchive 묶음파일</comment>
+  <comment xml:lang="lt">Parchive archyvas</comment>
+  <comment xml:lang="nb">Parchive-arkiv</comment>
+  <comment xml:lang="nl">Parchive-archief</comment>
+  <comment xml:lang="pt_BR">Pacote Parchive</comment>
+  <comment xml:lang="sv">Parchive-arkiv</comment>
+  <comment xml:lang="vi">Kho nén Parchive</comment>
+  <acronym>Parchive</acronym>
+  <expanded-acronym>Parity Volume Set Archive</expanded-acronym>
+  <generic-icon name="package-x-generic"/>
+</mime-type>

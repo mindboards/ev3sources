@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-chdr">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>C header</comment>
+  <comment xml:lang="be@latin">Zahałoŭny fajł C</comment>
+  <comment xml:lang="bg">Заглавен файл — C</comment>
+  <comment xml:lang="ca">capçalera en C</comment>
+  <comment xml:lang="cs">Záhlaví v C</comment>
+  <comment xml:lang="de">C-Header</comment>
+  <comment xml:lang="en_GB">C header</comment>
+  <comment xml:lang="es">cabecera de código fuente en C</comment>
+  <comment xml:lang="eu">C goiburua</comment>
+  <comment xml:lang="fi">C-otsake</comment>
+  <comment xml:lang="fr">en-tête C</comment>
+  <comment xml:lang="ga">ceanntásc C</comment>
+  <comment xml:lang="hu">C fejléc</comment>
+  <comment xml:lang="id">Tajuk C</comment>
+  <comment xml:lang="it">Header C</comment>
+  <comment xml:lang="ko">C 헤더</comment>
+  <comment xml:lang="lt">C antraštė</comment>
+  <comment xml:lang="nb">C-kildekodeheader</comment>
+  <comment xml:lang="nl">C-header</comment>
+  <comment xml:lang="nn">C-kjeldekode-hovud</comment>
+  <comment xml:lang="pl">Plik nagłówkowy w C</comment>
+  <comment xml:lang="pt_BR">Cabeçalho C</comment>
+  <comment xml:lang="ru">заголовочный файл языка C</comment>
+  <comment xml:lang="sv">C-huvud</comment>
+  <comment xml:lang="uk">Файл заголовків на C</comment>
+  <comment xml:lang="vi">Phần đầu mã nguồn C</comment>
+  <sub-class-of type="text/x-csrc"/>
+</mime-type>

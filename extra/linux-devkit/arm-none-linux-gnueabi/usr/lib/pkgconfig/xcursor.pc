@@ -1,0 +1,14 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+datarootdir=${prefix}/share
+icondir=/usr/share/icons
+
+Name: Xcursor
+Description: X Cursor Library
+Version: 1.1.11
+Requires: xproto
+Requires.private: x11 xrender xfixes
+Cflags: -I${includedir}
+Libs: -L${libdir} -lXcursor

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-tzo">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Tar archive (LZO-compressed)</comment>
+  <comment xml:lang="be@latin">Archiŭ tar (LZO-skampresavany)</comment>
+  <comment xml:lang="bg">Архив — tar, компресиран с LZO</comment>
+  <comment xml:lang="ca">arxiu tar (comprimit amb LZO)</comment>
+  <comment xml:lang="cs">Archiv tar (komprimovaný pomocí LZO)</comment>
+  <comment xml:lang="es">archivador Tar (comprimido con LZO)</comment>
+  <comment xml:lang="eu">Tar artxiboa (LZO-rekin konprimitua)</comment>
+  <comment xml:lang="fi">Tar-arkisto (LZO-pakattu)</comment>
+  <comment xml:lang="fr">archive tar (compression LZO)</comment>
+  <comment xml:lang="ga">cartlann Tar (comhbhrúite le LZO)</comment>
+  <comment xml:lang="hu">Tar archívum (LZO-val tömörítve)</comment>
+  <comment xml:lang="id">Arsip Tar (terkompresi LZO)</comment>
+  <comment xml:lang="it">Archivio tar (compresso con LZO)</comment>
+  <comment xml:lang="ko">(LZO로 압축한) tar 묶음파일</comment>
+  <comment xml:lang="lt">Tar archyvas (suglaudintas su LZO)</comment>
+  <comment xml:lang="nb">Tar-arkiv (LZO-komprimert)</comment>
+  <comment xml:lang="nl">Tar-archief (ingepakt met LZO)</comment>
+  <comment xml:lang="pt_BR">Pacote tar (compactado com LZO)</comment>
+  <comment xml:lang="ru">архив tar (сжатый LZO)</comment>
+  <comment xml:lang="sv">Tar-arkiv (LZO-komprimerat)</comment>
+  <comment xml:lang="vi">Kho nén tar (đã nén LZO)</comment>
+  <generic-icon name="package-x-generic"/>
+</mime-type>

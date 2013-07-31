@@ -1,0 +1,13 @@
+Package: iptables-dev
+Version: 1.4.9.1-r7.1.6
+Description: iptables network filtering tools
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2+
+Architecture: armv5te
+OE: iptables
+Homepage: http://www.netfilter.org/
+Depends: iptables, iptables
+Recommends: libnfnetlink-dev, libgcc1-dev, libc6-dev, iptables-dev
+Source: http://netfilter.org/projects/iptables/files/iptables-1.4.9.1.tar.bz2;name=iptables-1.4.9.1

@@ -1,0 +1,10 @@
+/usr/include/libdaemon/dlog.h
+/usr/lib/libdaemon.la
+/usr/include/libdaemon/dnonblock.h
+/usr/include/libdaemon/dfork.h
+/usr/lib/libdaemon.so
+/usr/include/libdaemon/daemon.h
+/usr/include/libdaemon/dexec.h
+/usr/lib/pkgconfig/libdaemon.pc
+/usr/include/libdaemon/dpid.h
+/usr/include/libdaemon/dsignal.h

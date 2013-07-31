@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="multipart/report">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>mail system report</comment>
+  <comment xml:lang="az">poçt sistemi raportu</comment>
+  <comment xml:lang="be@latin">rapart paštovaj systemy</comment>
+  <comment xml:lang="bg">Отчет за пощенската система</comment>
+  <comment xml:lang="ca">informe de sistema de correu</comment>
+  <comment xml:lang="cs">Zpráva poštovního systému</comment>
+  <comment xml:lang="cy">adroddiad system bost</comment>
+  <comment xml:lang="da">postsystemrapport</comment>
+  <comment xml:lang="de">E-Mail-Systembericht</comment>
+  <comment xml:lang="el">αναφορά συστήματος ηλ. ταχυδρομείου</comment>
+  <comment xml:lang="en_GB">mail system report</comment>
+  <comment xml:lang="eo">raporto de retpoŝta sistemo</comment>
+  <comment xml:lang="es">informe del sistema de correo</comment>
+  <comment xml:lang="eu">posta sistemako txostena</comment>
+  <comment xml:lang="fi">viestijärjestelmän ilmoitus</comment>
+  <comment xml:lang="fr">rapport système de courriels</comment>
+  <comment xml:lang="ga">tuairisc chóras poist</comment>
+  <comment xml:lang="hu">levelezőrendszer jelentése</comment>
+  <comment xml:lang="id">laporan sistem surat</comment>
+  <comment xml:lang="it">Rapporto di sistema posta</comment>
+  <comment xml:lang="ja">メールシステムレポート</comment>
+  <comment xml:lang="ko">메일 시스템 보고서</comment>
+  <comment xml:lang="lt">pašto sistemos ataskaita</comment>
+  <comment xml:lang="ms">Laporan sistem mel</comment>
+  <comment xml:lang="nb">e-postsystemrapport</comment>
+  <comment xml:lang="nl">e-mail-systeembericht</comment>
+  <comment xml:lang="nn">e-post-systemrapport</comment>
+  <comment xml:lang="pl">raport systemu pocztowego</comment>
+  <comment xml:lang="pt">relatório de sistema de e-mail</comment>
+  <comment xml:lang="pt_BR">relatório do sistema de correspondência</comment>
+  <comment xml:lang="sq">raport i sistemit të mesazheve</comment>
+  <comment xml:lang="sr">извештај поштанског система</comment>
+  <comment xml:lang="sv">e-postsystemrapport</comment>
+  <comment xml:lang="uk">звіт потової системи</comment>
+  <comment xml:lang="vi">thông báo hệ thống thư</comment>
+  <comment xml:lang="zh_CN">邮件系统报告</comment>
+</mime-type>

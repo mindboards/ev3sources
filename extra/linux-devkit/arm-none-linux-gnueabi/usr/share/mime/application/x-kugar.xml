@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-kugar">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Kugar document</comment>
+  <comment xml:lang="be@latin">Dakument Kugar</comment>
+  <comment xml:lang="bg">Документ — Kugar</comment>
+  <comment xml:lang="ca">document de Kugar</comment>
+  <comment xml:lang="cs">Dokument Kugar</comment>
+  <comment xml:lang="da">Kugar-dokument</comment>
+  <comment xml:lang="de">Kugar-Dokument</comment>
+  <comment xml:lang="el">έγγραφο Kugar</comment>
+  <comment xml:lang="en_GB">Kugar document</comment>
+  <comment xml:lang="eo">Kugar-dokumento</comment>
+  <comment xml:lang="es">documento de Kugar</comment>
+  <comment xml:lang="eu">Kugar dokumentua</comment>
+  <comment xml:lang="fi">Kugar-asiakirja</comment>
+  <comment xml:lang="fr">document Kugar</comment>
+  <comment xml:lang="ga">cáipéis Kugar</comment>
+  <comment xml:lang="hu">Kugar-dokumentum</comment>
+  <comment xml:lang="id">Dokumen Kugar</comment>
+  <comment xml:lang="it">Documento Kugar</comment>
+  <comment xml:lang="ja">KuKrita ドキュメント</comment>
+  <comment xml:lang="ko">Kugar 문서</comment>
+  <comment xml:lang="lt">Kugar dokumentas</comment>
+  <comment xml:lang="ms">Dokumen Kugar</comment>
+  <comment xml:lang="nb">Kugar-dokument</comment>
+  <comment xml:lang="nl">Kugar-document</comment>
+  <comment xml:lang="nn">Kugar-dokument</comment>
+  <comment xml:lang="pl">Dokument Kuguar</comment>
+  <comment xml:lang="pt">documento Kugar</comment>
+  <comment xml:lang="pt_BR">Documento do Kugar</comment>
+  <comment xml:lang="ru">документ Kugar</comment>
+  <comment xml:lang="sq">Dokument Kugar</comment>
+  <comment xml:lang="sr">Kugar документ</comment>
+  <comment xml:lang="sv">Kugar-dokument</comment>
+  <comment xml:lang="uk">Документ Kugar</comment>
+  <comment xml:lang="vi">Tài liệu Kugar</comment>
+  <comment xml:lang="zh_CN">Kugar 文档</comment>
+  <comment xml:lang="zh_TW">Kugar 文件</comment>
+  <generic-icon name="x-office-document"/>
+</mime-type>

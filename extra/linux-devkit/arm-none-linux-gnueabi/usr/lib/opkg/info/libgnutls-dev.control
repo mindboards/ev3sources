@@ -1,0 +1,13 @@
+Package: libgnutls-dev
+Version: 2.10.2-r10.1.6
+Description: GNU Transport Layer Security Library
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPL
+Architecture: armv5te
+OE: gnutls
+Homepage: http://www.gnu.org/software/gnutls/
+Depends: libgnutls26, libgnutls26, libgnutls-openssl26, libgnutls-extra26, libgnutlsxx26, libgnutls26, libz1, libgcrypt11, libgpg-error0, libgcc1, libc6
+Recommends: gettext-dev, libz-dev, libgcrypt-dev, liblzo-dev, gtk-doc-dev, libgnutls-dev, libgpg-error-dev, libgcc1-dev, libc6-dev, gnutls-extra-dev, libreadline-dev, libstdc++6-dev, gnutls-openssl-dev, gnutls-xx-dev, virtual-locale-ms-dev, virtual-locale-en+quot-dev, virtual-locale-fr-dev, virtual-locale-de-dev, virtual-locale-zh-cn-dev, virtual-locale-it-dev, virtual-locale-cs-dev, virtual-locale-en+boldquot-dev, virtual-locale-pl-dev, virtual-locale-sv-dev, virtual-locale-nl-dev, virtual-locale-vi-dev
+Source: ftp://ftp.gnutls.org/pub/gnutls/gnutls-2.10.2.tar.bz2;name=gnutls file://gettextize-with-gettext-0.18.patch file://gnutls-openssl.patch file://gnutls-replace-siginterrupt.patch file://parallel-build.patch

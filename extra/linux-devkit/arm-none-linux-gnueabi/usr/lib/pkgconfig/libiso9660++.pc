@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+libiconv=
+
+Name: libiso9660++
+Description: C++ OO ISO-9660 library of libcdio
+Version: 0.82
+Requires: libcdio 
+Libs: -L${libdir} -liso9660++ -lcdio++ -liso9660  -lcdio
+Cflags: -I${includedir}

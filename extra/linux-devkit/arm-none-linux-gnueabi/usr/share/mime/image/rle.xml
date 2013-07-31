@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/rle">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Run Length Encoded bitmap image</comment>
+  <comment xml:lang="be@latin">Bitmapnaja vyjava, zakadavanaja ŭ Run Length</comment>
+  <comment xml:lang="bg">Изображение — RLE Bitmap</comment>
+  <comment xml:lang="ca">imatge de mapa de bits Run Lenght Encoded</comment>
+  <comment xml:lang="cs">Obrázek bitové mapy Run Length Encoded</comment>
+  <comment xml:lang="es">mapa de bits con codificación del tamaño durante la ejecución</comment>
+  <comment xml:lang="eu">'Run Lenght Encoded' bitmap irudia</comment>
+  <comment xml:lang="fi">RLE-koodattu bittikartta</comment>
+  <comment xml:lang="fr">image matricielle Run Length Encoded</comment>
+  <comment xml:lang="ga">íomhá mhapa giotáin Run Length Encoded</comment>
+  <comment xml:lang="hu">Run Length Encoded bitkép</comment>
+  <comment xml:lang="id">Citra peta bit Run Length Encoded</comment>
+  <comment xml:lang="it">Immagine bitmap RLE (Run Length Encoded)</comment>
+  <comment xml:lang="ko">실행 길이 인코딩된 비트맵 그림</comment>
+  <comment xml:lang="lt">Run Length Encoded rastrinis paveikslėlis</comment>
+  <comment xml:lang="nb">Run Length Encoded bitmap bilde</comment>
+  <comment xml:lang="nl">RLE-gecodeerde bitmap-afbeelding</comment>
+  <comment xml:lang="pt_BR">Classe de comprimento imagem bitmap codificada</comment>
+  <comment xml:lang="sv">Körlängdskodad bitmappbild</comment>
+  <comment xml:lang="vi">Ảnh mảng mã hóa chiều dài chạy (RLE)</comment>
+</mime-type>

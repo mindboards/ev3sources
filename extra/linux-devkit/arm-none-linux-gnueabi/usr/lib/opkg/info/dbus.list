@@ -1,0 +1,9 @@
+/usr/bin/dbus-send
+/usr/libexec/dbus-daemon-launch-helper
+/etc/init.d/dbus-1
+/usr/bin/dbus-uuidgen
+/usr/bin/dbus-daemon
+/usr/bin/dbus-cleanup-sockets
+/etc/dbus-1/session.conf
+/etc/dbus-1/system.conf
+/usr/bin/dbus-monitor

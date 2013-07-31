@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-bittorrent">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>BitTorrent seed file</comment>
+  <comment xml:lang="az">BitTorrent seed faylı</comment>
+  <comment xml:lang="be@latin">Fajł krynicy BitTorrent</comment>
+  <comment xml:lang="bg">Файл-източник — BitTorrent</comment>
+  <comment xml:lang="ca">fitxer llavor de BitTorrent</comment>
+  <comment xml:lang="cs">Soubor BitTorrent</comment>
+  <comment xml:lang="cy">Ffeil hadu BitTorrent</comment>
+  <comment xml:lang="da">BitTorrent-frøfil</comment>
+  <comment xml:lang="de">BitTorrent-Seed-Datei</comment>
+  <comment xml:lang="el">αρχείο BitTorrent seed</comment>
+  <comment xml:lang="en_GB">BitTorrent seed file</comment>
+  <comment xml:lang="eo">BitTorrent-semdosiero</comment>
+  <comment xml:lang="es">archivo semilla de BitTorrent</comment>
+  <comment xml:lang="eu">BitTorrent hazi-fitxategia</comment>
+  <comment xml:lang="fi">BitTorrent-siementiedosto</comment>
+  <comment xml:lang="fr">fichier graine BitTorrent</comment>
+  <comment xml:lang="ga">comhad síl BitTorrent</comment>
+  <comment xml:lang="hu">BitTorrent-magfájl</comment>
+  <comment xml:lang="id">Berkas benih BitTorrent</comment>
+  <comment xml:lang="it">File seed BitTorrent</comment>
+  <comment xml:lang="ja">BitTorrent シードファイル</comment>
+  <comment xml:lang="ko">BitTorrent 시드 파일</comment>
+  <comment xml:lang="lt">BitTorrent sėklos rinkmena</comment>
+  <comment xml:lang="ms">Fail seed BitTorrent</comment>
+  <comment xml:lang="nb">Fil med utgangsverdi for BitTorrent</comment>
+  <comment xml:lang="nl">BitTorrent-bestand</comment>
+  <comment xml:lang="nn">Nedlastingsfil for BitTorrent</comment>
+  <comment xml:lang="pl">Plik ziarna Bittorrent</comment>
+  <comment xml:lang="pt">ficheiro de origem BitTorrent</comment>
+  <comment xml:lang="pt_BR">Arquivo semente BitTorrent</comment>
+  <comment xml:lang="ru">файл источника BitTorrent</comment>
+  <comment xml:lang="sq">File bazë BitTorrent</comment>
+  <comment xml:lang="sr">Датотека са БитТорентовим полазиштима</comment>
+  <comment xml:lang="sv">BitTorrent-fröfil</comment>
+  <comment xml:lang="uk">файл початкового значення BitTorrent</comment>
+  <comment xml:lang="vi">Tải tập hạt BitTorrent</comment>
+  <comment xml:lang="zh_CN">BitTorrent 种子文件</comment>
+  <comment xml:lang="zh_TW">BitTorrent 種子檔案</comment>
+</mime-type>

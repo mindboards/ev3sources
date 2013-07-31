@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/rfc822-headers">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>email headers</comment>
+  <comment xml:lang="az">epoçt başlıqları</comment>
+  <comment xml:lang="be@latin">paštovyja zahałoŭki</comment>
+  <comment xml:lang="bg">Заглавни части на електронни писма</comment>
+  <comment xml:lang="ca">capçaleres de correu electrònic</comment>
+  <comment xml:lang="cs">Záhlaví e-mailu</comment>
+  <comment xml:lang="cy">penawdau e-bost</comment>
+  <comment xml:lang="da">posthoveder</comment>
+  <comment xml:lang="de">E-Mail-Kopfzeilen</comment>
+  <comment xml:lang="el">κεφαλίδες ηλ. μηνυμάτων</comment>
+  <comment xml:lang="en_GB">email headers</comment>
+  <comment xml:lang="eo">retpoŝtaj ĉapoj</comment>
+  <comment xml:lang="es">cabeceras de correo electrónico</comment>
+  <comment xml:lang="eu">helbide elektronikoen goiburuak</comment>
+  <comment xml:lang="fi">sähköpostiotsakkeet</comment>
+  <comment xml:lang="fr">en-têtes de courriel</comment>
+  <comment xml:lang="ga">ceanntásca ríomhphoist</comment>
+  <comment xml:lang="hu">levélfejléc</comment>
+  <comment xml:lang="id">tajuk email</comment>
+  <comment xml:lang="it">Intestazioni email</comment>
+  <comment xml:lang="ja">メールヘッダー</comment>
+  <comment xml:lang="ko">전자우편 헤더</comment>
+  <comment xml:lang="lt">el. laiško antraštės</comment>
+  <comment xml:lang="ms">Pengepala emel</comment>
+  <comment xml:lang="nb">e-posthode</comment>
+  <comment xml:lang="nl">e-mail-kopregels</comment>
+  <comment xml:lang="nn">e-post-hovud</comment>
+  <comment xml:lang="pl">nagłówki listu e-mail</comment>
+  <comment xml:lang="pt">cabeçalhos de e-mail</comment>
+  <comment xml:lang="pt_BR">cabeçalhos de e-mail</comment>
+  <comment xml:lang="ru">почтовые заголовки</comment>
+  <comment xml:lang="sq">headers e email</comment>
+  <comment xml:lang="sr">заглавља е-порука</comment>
+  <comment xml:lang="sv">e-posthuvuden</comment>
+  <comment xml:lang="uk">заголовки email</comment>
+  <comment xml:lang="vi">dòng đầu thư điện tử</comment>
+  <comment xml:lang="zh_CN">电子邮件头</comment>
+  <comment xml:lang="zh_TW">電子郵件標頭</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

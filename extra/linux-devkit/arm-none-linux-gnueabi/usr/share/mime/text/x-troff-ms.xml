@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-troff-ms">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Troff MS input document</comment>
+  <comment xml:lang="be@latin">Uvodny dakument Troff MS</comment>
+  <comment xml:lang="bg">Изходен документ — Troff MS</comment>
+  <comment xml:lang="ca">document d'entrada Troff MS</comment>
+  <comment xml:lang="cs">Vstupní dokument Troff MS</comment>
+  <comment xml:lang="da">Troff MS inddata-dokument</comment>
+  <comment xml:lang="de">Troff-MS-Eingabedokument</comment>
+  <comment xml:lang="el">έγγραφο/πρόγραμμα εντολών troff MS</comment>
+  <comment xml:lang="en_GB">Troff MS input document</comment>
+  <comment xml:lang="eo">eniga dokumento de Troff MS</comment>
+  <comment xml:lang="es">documento de entrada Troff MS</comment>
+  <comment xml:lang="eu">Troff MS sarrerako dokumentua</comment>
+  <comment xml:lang="fi">Troff MS -syöteasiakirja</comment>
+  <comment xml:lang="fr">document d'entrée Troff MS</comment>
+  <comment xml:lang="ga">cáipéis ionchur Troff MS</comment>
+  <comment xml:lang="hu">Troff MS bemeneti dokumentum</comment>
+  <comment xml:lang="id">Dokumen masukan Troff MS</comment>
+  <comment xml:lang="it">Documento di input Troff MS</comment>
+  <comment xml:lang="ja">Troff MS 入力ドキュメント</comment>
+  <comment xml:lang="ko">Troff Ms 입력 문서</comment>
+  <comment xml:lang="lt">Troff MS įvesties dokumentas</comment>
+  <comment xml:lang="ms">Dokumen input Troff MS</comment>
+  <comment xml:lang="nb">Troff MS-inndatadokument</comment>
+  <comment xml:lang="nl">Troff MS-invoerdocument</comment>
+  <comment xml:lang="nn">Troff MS inndata-dokument</comment>
+  <comment xml:lang="pl">Dokument wejściowy Troff MS</comment>
+  <comment xml:lang="pt">documento origem Troff MS</comment>
+  <comment xml:lang="pt_BR">Documento de entrada Troff MS</comment>
+  <comment xml:lang="sq">Dokument input-i Troff MS</comment>
+  <comment xml:lang="sr">Troff MS улазни документ</comment>
+  <comment xml:lang="sv">Troff MS-indatadokument</comment>
+  <comment xml:lang="uk">Вхідний документ Troff MS</comment>
+  <comment xml:lang="vi">Tài liệu nhập MS Troff</comment>
+  <comment xml:lang="zh_CN">Troff MS 输入文档</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

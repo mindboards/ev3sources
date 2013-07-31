@@ -1,0 +1,16 @@
+prefix=/usr/
+exec_prefix=${prefix}
+libdir=${prefix}lib
+includedir=${prefix}include/qtopia/QtWebKit
+qt_config=lex yacc uic resources qt release incremental link_prl no_mocdepend release stl qt_no_framework silent release shared dll embedded largefile stl exceptions_off dylib create_prl link_prl depend_includepath QTDIR_build building-libs depend_includepath embedded qt_install_headers qt warn_on depend_includepath qmake_cache target_qt hide_symbols bsymbolic_functions create_libtool create_pc explicitlib link_pkgconfig no_debug_info moc thread shared dll
+moc_location=/usr/bin/moc4
+uic_location=/usr/bin/uic4
+
+Name: Qtwebkite
+Description: Qtwebkite Library
+Version: 4.6.3
+Libs: -L${libdir} -lQtWebKitE 
+Libs.private:    -lphononE   -lQtDBusE -lQtXmlE -lQtGuiE -lQtNetworkE -lQtCoreE -lglib-2.0 -lpthread   
+Cflags: -I${includedir}/qt4-embedded/QtWebKitE -DQT_SHARED -I${includedir}/qtopia -I${includedir}
+Requires: QtCoreE QtGuiE QtNetworkE
+

@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: zlib
+Description: Standard (de)compression library
+Version: 1.2.3
+Libs: -L${libdir} -lz
+Cflags: -I${includedir}

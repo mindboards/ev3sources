@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/x-speex+ogg">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Ogg Speex audio</comment>
+  <comment xml:lang="be@latin">Aŭdyjo Ogg Speex</comment>
+  <comment xml:lang="ca">àudio Ogg Speex</comment>
+  <comment xml:lang="cs">Zvuk Ogg Speex</comment>
+  <comment xml:lang="es">audio Ogg Speex</comment>
+  <comment xml:lang="fi">Ogg Speex -ääni</comment>
+  <comment xml:lang="fr">audio Ogg Speex</comment>
+  <comment xml:lang="ga">fuaim Ogg Speex</comment>
+  <comment xml:lang="hu">Ogg Speex hang</comment>
+  <comment xml:lang="id">Audio Ogg Speex</comment>
+  <comment xml:lang="it">Audio Ogg Speex</comment>
+  <comment xml:lang="ko">Ogg Speex 오디오</comment>
+  <comment xml:lang="lt">Ogg Speex garsas</comment>
+  <comment xml:lang="nb">Ogg Speex lyd</comment>
+  <comment xml:lang="nl">Ogg Speex-audio</comment>
+  <comment xml:lang="pt_BR">Áudio Speex Ogg</comment>
+  <comment xml:lang="sv">Ogg Speex-ljud</comment>
+  <comment xml:lang="vi">Âm thanh Speex Ogg</comment>
+  <sub-class-of type="audio/ogg"/>
+</mime-type>

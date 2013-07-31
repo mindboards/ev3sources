@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-dia-diagram">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Dia diagram</comment>
+  <comment xml:lang="az">Dia diaqramı</comment>
+  <comment xml:lang="be@latin">Dyjahrama Dia</comment>
+  <comment xml:lang="bg">Диаграма — Dia</comment>
+  <comment xml:lang="ca">diagrama de Dia</comment>
+  <comment xml:lang="cs">Diagram Dia</comment>
+  <comment xml:lang="cy">Diagram Dia</comment>
+  <comment xml:lang="da">Dia-diagram</comment>
+  <comment xml:lang="de">Dia-Diagramm</comment>
+  <comment xml:lang="el">διάγραμμα Dia</comment>
+  <comment xml:lang="en_GB">Dia diagram</comment>
+  <comment xml:lang="eo">Dia-diagramo</comment>
+  <comment xml:lang="es">diagrama de Dia</comment>
+  <comment xml:lang="eu">Dia diagrama</comment>
+  <comment xml:lang="fi">Dia-kaavio</comment>
+  <comment xml:lang="fr">diagramme Dia</comment>
+  <comment xml:lang="ga">léaráid Dia</comment>
+  <comment xml:lang="hu">Dia-diagram</comment>
+  <comment xml:lang="id">Diagram Dia</comment>
+  <comment xml:lang="it">Diagramma Dia</comment>
+  <comment xml:lang="ja">Dia ダイアグラム</comment>
+  <comment xml:lang="ko">Dia 도표</comment>
+  <comment xml:lang="lt">Dia diagrama</comment>
+  <comment xml:lang="ms">Diagram Dia</comment>
+  <comment xml:lang="nb">Dia-diagram</comment>
+  <comment xml:lang="nl">Dia-diagram</comment>
+  <comment xml:lang="nn">Dia diagram</comment>
+  <comment xml:lang="pl">Diagram programu Dia</comment>
+  <comment xml:lang="pt">diagrama Dia</comment>
+  <comment xml:lang="pt_BR">Diagrama do Dia</comment>
+  <comment xml:lang="ru">диаграмма Dia</comment>
+  <comment xml:lang="sq">Diagramë Dia</comment>
+  <comment xml:lang="sr">Диа дијаграм</comment>
+  <comment xml:lang="sv">Dia-diagram</comment>
+  <comment xml:lang="uk">Діаграма Dia</comment>
+  <comment xml:lang="vi">Biểu đồ Dia</comment>
+  <comment xml:lang="zh_CN">Dia 图表</comment>
+  <comment xml:lang="zh_TW">Dia 圖表</comment>
+  <generic-icon name="image-x-generic"/>
+  <sub-class-of type="application/xml"/>
+</mime-type>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/x-wav">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>WAV audio</comment>
+  <comment xml:lang="az">WAV audio faylı</comment>
+  <comment xml:lang="be@latin">Aŭdyjo WAV</comment>
+  <comment xml:lang="bg">Аудио — WAV</comment>
+  <comment xml:lang="ca">àudio WAV</comment>
+  <comment xml:lang="cs">Zvuk WAV</comment>
+  <comment xml:lang="cy">Sain WAV</comment>
+  <comment xml:lang="da">WAV-lyd</comment>
+  <comment xml:lang="de">WAV-Audio</comment>
+  <comment xml:lang="el">ήχος WAV</comment>
+  <comment xml:lang="en_GB">WAV audio</comment>
+  <comment xml:lang="eo">WAV-aŭdio</comment>
+  <comment xml:lang="es">audio WAV</comment>
+  <comment xml:lang="eu">WAV audioa</comment>
+  <comment xml:lang="fi">WAV-ääni</comment>
+  <comment xml:lang="fr">audio WAV</comment>
+  <comment xml:lang="ga">fuaim WAV</comment>
+  <comment xml:lang="hu">WAV hang</comment>
+  <comment xml:lang="id">Audio WAV</comment>
+  <comment xml:lang="it">Audio WAV</comment>
+  <comment xml:lang="ja">WAV オーディオ</comment>
+  <comment xml:lang="ko">WAV 오디오</comment>
+  <comment xml:lang="lt">WAV garsas</comment>
+  <comment xml:lang="ms">Audio VOC</comment>
+  <comment xml:lang="nb">WAV-lyd</comment>
+  <comment xml:lang="nl">WAV-audio</comment>
+  <comment xml:lang="nn">WAV-lyd</comment>
+  <comment xml:lang="pl">Plik dźwiękowy WAV</comment>
+  <comment xml:lang="pt">áudio WAV</comment>
+  <comment xml:lang="pt_BR">Áudio WAV</comment>
+  <comment xml:lang="ru">WAV аудио</comment>
+  <comment xml:lang="sq">Audio WAV</comment>
+  <comment xml:lang="sr">WAV звучни запис</comment>
+  <comment xml:lang="sv">WAV-ljud</comment>
+  <comment xml:lang="uk">Звук WAV</comment>
+  <comment xml:lang="vi">Âm thanh WAV</comment>
+  <comment xml:lang="zh_CN">WAV 音频</comment>
+  <comment xml:lang="zh_TW">WAV 音效</comment>
+  <alias type="audio/wav"/>
+  <alias type="audio/vnd.wave"/>
+</mime-type>

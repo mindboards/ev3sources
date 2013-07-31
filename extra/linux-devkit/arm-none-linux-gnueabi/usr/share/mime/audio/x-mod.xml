@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/x-mod">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Amiga SoundTracker audio</comment>
+  <comment xml:lang="be@latin">Aŭdyjo Amiga SoundTracker</comment>
+  <comment xml:lang="bg">Аудио — Amiga SoundTracker</comment>
+  <comment xml:lang="ca">àudio Amiga SoundTracker</comment>
+  <comment xml:lang="cs">Zvuk Amiga SoundTracker</comment>
+  <comment xml:lang="da">Amiga SoundTracker-lyd</comment>
+  <comment xml:lang="de">Amiga SoundTracker-Audio</comment>
+  <comment xml:lang="el">ήχος Amiga SoundTracker</comment>
+  <comment xml:lang="en_GB">Amiga SoundTracker audio</comment>
+  <comment xml:lang="eo">aŭdio de Amiga SoundTracker</comment>
+  <comment xml:lang="es">audio de Amiga SoundTracker</comment>
+  <comment xml:lang="eu">Amiga soundtracker audioa</comment>
+  <comment xml:lang="fi">Amiga SoundTracker -ääni</comment>
+  <comment xml:lang="fr">audio SoundTracker Amiga</comment>
+  <comment xml:lang="ga">fuaim Amiga SoundTracker</comment>
+  <comment xml:lang="hu">Amiga SoundTracker hang</comment>
+  <comment xml:lang="id">Audio Amida SoundTracker</comment>
+  <comment xml:lang="it">Audio Amiga SoundTracker</comment>
+  <comment xml:lang="ja">Amiga SoundTracker オーディオ</comment>
+  <comment xml:lang="ko">Amiga SoundTracker 오디오</comment>
+  <comment xml:lang="lt">Amiga SoundTracker garsas</comment>
+  <comment xml:lang="ms">Audio Amiga Soundtracker</comment>
+  <comment xml:lang="nb">Amiga SoundTracker-lyd</comment>
+  <comment xml:lang="nl">Amiga SoundTracker-audio</comment>
+  <comment xml:lang="nn">Amiga soundtracker-lyd</comment>
+  <comment xml:lang="pl">Plik dźwiękowy Amiga SoundTracker</comment>
+  <comment xml:lang="pt">áudio SoundTracker do Amiga</comment>
+  <comment xml:lang="pt_BR">Áudio Amiga SoundTracker</comment>
+  <comment xml:lang="ru">Amiga Sound Tracker аудио</comment>
+  <comment xml:lang="sq">Audio Amiga SoundTracker</comment>
+  <comment xml:lang="sr">Амига soundtracker звук</comment>
+  <comment xml:lang="sv">Amiga SoundTracker-ljud</comment>
+  <comment xml:lang="uk">Звук Amiga SoundTracker</comment>
+  <comment xml:lang="vi">Âm thanh Amiga SoundTracker</comment>
+  <comment xml:lang="zh_CN">Amiga SoundTracker 音频</comment>
+  <comment xml:lang="zh_TW">Amiga SoundTracker 音效</comment>
+</mime-type>

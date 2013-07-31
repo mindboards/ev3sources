@@ -1,0 +1,11 @@
+Package: gst-plugins-base
+Version: 0.10.30-r11.0.6
+Description: Plugins for GStreamer
+Section: multimedia
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPL
+Architecture: armv5te
+OE: gst-plugins-base
+Homepage: http://www.gstreamer.net/
+Source: http://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-0.10.30.tar.bz2;name=archive file://ivorbis-thumb.patch file://make382.patch

@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: XCB XFree86-DRI
+Description: XCB XFree86-DRI Extension
+Version: 1.6
+Requires: xcb
+Libs: -L${libdir} -lxcb-xf86dri
+Cflags: -I${includedir}

@@ -1,0 +1,14 @@
+prefix=/usr/
+exec_prefix=${prefix}
+libdir=${prefix}lib
+includedir=${prefix}include/qtopia/QtAssistant
+qt_config=lex yacc warn_on uic resources qt warn_on release incremental link_prl no_mocdepend release stl qt_no_framework silent release shared embedded largefile stl exceptions_off dylib create_prl link_prl depend_includepath fix_output_dirs QTDIR_build qt warn_on qt_install_headers create_pc moc thread dll shared
+
+Name: Qtassistantcliente
+Description: Qtassistantcliente Library
+Version: 4.6.3
+Libs: -L${libdir} -lQtAssistantClientE 
+Libs.private:     -lQtGuiE  -lQtNetworkE -lQtCoreE -lglib-2.0 -lpthread   
+Cflags: -I${includedir}/qt4-embedded/QtAssistantClientE -I${includedir}/qtopia -I${includedir}
+Requires: QtNetworkE
+

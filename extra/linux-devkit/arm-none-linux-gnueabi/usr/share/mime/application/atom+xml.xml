@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/atom+xml">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Atom syndication feed</comment>
+  <comment xml:lang="be@latin">Syndykacyjny kanał navinaŭ Atom</comment>
+  <comment xml:lang="bg">Емисия — Atom</comment>
+  <comment xml:lang="ca">canal de sindicació Atom</comment>
+  <comment xml:lang="cs">Kanál Atom</comment>
+  <comment xml:lang="es">Proveedor de noticias Atom</comment>
+  <comment xml:lang="eu">Atom harpidetze-iturria</comment>
+  <comment xml:lang="fi">Atom-yhdistevirta</comment>
+  <comment xml:lang="fr">fil de syndication Atom</comment>
+  <comment xml:lang="ga">fotha sindeacáitithe Atom</comment>
+  <comment xml:lang="hu">Atom egyesítőfolyam</comment>
+  <comment xml:lang="id">Umpan sindikasi Atom</comment>
+  <comment xml:lang="it">Feed di distribuzione Atom</comment>
+  <comment xml:lang="ko">Atom 묶음 피드</comment>
+  <comment xml:lang="lt">Atom sindikacijos kanalas</comment>
+  <comment xml:lang="nb">Atom syndikeringsstrøm</comment>
+  <comment xml:lang="nl">Atom-syndicatie-feed</comment>
+  <comment xml:lang="pt_BR">Fonte de notícias Atom</comment>
+  <comment xml:lang="sv">Atom-syndikeringskanal</comment>
+  <comment xml:lang="vi">Nguồn tin tức Atom</comment>
+  <sub-class-of type="application/xml"/>
+  <generic-icon name="text-html"/>
+</mime-type>

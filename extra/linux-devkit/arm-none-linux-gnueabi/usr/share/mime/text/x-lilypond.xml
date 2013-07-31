@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-lilypond">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Lilypond music sheet</comment>
+  <comment xml:lang="be@latin">Muzyčny arkuš Lilypond</comment>
+  <comment xml:lang="ca">full de música Lilypond</comment>
+  <comment xml:lang="cs">Notový papír Lilypond</comment>
+  <comment xml:lang="fi">Lilypond-nuotit</comment>
+  <comment xml:lang="fr">partition musicale Lilypond</comment>
+  <comment xml:lang="ga">bileog cheoil Lilypond</comment>
+  <comment xml:lang="id">Lembar musik Lilypond</comment>
+  <comment xml:lang="it">Partitura Lilypond</comment>
+  <comment xml:lang="ko">Lilypond 음악 시트</comment>
+  <comment xml:lang="lt">Lilypond muzikos lapas</comment>
+  <comment xml:lang="nl">Lilypond-muziekblad</comment>
+  <comment xml:lang="pt_BR">Folha de música do Lilypond</comment>
+  <comment xml:lang="sv">Lilypond-notblad</comment>
+  <comment xml:lang="vi">Bản nhạc Lilypond</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

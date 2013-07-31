@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-krita">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Krita document</comment>
+  <comment xml:lang="be@latin">Dakument Krita</comment>
+  <comment xml:lang="bg">Документ — Krita</comment>
+  <comment xml:lang="ca">document de Krita</comment>
+  <comment xml:lang="cs">Dokument Krita</comment>
+  <comment xml:lang="da">Krita-dokument</comment>
+  <comment xml:lang="de">Krita-Dokument</comment>
+  <comment xml:lang="el">έγγραφο Krita</comment>
+  <comment xml:lang="en_GB">Krita document</comment>
+  <comment xml:lang="eo">Krita-dokumento</comment>
+  <comment xml:lang="es">documento de Krita</comment>
+  <comment xml:lang="eu">Krita dokumentua</comment>
+  <comment xml:lang="fi">Krita-asiakirja</comment>
+  <comment xml:lang="fr">document Krita</comment>
+  <comment xml:lang="ga">cáipéis Krita</comment>
+  <comment xml:lang="hu">Krita-dokumentum</comment>
+  <comment xml:lang="id">Dokumen Krita</comment>
+  <comment xml:lang="it">Documento Krita</comment>
+  <comment xml:lang="ja">Krita ドキュメント</comment>
+  <comment xml:lang="ko">Krita 문서</comment>
+  <comment xml:lang="lt">Krita dokumentas</comment>
+  <comment xml:lang="ms">Dokumen Krita</comment>
+  <comment xml:lang="nb">Krita-dokument</comment>
+  <comment xml:lang="nl">Krita-document</comment>
+  <comment xml:lang="nn">Krita-dokument</comment>
+  <comment xml:lang="pl">Dokument Krita</comment>
+  <comment xml:lang="pt">documento Krita</comment>
+  <comment xml:lang="pt_BR">Documento do Krita</comment>
+  <comment xml:lang="ru">документ Krita</comment>
+  <comment xml:lang="sq">Dokument Krita</comment>
+  <comment xml:lang="sr">Krita документ</comment>
+  <comment xml:lang="sv">Krita-dokument</comment>
+  <comment xml:lang="uk">Документ Krita</comment>
+  <comment xml:lang="vi">Tài liệu Krita</comment>
+  <comment xml:lang="zh_CN">Krita 文档</comment>
+  <comment xml:lang="zh_TW">Krita 文件</comment>
+  <generic-icon name="x-office-document"/>
+</mime-type>

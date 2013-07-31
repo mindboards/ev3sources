@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="message/rfc822">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>email message</comment>
+  <comment xml:lang="be@latin">list email</comment>
+  <comment xml:lang="bg">Съобщение по електронната поща</comment>
+  <comment xml:lang="ca">missatge de correu electrònic</comment>
+  <comment xml:lang="cs">E-mailová zpráva</comment>
+  <comment xml:lang="da">postmeddelelse</comment>
+  <comment xml:lang="de">E-Mail-Nachricht</comment>
+  <comment xml:lang="el">ηλ. μήνυμα</comment>
+  <comment xml:lang="en_GB">email message</comment>
+  <comment xml:lang="eo">retpoŝta mesaĝo</comment>
+  <comment xml:lang="es">mensaje de correo electrónico</comment>
+  <comment xml:lang="eu">helbide elektronikoen mezua</comment>
+  <comment xml:lang="fi">sähköpostiviesti</comment>
+  <comment xml:lang="fr">message de courriel</comment>
+  <comment xml:lang="ga">teachtaireacht ríomhphoist</comment>
+  <comment xml:lang="hu">elektronikus levél</comment>
+  <comment xml:lang="id">pesan email</comment>
+  <comment xml:lang="it">Messaggio email</comment>
+  <comment xml:lang="ja">メール本文</comment>
+  <comment xml:lang="ko">전자우편 본문</comment>
+  <comment xml:lang="lt">el. laiškas</comment>
+  <comment xml:lang="ms">Mesej emel</comment>
+  <comment xml:lang="nb">e-postmelding</comment>
+  <comment xml:lang="nl">e-mailbericht</comment>
+  <comment xml:lang="nn">e-postmelding</comment>
+  <comment xml:lang="pl">wiadomość e-mail</comment>
+  <comment xml:lang="pt">mensagem de e-mail</comment>
+  <comment xml:lang="pt_BR">mensagem de correio eletrônico</comment>
+  <comment xml:lang="ru">почтовое сообщение</comment>
+  <comment xml:lang="sq">mesazh poste</comment>
+  <comment xml:lang="sr">е-порука</comment>
+  <comment xml:lang="sv">e-postmeddelande</comment>
+  <comment xml:lang="uk">повідомлення email</comment>
+  <comment xml:lang="vi">thư điện tử</comment>
+  <comment xml:lang="zh_CN">电子邮件</comment>
+  <comment xml:lang="zh_TW">電子郵件內容</comment>
+  <generic-icon name="text-x-generic"/>
+  <sub-class-of type="text/plain"/>
+</mime-type>

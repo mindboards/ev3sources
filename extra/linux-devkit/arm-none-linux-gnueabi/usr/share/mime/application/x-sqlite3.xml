@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-sqlite3">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>SQLite3 database</comment>
+  <comment xml:lang="be@latin">Baza źviestak SQLite3</comment>
+  <comment xml:lang="bg">База от данни — SQLite3</comment>
+  <comment xml:lang="ca">base de dades SQLite3</comment>
+  <comment xml:lang="cs">Databáze SQLite3</comment>
+  <comment xml:lang="de">SQLite2-Datenbank</comment>
+  <comment xml:lang="en_GB">SQLite3 database</comment>
+  <comment xml:lang="es">base de datos SQLite3</comment>
+  <comment xml:lang="eu">SQLite3 datubasea</comment>
+  <comment xml:lang="fi">SQLite3-tietokanta</comment>
+  <comment xml:lang="fr">base de données SQLite3</comment>
+  <comment xml:lang="ga">bunachar sonraí SQLite3</comment>
+  <comment xml:lang="hu">SQLite3 adatbázis</comment>
+  <comment xml:lang="id">Basis data SQLite3</comment>
+  <comment xml:lang="it">Database SQLite3</comment>
+  <comment xml:lang="ko">SQLite3 데이터베이스</comment>
+  <comment xml:lang="lt">SQLite3 duomenų bazė</comment>
+  <comment xml:lang="nb">SQLite3-database</comment>
+  <comment xml:lang="nl">SQLite3-gegevensbank</comment>
+  <comment xml:lang="nn">SQLite3-database</comment>
+  <comment xml:lang="pl">Baza danych SQLite3</comment>
+  <comment xml:lang="pt_BR">Banco de dados do SQLite3</comment>
+  <comment xml:lang="sv">SQLite3-databas</comment>
+  <comment xml:lang="uk">База даних SQLite3</comment>
+  <comment xml:lang="vi">Cơ sở dữ liệu SQLite3</comment>
+</mime-type>

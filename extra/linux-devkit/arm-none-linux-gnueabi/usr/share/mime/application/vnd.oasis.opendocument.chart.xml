@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.oasis.opendocument.chart">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>ODC chart</comment>
+  <comment xml:lang="be@latin">Dyjahrama ODC</comment>
+  <comment xml:lang="bg">Диаграма — ODC</comment>
+  <comment xml:lang="ca">diagrama ODC</comment>
+  <comment xml:lang="cs">Graf ODC</comment>
+  <comment xml:lang="de">ODC-Diagramm</comment>
+  <comment xml:lang="en_GB">ODC chart</comment>
+  <comment xml:lang="es">gráfica ODC</comment>
+  <comment xml:lang="eu">ODC diagrama</comment>
+  <comment xml:lang="fi">ODC-kaavio</comment>
+  <comment xml:lang="fr">graphique ODC</comment>
+  <comment xml:lang="ga">cairt ODC</comment>
+  <comment xml:lang="hu">ODC táblázat</comment>
+  <comment xml:lang="id">Bagan ODC</comment>
+  <comment xml:lang="it">Grafico ODC</comment>
+  <comment xml:lang="ko">ODC 차트</comment>
+  <comment xml:lang="lt">ODC diagrama</comment>
+  <comment xml:lang="nb">ODC-graf</comment>
+  <comment xml:lang="nl">ODC-grafiek</comment>
+  <comment xml:lang="nn">ODC-diagram</comment>
+  <comment xml:lang="pl">Wykres ODC</comment>
+  <comment xml:lang="pt_BR">Gráfico ODC</comment>
+  <comment xml:lang="ru">диаграмма ODC</comment>
+  <comment xml:lang="sv">ODC-diagram</comment>
+  <comment xml:lang="uk">Діаграма ODC</comment>
+  <comment xml:lang="vi">Sơ đồ ODC</comment>
+  <acronym>ODC chart</acronym>
+  <expanded-acronym>OpenDocument Chart</expanded-acronym>
+  <sub-class-of type="application/zip"/>
+  <generic-icon name="x-office-spreadsheet"/>
+</mime-type>

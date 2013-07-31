@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-rpm-spec">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>RPM spec file</comment>
+  <comment xml:lang="be@latin">Specyfikacyjny fajł RPM</comment>
+  <comment xml:lang="bg">Файл — спецификация за RPM</comment>
+  <comment xml:lang="ca">fitxer spec RPM</comment>
+  <comment xml:lang="cs">Soubor spec RPM</comment>
+  <comment xml:lang="es">archivo de especificaciones RPM</comment>
+  <comment xml:lang="eu">RPM espezifikazio fitxategia</comment>
+  <comment xml:lang="fi">RPM spec -tiedosto</comment>
+  <comment xml:lang="fr">fichier de spécification RPM</comment>
+  <comment xml:lang="ga">comhad spec RPM</comment>
+  <comment xml:lang="hu">RPM spec fájl</comment>
+  <comment xml:lang="id">Berkas spesifikasi RPM</comment>
+  <comment xml:lang="it">File specifica RPM</comment>
+  <comment xml:lang="ko">RPM spec 파일</comment>
+  <comment xml:lang="lt">RPM spec rinkmena</comment>
+  <comment xml:lang="nb">RPM-spesifikasjonsfil</comment>
+  <comment xml:lang="nl">RPM-spec-bestand</comment>
+  <comment xml:lang="pt_BR">Arquivo de especificação RPM</comment>
+  <comment xml:lang="sv">RPM spec-fil</comment>
+  <comment xml:lang="vi">Tập tin đặc tả RPM</comment>
+  <acronym>RPM</acronym>
+  <expanded-acronym>Red Hat Package Manager</expanded-acronym>
+  <sub-class-of type="text/plain"/>
+</mime-type>

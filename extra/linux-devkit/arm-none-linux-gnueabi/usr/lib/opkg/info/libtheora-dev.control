@@ -1,0 +1,13 @@
+Package: libtheora-dev
+Version: 1.1.1-r3.0.6
+Description: theora  is a high-quality video codec that is free of intellectual property restrictions
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: BSD
+Architecture: armv5te
+OE: libtheora
+Homepage: unknown
+Depends: libtheora0, libtheora0
+Recommends: pkgconfig-dev, libogg-dev, libgcc1-dev, libc6-dev, libtheora-dev
+Source: http://downloads.xiph.org/releases/theora/libtheora-1.1.1.tar.bz2 file://no-docs.patch

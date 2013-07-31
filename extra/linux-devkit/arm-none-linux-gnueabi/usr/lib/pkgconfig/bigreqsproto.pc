@@ -1,0 +1,9 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+ 
+Name: BigReqsProto
+Description: BigReqs extension headers
+Version: 1.1.1
+Cflags: -I${includedir}

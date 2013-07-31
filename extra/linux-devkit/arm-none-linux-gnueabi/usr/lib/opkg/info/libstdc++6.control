@@ -1,0 +1,12 @@
+Package: libstdc++6
+Version: 4.3.3-r7.6
+Description: Version 1.0-r7 of package external-toolchain-csl
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv3 with GCC RLE
+Architecture: armv5te
+OE: external-toolchain-csl
+Homepage: unknown
+Depends: libc6, libgcc1
+Source: file://SUPPORTED

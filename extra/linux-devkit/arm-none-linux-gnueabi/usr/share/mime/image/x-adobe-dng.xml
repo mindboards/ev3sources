@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-adobe-dng">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Adobe DNG negative</comment>
+  <comment xml:lang="be@latin">Adobe DNG Negative</comment>
+  <comment xml:lang="bg">Изображение — Adobe DNG negative</comment>
+  <comment xml:lang="ca">negatiu DNG d'Adobe</comment>
+  <comment xml:lang="cs">Adobe Digital Negative (DNG)</comment>
+  <comment xml:lang="es">Negativo digital de Adobe (ADN)</comment>
+  <comment xml:lang="eu">Adobe DNG negatiboa</comment>
+  <comment xml:lang="fi">Adobe-DNG-negatiivi</comment>
+  <comment xml:lang="fr">négatif DNG Adobe</comment>
+  <comment xml:lang="ga">claonchló DNG Adobe</comment>
+  <comment xml:lang="hu">Adobe DNG negatív</comment>
+  <comment xml:lang="id">Negatif Adobe DNG</comment>
+  <comment xml:lang="it">Negativo Adobe DNG</comment>
+  <comment xml:lang="ko">어도비 DNG 네가티브</comment>
+  <comment xml:lang="lt">Adobe DNG negatyvas</comment>
+  <comment xml:lang="nb">Adobe DNG-negativ</comment>
+  <comment xml:lang="nl">Adobe DNG-negatief</comment>
+  <comment xml:lang="pt_BR">Negativo DNG da Adobe</comment>
+  <comment xml:lang="sv">Adobe DNG-negativ</comment>
+  <comment xml:lang="vi">Âm bản Adobe DNG</comment>
+  <acronym>DNG</acronym>
+  <expanded-acronym>Digital Negative</expanded-acronym>
+  <sub-class-of type="image/x-dcraw"/>
+  <sub-class-of type="image/tiff"/>
+</mime-type>

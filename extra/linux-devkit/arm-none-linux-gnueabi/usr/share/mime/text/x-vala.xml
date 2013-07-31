@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-vala">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Vala source code</comment>
+  <comment xml:lang="be@latin">Kryničny kod Vala</comment>
+  <comment xml:lang="bg">Изходен код — Vala</comment>
+  <comment xml:lang="ca">codi font en Vala</comment>
+  <comment xml:lang="cs">Zdrojový kód Vala</comment>
+  <comment xml:lang="es">código fuente en Vala</comment>
+  <comment xml:lang="eu">Vala iturburu-kodea</comment>
+  <comment xml:lang="fi">Vala-lähdekoodi</comment>
+  <comment xml:lang="fr">code source Vala</comment>
+  <comment xml:lang="ga">cód foinseach Vala</comment>
+  <comment xml:lang="hu">Vala forráskód</comment>
+  <comment xml:lang="id">Kode program Vala</comment>
+  <comment xml:lang="it">Codice sorgente Vala</comment>
+  <comment xml:lang="ko">Vala 소스 코드</comment>
+  <comment xml:lang="lt">Vala pradinis kodas</comment>
+  <comment xml:lang="nb">Vala-kildekode</comment>
+  <comment xml:lang="nl">Vala-broncode</comment>
+  <comment xml:lang="pt_BR">Código fonte Vala</comment>
+  <comment xml:lang="ru">исходный код на языке Vala</comment>
+  <comment xml:lang="sv">Vala-källkod</comment>
+  <comment xml:lang="vi">Mã nguồn Vala</comment>
+  <sub-class-of type="text/x-csrc"/>
+</mime-type>

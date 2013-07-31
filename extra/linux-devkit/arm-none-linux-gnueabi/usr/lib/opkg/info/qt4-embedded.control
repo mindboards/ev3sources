@@ -1,0 +1,12 @@
+Package: qt4-embedded
+Version: 4.6.3-r25.1-arago4.6
+Description: Version 4.6.3-r25.1-arago4 of package qt4-embedded
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPLv2.1
+Architecture: armv5te
+OE: qt4-embedded
+Homepage: http://www.trolltech.com
+Recommends: libqt3supporte4, libqtassistantcliente4, libqtclucenee4, libqtcoree4, libqtdbuse4, libqtdesignere4, libqtdesignercomponentse4, libqtguie4, libqthelpe4, libqtnetworke4, libqt-embeddedopengl4, libqtscripte4, libqtscripttoolse4, libqtsqle4, libqtsvge4, libqtteste4, libqt-embeddeduitools4, libqtwebkite4, libqtxmle4, libqt-embeddedxmlpatterns4, libphonone4, libqtmultimediae4, libqt-embeddedopenvg4, libqt-embeddedmediaservices4, libqt-embeddeddeclarative4, libqt-embeddedpvrqwswsegl4, qt4-embedded-tools, qt4-embedded-assistant, qt4-embedded-common, qt4-embedded-dbus, qt4-embedded-demos, qt4-embedded-designer, qt4-embedded-examples, qt4-embedded-fonts, qt4-embedded-fonts-ttf-vera, qt4-embedded-fonts-ttf-dejavu, qt4-embedded-fonts-pfa, qt4-embedded-fonts-pfb, qt4-embedded-fonts-qpf, qt4-embedded-linguist, qt4-embedded-makeqpf, qt4-embedded-mkspecs, qt4-embedded-pixeltool, qt4-embedded-qmlviewer, qt4-embedded-xmlpatterns, qt4-embedded-qt3to4
+Source: ftp://ftp.trolltech.com/qt/source/qt-everywhere-opensource-src-4.6.3.tar.gz file://0001-cross-compile.patch file://0002-fix-resinit-declaration.patch file://0004-no-qmake.patch file://0006-freetype-host-includes.patch file://0008-qt-lib-infix.patch file://0009-support-2bpp.patch file://0010-no-simpledecoration-example.patch file://fix-config-tests.patch file://qt-config.patch file://g++.conf file://linux.conf file://qte.sh file://hack-out-pg_config.patch

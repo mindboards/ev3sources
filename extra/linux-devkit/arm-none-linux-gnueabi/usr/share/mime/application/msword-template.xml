@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/msword-template">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Word template</comment>
+  <comment xml:lang="be@latin">Šablon Word</comment>
+  <comment xml:lang="ca">plantilla de Word</comment>
+  <comment xml:lang="cs">Šablona Word</comment>
+  <comment xml:lang="es">plantilla de Word</comment>
+  <comment xml:lang="fi">Word-malli</comment>
+  <comment xml:lang="fr">modèle Word</comment>
+  <comment xml:lang="ga">teimpléad Word</comment>
+  <comment xml:lang="hu">Word sablon</comment>
+  <comment xml:lang="id">Templat Word</comment>
+  <comment xml:lang="it">Modello Word</comment>
+  <comment xml:lang="ko">Word 문서 틀</comment>
+  <comment xml:lang="lt">Word šablonas</comment>
+  <comment xml:lang="nb">Word-mal</comment>
+  <comment xml:lang="nl">Word-sjabloon</comment>
+  <comment xml:lang="pt_BR">Modelo do Word</comment>
+  <comment xml:lang="sv">Word-mall</comment>
+  <comment xml:lang="vi">Mẫu Word</comment>
+  <sub-class-of type="application/msword"/>
+  <generic-icon name="x-office-document"/>
+</mime-type>

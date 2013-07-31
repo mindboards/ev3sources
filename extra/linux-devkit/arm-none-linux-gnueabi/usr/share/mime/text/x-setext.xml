@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-setext">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Setext document</comment>
+  <comment xml:lang="az">Setext sənədi</comment>
+  <comment xml:lang="be@latin">Dakument Setext</comment>
+  <comment xml:lang="bg">Документ — Setext</comment>
+  <comment xml:lang="ca">document Setext</comment>
+  <comment xml:lang="cs">Dokument Setext</comment>
+  <comment xml:lang="cy">Dogfen Setext</comment>
+  <comment xml:lang="da">Setext-dokument</comment>
+  <comment xml:lang="de">Setext-Dokument</comment>
+  <comment xml:lang="el">έγγραφο Setext</comment>
+  <comment xml:lang="en_GB">Setext document</comment>
+  <comment xml:lang="eo">Setext-dokumento</comment>
+  <comment xml:lang="es">documento Setext</comment>
+  <comment xml:lang="eu">Setext dokumentua</comment>
+  <comment xml:lang="fi">Setext-asiakirja</comment>
+  <comment xml:lang="fr">document Setext</comment>
+  <comment xml:lang="ga">cáipéis Setext</comment>
+  <comment xml:lang="hu">Setext-dokumentum</comment>
+  <comment xml:lang="id">Dokumen Setext</comment>
+  <comment xml:lang="it">Documento Setext</comment>
+  <comment xml:lang="ja">Setext ドキュメント</comment>
+  <comment xml:lang="ko">Setext 문서</comment>
+  <comment xml:lang="lt">Setext dokumentas</comment>
+  <comment xml:lang="ms">Dokumen Setext</comment>
+  <comment xml:lang="nb">Setext-dokument</comment>
+  <comment xml:lang="nl">Setext-document</comment>
+  <comment xml:lang="nn">Setext-dokument</comment>
+  <comment xml:lang="pl">Dokument Setext</comment>
+  <comment xml:lang="pt">documento Setext</comment>
+  <comment xml:lang="pt_BR">Documento Setext</comment>
+  <comment xml:lang="sq">Dokument Setext</comment>
+  <comment xml:lang="sr">Setext документ</comment>
+  <comment xml:lang="sv">Setext-dokument</comment>
+  <comment xml:lang="uk">Документ Setext</comment>
+  <comment xml:lang="vi">Tài liệu Setext</comment>
+  <comment xml:lang="zh_CN">Setext 文档</comment>
+  <comment xml:lang="zh_TW">Setext 文件</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

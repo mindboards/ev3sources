@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=/usr/lib
+includedir=${prefix}/include
+
+Name: avahi-gobject
+Description: Avahi Multicast DNS Responder (GLib GObject Support)
+Version: 0.6.25
+Requires.private: glib-2.0 gobject-2.0 avahi-glib avahi-client
+Libs: -L${libdir} -lavahi-gobject
+Cflags: -D_REENTRANT -I${includedir}

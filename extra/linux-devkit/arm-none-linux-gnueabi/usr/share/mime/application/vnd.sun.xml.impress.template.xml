@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.sun.xml.impress.template">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>OpenOffice Impress template</comment>
+  <comment xml:lang="be@latin">Šablon OpenOffice Impress</comment>
+  <comment xml:lang="bg">Шаблон за презентации — OpenOffice Impress</comment>
+  <comment xml:lang="ca">plantilla d'OpenOffice Impress</comment>
+  <comment xml:lang="cs">Šablona OpenOffice Impress</comment>
+  <comment xml:lang="de">OpenOffice Impress-Vorlage</comment>
+  <comment xml:lang="en_GB">OpenOffice Impress template</comment>
+  <comment xml:lang="es">plantilla de OpenOffice Impress</comment>
+  <comment xml:lang="eu">OpenOffice Impress txantiloia</comment>
+  <comment xml:lang="fi">OpenOffice Impress -malli</comment>
+  <comment xml:lang="fr">modèle OpenOffice Impress</comment>
+  <comment xml:lang="ga">teimpléad OpenOffice Impress</comment>
+  <comment xml:lang="hu">OpenOffice Impress sablon</comment>
+  <comment xml:lang="id">Templat OpenOffice Impress</comment>
+  <comment xml:lang="it">Modello OpenOffice Impress</comment>
+  <comment xml:lang="ko">OpenOffice Impress 프리젠테이션 문서 틀</comment>
+  <comment xml:lang="lt">OpenOffice Impress šablonas</comment>
+  <comment xml:lang="nb">OpenOffice Impress-mal</comment>
+  <comment xml:lang="nl">OpenOffice.org Impress-sjabloon</comment>
+  <comment xml:lang="nn">OpenOffice Impress-mal</comment>
+  <comment xml:lang="pl">Szablon prezentacji OpenOffice</comment>
+  <comment xml:lang="pt_BR">Modelo do OpenOffice Impress</comment>
+  <comment xml:lang="ru">шаблон презентации OpenOffice Impress</comment>
+  <comment xml:lang="sv">OpenOffice Impress-mall</comment>
+  <comment xml:lang="uk">Шаблон презентації OpenOffice Impress</comment>
+  <comment xml:lang="vi">Mẫu trình diễn Impress của OpenOffice.org</comment>
+  <sub-class-of type="application/zip"/>
+  <generic-icon name="x-office-presentation"/>
+</mime-type>

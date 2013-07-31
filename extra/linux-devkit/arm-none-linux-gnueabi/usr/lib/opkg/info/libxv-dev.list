@@ -1,0 +1,4 @@
+/usr/lib/libXv.la
+/usr/lib/libXv.so
+/usr/include/X11/extensions/Xvlib.h
+/usr/lib/pkgconfig/xv.pc

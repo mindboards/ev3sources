@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-uil">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>X-Motif UIL table</comment>
+  <comment xml:lang="be@latin">Tablica X-Motif UIL</comment>
+  <comment xml:lang="bg">Таблица — X-Motif UIL</comment>
+  <comment xml:lang="ca">taula UIL de X-Motif</comment>
+  <comment xml:lang="cs">Tabulka X-Motif UIL</comment>
+  <comment xml:lang="da">X-Motif UIL-tabel</comment>
+  <comment xml:lang="de">X-Motif-UIL-Tabelle</comment>
+  <comment xml:lang="el">πίνακας X-Motif UIL</comment>
+  <comment xml:lang="en_GB">X-Motif UIL table</comment>
+  <comment xml:lang="es">tabla de X-Motif UIL</comment>
+  <comment xml:lang="eu">X-Motif UIL taula</comment>
+  <comment xml:lang="fi">X-Motif UIL -taulukko</comment>
+  <comment xml:lang="fr">table X-Motif UIL</comment>
+  <comment xml:lang="ga">tábla X-Motif UIL</comment>
+  <comment xml:lang="hu">X-Motif UIL-táblázat</comment>
+  <comment xml:lang="id">Tabel X-Motif UIL</comment>
+  <comment xml:lang="it">Tabella UIL X-Motif</comment>
+  <comment xml:lang="ja">X-Motif UIL 表</comment>
+  <comment xml:lang="ko">X-Motif UIL 테이블</comment>
+  <comment xml:lang="lt">X-Motif UIL lentelė</comment>
+  <comment xml:lang="ms">Jadual X-Motif UIL</comment>
+  <comment xml:lang="nb">X-Motif UIL-tabell</comment>
+  <comment xml:lang="nl">X-Motif UIL-tabel</comment>
+  <comment xml:lang="nn">X-Motif UIL-tabell</comment>
+  <comment xml:lang="pl">Tabela UIL X-Motif</comment>
+  <comment xml:lang="pt">tabela UIL do X-Motif</comment>
+  <comment xml:lang="pt_BR">Tabela do X-Motif UIL</comment>
+  <comment xml:lang="sq">Tabelë X-Motif UIL</comment>
+  <comment xml:lang="sr">X-Motif UIL табела</comment>
+  <comment xml:lang="sv">X-Motif UIL-tabell</comment>
+  <comment xml:lang="uk">Таблиця X-Motif UIL</comment>
+  <comment xml:lang="vi">Bảng UIL X-Motif</comment>
+  <comment xml:lang="zh_CN">X-Motif UIL 表</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

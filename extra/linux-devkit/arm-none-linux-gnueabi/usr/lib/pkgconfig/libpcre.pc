@@ -1,0 +1,12 @@
+# Package Information for pkg-config
+
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: libpcre
+Description: PCRE - Perl compatible regular expressions C library
+Version: 7.6
+Libs: -L${libdir} -lpcre
+Cflags: -I${includedir}

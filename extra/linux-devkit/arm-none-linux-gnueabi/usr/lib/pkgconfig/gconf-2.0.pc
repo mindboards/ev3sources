@@ -1,0 +1,14 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+gconf_serverdir=/usr/libexec
+
+
+Name: gconf
+Description: GNOME Config System.
+Version: 2.28.0
+Requires: glib-2.0
+Requires.private: ORBit-2.0 dbus-1
+Libs: -L${libdir} -lgconf-2
+Cflags: -I${includedir}/gconf/2

@@ -1,0 +1,13 @@
+Package: libpcre-dev
+Version: 7.6-r8.6
+Description: Perl-compatible regular expression library. PCRE has its own native API, but a set of 'wrapper' functions that are based on the POSIX API are also supplied in the library libpcreposix. Note that this just provides a POSIX calling interface to PCRE; the regular expressions themselves still follow Perl syntax and semantics. The header file for the POSIX-style functions is called pcreposix.h.
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: BSD
+Architecture: armv5te
+OE: libpcre
+Homepage: unknown
+Depends: libpcre0, libpcre0, libpcre0, libgcc1, libc6
+Recommends: libstdc++6-dev, libc6-dev, libgcc1-dev, libpcre-dev
+Source: http://downloads.sourceforge.net/pcre/pcre-7.6.tar.bz2 file://pcre-cross.patch

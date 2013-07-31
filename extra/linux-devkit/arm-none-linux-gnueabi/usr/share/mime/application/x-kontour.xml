@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-kontour">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Kontour drawing</comment>
+  <comment xml:lang="be@latin">Rysunak Kontour</comment>
+  <comment xml:lang="bg">Чертеж — Kontour</comment>
+  <comment xml:lang="ca">dibuix de Kontour</comment>
+  <comment xml:lang="cs">Kresba Kontour</comment>
+  <comment xml:lang="da">Kontour-tegning</comment>
+  <comment xml:lang="de">Kontour-Zeichnung</comment>
+  <comment xml:lang="el">σχέδιο Kontour</comment>
+  <comment xml:lang="en_GB">Kontour drawing</comment>
+  <comment xml:lang="eo">Kontour-grafikaĵo</comment>
+  <comment xml:lang="es">dibujo de Kontour</comment>
+  <comment xml:lang="eu">Kontour marrazkia</comment>
+  <comment xml:lang="fi">Kontour-piirros</comment>
+  <comment xml:lang="fr">dessin Kontour</comment>
+  <comment xml:lang="ga">líníocht Kontour</comment>
+  <comment xml:lang="hu">Kontour-rajz</comment>
+  <comment xml:lang="id">Gambar Kontour</comment>
+  <comment xml:lang="it">Disegno Kontour</comment>
+  <comment xml:lang="ja">Kontour </comment>
+  <comment xml:lang="ko">Kontour 그림</comment>
+  <comment xml:lang="lt">Kontour piešinys</comment>
+  <comment xml:lang="ms">Lukisan Kontour</comment>
+  <comment xml:lang="nb">Kontour-tegning</comment>
+  <comment xml:lang="nl">Kontour-tekening</comment>
+  <comment xml:lang="nn">Kontour-teikning</comment>
+  <comment xml:lang="pl">Rysunek Kontour</comment>
+  <comment xml:lang="pt">desenho Kontour</comment>
+  <comment xml:lang="pt_BR">Desenho do Kontour</comment>
+  <comment xml:lang="ru">изображение Kontour</comment>
+  <comment xml:lang="sq">Vizatim Kontour</comment>
+  <comment xml:lang="sr">Kontour цртеж</comment>
+  <comment xml:lang="sv">Kontour-teckning</comment>
+  <comment xml:lang="uk">Малюнок Kontour</comment>
+  <comment xml:lang="vi">Bản vẽ Kontour</comment>
+  <comment xml:lang="zh_CN">Kontour 绘图</comment>
+  <comment xml:lang="zh_TW">Kontour 繪圖</comment>
+  <generic-icon name="image-x-generic"/>
+</mime-type>

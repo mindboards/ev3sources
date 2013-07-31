@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/pgp-keys">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>PGP keys</comment>
+  <comment xml:lang="az">PGP açarları</comment>
+  <comment xml:lang="be@latin">Klučy PGP</comment>
+  <comment xml:lang="bg">Ключове — PGP</comment>
+  <comment xml:lang="ca">claus PGP</comment>
+  <comment xml:lang="cs">Klíče PGP</comment>
+  <comment xml:lang="cy">Allweddi PGP</comment>
+  <comment xml:lang="da">PGP-nøgler </comment>
+  <comment xml:lang="de">PGP-Schlüssel</comment>
+  <comment xml:lang="el">κλειδιά PGP</comment>
+  <comment xml:lang="en_GB">PGP keys</comment>
+  <comment xml:lang="eo">PGP-ŝlosiloj</comment>
+  <comment xml:lang="es">claves PGP</comment>
+  <comment xml:lang="eu">PGP giltzak</comment>
+  <comment xml:lang="fi">PGP-avainrengas</comment>
+  <comment xml:lang="fr">clés PGP</comment>
+  <comment xml:lang="ga">eochracha PGP</comment>
+  <comment xml:lang="hu">PGP-kulcs</comment>
+  <comment xml:lang="id">Kunci PGP</comment>
+  <comment xml:lang="it">Chiavi PGP</comment>
+  <comment xml:lang="ja">PGP 鍵</comment>
+  <comment xml:lang="ko">PGP 키</comment>
+  <comment xml:lang="lt">PGP raktai</comment>
+  <comment xml:lang="ms">Kekunci PGP</comment>
+  <comment xml:lang="nb">PGP-nøkler</comment>
+  <comment xml:lang="nl">PGP-sleutels</comment>
+  <comment xml:lang="nn">PGP-nøkler</comment>
+  <comment xml:lang="pl">Klucze PGP</comment>
+  <comment xml:lang="pt">chaves PGP</comment>
+  <comment xml:lang="pt_BR">Chaves PGP</comment>
+  <comment xml:lang="ru">ключи PGP</comment>
+  <comment xml:lang="sq">Kyçe PGP</comment>
+  <comment xml:lang="sr">PGP кључ</comment>
+  <comment xml:lang="sv">PGP-nycklar</comment>
+  <comment xml:lang="uk">Ключі PGP</comment>
+  <comment xml:lang="vi">Khoá PGP</comment>
+  <comment xml:lang="zh_CN">PGP 密钥</comment>
+  <comment xml:lang="zh_TW">PGP 鑰匙</comment>
+  <acronym>PGP</acronym>
+  <expanded-acronym>Pretty Good Privacy</expanded-acronym>
+  <sub-class-of type="text/plain"/>
+  <generic-icon name="text-x-generic"/>
+</mime-type>

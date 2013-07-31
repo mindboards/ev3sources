@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.oasis.opendocument.text">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>ODT document</comment>
+  <comment xml:lang="be@latin">Dakument ODT</comment>
+  <comment xml:lang="bg">Документ — ODT</comment>
+  <comment xml:lang="ca">document ODT</comment>
+  <comment xml:lang="cs">Dokument ODT</comment>
+  <comment xml:lang="de">ODT-Dokument</comment>
+  <comment xml:lang="en_GB">ODT document</comment>
+  <comment xml:lang="es">documento ODT</comment>
+  <comment xml:lang="eu">ODT dokumentua</comment>
+  <comment xml:lang="fi">ODT-asiakirja</comment>
+  <comment xml:lang="fr">document ODT</comment>
+  <comment xml:lang="ga">cáipéis ODT</comment>
+  <comment xml:lang="hu">ODT dokumentum</comment>
+  <comment xml:lang="id">Dokumen ODT</comment>
+  <comment xml:lang="it">Documento ODT</comment>
+  <comment xml:lang="ko">ODT 문서</comment>
+  <comment xml:lang="lt">ODA dokumentas</comment>
+  <comment xml:lang="nb">ODT-dokument</comment>
+  <comment xml:lang="nl">ODT-document</comment>
+  <comment xml:lang="nn">ODT-dokument</comment>
+  <comment xml:lang="pl">Dokument ODT</comment>
+  <comment xml:lang="pt_BR">Documento ODT</comment>
+  <comment xml:lang="ru">документ ODT</comment>
+  <comment xml:lang="sv">ODT-dokument</comment>
+  <comment xml:lang="uk">Документ ODT</comment>
+  <comment xml:lang="vi">Tài liệu ODT</comment>
+  <acronym>ODT</acronym>
+  <expanded-acronym>OpenDocument Text</expanded-acronym>
+  <sub-class-of type="application/zip"/>
+  <generic-icon name="x-office-document"/>
+</mime-type>

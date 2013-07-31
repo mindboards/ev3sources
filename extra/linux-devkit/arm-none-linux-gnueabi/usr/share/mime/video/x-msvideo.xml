@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="video/x-msvideo">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>AVI video</comment>
+  <comment xml:lang="az">AVI video faylı</comment>
+  <comment xml:lang="be@latin">Videa AVI</comment>
+  <comment xml:lang="bg">Видео — AVI</comment>
+  <comment xml:lang="ca">vídeo AVI</comment>
+  <comment xml:lang="cs">Video AVI</comment>
+  <comment xml:lang="cy">Fideo AVI</comment>
+  <comment xml:lang="da">AVI-video</comment>
+  <comment xml:lang="de">AVI-Video</comment>
+  <comment xml:lang="el">βίντεο AVI</comment>
+  <comment xml:lang="en_GB">AVI video</comment>
+  <comment xml:lang="eo">AVI-video</comment>
+  <comment xml:lang="es">vídeo AVI</comment>
+  <comment xml:lang="eu">AVI bideoa</comment>
+  <comment xml:lang="fi">AVI-video</comment>
+  <comment xml:lang="fr">vidéo AVI</comment>
+  <comment xml:lang="ga">físeán AVI</comment>
+  <comment xml:lang="hu">AVI-videó</comment>
+  <comment xml:lang="id">Video AVI</comment>
+  <comment xml:lang="it">Video AVI</comment>
+  <comment xml:lang="ja">AVI 動画</comment>
+  <comment xml:lang="ko">AVI 비디오</comment>
+  <comment xml:lang="lt">AVI vaizdas</comment>
+  <comment xml:lang="ms">Video AVI</comment>
+  <comment xml:lang="nb">AVI-film</comment>
+  <comment xml:lang="nl">AVI-video</comment>
+  <comment xml:lang="nn">AVI-video</comment>
+  <comment xml:lang="pl">Plik wideo AVI</comment>
+  <comment xml:lang="pt">vídeo AVI</comment>
+  <comment xml:lang="pt_BR">Vídeo AVI</comment>
+  <comment xml:lang="ru">AVi видео</comment>
+  <comment xml:lang="sq">Video AVI</comment>
+  <comment xml:lang="sr">AVI видео</comment>
+  <comment xml:lang="sv">AVI-video</comment>
+  <comment xml:lang="uk">Відео-кліп AVI</comment>
+  <comment xml:lang="vi">Ảnh động AVI</comment>
+  <comment xml:lang="zh_CN">AVI 视频</comment>
+  <comment xml:lang="zh_TW">AVI 影音檔</comment>
+  <acronym>AVI</acronym>
+  <expanded-acronym>Audio Video Interleave</expanded-acronym>
+  <alias type="video/x-avi"/>
+  <alias type="video/avi"/>
+  <alias type="video/vnd.divx"/>
+</mime-type>

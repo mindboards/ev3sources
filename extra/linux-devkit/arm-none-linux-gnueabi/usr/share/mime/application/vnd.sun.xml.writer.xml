@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.sun.xml.writer">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>OpenOffice Writer document</comment>
+  <comment xml:lang="az">OpenOffice Writer sənədi</comment>
+  <comment xml:lang="be@latin">Dakument OpenOffice Writer</comment>
+  <comment xml:lang="bg">Документ — OpenOffice Writer</comment>
+  <comment xml:lang="ca">document d'OpenOffice Writer</comment>
+  <comment xml:lang="cs">Dokument OpenOffice Writer</comment>
+  <comment xml:lang="cy">Dogfen OpenOffice (Writer)</comment>
+  <comment xml:lang="de">OpenOffice Writer-Dokument</comment>
+  <comment xml:lang="es">documento de OpenOffice Writer</comment>
+  <comment xml:lang="eu">OpenOffice.org Writer dokumentua</comment>
+  <comment xml:lang="fi">OpenOffice.org Writer -asiakirja</comment>
+  <comment xml:lang="fr">document OpenOffice Writer</comment>
+  <comment xml:lang="ga">cáipéis OpenOffice Writer</comment>
+  <comment xml:lang="hu">OpenOffice Writer dokumentum</comment>
+  <comment xml:lang="id">Dokumen OpenOffice Writer</comment>
+  <comment xml:lang="it">Documento OpenOffice Writer</comment>
+  <comment xml:lang="ko">OpenOffice Writer 문서</comment>
+  <comment xml:lang="lt">OpenOffice Writer dokumentas</comment>
+  <comment xml:lang="nb">OpenOffice Writer-dokument</comment>
+  <comment xml:lang="nl">OpenOffice.org Writer-document</comment>
+  <comment xml:lang="pt_BR">Documento do OpenOffice Writer</comment>
+  <comment xml:lang="ru">документ OpenOffice Writer</comment>
+  <comment xml:lang="sv">OpenOffice Writer-dokument</comment>
+  <comment xml:lang="uk">Документ OpenOffice Writer</comment>
+  <comment xml:lang="vi">Tài liệu Writer của OpenOffice.org</comment>
+  <sub-class-of type="application/zip"/>
+  <generic-icon name="x-office-document"/>
+</mime-type>

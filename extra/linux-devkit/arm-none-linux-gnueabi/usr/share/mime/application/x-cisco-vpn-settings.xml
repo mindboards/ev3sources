@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-cisco-vpn-settings">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Cisco VPN Settings</comment>
+  <comment xml:lang="be@latin">Nałady Cisco VPN</comment>
+  <comment xml:lang="ca">paràmetres VPN de Cisco</comment>
+  <comment xml:lang="cs">Nastavení Cisco VPN</comment>
+  <comment xml:lang="es">Ajustes VPN de Cisco</comment>
+  <comment xml:lang="fi">Cisco VPN -asetukset</comment>
+  <comment xml:lang="fr">paramètres VPN Cisco</comment>
+  <comment xml:lang="ga">socruithe VPN Cisco</comment>
+  <comment xml:lang="hu">Cisco VPN beállítások</comment>
+  <comment xml:lang="id">Penataan Cisco VPN</comment>
+  <comment xml:lang="it">Impostazioni VPN Cisco</comment>
+  <comment xml:lang="ko">Cisco VPN 설정</comment>
+  <comment xml:lang="lt">Cisco VPN parametrai</comment>
+  <comment xml:lang="nb">Cisco VPN-innstillinger</comment>
+  <comment xml:lang="nl">Cisco VPN-instellingen</comment>
+  <comment xml:lang="pt_BR">Configurações de VPN da Cisco</comment>
+  <comment xml:lang="sv">Cisco VPN-inställningar</comment>
+  <comment xml:lang="vi">Thiết lập VPN Cisco</comment>
+  <generic-icon name="text-x-generic"/>
+</mime-type>

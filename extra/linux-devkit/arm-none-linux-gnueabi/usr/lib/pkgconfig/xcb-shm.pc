@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: XCB Shm
+Description: XCB Shm Extension
+Version: 1.6
+Requires: xcb
+Libs: -L${libdir} -lxcb-shm
+Cflags: -I${includedir}

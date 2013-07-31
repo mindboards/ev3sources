@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/directory">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>electronic business card</comment>
+  <comment xml:lang="da">elektronisk visitkort</comment>
+  <comment xml:lang="eo">elektronika vizitkarto</comment>
+  <comment xml:lang="pt">cartão de visita electrónico</comment>
+  <comment xml:lang="sq">kartë elektronike biznesi</comment>
+  <comment xml:lang="zh_CN">电子商务卡</comment>
+  <alias type="text/x-vcard"/>
+  <sub-class-of type="text/plain"/>
+</mime-type>

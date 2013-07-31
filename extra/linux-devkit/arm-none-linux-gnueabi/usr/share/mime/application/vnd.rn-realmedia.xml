@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.rn-realmedia">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>RealMedia document</comment>
+  <comment xml:lang="be@latin">Dakument RealMedia</comment>
+  <comment xml:lang="bg">Документ — RealMedia</comment>
+  <comment xml:lang="ca">document RealMedia</comment>
+  <comment xml:lang="cs">Dokument RealMedia</comment>
+  <comment xml:lang="de">RealMedia-Dokument</comment>
+  <comment xml:lang="en_GB">RealMedia document</comment>
+  <comment xml:lang="es">documento RealMedia</comment>
+  <comment xml:lang="eu">RealMedia dokumentua</comment>
+  <comment xml:lang="fi">RealMedia-asiakirja</comment>
+  <comment xml:lang="fr">document RealMedia</comment>
+  <comment xml:lang="ga">cáipéis RealMedia</comment>
+  <comment xml:lang="hu">RealMedia dokumentum</comment>
+  <comment xml:lang="id">Dokumen RealMedia</comment>
+  <comment xml:lang="it">Documento RealMedia</comment>
+  <comment xml:lang="ko">RealMedia 문서</comment>
+  <comment xml:lang="lt">RealMedia dokumentas</comment>
+  <comment xml:lang="nb">RealMedia-dokument</comment>
+  <comment xml:lang="nl">RealMedia-document</comment>
+  <comment xml:lang="nn">RealMedia-dokument</comment>
+  <comment xml:lang="pl">Dokument RealMedia</comment>
+  <comment xml:lang="pt_BR">Documento RealMedia</comment>
+  <comment xml:lang="sv">RealMedia-dokument</comment>
+  <comment xml:lang="uk">Документ RealMedia</comment>
+  <comment xml:lang="vi">Tài liệu RealMedia</comment>
+  <generic-icon name="video-x-generic"/>
+</mime-type>

@@ -1,0 +1,6 @@
+#!/bin/sh
+if [ "x$D" != "x" ]; then
+  exit 1
+fi
+
+pango-querymodules > /etc/pango/pango.modules

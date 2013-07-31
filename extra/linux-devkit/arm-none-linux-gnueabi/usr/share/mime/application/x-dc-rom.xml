@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-dc-rom">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Dreamcast ROM</comment>
+  <comment xml:lang="be@latin">Dreamcast ROM</comment>
+  <comment xml:lang="bg">ROM — Dreamcast</comment>
+  <comment xml:lang="ca">ROM de Dreamcast</comment>
+  <comment xml:lang="cs">ROM pro Dreamcast</comment>
+  <comment xml:lang="da">Dreamcast-rom</comment>
+  <comment xml:lang="de">Dreamcast-ROM</comment>
+  <comment xml:lang="el">εικόνα μνήμης ROM Dreamcast</comment>
+  <comment xml:lang="en_GB">Dreamcast ROM</comment>
+  <comment xml:lang="eo">Dreamcast-NLM</comment>
+  <comment xml:lang="es">ROM de Dreamcast</comment>
+  <comment xml:lang="eu">Dreamcast-en ROM</comment>
+  <comment xml:lang="fi">Dreamcast-ROM</comment>
+  <comment xml:lang="fr">ROM Dreamcast</comment>
+  <comment xml:lang="ga">ROM Dreamcast</comment>
+  <comment xml:lang="hu">Dreamcast ROM</comment>
+  <comment xml:lang="id">Memori baca-saja Dreamcast</comment>
+  <comment xml:lang="it">ROM Dreamcast</comment>
+  <comment xml:lang="ja">Dreamcast ROM</comment>
+  <comment xml:lang="ko">드림캐스트 롬</comment>
+  <comment xml:lang="lt">Dreamcast ROM</comment>
+  <comment xml:lang="ms">ROM Dreamcast</comment>
+  <comment xml:lang="nb">Dreamcast-ROM</comment>
+  <comment xml:lang="nl">Dreamcast-ROM</comment>
+  <comment xml:lang="nn">Dreamcast-ROM</comment>
+  <comment xml:lang="pl">Plik ROM konsoli Dreamcast</comment>
+  <comment xml:lang="pt">ROM Dreamcast</comment>
+  <comment xml:lang="pt_BR">ROM do Dreamcast</comment>
+  <comment xml:lang="ru">Dreamcast ROM </comment>
+  <comment xml:lang="sq">ROM Dreamcast</comment>
+  <comment xml:lang="sr">Dreamcast ROM</comment>
+  <comment xml:lang="sv">Dreamcast-rom</comment>
+  <comment xml:lang="uk">ПЗП Dreamcast</comment>
+  <comment xml:lang="vi">ROM Dreamcast</comment>
+  <comment xml:lang="zh_CN">Dreamcast ROM</comment>
+  <comment xml:lang="zh_TW">Dreamcast ROM</comment>
+  <generic-icon name="application-x-executable"/>
+</mime-type>

@@ -1,0 +1,12 @@
+Package: libschroedinger-1.0-0
+Version: 1.0.9-r0.6
+Description: Version 1.0.9-r0 of package schroedinger
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MPL GPL LGPL MIT
+Architecture: armv5te
+OE: schroedinger
+Homepage: http://schrodinger.sourceforge.net/
+Depends: liborc-0.4-0, libc6, libstdc++6, libgcc1
+Source: http://www.diracvideo.org/download/schroedinger/schroedinger-1.0.9.tar.gz;name=schroedingertargz file://configure.ac.patch

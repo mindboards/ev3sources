@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="x-content/video-vcd">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Video CD</comment>
+  <comment xml:lang="be@latin">Videa CD</comment>
+  <comment xml:lang="ca">vídeo CD</comment>
+  <comment xml:lang="fr">CD vidéo</comment>
+  <comment xml:lang="ga">Dlúthdhiosca Físe</comment>
+  <comment xml:lang="nl">video-CD</comment>
+</mime-type>

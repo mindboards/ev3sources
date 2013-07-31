@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-matlab">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>MATLAB script/function</comment>
+  <comment xml:lang="be@latin">Skrypt/funkcyja MATLAB</comment>
+  <comment xml:lang="bg">Скрипт/функция — MATLAB</comment>
+  <comment xml:lang="ca">script/funció MATLAB</comment>
+  <comment xml:lang="cs">Skript/funkce MATLAB</comment>
+  <comment xml:lang="de">MATLAB-Skript/-Funktion</comment>
+  <comment xml:lang="en_GB">MATLAB script/function</comment>
+  <comment xml:lang="es">script/función de MATLAB</comment>
+  <comment xml:lang="eu">MATLAB script/funtzioa</comment>
+  <comment xml:lang="fi">MATLAB-skripti/funktio</comment>
+  <comment xml:lang="fr">script/fonction MATLAB</comment>
+  <comment xml:lang="ga">script/feidhm MATLAB</comment>
+  <comment xml:lang="hu">MATLAB parancsfájl/funkció</comment>
+  <comment xml:lang="id">Skrip/fungsi MATLAB</comment>
+  <comment xml:lang="it">Script/Funzione MATLAB</comment>
+  <comment xml:lang="ko">MATLAB 스크립트/함수</comment>
+  <comment xml:lang="lt">MATLAB scenarijus / funkcija</comment>
+  <comment xml:lang="nb">Skript/funksjon for MATLAB</comment>
+  <comment xml:lang="nl">MATLAB-script/functie</comment>
+  <comment xml:lang="nn">MATLAB-skript/funksjon</comment>
+  <comment xml:lang="pl">Skrypt/funkcja MATLABa</comment>
+  <comment xml:lang="pt_BR">Script/função do MATLAB</comment>
+  <comment xml:lang="sv">MATLAB-skript/funktion</comment>
+  <comment xml:lang="uk">Сценарій/функція MATLAB</comment>
+  <comment xml:lang="vi">Văn lệnh/chức năng MATLAB</comment>
+  <sub-class-of type="text/plain"/>
+  <alias type="text/x-octave"/>
+</mime-type>

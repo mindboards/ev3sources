@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: XCB Xprint
+Description: XCB Xprint Extension
+Version: 1.6
+Requires: xcb
+Libs: -L${libdir} -lxcb-xprint
+Cflags: -I${includedir}

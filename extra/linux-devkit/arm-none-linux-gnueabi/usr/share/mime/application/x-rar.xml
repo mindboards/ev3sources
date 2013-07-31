@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-rar">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>RAR archive</comment>
+  <comment xml:lang="be@latin">Archiŭ RAR</comment>
+  <comment xml:lang="bg">Архив — RAR</comment>
+  <comment xml:lang="ca">arxiu RAR</comment>
+  <comment xml:lang="cs">Archiv RAR</comment>
+  <comment xml:lang="da">RAR-arkiv</comment>
+  <comment xml:lang="de">RAR-Archiv</comment>
+  <comment xml:lang="el">αρχείο RAR</comment>
+  <comment xml:lang="en_GB">RAR archive</comment>
+  <comment xml:lang="eo">RAR-arkivo</comment>
+  <comment xml:lang="es">archivador RAR</comment>
+  <comment xml:lang="eu">RAR artxiboa</comment>
+  <comment xml:lang="fi">RAR-arkisto</comment>
+  <comment xml:lang="fr">archive RAR</comment>
+  <comment xml:lang="ga">cartlann RAR</comment>
+  <comment xml:lang="hu">RAR-archívum</comment>
+  <comment xml:lang="id">Arsip RAR</comment>
+  <comment xml:lang="it">Archivio RAR</comment>
+  <comment xml:lang="ja">RAR アーカイブ</comment>
+  <comment xml:lang="ko">RAR 압축파일</comment>
+  <comment xml:lang="lt">RAR archyvas</comment>
+  <comment xml:lang="ms">Arkib RAR</comment>
+  <comment xml:lang="nb">RAR-arkiv</comment>
+  <comment xml:lang="nl">RAR-archief</comment>
+  <comment xml:lang="nn">RAR-arkiv</comment>
+  <comment xml:lang="pl">Archiwum RAR</comment>
+  <comment xml:lang="pt">arquivo RAR</comment>
+  <comment xml:lang="pt_BR">Pacote RAR</comment>
+  <comment xml:lang="ru">архив RAR</comment>
+  <comment xml:lang="sq">Arkiv RAR</comment>
+  <comment xml:lang="sr">РАР архива</comment>
+  <comment xml:lang="sv">RAR-arkiv</comment>
+  <comment xml:lang="uk">Архів RAR</comment>
+  <comment xml:lang="vi">Kho nén RAR</comment>
+  <comment xml:lang="zh_CN">RAR 压缩包</comment>
+  <comment xml:lang="zh_TW">RAR 保存檔</comment>
+  <generic-icon name="package-x-generic"/>
+</mime-type>

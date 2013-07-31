@@ -1,0 +1,14 @@
+/usr/include/gconf/2/gconf/gconf-enum-types.h
+/usr/share/aclocal/gconf-2.m4
+/usr/include/gconf/2/gconf/gconf-changeset.h
+/usr/include/gconf/2/gconf/gconf.h
+/usr/include/gconf/2/gconf/gconf-error.h
+/usr/lib/pkgconfig/gconf-2.0.pc
+/usr/include/gconf/2/gconf/gconf-client.h
+/usr/lib/libgconf-2.la
+/usr/include/gconf/2/gconf/gconf-engine.h
+/usr/share/sgml/gconf/gconf-1.0.dtd
+/usr/include/gconf/2/gconf/gconf-listeners.h
+/usr/lib/libgconf-2.so
+/usr/include/gconf/2/gconf/gconf-schema.h
+/usr/include/gconf/2/gconf/gconf-value.h

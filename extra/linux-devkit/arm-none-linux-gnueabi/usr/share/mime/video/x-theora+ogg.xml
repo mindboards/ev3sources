@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="video/x-theora+ogg">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Ogg Theora video</comment>
+  <comment xml:lang="be@latin">Videa Ogg Theora</comment>
+  <comment xml:lang="ca">vídeo Ogg Theora</comment>
+  <comment xml:lang="cs">Video Ogg Theora</comment>
+  <comment xml:lang="es">vídeo Ogg Theora</comment>
+  <comment xml:lang="fi">Ogg Theora -video</comment>
+  <comment xml:lang="fr">vidéo Ogg Theora</comment>
+  <comment xml:lang="ga">físeán Ogg Theora</comment>
+  <comment xml:lang="hu">Ogg Theora videó</comment>
+  <comment xml:lang="id">Video Ogg Theora</comment>
+  <comment xml:lang="it">Video Ogg Theora</comment>
+  <comment xml:lang="ko">Ogg Theora 비디오</comment>
+  <comment xml:lang="lt">Ogg Theora vaizdas</comment>
+  <comment xml:lang="nb">Ogg Theora video</comment>
+  <comment xml:lang="nl">Ogg Theora-video</comment>
+  <comment xml:lang="pt_BR">Vídeo do Ogg Theora</comment>
+  <comment xml:lang="sv">Ogg Theora-video</comment>
+  <comment xml:lang="vi">Ảnh động Theora Ogg</comment>
+  <sub-class-of type="video/ogg"/>
+</mime-type>

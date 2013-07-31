@@ -1,0 +1,9 @@
+/usr/include/X11/ICE/ICE.h
+/usr/include/X11/ICE/ICEutil.h
+/usr/include/X11/ICE/ICEmsg.h
+/usr/lib/libICE.la
+/usr/include/X11/ICE/ICEconn.h
+/usr/lib/libICE.so
+/usr/lib/pkgconfig/ice.pc
+/usr/include/X11/ICE/ICEproto.h
+/usr/include/X11/ICE/ICElib.h

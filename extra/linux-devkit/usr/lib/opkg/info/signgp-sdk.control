@@ -1,0 +1,12 @@
+Package: signgp-sdk
+Version: 1.0-r4.6
+Description: Tool to sign omap3 x-loader images
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: NewBSD
+Architecture: i686-armv5te-sdk
+OE: signgp-sdk
+Homepage: unknown
+Depends: libc6
+Source: file://signGP.c

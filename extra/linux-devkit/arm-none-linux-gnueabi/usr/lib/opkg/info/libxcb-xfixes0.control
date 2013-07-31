@@ -1,0 +1,12 @@
+Package: libxcb-xfixes0
+Version: 1.6-r4.1.6
+Description: XCB: an X protocol C binding
+Section: x11/libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT-X
+Architecture: armv5te
+OE: libxcb
+Homepage: http://xcb.freedesktop.org
+Depends: libxcb1, libpthread-stubs0, libxau6, libgcc1, libc6
+Source: http://xcb.freedesktop.org/dist/libxcb-1.6.tar.bz2 file://configure_git.patch

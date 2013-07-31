@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-emacs-lisp">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Emacs Lisp source code</comment>
+  <comment xml:lang="az">Emacs Lisp mənbə kodu</comment>
+  <comment xml:lang="be@latin">Kryničny kod Emacs Lisp</comment>
+  <comment xml:lang="bg">Изходен код — Emacs Lisp</comment>
+  <comment xml:lang="ca">codi font en Emacs Lisp</comment>
+  <comment xml:lang="cs">Zdrojový kód Emacs Lisp</comment>
+  <comment xml:lang="cy">Ffynhonnell rhaglen EMACS LISP</comment>
+  <comment xml:lang="da">Emacs Lisp-kildekode</comment>
+  <comment xml:lang="de">Emacs-Lisp-Quelltext</comment>
+  <comment xml:lang="el">πηγαίος κώδικας Emacs Lisp</comment>
+  <comment xml:lang="en_GB">Emacs Lisp source code</comment>
+  <comment xml:lang="eo">fontkodo en Emacs Lisp</comment>
+  <comment xml:lang="es">código fuente en Lisp de Emacs</comment>
+  <comment xml:lang="eu">Emacs Lisp iturburu-kodea</comment>
+  <comment xml:lang="fi">Emacs Lisp -lähdekoodi</comment>
+  <comment xml:lang="fr">code source Emacs Lisp</comment>
+  <comment xml:lang="ga">cód foinseach Emacs Lisp</comment>
+  <comment xml:lang="hu">Emacs Lisp-forráskód</comment>
+  <comment xml:lang="id">Kode sumber Emacs Lisp</comment>
+  <comment xml:lang="it">Codice sorgente Emacs Lisp</comment>
+  <comment xml:lang="ja">Emacs Lisp ソースコード</comment>
+  <comment xml:lang="ko">Emacs Lisp 소스 코드</comment>
+  <comment xml:lang="lt">Emacs Lisp pradinis kodas</comment>
+  <comment xml:lang="ms">Kod sumber Emacs Lisp</comment>
+  <comment xml:lang="nb">Emacs Lisp-kildekode</comment>
+  <comment xml:lang="nl">Emacs Lisp-broncode</comment>
+  <comment xml:lang="nn">Emacs Lisp kjeldekode</comment>
+  <comment xml:lang="pl">Plik źródłowy Emacs Lisp</comment>
+  <comment xml:lang="pt">código fonte Emacs Lisp</comment>
+  <comment xml:lang="pt_BR">Código fonte Lisp do Emacs</comment>
+  <comment xml:lang="ru">исходный код программы Emacs Lisp</comment>
+  <comment xml:lang="sq">Kod burues Emacs Lisp</comment>
+  <comment xml:lang="sr">Емакс Лисп изворни ко̂д</comment>
+  <comment xml:lang="sv">Emacs Lisp-källkod</comment>
+  <comment xml:lang="uk">Вихідний код на мові Emacs Lisp</comment>
+  <comment xml:lang="vi">Mã nguồn Lisp Emacs</comment>
+  <comment xml:lang="zh_CN">Emacs Lisp 源代码</comment>
+  <comment xml:lang="zh_TW">Emacs Lisp 源代碼</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

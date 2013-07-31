@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.oasis.opendocument.text-template">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>ODT template</comment>
+  <comment xml:lang="be@latin">Šablon ODT</comment>
+  <comment xml:lang="bg">Шаблон — ODT</comment>
+  <comment xml:lang="ca">plantilla ODT</comment>
+  <comment xml:lang="cs">Šablona ODT</comment>
+  <comment xml:lang="de">ODT-Vorlage</comment>
+  <comment xml:lang="en_GB">ODT template</comment>
+  <comment xml:lang="es">plantilla ODT</comment>
+  <comment xml:lang="eu">ODT txantiloia</comment>
+  <comment xml:lang="fi">ODT-malli</comment>
+  <comment xml:lang="fr">modèle ODT</comment>
+  <comment xml:lang="ga">teimpléad ODT</comment>
+  <comment xml:lang="hu">ODT sablon</comment>
+  <comment xml:lang="id">Templat ODT</comment>
+  <comment xml:lang="it">Modello ODT</comment>
+  <comment xml:lang="ko">ODT 문서 틀</comment>
+  <comment xml:lang="lt">ODT šablonas</comment>
+  <comment xml:lang="nb">ODT-mal</comment>
+  <comment xml:lang="nl">ODT-sjabloon</comment>
+  <comment xml:lang="nn">ODT-mal</comment>
+  <comment xml:lang="pl">Szablon ODT</comment>
+  <comment xml:lang="pt_BR">Modelo ODT</comment>
+  <comment xml:lang="sv">ODT-mall</comment>
+  <comment xml:lang="uk">Шаблон ODT</comment>
+  <comment xml:lang="vi">Mẫu ODT</comment>
+  <acronym>OTT</acronym>
+  <expanded-acronym>OpenDocument Text Template</expanded-acronym>
+  <sub-class-of type="application/zip"/>
+  <generic-icon name="x-office-document"/>
+</mime-type>

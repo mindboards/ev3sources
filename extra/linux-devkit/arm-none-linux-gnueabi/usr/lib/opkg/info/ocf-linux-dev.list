@@ -1,0 +1,4 @@
+/usr/include/crypto/uio.h
+/usr/include/crypto/rndtest.h
+/usr/include/crypto/ocf-compat.h
+/usr/include/crypto/cryptodev.h

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-go-sgf">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>SGF record</comment>
+  <comment xml:lang="be@latin">Zapisanaja hulnia SGF</comment>
+  <comment xml:lang="ca">registre SGF</comment>
+  <comment xml:lang="cs">Záznam SGF</comment>
+  <comment xml:lang="es">grabación SGF</comment>
+  <comment xml:lang="fi">SGF-nauhoitus</comment>
+  <comment xml:lang="fr">partie SGF</comment>
+  <comment xml:lang="ga">taifead SGF</comment>
+  <comment xml:lang="hu">SGF pontszám</comment>
+  <comment xml:lang="id">Catatan SGF</comment>
+  <comment xml:lang="it">Registrazione SGF</comment>
+  <comment xml:lang="ko">SGF 기록파일</comment>
+  <comment xml:lang="lt">SGF įrašas</comment>
+  <comment xml:lang="nb">SGF-oppføring</comment>
+  <comment xml:lang="nl">SGF-record</comment>
+  <comment xml:lang="pt_BR">Gravação do SGF</comment>
+  <comment xml:lang="sv">SGF-poäng</comment>
+  <comment xml:lang="vi">Mục ghi SGF</comment>
+  <acronym>SGF</acronym>
+  <expanded-acronym>Smart Game Format</expanded-acronym>
+  <generic-icon name="text-x-generic"/>
+  <sub-class-of type="text/plain"/>
+</mime-type>

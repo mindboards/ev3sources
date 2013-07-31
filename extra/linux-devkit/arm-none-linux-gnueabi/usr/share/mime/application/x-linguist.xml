@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-linguist">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>message catalog</comment>
+  <comment xml:lang="be@latin">kataloh paviedamleńniaŭ</comment>
+  <comment xml:lang="bg">Каталог със съобщения</comment>
+  <comment xml:lang="ca">catàleg de missatges</comment>
+  <comment xml:lang="cs">Katalog zpráv</comment>
+  <comment xml:lang="da">meddelelseskatalog</comment>
+  <comment xml:lang="de">Nachrichtenkatalog</comment>
+  <comment xml:lang="el">κατάλογος μηνυμάτων</comment>
+  <comment xml:lang="en_GB">message catalogue</comment>
+  <comment xml:lang="eo">katalogo de mesaĝoj</comment>
+  <comment xml:lang="es">catálogo de mensajes</comment>
+  <comment xml:lang="eu">mezuen katalogoa</comment>
+  <comment xml:lang="fi">viestiluettelo</comment>
+  <comment xml:lang="fr">catalogue de messages</comment>
+  <comment xml:lang="ga">catalóg theachtaireachtaí</comment>
+  <comment xml:lang="hu">üzenetkatalógus</comment>
+  <comment xml:lang="id">katalog pesan</comment>
+  <comment xml:lang="it">Catalogo di messaggi</comment>
+  <comment xml:lang="ja">メッセージカタログ</comment>
+  <comment xml:lang="ko">메세지 카탈로그</comment>
+  <comment xml:lang="lt">laiškų katalogas</comment>
+  <comment xml:lang="ms">Katalog mesej</comment>
+  <comment xml:lang="nb">meldingskatalog</comment>
+  <comment xml:lang="nl">berichtencatalogus</comment>
+  <comment xml:lang="nn">meldingskatalog</comment>
+  <comment xml:lang="pl">katalog wiadomości</comment>
+  <comment xml:lang="pt">catálogo de mensagens</comment>
+  <comment xml:lang="pt_BR">católogo de mensagens</comment>
+  <comment xml:lang="sq">katallog mesazhi</comment>
+  <comment xml:lang="sr">каталог порука</comment>
+  <comment xml:lang="sv">meddelandekatalog</comment>
+  <comment xml:lang="uk">каталог повідомлень</comment>
+  <comment xml:lang="vi">phân loại thông điệp</comment>
+  <comment xml:lang="zh_CN">消息库</comment>
+</mime-type>

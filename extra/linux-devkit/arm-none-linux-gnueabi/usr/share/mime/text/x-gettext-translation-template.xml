@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-gettext-translation-template">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>translation template</comment>
+  <comment xml:lang="be@latin">šablon dla pierakładu</comment>
+  <comment xml:lang="bg">Шаблон за превод</comment>
+  <comment xml:lang="ca">plantilla de traducció</comment>
+  <comment xml:lang="cs">Šablona překladu</comment>
+  <comment xml:lang="de">Übersetzungsvorlage</comment>
+  <comment xml:lang="en_GB">translation template</comment>
+  <comment xml:lang="es">plantilla de traducción</comment>
+  <comment xml:lang="eu">itzulpenen txantiloia</comment>
+  <comment xml:lang="fi">käännösmalli</comment>
+  <comment xml:lang="fr">modèle de traduction</comment>
+  <comment xml:lang="ga">teimpléad aistrithe</comment>
+  <comment xml:lang="hu">fordítási sablon</comment>
+  <comment xml:lang="id">templat terjemahan</comment>
+  <comment xml:lang="it">Modello di traduzione</comment>
+  <comment xml:lang="ko">메세지 번역틀</comment>
+  <comment xml:lang="lt">vertimo šablonas</comment>
+  <comment xml:lang="nb">mal for oversetting</comment>
+  <comment xml:lang="nl">vertalingssjabloon</comment>
+  <comment xml:lang="nn">omsetjingsmal</comment>
+  <comment xml:lang="pl">szablon tłumaczenia</comment>
+  <comment xml:lang="pt_BR">modelo de tradução</comment>
+  <comment xml:lang="ru">шаблон переводов сообщений</comment>
+  <comment xml:lang="sv">översättningsmall</comment>
+  <comment xml:lang="uk">шаблон перекладу</comment>
+  <comment xml:lang="vi">mẫu dịch</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

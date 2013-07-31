@@ -1,0 +1,252 @@
+# Copyright (C) Eazel, Inc. 2000, 2001
+#
+# MIME magic patterns as used by the Gnome VFS library
+#
+# The format of magic entries is:
+#
+#     offset_start[:offset_end] pattern_type pattern [&pattern_mask] type
+#
+# <offset_start> and <offset_end> are decimal numbers (file offsets).
+#
+# <pattern_type> is (byte | short | long | string | date | beshort |
+#                    belong | bedate | leshort | lelong | ledate).
+#
+# <pattern> is an ASCII string with non-printable characters escaped
+# as hex or octal escape sequences, and spaces and other important
+# whitespace escaped with '\'.
+#
+# <pattern_mask> is a string of hex digits. The mask must be the same
+# length as the pattern.
+#
+# <type> is a valid MIME type.
+#
+# Order magic patterns such that ambiguous ones (such as
+# application/x-ms-dos-executable) are at the end of the list and
+# therefore get applied last.
+#
+# Avoid rules that require a seek deep into the examined file. If you
+# must, locate such rules at the end of the list so that they get
+# applied last
+#
+# When designing new document formats, make them easily recognizable
+# by defining a sufficiently unique magic pattern near the document
+# start. A good pattern is at least four bytes long and contains one
+# or two non-printable characters so that text files won't be
+# misidentified.
+
+0	string		%PDF-					application/pdf
+0	string		\177ELF\ \ \ \ \ \ \ \ \ \ \ \ \004 &0xffffffff000000000000000000000000ff application/x-core-file
+0	string		\177ELF\ \ \ \ \ \ \ \ \ \ \ \ \003 &0xffffffff000000000000000000000000ff application/x-shared-library
+0	string		\177ELF					application/x-executable-binary
+
+# Disable zip because detecting StarOffice files correctly is more imporant in the release
+# than detecting the occasional zip file without an extension
+#0	string		PK\003\004				application/zip
+
+0	string		\004%!					application/postscript
+0	string		\000\000\001\272			video/mpeg
+0	string		\000\000\001\263			video/mpeg
+# .mmv, mpeg transport stream created by movieshaker
+0       string          \x47\x3f\xff\x10                        video/mpeg
+0	string		\377\330\377				image/jpeg
+# The below ignores the details available (architecture, type, version)
+0	string		\xed\xab\xee\xdb			application/x-rpm
+0	string		Rar!					application/x-rar
+0	string		GIF8					image/gif
+4	string		ftypM4A					audio/x-m4a
+4	string		moov					video/quicktime
+4	string		mdat					video/quicktime
+8	string		mp42					video/quicktime
+12	string		mdat					video/quicktime
+36	string		mdat					video/quicktime
+0	belong		0x3026b275				video/x-ms-asf
+0	string		ASF\ 					audio/x-ms-asx
+0	string		\<ASX					audio/x-ms-asx
+0	string		\<asx					audio/x-ms-asx
+0	string		MThd					audio/x-midi
+0	string		IMPM					audio/x-it
+0	string		\x1f\x07\x00\x00 &0xffffff00		video/dv
+2	string		-lh0-					application/x-lha
+2	string		-lh1-					application/x-lha
+2	string		-lz4-					application/x-lha
+2	string		-lz5-					application/x-lha
+2	string		-lzs-					application/x-lha
+2	string		-lh\40-					application/x-lha
+2	string		-lhd-					application/x-lha
+2	string		-lh2-					application/x-lha
+2	string		-lh3-					application/x-lha
+2	string		-lh4-					application/x-lha
+2	string		-lh5-					application/x-lha
+20      string		\375\304\247\334			application/x-zoo
+0	string		StuffIt\ 				application/x-stuffit
+11	string		must\ be\ converted\ with\ BinHex	application/mac-binhex40
+102	string		mBIN					application/x-macbinary
+4	string		gtktalog\ 				application/x-gtktalog
+0	string		diff\ 					text/x-patch
+0	string		Index:					text/x-patch
+0	string		***\ 					text/x-patch
+0	string		Only\ in\ 				text/x-patch
+0	string		Common\ subdirectories:\ 		text/x-patch
+0	string		FONT					application/x-font-vfont
+0	string		IIN1					image/tiff
+0	string		MM\x00\x2a				image/tiff
+0	string		II\x2a\x00				image/tiff
+0	string		\x89PNG					image/png
+0	string		8BPS\ \ \000\000\000\000 &0xffffffff0000ffffffff image/x-psd
+0	string		#LyX					text/x-lyx
+0	string		DCMw					image/x-dcm
+0	belong		0x59a66a95				image/x-sun-raster
+0	belong		0x01da0000 &0xfcfeffff			image/x-sgi
+0	belong		0xb168de3a				image/x-pcx
+0	string          \x28\x00\x00\x00                        image/x-dib
+0	string          SIMPLE\ \ =                             image/x-fits
+0	belong          0x46506978                              image/x-fpx
+0	belong		0x00000200				image/x-icb
+0	belong		0x53445058				image/x-dpx
+0	string		d8:announce				application/x-bittorrent
+8	string		matroska				application/x-matroska
+
+# Desktop file support - slightly wrong, since comments can be before
+# the [Desktop Entry] line in the current spec - probably should fix
+# desktop entry spec to allow this
+0:32   string          [Desktop\ Entry]                        application/x-gnome-app-info
+
+# Theme ("Metatheme") support
+0:40   string          [X-GNOME-Metatheme]                     application/x-gnome-theme
+
+# special Nautilus link type
+0:32	string		\<nautilus_object\ nautilus_link	application/x-nautilus-link
+
+# special GMC link type
+0:32	string		\URL:					application/x-gmc-link
+
+# xpm rule needs to go before text/x-c
+0	string		/*\ XPM\ */				image/x-xpixmap
+
+0:64	string		\<!DOCTYPE\ xbel			application/x-xbel
+0:192	string		\<xbel					application/x-xbel
+0:64	string		\<!DOCTYPE\ NETSCAPE-Bookmark-file-1\>	application/x-mozilla-bookmarks
+0:64	string		\<!DOCTYPE\ NETSCAPE-Bookmark-file-1\>	application/x-netscape-bookmarks
+0:64	string		\<ephy_bookmarks			application/x-epiphany-bookmarks
+
+# svg rules need to go before html
+0:256	string		\<!DOCTYPE\ svg				image/svg+xml
+0:64	string		\<svg					image/svg+xml
+0:64	string		\<chemistry				application/x-gchempaint
+0:64	string		\<crystal				application/x-gcrystal
+# php rules need to go before html
+0:64	string		\<?php					application/x-php
+0:64	string		\<smil\>				application/x-smil
+0:64    string		\<SMIL\>				application/x-smil
+0:64	string		\<!DOCTYPE\ HTML			text/html
+0:64	string		\<!doctype\ html			text/html
+0:64	string		\<HEAD					text/html
+0:64	string		\<head					text/html
+0:64	string		\<html					text/html
+0:64	string		\<HTML					text/html
+0:64	string		\<dia:diagram				application/x-dia-diagram
+0:64	string		\<abiword				application/x-abiword
+0:64	string		\<\!DOCTYPE\ abiword			application/x-abiword
+0:64	string		gmr:Workbook				application/x-gnumeric
+0:64	string		\<project				application/x-mrproject
+# text/xml content detection needs to be after all the xml-derived formats
+0:64	string		\<?xml					text/xml
+0	string		{\\rtf					application/rtf
+0	string		#!/bin/sh				text/x-sh
+0	string		#!/bin/bash				text/x-sh
+0	string		#!/bin/csh				text/x-csh
+0	string		#!/bin/ksh				text/x-ksh
+0	string		#!/bin/perl				text/x-perl
+0	string		#!/bin/zsh				text/x-zsh
+1:16	string		/bin/sh					text/x-sh
+1:16	string		/bin/bash				text/x-sh
+1:16	string		/bin/csh				text/x-csh
+1:16	string		/bin/ksh				text/x-ksh
+1:16	string		/bin/perl				text/x-perl
+1:16	string		/bin/python				text/x-python
+0	string		BEGIN:VCARD				text/x-vcard
+0	string		BEGIN:VCALENDAR				text/calendar
+8	string		CDR\ vrsn				application/vnd.corel-draw
+8	string		AVI\ 					video/x-msvideo
+0	string		MOVI					video/x-sgi-movie
+0	string		.snd					audio/basic
+8	string		AIFC					audio/x-aifc
+8	string		AIFF					audio/x-aiff
+0	string		.ra\375					audio/x-pn-realaudio
+0	belong		0x2e7261fd				audio/x-pn-realaudio
+0	string		.RMF					audio/x-pn-realaudio
+8	string		WAVE					audio/x-wav
+8	string		WAV\ 					audio/x-wav
+0	string		RIFFxxxxCDXA &0xffffffff00000000ffffffff	video/mpeg
+0	string		RIFF					audio/x-riff
+0	string		OggS					application/ogg
+0	string		pnm:\/\/				audio/x-real-audio
+0	string		rtsp:\/\/				audio/x-real-audio
+0	string		SIT! 					application/x-stuffit
+0	string		\312\376\272\276			application/x-java-byte-code
+0	string		Joy!					application/x-pef-executable
+4       string		\x11\xAF				video/x-fli
+4       string		\x12\xAF				video/x-flc
+0	string		\x31\xbe\x00\x00			application/msword
+0       string  	PO^Q`           			application/msword
+0	string		*BEGIN\ SPREADSHEETS			application/x-applix-spreadsheet
+0	string		\x00\x00\x02\x00			application/vnd.lotus-1-2-3
+0	string		PSID					audio/prs.sid
+31      string		Oleo					application/x-oleo
+0	string		FFIL					application/x-font-ttf
+65	string		FFIL					application/x-font-ttf
+0	string		LWFN					application/x-font-type1
+65	string		LWFN					application/x-font-type1
+0	string		StartFont				application/x-font-sunos-news
+0	string		\x13\x7A\x29				application/x-font-sunos-news
+8	string		\x13\x7A\x2B				application/x-font-sunos-news
+0	string		%!PS-AdobeFont-1.			application/x-font-type1
+6	string		%!PS-AdobeFont-1.			application/x-font-type1
+0	string		%!FontType1-1.				application/x-font-type1
+6	string		%!FontType1-1.				application/x-font-type1
+0	string		STARTFONT\040				application/x-font-bdf
+0	string		\001fcp					application/x-font-pcf
+0	string		D1.0\015				application/x-font-speedo
+0	string		\x14\x02\x59\x19			application/x-font-libgrx
+0	string		\xff\x46\x4f\x4e			application/x-font-dos
+7	string		\x00\x45\x47\x41			application/x-font-dos
+7	string		\x00\x56\x49\x44			application/x-font-dos
+0	string		\<MakerScreenFont			application/x-font-framemaker
+0	string		\000\001\000\000\000			application/x-font-ttf
+1       string          WPC        				application/x-wordperfect
+0	string		ID;					text/spreadsheet
+0	string		MZ					application/x-ms-dos-executable
+0	string		%!					application/postscript
+0       string          BZh                                     application/x-bzip
+0	string		\x1f\x8b				application/x-gzip
+0	string		\037\235				application/x-compress
+0	string		\367\002				application/x-dvi
+0	string		\367\203				application/x-font-tex
+0	string		\367\131				application/x-font-tex
+0	string		\367\312				application/x-font-tex
+2	string		\000\022				application/x-font-tex-tfm
+0	string		\x36\x04				application/x-font-linux-psf
+0	string		FWS					application/x-shockwave-flash
+0	string		NSVf					video/x-nsv
+0	string		BMxxxx\000\000 &0xffff00000000ffff	image/bmp
+0	string		AT&TFORM				image/vnd.djvu
+0	string		Return-Path:				message/rfc822
+0	string		Path:					message/news
+0	string		Xref:					message/news
+0	string		From:					message/rfc822
+0	string		Article					message/news
+0	string		Received:				message/rfc822
+0	string		[playlist]				audio/x-scpls
+0	string		[Reference]				video/x-ms-asf
+22	string		\<EDL					application/x-cinelerra
+32769	string		CD001					application/x-iso-image
+37633	string		CD001					application/x-iso-image
+32776	string		CDROM					application/x-iso-image
+0       string          OTTO                                    application/x-font-otf
+54	string		S\ T\ O\ P				application/x-ipod-firmware
+0:160	string		fLaC					audio/x-flac
+0:160	string		ID3\x20\x00				audio/mpeg
+0:160	string		ID3\x30\x00				audio/mpeg
+0:160	string		ID3\x40\x00				audio/mpeg
+0:512	string		\x00\x00\x01\xba			video/mpeg
+0	string		BLENDER					application/x-blender

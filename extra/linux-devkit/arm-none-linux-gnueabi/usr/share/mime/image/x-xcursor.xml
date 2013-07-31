@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-xcursor">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>X11 cursor</comment>
+  <comment xml:lang="be@latin">Kursor X11</comment>
+  <comment xml:lang="bg">Курсор — X11</comment>
+  <comment xml:lang="ca">cursor X11</comment>
+  <comment xml:lang="cs">Kurzor X11</comment>
+  <comment xml:lang="de">X11-Zeiger</comment>
+  <comment xml:lang="es">cursor X11</comment>
+  <comment xml:lang="eu">X11 kurtsorea</comment>
+  <comment xml:lang="fi">X11-osoitin</comment>
+  <comment xml:lang="fr">curseur X11</comment>
+  <comment xml:lang="ga">cúrsóir X11</comment>
+  <comment xml:lang="hu">X11 kurzor</comment>
+  <comment xml:lang="id">Kursor X11</comment>
+  <comment xml:lang="it">Cursore X11</comment>
+  <comment xml:lang="ko">X11 커서</comment>
+  <comment xml:lang="lt">X11 žymiklis</comment>
+  <comment xml:lang="nb">X11-markør</comment>
+  <comment xml:lang="nl">X11-muisaanwijzer</comment>
+  <comment xml:lang="pl">Kursor X11</comment>
+  <comment xml:lang="pt_BR">Cursor do X11</comment>
+  <comment xml:lang="sv">X11-muspekare</comment>
+  <comment xml:lang="uk">Курсор X11</comment>
+  <comment xml:lang="vi">Con chạy X11</comment>
+</mime-type>

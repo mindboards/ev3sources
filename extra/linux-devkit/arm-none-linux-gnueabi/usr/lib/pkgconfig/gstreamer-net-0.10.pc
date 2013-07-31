@@ -1,0 +1,15 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include/gstreamer-0.10
+datarootdir=${prefix}/share
+datadir=${datarootdir}
+girdir=${datadir}/gir-1.0
+typelibdir=${libdir}/girepository-1.0
+
+Name: GStreamer networking library
+Description: Network-enabled GStreamer plug-ins and clocking
+Requires: gstreamer-0.10
+Version: 0.10.30
+Libs: -L${libdir} -lgstnet-0.10
+Cflags: -I${includedir}

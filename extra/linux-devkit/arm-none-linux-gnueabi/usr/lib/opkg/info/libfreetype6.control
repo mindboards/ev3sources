@@ -1,0 +1,12 @@
+Package: libfreetype6
+Version: 2.4.3-r0-arago1.6
+Description: Freetype font rendering library
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2
+Architecture: armv5te
+OE: freetype
+Homepage: unknown
+Depends: libz1, libgcc1, libc6
+Source: http://downloads.sourceforge.net/freetype/freetype-2.4.3.tar.bz2 file://no-hardcode.patch file://fix-configure.patch file://libtool-tag.patch

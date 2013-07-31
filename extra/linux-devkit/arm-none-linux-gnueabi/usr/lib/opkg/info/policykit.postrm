@@ -1,0 +1,2 @@
+deluser polkituser || true
+    delgroup polkituser || true

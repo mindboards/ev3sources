@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.oasis.opendocument.text-master">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>ODM document</comment>
+  <comment xml:lang="be@latin">Dakument ODM</comment>
+  <comment xml:lang="bg">Документ — ODM</comment>
+  <comment xml:lang="ca">document ODM</comment>
+  <comment xml:lang="cs">Dokument ODM</comment>
+  <comment xml:lang="de">ODM-Dokument</comment>
+  <comment xml:lang="en_GB">ODM document</comment>
+  <comment xml:lang="es">documento ODM</comment>
+  <comment xml:lang="eu">ODM dokumentua</comment>
+  <comment xml:lang="fi">ODM-asiakirja</comment>
+  <comment xml:lang="fr">document ODM</comment>
+  <comment xml:lang="ga">cáipéis ODM</comment>
+  <comment xml:lang="hu">ODM dokumentum</comment>
+  <comment xml:lang="id">Dokumen ODM</comment>
+  <comment xml:lang="it">Documento ODM</comment>
+  <comment xml:lang="ko">ODM 문서</comment>
+  <comment xml:lang="lt">ODM dokumentas</comment>
+  <comment xml:lang="nb">ODM-dokument</comment>
+  <comment xml:lang="nl">ODM-document</comment>
+  <comment xml:lang="nn">ODM-dokument</comment>
+  <comment xml:lang="pl">Dokument ODM</comment>
+  <comment xml:lang="pt_BR">Documento ODM</comment>
+  <comment xml:lang="ru">документ ODM</comment>
+  <comment xml:lang="sv">ODM-dokument</comment>
+  <comment xml:lang="uk">Документ ODM</comment>
+  <comment xml:lang="vi">Tài liệu ODM</comment>
+  <acronym>ODM</acronym>
+  <expanded-acronym>OpenDocument Master</expanded-acronym>
+  <sub-class-of type="application/zip"/>
+  <generic-icon name="x-office-document"/>
+</mime-type>

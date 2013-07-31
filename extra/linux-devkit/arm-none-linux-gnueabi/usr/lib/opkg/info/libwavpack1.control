@@ -1,0 +1,12 @@
+Package: libwavpack1
+Version: 4.60.1-r0.6
+Description: WavPack is a completely open audio compression format providing lossless, high-quality lossy, and a unique hybrid compression mode.
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: BSD
+Architecture: armv5te
+OE: wavpack
+Homepage: unknown
+Depends: libc6, libgcc1
+Source: http://wavpack.com/wavpack-4.60.1.tar.bz2

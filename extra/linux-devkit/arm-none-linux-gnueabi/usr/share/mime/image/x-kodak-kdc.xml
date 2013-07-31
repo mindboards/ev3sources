@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-kodak-kdc">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Kodak KDC raw image</comment>
+  <comment xml:lang="be@latin">Suvoraja vyjava Kodak KDC</comment>
+  <comment xml:lang="bg">Изображение — Kodak KDC raw</comment>
+  <comment xml:lang="ca">imatge en cru de Kodak KDC</comment>
+  <comment xml:lang="cs">Surový obrázek Kodak KDC</comment>
+  <comment xml:lang="es">imagen en bruto KDC de Kodak</comment>
+  <comment xml:lang="eu">Kodak KDC irudi gordina</comment>
+  <comment xml:lang="fi">Kodak-KDC-raakakuva</comment>
+  <comment xml:lang="fr">image brute KDC Kodak</comment>
+  <comment xml:lang="ga">amhíomhá Kodak KDC</comment>
+  <comment xml:lang="hu">Kodak KDC nyers kép</comment>
+  <comment xml:lang="id">Citra mentah Kodak KDC</comment>
+  <comment xml:lang="it">Immagine raw Kodak KDC</comment>
+  <comment xml:lang="ko">코닥 KDC raw 이미지</comment>
+  <comment xml:lang="lt">Kodak KDC neapdorotas paveikslėlis</comment>
+  <comment xml:lang="nb">Kodak KDC raw-bilde</comment>
+  <comment xml:lang="nl">onbewerkt Kodak KDC-beeld</comment>
+  <comment xml:lang="pt_BR">Imagem bruta KDC da Kodak</comment>
+  <comment xml:lang="sv">Kodak KDC-råbild</comment>
+  <comment xml:lang="vi">Ảnh thô Kodak KDC</comment>
+  <acronym>KDC</acronym>
+  <expanded-acronym>Kodak Digital Camera</expanded-acronym>
+  <sub-class-of type="image/x-dcraw"/>
+  <sub-class-of type="image/tiff"/>
+</mime-type>

@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: FreeType 2
+Description: A free, high-quality, and portable font engine.
+Version: 12.1.6
+Requires:
+Libs: -L${libdir} -lfreetype
+Libs.private: -lz 
+Cflags: -I${includedir}/freetype2 -I${includedir}

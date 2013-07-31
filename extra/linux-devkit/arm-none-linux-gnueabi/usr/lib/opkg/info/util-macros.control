@@ -1,0 +1,11 @@
+Package: util-macros
+Version: 1:1.11.0-r2.0.6
+Description: X autotools macros
+Section: x11/utils
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT-X
+Architecture: armv5te
+OE: util-macros
+Homepage: http://www.x.org
+Source: http://xorg.freedesktop.org/releases/individual/util/util-macros-1.11.0.tar.gz;name=archive

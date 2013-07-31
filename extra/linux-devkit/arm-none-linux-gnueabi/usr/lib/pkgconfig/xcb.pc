@@ -1,0 +1,13 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+xcbproto_version=1.6
+
+Name: XCB
+Description: X-protocol C Binding
+Version: 1.6
+Requires.private: pthread-stubs xau >= 0.99.2
+Libs: -L${libdir} -lxcb
+Libs.private: 
+Cflags: -I${includedir}

@@ -1,0 +1,6 @@
+/usr/lib/libopenobex.la
+/usr/include/openobex/obex.h
+/usr/lib/libopenobex.so
+/usr/include/openobex/obex_const.h
+/usr/lib/pkgconfig/openobex.pc
+/usr/share/aclocal/openobex.m4

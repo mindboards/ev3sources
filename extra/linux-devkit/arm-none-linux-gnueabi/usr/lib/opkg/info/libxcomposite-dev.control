@@ -1,0 +1,13 @@
+Package: libxcomposite-dev
+Version: 1:0.4.3-r9.0.6
+Description: X Composite extension library.
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: BSD-X
+Architecture: armv5te
+OE: libxcomposite
+Homepage: http://www.x.org
+Depends: libxcomposite1, libxcomposite1
+Recommends: util-macros-dev, compositeproto-dev, libxfixes-dev, libxext-dev, libx11-dev, libxcb-dev, libpthread-stubs-dev, libxau-dev, libc6-dev, libgcc1-dev, libxcomposite-dev
+Source: http://xorg.freedesktop.org/releases/individual/lib/libXcomposite-0.4.3.tar.bz2;name=archive

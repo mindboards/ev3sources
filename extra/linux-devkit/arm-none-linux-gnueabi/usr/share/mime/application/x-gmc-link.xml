@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-gmc-link">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>GMC link</comment>
+  <comment xml:lang="az">GMC körpüsü</comment>
+  <comment xml:lang="be@latin">Spasyłka GMC</comment>
+  <comment xml:lang="bg">Връзка — GMC</comment>
+  <comment xml:lang="ca">enllaç GMC</comment>
+  <comment xml:lang="cs">Odkaz GMC</comment>
+  <comment xml:lang="cy">Cyswllt GMC</comment>
+  <comment xml:lang="da">GMC-henvisning</comment>
+  <comment xml:lang="de">GMC-Link</comment>
+  <comment xml:lang="el">σύνδεσμος GMC</comment>
+  <comment xml:lang="en_GB">GMC link</comment>
+  <comment xml:lang="eo">GMC-ligilo</comment>
+  <comment xml:lang="es">enlace GMC</comment>
+  <comment xml:lang="eu">GMC esteka</comment>
+  <comment xml:lang="fi">GMC-linkki</comment>
+  <comment xml:lang="fr">lien GMC</comment>
+  <comment xml:lang="ga">nasc GMC</comment>
+  <comment xml:lang="hu">GMC-link</comment>
+  <comment xml:lang="id">Taut GMC</comment>
+  <comment xml:lang="it">Collegamento GMC</comment>
+  <comment xml:lang="ja">GMC リンク</comment>
+  <comment xml:lang="ko">GMC 연결</comment>
+  <comment xml:lang="lt">GMC nuoroda</comment>
+  <comment xml:lang="ms">Pautan GMC</comment>
+  <comment xml:lang="nb">GMC-lenke</comment>
+  <comment xml:lang="nl">GMC-verwijzing</comment>
+  <comment xml:lang="nn">GMC-lenkje</comment>
+  <comment xml:lang="pl">Odnośnik GMC</comment>
+  <comment xml:lang="pt">'link' GMC</comment>
+  <comment xml:lang="pt_BR">Link GMC</comment>
+  <comment xml:lang="ru">GMC ссылка</comment>
+  <comment xml:lang="sq">Lidhje GMC</comment>
+  <comment xml:lang="sr">GMC веза</comment>
+  <comment xml:lang="sv">GMC-länk</comment>
+  <comment xml:lang="uk">Посилання GMC</comment>
+  <comment xml:lang="vi">Liên kết GMC</comment>
+  <comment xml:lang="zh_CN">GMC 链接</comment>
+  <comment xml:lang="zh_TW">GMC 鏈結</comment>
+  <generic-icon name="text-x-generic"/>
+</mime-type>

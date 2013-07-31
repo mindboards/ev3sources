@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-rpm">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>RPM package</comment>
+  <comment xml:lang="be@latin">Pakunak RPM</comment>
+  <comment xml:lang="bg">Пакет — RPM</comment>
+  <comment xml:lang="ca">paquet RPM</comment>
+  <comment xml:lang="cs">Balíček RPM</comment>
+  <comment xml:lang="da">RPM-pakke</comment>
+  <comment xml:lang="de">RPM-Paket</comment>
+  <comment xml:lang="el">πακέτο RPM</comment>
+  <comment xml:lang="en_GB">RPM package</comment>
+  <comment xml:lang="eo">RPM-pakaĵo</comment>
+  <comment xml:lang="es">paquete RPM</comment>
+  <comment xml:lang="eu">RPM paketea</comment>
+  <comment xml:lang="fi">RPM-paketti</comment>
+  <comment xml:lang="fr">paquet RPM</comment>
+  <comment xml:lang="ga">pacáiste RPM</comment>
+  <comment xml:lang="hu">RPM-csomag</comment>
+  <comment xml:lang="id">Paket RPM</comment>
+  <comment xml:lang="it">Pacchetto RPM</comment>
+  <comment xml:lang="ja">RPM パッケージ</comment>
+  <comment xml:lang="ko">RPM 꾸러미</comment>
+  <comment xml:lang="lt">RPM paketas</comment>
+  <comment xml:lang="ms">Pakej RPM</comment>
+  <comment xml:lang="nb">RPM-pakke</comment>
+  <comment xml:lang="nl">RPM-pakket</comment>
+  <comment xml:lang="nn">RPM-pakke</comment>
+  <comment xml:lang="pl">Pakiet RPM</comment>
+  <comment xml:lang="pt">pacote RPM</comment>
+  <comment xml:lang="pt_BR">Pacote RPM</comment>
+  <comment xml:lang="ru">RPM пакет</comment>
+  <comment xml:lang="sq">Paketë RPM</comment>
+  <comment xml:lang="sr">RPM пакет</comment>
+  <comment xml:lang="sv">RPM-paket</comment>
+  <comment xml:lang="uk">Пакет RPM</comment>
+  <comment xml:lang="vi">Gói RPM</comment>
+  <comment xml:lang="zh_CN">RPM 软件包</comment>
+  <comment xml:lang="zh_TW">RPM 套件</comment>
+  <generic-icon name="package-x-generic"/>
+  <alias type="application/x-redhat-package-manager"/>
+</mime-type>

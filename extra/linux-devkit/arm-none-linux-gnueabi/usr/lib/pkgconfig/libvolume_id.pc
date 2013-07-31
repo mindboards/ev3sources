@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr//lib
+includedir=/usr/include
+
+Name: libvolume_id
+Description: Library for reading metadata, label, uuid from various filesystems
+Version: 141
+Libs: -L${libdir} -lvolume_id
+Cflags: -I${includedir}

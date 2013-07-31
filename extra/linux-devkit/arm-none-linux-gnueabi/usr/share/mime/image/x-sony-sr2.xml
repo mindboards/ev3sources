@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-sony-sr2">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Sony SR2 raw image</comment>
+  <comment xml:lang="be@latin">Suvoraja vyjava Sony SR2</comment>
+  <comment xml:lang="bg">Изображение — Sony SR2 raw</comment>
+  <comment xml:lang="ca">imatge en cru de Sony SR2</comment>
+  <comment xml:lang="cs">Surový obrázek Sony SR2</comment>
+  <comment xml:lang="es">imagen en bruto SR2 de Sony</comment>
+  <comment xml:lang="eu">Sony SR2 irudi gordina</comment>
+  <comment xml:lang="fi">Sony-SR2-raakakuva</comment>
+  <comment xml:lang="fr">image brute SR2 Sony</comment>
+  <comment xml:lang="ga">amhíomhá Sony SR2</comment>
+  <comment xml:lang="hu">Sony SR2 nyers kép</comment>
+  <comment xml:lang="id">Citra mentah Sony SR2</comment>
+  <comment xml:lang="it">Immagine raw Sony SR2</comment>
+  <comment xml:lang="ko">소니 SR2 raw 이미지</comment>
+  <comment xml:lang="lt">Sony SR2 neapdorotas paveikslėlis</comment>
+  <comment xml:lang="nb">Sony SR2 raw-bilde</comment>
+  <comment xml:lang="nl">onbewerkt Sony SR2-beeld</comment>
+  <comment xml:lang="pt_BR">Imagem bruta SR2 da Sony</comment>
+  <comment xml:lang="sv">Sony SR2-råbild</comment>
+  <comment xml:lang="vi">Ảnh thô Sony SR2</comment>
+  <acronym>SR2</acronym>
+  <expanded-acronym>Sony Raw format 2</expanded-acronym>
+  <sub-class-of type="image/x-dcraw"/>
+  <sub-class-of type="image/tiff"/>
+</mime-type>

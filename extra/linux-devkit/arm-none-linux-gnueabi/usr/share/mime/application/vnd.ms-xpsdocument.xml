@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.ms-xpsdocument">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>XPS document</comment>
+  <comment xml:lang="be@latin">Dakument XPS</comment>
+  <comment xml:lang="bg">Документ — XPS</comment>
+  <comment xml:lang="ca">document XPS</comment>
+  <comment xml:lang="cs">Dokument XPS</comment>
+  <comment xml:lang="de">XPS-Dokument</comment>
+  <comment xml:lang="es">documento XPS</comment>
+  <comment xml:lang="eu">XPS dokumentua</comment>
+  <comment xml:lang="fi">XPS-asiakirja</comment>
+  <comment xml:lang="fr">document XPS</comment>
+  <comment xml:lang="ga">cáipéis XPS</comment>
+  <comment xml:lang="hu">XPS dokumentum</comment>
+  <comment xml:lang="id">Dokumen XPS</comment>
+  <comment xml:lang="it">Documento XPS</comment>
+  <comment xml:lang="ko">XPS 문서</comment>
+  <comment xml:lang="lt">XPS dokumentas</comment>
+  <comment xml:lang="nb">XPS-dokument</comment>
+  <comment xml:lang="nl">XPS-document</comment>
+  <comment xml:lang="pl">Dokument XPS</comment>
+  <comment xml:lang="pt_BR">Documento XPS</comment>
+  <comment xml:lang="sv">XPS-dokument</comment>
+  <comment xml:lang="uk">Документ XPS</comment>
+  <comment xml:lang="vi">Tài liệu XPS</comment>
+  <acronym>XPS</acronym>
+  <expanded-acronym>XML Paper Specification</expanded-acronym>
+  <sub-class-of type="application/zip"/>
+  <generic-icon name="x-office-document"/>
+</mime-type>

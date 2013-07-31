@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/rdf">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>RDF file</comment>
+  <comment xml:lang="be@latin">Fajł RDF</comment>
+  <comment xml:lang="bg">Файл — RDF</comment>
+  <comment xml:lang="ca">fitxer RDF</comment>
+  <comment xml:lang="cs">Soubor RDF</comment>
+  <comment xml:lang="de">RDF-Datei</comment>
+  <comment xml:lang="en_GB">RDF file</comment>
+  <comment xml:lang="es">archivo RDF</comment>
+  <comment xml:lang="eu">RDF fitxategia</comment>
+  <comment xml:lang="fi">RDF-tiedosto</comment>
+  <comment xml:lang="fr">fichier RDF</comment>
+  <comment xml:lang="ga">comhad RDF</comment>
+  <comment xml:lang="hu">RDF fájl</comment>
+  <comment xml:lang="id">Arsip RDF</comment>
+  <comment xml:lang="it">File RDF</comment>
+  <comment xml:lang="ko">RDF 파일</comment>
+  <comment xml:lang="lt">RDF rinkmena</comment>
+  <comment xml:lang="nb">RDF-fil</comment>
+  <comment xml:lang="nl">RDF-bestand</comment>
+  <comment xml:lang="nn">RDF-fil</comment>
+  <comment xml:lang="pl">Plik RDF</comment>
+  <comment xml:lang="pt_BR">Arquivo RDF</comment>
+  <comment xml:lang="sv">RDF-fil</comment>
+  <comment xml:lang="uk">Файл RDF</comment>
+  <comment xml:lang="vi">Tập tin RDF</comment>
+  <acronym>RDF</acronym>
+  <expanded-acronym>Resource Description Framework</expanded-acronym>
+  <sub-class-of type="application/xml"/>
+</mime-type>

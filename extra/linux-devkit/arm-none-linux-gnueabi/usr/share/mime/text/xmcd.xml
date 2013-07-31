@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/xmcd">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>XMCD CD database</comment>
+  <comment xml:lang="be@latin">Baza źviestak ab dyskach XMCD</comment>
+  <comment xml:lang="bg">База от данни за CD-та — XMCD</comment>
+  <comment xml:lang="ca">base de dades de CD XMCD</comment>
+  <comment xml:lang="cs">Databáze XMCD CD</comment>
+  <comment xml:lang="de">XMCD-CD-Datenbank</comment>
+  <comment xml:lang="es">base de datos de CD XMCD</comment>
+  <comment xml:lang="eu">XMCD CD datu-basea</comment>
+  <comment xml:lang="fi">XMCD CD -tietokanta</comment>
+  <comment xml:lang="fr">base de données de CD XMCD</comment>
+  <comment xml:lang="ga">bunachar sonraí XMCD CD</comment>
+  <comment xml:lang="hu">XMCD CD-adatbázis</comment>
+  <comment xml:lang="id">Basis data XMCD CD</comment>
+  <comment xml:lang="it">Database XMCD CD</comment>
+  <comment xml:lang="ko">XMCD CD 데이터베이스</comment>
+  <comment xml:lang="lt">XMCD CD duomenų bazė</comment>
+  <comment xml:lang="nb">XMCD CD-database</comment>
+  <comment xml:lang="nl">XMCD CD-gegevensbank</comment>
+  <comment xml:lang="pl">Baza danych CD XMCD</comment>
+  <comment xml:lang="pt_BR">Banco de dados de CD XMCD</comment>
+  <comment xml:lang="sv">XMCD cd-databas</comment>
+  <comment xml:lang="uk">База даних XMCD CD</comment>
+  <comment xml:lang="vi">Cơ sở dữ liệu CD XMCD</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

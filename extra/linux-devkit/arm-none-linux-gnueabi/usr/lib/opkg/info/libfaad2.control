@@ -1,0 +1,12 @@
+Package: libfaad2
+Version: 2.7-r0.6
+Description: Library for reading some sort of media format.
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPL
+Architecture: armv5te
+OE: faad2
+Homepage: unknown
+Depends: libc6, libgcc1
+Source: http://downloads.sourceforge.net/faac/faad2-src/faad2-2.7/faad2-2.7.tar.bz2;name=faad2

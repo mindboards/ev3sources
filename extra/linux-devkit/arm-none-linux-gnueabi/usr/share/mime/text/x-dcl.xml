@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-dcl">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>DCL script</comment>
+  <comment xml:lang="az">DCL skripti</comment>
+  <comment xml:lang="be@latin">Skrypt DCL</comment>
+  <comment xml:lang="bg">Скрипт — DCL</comment>
+  <comment xml:lang="ca">script DCL</comment>
+  <comment xml:lang="cs">Skript DCL</comment>
+  <comment xml:lang="cy">Sgript DCL</comment>
+  <comment xml:lang="da">DCL-program</comment>
+  <comment xml:lang="de">DCL-Skript</comment>
+  <comment xml:lang="el">πρόγραμμα εντολών DCL</comment>
+  <comment xml:lang="en_GB">DCL script</comment>
+  <comment xml:lang="eo">DCL-skripto</comment>
+  <comment xml:lang="es">script en DCL</comment>
+  <comment xml:lang="eu">DCL script-a</comment>
+  <comment xml:lang="fi">DCL-komentotiedosto</comment>
+  <comment xml:lang="fr">script DCL</comment>
+  <comment xml:lang="ga">script DCL</comment>
+  <comment xml:lang="hu">DCL-parancsfájl</comment>
+  <comment xml:lang="id">Skrip DCL</comment>
+  <comment xml:lang="it">Script DCL</comment>
+  <comment xml:lang="ja">DCL スクリプト</comment>
+  <comment xml:lang="ko">DCL 스크립트</comment>
+  <comment xml:lang="lt">DCL scenarijus</comment>
+  <comment xml:lang="ms">Skrip DCL</comment>
+  <comment xml:lang="nb">DCL-skript</comment>
+  <comment xml:lang="nl">DCL-script</comment>
+  <comment xml:lang="nn">DCL-skript</comment>
+  <comment xml:lang="pl">Skrypt DCL</comment>
+  <comment xml:lang="pt">'script' DCL</comment>
+  <comment xml:lang="pt_BR">Script DCL</comment>
+  <comment xml:lang="ru">скрипт DCL</comment>
+  <comment xml:lang="sq">Script DCL</comment>
+  <comment xml:lang="sr">DCL скрипта</comment>
+  <comment xml:lang="sv">DCL-skript</comment>
+  <comment xml:lang="uk">Сценарій DCL</comment>
+  <comment xml:lang="vi">Văn lệnh DCL</comment>
+  <comment xml:lang="zh_CN">DCL 脚本</comment>
+  <comment xml:lang="zh_TW">DCL 描述語言檔</comment>
+  <acronym>DCL</acronym>
+  <expanded-acronym>Data Conversion Laboratory</expanded-acronym>
+  <sub-class-of type="text/plain"/>
+</mime-type>

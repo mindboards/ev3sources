@@ -1,0 +1,12 @@
+Package: task-arago-toolchain-tisdk-bsp-target
+Version: 1.0-r3.6
+Description: Task to build and install corresponding development packages for Board Support Package
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT
+Architecture: all
+OE: task-arago-toolchain-tisdk-bsp-target
+Homepage: unknown
+Recommends: bluez4-dev, libopenobex-dev
+Source: file:///home/schuyler_2/am_builds/arago/recipes/tasks/task-arago-toolchain-tisdk-bsp-target.bb

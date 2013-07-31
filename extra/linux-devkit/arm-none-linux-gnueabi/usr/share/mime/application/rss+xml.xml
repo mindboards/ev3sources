@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/rss+xml">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>RSS summary</comment>
+  <comment xml:lang="be@latin">Karotki ahlad RSS</comment>
+  <comment xml:lang="bg">Обобщение за сайтове — RSS</comment>
+  <comment xml:lang="ca">resum RSS</comment>
+  <comment xml:lang="cs">Souhrn RSS</comment>
+  <comment xml:lang="de">RSS-Zusammenfassung</comment>
+  <comment xml:lang="en_GB">RSS summary</comment>
+  <comment xml:lang="es">resumen RSS</comment>
+  <comment xml:lang="eu">RSS laburpena</comment>
+  <comment xml:lang="fi">RSS-tiivistelmä</comment>
+  <comment xml:lang="fr">résumé RSS</comment>
+  <comment xml:lang="ga">achoimre RSS</comment>
+  <comment xml:lang="hu">RSS összefoglaló</comment>
+  <comment xml:lang="id">Ringkasan RSS</comment>
+  <comment xml:lang="it">Sommario RSS</comment>
+  <comment xml:lang="ko">RSS 요약</comment>
+  <comment xml:lang="lt">RSS santrauka</comment>
+  <comment xml:lang="nb">RSS-sammendrag</comment>
+  <comment xml:lang="nl">RSS-samenvatting</comment>
+  <comment xml:lang="nn">RDF-samandrag</comment>
+  <comment xml:lang="pl">Podsumowanie RSS</comment>
+  <comment xml:lang="pt_BR">Resumo RSS</comment>
+  <comment xml:lang="sv">RSS-sammanfattning</comment>
+  <comment xml:lang="uk">Зведення сайту RSS</comment>
+  <comment xml:lang="vi">Bản tóm tắt RSS</comment>
+  <acronym>RSS</acronym>
+  <expanded-acronym>RDF Site Summary</expanded-acronym>
+  <alias type="text/rss"/>
+  <sub-class-of type="application/xml"/>
+  <generic-icon name="text-html"/>
+</mime-type>

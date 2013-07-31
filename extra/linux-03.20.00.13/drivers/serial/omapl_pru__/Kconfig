@@ -1,0 +1,24 @@
+config SERIAL_SUART_OMAPL_PRU
+	depends on ARCH_DAVINCI && (ARCH_DAVINCI_DA850 || ARCH_DAVINCI_DA830)
+	select SERIAL_CORE
+	tristate "PRU based SUART emulation for OMAPL"
+	---help---
+	Enable this to emulate a UART controller on the PRU of OMAPL.
+	If not sure, mark N
+
+config OMAPL_SUART_MCASP
+    int "McASP number"
+    depends on ARCH_DAVINCI && ARCH_DAVINCI_DA830 && SERIAL_SUART_OMAPL_PRU
+    default "0"
+    ---help---
+    Enter the McASP number to use with SUART (0, 1 or 2).
+	You will need to recompile the kernel if this is changed.
+
+config OMAPL_SUART_FW_SOURCE
+    string "OMAPL SUART source file(s)"
+	depends on SERIAL_SUART_OMAPL_PRU
+    default ""
+    ---help---
+	Enter the path for the OMAPL PRU SUART source files (<system path>/pru)
+
+

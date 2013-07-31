@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-ssa">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>SSA subtitles</comment>
+  <comment xml:lang="be@latin">Subtytry SSA</comment>
+  <comment xml:lang="bg">Субтитри — SSA</comment>
+  <comment xml:lang="ca">subtítols SSA</comment>
+  <comment xml:lang="cs">Titulky SSA</comment>
+  <comment xml:lang="es">Subtítulos SSA</comment>
+  <comment xml:lang="eu">SSA azpitituluak</comment>
+  <comment xml:lang="fi">SSA-tekstitykset</comment>
+  <comment xml:lang="fr">sous-titres SSA</comment>
+  <comment xml:lang="ga">fotheidil SSA</comment>
+  <comment xml:lang="hu">SSA feliratok</comment>
+  <comment xml:lang="id">Subjudul SSA</comment>
+  <comment xml:lang="it">Sottotitoli SSA</comment>
+  <comment xml:lang="ko">SSA 자막파일</comment>
+  <comment xml:lang="lt">SSA subtitrai</comment>
+  <comment xml:lang="nb">SSA undertekst</comment>
+  <comment xml:lang="nl">SSA-ondertitels</comment>
+  <comment xml:lang="pt_BR">Legenda SSA</comment>
+  <comment xml:lang="sv">SSA-undertexter</comment>
+  <comment xml:lang="vi">Phụ đề SSA</comment>
+  <acronym>SSA</acronym>
+  <expanded-acronym>SubStation Alpha</expanded-acronym>
+  <sub-class-of type="text/plain"/>
+</mime-type>

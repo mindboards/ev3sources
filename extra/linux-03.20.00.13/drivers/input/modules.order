@@ -1,0 +1,2 @@
+kernel/drivers/input/keyboard/atkbd.ko
+kernel/drivers/input/keyboard/xtkbd.ko

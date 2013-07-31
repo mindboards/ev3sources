@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-pw">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Pathetic Writer document</comment>
+  <comment xml:lang="be@latin">Dakument Pathetic Writer</comment>
+  <comment xml:lang="bg">Документ — Pathetic Writer</comment>
+  <comment xml:lang="ca">document de Pathetic Writer</comment>
+  <comment xml:lang="cs">Dokument Pathetic Writer</comment>
+  <comment xml:lang="da">Pathetic Writer-dokument</comment>
+  <comment xml:lang="de">Pathetic Writer-Dokument</comment>
+  <comment xml:lang="el">έγγραφο Pathetic Writer</comment>
+  <comment xml:lang="en_GB">Pathetic Writer document</comment>
+  <comment xml:lang="eo">dokumento de Pathetic Writer</comment>
+  <comment xml:lang="es">documento de Pathetic Writer</comment>
+  <comment xml:lang="eu">Pathetic Writer dokumentua</comment>
+  <comment xml:lang="fi">Pathetic Writer -asiakirja</comment>
+  <comment xml:lang="fr">document Pathetic Writer</comment>
+  <comment xml:lang="ga">cáipéis Pathetic Writer</comment>
+  <comment xml:lang="hu">Pathetic Writer-dokumentum</comment>
+  <comment xml:lang="id">Dokumen Pathetic Writer</comment>
+  <comment xml:lang="it">Documento Pathetic Writer</comment>
+  <comment xml:lang="ko">Pathetic Writer 문서</comment>
+  <comment xml:lang="lt">Pathetic Writer dokumentas</comment>
+  <comment xml:lang="ms">Dokumen Pathetic Writer</comment>
+  <comment xml:lang="nb">Pathetic Writer-dokument</comment>
+  <comment xml:lang="nl">Pathetic Writer-document</comment>
+  <comment xml:lang="nn">Pathetic Writer-dokument</comment>
+  <comment xml:lang="pl">Dokument Pathetic Writer</comment>
+  <comment xml:lang="pt">documento do Pathetic Writer</comment>
+  <comment xml:lang="pt_BR">Documento do Pathetic Writer</comment>
+  <comment xml:lang="ru">документ Pathetic Writer</comment>
+  <comment xml:lang="sq">Dokument Pathetic Writer</comment>
+  <comment xml:lang="sr">Документ Патетичног писца</comment>
+  <comment xml:lang="sv">Pathetic Writer-dokument</comment>
+  <comment xml:lang="uk">Документ Pathetic Writer</comment>
+  <comment xml:lang="vi">Tài liệu Pathetic Writer</comment>
+  <comment xml:lang="zh_CN">Pathetic Writer 文档</comment>
+  <comment xml:lang="zh_TW">Pathetic Writer 文件</comment>
+  <generic-icon name="x-office-document"/>
+</mime-type>

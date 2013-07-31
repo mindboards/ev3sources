@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-cmu-raster">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>CMU raster image</comment>
+  <comment xml:lang="az">CMU raster rəsmi</comment>
+  <comment xml:lang="be@latin">Rastravaja vyjava CMU</comment>
+  <comment xml:lang="bg">Изображение — CMU raster</comment>
+  <comment xml:lang="ca">imatge ràster CMU</comment>
+  <comment xml:lang="cs">Rastrový obrázek CMU</comment>
+  <comment xml:lang="cy">Delwedd raster CMU</comment>
+  <comment xml:lang="da">CMU-rasterbillede</comment>
+  <comment xml:lang="de">CMU-Rasterbild</comment>
+  <comment xml:lang="el">εικόνα ράστερ CMU</comment>
+  <comment xml:lang="en_GB">CMU raster image</comment>
+  <comment xml:lang="eo">rastruma bildo de CMU</comment>
+  <comment xml:lang="es">imagen ráster CMU</comment>
+  <comment xml:lang="eu">CMU bilbe-irudia</comment>
+  <comment xml:lang="fi">CMU-rasterikuva</comment>
+  <comment xml:lang="fr">image raster CMU</comment>
+  <comment xml:lang="ga">íomhá rastar CMU</comment>
+  <comment xml:lang="hu">CMU-raszterkép</comment>
+  <comment xml:lang="id">Citra raster CMU</comment>
+  <comment xml:lang="it">Immagine raster CMU</comment>
+  <comment xml:lang="ja">CMU ラスタ画像</comment>
+  <comment xml:lang="ko">CMU 래스터 그림</comment>
+  <comment xml:lang="lt">CMU rastrinis paveikslėlis</comment>
+  <comment xml:lang="ms">Imej raster CMU</comment>
+  <comment xml:lang="nb">CMU-rasterbilde</comment>
+  <comment xml:lang="nl">CMU-rasterafbeelding</comment>
+  <comment xml:lang="nn">CMU raster-bilete</comment>
+  <comment xml:lang="pl">Obraz rastrowy CMU</comment>
+  <comment xml:lang="pt">imagem rasterizada CMU</comment>
+  <comment xml:lang="pt_BR">Imagem raster CMU</comment>
+  <comment xml:lang="ru">растровое изображение CMU</comment>
+  <comment xml:lang="sq">Figurë raster CMU</comment>
+  <comment xml:lang="sr">CMU растерска слика</comment>
+  <comment xml:lang="sv">CMU-rasterbild</comment>
+  <comment xml:lang="uk">Растрове зображення CMU</comment>
+  <comment xml:lang="vi">Ảnh mành CMU</comment>
+  <comment xml:lang="zh_CN">CMU 矢量图像</comment>
+  <comment xml:lang="zh_TW">CMU raster 圖片</comment>
+</mime-type>

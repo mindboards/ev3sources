@@ -1,0 +1,8 @@
+/usr/include/mtd/nftl-user.h
+/usr/include/mtd/jffs2-user.h
+/usr/include/mtd/inftl-user.h
+/usr/include/mtd/ftl-user.h
+/usr/include/mtd/mtd-abi.h
+/usr/include/mtd/ubi-media.h
+/usr/include/mtd/ubi-user.h
+/usr/include/mtd/mtd-user.h

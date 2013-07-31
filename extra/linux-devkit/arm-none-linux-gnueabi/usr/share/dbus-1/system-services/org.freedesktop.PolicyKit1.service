@@ -1,0 +1,4 @@
+[D-BUS Service]
+Name=org.freedesktop.PolicyKit1
+Exec=/usr/libexec/polkitd
+User=root

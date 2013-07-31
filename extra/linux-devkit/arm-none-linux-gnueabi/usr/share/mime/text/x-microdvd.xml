@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-microdvd">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>MicroDVD subtitles</comment>
+  <comment xml:lang="be@latin">Subtytry MicroDVD</comment>
+  <comment xml:lang="bg">Субтитри — MicroDVD</comment>
+  <comment xml:lang="ca">subtítols MicroDVD</comment>
+  <comment xml:lang="cs">Titulky MicroDVD</comment>
+  <comment xml:lang="es">Subtítulos MicroDVD</comment>
+  <comment xml:lang="eu">MicroDVD azpitituluak</comment>
+  <comment xml:lang="fi">MicroDVD-tekstitykset</comment>
+  <comment xml:lang="fr">sous-titres MicroDVD</comment>
+  <comment xml:lang="ga">fotheidil MicroDVD</comment>
+  <comment xml:lang="hu">MicroDVD feliratok</comment>
+  <comment xml:lang="id">Subjudul MicroDVD</comment>
+  <comment xml:lang="it">Sottotitoli MicroDVD</comment>
+  <comment xml:lang="ko">MicroDVD 자막파일</comment>
+  <comment xml:lang="lt">MicroDVD subtitrai</comment>
+  <comment xml:lang="nb">MicroDVD undertekst</comment>
+  <comment xml:lang="nl">MicroDVD-ondertitels</comment>
+  <comment xml:lang="pt_BR">Legendas MicroDVD</comment>
+  <comment xml:lang="sv">MicroDVD-undertexter</comment>
+  <comment xml:lang="vi">Phụ đề MicroDVD</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

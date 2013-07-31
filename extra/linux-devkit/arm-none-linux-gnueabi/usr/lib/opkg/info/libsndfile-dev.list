@@ -1,0 +1,5 @@
+/usr/lib/pkgconfig/sndfile.pc
+/usr/lib/libsndfile.so
+/usr/include/sndfile.hh
+/usr/include/sndfile.h
+/usr/lib/libsndfile.la

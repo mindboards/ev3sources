@@ -1,0 +1,12 @@
+Package: libavahi-common3
+Version: 0.6.25-r1.6
+Description: Avahi implements the DNS-SD over Multicast DNS
+Section: network
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPL
+Architecture: armv5te
+OE: avahi
+Homepage: http://avahi.org
+Depends: libgcc1, libc6
+Source: http://avahi.org/download/avahi-0.6.25.tar.gz file://00avahi-autoipd file://99avahi-autoipd

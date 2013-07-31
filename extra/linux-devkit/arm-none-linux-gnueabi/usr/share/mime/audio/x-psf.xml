@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/x-psf">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>PSF audio</comment>
+  <comment xml:lang="be@latin">Aŭdyjo PSF</comment>
+  <comment xml:lang="bg">Аудио — PSF</comment>
+  <comment xml:lang="ca">àudio PSF</comment>
+  <comment xml:lang="cs">Zvuk PSF</comment>
+  <comment xml:lang="de">PSF-Audio</comment>
+  <comment xml:lang="es">audio PSF</comment>
+  <comment xml:lang="eu">PSF audioa</comment>
+  <comment xml:lang="fi">PSF-ääni</comment>
+  <comment xml:lang="fr">audio PSF</comment>
+  <comment xml:lang="ga">fuaim PSF</comment>
+  <comment xml:lang="hu">PSF hang</comment>
+  <comment xml:lang="id">Audio PSF</comment>
+  <comment xml:lang="it">Audio PSF</comment>
+  <comment xml:lang="ko">PSF 오디오</comment>
+  <comment xml:lang="lt">PSF garsas</comment>
+  <comment xml:lang="nb">PSF-lyd</comment>
+  <comment xml:lang="nl">PSF-audio</comment>
+  <comment xml:lang="pl">Plik dźwiękowy PSF</comment>
+  <comment xml:lang="pt_BR">Áudio PSF</comment>
+  <comment xml:lang="sv">PSF-ljud</comment>
+  <comment xml:lang="uk">Звук PSF</comment>
+  <comment xml:lang="vi">Âm thanh PSF</comment>
+  <acronym>PSF</acronym>
+  <expanded-acronym>Portable Sound Format</expanded-acronym>
+</mime-type>

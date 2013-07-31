@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.hp-hpgl">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>HPGL file</comment>
+  <comment xml:lang="be@latin">Fajł HPGL</comment>
+  <comment xml:lang="bg">Файл — HPGL</comment>
+  <comment xml:lang="ca">fitxer HPGL</comment>
+  <comment xml:lang="cs">Soubor HPGL</comment>
+  <comment xml:lang="de">HPGL-Datei</comment>
+  <comment xml:lang="en_GB">HPGL file</comment>
+  <comment xml:lang="es">archivo HPGL</comment>
+  <comment xml:lang="eu">HPGL fitxategia</comment>
+  <comment xml:lang="fi">HPGL-tiedosto</comment>
+  <comment xml:lang="fr">fichier HPGL</comment>
+  <comment xml:lang="ga">comhad HPGL</comment>
+  <comment xml:lang="hu">HPGL fájl</comment>
+  <comment xml:lang="id">Berkas HPGL</comment>
+  <comment xml:lang="it">File HPGL</comment>
+  <comment xml:lang="ko">HPGL 파일</comment>
+  <comment xml:lang="lt">HPGL rinkmena</comment>
+  <comment xml:lang="nb">HPGL-fil</comment>
+  <comment xml:lang="nl">HPGL-bestand</comment>
+  <comment xml:lang="nn">HPGL-fil</comment>
+  <comment xml:lang="pl">Plik HPGL</comment>
+  <comment xml:lang="pt_BR">Arquivo HPGL</comment>
+  <comment xml:lang="sv">HPGL-fil</comment>
+  <comment xml:lang="uk">Файл HPGL</comment>
+  <comment xml:lang="vi">Tập tin HPGL</comment>
+  <acronym>HPGL</acronym>
+  <expanded-acronym>HP Graphics Language</expanded-acronym>
+  <generic-icon name="image-x-generic"/>
+</mime-type>

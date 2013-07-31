@@ -1,0 +1,2 @@
+kernel/drivers/hid/hid.ko
+kernel/drivers/hid/usbhid/usbhid.ko

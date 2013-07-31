@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: Xfixes
+Description: X Fixes  Library
+Version: 4.0.5
+Requires: xproto fixesproto >= 4.0
+Requires.private: x11
+Cflags: -I${includedir}
+Libs: -L${libdir} -lXfixes

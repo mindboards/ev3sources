@@ -1,0 +1,17 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include/gstreamer-0.10
+toolsdir=${exec_prefix}/bin
+pluginsdir=/usr/lib/gstreamer-0.10
+datarootdir=${prefix}/share
+datadir=${datarootdir}
+girdir=${datadir}/gir-1.0
+typelibdir=${libdir}/girepository-1.0
+
+Name: GStreamer
+Description: Streaming media framework
+Requires: glib-2.0, gobject-2.0, gmodule-no-export-2.0, gthread-2.0, libxml-2.0
+Version: 0.10.30
+Libs: -L${libdir} -lgstreamer-0.10
+Cflags: -I${includedir}

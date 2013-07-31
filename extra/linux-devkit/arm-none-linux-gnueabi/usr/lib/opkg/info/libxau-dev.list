@@ -1,0 +1,4 @@
+/usr/lib/libXau.so
+/usr/lib/pkgconfig/xau.pc
+/usr/include/X11/Xauth.h
+/usr/lib/libXau.la

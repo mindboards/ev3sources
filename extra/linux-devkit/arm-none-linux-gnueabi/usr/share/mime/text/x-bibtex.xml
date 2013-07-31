@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-bibtex">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>BibTeX document</comment>
+  <comment xml:lang="be@latin">Dakument BibTeX</comment>
+  <comment xml:lang="bg">Документ — BibTeX</comment>
+  <comment xml:lang="ca">document BibTeX</comment>
+  <comment xml:lang="cs">Dokument BibTeX</comment>
+  <comment xml:lang="de">BibTeX-Dokument</comment>
+  <comment xml:lang="en_GB">BibTeX document</comment>
+  <comment xml:lang="es">documento BibTeX</comment>
+  <comment xml:lang="eu">BibTeX dokumentua</comment>
+  <comment xml:lang="fi">BibTeX-asiakirja</comment>
+  <comment xml:lang="fr">document BibTeX</comment>
+  <comment xml:lang="ga">cáipéis BibTeX</comment>
+  <comment xml:lang="hu">BibTeX dokumentum</comment>
+  <comment xml:lang="id">Dokumen BibTeX</comment>
+  <comment xml:lang="it">Documento BibTeX</comment>
+  <comment xml:lang="ko">BibTeX 문서</comment>
+  <comment xml:lang="lt">BibTeX dokumentas</comment>
+  <comment xml:lang="nb">BibTeX-dokument</comment>
+  <comment xml:lang="nl">BibTeX-document</comment>
+  <comment xml:lang="nn">BibTeX-dokument</comment>
+  <comment xml:lang="pl">Dokument BibTeX</comment>
+  <comment xml:lang="pt_BR">Documento BibTeX</comment>
+  <comment xml:lang="ru">документ BibTeX</comment>
+  <comment xml:lang="sv">BibTeX-dokument</comment>
+  <comment xml:lang="uk">Документ BibTeX</comment>
+  <comment xml:lang="vi">Tài liệu BibTeX</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

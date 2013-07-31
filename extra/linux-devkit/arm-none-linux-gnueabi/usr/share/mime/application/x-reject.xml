@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-reject">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>rejected patch</comment>
+  <comment xml:lang="be@latin">niepryniaty patch</comment>
+  <comment xml:lang="bg">Отхвърлен файл с кръпка</comment>
+  <comment xml:lang="ca">pedaç rebutjat</comment>
+  <comment xml:lang="cs">Odmítnutá záplata</comment>
+  <comment xml:lang="da">afvist tekstlap</comment>
+  <comment xml:lang="de">abgelehnter Patch</comment>
+  <comment xml:lang="el">μπάλωμα που απορρίφθηκε</comment>
+  <comment xml:lang="en_GB">rejected patch</comment>
+  <comment xml:lang="eo">reĵeta flikaĵo</comment>
+  <comment xml:lang="es">parche rechazado</comment>
+  <comment xml:lang="eu">baztertutako bide-izena</comment>
+  <comment xml:lang="fi">hylättyjen muutosten tiedosto</comment>
+  <comment xml:lang="fr">correctif rejeté</comment>
+  <comment xml:lang="ga">paiste diúltaithe</comment>
+  <comment xml:lang="hu">visszautasított folt</comment>
+  <comment xml:lang="id">patch ditolak</comment>
+  <comment xml:lang="it">Patch rifiutata</comment>
+  <comment xml:lang="ja">当らないパッチ</comment>
+  <comment xml:lang="ko">거부된 패치 파일</comment>
+  <comment xml:lang="lt">atmestas lopas</comment>
+  <comment xml:lang="ms">Tampungan ditolak</comment>
+  <comment xml:lang="nb">avvist patchfil</comment>
+  <comment xml:lang="nl">verworpen patch</comment>
+  <comment xml:lang="nn">avvist programfiks</comment>
+  <comment xml:lang="pl">odrzucona łata</comment>
+  <comment xml:lang="pt">ficheiro de patch rejeitado</comment>
+  <comment xml:lang="pt_BR">arquivo de patch rejeitado</comment>
+  <comment xml:lang="ru">отвергнутый патч</comment>
+  <comment xml:lang="sq">patch i papranuar</comment>
+  <comment xml:lang="sr">одбијена закрпа</comment>
+  <comment xml:lang="sv">avvisad programfix</comment>
+  <comment xml:lang="uk">відхилена латка</comment>
+  <comment xml:lang="vi">đắp vá bị từ chối</comment>
+  <comment xml:lang="zh_CN">拒绝的补丁</comment>
+  <sub-class-of type="text/plain"/>
+  <generic-icon name="text-x-generic"/>
+</mime-type>

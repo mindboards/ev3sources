@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="inode/directory">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>folder</comment>
+  <comment xml:lang="be@latin">kataloh</comment>
+  <comment xml:lang="bg">Папка</comment>
+  <comment xml:lang="ca">carpeta</comment>
+  <comment xml:lang="cs">Složka</comment>
+  <comment xml:lang="da">mappe</comment>
+  <comment xml:lang="de">Ordner</comment>
+  <comment xml:lang="el">φάκελος</comment>
+  <comment xml:lang="en_GB">folder</comment>
+  <comment xml:lang="eo">dosierujo</comment>
+  <comment xml:lang="es">carpeta</comment>
+  <comment xml:lang="eu">karpeta</comment>
+  <comment xml:lang="fi">kansio</comment>
+  <comment xml:lang="fr">dossier</comment>
+  <comment xml:lang="ga">fillteán</comment>
+  <comment xml:lang="hu">mappa</comment>
+  <comment xml:lang="id">folder</comment>
+  <comment xml:lang="it">Cartella</comment>
+  <comment xml:lang="ja">フォルダ</comment>
+  <comment xml:lang="ko">폴더</comment>
+  <comment xml:lang="lt">aplankas</comment>
+  <comment xml:lang="ms">Folder</comment>
+  <comment xml:lang="nb">mappe</comment>
+  <comment xml:lang="nl">map</comment>
+  <comment xml:lang="nn">mappe</comment>
+  <comment xml:lang="pl">folder</comment>
+  <comment xml:lang="pt">pasta</comment>
+  <comment xml:lang="pt_BR">pasta</comment>
+  <comment xml:lang="ru">папка</comment>
+  <comment xml:lang="sq">kartelë</comment>
+  <comment xml:lang="sr">директоријум</comment>
+  <comment xml:lang="sv">mapp</comment>
+  <comment xml:lang="uk">тека</comment>
+  <comment xml:lang="vi">thư mục</comment>
+  <comment xml:lang="zh_CN">文件夹</comment>
+  <comment xml:lang="zh_TW">資料夾</comment>
+  <alias type="x-directory/normal"/>
+</mime-type>

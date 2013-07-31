@@ -1,0 +1,12 @@
+Package: libgcrypt11
+Version: 1.4.1-r0.6
+Description: A general purpose cryptographic library based on the code from GnuPG
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPL LGPL FDL
+Architecture: armv5te
+OE: libgcrypt
+Homepage: unknown
+Depends: libgpg-error0, libgcc1, libc6
+Source: ftp://ftp.gnupg.org/gcrypt/libgcrypt/libgcrypt-1.4.1.tar.gz file://add-pkgconfig-support.patch file://mips-h-constraint.patch

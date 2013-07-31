@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-log">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>application log</comment>
+  <comment xml:lang="be@latin">časopis aplikacyi</comment>
+  <comment xml:lang="bg">Файл-дневник на приложение</comment>
+  <comment xml:lang="ca">registre d'aplicació</comment>
+  <comment xml:lang="cs">Záznam aplikace</comment>
+  <comment xml:lang="da">programlog</comment>
+  <comment xml:lang="de">Anwendungsprotokoll</comment>
+  <comment xml:lang="el">ημερολόγιο συμβάντων εφαρμογής</comment>
+  <comment xml:lang="en_GB">application log</comment>
+  <comment xml:lang="eo">protokolo de aplikaĵo</comment>
+  <comment xml:lang="es">registro de aplicación</comment>
+  <comment xml:lang="eu">aplikazio egunkaria</comment>
+  <comment xml:lang="fi">sovelluksen lokitiedosto</comment>
+  <comment xml:lang="fr">journal d'application</comment>
+  <comment xml:lang="ga">logchomhad feidhmchláir</comment>
+  <comment xml:lang="hu">alkalmazás naplója</comment>
+  <comment xml:lang="id">log aplikasi</comment>
+  <comment xml:lang="it">Log applicazione</comment>
+  <comment xml:lang="ja">アプリケーションログ</comment>
+  <comment xml:lang="ko">프로그램 기록</comment>
+  <comment xml:lang="lt">programos žurnalas</comment>
+  <comment xml:lang="ms">Log aplikasi</comment>
+  <comment xml:lang="nb">applikasjonslogg</comment>
+  <comment xml:lang="nl">programma-logbestand</comment>
+  <comment xml:lang="nn">programlogg</comment>
+  <comment xml:lang="pl">dziennik aplikacji</comment>
+  <comment xml:lang="pt">registo de aplicação</comment>
+  <comment xml:lang="pt_BR">Registro de aplicação</comment>
+  <comment xml:lang="sq">log i mesazheve të programit</comment>
+  <comment xml:lang="sr">дневник програма</comment>
+  <comment xml:lang="sv">programlogg</comment>
+  <comment xml:lang="uk">журнал програми</comment>
+  <comment xml:lang="vi">bản ghi ứng dụng</comment>
+  <comment xml:lang="zh_CN">应用程序日志</comment>
+  <comment xml:lang="zh_TW">程式紀錄檔</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

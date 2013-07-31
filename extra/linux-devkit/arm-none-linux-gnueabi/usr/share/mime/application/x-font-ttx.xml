@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-font-ttx">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>TrueType XML font</comment>
+  <comment xml:lang="be@latin">Šryft TrueType XML</comment>
+  <comment xml:lang="ca">tipus de lletra TrueType XML</comment>
+  <comment xml:lang="cs">Písmo TrueType XML</comment>
+  <comment xml:lang="es">tipografía TrueType XML</comment>
+  <comment xml:lang="fi">TrueType-XML-kirjasin</comment>
+  <comment xml:lang="fr">police Truetype XML</comment>
+  <comment xml:lang="ga">cló XML TrueType</comment>
+  <comment xml:lang="hu">TrueType XML betűkészlet</comment>
+  <comment xml:lang="id">Fonta TrueType XML</comment>
+  <comment xml:lang="it">Tipo carattere TrueType XML</comment>
+  <comment xml:lang="ko">트루타입 XML 글꼴</comment>
+  <comment xml:lang="lt">TrueType XML šriftas</comment>
+  <comment xml:lang="nb">TrueType XML-skrift</comment>
+  <comment xml:lang="nl">TrueType XML-lettertype</comment>
+  <comment xml:lang="pt_BR">Fonte TrueType XML</comment>
+  <comment xml:lang="ru">шрифт TrueType XML</comment>
+  <comment xml:lang="sv">Truetype XML-typsnitt</comment>
+  <comment xml:lang="vi">Phông chữ XML TrueType</comment>
+  <sub-class-of type="text/xml"/>
+  <generic-icon name="font-x-generic"/>
+</mime-type>

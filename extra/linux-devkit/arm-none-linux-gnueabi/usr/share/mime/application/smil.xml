@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/smil">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>SMIL document</comment>
+  <comment xml:lang="be@latin">Dakument SMIL</comment>
+  <comment xml:lang="bg">Документ — SMIL</comment>
+  <comment xml:lang="ca">document SMIL</comment>
+  <comment xml:lang="cs">Dokument SMIL</comment>
+  <comment xml:lang="de">SMIL-Dokument</comment>
+  <comment xml:lang="en_GB">SMIL document</comment>
+  <comment xml:lang="es">documento SMIL</comment>
+  <comment xml:lang="eu">SMIL dokumentua</comment>
+  <comment xml:lang="fi">SMIL-asiakirja</comment>
+  <comment xml:lang="fr">document SMIL</comment>
+  <comment xml:lang="ga">cáipéis SMIL</comment>
+  <comment xml:lang="hu">SMIL dokumentum</comment>
+  <comment xml:lang="id">Dokumen SMIL</comment>
+  <comment xml:lang="it">Documento SMIL</comment>
+  <comment xml:lang="ko">SMIL 문서</comment>
+  <comment xml:lang="lt">SMIL dokumentas</comment>
+  <comment xml:lang="nb">SMIL-dokument</comment>
+  <comment xml:lang="nl">SMIL-document</comment>
+  <comment xml:lang="nn">SMIL-dokument</comment>
+  <comment xml:lang="pl">Dokument SMIL</comment>
+  <comment xml:lang="pt_BR">Documento SMIL</comment>
+  <comment xml:lang="sv">SMIL-dokument</comment>
+  <comment xml:lang="uk">Документ SMIL</comment>
+  <comment xml:lang="vi">Tài liệu SMIL</comment>
+  <acronym>SMIL</acronym>
+  <expanded-acronym>Synchronized Multimedia Integration Language</expanded-acronym>
+  <sub-class-of type="application/xml"/>
+  <generic-icon name="video-x-generic"/>
+</mime-type>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="video/x-ms-wmv">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Windows Media video</comment>
+  <comment xml:lang="be@latin">Videa Windows Media</comment>
+  <comment xml:lang="bg">Видео — Windows Media</comment>
+  <comment xml:lang="ca">vídeo Windows Media</comment>
+  <comment xml:lang="cs">Video Windows Media</comment>
+  <comment xml:lang="es">Vídeo de Windows Media</comment>
+  <comment xml:lang="eu">Windows Media bideoa</comment>
+  <comment xml:lang="fi">Windows Media -video</comment>
+  <comment xml:lang="fr">vidéo Windows Media</comment>
+  <comment xml:lang="ga">físeán Windows Media</comment>
+  <comment xml:lang="hu">Windows Media videó</comment>
+  <comment xml:lang="id">Video Windows Media</comment>
+  <comment xml:lang="it">Video Windows Media</comment>
+  <comment xml:lang="ko">윈도우즈 미디어 비디오</comment>
+  <comment xml:lang="lt">Windows Media vaizdas</comment>
+  <comment xml:lang="nb">Windows Media film</comment>
+  <comment xml:lang="nl">Windows Media-video</comment>
+  <comment xml:lang="pt_BR">Vídeo do Windows Media</comment>
+  <comment xml:lang="sv">Windows Media-video</comment>
+  <comment xml:lang="vi">Ảnh động Windows Media</comment>
+  <sub-class-of type="video/x-ms-asf"/>
+</mime-type>

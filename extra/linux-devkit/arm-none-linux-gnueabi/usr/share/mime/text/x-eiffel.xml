@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-eiffel">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Eiffel source code</comment>
+  <comment xml:lang="be@latin">Kryničny kod Eiffel</comment>
+  <comment xml:lang="ca">codi font en Eiffel</comment>
+  <comment xml:lang="cs">Zdrojový kód Eiffel</comment>
+  <comment xml:lang="es">código fuente en Eiffel</comment>
+  <comment xml:lang="fi">Eiffel-lähdekoodi</comment>
+  <comment xml:lang="fr">code source Eiffel</comment>
+  <comment xml:lang="ga">cód foinseach Eiffel</comment>
+  <comment xml:lang="hu">Eiffel forráskód</comment>
+  <comment xml:lang="id">Kode program Eiffel</comment>
+  <comment xml:lang="it">Codice sorgente Eiffel</comment>
+  <comment xml:lang="ko">Eiffel 소스 코드</comment>
+  <comment xml:lang="lt">Eiffel pirminis programos kekstas</comment>
+  <comment xml:lang="nb">Eiffel-kildekode</comment>
+  <comment xml:lang="nl">Eiffel-broncode</comment>
+  <comment xml:lang="pt_BR">Código fonte Eiffel</comment>
+  <comment xml:lang="ru">программа на языке Eiffel</comment>
+  <comment xml:lang="sv">Eiffel-källkod</comment>
+  <comment xml:lang="vi">Mã nguồn Eiffel</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

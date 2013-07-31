@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/vnd.wap.wml">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>WML document</comment>
+  <comment xml:lang="az">WML sənədi</comment>
+  <comment xml:lang="be@latin">Dakument WML</comment>
+  <comment xml:lang="bg">Документ — WML</comment>
+  <comment xml:lang="ca">document WML</comment>
+  <comment xml:lang="cs">Dokument WML</comment>
+  <comment xml:lang="cy">Dogfen WML</comment>
+  <comment xml:lang="da">WML-dokument</comment>
+  <comment xml:lang="de">WML-Dokument</comment>
+  <comment xml:lang="el">έγγραφο WML</comment>
+  <comment xml:lang="en_GB">WML document</comment>
+  <comment xml:lang="eo">WML-dokumento</comment>
+  <comment xml:lang="es">documento WML</comment>
+  <comment xml:lang="eu">WML dokumentua</comment>
+  <comment xml:lang="fi">WML-asiakirja</comment>
+  <comment xml:lang="fr">document WML</comment>
+  <comment xml:lang="ga">cáipéis WML</comment>
+  <comment xml:lang="hu">WML-dokumentum</comment>
+  <comment xml:lang="id">Dokumen WML</comment>
+  <comment xml:lang="it">Documento WML</comment>
+  <comment xml:lang="ja">WML ドキュメント</comment>
+  <comment xml:lang="ko">WML 문서</comment>
+  <comment xml:lang="lt">WML dokumentas</comment>
+  <comment xml:lang="ms">Dokumen XML</comment>
+  <comment xml:lang="nb">WML-dokument</comment>
+  <comment xml:lang="nl">WML-document</comment>
+  <comment xml:lang="nn">WML-dokument</comment>
+  <comment xml:lang="pl">Dokument WML</comment>
+  <comment xml:lang="pt">documento WML</comment>
+  <comment xml:lang="pt_BR">Documento WML</comment>
+  <comment xml:lang="sq">Dokument WML</comment>
+  <comment xml:lang="sr">WML документ</comment>
+  <comment xml:lang="sv">WML-dokument</comment>
+  <comment xml:lang="uk">Документ WML</comment>
+  <comment xml:lang="vi">Tài liệu WML</comment>
+  <comment xml:lang="zh_CN">WML 文档</comment>
+  <comment xml:lang="zh_TW">WML 文件</comment>
+  <acronym>WML</acronym>
+  <expanded-acronym>Wireless Markup Language</expanded-acronym>
+  <sub-class-of type="application/xml"/>
+</mime-type>

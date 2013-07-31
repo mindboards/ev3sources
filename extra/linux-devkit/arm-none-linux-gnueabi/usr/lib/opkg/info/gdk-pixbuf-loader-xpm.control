@@ -1,0 +1,12 @@
+Package: gdk-pixbuf-loader-xpm
+Version: 2.20.1-r10.4.6
+Description: GDK pixbuf loader for xpm
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPL
+Architecture: armv5te
+OE: gtk+
+Homepage: http://www.gtk.org
+Depends: gtk+, libgio-2.0-0, libc6, libz1, libgobject-2.0-0, libgmodule-2.0-0, libc6, libgthread-2.0-0, libglib-2.0-0, libgcc1
+Source: http://download.gnome.org/sources/gtk+/2.20/gtk+-2.20.1.tar.bz2;name=gtk file://hardcoded_libtool.patch file://run-iconcache.patch file://toggle-font.diff;striplevel=0 file://xsettings.patch file://gtk-dnd-grab-deadlock-fix.patch file://cross-nm.patch file://xkb-ifdef.patch

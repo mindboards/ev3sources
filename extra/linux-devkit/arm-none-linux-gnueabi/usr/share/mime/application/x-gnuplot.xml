@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-gnuplot">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Gnuplot document</comment>
+  <comment xml:lang="be@latin">Dakument Gnuplot</comment>
+  <comment xml:lang="bg">Документ — Gnuplot</comment>
+  <comment xml:lang="ca">document gnuplot</comment>
+  <comment xml:lang="cs">Dokument Gnuplot</comment>
+  <comment xml:lang="de">Gnuplot-Dokument</comment>
+  <comment xml:lang="en_GB">Gnuplot document</comment>
+  <comment xml:lang="es">documento de Gnuplot</comment>
+  <comment xml:lang="eu">Gnuplot dokumentua</comment>
+  <comment xml:lang="fi">Gnuplot-asiakirja</comment>
+  <comment xml:lang="fr">document Gnuplot</comment>
+  <comment xml:lang="ga">cáipéis Gnuplot</comment>
+  <comment xml:lang="hu">Gnuplot dokumentum</comment>
+  <comment xml:lang="id">Dokumen Gnuplot</comment>
+  <comment xml:lang="it">Documento Gnuplot</comment>
+  <comment xml:lang="ko">Gnuplot 문서</comment>
+  <comment xml:lang="lt">Gnuplot dokumentas</comment>
+  <comment xml:lang="nb">Gnuplot-dokument</comment>
+  <comment xml:lang="nl">Gnuplot-document</comment>
+  <comment xml:lang="nn">Gnuplot-dokument</comment>
+  <comment xml:lang="pl">Dokument Gnuplot</comment>
+  <comment xml:lang="pt_BR">Documento do Gnuplot</comment>
+  <comment xml:lang="ru">документ Gnuplot</comment>
+  <comment xml:lang="sv">Gnuplot-dokument</comment>
+  <comment xml:lang="uk">Документ Gnuplot</comment>
+  <comment xml:lang="vi">Tài liệu Gnuplot</comment>
+  <sub-class-of type="text/plain"/>
+  <generic-icon name="x-office-document"/>
+</mime-type>

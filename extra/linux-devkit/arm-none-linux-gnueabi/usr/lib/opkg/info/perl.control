@@ -1,0 +1,12 @@
+Package: perl
+Version: 5.8.8-r36.6
+Description: Perl is a popular scripting language.
+Section: devel/perl
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: Artistic|GPLv1+
+Architecture: armv5te
+OE: perl
+Homepage: http://www.perl.org/
+Depends: libperl5, libc6, libc6, libgcc1
+Source: http://ftp.funet.fi/pub/CPAN/src/5.0/perl-5.8.8.tar.gz;name=perl588targz file://Makefile.patch file://Makefile.SH.patch file://makedepend-dash.patch file://installperl.patch file://perl-dynloader.patch file://perl-moreconfig.patch file://letgcc-find-errno.patch file://generate-sh.patch file://perl-5.8.8-gcc-4.2.patch file://09_fix_installperl.patch file://52_debian_extutils_hacks.patch file://53_debian_mod_paths.patch file://54_debian_perldoc-r.patch file://58_debian_cpan_config_path.patch file://60_debian_libnet_config_path.patch file://62_debian_cpan_definstalldirs.patch file://64_debian_enc2xs_inc.patch file://asm-pageh-fix.patch file://shared-ldflags.patch file://config.sh file://config.sh-32 file://config.sh-32-le file://config.sh-32-be file://config.sh-64 file://config.sh-64-le file://config.sh-64-be

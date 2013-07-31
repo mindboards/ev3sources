@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="video/vivo">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Vivo video</comment>
+  <comment xml:lang="az">Vivo video faylı</comment>
+  <comment xml:lang="be@latin">Videa Vivo</comment>
+  <comment xml:lang="bg">Видео — Vivo</comment>
+  <comment xml:lang="ca">vídeo Vivo</comment>
+  <comment xml:lang="cs">Video Vivo</comment>
+  <comment xml:lang="cy">Fideo Vivo</comment>
+  <comment xml:lang="da">Vivo-video</comment>
+  <comment xml:lang="de">Vivo-Video</comment>
+  <comment xml:lang="el">βίντεο Vivo</comment>
+  <comment xml:lang="en_GB">Vivo video</comment>
+  <comment xml:lang="eo">Vivo-video</comment>
+  <comment xml:lang="es">vídeo Vivo</comment>
+  <comment xml:lang="eu">Vivo bideoa</comment>
+  <comment xml:lang="fi">Vivo-video</comment>
+  <comment xml:lang="fr">vidéo Vivo</comment>
+  <comment xml:lang="ga">físeán Vivo</comment>
+  <comment xml:lang="hu">Vivo-videó</comment>
+  <comment xml:lang="id">Video Vivo</comment>
+  <comment xml:lang="it">Video Vivo</comment>
+  <comment xml:lang="ja">Vivo 動画</comment>
+  <comment xml:lang="ko">Vivo 비디오</comment>
+  <comment xml:lang="lt">Vivo vaizdas</comment>
+  <comment xml:lang="ms">Video Vivo</comment>
+  <comment xml:lang="nb">Vivo-film</comment>
+  <comment xml:lang="nl">Vivo-video</comment>
+  <comment xml:lang="nn">Vivo-film</comment>
+  <comment xml:lang="pl">Plik wideo Vivo</comment>
+  <comment xml:lang="pt">vídeo Vivo</comment>
+  <comment xml:lang="pt_BR">Vídeo Vivo</comment>
+  <comment xml:lang="sq">Video Vivo</comment>
+  <comment xml:lang="sr">Vivo видео</comment>
+  <comment xml:lang="sv">Vivo-video</comment>
+  <comment xml:lang="uk">Відео Vivo</comment>
+  <comment xml:lang="vi">Ảnh động Vivo</comment>
+  <comment xml:lang="zh_CN">Vivo 视频</comment>
+  <comment xml:lang="zh_TW">Vivo 影音檔</comment>
+  <alias type="video/vnd.vivo"/>
+</mime-type>

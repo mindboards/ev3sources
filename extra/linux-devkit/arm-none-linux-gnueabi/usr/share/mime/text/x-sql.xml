@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-sql">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>SQL code</comment>
+  <comment xml:lang="az">SQL kodu</comment>
+  <comment xml:lang="be@latin">Kod SQL</comment>
+  <comment xml:lang="bg">Код — SQL</comment>
+  <comment xml:lang="ca">codi en SQL</comment>
+  <comment xml:lang="cs">Kód SQL</comment>
+  <comment xml:lang="cy">Côd SQL</comment>
+  <comment xml:lang="da">SQL-kode</comment>
+  <comment xml:lang="de">SQL-Befehle</comment>
+  <comment xml:lang="el">κώδικας SQL</comment>
+  <comment xml:lang="en_GB">SQL code</comment>
+  <comment xml:lang="eo">SQL-kodo</comment>
+  <comment xml:lang="es">código SQL</comment>
+  <comment xml:lang="eu">SQL kodea</comment>
+  <comment xml:lang="fi">SQL-koodi</comment>
+  <comment xml:lang="fr">code SQL</comment>
+  <comment xml:lang="ga">cód SQL</comment>
+  <comment xml:lang="hu">SQL-kód</comment>
+  <comment xml:lang="id">Kode SQL</comment>
+  <comment xml:lang="it">Codice SQL</comment>
+  <comment xml:lang="ja">SQL コード</comment>
+  <comment xml:lang="ko">SQL 코드</comment>
+  <comment xml:lang="lt">SQL kodas</comment>
+  <comment xml:lang="ms">Kod SQL</comment>
+  <comment xml:lang="nb">SQL-kildekode</comment>
+  <comment xml:lang="nl">SQL-code</comment>
+  <comment xml:lang="nn">SQL-kode</comment>
+  <comment xml:lang="pl">Kod SQL</comment>
+  <comment xml:lang="pt">código SQL</comment>
+  <comment xml:lang="pt_BR">Código SQL</comment>
+  <comment xml:lang="sq">Kod SQL</comment>
+  <comment xml:lang="sr">SQL ко̂д</comment>
+  <comment xml:lang="sv">SQL-kod</comment>
+  <comment xml:lang="uk">Код SQL</comment>
+  <comment xml:lang="vi">Mã SQL</comment>
+  <comment xml:lang="zh_CN">SQL 代码</comment>
+  <comment xml:lang="zh_TW">SQL 碼</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

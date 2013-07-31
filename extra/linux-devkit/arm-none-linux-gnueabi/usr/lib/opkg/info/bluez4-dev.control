@@ -1,0 +1,14 @@
+Package: bluez4-dev
+Version: 4.75-r8.0-arago2.6
+Description: Linux Bluetooth Stack Userland V4
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2/LGPLv2.1
+Architecture: armv5te
+OE: bluez4
+Homepage: http://www.bluez.org
+Depends: bluez4, bluez4
+Recommends: gst-plugins-base-dev, alsa-lib-dev, libdbus-glib-1-dev, libnl-dev, libsndfile-dev, update-rc.d-dev, dbus-lib-dev, libc6-dev, libgcc1-dev, bluez4-dev, libgstaudio-0.10-dev, libgstinterfaces-0.10-dev, libgstrtp-0.10-dev, gstreamer-dev, gobject-2.0-dev, gmodule-2.0-dev, libxml2-dev, libz-dev, gthread-2.0-dev, libglib-2.0-dev, libasound-dev, libusb-0.1-dev, libusb-1.0-dev
+Provides: bluez-libs-dev
+Source: http://www.kernel.org/pub/linux/bluetooth/bluez-4.75.tar.gz file://fix-dfutool-usb-declaration-mismatch.patch file://sbc-thumb.patch file://bluetooth.conf

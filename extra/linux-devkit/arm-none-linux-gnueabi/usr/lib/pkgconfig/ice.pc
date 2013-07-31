@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: ICE
+Description: X Inter Client Exchange Library
+Version: 1.0.7
+Requires: xproto
+Cflags: -I${includedir}
+Libs: -L${libdir} -lICE

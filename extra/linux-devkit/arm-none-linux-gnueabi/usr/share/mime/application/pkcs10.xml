@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/pkcs10">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>PKCS#10 certification request</comment>
+  <comment xml:lang="be@latin">Zapyt sertyfikacyi PKCS#10</comment>
+  <comment xml:lang="bg">Заявка за сертификат — PKCS#10</comment>
+  <comment xml:lang="ca">sol·licitud de certificació PKCS#10</comment>
+  <comment xml:lang="cs">Požadavek na certifikát PKCS#10</comment>
+  <comment xml:lang="de">PKCS#10-Zertifikatanfrage</comment>
+  <comment xml:lang="es">petición de certificados PKCS#10</comment>
+  <comment xml:lang="eu">PKCS#10 ziurtagirien eskaera</comment>
+  <comment xml:lang="fi">PKCS#10-varmennepyyntö</comment>
+  <comment xml:lang="fr">requête de certification PKCS#10</comment>
+  <comment xml:lang="ga">iarratas dheimhniúchán PKCS#10</comment>
+  <comment xml:lang="hu">PKCS#10-tanúsítványkérés</comment>
+  <comment xml:lang="id">Permintaan sertifikasi PKCS#10</comment>
+  <comment xml:lang="it">Richiesta certificazione PKCS#10</comment>
+  <comment xml:lang="ko">PKCS#10 인증서 요청</comment>
+  <comment xml:lang="lt">PKCS#10 sertifikatų užklausa</comment>
+  <comment xml:lang="nb">PKCS#10-sertifikatforespørsel</comment>
+  <comment xml:lang="nl">PKCS#10-certificatieverzoek</comment>
+  <comment xml:lang="pl">Żądanie certyfikatu PKCS#10</comment>
+  <comment xml:lang="pt_BR">Pedido de certificação PKCS#12</comment>
+  <comment xml:lang="sv">PKCS#10-certifikatbegäran</comment>
+  <comment xml:lang="uk">Комплект сертифікатів PKCS#10</comment>
+  <comment xml:lang="vi">Yêu cầu chứng nhận PKCS#10</comment>
+  <generic-icon name="text-x-generic"/>
+</mime-type>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/basic">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>ULAW (Sun) audio</comment>
+  <comment xml:lang="az">ULAW (Sun) audio faylı</comment>
+  <comment xml:lang="be@latin">Aŭdyjo ULAW (Sun)</comment>
+  <comment xml:lang="bg">Аудио — ULAW, Sun</comment>
+  <comment xml:lang="ca">àudio ULAW (Sun)</comment>
+  <comment xml:lang="cs">Zvuk ULAW (Sun)</comment>
+  <comment xml:lang="cy">Sain ULAW (Sun)</comment>
+  <comment xml:lang="da">ULAW (Sun)-lyd</comment>
+  <comment xml:lang="de">ULAW (Sun)-Audio</comment>
+  <comment xml:lang="el">ήχος ULAW (Sun)</comment>
+  <comment xml:lang="en_GB">ULAW (Sun) audio</comment>
+  <comment xml:lang="eo">ULAW-aŭdio (Sun)</comment>
+  <comment xml:lang="es">audio ULAW (Sun)</comment>
+  <comment xml:lang="eu">ULAW (sun) audioa</comment>
+  <comment xml:lang="fi">ULAW (Sun) -ääni</comment>
+  <comment xml:lang="fr">audio ULAW (Sun)</comment>
+  <comment xml:lang="ga">fuaim ULAW (Sun)</comment>
+  <comment xml:lang="hu">ULAW (Sun) hang</comment>
+  <comment xml:lang="id">Audio ULAW (Sun)</comment>
+  <comment xml:lang="it">Audio ULAW (Sun)</comment>
+  <comment xml:lang="ja">ULAW (Sun) オーディオ</comment>
+  <comment xml:lang="ko">ULAW (Sun) 오디오</comment>
+  <comment xml:lang="lt">ULAW (Sun) garsas</comment>
+  <comment xml:lang="ms">Audio ULAW (Sun)</comment>
+  <comment xml:lang="nb">ULAW-lyd (Sun)</comment>
+  <comment xml:lang="nl">(Sun) ULAW-audio</comment>
+  <comment xml:lang="nn">ULAW (Sun)-lyd</comment>
+  <comment xml:lang="pl">Plik dźwiękowy ULAW (Sun)</comment>
+  <comment xml:lang="pt">áudio ULAW (Sun)</comment>
+  <comment xml:lang="pt_BR">Áudio ULAW (Sun)</comment>
+  <comment xml:lang="sq">Audio ULAW (Sun)</comment>
+  <comment xml:lang="sr">ULAW (Sun) звучни запис</comment>
+  <comment xml:lang="sv">ULAW-ljud (Sun)</comment>
+  <comment xml:lang="uk">Звук ULAW (Sun)</comment>
+  <comment xml:lang="vi">Âm thanh ULAW (Sun)</comment>
+  <comment xml:lang="zh_CN">ULAW (Sun) 音频</comment>
+  <comment xml:lang="zh_TW">ULAW (Sun) 音效</comment>
+</mime-type>

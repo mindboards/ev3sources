@@ -1,0 +1,12 @@
+Package: ttf-dejavu-common
+Version: 2.23-r3.6
+Description: DejaVu font - TTF Edition
+Section: fonts
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: Bitstream Vera
+Architecture: all
+OE: ttf-dejavu
+Homepage: http://dejavu.sourceforge.net/wiki/
+Recommends: font-update-common
+Source: http://downloads.sourceforge.net/dejavu/dejavu-fonts-ttf-2.23.tar.bz2 file://30-dejavu-aliases.conf

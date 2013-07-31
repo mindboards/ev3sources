@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: gpg-error
+Description: a library that defines common error values for all GnuPG components
+Version: 1.4
+Libs: -L{libdir} -lgpg-error
+Cflags: -I${includedir}

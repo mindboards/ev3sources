@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include/gstreamer-0.10
+
+Name: GStreamer CDDA Library
+Description: CDDA base classes
+Requires: gstreamer-0.10 gstreamer-base-0.10 gstreamer-tag-0.10
+Version: 0.10.30
+Libs: -L${libdir} -lgstcdda-0.10
+Cflags: -I${includedir}
+

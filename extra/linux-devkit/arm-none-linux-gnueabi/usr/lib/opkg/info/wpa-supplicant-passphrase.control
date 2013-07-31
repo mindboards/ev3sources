@@ -1,0 +1,13 @@
+Package: wpa-supplicant-passphrase
+Version: 0.5.7-r3-arago1.6
+Description: A Client for Wi-Fi Protected Access (WPA).
+Section: network
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2 BSD
+Architecture: am180x-evm
+OE: wpa-supplicant
+Homepage: http://hostap.epitest.fi/wpa_supplicant/
+Depends: libcrypto1.0.0, libgcc1, libc6
+Replaces: wpa-supplicant-cli
+Source: http://hostap.epitest.fi/releases/wpa_supplicant-0.5.7.tar.gz file://wpa_suppl.diff file://defconfig-openssl file://ifupdown.sh file://functions.sh

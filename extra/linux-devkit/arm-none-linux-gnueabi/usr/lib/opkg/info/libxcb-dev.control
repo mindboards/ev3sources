@@ -1,0 +1,13 @@
+Package: libxcb-dev
+Version: 1.6-r4.1.6
+Description: XCB: an X protocol C binding
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT-X
+Architecture: armv5te
+OE: libxcb
+Homepage: http://xcb.freedesktop.org
+Depends: libxcb1, libxcb-xfixes0, libxcb1, libxcb-sync0, libxcb-glx0, libxcb-composite0, libxcb-xinerama0, libxcb-damage0, libxcb-xf86dri0, libxcb-shape0, libxcb-record0, libxcb-screensaver0, libxcb-xvmc0, libxcb-dri2-0, libxcb-xv0, libxcb-shm0, libxcb-xprint0, libxcb-xtest0, libxcb-randr0, libxcb-dpms0, libxcb-res0, libxcb-render0, libxcb-xevie0
+Recommends: xcb-proto-dev, xproto-dev, libxau-dev, libpthread-stubs-dev, libxcb-dev, libgcc1-dev, libc6-dev, libxcb-xfixes-dev, libxcb-sync-dev, libxcb-glx-dev, libxcb-composite-dev, libxcb-xinerama-dev, libxcb-damage-dev, libxcb-xf86dri-dev, libxcb-shape-dev, libxcb-record-dev, libxcb-screensaver-dev, libxcb-xvmc-dev, libxcb-dri2-dev, libxcb-xv-dev, libxcb-shm-dev, libxcb-xprint-dev, libxcb-xtest-dev, libxcb-randr-dev, libxcb-dpms-dev, libxcb-res-dev, libxcb-render-dev, libxcb-xevie-dev
+Source: http://xcb.freedesktop.org/dist/libxcb-1.6.tar.bz2 file://configure_git.patch

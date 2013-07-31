@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="multipart/digest">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>message digest</comment>
+  <comment xml:lang="az">ismarış daycesti</comment>
+  <comment xml:lang="be@latin">digest paviedamleńniaŭ</comment>
+  <comment xml:lang="bg">Извадка от съобщение</comment>
+  <comment xml:lang="ca">recopilació de missatges</comment>
+  <comment xml:lang="cs">Přehled zpráv</comment>
+  <comment xml:lang="cy">crynodeb negeseuon</comment>
+  <comment xml:lang="da">meddelelsessammendrag</comment>
+  <comment xml:lang="de">Nachrichtensammlung</comment>
+  <comment xml:lang="el">περίληψη μηνύματος</comment>
+  <comment xml:lang="en_GB">message digest</comment>
+  <comment xml:lang="eo">mesaĝaro</comment>
+  <comment xml:lang="es">recopilación de mensajes</comment>
+  <comment xml:lang="eu">mezu laburra</comment>
+  <comment xml:lang="fi">viestikokoelma</comment>
+  <comment xml:lang="fr">condensé de message</comment>
+  <comment xml:lang="ga">achoimre theachtaireachtaí</comment>
+  <comment xml:lang="hu">ömlesztett üzenet</comment>
+  <comment xml:lang="id">pesan digest</comment>
+  <comment xml:lang="it">Digest di messaggi</comment>
+  <comment xml:lang="ja">メッセージダイジェスト</comment>
+  <comment xml:lang="ko">메세지 묶음</comment>
+  <comment xml:lang="lt">laiškų santrauka</comment>
+  <comment xml:lang="ms">Jilid mesej</comment>
+  <comment xml:lang="nb">medldingssamling</comment>
+  <comment xml:lang="nl">berichtenbundel</comment>
+  <comment xml:lang="nn">meldingsamandrag</comment>
+  <comment xml:lang="pl">wiadomość przetwarzania</comment>
+  <comment xml:lang="pt">'digest' de mensagens</comment>
+  <comment xml:lang="pt_BR">resumo de mensagem</comment>
+  <comment xml:lang="sq">shpërndarja mesazheve</comment>
+  <comment xml:lang="sr">гомила порука</comment>
+  <comment xml:lang="sv">meddelandesamling</comment>
+  <comment xml:lang="uk">збірка повідомлень</comment>
+  <comment xml:lang="vi">bản tóm tắt thông điệp</comment>
+  <comment xml:lang="zh_CN">消息摘要</comment>
+</mime-type>

@@ -1,0 +1,11 @@
+Package: libtool-sdk
+Version: 2.2.6b-r27.1.6
+Description: Generic library support script This is GNU libtool, a generic library support script.  Libtool hides the complexity of generating special library types (such as shared libraries) behind a consistent interface.
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2+
+Architecture: i686-armv5te-sdk
+OE: libtool-sdk
+Homepage: http://www.gnu.org/software/libtool/libtool.html
+Source: ftp://ftp.gnu.org/gnu/libtool/libtool-2.2.6b.tar.gz;name=archive file://cross_compile.patch

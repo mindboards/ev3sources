@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-kpresenter">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>KPresenter presentation</comment>
+  <comment xml:lang="be@latin">Prezentacyja KPresenter</comment>
+  <comment xml:lang="bg">Презентация — KPresenter</comment>
+  <comment xml:lang="ca">presentació de KPresenter</comment>
+  <comment xml:lang="cs">Prezentace KPresenter</comment>
+  <comment xml:lang="da">KPresenter-præsentation</comment>
+  <comment xml:lang="de">KPresenter-Präsentation</comment>
+  <comment xml:lang="el">παρουσίαση KPresenter</comment>
+  <comment xml:lang="en_GB">KPresenter presentation</comment>
+  <comment xml:lang="eo">KPresenter-prezentaĵo</comment>
+  <comment xml:lang="es">presentación de KPresenter</comment>
+  <comment xml:lang="eu">Kpresenter aurkezpena</comment>
+  <comment xml:lang="fi">KPresenter-esitys</comment>
+  <comment xml:lang="fr">présentation KPresenter</comment>
+  <comment xml:lang="ga">láithreoireacht KPresenter</comment>
+  <comment xml:lang="hu">KPresenter-bemutató</comment>
+  <comment xml:lang="id">Presentasi KPresenter</comment>
+  <comment xml:lang="it">Presentazione KPresenter</comment>
+  <comment xml:lang="ja">KPresenter プレゼンテーション</comment>
+  <comment xml:lang="ko">KPresenter 프리젠테이션</comment>
+  <comment xml:lang="lt">KPresenter pateiktis</comment>
+  <comment xml:lang="ms">Persembahan Kpresenter</comment>
+  <comment xml:lang="nb">KPresenter-presentasjon</comment>
+  <comment xml:lang="nl">KPresenter-presentatie</comment>
+  <comment xml:lang="nn">KPresenter-presentasjon</comment>
+  <comment xml:lang="pl">Prezentacja KPresenter</comment>
+  <comment xml:lang="pt">apresentação KPresenter</comment>
+  <comment xml:lang="pt_BR">Apresentação do KPresenter</comment>
+  <comment xml:lang="ru">презентация KPresenter</comment>
+  <comment xml:lang="sq">Prezantim i KPresenter</comment>
+  <comment xml:lang="sr">KPresenter презентација</comment>
+  <comment xml:lang="sv">KPresenter-presentation</comment>
+  <comment xml:lang="uk">Презентація KPresenter</comment>
+  <comment xml:lang="vi">Trình diễn KPresenter</comment>
+  <comment xml:lang="zh_CN">KPresenter 演示文稿</comment>
+  <comment xml:lang="zh_TW">KPresenter 簡報檔</comment>
+  <generic-icon name="x-office-presentation"/>
+</mime-type>

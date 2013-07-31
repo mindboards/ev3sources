@@ -1,0 +1,13 @@
+Package: libpng-dev
+Version: 1.2.44-r2.0.6
+Description: PNG Library
+Section: devel
+Priority: required
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: libpng
+Architecture: armv5te
+OE: libpng
+Homepage: http://www.libpng.org/
+Depends: libpng, libpng12-0
+Recommends: libz-dev, libc6-dev, libgcc1-dev, libpng-dev, libpng12-dev
+Source: http://downloads.sourceforge.net/libpng/libpng-1.2.44.tar.bz2;name=libpng file://makefile_fix.patch

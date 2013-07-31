@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-panasonic-raw">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Panasonic raw image</comment>
+  <comment xml:lang="be@latin">Suvoraja vyjava Panasonic</comment>
+  <comment xml:lang="bg">Изображение — Panasonic raw</comment>
+  <comment xml:lang="ca">imatge en cru de Panasonic</comment>
+  <comment xml:lang="cs">Surový obrázek Panasonic</comment>
+  <comment xml:lang="de">Panasonic-Rohbild</comment>
+  <comment xml:lang="es">imagen en bruto de Panasonic</comment>
+  <comment xml:lang="eu">Panasonic irudi gordina</comment>
+  <comment xml:lang="fi">Panasonic-raakakuva</comment>
+  <comment xml:lang="fr">image brute Panasonic</comment>
+  <comment xml:lang="ga">amhíomhá Panasonic</comment>
+  <comment xml:lang="hu">Panasonic nyers kép</comment>
+  <comment xml:lang="id">Citra mentah Panasonic</comment>
+  <comment xml:lang="it">Immagine raw Panasonic</comment>
+  <comment xml:lang="ko">파나소닉 raw 이미지</comment>
+  <comment xml:lang="lt">Panasonic neapdorotas paveikslėlis</comment>
+  <comment xml:lang="nb">Panasonic raw-bilde</comment>
+  <comment xml:lang="nl">onbewerkt Panasonic-beeld</comment>
+  <comment xml:lang="pl">Obraz RAW Panasonica</comment>
+  <comment xml:lang="pt_BR">Imagem bruta da Panasonic</comment>
+  <comment xml:lang="sv">Panasonic-råbild</comment>
+  <comment xml:lang="uk">Необроблене зображення Panasonic</comment>
+  <comment xml:lang="vi">Ảnh thô Panasonic</comment>
+  <sub-class-of type="image/x-dcraw"/>
+</mime-type>

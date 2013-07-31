@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-msi">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Windows Installer package</comment>
+  <comment xml:lang="be@latin">Pakunak Windows Installer</comment>
+  <comment xml:lang="ca">paquet de Windows Installer</comment>
+  <comment xml:lang="fr">paquet d'installation Windows</comment>
+  <comment xml:lang="ga">pacáiste Windows Installer</comment>
+  <comment xml:lang="nl">Windows-installatiepakket</comment>
+  <sub-class-of type="application/x-ole-storage"/>
+</mime-type>

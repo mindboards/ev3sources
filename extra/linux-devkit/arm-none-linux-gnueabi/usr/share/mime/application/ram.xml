@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/ram">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>RealMedia Metafile</comment>
+  <comment xml:lang="be@latin">Metafajł RealMedia</comment>
+  <comment xml:lang="ca">metafitxer RealMedia</comment>
+  <comment xml:lang="cs">RealMedia Metafile</comment>
+  <comment xml:lang="es">metarchivo RealMedia</comment>
+  <comment xml:lang="fi">RealMedia-metatiedosto</comment>
+  <comment xml:lang="fr">métafichier RealMedia</comment>
+  <comment xml:lang="ga">meiteachomhad RealMedia</comment>
+  <comment xml:lang="hu">RealMedia metafájl</comment>
+  <comment xml:lang="id">RealMedia Metafile</comment>
+  <comment xml:lang="it">Metafile RealMedia</comment>
+  <comment xml:lang="ko">RealMedia 메타파일</comment>
+  <comment xml:lang="lt">RealMedia metafailas</comment>
+  <comment xml:lang="nb">RealMedia-metafil</comment>
+  <comment xml:lang="nl">RealMedia-metabestand</comment>
+  <comment xml:lang="pt_BR">Meta arquivo do RealMedia</comment>
+  <comment xml:lang="sv">RealMedia-metafil</comment>
+  <comment xml:lang="vi">Siêu tập tin RealMedia</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

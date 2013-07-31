@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-ico">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>ICO icon</comment>
+  <comment xml:lang="be@latin">Ikona ICO</comment>
+  <comment xml:lang="bg">Икона — ICO</comment>
+  <comment xml:lang="ca">icona ICO</comment>
+  <comment xml:lang="cs">Ikona ICO</comment>
+  <comment xml:lang="de">ICO-Symbol</comment>
+  <comment xml:lang="en_GB">ICO icon</comment>
+  <comment xml:lang="es">icono ICO</comment>
+  <comment xml:lang="eu">ICO ikonoa</comment>
+  <comment xml:lang="fi">ICO-kuvake</comment>
+  <comment xml:lang="fr">icône ICO</comment>
+  <comment xml:lang="ga">deilbhín ICO</comment>
+  <comment xml:lang="hu">ICO ikon</comment>
+  <comment xml:lang="id">Ikon ICO</comment>
+  <comment xml:lang="it">Icona ICO</comment>
+  <comment xml:lang="ko">ICO 아이콘</comment>
+  <comment xml:lang="lt">ICO piktograma</comment>
+  <comment xml:lang="nb">ICO-ikon</comment>
+  <comment xml:lang="nl">ICO-pictogram</comment>
+  <comment xml:lang="nn">ICO-ikon</comment>
+  <comment xml:lang="pl">Ikona ICO</comment>
+  <comment xml:lang="pt_BR">Ícone ICO</comment>
+  <comment xml:lang="sv">ICO-ikon</comment>
+  <comment xml:lang="uk">Значок ICO</comment>
+  <comment xml:lang="vi">Biểu tượng ICO</comment>
+  <acronym>ICO</acronym>
+  <expanded-acronym>Windows Icon</expanded-acronym>
+</mime-type>

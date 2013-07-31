@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="x-content/video-svcd">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Super Video CD</comment>
+  <comment xml:lang="be@latin">Super Video CD</comment>
+  <comment xml:lang="ca">CD Super Vídeo</comment>
+  <comment xml:lang="fr">Super VCD</comment>
+  <comment xml:lang="ga">Dlúthdhiosca Sárfhíse</comment>
+  <comment xml:lang="nl">super-video-CD</comment>
+</mime-type>

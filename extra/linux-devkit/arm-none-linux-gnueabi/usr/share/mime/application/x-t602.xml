@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-t602">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>T602 document</comment>
+  <comment xml:lang="be@latin">Dakument T602</comment>
+  <comment xml:lang="bg">Документ — T602</comment>
+  <comment xml:lang="ca">document T602</comment>
+  <comment xml:lang="cs">Dokument T602</comment>
+  <comment xml:lang="de">T602-Dokument</comment>
+  <comment xml:lang="es">documento T602</comment>
+  <comment xml:lang="eu">T602 dokumentua</comment>
+  <comment xml:lang="fi">T602-asiakirja</comment>
+  <comment xml:lang="fr">document T602</comment>
+  <comment xml:lang="ga">cáipéis T602</comment>
+  <comment xml:lang="hu">T602 dokumentum</comment>
+  <comment xml:lang="id">Dokumen T602</comment>
+  <comment xml:lang="it">Documento T602</comment>
+  <comment xml:lang="ko">T602 문서</comment>
+  <comment xml:lang="lt">T602 dokumentas</comment>
+  <comment xml:lang="nb">T602-dokument</comment>
+  <comment xml:lang="nl">T602-document</comment>
+  <comment xml:lang="pl">Dokument T602</comment>
+  <comment xml:lang="pt_BR">Documento T602</comment>
+  <comment xml:lang="sv">T602-dokument</comment>
+  <comment xml:lang="uk">Документ T602</comment>
+  <comment xml:lang="vi">Tài liệu T602</comment>
+  <generic-icon name="x-office-document"/>
+</mime-type>

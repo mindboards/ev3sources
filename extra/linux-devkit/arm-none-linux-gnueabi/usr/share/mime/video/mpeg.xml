@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="video/mpeg">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>MPEG video</comment>
+  <comment xml:lang="be@latin">Videa MPEG</comment>
+  <comment xml:lang="bg">Видео — MPEG</comment>
+  <comment xml:lang="ca">vídeo MPEG</comment>
+  <comment xml:lang="cs">Video MPEG</comment>
+  <comment xml:lang="da">MPEG-video</comment>
+  <comment xml:lang="de">MPEG-Video</comment>
+  <comment xml:lang="el">βίντεο MPEG</comment>
+  <comment xml:lang="en_GB">MPEG video</comment>
+  <comment xml:lang="eo">MPEG-video</comment>
+  <comment xml:lang="es">vídeo MPEG</comment>
+  <comment xml:lang="eu">MPEG bideoa</comment>
+  <comment xml:lang="fi">MPEG-video</comment>
+  <comment xml:lang="fr">vidéo MPEG</comment>
+  <comment xml:lang="ga">físeán MPEG</comment>
+  <comment xml:lang="hu">MPEG-videó</comment>
+  <comment xml:lang="id">Video MPEG</comment>
+  <comment xml:lang="it">Video MPEG</comment>
+  <comment xml:lang="ja">MPEG 動画</comment>
+  <comment xml:lang="ko">MPEG 비디오</comment>
+  <comment xml:lang="lt">MPEG vaizdas</comment>
+  <comment xml:lang="ms">Video MPEG</comment>
+  <comment xml:lang="nb">MPEG-film</comment>
+  <comment xml:lang="nl">MPEG-video</comment>
+  <comment xml:lang="nn">MPEG-video</comment>
+  <comment xml:lang="pl">Plik wideo MPEG</comment>
+  <comment xml:lang="pt">vídeo MPEG</comment>
+  <comment xml:lang="pt_BR">Vídeo MPEG</comment>
+  <comment xml:lang="ru">MPEG видео</comment>
+  <comment xml:lang="sq">Video MPEG</comment>
+  <comment xml:lang="sr">MPEG видео</comment>
+  <comment xml:lang="sv">MPEG-video</comment>
+  <comment xml:lang="uk">Відео-кліп MPEG</comment>
+  <comment xml:lang="vi">Ảnh động MPEG</comment>
+  <comment xml:lang="zh_CN">MPEG 视频</comment>
+  <comment xml:lang="zh_TW">MPEG 影音檔</comment>
+  <acronym>MPEG</acronym>
+  <expanded-acronym>Moving Picture Experts Group</expanded-acronym>
+</mime-type>

@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: XCB Damage
+Description: XCB Damage Extension
+Version: 1.6
+Requires: xcb xcb-xfixes
+Libs: -L${libdir} -lxcb-damage
+Cflags: -I${includedir}

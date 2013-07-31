@@ -1,0 +1,4 @@
+/usr/include/X11/extensions/Xrandr.h
+/usr/lib/pkgconfig/xrandr.pc
+/usr/lib/libXrandr.la
+/usr/lib/libXrandr.so

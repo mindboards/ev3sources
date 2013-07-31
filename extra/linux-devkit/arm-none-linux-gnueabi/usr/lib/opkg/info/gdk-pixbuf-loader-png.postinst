@@ -1,0 +1,6 @@
+#!/bin/sh
+if [ "x$D" != "x" ]; then
+  exit 1
+fi
+
+gdk-pixbuf-query-loaders > /etc/gtk-2.0/gdk-pixbuf.loaders

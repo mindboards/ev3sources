@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="video/dv">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>DV video</comment>
+  <comment xml:lang="be@latin">Videa DV</comment>
+  <comment xml:lang="bg">Видео — DV</comment>
+  <comment xml:lang="ca">vídeo DV</comment>
+  <comment xml:lang="cs">Video DV</comment>
+  <comment xml:lang="de">DV-Video</comment>
+  <comment xml:lang="en_GB">DV video</comment>
+  <comment xml:lang="es">vídeo DV</comment>
+  <comment xml:lang="eu">DV bideoa</comment>
+  <comment xml:lang="fi">DV-video</comment>
+  <comment xml:lang="fr">vidéo DV</comment>
+  <comment xml:lang="ga">físeán DV</comment>
+  <comment xml:lang="hu">DV videó</comment>
+  <comment xml:lang="id">Video DV</comment>
+  <comment xml:lang="it">Video DV</comment>
+  <comment xml:lang="ko">DV 비디오</comment>
+  <comment xml:lang="lt">DV vaizdas</comment>
+  <comment xml:lang="nb">DV-film</comment>
+  <comment xml:lang="nl">DV-video</comment>
+  <comment xml:lang="nn">DV-video</comment>
+  <comment xml:lang="pl">Plik wideo DV</comment>
+  <comment xml:lang="pt_BR">Vídeo DV</comment>
+  <comment xml:lang="ru">DV видео</comment>
+  <comment xml:lang="sv">DV-video</comment>
+  <comment xml:lang="uk">Відео-кліп DV</comment>
+  <comment xml:lang="vi">Ảnh động DV</comment>
+  <acronym>DV</acronym>
+  <expanded-acronym>Digital Video</expanded-acronym>
+</mime-type>

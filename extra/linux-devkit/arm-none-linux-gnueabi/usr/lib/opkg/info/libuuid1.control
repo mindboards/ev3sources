@@ -1,0 +1,12 @@
+Package: libuuid1
+Version: 2.17-r34.3-arago1.6
+Description: util-linux-ng uuid library
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2
+Architecture: armv5te
+OE: util-linux-ng
+Homepage: unknown
+Depends: libgcc1, libc6, libc6
+Source: http://kernel.org/pub/linux/utils/util-linux-ng/v2.17/util-linux-ng-2.17-arago1.tar.bz2;name=archive file://uclibc-compile.patch file://util-linux-ng-replace-siginterrupt.patch file://fdiskbsdlabel.h-nios2.patch file://uclibc-nolargefile.patch

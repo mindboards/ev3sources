@@ -1,0 +1,13 @@
+Package: cups-dev
+Version: 1.2.12-r7.2.6
+Description: An Internet printing system for Unix.
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPL LGPL
+Architecture: armv5te
+OE: cups
+Homepage: unknown
+Depends: cups, libcupsimage, libcups2
+Recommends: libgnutls-dev, libjpeg-dev, dbus-dev, libdbus-glib-1-dev, libpng-dev, libz-dev, libc6-dev, libgcc1-dev, libpng12-dev, cups-lib-dev, cups-libimage-dev, libstdc++6-dev, libpam-dev, dbus-lib-dev, cups-dev, virtual-locale-es-dev, virtual-locale-fr-dev, virtual-locale-de-dev, virtual-locale-et-dev, virtual-locale-zh-tw-dev, virtual-locale-it-dev, virtual-locale-pl-dev, virtual-locale-sv-dev, virtual-locale-ja-dev
+Source: ftp://ftp.easysw.com/pub/cups/1.2.12/cups-1.2.12-source.tar.bz2

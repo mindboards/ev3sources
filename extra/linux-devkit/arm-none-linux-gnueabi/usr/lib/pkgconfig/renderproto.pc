@@ -1,0 +1,9 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+ 
+Name: RenderProto
+Description: Render extension headers
+Version: 0.11.1
+Cflags: -I${includedir}

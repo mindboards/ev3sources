@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-macpaint">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>MacPaint Bitmap image</comment>
+  <comment xml:lang="be@latin">Bitmapnaja vyjava MacPaint</comment>
+  <comment xml:lang="bg">Изображение — MacPaint Bitmap</comment>
+  <comment xml:lang="ca">imatge de mapa de bits MacPaint</comment>
+  <comment xml:lang="cs">Obrázek MacPaint Bitmap</comment>
+  <comment xml:lang="de">MacPaint Bitmap-Datei</comment>
+  <comment xml:lang="es">imagen en mapa de bits de MacPaint</comment>
+  <comment xml:lang="eu">MacPaint Bitmap irudia</comment>
+  <comment xml:lang="fi">MacPaint BitMap -kuva</comment>
+  <comment xml:lang="fr">image matricielle MacPaint</comment>
+  <comment xml:lang="ga">íomhá MacPaint Bitmap</comment>
+  <comment xml:lang="hu">MacPaint bitkép</comment>
+  <comment xml:lang="id">Citra MacPaint Bitmap</comment>
+  <comment xml:lang="it">Immagine Bitmap MacPaint</comment>
+  <comment xml:lang="ko">맥페인트 비트맵 그림</comment>
+  <comment xml:lang="lt">MacPaint rastrinis paveikslėlis</comment>
+  <comment xml:lang="nb">MacPaint Bitmap-bilde</comment>
+  <comment xml:lang="nl">MacPaint-bitmap-afbeelding</comment>
+  <comment xml:lang="pl">Obraz bitmapowy MacPaint</comment>
+  <comment xml:lang="pt_BR">Imagem de bitmap do MacPaint</comment>
+  <comment xml:lang="sv">MacPaint Bitmap-bild</comment>
+  <comment xml:lang="uk">Растрове зображення MacPaint</comment>
+  <comment xml:lang="vi">Ảnh mảng MacPaint</comment>
+</mime-type>

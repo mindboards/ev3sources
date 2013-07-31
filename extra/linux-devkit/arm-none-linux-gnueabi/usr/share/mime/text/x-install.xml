@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-install">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>installation instructions</comment>
+  <comment xml:lang="be@latin">instrukcyja dla instalavańnia</comment>
+  <comment xml:lang="bg">Инструкции за инсталация</comment>
+  <comment xml:lang="ca">instruccions d'instal·lació</comment>
+  <comment xml:lang="cs">Návod k instalaci</comment>
+  <comment xml:lang="de">Installationsanleitung</comment>
+  <comment xml:lang="en_GB">installation instructions</comment>
+  <comment xml:lang="es">instrucciones de instalación</comment>
+  <comment xml:lang="eu">instalatzio instrukzioak</comment>
+  <comment xml:lang="fi">asennusohjeet</comment>
+  <comment xml:lang="fr">instructions d'installation</comment>
+  <comment xml:lang="ga">treoracha suiteála</comment>
+  <comment xml:lang="hu">telepítési utasítások</comment>
+  <comment xml:lang="id">instruksi instalasi</comment>
+  <comment xml:lang="it">Istruzioni di installazione</comment>
+  <comment xml:lang="ko">설치 방법</comment>
+  <comment xml:lang="lt">diegimo instrukcijos</comment>
+  <comment xml:lang="nb">installationsinstruksjoner</comment>
+  <comment xml:lang="nl">installatie-instructies</comment>
+  <comment xml:lang="nn">installasjonsinstruksjonar</comment>
+  <comment xml:lang="pl">instrukcje instalacji</comment>
+  <comment xml:lang="pt_BR">instruções de instalação</comment>
+  <comment xml:lang="ru">инструкции по установке программы</comment>
+  <comment xml:lang="sv">installationsinstruktioner</comment>
+  <comment xml:lang="uk">інструкції з встановлення</comment>
+  <comment xml:lang="vi">hướng dẫn cài đặt</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

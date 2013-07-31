@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-tarz">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Tar archive (compressed)</comment>
+  <comment xml:lang="be@latin">Archiŭ tar (skampresavany)</comment>
+  <comment xml:lang="bg">Архив — tar, компресиран</comment>
+  <comment xml:lang="ca">arxiu tar (comprimit)</comment>
+  <comment xml:lang="cs">Archiv tar (komprimovaný)</comment>
+  <comment xml:lang="es">archivador Tar (comprimido)</comment>
+  <comment xml:lang="eu">Tar artxiboa (konprimitua)</comment>
+  <comment xml:lang="fi">Tar-arkisto (pakattu)</comment>
+  <comment xml:lang="fr">archive tar (compressée)</comment>
+  <comment xml:lang="ga">cartlann Tar (comhbhrúite)</comment>
+  <comment xml:lang="hu">Tar archívum (tömörített)</comment>
+  <comment xml:lang="id">Arsip Tar (terkompresi)</comment>
+  <comment xml:lang="it">Archivio tar (compresso)</comment>
+  <comment xml:lang="ko">tar 묶음파일 (압축함) </comment>
+  <comment xml:lang="lt">Tar archyvas (suglaudintas)</comment>
+  <comment xml:lang="nb">Tar-arkiv (komprimert)</comment>
+  <comment xml:lang="nl">Tar-archief (ingepakt)</comment>
+  <comment xml:lang="pt_BR">Pacote tar (compactado)</comment>
+  <comment xml:lang="ru">архив tar (сжатый)</comment>
+  <comment xml:lang="sv">Tar-arkiv (komprimerat)</comment>
+  <comment xml:lang="vi">Kho nén tar (đã nén)</comment>
+  <generic-icon name="package-x-generic"/>
+</mime-type>

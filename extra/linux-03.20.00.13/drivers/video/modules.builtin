@@ -1,0 +1,6 @@
+kernel/drivers/video/fb.ko
+kernel/drivers/video/sysfillrect.ko
+kernel/drivers/video/syscopyarea.ko
+kernel/drivers/video/sysimgblt.ko
+kernel/drivers/video/fb_sys_fops.ko
+kernel/drivers/video/st7586fb.ko

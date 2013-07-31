@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: Xcomposite
+Description: X Composite Extension Library
+Version: 0.4.3
+Requires: xproto compositeproto >= 0.4
+Requires.private: x11 xfixes
+Cflags: -I${includedir}
+Libs: -L${libdir} -lXcomposite

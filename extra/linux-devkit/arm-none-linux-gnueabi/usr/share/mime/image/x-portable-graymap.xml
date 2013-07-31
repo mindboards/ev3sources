@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-portable-graymap">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>PGM image</comment>
+  <comment xml:lang="be@latin">Vyjava PGM</comment>
+  <comment xml:lang="bg">Изображение — PGM</comment>
+  <comment xml:lang="ca">imatge PGM</comment>
+  <comment xml:lang="cs">Obrázek PGM</comment>
+  <comment xml:lang="de">PGM-Bild</comment>
+  <comment xml:lang="en_GB">PGM image</comment>
+  <comment xml:lang="es">imagen PGM</comment>
+  <comment xml:lang="eu">PGM irudia</comment>
+  <comment xml:lang="fi">PGM-kuva</comment>
+  <comment xml:lang="fr">image PGM</comment>
+  <comment xml:lang="ga">íomhá PGM</comment>
+  <comment xml:lang="hu">PGM kép</comment>
+  <comment xml:lang="id">Citra PGM</comment>
+  <comment xml:lang="it">Immagine PGM</comment>
+  <comment xml:lang="ko">PGM 그림</comment>
+  <comment xml:lang="lt">PGM paveikslėlis</comment>
+  <comment xml:lang="nb">PGM-bilde</comment>
+  <comment xml:lang="nl">PGM-afbeelding</comment>
+  <comment xml:lang="nn">PGM-bilete</comment>
+  <comment xml:lang="pl">Obraz PGM</comment>
+  <comment xml:lang="pt_BR">Imagem PGM</comment>
+  <comment xml:lang="sv">PGM-bild</comment>
+  <comment xml:lang="uk">Зображення PGM</comment>
+  <comment xml:lang="vi">Ảnh PGM</comment>
+  <acronym>PGM</acronym>
+  <expanded-acronym>Portable GrayMap</expanded-acronym>
+  <sub-class-of type="image/x-portable-anymap"/>
+</mime-type>

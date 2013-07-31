@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/vnd.dwg">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>AutoCAD image</comment>
+  <comment xml:lang="az">AutoCAD rəsmi</comment>
+  <comment xml:lang="be@latin">Vyjava AutoCAD</comment>
+  <comment xml:lang="bg">Изображение — AutoCAD</comment>
+  <comment xml:lang="ca">imatge d'AutoCAD</comment>
+  <comment xml:lang="cs">Obrázek AutoCAD</comment>
+  <comment xml:lang="cy">Delwedd AutoCAD</comment>
+  <comment xml:lang="da">AutoCAD-billede</comment>
+  <comment xml:lang="de">AutoCAD-Bild</comment>
+  <comment xml:lang="el">εικόνα AutoCAD</comment>
+  <comment xml:lang="en_GB">AutoCAD image</comment>
+  <comment xml:lang="eo">AutoCAD-bildo</comment>
+  <comment xml:lang="es">imagen de AutoCAD</comment>
+  <comment xml:lang="eu">AutoCAD-eko irudia</comment>
+  <comment xml:lang="fi">AutoCAD-kuva</comment>
+  <comment xml:lang="fr">image AutoCAD</comment>
+  <comment xml:lang="ga">íomhá AutoCAD</comment>
+  <comment xml:lang="hu">AutoCAD-kép</comment>
+  <comment xml:lang="id">Citra AutoCAD</comment>
+  <comment xml:lang="it">Immagine AutoCAD</comment>
+  <comment xml:lang="ja">AutoCAD 画像</comment>
+  <comment xml:lang="ko">AutoCAD 그림</comment>
+  <comment xml:lang="lt">AutoCAD paveikslėlis</comment>
+  <comment xml:lang="ms">Imej AutoCAD</comment>
+  <comment xml:lang="nb">AutoCAD-bilde</comment>
+  <comment xml:lang="nl">AutoCAD-afbeelding</comment>
+  <comment xml:lang="nn">AutoCAD-bilete</comment>
+  <comment xml:lang="pl">Obraz AutoCAD</comment>
+  <comment xml:lang="pt">imagem AutoCAD</comment>
+  <comment xml:lang="pt_BR">Imagem do AutoCAD</comment>
+  <comment xml:lang="ru">изображение AutoCad</comment>
+  <comment xml:lang="sq">Figurë AutoCAD</comment>
+  <comment xml:lang="sr">AutoCAD слика</comment>
+  <comment xml:lang="sv">AutoCAD-bild</comment>
+  <comment xml:lang="uk">Зображення AutoCAD</comment>
+  <comment xml:lang="vi">Ảnh AutoCAD</comment>
+  <comment xml:lang="zh_CN">AutoCAD 图像</comment>
+  <comment xml:lang="zh_TW">AutoCAD 圖片</comment>
+</mime-type>

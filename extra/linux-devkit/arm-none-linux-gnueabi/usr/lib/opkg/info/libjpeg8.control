@@ -1,0 +1,13 @@
+Package: libjpeg8
+Version: 8b-r1.6
+Description: libjpeg is a library for handling the JPEG (JFIF) image format.
+Section: libs
+Priority: required
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: jpeg
+Architecture: armv5te
+OE: jpeg
+Homepage: unknown
+Depends: libgcc1, libc6
+Provides: libjpeg8
+Source: http://www.ijg.org/files/jpegsrc.v8b.tar.gz file://0001-configure-make-jpeg-work-with-older-autotools.patch

@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include/gstreamer-0.10
+
+Name: GStreamer Audio library
+Description: Audio helper functions and base classes
+Requires: gstreamer-0.10 gstreamer-base-0.10 gstreamer-interfaces-0.10
+Version: 0.10.30
+Libs: -L${libdir} -lgstaudio-0.10
+Cflags: -I${includedir}
+

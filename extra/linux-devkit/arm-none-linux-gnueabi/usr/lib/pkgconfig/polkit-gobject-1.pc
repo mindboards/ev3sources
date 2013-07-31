@@ -1,0 +1,13 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+policydir=${prefix}/share/polkit-1/actions/
+actiondir=${prefix}/share/polkit-1/actions/
+
+Name: polkit-gobject-1
+Description: PolicyKit Authorization API
+Version: 0.96
+Libs: -L${libdir} -lpolkit-gobject-1
+Cflags: -I${includedir}/polkit-1
+Requires: gio-2.0 >= 2.18 glib-2.0 >= 2.18

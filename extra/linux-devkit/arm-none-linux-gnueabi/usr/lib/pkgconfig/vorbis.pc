@@ -1,0 +1,14 @@
+# libvorbis pkg-config source file
+
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: vorbis
+Description: vorbis is the primary Ogg Vorbis library
+Version: 1.2.3
+Requires: ogg
+Conflicts:
+Libs: -L${libdir} -lvorbis -lm
+Cflags: -I${includedir}

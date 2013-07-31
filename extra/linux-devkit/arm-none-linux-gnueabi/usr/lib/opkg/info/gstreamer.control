@@ -1,0 +1,12 @@
+Package: gstreamer
+Version: 0.10.30-r1.6
+Description: GStreamer is a multimedia framework for encoding and decoding video and sound. It supports a wide range of formats including mp3, ogg, avi, mpeg and quicktime.
+Section: multimedia
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPL
+Architecture: armv5te
+OE: gstreamer
+Homepage: http://www.gstreamer.net/
+Depends: libxml2, libz1, libc6, libgobject-2.0-0, libgthread-2.0-0, libgmodule-2.0-0, libglib-2.0-0, libgcc1
+Source: http://gstreamer.freedesktop.org/src/gstreamer/gstreamer-0.10.30.tar.bz2;name=archive

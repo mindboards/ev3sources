@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-netcdf">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Unidata NetCDF document</comment>
+  <comment xml:lang="be@latin">Dakument Unidata NetCDF</comment>
+  <comment xml:lang="bg">Документ — Unidata NetCDF</comment>
+  <comment xml:lang="ca">document Unidata NetCDF</comment>
+  <comment xml:lang="cs">Dokument Unidata NetCDF</comment>
+  <comment xml:lang="da">Unidata NetCDF-dokument</comment>
+  <comment xml:lang="de">Unidata-NetCDF-Dokument</comment>
+  <comment xml:lang="el">έγγραφο Unidata NetCDF</comment>
+  <comment xml:lang="en_GB">Unidata NetCDF document</comment>
+  <comment xml:lang="eo">dokumento en NetCDF-formato de Unidata</comment>
+  <comment xml:lang="es">documento de Unidata NetCDF</comment>
+  <comment xml:lang="eu">Unidata NetCDF dokumentua</comment>
+  <comment xml:lang="fi">Unidata NetCDF -asiakirja</comment>
+  <comment xml:lang="fr">document Unidata NetCDF</comment>
+  <comment xml:lang="ga">cáipéis Unidata NetCDF</comment>
+  <comment xml:lang="hu">Unidata NetCDF-dokumentum</comment>
+  <comment xml:lang="id">Dokumen Unidata NetCDF</comment>
+  <comment xml:lang="it">Documento Unidata NetCDF</comment>
+  <comment xml:lang="ja">Unidata NetCDF ドキュメント</comment>
+  <comment xml:lang="ko">Unidata NetCDF 문서</comment>
+  <comment xml:lang="lt">Unidata NetCDF dokumentas</comment>
+  <comment xml:lang="ms">Dokumen Unidata NetCDF</comment>
+  <comment xml:lang="nb">Unidata NetCDF-dokument</comment>
+  <comment xml:lang="nl">Unidata NetCDF-document</comment>
+  <comment xml:lang="nn">Unidata netCDF-dokument</comment>
+  <comment xml:lang="pl">Dokument Unidata NetCDF</comment>
+  <comment xml:lang="pt">documento Unidata NetCDF</comment>
+  <comment xml:lang="pt_BR">Documento do Unidata NetCDF</comment>
+  <comment xml:lang="sq">Dokument Unidata NetCDF</comment>
+  <comment xml:lang="sr">Unidata NetCDF документ</comment>
+  <comment xml:lang="sv">Unidata NetCDF-dokument</comment>
+  <comment xml:lang="uk">Документ Unidata NetCDF</comment>
+  <comment xml:lang="vi">Tài liệu NetCDF Unidata</comment>
+  <comment xml:lang="zh_CN">Unidata NetCDF 文档</comment>
+  <comment xml:lang="zh_TW">Unidata NetCDF 圖形</comment>
+  <acronym>NetCDF</acronym>
+  <expanded-acronym>Network Common Data Form</expanded-acronym>
+  <generic-icon name="x-office-document"/>
+</mime-type>

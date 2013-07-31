@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-exr">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>EXR image</comment>
+  <comment xml:lang="be@latin">Vyjava EXR</comment>
+  <comment xml:lang="ca">imatge EXR</comment>
+  <comment xml:lang="cs">Obrázek EXR</comment>
+  <comment xml:lang="es">imagen EXR</comment>
+  <comment xml:lang="fi">EXR-kuva</comment>
+  <comment xml:lang="fr">image EXR</comment>
+  <comment xml:lang="ga">íomhá EXR</comment>
+  <comment xml:lang="hu">EXR kép</comment>
+  <comment xml:lang="id">Citra EXR</comment>
+  <comment xml:lang="it">Immagine EXR</comment>
+  <comment xml:lang="ko">EXR 그림</comment>
+  <comment xml:lang="lt">EXR paveikslėlis</comment>
+  <comment xml:lang="nb">EXR-bilde</comment>
+  <comment xml:lang="nl">EXR-afbeelding</comment>
+  <comment xml:lang="pt_BR">Imagem EXR</comment>
+  <comment xml:lang="ru">изображение EXR</comment>
+  <comment xml:lang="sv">EXR-bild</comment>
+  <comment xml:lang="vi">Ảnh EXR</comment>
+</mime-type>

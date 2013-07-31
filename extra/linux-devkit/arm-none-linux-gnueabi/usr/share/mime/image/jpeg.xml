@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/jpeg">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>JPEG image</comment>
+  <comment xml:lang="az">JPEG rəsmi</comment>
+  <comment xml:lang="be@latin">Vyjava JPEG</comment>
+  <comment xml:lang="bg">Изображение — JPEG</comment>
+  <comment xml:lang="ca">imatge JPEG</comment>
+  <comment xml:lang="cs">Obrázek JPEG</comment>
+  <comment xml:lang="cy">Delwedd JPEG</comment>
+  <comment xml:lang="da">JPEG-billede</comment>
+  <comment xml:lang="de">JPEG-Bild</comment>
+  <comment xml:lang="el">εικόνα JPEG</comment>
+  <comment xml:lang="en_GB">JPEG image</comment>
+  <comment xml:lang="eo">JPEG-bildo</comment>
+  <comment xml:lang="es">imagen JPEG</comment>
+  <comment xml:lang="eu">JPEG irudia</comment>
+  <comment xml:lang="fi">JPEG-kuva</comment>
+  <comment xml:lang="fr">image JPEG</comment>
+  <comment xml:lang="ga">íomhá JPEG</comment>
+  <comment xml:lang="hu">JPEG-kép</comment>
+  <comment xml:lang="id">Citra JPEG</comment>
+  <comment xml:lang="it">Immagine JPEG</comment>
+  <comment xml:lang="ja">JPEG 画像 </comment>
+  <comment xml:lang="ko">JPEG 그림</comment>
+  <comment xml:lang="lt">JPEG paveikslėlis</comment>
+  <comment xml:lang="ms">Imej JPEG</comment>
+  <comment xml:lang="nb">JPEG-bilde</comment>
+  <comment xml:lang="nl">JPEG-afbeelding</comment>
+  <comment xml:lang="nn">JPEG-bilete</comment>
+  <comment xml:lang="pl">Obraz JPEG</comment>
+  <comment xml:lang="pt">imagem JPEG</comment>
+  <comment xml:lang="pt_BR">Imagem JPEG</comment>
+  <comment xml:lang="ru">изображение JPEG</comment>
+  <comment xml:lang="sq">Figurë JPEG</comment>
+  <comment xml:lang="sr">JPEG слика</comment>
+  <comment xml:lang="sv">JPEG-bild</comment>
+  <comment xml:lang="uk">Зображення JPEG</comment>
+  <comment xml:lang="vi">Ảnh JPEG</comment>
+  <comment xml:lang="zh_CN">JPEG 图像</comment>
+  <comment xml:lang="zh_TW">JPEG 圖片</comment>
+  <alias type="image/pjpeg"/>
+</mime-type>

@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: EggDBus
+Description: GObject bindings for D-Bus
+Version: 0.6
+Requires: gobject-2.0 gio-2.0
+Libs: -L${libdir} -leggdbus-1
+Cflags: -I${includedir}/eggdbus-1

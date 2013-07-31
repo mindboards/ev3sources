@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: XCB Composite
+Description: XCB Composite Extension
+Version: 1.6
+Requires: xcb xcb-xfixes
+Libs: -L${libdir} -lxcb-composite
+Cflags: -I${includedir}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/ecmascript">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>ECMAScript program</comment>
+  <comment xml:lang="be@latin">Prahrama ECMAScript</comment>
+  <comment xml:lang="bg">Програма — ECMAScript</comment>
+  <comment xml:lang="ca">programa ECMAScript</comment>
+  <comment xml:lang="cs">Program ECMAScript</comment>
+  <comment xml:lang="de">ECMAScript-Programm</comment>
+  <comment xml:lang="es">programa en ECMAScript</comment>
+  <comment xml:lang="eu">ECMAScript programa</comment>
+  <comment xml:lang="fi">ECMAScript-ohjelma</comment>
+  <comment xml:lang="fr">programme ECMAScript</comment>
+  <comment xml:lang="ga">ríomhchlár ECMAScript</comment>
+  <comment xml:lang="hu">ECMAScript program</comment>
+  <comment xml:lang="id">Program ECMAScript</comment>
+  <comment xml:lang="it">Programma ECMAScript</comment>
+  <comment xml:lang="ko">ECMA스크립트 프로그램</comment>
+  <comment xml:lang="lt">ECMAScript programa</comment>
+  <comment xml:lang="nb">ECMAScript-program</comment>
+  <comment xml:lang="nl">ECMAScript-programma</comment>
+  <comment xml:lang="pl">Pogram ECMAScript</comment>
+  <comment xml:lang="pt_BR">Programa ECMAScript</comment>
+  <comment xml:lang="ru">программа ECMAScript</comment>
+  <comment xml:lang="sv">ECMAScript-program</comment>
+  <comment xml:lang="uk">Програма на мові ECMAScript</comment>
+  <comment xml:lang="vi">Chương trình ECMAScript</comment>
+  <alias type="text/ecmascript"/>
+  <sub-class-of type="text/plain"/>
+  <generic-icon name="text-x-script"/>
+</mime-type>

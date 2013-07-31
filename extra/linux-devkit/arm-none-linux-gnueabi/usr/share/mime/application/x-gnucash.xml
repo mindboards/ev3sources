@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-gnucash">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>GnuCash spreadsheet</comment>
+  <comment xml:lang="be@latin">Raźlikovy arkuš GnuCash</comment>
+  <comment xml:lang="bg">Таблица — GnuCash</comment>
+  <comment xml:lang="ca">full de càlcul de GnuCash</comment>
+  <comment xml:lang="cs">Sešit GnuCash</comment>
+  <comment xml:lang="da">GnuCash-regneark</comment>
+  <comment xml:lang="de">GnuCash-Tabelle</comment>
+  <comment xml:lang="el">λογιστικό φύλλο Gnucash</comment>
+  <comment xml:lang="en_GB">GnuCash spreadsheet</comment>
+  <comment xml:lang="eo">GnuCash-sterntabelo</comment>
+  <comment xml:lang="es">hoja de cálculo de GnuCash</comment>
+  <comment xml:lang="eu">GnuCash kalkulu-orria</comment>
+  <comment xml:lang="fi">GnuCash-taulukko</comment>
+  <comment xml:lang="fr">feuille de calcul GnuCash</comment>
+  <comment xml:lang="ga">scarbhileog GnuCash</comment>
+  <comment xml:lang="hu">GnuCash-munkafüzet</comment>
+  <comment xml:lang="id">Lembar sebar GnuCash</comment>
+  <comment xml:lang="it">Foglio di calcolo GnuCash</comment>
+  <comment xml:lang="ja">GnuCash スプレッドシート</comment>
+  <comment xml:lang="ko">GnuCash 스프레드시트</comment>
+  <comment xml:lang="lt">GnuCash skaičialentė</comment>
+  <comment xml:lang="ms">Hamparan GnuCash</comment>
+  <comment xml:lang="nb">GnuCash-regneark</comment>
+  <comment xml:lang="nl">GnuCash-rekenblad</comment>
+  <comment xml:lang="nn">GnuCash-rekneark</comment>
+  <comment xml:lang="pl">Arkusz GnuCash</comment>
+  <comment xml:lang="pt">folha de cálculo GnuCash</comment>
+  <comment xml:lang="pt_BR">Planilha do GnuCash</comment>
+  <comment xml:lang="ru">электронная таблица GnuCash</comment>
+  <comment xml:lang="sq">Fletë llogaritëse GnuCash</comment>
+  <comment xml:lang="sr">ГнуКеш табеларни прорачун</comment>
+  <comment xml:lang="sv">GnuCash-kalkylblad</comment>
+  <comment xml:lang="uk">Ел.таблиця GnuCash</comment>
+  <comment xml:lang="vi">Bảng tính GnuCash</comment>
+  <comment xml:lang="zh_CN">GnuCash 工作簿</comment>
+  <comment xml:lang="zh_TW">GnuCash 試算表</comment>
+  <generic-icon name="x-office-spreadsheet"/>
+</mime-type>

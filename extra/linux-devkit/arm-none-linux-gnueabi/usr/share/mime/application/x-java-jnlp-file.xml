@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-java-jnlp-file">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>JNLP file</comment>
+  <comment xml:lang="be@latin">Fajł JNLP</comment>
+  <comment xml:lang="bg">Файл — JNLP</comment>
+  <comment xml:lang="ca">fitxer JNLP</comment>
+  <comment xml:lang="cs">Soubor JNLP</comment>
+  <comment xml:lang="de">JNLP-Datei</comment>
+  <comment xml:lang="en_GB">JNLP file</comment>
+  <comment xml:lang="es">archivo JNPL</comment>
+  <comment xml:lang="eu">JNLP fitxategia</comment>
+  <comment xml:lang="fi">JNLP-tiedosto</comment>
+  <comment xml:lang="fr">fichier JNLP</comment>
+  <comment xml:lang="ga">comhad JNLP</comment>
+  <comment xml:lang="hu">JNLP fájl</comment>
+  <comment xml:lang="id">Berkas JNLP</comment>
+  <comment xml:lang="it">File JNPL</comment>
+  <comment xml:lang="ko">JNLP 파일</comment>
+  <comment xml:lang="lt">JNLP rinkmena</comment>
+  <comment xml:lang="nb">JNLP-fil</comment>
+  <comment xml:lang="nl">JNLP-bestand</comment>
+  <comment xml:lang="nn">JNLP-fil</comment>
+  <comment xml:lang="pl">Plik JNLP</comment>
+  <comment xml:lang="pt_BR">Arquivo JNLP</comment>
+  <comment xml:lang="sv">JNLP-fil</comment>
+  <comment xml:lang="uk">Файл JNLP</comment>
+  <comment xml:lang="vi">Tập tin JNLP</comment>
+  <acronym>JNLP</acronym>
+  <expanded-acronym>Java Network Launching Protocol</expanded-acronym>
+  <sub-class-of type="application/xml"/>
+  <generic-icon name="text-x-script"/>
+</mime-type>

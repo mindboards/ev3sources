@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-iptables">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>iptables configuration file</comment>
+  <comment xml:lang="be@latin">kanfihuracyjny fajł iptables</comment>
+  <comment xml:lang="ca">fitxer de configuració d'iptables</comment>
+  <comment xml:lang="cs">Soubor nastavení iptables</comment>
+  <comment xml:lang="es">archivo de configuración de iptables</comment>
+  <comment xml:lang="fi">iptables-asetustiedosto</comment>
+  <comment xml:lang="fr">fichier de configuration iptables</comment>
+  <comment xml:lang="ga">comhad cumraíochta iptables</comment>
+  <comment xml:lang="hu">iptables beállítófájl</comment>
+  <comment xml:lang="id">berkas konfigurasi iptables</comment>
+  <comment xml:lang="it">File configurazione iptables</comment>
+  <comment xml:lang="ko">iptables 설정 파일</comment>
+  <comment xml:lang="lt">iptables konfigūracijos rinkmena</comment>
+  <comment xml:lang="nb">konfigurasjonsfil for iptables</comment>
+  <comment xml:lang="nl">iptables-configuratiebestand</comment>
+  <comment xml:lang="pt_BR">arquivo de configuração do iptables</comment>
+  <comment xml:lang="ru">конфигурационный файл iptables</comment>
+  <comment xml:lang="sv">iptables-konfigurationsfil</comment>
+  <comment xml:lang="vi">tập tin cấu hình iptables</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

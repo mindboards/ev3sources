@@ -1,0 +1,11 @@
+Package: libpng
+Version: 1.2.44-r2.0.6
+Description: PNG Library
+Section: libs
+Priority: required
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: libpng
+Architecture: armv5te
+OE: libpng
+Homepage: http://www.libpng.org/
+Source: http://downloads.sourceforge.net/libpng/libpng-1.2.44.tar.bz2;name=libpng file://makefile_fix.patch

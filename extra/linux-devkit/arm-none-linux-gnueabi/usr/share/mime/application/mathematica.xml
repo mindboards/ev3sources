@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/mathematica">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Mathematica Notebook</comment>
+  <comment xml:lang="be@latin">Natatnik Mathematica</comment>
+  <comment xml:lang="bg">Тетрадка — Mathematica</comment>
+  <comment xml:lang="ca">llibreta de notes de Mathematica</comment>
+  <comment xml:lang="cs">Sešit Mathematica</comment>
+  <comment xml:lang="de">Mathematica-Dokument</comment>
+  <comment xml:lang="en_GB">Mathematica Notebook</comment>
+  <comment xml:lang="es">notebook de Mathematica</comment>
+  <comment xml:lang="eu">Mathematica Notebook</comment>
+  <comment xml:lang="fi">Mathematica-muistilehtiö</comment>
+  <comment xml:lang="fr">carnet de notes Mathematica</comment>
+  <comment xml:lang="ga">leabhar nótaí Mathematica</comment>
+  <comment xml:lang="hu">Mathematica notesz</comment>
+  <comment xml:lang="id">Mathematica Notebook</comment>
+  <comment xml:lang="it">Notebook Mathematica</comment>
+  <comment xml:lang="ko">Mathematica 노트북</comment>
+  <comment xml:lang="lt">Mathematica užrašinė</comment>
+  <comment xml:lang="nb">Mathematica notisblokk</comment>
+  <comment xml:lang="nl">Mathematica-notitieboek</comment>
+  <comment xml:lang="nn">Mathematica-notatbok</comment>
+  <comment xml:lang="pl">Notatnik Mathematica</comment>
+  <comment xml:lang="pt_BR">Caderno do Mathematica</comment>
+  <comment xml:lang="sv">Mathematica Notebook-dokument</comment>
+  <comment xml:lang="uk">Математичний записник</comment>
+  <comment xml:lang="vi">Cuốn vở Mathematica</comment>
+  <sub-class-of type="text/plain"/>
+  <generic-icon name="x-office-document"/>
+  <alias type="application/x-mathematica"/>
+</mime-type>

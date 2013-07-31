@@ -1,0 +1,12 @@
+Package: db
+Version: 5.0.21-r2.6
+Description: Berkeley DB v5.
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: BSD
+Architecture: armv5te
+OE: db
+Homepage: http://www.oracle.com/technology/products/berkeley-db/db/index.html
+Depends: libc6, libgcc1
+Source: ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/bdb/db-5.0.21.tar.gz file://db5-arm-thumb-mutex.patch file://cp.patch

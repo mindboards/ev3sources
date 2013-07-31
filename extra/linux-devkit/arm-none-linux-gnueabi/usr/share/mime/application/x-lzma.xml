@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-lzma">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>LZMA archive</comment>
+  <comment xml:lang="be@latin">Archiŭ LZMA</comment>
+  <comment xml:lang="ca">arxiu LZMA</comment>
+  <comment xml:lang="cs">Archiv LZMA</comment>
+  <comment xml:lang="es">archivador LZMA</comment>
+  <comment xml:lang="fi">LZMA-arkisto</comment>
+  <comment xml:lang="fr">archive LZMA</comment>
+  <comment xml:lang="ga">cartlann LZMA</comment>
+  <comment xml:lang="hu">LZMA-archívum</comment>
+  <comment xml:lang="id">Arsip LZMA</comment>
+  <comment xml:lang="it">Archivio LZMA</comment>
+  <comment xml:lang="ko">LZMA 압축파일</comment>
+  <comment xml:lang="lt">LZMA archyvas</comment>
+  <comment xml:lang="nb">LZMA-arkiv</comment>
+  <comment xml:lang="nl">LZMA-archief</comment>
+  <comment xml:lang="pt_BR">Pacote LZMA</comment>
+  <comment xml:lang="ru">архив LZMA</comment>
+  <comment xml:lang="sv">LZMA-arkiv</comment>
+  <comment xml:lang="vi">Kho nén LZMA</comment>
+  <acronym>LZMA</acronym>
+  <expanded-acronym>Lempel-Ziv-Markov chain-Algorithm</expanded-acronym>
+  <generic-icon name="package-x-generic"/>
+</mime-type>

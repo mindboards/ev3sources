@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-iff">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>IFF image</comment>
+  <comment xml:lang="az">IFF rəsmi</comment>
+  <comment xml:lang="be@latin">Vyjava IFF</comment>
+  <comment xml:lang="bg">Изображение — IFF</comment>
+  <comment xml:lang="ca">imatge IFF</comment>
+  <comment xml:lang="cs">Obrázek IFF</comment>
+  <comment xml:lang="cy">Delwedd IFF</comment>
+  <comment xml:lang="da">IFF-billede</comment>
+  <comment xml:lang="de">IFF-Bild</comment>
+  <comment xml:lang="el">εικόνα IFF</comment>
+  <comment xml:lang="en_GB">IFF image</comment>
+  <comment xml:lang="eo">IFF-bildo</comment>
+  <comment xml:lang="es">imagen IFF</comment>
+  <comment xml:lang="eu">IFF irudia</comment>
+  <comment xml:lang="fi">IFF-kuva</comment>
+  <comment xml:lang="fr">image IFF</comment>
+  <comment xml:lang="ga">íomhá IFF</comment>
+  <comment xml:lang="hu">IFF-kép</comment>
+  <comment xml:lang="id">Citra IFF</comment>
+  <comment xml:lang="it">Immagine IFF</comment>
+  <comment xml:lang="ja">IFF 画像</comment>
+  <comment xml:lang="ko">IFF 그림</comment>
+  <comment xml:lang="lt">IFF paveikslėlis</comment>
+  <comment xml:lang="ms">Imej IFF</comment>
+  <comment xml:lang="nb">IFF-bilde</comment>
+  <comment xml:lang="nl">IFF-afbeelding</comment>
+  <comment xml:lang="nn">IFF-bilete</comment>
+  <comment xml:lang="pl">Obraz IFF</comment>
+  <comment xml:lang="pt">imagem IFF</comment>
+  <comment xml:lang="pt_BR">Imagem IFF</comment>
+  <comment xml:lang="ru">изображение IFF</comment>
+  <comment xml:lang="sq">Figurë IFF</comment>
+  <comment xml:lang="sr">IFF слика</comment>
+  <comment xml:lang="sv">IFF-bild</comment>
+  <comment xml:lang="uk">Зображення IFF</comment>
+  <comment xml:lang="vi">Ảnh IFF</comment>
+  <comment xml:lang="zh_CN">IFF 图像</comment>
+  <comment xml:lang="zh_TW">IFF 圖片</comment>
+</mime-type>

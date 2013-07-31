@@ -1,0 +1,13 @@
+Package: libcurl4
+Version: 7.21.2-r4.0-arago1.6
+Description: Command line tool and library for client-side URL transfers.
+Section: console/network
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT
+Architecture: armv5te
+OE: curl
+Homepage: unknown
+Depends: libc6, libz1, libgcc1
+Recommends: curl-certs
+Source: http://curl.haxx.se/download/curl-7.21.2.tar.bz2 file://off_t_abi_fix.patch;striplevel=0

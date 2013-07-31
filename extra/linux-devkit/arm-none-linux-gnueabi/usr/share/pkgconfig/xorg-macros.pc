@@ -1,0 +1,16 @@
+prefix=/usr
+exec_prefix=/usr
+includedir=/usr/include
+datarootdir=${prefix}/share
+datadir=/usr/share
+PACKAGE=util-macros
+# Used by XORG_INSTALL
+pkgdatadir=${datadir}/${PACKAGE}
+# docdir is kept for backwards compatibility with XORG_INSTALL from
+# util-macros 1.4
+docdir=${pkgdatadir}
+
+Name: X.Org Macros
+Description: A set of autoconf project macros for X.Org modules
+Version: 1.11.0
+

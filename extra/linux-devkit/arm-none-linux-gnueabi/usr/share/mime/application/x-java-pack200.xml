@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-java-pack200">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Pack200 Java archive</comment>
+  <comment xml:lang="be@latin">Archiŭ Pack200 Java</comment>
+  <comment xml:lang="ca">arxiu Java Pack200</comment>
+  <comment xml:lang="cs">Archiv Java Pack200</comment>
+  <comment xml:lang="es">archivador Pack200 Java</comment>
+  <comment xml:lang="fi">Pack200-Java-arkisto</comment>
+  <comment xml:lang="fr">archive Java Pack200</comment>
+  <comment xml:lang="ga">cartlann Java Pack200</comment>
+  <comment xml:lang="hu">Pack200 Java-archívum</comment>
+  <comment xml:lang="id">Arsip Pack200 Java</comment>
+  <comment xml:lang="it">Archivio Pack200 Java</comment>
+  <comment xml:lang="ko">Pack200 자바 묶음파일</comment>
+  <comment xml:lang="lt">Pack200 Java archyvas</comment>
+  <comment xml:lang="nb">Pack200 Java-arkiv</comment>
+  <comment xml:lang="nl">Pack200 Java-archief</comment>
+  <comment xml:lang="pt_BR">Pacote Java Pack200</comment>
+  <comment xml:lang="sv">Pack200 Java-arkiv</comment>
+  <comment xml:lang="vi">Kho nén Java Pack200</comment>
+  <generic-icon name="package-x-generic"/>
+</mime-type>

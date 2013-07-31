@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/ogg">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Ogg multimedia file</comment>
+  <comment xml:lang="be@latin">Multymedyjny fajł Ogg</comment>
+  <comment xml:lang="ca">fitxer Ogg multimèdia</comment>
+  <comment xml:lang="cs">Soubor multimédií Ogg</comment>
+  <comment xml:lang="es">archivo multimedia Ogg</comment>
+  <comment xml:lang="fi">Ogg-multimediatiedosto</comment>
+  <comment xml:lang="fr">fichier multimédia Ogg</comment>
+  <comment xml:lang="ga">comhad ilmheán Ogg</comment>
+  <comment xml:lang="hu">Ogg multimédiafájl</comment>
+  <comment xml:lang="id">Berkas multimedia Ogg</comment>
+  <comment xml:lang="it">File multimediale Ogg</comment>
+  <comment xml:lang="ko">Ogg 멀티미디어 파일</comment>
+  <comment xml:lang="lt">Ogg multimedijos rinkmena</comment>
+  <comment xml:lang="nb">Ogg-multimediafil</comment>
+  <comment xml:lang="nl">Ogg-multimediabestand</comment>
+  <comment xml:lang="pt_BR">Arquivo multimídia Ogg</comment>
+  <comment xml:lang="sv">Ogg-multimediafil</comment>
+  <comment xml:lang="vi">Tập tin đa phương tiện Ogg</comment>
+  <generic-icon name="video-x-generic"/>
+</mime-type>

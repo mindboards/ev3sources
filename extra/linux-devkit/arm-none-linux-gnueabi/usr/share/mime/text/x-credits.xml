@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-credits">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>author credits</comment>
+  <comment xml:lang="be@latin">zasłuhi aŭtara</comment>
+  <comment xml:lang="bg">Благодарности към авторите</comment>
+  <comment xml:lang="ca">crèdits d'autor</comment>
+  <comment xml:lang="cs">Autorské zásluhy</comment>
+  <comment xml:lang="de">Software-Impressum</comment>
+  <comment xml:lang="en_GB">author credits</comment>
+  <comment xml:lang="es">reconocimiento de autoría</comment>
+  <comment xml:lang="fi">tekijöiden kiitokset</comment>
+  <comment xml:lang="fr">remerciements</comment>
+  <comment xml:lang="ga">admhálacha údar</comment>
+  <comment xml:lang="hu">szerzők listája</comment>
+  <comment xml:lang="id">kredit penulis</comment>
+  <comment xml:lang="it">Riconoscimenti autori</comment>
+  <comment xml:lang="ko">저작자 크레디트</comment>
+  <comment xml:lang="lt">padėkos autoriams</comment>
+  <comment xml:lang="nb">liste med bidragsytere</comment>
+  <comment xml:lang="nl">auteursinformatie</comment>
+  <comment xml:lang="nn">forfattarliste</comment>
+  <comment xml:lang="pl">podziękowania autorów programu</comment>
+  <comment xml:lang="pt_BR">créditos do autor</comment>
+  <comment xml:lang="sv">författarlista</comment>
+  <comment xml:lang="uk">подяки авторам програми</comment>
+  <comment xml:lang="vi">công trạng tác giả</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

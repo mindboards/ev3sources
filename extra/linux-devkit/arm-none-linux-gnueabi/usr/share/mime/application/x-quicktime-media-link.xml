@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-quicktime-media-link">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>QuickTime metalink playlist</comment>
+  <comment xml:lang="be@latin">śpis metaspasyłak na pieśni QuickTime</comment>
+  <comment xml:lang="bg">Списък за изпълнение — QuickTime</comment>
+  <comment xml:lang="ca">llista de reproducció de metaenllaços QuickTime</comment>
+  <comment xml:lang="cs">Seznam skladeb metalink QuickTime</comment>
+  <comment xml:lang="de">QuickTime metalink-Wiedergabeliste</comment>
+  <comment xml:lang="es">lista de reproducción de metaenlaces QuickTime</comment>
+  <comment xml:lang="eu">QuickTime meta-esteken erreprodukzio-zerrenda</comment>
+  <comment xml:lang="fi">QuickTime metalink -soittolista</comment>
+  <comment xml:lang="fr">liste de lecture metalink QuickTime</comment>
+  <comment xml:lang="ga">seinmliosta meiteanasc QuickTime</comment>
+  <comment xml:lang="hu">QuickTime metalink lejátszólista</comment>
+  <comment xml:lang="id">Senarai berkas taut meta QuickTime</comment>
+  <comment xml:lang="it">Scaletta metalink QuickTime</comment>
+  <comment xml:lang="ko">퀵타임 metalink 연주목록</comment>
+  <comment xml:lang="lt">QuickTime metanuorodos grojaraštis</comment>
+  <comment xml:lang="nb">QuickTime metalink-spilleliste</comment>
+  <comment xml:lang="nl">QuickTime metalink-afspeellijst</comment>
+  <comment xml:lang="pl">Lista odtwarzania metaodnośników QuickTime</comment>
+  <comment xml:lang="pt_BR">Lista de reprodução metalink do QuickTime</comment>
+  <comment xml:lang="sv">QuickTime-metalänkspellista</comment>
+  <comment xml:lang="uk">Список відтворення QuickTime metalink</comment>
+  <comment xml:lang="vi">Danh mục nhạc siêu liên kết Quicktime</comment>
+  <generic-icon name="video-x-generic"/>
+  <sub-class-of type="video/quicktime"/>
+  <alias type="application/x-quicktimeplayer"/>
+</mime-type>

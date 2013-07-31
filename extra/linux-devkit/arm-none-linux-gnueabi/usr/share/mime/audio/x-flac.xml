@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/x-flac">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>FLAC audio</comment>
+  <comment xml:lang="be@latin">Aŭdyjo FLAC</comment>
+  <comment xml:lang="bg">Аудио — FLAC</comment>
+  <comment xml:lang="ca">àudio FLAC</comment>
+  <comment xml:lang="cs">Zvuk FLAC</comment>
+  <comment xml:lang="da">FLAC-lyd</comment>
+  <comment xml:lang="de">FLAC-Audio</comment>
+  <comment xml:lang="el">Ήχος FLAC</comment>
+  <comment xml:lang="en_GB">FLAC audio</comment>
+  <comment xml:lang="eo">FLAC-aŭdio</comment>
+  <comment xml:lang="es">audio FLAC</comment>
+  <comment xml:lang="eu">FLAC audioa</comment>
+  <comment xml:lang="fi">FLAC-ääni</comment>
+  <comment xml:lang="fr">audio FLAC</comment>
+  <comment xml:lang="ga">fuaim FLAC</comment>
+  <comment xml:lang="hu">FLAC hang</comment>
+  <comment xml:lang="id">Audio FLAC</comment>
+  <comment xml:lang="it">Audio FLAC</comment>
+  <comment xml:lang="ja">FLAC オーディオ</comment>
+  <comment xml:lang="ko">FLAC 오디오</comment>
+  <comment xml:lang="lt">FLAC garsas</comment>
+  <comment xml:lang="ms">Audio FLAC</comment>
+  <comment xml:lang="nb">FLAC-lyd</comment>
+  <comment xml:lang="nl">FLAC-audio</comment>
+  <comment xml:lang="nn">FLAC-lyd</comment>
+  <comment xml:lang="pl">Plik dźwiękowy FLAC</comment>
+  <comment xml:lang="pt">áudio FLAC</comment>
+  <comment xml:lang="pt_BR">Áudio FLAC</comment>
+  <comment xml:lang="ru">FLAC аудио</comment>
+  <comment xml:lang="sq">Audio FLAC</comment>
+  <comment xml:lang="sr">FLAC звучни запис</comment>
+  <comment xml:lang="sv">FLAC-ljud</comment>
+  <comment xml:lang="uk">Звук FLAC</comment>
+  <comment xml:lang="vi">Âm thanh FLAC</comment>
+  <comment xml:lang="zh_CN">FLAC 音频</comment>
+  <comment xml:lang="zh_TW">FLAC 音效</comment>
+</mime-type>

@@ -1,0 +1,13 @@
+Package: gnome-mime-data-dev
+Version: 2.18.0-r1.6
+Description: Version 2.18.0-r1 of package gnome-mime-data
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPL
+Architecture: armv5te
+OE: gnome-mime-data
+Homepage: unknown
+Depends: gnome-mime-data
+Recommends: gnome-common-dev, gconf-dev, shared-mime-info-dev, gnome-mime-data-dev, virtual-locale-es-dev, virtual-locale-yi-dev, virtual-locale-is-dev, virtual-locale-ms-dev, virtual-locale-th-dev, virtual-locale-ta-dev, virtual-locale-az-dev, virtual-locale-lv-dev, virtual-locale-da-dev, virtual-locale-eu-dev, virtual-locale-cy-dev, virtual-locale-fa-dev, virtual-locale-fr-dev, virtual-locale-he-dev, virtual-locale-gl-dev, virtual-locale-en-ca-dev, virtual-locale-hu-dev, virtual-locale-de-dev, virtual-locale-id-dev, virtual-locale-nb-dev, virtual-locale-uk-dev, virtual-locale-ca-dev, virtual-locale-zh-cn-dev, virtual-locale-et-dev, virtual-locale-ro-dev, virtual-locale-zh-tw-dev, virtual-locale-nso-dev, virtual-locale-ko-dev, virtual-locale-be-dev, virtual-locale-lt-dev, virtual-locale-am-dev, virtual-locale-sr+ije-dev, virtual-locale-it-dev, virtual-locale-rw-dev, virtual-locale-mn-dev, virtual-locale-cs-dev, virtual-locale-tr-dev, virtual-locale-eo-dev, virtual-locale-el-dev, virtual-locale-ar-dev, virtual-locale-sq-dev, virtual-locale-pl-dev, virtual-locale-sv-dev, virtual-locale-fi-dev, virtual-locale-pt-br-dev, virtual-locale-bs-dev, virtual-locale-pt-dev, virtual-locale-bn-dev, virtual-locale-nl-dev, virtual-locale-sr-dev, virtual-locale-gu-dev, virtual-locale-mk-dev, virtual-locale-bg-dev, virtual-locale-sl-dev, virtual-locale-ru-dev, virtual-locale-en-gb-dev, virtual-locale-ga-dev, virtual-locale-li-dev, virtual-locale-nn-dev, virtual-locale-zu-dev, virtual-locale-af-dev, virtual-locale-hr-dev, virtual-locale-tk-dev, virtual-locale-ml-dev, virtual-locale-vi-dev, virtual-locale-hi-dev, virtual-locale-xh-dev, virtual-locale-sr+latn-dev, virtual-locale-wa-dev, virtual-locale-ne-dev, virtual-locale-sk-dev, virtual-locale-ja-dev, virtual-locale-pa-dev
+Source: http://ftp.gnome.org/pub/GNOME/sources/gnome-mime-data/2.18/gnome-mime-data-2.18.0.tar.bz2;name=archive

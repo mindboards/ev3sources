@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="video/3gpp">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>3GPP multimedia file</comment>
+  <comment xml:lang="be@latin">Multymedyjny fajł 3GPP</comment>
+  <comment xml:lang="ca">fitxer multimèdia 3GPP</comment>
+  <comment xml:lang="cs">Soubor multimédií 3GPP</comment>
+  <comment xml:lang="es">archivo multimedia 3GPP</comment>
+  <comment xml:lang="fi">3GPP-multimediatiedosto</comment>
+  <comment xml:lang="fr">fichier multimédia 3GPP</comment>
+  <comment xml:lang="ga">comhad ilmheán 3GPP</comment>
+  <comment xml:lang="hu">3GPP multimédiafájl</comment>
+  <comment xml:lang="id">Berkas multimedia 3GPP</comment>
+  <comment xml:lang="it">File multimediale 3GPP</comment>
+  <comment xml:lang="ko">3GPP 멀티미디어 파일</comment>
+  <comment xml:lang="lt">3GPP multmedijos rinkmena</comment>
+  <comment xml:lang="nb">3GPP-multimediafil</comment>
+  <comment xml:lang="nl">3GPP-multimediabestand</comment>
+  <comment xml:lang="pt_BR">Arquivo multimídia 3GPP</comment>
+  <comment xml:lang="sv">3GPP-multimediafil</comment>
+  <comment xml:lang="vi">Tập tin đa phương tiện 3GPP</comment>
+  <sub-class-of type="video/mp4"/>
+  <alias type="audio/3gpp"/>
+  <alias type="video/3gpp-encrypted"/>
+  <alias type="audio/3gpp-encrypted"/>
+  <alias type="audio/amr"/>
+  <alias type="audio/amr-encrypted"/>
+  <alias type="audio/amr-wb"/>
+  <alias type="audio/amr-wb-encrypted"/>
+  <alias type="audio/x-rn-3gpp-amr"/>
+  <alias type="audio/x-rn-3gpp-amr-encrypted"/>
+  <alias type="audio/x-rn-3gpp-amr-wb"/>
+  <alias type="audio/x-rn-3gpp-amr-wb-encrypted"/>
+  <alias type="video/3gpp2"/>
+  <alias type="audio/3gpp2"/>
+</mime-type>

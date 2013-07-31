@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-shared-library-la">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>libtool shared library</comment>
+  <comment xml:lang="be@latin">supolnaja biblijateka libtool</comment>
+  <comment xml:lang="ca">biblioteca compartida libtool</comment>
+  <comment xml:lang="cs">Sdílená knihovna libtool</comment>
+  <comment xml:lang="es">biblioteca compartida de libtool</comment>
+  <comment xml:lang="fi">jaettu libtool-kirjasto</comment>
+  <comment xml:lang="fr">bibliothèque partagée libtool</comment>
+  <comment xml:lang="ga">comhleabharlann libtool</comment>
+  <comment xml:lang="hu">libtool osztott programkönyvtár</comment>
+  <comment xml:lang="id">pustaka bersama libtool</comment>
+  <comment xml:lang="it">Libreria condivisa libtool</comment>
+  <comment xml:lang="ko">libtool 공유 라이브러리</comment>
+  <comment xml:lang="lt">libtool bendroji biblioteka</comment>
+  <comment xml:lang="nb">libtool delt bibliotek</comment>
+  <comment xml:lang="nl">gedeelde libtool-bibliotheek</comment>
+  <comment xml:lang="pt_BR">biblioteca compartilhada libtool</comment>
+  <comment xml:lang="ru">разделяемая библиотека</comment>
+  <comment xml:lang="sv">delat libtool-bibliotek</comment>
+  <comment xml:lang="vi">thư viện dùng chung libtool</comment>
+  <sub-class-of type="text/plain"/>
+  <generic-icon name="text-x-script"/>
+</mime-type>

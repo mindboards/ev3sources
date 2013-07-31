@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/prs.sid">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Commodore 64 audio</comment>
+  <comment xml:lang="be@latin">Aŭdyjo Commodore 64</comment>
+  <comment xml:lang="bg">Аудио — Commodore 64</comment>
+  <comment xml:lang="ca">àudio Commodore 64</comment>
+  <comment xml:lang="cs">Zvuk Commodore 64</comment>
+  <comment xml:lang="da">Commodore 64-lyd</comment>
+  <comment xml:lang="de">Commodore 64-Audio</comment>
+  <comment xml:lang="el">ήχος Commodore 64</comment>
+  <comment xml:lang="en_GB">Commodore 64 audio</comment>
+  <comment xml:lang="eo">aŭdio de Commodore 64</comment>
+  <comment xml:lang="es">audio de Commodore 64</comment>
+  <comment xml:lang="eu">Commodore 64 Audioa</comment>
+  <comment xml:lang="fi">Commodore 64 -ääni</comment>
+  <comment xml:lang="fr">audio Commodore 64</comment>
+  <comment xml:lang="ga">fuaim Commodore 64</comment>
+  <comment xml:lang="hu">Commodore 64 hang</comment>
+  <comment xml:lang="id">Audio Commodore 64</comment>
+  <comment xml:lang="it">Audio Commodore 64</comment>
+  <comment xml:lang="ja">Commodore 64 オーディオ</comment>
+  <comment xml:lang="ko">Commodore 64 오디오</comment>
+  <comment xml:lang="lt">Commodore 64 garsas</comment>
+  <comment xml:lang="ms">Audio Commodore 64</comment>
+  <comment xml:lang="nb">Commodore 64-lyd</comment>
+  <comment xml:lang="nl">Commodore 64-audio</comment>
+  <comment xml:lang="nn">Commodore 64-lyd</comment>
+  <comment xml:lang="pl">Plik dźwiękowy Commodore 64</comment>
+  <comment xml:lang="pt">áudio Commodore 64</comment>
+  <comment xml:lang="pt_BR">Áudio Commodore 64</comment>
+  <comment xml:lang="ru">Commodore 64 аудио</comment>
+  <comment xml:lang="sq">Audio Commodore 64</comment>
+  <comment xml:lang="sr">Комодор 64 звучни запис</comment>
+  <comment xml:lang="sv">Commodore 64-ljud</comment>
+  <comment xml:lang="uk">Звук Commodore 64</comment>
+  <comment xml:lang="vi">Âm thanh Commodore 64</comment>
+  <comment xml:lang="zh_CN">Commodore 64 音频</comment>
+  <comment xml:lang="zh_TW">Commodore 64 音效</comment>
+</mime-type>

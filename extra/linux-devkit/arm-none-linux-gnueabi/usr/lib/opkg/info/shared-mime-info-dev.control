@@ -1,0 +1,13 @@
+Package: shared-mime-info-dev
+Version: 0.51-r2.6
+Description: Version 0.51-r2 of package shared-mime-info
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPL
+Architecture: armv5te
+OE: shared-mime-info
+Homepage: unknown
+Depends: shared-mime-info
+Recommends: libxml2-dev, libglib-2.0-dev, shared-mime-info-dev, libgcc1-dev, libc6-dev, freedesktop-mime-info-dev, virtual-locale-es-dev, virtual-locale-ms-dev, virtual-locale-az-dev, virtual-locale-da-dev, virtual-locale-eu-dev, virtual-locale-cy-dev, virtual-locale-fr-dev, virtual-locale-hu-dev, virtual-locale-de-dev, virtual-locale-id-dev, virtual-locale-nb-dev, virtual-locale-uk-dev, virtual-locale-ca-dev, virtual-locale-zh-cn-dev, virtual-locale-zh-tw-dev, virtual-locale-ko-dev, virtual-locale-lt-dev, virtual-locale-it-dev, virtual-locale-rw-dev, virtual-locale-cs-dev, virtual-locale-eo-dev, virtual-locale-el-dev, virtual-locale-sq-dev, virtual-locale-pl-dev, virtual-locale-sv-dev, virtual-locale-fi-dev, virtual-locale-pt-br-dev, virtual-locale-pt-dev, virtual-locale-nl-dev, virtual-locale-sr-dev, virtual-locale-bg-dev, virtual-locale-ru-dev, virtual-locale-en-gb-dev, virtual-locale-ga-dev, virtual-locale-nn-dev, virtual-locale-vi-dev, virtual-locale-be+latin-dev, virtual-locale-ja-dev
+Source: http://freedesktop.org/~hadess/shared-mime-info-0.51.tar.bz2

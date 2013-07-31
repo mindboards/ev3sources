@@ -1,0 +1,13 @@
+Package: libz-dev
+Version: 1.2.3-r7.0.6
+Description: Zlib Compression Library
+Section: devel
+Priority: required
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: zlib
+Architecture: armv5te
+OE: zlib
+Homepage: http://www.gzip.org/zlib/
+Depends: libz1, libz1
+Recommends: libgcc1-dev, libc6-dev, libz-dev
+Source: http://www.zlib.net/zlib-1.2.3.tar.bz2 file://visibility.patch file://autotools.patch

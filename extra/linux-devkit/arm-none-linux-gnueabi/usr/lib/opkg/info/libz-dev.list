@@ -1,0 +1,5 @@
+/usr/include/zconf.h
+/usr/include/zlib.h
+/usr/lib/libz.la
+/usr/lib/pkgconfig/zlib.pc
+/usr/lib/libz.so

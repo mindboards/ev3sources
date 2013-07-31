@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-minolta-mrw">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Minolta MRW raw image</comment>
+  <comment xml:lang="be@latin">Suvoraja vyjava Minolta MRW</comment>
+  <comment xml:lang="bg">Изображение — Minolta MRW raw</comment>
+  <comment xml:lang="ca">imatge en cru de Minolta MRW</comment>
+  <comment xml:lang="cs">Surový obrázek Minolta MRW</comment>
+  <comment xml:lang="es">imagen en bruto MRW de Minolta</comment>
+  <comment xml:lang="eu">Minolta MRW irudi gordina</comment>
+  <comment xml:lang="fi">Minolta-MRW-raakakuva</comment>
+  <comment xml:lang="fr">image brute MRW Minolta</comment>
+  <comment xml:lang="ga">amhíomhá Minolta MRW</comment>
+  <comment xml:lang="hu">Minolta MRW nyers kép</comment>
+  <comment xml:lang="id">Citra mentah Minolta MRW</comment>
+  <comment xml:lang="it">Immagine raw Minolta MRW</comment>
+  <comment xml:lang="ko">미놀타 MRW raw 이미지</comment>
+  <comment xml:lang="lt">Minolta MRW neapdorotas paveikslėlis</comment>
+  <comment xml:lang="nb">Minolta MRW raw-bilde</comment>
+  <comment xml:lang="nl">onbewerkt Minolta MRW-beeld</comment>
+  <comment xml:lang="pt_BR">Imagem bruta MRW do Minolta</comment>
+  <comment xml:lang="sv">Minolta MRW-råbild</comment>
+  <comment xml:lang="vi">Ảnh thô Minolta MRW</comment>
+  <acronym>MRW</acronym>
+  <expanded-acronym>Minolta RaW</expanded-acronym>
+  <sub-class-of type="image/x-dcraw"/>
+</mime-type>

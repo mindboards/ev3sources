@@ -1,0 +1,13 @@
+Package: liboil-dev
+Version: 0.3.17-r1.6
+Description: Liboil is a library of simple functions that are optimized for various CPUs.
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: liboil
+Architecture: armv5te
+OE: liboil
+Homepage: http://liboil.freedesktop.org/
+Depends: liboil, liboil
+Recommends: libglib-2.0-dev, libc6-dev, libgcc1-dev, liboil-dev
+Source: http://liboil.freedesktop.org/download/liboil-0.3.17.tar.gz file://fix-unaligned-whitelist.patch;apply=yes

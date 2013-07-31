@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-kchart">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>KChart chart</comment>
+  <comment xml:lang="be@latin">Hrafik KChart</comment>
+  <comment xml:lang="bg">Диаграма — KChart</comment>
+  <comment xml:lang="ca">diagrama de KChart</comment>
+  <comment xml:lang="cs">Graf Chart</comment>
+  <comment xml:lang="da">KChart-diagram</comment>
+  <comment xml:lang="de">KChart-Diagramm</comment>
+  <comment xml:lang="el">γράφημα KChart</comment>
+  <comment xml:lang="en_GB">KChart chart</comment>
+  <comment xml:lang="eo">KChart-diagramo</comment>
+  <comment xml:lang="es">gráfica de KChart</comment>
+  <comment xml:lang="eu">KChart diagrama</comment>
+  <comment xml:lang="fi">KChart-kaavio</comment>
+  <comment xml:lang="fr">graphique KChart</comment>
+  <comment xml:lang="ga">cairt KChart</comment>
+  <comment xml:lang="hu">KChart-grafikon</comment>
+  <comment xml:lang="id">Bagan KChart</comment>
+  <comment xml:lang="it">Grafico KChart</comment>
+  <comment xml:lang="ja">KChart チャート</comment>
+  <comment xml:lang="ko">KChart 차트</comment>
+  <comment xml:lang="lt">KChart diagrama</comment>
+  <comment xml:lang="ms">Carta KChart</comment>
+  <comment xml:lang="nb">KChart-graf</comment>
+  <comment xml:lang="nl">KChart-grafiek</comment>
+  <comment xml:lang="nn">KChart-diagram</comment>
+  <comment xml:lang="pl">Wykres KChart</comment>
+  <comment xml:lang="pt">gráfico KChart</comment>
+  <comment xml:lang="pt_BR">Gráfico do KChart</comment>
+  <comment xml:lang="ru">диаграмма KChart</comment>
+  <comment xml:lang="sq">Grafik KChart</comment>
+  <comment xml:lang="sr">KChart графикон</comment>
+  <comment xml:lang="sv">KChart-diagram</comment>
+  <comment xml:lang="uk">Діаграма KChart</comment>
+  <comment xml:lang="vi">Sơ đồ KChart</comment>
+  <comment xml:lang="zh_CN">KChart 图表</comment>
+  <comment xml:lang="zh_TW">KChart 圖表</comment>
+  <generic-icon name="x-office-spreadsheet"/>
+</mime-type>

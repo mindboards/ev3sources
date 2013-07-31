@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-google-video-pointer">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Google Video Pointer</comment>
+  <comment xml:lang="be@latin">Pakazalnik Google Video</comment>
+  <comment xml:lang="bg">Документ-указател към видео на Google</comment>
+  <comment xml:lang="ca">apuntador a vídeo de Google</comment>
+  <comment xml:lang="cs">Google Video Pointer</comment>
+  <comment xml:lang="de">Google Video Pointer</comment>
+  <comment xml:lang="es">lista de reproducción de Google Video (GVP)</comment>
+  <comment xml:lang="eu">Google Video-ren erreprodukzio-zerrenda</comment>
+  <comment xml:lang="fi">Google-videoosoitin</comment>
+  <comment xml:lang="fr">pointeur vidéo Google</comment>
+  <comment xml:lang="ga">pointeoir Google Video</comment>
+  <comment xml:lang="hu">Google Video Pointer</comment>
+  <comment xml:lang="id">Google Video Pointer</comment>
+  <comment xml:lang="it">Puntatore Google Video</comment>
+  <comment xml:lang="ko">구글 비디오 포인터</comment>
+  <comment xml:lang="lt">Google Video Pointer</comment>
+  <comment xml:lang="nb">Peker til Google Video</comment>
+  <comment xml:lang="nl">Google-videoverwijzing</comment>
+  <comment xml:lang="pl">Lista odtwarzania Google Video</comment>
+  <comment xml:lang="pt_BR">Ponteiro do Google Vídeo</comment>
+  <comment xml:lang="sv">Google Video-pekare</comment>
+  <comment xml:lang="uk">Вказівник відео Google</comment>
+  <comment xml:lang="vi">Con trỏ ảnh động Google</comment>
+  <alias type="text/google-video-pointer"/>
+</mime-type>

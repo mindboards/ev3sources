@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-dib">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>DIB image</comment>
+  <comment xml:lang="be@latin">Vyjava DIB</comment>
+  <comment xml:lang="bg">Изображение — DIB</comment>
+  <comment xml:lang="ca">imatge DIB</comment>
+  <comment xml:lang="cs">Obrázek DIB</comment>
+  <comment xml:lang="de">DIB-Bild</comment>
+  <comment xml:lang="en_GB">DIB image</comment>
+  <comment xml:lang="es">imagen DIB</comment>
+  <comment xml:lang="eu">DIB irudia</comment>
+  <comment xml:lang="fi">DIB-kuva</comment>
+  <comment xml:lang="fr">image DIB</comment>
+  <comment xml:lang="ga">íomhá DIB</comment>
+  <comment xml:lang="hu">DIB kép</comment>
+  <comment xml:lang="id">Citra DIB</comment>
+  <comment xml:lang="it">Immagine DIB</comment>
+  <comment xml:lang="ko">DIB 그림</comment>
+  <comment xml:lang="lt">DIB paveikslėlis</comment>
+  <comment xml:lang="nb">DIB-bilde</comment>
+  <comment xml:lang="nl">DIB-afbeelding</comment>
+  <comment xml:lang="nn">DIB-bilete</comment>
+  <comment xml:lang="pl">Obraz DIB</comment>
+  <comment xml:lang="pt_BR">Imagem DIB</comment>
+  <comment xml:lang="ru">изображение DIB</comment>
+  <comment xml:lang="sv">DIB-bild</comment>
+  <comment xml:lang="uk">Зображення DIB</comment>
+  <comment xml:lang="vi">Ảnh DIB</comment>
+  <acronym>DIB</acronym>
+  <expanded-acronym>Device Independant Bitmap</expanded-acronym>
+</mime-type>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="video/x-ogm+ogg">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>OGM video</comment>
+  <comment xml:lang="be@latin">Videa OGM</comment>
+  <comment xml:lang="ca">vídeo OGM</comment>
+  <comment xml:lang="cs">Video OGM</comment>
+  <comment xml:lang="es">vídeo OGM</comment>
+  <comment xml:lang="fi">OGM-video</comment>
+  <comment xml:lang="fr">vidéo OGM</comment>
+  <comment xml:lang="ga">físeán OGM</comment>
+  <comment xml:lang="hu">OGM-videó</comment>
+  <comment xml:lang="id">Video OGM</comment>
+  <comment xml:lang="it">Video OGM</comment>
+  <comment xml:lang="ko">OGM 비디오</comment>
+  <comment xml:lang="lt">OGM vaizdas</comment>
+  <comment xml:lang="nb">OGM-film</comment>
+  <comment xml:lang="nl">OGM-video</comment>
+  <comment xml:lang="pt_BR">Vídeo OGM</comment>
+  <comment xml:lang="ru">OGM видео</comment>
+  <comment xml:lang="sv">OGM-video</comment>
+  <comment xml:lang="vi">Ảnh động OGM</comment>
+  <sub-class-of type="video/ogg"/>
+</mime-type>

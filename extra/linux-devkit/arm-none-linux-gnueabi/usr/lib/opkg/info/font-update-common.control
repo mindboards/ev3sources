@@ -1,0 +1,11 @@
+Package: font-update-common
+Version: 0.1-r1.6
+Description: Scripts to be called when fonts are installed or removed to make them known to the WM, whether X11 or Opie
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT
+Architecture: all
+OE: font-update-common
+Homepage: unknown
+Source: file://update-fonts

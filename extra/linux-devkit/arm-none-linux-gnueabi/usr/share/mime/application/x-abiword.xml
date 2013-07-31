@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-abiword">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>AbiWord document</comment>
+  <comment xml:lang="be@latin">Dakument AbiWord</comment>
+  <comment xml:lang="bg">Документ — AbiWord</comment>
+  <comment xml:lang="ca">document d'AbiWord</comment>
+  <comment xml:lang="cs">Dokument AbiWord</comment>
+  <comment xml:lang="da">AbiWord-dokument</comment>
+  <comment xml:lang="de">AbiWord-Dokument</comment>
+  <comment xml:lang="el">έγγραφο AbiWord</comment>
+  <comment xml:lang="en_GB">AbiWord document</comment>
+  <comment xml:lang="eo">dokumento de AbiWord</comment>
+  <comment xml:lang="es">documento de Abiword</comment>
+  <comment xml:lang="eu">AbiWord dokumentua</comment>
+  <comment xml:lang="fi">AbiWord-asiakirja</comment>
+  <comment xml:lang="fr">document AbiWord</comment>
+  <comment xml:lang="ga">cáipéis AbiWord</comment>
+  <comment xml:lang="hu">AbiWord-dokumentum</comment>
+  <comment xml:lang="id">Dokumen AbiWord</comment>
+  <comment xml:lang="it">Documento AbiWord</comment>
+  <comment xml:lang="ja">AbiWord ドキュメント</comment>
+  <comment xml:lang="ko">AbiWord 문서</comment>
+  <comment xml:lang="lt">AbiWord dokumentas</comment>
+  <comment xml:lang="ms">Dokumen AbiWord</comment>
+  <comment xml:lang="nb">AbiWord-dokument</comment>
+  <comment xml:lang="nl">AbiWord-document</comment>
+  <comment xml:lang="nn">AbiWord-dokument</comment>
+  <comment xml:lang="pl">Dokument AbiWord</comment>
+  <comment xml:lang="pt">documento AbiWord</comment>
+  <comment xml:lang="pt_BR">Documento do AbiWord</comment>
+  <comment xml:lang="ru">документ AbiWord</comment>
+  <comment xml:lang="sq">Dokument AbiWord</comment>
+  <comment xml:lang="sr">Абиворд документ</comment>
+  <comment xml:lang="sv">AbiWord-dokument</comment>
+  <comment xml:lang="uk">Документ AbiWord</comment>
+  <comment xml:lang="vi">Tài liệu AbiWord</comment>
+  <comment xml:lang="zh_CN">AbiWord 文档</comment>
+  <comment xml:lang="zh_TW">AbiWord 文件</comment>
+  <sub-class-of type="application/xml"/>
+  <generic-icon name="x-office-document"/>
+</mime-type>

@@ -1,0 +1,13 @@
+Package: pango-dev
+Version: 1.24.4-r1.1.6
+Description: The goal of the Pango project is to provide an Open Source framework for the layout and rendering of internationalized text.
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPL
+Architecture: armv5te
+OE: pango
+Homepage: unknown
+Depends: pango, pango, libglib-2.0-dev, libxft-dev, libfreetype-dev, libfontconfig-dev, libcairo-dev
+Recommends: libglib-2.0-dev, libfontconfig-dev, libfreetype-dev, libz-dev, libxft-dev, gtk-doc-dev, libcairo-dev, hicolor-icon-theme-dev, libpixman-1-dev, libpng12-dev, libxrender-dev, libx11-dev, libxcb-dev, libpthread-stubs-dev, libxau-dev, gobject-2.0-dev, gthread-2.0-dev, libc6-dev, gmodule-2.0-dev, libexpat-dev, libgcc1-dev, pango-dev
+Source: http://ftp.gnome.org/pub/GNOME/sources/pango/1.24/pango-1.24.4.tar.bz2;name=archive file://no-tests.patch file://CVE-2010-0421.patch

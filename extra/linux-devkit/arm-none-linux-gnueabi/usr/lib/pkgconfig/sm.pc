@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: SM
+Description: X Session Management Library
+Version: 1.2.0
+Requires: ice xproto
+Requires.private: ice
+Cflags: -I${includedir}
+Libs: -L${libdir} -lSM

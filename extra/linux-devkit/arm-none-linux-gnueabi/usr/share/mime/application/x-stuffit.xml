@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-stuffit">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>StuffIt archive</comment>
+  <comment xml:lang="be@latin">Archiŭ StuffIt</comment>
+  <comment xml:lang="bg">Архив — StuffIt</comment>
+  <comment xml:lang="ca">arxiu StuffIt</comment>
+  <comment xml:lang="cs">Archiv StuffIt</comment>
+  <comment xml:lang="de">StuffIt-Archiv</comment>
+  <comment xml:lang="en_GB">StuffIt archive</comment>
+  <comment xml:lang="es">archivador StuffIt</comment>
+  <comment xml:lang="eu">StuffIt artxiboa</comment>
+  <comment xml:lang="fi">StuffIt-arkisto</comment>
+  <comment xml:lang="fr">archive StuffIt</comment>
+  <comment xml:lang="ga">cartlann StuffIt</comment>
+  <comment xml:lang="hu">StuffIt-archívum</comment>
+  <comment xml:lang="id">Arsip StuffIt</comment>
+  <comment xml:lang="it">Archivio StuffIt</comment>
+  <comment xml:lang="ko">StuffIt 압축파일</comment>
+  <comment xml:lang="lt">StuffIt archyvas</comment>
+  <comment xml:lang="nb">StuffIt arkiv</comment>
+  <comment xml:lang="nl">StuffIt-archief</comment>
+  <comment xml:lang="nn">StuffIt-arkiv</comment>
+  <comment xml:lang="pl">Archiwum StuffIt</comment>
+  <comment xml:lang="pt_BR">Pacote StuffIt</comment>
+  <comment xml:lang="ru">архив StuffIt</comment>
+  <comment xml:lang="sr">StuffIt архива</comment>
+  <comment xml:lang="sv">StuffIt-arkiv </comment>
+  <comment xml:lang="uk">Архів StuffIt</comment>
+  <comment xml:lang="vi">Kho nén Stuffit</comment>
+  <comment xml:lang="zh_TW">StuffIt 保存檔</comment>
+  <generic-icon name="package-x-generic"/>
+  <alias type="application/stuffit"/>
+  <alias type="application/x-sit"/>
+</mime-type>

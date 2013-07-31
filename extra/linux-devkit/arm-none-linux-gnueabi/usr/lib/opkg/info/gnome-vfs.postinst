@@ -1,0 +1,19 @@
+#!/bin/sh
+if [ "$1" = configure ]; then
+	if [ "x$D" != "x" ]; then
+		exit 1
+	fi
+	SCHEMA_LOCATION=/etc/gconf/schemas
+	for SCHEMA in desktop_default_applications.schemas system_dns_sd.schemas desktop_gnome_url_handlers.schemas system_http_proxy.schemas system_smb.schemas; do
+		if [ -e $SCHEMA_LOCATION/$SCHEMA ]; then
+			HOME=/root GCONF_CONFIG_SOURCE=`gconftool-2 --get-default-source` \
+				gconftool-2 \
+				--makefile-install-rule $SCHEMA_LOCATION/$SCHEMA > /dev/null
+		fi
+	done
+fi
+if [ x"$D" = "x" ]; then
+	if [ -e /etc/ld.so.conf ] ; then
+		[ -x /sbin/ldconfig ] && /sbin/ldconfig
+	fi
+fi

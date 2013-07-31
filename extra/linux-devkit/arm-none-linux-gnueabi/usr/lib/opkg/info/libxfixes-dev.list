@@ -1,0 +1,4 @@
+/usr/lib/libXfixes.so
+/usr/include/X11/extensions/Xfixes.h
+/usr/lib/pkgconfig/xfixes.pc
+/usr/lib/libXfixes.la

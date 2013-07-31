@@ -1,0 +1,13 @@
+/usr/lib/libvorbisfile.la
+/usr/lib/libvorbis.la
+/usr/lib/libvorbisfile.so
+/usr/include/vorbis/vorbisfile.h
+/usr/lib/libvorbis.so
+/usr/include/vorbis/vorbisenc.h
+/usr/lib/pkgconfig/vorbisfile.pc
+/usr/lib/libvorbisenc.la
+/usr/include/vorbis/codec.h
+/usr/share/aclocal/vorbis.m4
+/usr/lib/pkgconfig/vorbis.pc
+/usr/lib/pkgconfig/vorbisenc.pc
+/usr/lib/libvorbisenc.so

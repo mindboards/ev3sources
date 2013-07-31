@@ -1,0 +1,721 @@
+<?xml version="1.0"?>
+<gconfschemafile>
+  <schemalist>
+    <schema>
+      <key>/schemas/system/dns_sd/display_local</key>
+      <applyto>/system/dns_sd/display_local</applyto>
+      <owner>gnome-vfs</owner>
+      <type>string</type>
+      <default>merged</default>
+      <locale name="C">
+        <short>How to display local DNS-SD service</short>
+        <long>Possible values are "merged", "separate" and "disabled".</long>
+      </locale>
+
+      <locale name="ar">
+        <short>كيفية عرض خدمة DNS-SD المحلية</short>
+        <long>القيم الممكنة هي &quot;merged&quot;، &quot;separate&quot;، و &quot;disabled&quot;.</long>
+      </locale>
+
+      <locale name="as">
+        <short>স্থানীয় DNS-SD পৰিসেবা প্ৰদৰ্শনেৰ প্ৰণালী</short>
+        <long>সম্ভব মান &quot;merged&quot;, &quot;separate&quot; ও &quot;disabled&quot; ।</long>
+      </locale>
+
+      <locale name="ast">
+        <short>Cómo amosar el serviciu DNS-SD llocal</short>
+        <long>Los valores dables son «merged», «separate» y «disabled».</long>
+      </locale>
+
+      <locale name="be">
+        <short>Як адлюстроўваць мясцовую паслугу DNS-SD</short>
+        <long>Магчымыя значэньні &quot;merged&quot;, &quot;separate&quot; і &quot;disabled&quot;.</long>
+      </locale>
+
+      <locale name="bg">
+        <short>Как да се показва локална услуга от тип DNS-SD</short>
+        <long>Възможни стойности са „merged“, „separate“ и „disabled“.</long>
+      </locale>
+
+      <locale name="bn">
+        <short>কিভাবে স্থানীয় DNS-SD সার্ভিস প্রদর্শন করা হবে</short>
+        <long>সম্ভব মান হচ্ছে &quot;merged&quot;, &quot;separate&quot; and &quot;disabled&quot;।</long>
+      </locale>
+
+      <locale name="bn_IN">
+        <short>স্থানীয় DNS-SD পরিসেবা প্রদর্শনের প্রণালী</short>
+        <long>সম্ভব মান &quot;merged&quot;, &quot;separate&quot; ও &quot;disabled&quot;।</long>
+      </locale>
+
+      <locale name="bs">
+        <short>Kako prikazati lokalni DNS-SD servis</short>
+        <long>Moguće vrijednosti su &quot;merged&quot;, &quot;separate&quot; i &quot;disabled&quot;.</long>
+      </locale>
+
+      <locale name="ca">
+        <short>Com mostrar serveis DNS-SD locals</short>
+        <long>Els valors possibles són «merged», «separate» i «disabled».</long>
+      </locale>
+
+      <locale name="cs">
+        <short>Jak zobrazit místní službu DNS-SD</short>
+        <long>Možné hodnoty jsou &quot;merged&quot;, &quot;separate&quot; a &quot;disabled&quot;.</long>
+      </locale>
+
+      <locale name="cy">
+        <short>Sut i ddangos gwasanaeth DNS-SD lleol</short>
+        <long>Gwerthoedd posib: &quot;merged&quot;, &quot;separate&quot; a &quot;disabled&quot;.</long>
+      </locale>
+
+      <locale name="da">
+        <short>Hvordan en lokal DNS-SD-tjeneste skal vises</short>
+        <long>Mulige værdier er &quot;merged&quot;, &quot;separate&quot; og &quot;disabled&quot;.</long>
+      </locale>
+
+      <locale name="de">
+        <short>Legt fest, wie der lokale DNS-SD-Dienst angezeigt werden soll</short>
+        <long>Zulässige Werte: »merged«, »separate« sowie »disabled«.</long>
+      </locale>
+
+      <locale name="dz">
+        <short>ཉེ་གནས་ཀྱི་ཌི་ཨེན་ཨེསི་-ཨེསི་ཌི་གི་ ཞབས་ཏོག་བཀྲམ་སྟོན་འབད་ཐངས།</short>
+        <long>སྲིད་པའི་བེ་ལུསི་ &quot;merged&quot; &quot;separate&quot; དང་ &quot;disabled&quot; ཚུ་ཨིན།</long>
+      </locale>
+
+      <locale name="el">
+        <short>Πως να εμφανίζεται η τοπική υπηρεσία DNS-SD</short>
+        <long>Πιθανές τιμές είναι &quot;merged&quot;, &quot;separate&quot; and &quot;disabled&quot;.</long>
+      </locale>
+
+      <locale name="en_CA">
+        <short>How to display local DNS-SD service</short>
+        <long>Possible values are &quot;merged&quot;, &quot;separate&quot; and &quot;disabled&quot;.</long>
+      </locale>
+
+      <locale name="en_GB">
+        <short>How to display local DNS-SD service</short>
+        <long>Possible values are &quot;merged&quot;, &quot;separate&quot; and &quot;disabled&quot;.</long>
+      </locale>
+
+      <locale name="es">
+        <short>Cómo mostrar el servicio DNS-SD local</short>
+        <long>Los valores posibles son &quot;merged&quot; (mezclar), &quot;separate&quot; (separar) y &quot;disabled&quot; (desactivado).</long>
+      </locale>
+
+      <locale name="et">
+        <short>Kuidas kuvada kohalikku DNS-SD teenust</short>
+        <long>Võimalikud väärtused on &quot;kokkupandud&quot;, &quot;eraldatud&quot; ja &quot;keelatud&quot;.</long>
+      </locale>
+
+      <locale name="eu">
+        <short>DNS-SD zerbitzua bistaratzeko modua</short>
+        <long>Balio erabilgarriak &quot;merged&quot;, &quot;separate&quot; eta &quot;disabled&quot; dira.</long>
+      </locale>
+
+      <locale name="fi">
+        <short>Miten paikallinen DNS-SD-palvelu näkyy</short>
+        <long>Mahdollisia arvoja ovat &quot;merged&quot; (yhdessä), &quot;separate&quot; (erillinen) ja &quot;disabled&quot; (ei käytössä).</long>
+      </locale>
+
+      <locale name="fr">
+        <short>La manière d&apos;afficher le service DNS-SD local</short>
+        <long>Les valeurs possibles sont « merged » (fusionné), « separate » (séparé) et « disabled » (désactivé).</long>
+      </locale>
+
+      <locale name="gl">
+        <short>Como mostrar o servizo DNS-SD local</short>
+        <long>Os valores posíbeis son &quot;merged&quot;, &quot;separate&quot; e &quot;disabled&quot;.</long>
+      </locale>
+
+      <locale name="gu">
+        <short>કેવી રીતે સ્થાનિક DNS-SD સેવા પ્રદર્શિત કરવી</short>
+        <long>&quot;ભેગું થયેલ&quot;, &quot;અલગ&quot; અને &quot;નિષ્ક્રિય&quot; શક્ય કિંમતો છે.</long>
+      </locale>
+
+      <locale name="he">
+        <short>How to display local DNS-SD service</short>
+        <long>Possible values are &quot;merged&quot;, &quot;separate&quot; and &quot;disabled&quot;.</long>
+      </locale>
+
+      <locale name="hi">
+        <short>स्थानीय DNS-SD सेवा कैसे दिखानी है</short>
+        <long>संभावित मान हैं &quot;merged&quot;, &quot;separate&quot; और &quot;disabled&quot;.</long>
+      </locale>
+
+      <locale name="hr">
+        <short>Kako prikazati lokalne DNS-SD usluge</short>
+        <long>Ispravne vrijednosti su &quot;spojeno&quot;, &quot;odvojeno&quot; i &quot;onemogućeno&quot;.</long>
+      </locale>
+
+      <locale name="hu">
+        <short>Hogyan jelenítse meg a helyi DNS-SD szolgáltatást</short>
+        <long>Lehetséges értékek: „merged”, „separate” és „disabled”.</long>
+      </locale>
+
+      <locale name="id">
+        <short>Penampakan layanan DNS SD lokal</short>
+        <long>Nilai yang mungkin: &quot;merged&quot;, &quot;separate&quot; dan &quot;disabled&quot;.</long>
+      </locale>
+
+      <locale name="it">
+        <short>Visualizzazione del servizio DNS-SD locale</short>
+        <long>Valori ammessi sono &quot;merged&quot;, &quot;separate&quot; e &quot;disabled&quot;.</long>
+      </locale>
+
+      <locale name="ja">
+        <short>ローカルの DNS-SD サービスの表示方法</short>
+        <long>設定可能な値: &quot;merged&quot;、&quot;separate&quot;、&quot;disabled&quot;</long>
+      </locale>
+
+      <locale name="ka">
+        <short>როგორ იქნება ნაჩვენები ლოკალური DNS-SD მომსახურება</short>
+        <long>შესაძლო მნიშვნელობებია &quot;merged&quot; (&quot;შერწყმული&quot;), &quot;separate&quot; (&quot;დაყოფილი&quot;) და &quot;disabled&quot; (&quot;ამორთული&quot;).</long>
+      </locale>
+
+      <locale name="kn">
+        <short>ಸ್ಥಳೀಯ DNS-SD ಸೇವೆಯನ್ನು ಹೇಗೆ ತೋರಿಸಬೇಕು</short>
+        <long>ಸಾಧ್ಯವಿರುವ ಮೌಲ್ಯಗಳು &quot;ಒಗ್ಗೂಡಿಸಲಾದ&quot;, &quot;ಪ್ರತ್ಯೇಕ&quot; ಹಾಗು &quot;ಅಶಕ್ತಗೊಂಡ&quot; ಆಗಿರುತ್ತವೆ.</long>
+      </locale>
+
+      <locale name="ko">
+        <short>로컬 DNS-SD 서비스를 표시하는 법</short>
+        <long>쓸 수 있는 값은 &quot;merged&quot;, &quot;separated&quot; 및 &quot;disabled&quot;입니다.</long>
+      </locale>
+
+      <locale name="lt">
+        <short>Kaip rodyti vietinę DNS-SD paslaugą</short>
+        <long>Galimos reikšmės yra „merged“, „separate“ ir „disabled“.</long>
+      </locale>
+
+      <locale name="lv">
+        <short>Kā attēlot vietējo DNS-SD servisu</short>
+        <long>Iespējamās vērtības ir &quot;merged&quot;, &quot;separate&quot; un &quot;disabled&quot;.</long>
+      </locale>
+
+      <locale name="mai">
+        <short>स्थानीय DNS-SD सेवा कहिना देखाएनाइ अछि</short>
+        <long>संभावित मान अछि &quot;merged&quot;, &quot;separate&quot; आओर &quot;disabled&quot;.</long>
+      </locale>
+
+      <locale name="mg">
+        <short>Ny fomba fanehoana sampan&apos;asa DNS-SD</short>
+        <long>&quot;merged&quot;, &quot;separate&quot; ary &quot;disabled&quot; no sanda mety ampiasaina.</long>
+      </locale>
+
+      <locale name="mk">
+        <short>Како да ги прикаже локалните DNS-SD сервиси</short>
+        <long>Можни вредности се &quot;припоено&quot;, &quot;одделено&quot; и &quot;искулучено&quot;.</long>
+      </locale>
+
+      <locale name="ml">
+        <short>ലോക്കല്‍ DNS-SD സേവനം എങ്ങനെ പ്രദര്‍ശിപ്പിക്കണം എന്ന്</short>
+        <long>&quot;യോജിച്ചിരിക്കുന്നു&quot;, &quot;വേര്‍പ്പെട്ട്&quot;, &quot;അപ്രാപ്യമായ&quot; എന്നിവയാണ് സാധ്യമായ മൂല്ല്യങ്ങള്‍.</long>
+      </locale>
+
+      <locale name="mn">
+        <short>Яаж локал DNS-SD сервисийг харуулах вэ</short>
+        <long>Боломжит утгууд &quot;merged&quot;, &quot;separate&quot; ба &quot;disabled&quot;.</long>
+      </locale>
+
+      <locale name="mr">
+        <short>स्थानीक DNS-SD सेवा कसे दर्शवायचे</short>
+        <long>संभाव्य मूल्ये &quot;विलीन&quot;, &quot;विभाजीत&quot; आणि &quot;अकार्यान्वीत&quot; अशी आहेत.</long>
+      </locale>
+
+      <locale name="ms">
+        <short>Bagaimana memapar servis DNS-SD setempat</short>
+        <long>Nilai yang boleh adalah &quot;merged&quot;, &quot;separate&quot; dan &quot;disabled&quot;.</long>
+      </locale>
+
+      <locale name="nb">
+        <short>Hvordan vises lokale DNS-SD-tjenester</short>
+        <long>Mulige verdier er «merged», «separate» og «disabled».</long>
+      </locale>
+
+      <locale name="ne">
+        <short>स्थानीय DNS-SD सेवा कसरी प्रदर्शन गर्नुहुन्छ</short>
+        <long>सम्भावित मान &quot;गाभिएका&quot;, &quot;विभाजन&quot; र &quot;अक्षम&quot; हुन् ।</long>
+      </locale>
+
+      <locale name="nl">
+        <short>Hoe een lokale DNS-SD service wordt weergegeven</short>
+        <long>Mogelijke waarden zijn &quot;merged&quot;, &quot;separate&quot; en &quot;disabled&quot;.</long>
+      </locale>
+
+      <locale name="nn">
+        <short>Korleis lokal DNS-SD-teneste skal visast</short>
+        <long>Moglege verdiar er «merged», «separate» og «disabled».</long>
+      </locale>
+
+      <locale name="nso">
+        <short>Kamoo o ka bonagatšago tirelo ya mo gae ya DNS-SD</short>
+        <long>Boleng bjo ke  &quot;merged&quot;, &quot;separate&quot; le &quot;disabled&quot;.</long>
+      </locale>
+
+      <locale name="or">
+        <short>ସ୍ଥାନୀୟ ଡି.ଏନ୍.ଏସ୍.-ଏସ୍.ଡି. ସେବାକୁ କିପରି ପ୍ରଦର୍ଶିତ କରାଯିବ</short>
+        <long>ସମ୍ଭବ ମୂଲ୍ଯଗୁଡି଼କ ହେଲା &quot;merged&quot;, &quot;separate&quot; ଓ &quot;disabled&quot;.</long>
+      </locale>
+
+      <locale name="pa">
+        <short>ਲੋਕਲ DNS-SD ਸਰਵਿਸ ਨੂੰ ਕਿਵੇਂ ਵੇਖਾਉਣਾ ਹੈ</short>
+        <long>ਸੰਭਵ ਮੁੱਲ ਹਨ &quot;merged (ਰਲਵੇਂ)&quot;, &quot;separate(ਵੱਖਰੇ)&quot; ਅਤੇ &quot;disabled(ਆਯੋਗ)&quot;</long>
+      </locale>
+
+      <locale name="pl">
+        <short>Sposób wyświetlania lokalnych usług DNS-SD</short>
+        <long>Dopuszczalne wartości to &quot;merged&quot; (połączone), &quot;separate&quot; (oddzielne) oraz &quot;disabled&quot; (wyłączone).</long>
+      </locale>
+
+      <locale name="pt">
+        <short>Como apresentar o serviço DNS-SD local</short>
+        <long>Valores possíveis são &quot;merged&quot;, &quot;separate&quot; e &quot;disabled&quot;.</long>
+      </locale>
+
+      <locale name="pt_BR">
+        <short>Como exibir o serviço DNS-SD local</short>
+        <long>Valores possíveis são &quot;merged&quot; (junto), &quot;separate&quot; (à parte) e &quot;disabled&quot; (desabilitado).</long>
+      </locale>
+
+      <locale name="ro">
+        <short>Modalitatea de afișare a serviciului local dns-sd</short>
+        <long>Valori posibile: „merged”, „separate” și „disabled”.</long>
+      </locale>
+
+      <locale name="ru">
+        <short>Как отображать локальный сервис типа DNS-SD</short>
+        <long>Возможные значения &quot;merged&quot; (&quot;совместные&quot;), &quot;separate&quot; (&quot;раздельные&quot;) и &quot;disabled&quot; (&quot;отключено&quot;).</long>
+      </locale>
+
+      <locale name="sk">
+        <short>Ako sa má zobraziť miestna služba DNS-SD</short>
+        <long>Prípustné hodnoty sú &quot;merged&quot;, &quot;separate&quot; a &quot;disabled&quot;.</long>
+      </locale>
+
+      <locale name="sl">
+        <short>Kako naj se prikaže lokalna storitev DNS-SD</short>
+        <long>Možne vrednosti so &quot;povezano&quot;, &quot;loči&quot; in &quot;onemogočeno&quot;.</long>
+      </locale>
+
+      <locale name="sq">
+        <short>Si duhet shfaqur shërbimi lokal DNS-SD</short>
+        <long>Vlerat e mundshme janë &quot;merged&quot;, &quot;separate&quot; dhe &quot;disabled&quot;.</long>
+      </locale>
+
+      <locale name="sr">
+        <short>Како да приказује локалну DNS-SD услугу</short>
+        <long>Допуштене вредности су „merged“ (спојено), „separate“ (раздвојено) и „disabled“ (искључено).</long>
+      </locale>
+
+      <locale name="sr@latin">
+        <short>Kako da prikazuje lokalnu DNS-SD uslugu</short>
+        <long>Dopuštene vrednosti su „merged“ (spojeno), „separate“ (razdvojeno) i „disabled“ (isključeno).</long>
+      </locale>
+
+      <locale name="sv">
+        <short>Hur den lokala DNS-SD-tjänsten ska visas</short>
+        <long>Möjliga värden är &quot;merged&quot;, &quot;separate&quot; och &quot;disabled&quot;.</long>
+      </locale>
+
+      <locale name="ta">
+        <short>உள் DNS-SD சேவையை காட்டுவது எப்படி</short>
+        <long>இயன்ற மதிப்புகள் &quot;merged&quot;, &quot;separate&quot; மற்றும் &quot;disabled&quot;.</long>
+      </locale>
+
+      <locale name="te">
+        <short>స్థానిక DNS-SD సేవ ఎలా ప్రదర్శించాలి</short>
+        <long>సాధ్యమైన విలువలు ఉన్నవి &quot;ముంచబడినది&quot;, &quot;వేరుచేయు&quot; మరియు &quot;నిరుపయోగము&quot;.</long>
+      </locale>
+
+      <locale name="th">
+        <short>วิธีแสดงผลบริการ DNS-SD ในเครือข่ายท้องถิ่น</short>
+        <long>ค่าที่เป็นไปได้คือ &quot;merged&quot;, &quot;separate&quot; และ &quot;disabled&quot;</long>
+      </locale>
+
+      <locale name="tr">
+        <short>Yerel DNS-SD servislerinin nasıl gösterileceği</short>
+        <long>Geçerli değerler, &quot;merged&quot; (birleşik), &quot;separate&quot; (ayrık) ve &quot;disabled&quot; (kapalı)&apos;dir.</long>
+      </locale>
+
+      <locale name="uk">
+        <short>Як відображати локальну службу DNS-SD</short>
+        <long>Можливими значеннями є &quot;merged&quot;, &quot;separate&quot; and &quot;disabled&quot;.</long>
+      </locale>
+
+      <locale name="vi">
+        <short>Cách hiển thị dịch vụ DNS-SD cục bộ</short>
+        <long>Giá trị có thể là:
+ • merged — đã phối hợp.
+ • separate — riêng,
+ • disabled — đã tắt.</long>
+      </locale>
+
+      <locale name="xh">
+        <short>Uyibonisa njani inkonzo efikeleleka ngqo ye-DNS-SD</short>
+        <long>Amaxabiso anokubakhona ngala &quot;merged&quot;, &quot;separate&quot; kunye &quot;disabled&quot;.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>如何显示本地 DNS-SD 服务</short>
+        <long>可供选择的值有“merged”、“separate”和“disabled”。</long>
+      </locale>
+
+      <locale name="zh_HK">
+        <short>如何顯示本地端的 DNS-SD 服務</short>
+        <long>可能值為“merged”,“separate”以及“disabled”。</long>
+      </locale>
+
+      <locale name="zh_TW">
+        <short>如何顯示本地端的 DNS-SD 服務</short>
+        <long>可能值為“merged”,“separate”以及“disabled”。</long>
+      </locale>
+
+      <locale name="zu">
+        <short>Utshengisa kanjani izisebenzisi zei-DNS-SD zasendaweni</short>
+        <long>Amanani anganzeka ilawa &quot;hlangana&quot;, &quot;hlukene&quot; kanye &quot;khininda&quot;.</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/system/dns_sd/extra_domains</key>
+      <applyto>/system/dns_sd/extra_domains</applyto>
+      <owner>gnome-vfs</owner>
+      <type>string</type>
+      <default></default>
+      <locale name="C">
+        <short>Extra domains to look for DNS-SD services in</short>
+        <long>Comma separated list of DNS-SD domains that should be
+        visible in the "network:///" location.</long>
+      </locale>
+
+      <locale name="ar">
+        <short>نطاقات زيادة للبحث في داخلها عن خدمات  DNS-SD</short>
+        <long>قائمة -مفصولة بفاصلة- بنطاقات DNS-SD التي ستكون مرئيّة في موقع &quot;network:///&quot;.</long>
+      </locale>
+
+      <locale name="as">
+        <short>DNS-SD পৰিসেবাৰ জন্য অতিৰিক্ত ডোমেইন অনুসন্ধান কৰা হবে</short>
+        <long>&quot;network:///&quot; location&apos;ত প্ৰদৰ্শনযোগ্য DNS-SD&apos;ৰ তালিকা, কমা চিহ্ন দ্বাৰা বিভাজিত</long>
+      </locale>
+
+      <locale name="ast">
+        <short>Dominios adicionales nos que buscar servicios DNS-SD</short>
+        <long>Llista separtada por comes de dominios DNS-SD que tendríen de ser adicables nel llugar «network:///».</long>
+      </locale>
+
+      <locale name="be">
+        <short>Дадатковыя маёнткі для пошуку паслуг DNS-SD</short>
+        <long>Падзелены коскамі сьпіс маёнткаў dns-sd, якія мусяць быць бачны ў сеткавым асяродзьдзі.</long>
+      </locale>
+
+      <locale name="bg">
+        <short>Допълнителни домейни, в които да се търсят услуги от тип DNS-SD</short>
+        <long>Списък от домейни тип DNS-SD, разделени със запетаи, които трябва да са видими в местоположението „network:///“.</long>
+      </locale>
+
+      <locale name="bn">
+        <short>DNS-SD সার্ভিস খোঁজার জন্য অতিরিক্ত ক্ষেত্রে।</short>
+        <long>DNS-SD ক্ষেত্রের কমা বিচ্ছিন্ন তালিকা দৃশ্যমান হওয়া উচিত &quot;network:///&quot; অবস্থানে।</long>
+      </locale>
+
+      <locale name="bn_IN">
+        <short>DNS-SD পরিসেবার জন্য অতিরিক্ত ডোমেইন অনুসন্ধান করা হবে</short>
+        <long>&quot;network:///&quot; location&apos;র মধ্যে প্রদর্শনযোগ্য DNS-SD&apos;র তালিকা, কমা চিহ্ন দ্বারা বিভাজিত</long>
+      </locale>
+
+      <locale name="ca">
+        <short>Dominis extra dins dels quals cercar serveis DNS-SD</short>
+        <long>Llista separada per comes de dominis DNS-SD que haurien de ser visibles a la ubicació «network:///».</long>
+      </locale>
+
+      <locale name="cs">
+        <short>Další domény, ve kterých se mají hledat služby DNS-SD</short>
+        <long>Čárkami oddělený seznam domén DNS-SD, které by měly být viditelné v umístění &quot;network:///&quot;.</long>
+      </locale>
+
+      <locale name="cy">
+        <short>Parthau ychwanegol i chwilio am wasanaethau DNS-SD ynddynt</short>
+        <long>Rhestr o barthau DNS-SD, wedi&apos;u gwahanu gan gomáu, a ddylai fod yn weladwy yn y lleoliad &quot;network:///&quot;.</long>
+      </locale>
+
+      <locale name="da">
+        <short>Ekstra domæner til at kigge efter DNS-SD-tjenester i</short>
+        <long>Komma-adskilt liste af DNS-SD-domæner som skal være synlige i &quot;network:///&quot;-stedet.</long>
+      </locale>
+
+      <locale name="de">
+        <short>Zusätzlich nach DNS-SD-Diensten zu durchsuchende Domänen</short>
+        <long>Durch Kommata unterteilte Liste der DNS-SD-Domänen, die am Netzwerk-Speicherort »network:///« angezeigt werden sollen.</long>
+      </locale>
+
+      <locale name="dz">
+        <short>ཌི་ཨེན་ཨེསི་-ཨེསི་ཌི་གི་ ཞབས་ཏོག་བལྟ་ནིའི་དོན་ལུ་ ཌོ་མེན་ཐེབས།</short>
+        <long>&quot;network:///&quot; གནས་ཁོངས་ནང་ མཐོང་དགོ་པའི་ ལྷོོད་རྟགས་ཀྱིས་ སོ་སོ་དབྱེ་མི་  ཌི་ཨེན་ཨེསི་-ཨེསི་ཌི་ཌོ་མེན།</long>
+      </locale>
+
+      <locale name="el">
+        <short>Επιπρόσθετοι τομείς για αναζήτηση υπηρεσιών dns-sd</short>
+        <long>Λίστα διαχωρισμένη με κόμμα από τομείς dns-sd που θα πρέπει να είναι ορατοί στην τοποθεσία &quot;network:///&quot; </long>
+      </locale>
+
+      <locale name="en_CA">
+        <short>Extra domains in which to look for DNS-SD services</short>
+        <long>Comma-separated list of DNS-SD domains that should be visible in the &quot;network:///&quot; location.</long>
+      </locale>
+
+      <locale name="en_GB">
+        <short>Extra domains to look for DNS-SD services in</short>
+        <long>Comma separated list of DNS-SD domains that should be visible in the &quot;network:///&quot; location.</long>
+      </locale>
+
+      <locale name="es">
+        <short>Dominios adicionales en los que buscar servicios DNS-SD</short>
+        <long>Lista separada por comas de dominios DNS-SD que deberían ser visibles en el lugar &quot;network:///&quot;.</long>
+      </locale>
+
+      <locale name="et">
+        <short>Lisadomeenid DNS-SD teenuste otsimiseks</short>
+        <long>Komadega eraldatud rida DNS-SD domeenidest, mis peaksid olema nähtavad võrgukohas &quot;network:///&quot;.</long>
+      </locale>
+
+      <locale name="eu">
+        <short>Domeinu gehigarriak DNS-SD zerbitzuetan bilatzeko</short>
+        <long>Komaz bereiztutako DNS-SD domeinuen zerrenda, &quot;network:///&quot; helbidean ikusgai izango dena.</long>
+      </locale>
+
+      <locale name="fi">
+        <short>Lisäverkkoalueet, joilta etsiä DNS-SD-palveluja</short>
+        <long>Pilkuilla eroteltu luettelo DNS-SD-verkkoalueista, jotka näkyvät sijainnissa &quot;network:///&quot;.</long>
+      </locale>
+
+      <locale name="fr">
+        <short>Domaines supplémentaire dans lesquels chercher des services DNS-SD</short>
+        <long>Liste des domaines DNS-SD séparés par une virgule qui doivent être visible dans l&apos;emplacement « network:/// ».</long>
+      </locale>
+
+      <locale name="gl">
+        <short>Dominios adicionais onde buscar servizos DNS-SD</short>
+        <long>Lista separada por comas dos dominios DNS-SD que deben ser visíbeis na localización &quot;network:///&quot;.</long>
+      </locale>
+
+      <locale name="gu">
+        <short>DNS-SD સેવાઓ માટે જોવા માટે વધારાના ડોમેઈનો</short>
+        <long>અલ્પવિરામથી અલગ પાડેલ DNS-SD ડોમેઈનોની યાદી કે જે &quot;network:///&quot; સ્થાનમાં દ્રશ્યમાન હોવું જોઈએ.</long>
+      </locale>
+
+      <locale name="he">
+        <short>Extra domains to look for DNS-SD services in</short>
+        <long>Comma separated list of DNS-SD domains that should be visible in the &quot;network:///&quot; location.</long>
+      </locale>
+
+      <locale name="hi">
+        <short>DNS-SD सेवा में देखने के लिये अतिरिक्त डोमेन</short>
+        <long>DNS-SD डोमेन के कोमा से अलग सूची जिसे &quot;network:///&quot; स्थान में दृश्य होना चाहिये.</long>
+      </locale>
+
+      <locale name="hr">
+        <short>Dodatne domene u kojima se traže DNS-SD usluge</short>
+        <long>Zarezima odvojena lista DNS-SD domena koje trebaju biti vidljive u &quot;network:///&quot; lokaciji.</long>
+      </locale>
+
+      <locale name="hu">
+        <short>Extra tartományok a DNS-SD szolgáltatások kereséséhez</short>
+        <long>A „network:///” helyen látható DNS-SD tartományok vesszővel elválasztott listája.</long>
+      </locale>
+
+      <locale name="id">
+        <short>Ranah tambahan yang dicari layanan DNS SD</short>
+        <long>Daftar ranah DNS SD (dibatasi koma) yang seharusnya nampak pada lokasi &quot;network:///&quot;</long>
+      </locale>
+
+      <locale name="it">
+        <short>Domini aggiuntivi da interrogare per servizi DNS-SD</short>
+        <long>Elenco separato da virgole di domini DNS-SD che dovrebbero essere visibili nella posizione &quot;network:///&quot;.</long>
+      </locale>
+
+      <locale name="ja">
+        <short>DNS-SD サービスで検索する追加ドメイン</short>
+        <long>コンマ (,) で区切った DNS-SD のリストで、&quot;network:///&quot; の中に表示されます。</long>
+      </locale>
+
+      <locale name="ka">
+        <short>დამატებითი დომენები DNS-SD მომსახურების მოსაძებნად</short>
+        <long>მძიმით გამოყოფილი DNS-SD დომენები, რომლებიც უნდა ჩანდეს &quot;network:///&quot; მისამართზე.</long>
+      </locale>
+
+      <locale name="kn">
+        <short>DNS-SD ಸೇವೆಗಳನ್ನು ಹುಡುಕಬೇಕಿರುವ ಹೆಚ್ಚಿನ ಘಟಕಗಳು</short>
+        <long>&quot;network:///&quot; ಸ್ಥಳದಲ್ಲಿ ಕಾಣಿಸಬೇಕಿರುವ ಅರ್ಧವಿರಾಮ ಚಿಹ್ನೆವನ್ನು ಹೊಂದಿರುವ DNS-SD ಕ್ಷೇತ್ರಗಳ ಪಟ್ಟಿ.</long>
+      </locale>
+
+      <locale name="ko">
+        <short>DNS-SD 서비스를 찾아볼 추가 도메인</short>
+        <long>&quot;network:///&quot; 위치에서 보여야 하는 DNS-SD 도메인들의 쉼표로 구분한 목록.</long>
+      </locale>
+
+      <locale name="lt">
+        <short>Papildomos sritys, kuriose ieškoti DNS-SD paslaugų</short>
+        <long>Kableliu atskirtų DNS-SD sričių, kurios turėtų būti matomos „network:///“ vietoje, sąrašas.</long>
+      </locale>
+
+      <locale name="lv">
+        <short>Papildus domēni,  DNS-SD servisu meklēšanai</short>
+        <long>Komata atdalīts DNS-SD domēnu saraksts, ko vajadzētu redzēt šeit: &quot;network:///&quot;.</long>
+      </locale>
+
+      <locale name="mai">
+        <short>DNS-SD सेवामे देखबाक लेल अतिरिक्त डोमेन</short>
+        <long>DNS-SD डोमेन क&apos; कोमा सँ अलग सूची जकरा &quot;network:///&quot; स्थानमे दृश्य होनाइ चाही.</long>
+      </locale>
+
+      <locale name="mg">
+        <short>Domena fanampiny hitadiavana sampan&apos;asa DNS-SD</short>
+        <long>Domena DNS-SD saraham-paingo izay tokony ho hita ao amin&apos;ny &quot;network:///&quot;.</long>
+      </locale>
+
+      <locale name="mk">
+        <short>Екстра домени за пребарување на DNS-SD сервиси</short>
+        <long>Листа разделена со запирки од DNS-SD домените кои што би требало да се видливи на локацијата „network:///“.</long>
+      </locale>
+
+      <locale name="ml">
+        <short>DNS-SD സേവനങ്ങള്‍ തിരയുന്നതിനുളള അധികമായ ഡൊമെയിനുകള്‍</short>
+        <long>&quot;നെറ്റ്‍വര്‍ക്ക്:///&quot; സ്ഥാനത്ത് ദൃശ്യമായിരിക്കേണ്ട കോമാ ഉപയോഗിച്ച് വേര്‍തിരിച്ചിരിക്കുന്ന DNS-SD ഡൊമെയിനുകള്‍.</long>
+      </locale>
+
+      <locale name="mr">
+        <short>DNS-SD सेवांकरीता पहाचे ते अगाऊ क्षेत्र</short>
+        <long>&quot;network:///&quot; स्थानावर दिसण्यायोग्य अल्पविरामद्वारा वेगळी केलेली DNS-SD क्षेत्र.</long>
+      </locale>
+
+      <locale name="nb">
+        <short>Ekstra domener som skal sjekkes for DNS-SD-tjenester</short>
+        <long>Kommaseparert liste med DNS-SD-domener som skal være synlige i lokasjonen «network:///».</long>
+      </locale>
+
+      <locale name="ne">
+        <short>यस भित्र DNS-SD सेवा खोज्नका लागि अतिरिक्त डोमेन</short>
+        <long>अल्पविरामले DNS-SD डोमेनको सूची विभाजन गर्दछ जुन &quot;network:///&quot; स्थानमा देखिने हुनुपर्दछ ।</long>
+      </locale>
+
+      <locale name="nl">
+        <short>Extra domeinen waarin naar DNS-SD services wordt gezocht</short>
+        <long>Een door komma&apos;s gescheiden lijst met DNS-SD domeinen die zichtbaar behoren te zijn in de locatie &quot;netwerk:///&quot;.</long>
+      </locale>
+
+      <locale name="nn">
+        <short>Ekstra domener det skal sjåast etter DNS-SD-tenester i</short>
+        <long>Kommadelt liste over DNS-SD-domener som skal vera synlege i nettverksplasseringa.</long>
+      </locale>
+
+      <locale name="or">
+        <short>ଡି.ଏନ୍.ଏସ୍-ଏସ୍.ଡି ସେବା ଖୋଜି ପାଇବା ପାଇଁ ଅଧିକ ପରିସର</short>
+        <long>କମା ଦ୍ବାରା ବିଭାଜିତ ଡି.ଏନ୍.ଏସ୍-ଏସ୍.ଡି ପରିସରର ଯାହାକି &quot;network:///&quot; ଅବସ୍ଥାନରେ ଦ୍ରୁଶ୍ଯମାନ ହେବା ଉଚିତ.</long>
+      </locale>
+
+      <locale name="pa">
+        <short>ਇਸ ਵਿੱਚ DNS-SD ਸਰਵਿਸਾਂ ਦੀ ਖੋਜ ਲਈ ਹੋਰ ਡੋਮੇਨਾਂ</short>
+        <long>DNS-SD ਡੋਮੇਨਾਂ ਦੀ ਕਾਮਿਆਂ ਨਾਲ ਵੱਖ ਕੀਤੀ ਸੂਚੀ, ਜੋ ਕਿ &quot;network:///&quot; ਟਿਕਾਣੇ ਉੱਤੇ ਵਿਖਾਈ ਦੇਣੀ ਚਾਹੀਦੀ ਹੈ।</long>
+      </locale>
+
+      <locale name="pl">
+        <short>Dodatkowe domeny do wyszukiwania usług DNS-SD</short>
+        <long>Lista oddzielonych przecinkami domen DNS-SD, które powinny być widoczne w położeniu &quot;network:///&quot;.</long>
+      </locale>
+
+      <locale name="pt">
+        <short>Domínios adicionais onde procurar serviços DNS-SD</short>
+        <long>Lista separada por vírgulas de domínios DNS-SD que deverão ser visíveis na localização de rede &quot;network:///&quot;.</long>
+      </locale>
+
+      <locale name="pt_BR">
+        <short>Domínios extras para procurar por serviços DNS-SD</short>
+        <long>Lista separada por vírgulas de domínios DNS-SD que devem ser visíveis na localização &quot;network:///&quot;.</long>
+      </locale>
+
+      <locale name="ro">
+        <short>Domenii în plus de verificat pentru servicii DNS-SD</short>
+        <long>Listă separată prin virgule de domenii DNS-SD ce ar trebui să fie vizibile în locația „network:///”.</long>
+      </locale>
+
+      <locale name="ru">
+        <short>Дополнительные домены, в которых осуществлять поиск сервисов типа DNS-SD</short>
+        <long>Разделённый запятыми список доменов типа DNS-SD, которые должны быть видимы по адресу &quot;network:///&quot;.</long>
+      </locale>
+
+      <locale name="sk">
+        <short>Ďalšie domény, v ktorých sa majú hľadať služby DNS-SD</short>
+        <long>Čiarkou oddelený zoznam DNS-SD domén, ktoré majú byť viditeľné v umiestnení &quot;network:///&quot;.</long>
+      </locale>
+
+      <locale name="sl">
+        <short>Dodatne domene za iskanje storitev DNS-SD</short>
+        <long>Z vejico ločen seznam domen DNS-SD, ki naj bodo vidne na lokaciji &quot;network:///&quot;.</long>
+      </locale>
+
+      <locale name="sq">
+        <short>Domain-e të tjerë që duhen kontrolluar për shërbimet DNS-SD</short>
+        <long>Lista e domain-eve DNS-SD, të ndarë me presje, që do të jenë të dukshëm tek pozicioni i rrjetit &quot;network:///&quot;.</long>
+      </locale>
+
+      <locale name="sr">
+        <short>Допунски домени на којима да тражи DNS-SD услуге</short>
+        <long>Запетом раздвојен списак DNS-SD домена који су доступни на путањи „network:///.</long>
+      </locale>
+
+      <locale name="sr@latin">
+        <short>Dopunski domeni na kojima da traži DNS-SD usluge</short>
+        <long>Zapetom razdvojen spisak DNS-SD domena koji su dostupni na putanji „network:///.</long>
+      </locale>
+
+      <locale name="sv">
+        <short>Extra domäner som dns-sd-tjänster ska sökas i</short>
+        <long>Kommaseparerad lista med dns-sd-domäner som ska synas på platsen &quot;network:///&quot;.</long>
+      </locale>
+
+      <locale name="ta">
+        <short>DNS-SD சேவைகளுக்கு கூடுதல் களங்கள்</short>
+        <long>DNS-SD களங்களின் கால்புள்ளியால் பிரிக்கப்பட்ட பட்டியல் &quot;network:///&quot; இடத்தில் தெரிய வேண்டும்.</long>
+      </locale>
+
+      <locale name="te">
+        <short>DNS-SD సేవలలో అధికమైన అధికారక్షేత్రాలకు చూచుట కొరకు</short>
+        <long>DNS-SD డొమైన్లయొక్క కామాతో విభజించిన జాబితా &quot;network:///&quot; స్థానమునందు కనిపించాలి.</long>
+      </locale>
+
+      <locale name="th">
+        <short>โดเมนเพิ่มเติมที่จะมองหาบริการ DNS-SD</short>
+        <long>รายการโดเมน DNS-SD (คั่นด้วยจุลภาค) ที่น่าจะมองเห็นได้ในตำแหน่ง &quot;network:///&quot;</long>
+      </locale>
+
+      <locale name="tr">
+        <short>İçinde DNS-SD servislerini aramak için ek alan adları</short>
+        <long>&quot;network:///&quot; konumunda görülmesi gereken DNS-SD alan adlarının virgül ile ayırılmış listesi.</long>
+      </locale>
+
+      <locale name="uk">
+        <short>Додаткові домени для пошуку у них служб DNS-SD</short>
+        <long>Перелік розділених комою доменів DNS-SD, які повинні бути видимими за адресою &quot;network:///&quot;.</long>
+      </locale>
+
+      <locale name="vi">
+        <short>Những miền thêm nơi cần tìm dịch vụ DNS-SD</short>
+        <long>Danh sách các miền DNS-SD, định giới bằng dấu phẩy, nên được hiển thị trong địa điểm « network:// ».</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>DNS-SD 服务应查阅的额外域</short>
+        <long>以逗号分隔的 DNS-SD 域列表，这些域将出现在“network:///”位置中。</long>
+      </locale>
+
+      <locale name="zh_HK">
+        <short>找尋 DNS-SD 服務的額外網域</short>
+        <long>在“network:///”位置中顯示的 DNS-SD 網域清單，以逗號隔開。</long>
+      </locale>
+
+      <locale name="zh_TW">
+        <short>找尋 DNS-SD 服務的額外網域</short>
+        <long>在“network:///”位置中顯示的 DNS-SD 網域清單，以逗號隔開。</long>
+      </locale>
+    </schema>
+  </schemalist>
+</gconfschemafile>

@@ -1,0 +1,12 @@
+Package: libusb-1.0-0
+Version: 1.0.8-r0.6
+Description: library to provide userspace access to USB devices
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPLv2.1
+Architecture: armv5te
+OE: libusb1
+Homepage: http://libusb.sf.net
+Depends: libc6, libgcc1
+Source: http://downloads.sourceforge.net/libusb/libusb-1.0.8.tar.bz2;name=tar

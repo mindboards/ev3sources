@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-kword">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>KWord document</comment>
+  <comment xml:lang="be@latin">Dakument KWord</comment>
+  <comment xml:lang="bg">Документ — KWord</comment>
+  <comment xml:lang="ca">document de KWord</comment>
+  <comment xml:lang="cs">Dokument KWord</comment>
+  <comment xml:lang="da">KWord-dokument</comment>
+  <comment xml:lang="de">KWord-Dokument</comment>
+  <comment xml:lang="el">έγγραφο KWord</comment>
+  <comment xml:lang="en_GB">KWord document</comment>
+  <comment xml:lang="eo">KWord-dokumento</comment>
+  <comment xml:lang="es">documento de KWord</comment>
+  <comment xml:lang="eu">KWord dokumentua</comment>
+  <comment xml:lang="fi">KWord-asiakirja</comment>
+  <comment xml:lang="fr">document KWord</comment>
+  <comment xml:lang="ga">cáipéis KWord</comment>
+  <comment xml:lang="hu">KWord-dokumentum</comment>
+  <comment xml:lang="id">Dokumen KWord</comment>
+  <comment xml:lang="it">Documento KWord</comment>
+  <comment xml:lang="ja">KWord ドキュメント</comment>
+  <comment xml:lang="ko">KWord 문서</comment>
+  <comment xml:lang="lt">KWord dokumentas</comment>
+  <comment xml:lang="ms">Dokumen KWord</comment>
+  <comment xml:lang="nb">KWord-dokument</comment>
+  <comment xml:lang="nl">KWord-document</comment>
+  <comment xml:lang="nn">KWord-dokument</comment>
+  <comment xml:lang="pl">Dokument KWord</comment>
+  <comment xml:lang="pt">documento KWord</comment>
+  <comment xml:lang="pt_BR">Documento do KWord</comment>
+  <comment xml:lang="ru">документ KWord</comment>
+  <comment xml:lang="sq">Dokument KWord</comment>
+  <comment xml:lang="sr">KWord документ</comment>
+  <comment xml:lang="sv">KWord-dokument</comment>
+  <comment xml:lang="uk">Документ KWord</comment>
+  <comment xml:lang="vi">Tài liệu KWord</comment>
+  <comment xml:lang="zh_CN">KWord 文档</comment>
+  <comment xml:lang="zh_TW">KWord 文件</comment>
+  <generic-icon name="x-office-document"/>
+</mime-type>

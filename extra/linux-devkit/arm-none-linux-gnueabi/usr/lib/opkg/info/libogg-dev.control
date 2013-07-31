@@ -1,0 +1,13 @@
+Package: libogg-dev
+Version: 1.1.4-r4.0.6
+Description: libogg is the bitstream and framing library for the Ogg project. It provides functions which are necessary to codec libraries like libvorbis.
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: BSD
+Architecture: armv5te
+OE: libogg
+Homepage: unknown
+Depends: libogg0, libogg0
+Recommends: libgcc1-dev, libc6-dev, libogg-dev
+Source: http://downloads.xiph.org/releases/ogg/libogg-1.1.4.tar.gz

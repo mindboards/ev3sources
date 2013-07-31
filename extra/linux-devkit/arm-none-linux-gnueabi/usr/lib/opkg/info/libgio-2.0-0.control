@@ -1,0 +1,12 @@
+Package: libgio-2.0-0
+Version: 2.24.1-r2.6
+Description: GLib is a general-purpose utility library, which provides many useful data types, macros, type conversions, string utilities, file utilities, a main loop abstraction, and so on. It works on many UNIX-like platforms, Windows, OS/2 and BeOS.
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPLv2+
+Architecture: armv5te
+OE: glib-2.0
+Homepage: unknown
+Depends: libgobject-2.0-0, libgthread-2.0-0, libc6, libgmodule-2.0-0, libglib-2.0-0, libc6, libz1, libgcc1
+Source: http://ftp.gnome.org/pub/GNOME/sources/glib/2.24/glib-2.24.1.tar.bz2;name=archive file://glibconfig-sysdefs.h file://configure-libtool.patch file://g_once_init_enter.patch file://gatomic-proper-pointer-get-cast.patch file://gio.patch file://60_wait-longer-for-threads-to-die.patch file://glib-mkenums-interpreter.patch file://atomic-thumb.patch

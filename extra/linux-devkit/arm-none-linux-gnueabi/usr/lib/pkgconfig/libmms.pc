@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include/
+
+Name: libmms
+Description: Library implementing the MMS protocol 
+Requires: glib-2.0
+Version: 0.5
+Libs: -L${libdir} -lmms -lm
+Cflags: -I${includedir}

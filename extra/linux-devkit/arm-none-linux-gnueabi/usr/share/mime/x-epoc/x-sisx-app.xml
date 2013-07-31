@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="x-epoc/x-sisx-app">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>SISX package</comment>
+  <comment xml:lang="be@latin">Pakunak SISX</comment>
+  <comment xml:lang="bg">Пакет — SISX</comment>
+  <comment xml:lang="ca">paquet SISX</comment>
+  <comment xml:lang="cs">Balíček SISX</comment>
+  <comment xml:lang="es">paquete SISX</comment>
+  <comment xml:lang="eu">SISX paketea</comment>
+  <comment xml:lang="fi">SISX-paketti</comment>
+  <comment xml:lang="fr">paquet SISX</comment>
+  <comment xml:lang="ga">pacáiste SISX</comment>
+  <comment xml:lang="hu">SISX csomag</comment>
+  <comment xml:lang="id">Paket SISX</comment>
+  <comment xml:lang="it">Pacchetto SISX</comment>
+  <comment xml:lang="ko">SISX 꾸러미</comment>
+  <comment xml:lang="lt">SISX paketas</comment>
+  <comment xml:lang="nb">SISX-pakke</comment>
+  <comment xml:lang="nl">SISX-pakket</comment>
+  <comment xml:lang="pt_BR">Pacote SISX</comment>
+  <comment xml:lang="sv">SISX-paket</comment>
+  <comment xml:lang="uk">Пакет SISX</comment>
+  <comment xml:lang="vi">Gói SISX</comment>
+  <acronym>SIS</acronym>
+  <expanded-acronym>Symbian Installation File</expanded-acronym>
+  <generic-icon name="package-x-generic"/>
+</mime-type>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-mrml">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>MRML playlist</comment>
+  <comment xml:lang="be@latin">Śpis piesień MRML</comment>
+  <comment xml:lang="ca">llista de reproducció MRML</comment>
+  <comment xml:lang="cs">Seznam skladeb MRML</comment>
+  <comment xml:lang="es">lista de reproducción MRML</comment>
+  <comment xml:lang="fi">MRML-soittolista</comment>
+  <comment xml:lang="fr">liste de lecture MRML</comment>
+  <comment xml:lang="ga">seinmliosta MRML</comment>
+  <comment xml:lang="hu">MRML-lejátszólista</comment>
+  <comment xml:lang="id">Senarai putar MRML</comment>
+  <comment xml:lang="it">Scaletta MRML</comment>
+  <comment xml:lang="ko">MRML 연주목록</comment>
+  <comment xml:lang="lt">MRML grojaraštis</comment>
+  <comment xml:lang="nb">MRML-spilleliste</comment>
+  <comment xml:lang="nl">MRML-afspeellijst</comment>
+  <comment xml:lang="pt_BR">Lista de reprodução do MRML</comment>
+  <comment xml:lang="ru">список воспроизведения MRML</comment>
+  <comment xml:lang="sv">MRML-spellista</comment>
+  <comment xml:lang="vi">Danh mục nhạc MRML</comment>
+</mime-type>

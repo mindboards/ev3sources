@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="video/x-flic">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>FLIC animation</comment>
+  <comment xml:lang="be@latin">Animacyja FLIC</comment>
+  <comment xml:lang="bg">Анимация — FLIC</comment>
+  <comment xml:lang="ca">animació FLIC</comment>
+  <comment xml:lang="cs">Animace FLIC</comment>
+  <comment xml:lang="de">FLIC-Animation</comment>
+  <comment xml:lang="en_GB">FLIC animation</comment>
+  <comment xml:lang="es">animación FLIC</comment>
+  <comment xml:lang="eu">FLIC animazioa</comment>
+  <comment xml:lang="fi">FLIC-animaatio</comment>
+  <comment xml:lang="fr">animation FLIC</comment>
+  <comment xml:lang="ga">beochan FLIC</comment>
+  <comment xml:lang="hu">FLIC animáció</comment>
+  <comment xml:lang="id">Animasi FLIC</comment>
+  <comment xml:lang="it">Animazione FLIC</comment>
+  <comment xml:lang="ko">FLIC 동화상</comment>
+  <comment xml:lang="lt">FLIC animacija</comment>
+  <comment xml:lang="nb">FLIC-animasjon</comment>
+  <comment xml:lang="nl">FLIC-animatie</comment>
+  <comment xml:lang="nn">FLIC-animasjon</comment>
+  <comment xml:lang="pl">Plik animacji FLIC</comment>
+  <comment xml:lang="pt_BR">Animação FLIC</comment>
+  <comment xml:lang="ru">FLIC анимация</comment>
+  <comment xml:lang="sv">FLIC-animering</comment>
+  <comment xml:lang="uk">Анімація FLIC</comment>
+  <comment xml:lang="vi">Hoạt ảnh FLIC</comment>
+  <alias type="video/fli"/>
+  <alias type="video/x-fli"/>
+</mime-type>

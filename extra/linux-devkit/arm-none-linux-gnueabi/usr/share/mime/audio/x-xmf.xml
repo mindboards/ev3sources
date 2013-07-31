@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/x-xmf">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>XMF audio</comment>
+  <comment xml:lang="be@latin">Aŭdyjo XMF</comment>
+  <comment xml:lang="ca">àudio XMF</comment>
+  <comment xml:lang="cs">Zvuk XMF</comment>
+  <comment xml:lang="es">audio XMF</comment>
+  <comment xml:lang="fi">XMF-ääni</comment>
+  <comment xml:lang="fr">audio XMF</comment>
+  <comment xml:lang="ga">fuaim XMF</comment>
+  <comment xml:lang="hu">XMF hang</comment>
+  <comment xml:lang="id">Audio XMF</comment>
+  <comment xml:lang="it">Audio XMF</comment>
+  <comment xml:lang="ko">XMF 오디오</comment>
+  <comment xml:lang="lt">XMF garsas</comment>
+  <comment xml:lang="nb">XMF-lyd</comment>
+  <comment xml:lang="nl">XMF-audio</comment>
+  <comment xml:lang="pt_BR">Áudio XMF</comment>
+  <comment xml:lang="sv">XMF-ljud</comment>
+  <comment xml:lang="vi">Âm thanh XMF</comment>
+  <acronym>XMF</acronym>
+  <expanded-acronym>eXtensible Music Format</expanded-acronym>
+  <alias type="audio/xmf"/>
+  <alias type="audio/mobile-xmf"/>
+</mime-type>

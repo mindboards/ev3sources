@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-xwindowdump">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>X window image</comment>
+  <comment xml:lang="az">X window rəsmi</comment>
+  <comment xml:lang="be@latin">Vyjava vakna X</comment>
+  <comment xml:lang="bg">Изображение — X Window</comment>
+  <comment xml:lang="ca">imatge de X window</comment>
+  <comment xml:lang="cs">Obrázek X window</comment>
+  <comment xml:lang="cy">Delwedd ffenest X</comment>
+  <comment xml:lang="da">X-billede</comment>
+  <comment xml:lang="de">X-Window-Bild</comment>
+  <comment xml:lang="el">εικόνα περιβάλλοντος X</comment>
+  <comment xml:lang="en_GB">X window image</comment>
+  <comment xml:lang="eo">bildo de X window</comment>
+  <comment xml:lang="es">imagen de X window</comment>
+  <comment xml:lang="eu">X window irudia</comment>
+  <comment xml:lang="fi">X-ikkunakuva</comment>
+  <comment xml:lang="fr">image X window</comment>
+  <comment xml:lang="ga">íomhá fhuinneog X</comment>
+  <comment xml:lang="hu">X window-kép</comment>
+  <comment xml:lang="id">Citra X window</comment>
+  <comment xml:lang="it">Immagine X window</comment>
+  <comment xml:lang="ja">X window 画像</comment>
+  <comment xml:lang="ko">X 윈도우 그림</comment>
+  <comment xml:lang="lt">X window paveikslėlis</comment>
+  <comment xml:lang="ms">Imej tetingkap X</comment>
+  <comment xml:lang="nb">X-Windows skjermbilde</comment>
+  <comment xml:lang="nl">X-window-afbeelding</comment>
+  <comment xml:lang="nn">X window bilete</comment>
+  <comment xml:lang="pl">Obraz X window</comment>
+  <comment xml:lang="pt">imagem de janela X</comment>
+  <comment xml:lang="pt_BR">Imagem de janela do X</comment>
+  <comment xml:lang="sq">Figurë X window</comment>
+  <comment xml:lang="sr">X прозор слика</comment>
+  <comment xml:lang="sv">X-fönsterbild</comment>
+  <comment xml:lang="uk">Зображення X window</comment>
+  <comment xml:lang="vi">Ảnh cửa sổ X</comment>
+  <comment xml:lang="zh_CN">X window 图像</comment>
+  <comment xml:lang="zh_TW">X window 圖片</comment>
+</mime-type>

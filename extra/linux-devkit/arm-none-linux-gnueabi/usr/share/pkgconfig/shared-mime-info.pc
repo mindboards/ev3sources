@@ -1,0 +1,8 @@
+prefix=/usr
+
+Name: shared-mime-info
+Description: Freedesktop common MIME database
+Version: 0.51
+Requires:
+Libs:
+Cflags:

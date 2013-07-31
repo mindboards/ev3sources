@@ -1,0 +1,13 @@
+Package: orc-dev
+Version: 0.4.9-r0.6
+Description: orc - The Oil Runtime Compiler
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: orc
+Architecture: armv5te
+OE: orc
+Homepage: http://code.entropywave.com/projects/orc/
+Depends: orc, liborc-test-0.4-0, liborc-0.4-0
+Recommends: liborc-0.4-dev, libc6-dev, libgcc1-dev, liborc-test-0.4-dev, orc-dev
+Source: http://code.entropywave.com/download/orc/orc-0.4.9.tar.gz;name=orc

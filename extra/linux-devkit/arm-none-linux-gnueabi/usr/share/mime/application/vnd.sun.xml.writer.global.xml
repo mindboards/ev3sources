@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.sun.xml.writer.global">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>OpenOffice Writer global document</comment>
+  <comment xml:lang="az">OpenOffice Writer qlobal sənədi</comment>
+  <comment xml:lang="be@latin">Hlabalny dakument OpenOffice Writer</comment>
+  <comment xml:lang="bg">Документ - глобален — OpenOffice Writer</comment>
+  <comment xml:lang="ca">document global d'OpenOffice Writer</comment>
+  <comment xml:lang="cs">Globální dokument OpenOffice Writer</comment>
+  <comment xml:lang="cy">Dogfen eang OpenOffice (Writer)</comment>
+  <comment xml:lang="de">OpenOffice Writer-Globaldokument</comment>
+  <comment xml:lang="es">documento global de OpenOffice Writer</comment>
+  <comment xml:lang="eu">OpenOffice.org Writer dokumentu globala</comment>
+  <comment xml:lang="fi">OpenOffice.org Writer - yleinen asiakirja</comment>
+  <comment xml:lang="fr">document global OpenOffice Writer</comment>
+  <comment xml:lang="ga">cáipéis chomhchoiteann OpenOffice Writer</comment>
+  <comment xml:lang="hu">OpenOffice Writer globális dokumentum</comment>
+  <comment xml:lang="id">Dokumen global OpenOffice Writer</comment>
+  <comment xml:lang="it">Documento globale OpenOffice Writer</comment>
+  <comment xml:lang="ko">OpenOffice Writer 글로벌 문서</comment>
+  <comment xml:lang="lt">OpenOffice Writer bendrinis dokumentas</comment>
+  <comment xml:lang="nb">Global OpenOffice Writer globalt dokument</comment>
+  <comment xml:lang="nl">OpenOffice.org Writer-globaal-document</comment>
+  <comment xml:lang="pt_BR">Documento global do OpenOffice Writer</comment>
+  <comment xml:lang="ru">основной документ OpenOffice Writer</comment>
+  <comment xml:lang="sv">OpenOffice Writer-globaldokument</comment>
+  <comment xml:lang="uk">Глобальний документ OpenOffice Writer</comment>
+  <comment xml:lang="vi">Tài liệu toàn cục Writer của OpenOffice.org</comment>
+  <sub-class-of type="application/zip"/>
+  <generic-icon name="x-office-document"/>
+</mime-type>

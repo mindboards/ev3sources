@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/dicom">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>DICOM image</comment>
+  <comment xml:lang="be@latin">Vyjava DICOM</comment>
+  <comment xml:lang="bg">Изображение — DICOM</comment>
+  <comment xml:lang="ca">imatge DICOM</comment>
+  <comment xml:lang="cs">Obrázek DICOM</comment>
+  <comment xml:lang="de">DICOM-Bild</comment>
+  <comment xml:lang="en_GB">DICOM image</comment>
+  <comment xml:lang="es">imagen DICOM</comment>
+  <comment xml:lang="eu">DICOM irudia</comment>
+  <comment xml:lang="fi">DICOM-kuva</comment>
+  <comment xml:lang="fr">image DICOM</comment>
+  <comment xml:lang="ga">íomhá DICOM</comment>
+  <comment xml:lang="hu">DICOM kép</comment>
+  <comment xml:lang="id">Citra DICOM</comment>
+  <comment xml:lang="it">Immagine DICOM</comment>
+  <comment xml:lang="ko">DICOM 그림</comment>
+  <comment xml:lang="lt">DICOM paveikslėlis</comment>
+  <comment xml:lang="nb">DICOM-bilde</comment>
+  <comment xml:lang="nl">DICOM-afbeelding</comment>
+  <comment xml:lang="nn">DICOM-bilete</comment>
+  <comment xml:lang="pl">Obraz DICOM</comment>
+  <comment xml:lang="pt_BR">Imagem DICOM</comment>
+  <comment xml:lang="ru">изображение DICOM</comment>
+  <comment xml:lang="sv">DICOM-bild</comment>
+  <comment xml:lang="uk">Зображення DICOM</comment>
+  <comment xml:lang="vi">Ảnh DICOM</comment>
+  <acronym>DICOM</acronym>
+  <expanded-acronym>Digital Imaging and Communications in Medicine</expanded-acronym>
+  <generic-icon name="image-x-generic"/>
+</mime-type>

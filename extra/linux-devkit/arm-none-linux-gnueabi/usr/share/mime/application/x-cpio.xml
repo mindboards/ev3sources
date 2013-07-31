@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-cpio">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>CPIO archive</comment>
+  <comment xml:lang="az">CPIO arxivi</comment>
+  <comment xml:lang="be@latin">Archiŭ CPIO</comment>
+  <comment xml:lang="bg">Архив — CPIO</comment>
+  <comment xml:lang="ca">arxiu CPIO</comment>
+  <comment xml:lang="cs">Archiv CPIO</comment>
+  <comment xml:lang="cy">Archif CPIO</comment>
+  <comment xml:lang="da">CPIO-arkiv</comment>
+  <comment xml:lang="de">CPIO-Archiv</comment>
+  <comment xml:lang="el">αρχείο CPIO</comment>
+  <comment xml:lang="en_GB">CPIO archive</comment>
+  <comment xml:lang="eo">CPIO-arkivo</comment>
+  <comment xml:lang="es">archivador CPIO</comment>
+  <comment xml:lang="eu">CPIO artxiboa</comment>
+  <comment xml:lang="fi">CPIO-arkisto</comment>
+  <comment xml:lang="fr">archive CPIO</comment>
+  <comment xml:lang="ga">cartlann CPIO</comment>
+  <comment xml:lang="hu">CPIO-archívum</comment>
+  <comment xml:lang="id">Arsip CPIO</comment>
+  <comment xml:lang="it">Archivio CPIO</comment>
+  <comment xml:lang="ja">CPIO アーカイブ</comment>
+  <comment xml:lang="ko">CPIO 묶음파일</comment>
+  <comment xml:lang="lt">CPIO archyvas</comment>
+  <comment xml:lang="ms">Arkib CPIO</comment>
+  <comment xml:lang="nb">CPIO-arkiv</comment>
+  <comment xml:lang="nl">CPIO-archief</comment>
+  <comment xml:lang="nn">CPIO-arkiv</comment>
+  <comment xml:lang="pl">Archiwum CPIO</comment>
+  <comment xml:lang="pt">arquivo CPIO</comment>
+  <comment xml:lang="pt_BR">Pacote CPIO</comment>
+  <comment xml:lang="ru">архив CPIO</comment>
+  <comment xml:lang="sq">Arkiv CPIO</comment>
+  <comment xml:lang="sr">CPIO архива</comment>
+  <comment xml:lang="sv">CPIO-arkiv</comment>
+  <comment xml:lang="uk">Архів CPIO</comment>
+  <comment xml:lang="vi">Kho nén CPIO</comment>
+  <comment xml:lang="zh_CN">CPIO 压缩包</comment>
+  <comment xml:lang="zh_TW">CPIO 保存檔</comment>
+  <generic-icon name="package-x-generic"/>
+</mime-type>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-genesis-rom">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Genesis ROM</comment>
+  <comment xml:lang="be@latin">Genesis ROM</comment>
+  <comment xml:lang="bg">ROM — Genesis</comment>
+  <comment xml:lang="ca">ROM de Genesis</comment>
+  <comment xml:lang="cs">ROM pro Genesis</comment>
+  <comment xml:lang="da">Genesis-rom</comment>
+  <comment xml:lang="de">Genesis-ROM</comment>
+  <comment xml:lang="el">εικόνα μνήμης ROM Genesis</comment>
+  <comment xml:lang="en_GB">Genesis ROM</comment>
+  <comment xml:lang="eo">Genesis-NLM</comment>
+  <comment xml:lang="es">ROM de Genesis (Mega Drive)</comment>
+  <comment xml:lang="eu">Genesis-eko ROMa</comment>
+  <comment xml:lang="fi">Genesis-ROM</comment>
+  <comment xml:lang="fr">ROM Mega Drive/Genesis</comment>
+  <comment xml:lang="ga">ROM Genesis</comment>
+  <comment xml:lang="hu">Genesis ROM</comment>
+  <comment xml:lang="id">Memori baca-saja Genesis</comment>
+  <comment xml:lang="it">ROM Megadrive</comment>
+  <comment xml:lang="ja">Genesis ROM</comment>
+  <comment xml:lang="ko">제네시스 롬</comment>
+  <comment xml:lang="lt">Genesis ROM</comment>
+  <comment xml:lang="ms">ROM Genesis</comment>
+  <comment xml:lang="nb">Genesis-ROM</comment>
+  <comment xml:lang="nl">Mega Drive</comment>
+  <comment xml:lang="nn">Genesis-ROM</comment>
+  <comment xml:lang="pl">Plik ROM konsoli Genesis</comment>
+  <comment xml:lang="pt">ROM Genesis</comment>
+  <comment xml:lang="pt_BR">ROM do Gênesis (Mega Drive)</comment>
+  <comment xml:lang="ru">Genesis ROM </comment>
+  <comment xml:lang="sq">ROM Genesis</comment>
+  <comment xml:lang="sr">Genesis РОМ</comment>
+  <comment xml:lang="sv">Genesis-rom</comment>
+  <comment xml:lang="uk">ПЗП Genesis</comment>
+  <comment xml:lang="vi">ROM Genesis</comment>
+  <comment xml:lang="zh_CN">Genesis ROM</comment>
+  <comment xml:lang="zh_TW">Genesis ROM</comment>
+  <generic-icon name="application-x-executable"/>
+</mime-type>

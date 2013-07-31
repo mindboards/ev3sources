@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-portable-anymap">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>PNM image</comment>
+  <comment xml:lang="az">PNM rəsmi</comment>
+  <comment xml:lang="be@latin">Vyjava PNM</comment>
+  <comment xml:lang="bg">Изображение — PNM</comment>
+  <comment xml:lang="ca">imatge PNM</comment>
+  <comment xml:lang="cs">Obrázek PNM</comment>
+  <comment xml:lang="cy">Delwedd PNM</comment>
+  <comment xml:lang="da">PNM-billede</comment>
+  <comment xml:lang="de">PNM-Bild</comment>
+  <comment xml:lang="el">εικόνα PNM</comment>
+  <comment xml:lang="en_GB">PNM image</comment>
+  <comment xml:lang="eo">PNM-bildo</comment>
+  <comment xml:lang="es">imagen PNM</comment>
+  <comment xml:lang="eu">PNM irudia</comment>
+  <comment xml:lang="fi">PNM-kuva</comment>
+  <comment xml:lang="fr">image PNM</comment>
+  <comment xml:lang="ga">íomhá PNM</comment>
+  <comment xml:lang="hu">PNM-kép</comment>
+  <comment xml:lang="id">Citra PNM</comment>
+  <comment xml:lang="it">Immagine PNM</comment>
+  <comment xml:lang="ja">PNM 画像</comment>
+  <comment xml:lang="ko">PNM 그림</comment>
+  <comment xml:lang="lt">PNM paveikslėlis</comment>
+  <comment xml:lang="ms">Imej PNM</comment>
+  <comment xml:lang="nb">PNM-bilde</comment>
+  <comment xml:lang="nl">PNM-afbeelding</comment>
+  <comment xml:lang="nn">PNM-bilete</comment>
+  <comment xml:lang="pl">Obraz PNM</comment>
+  <comment xml:lang="pt">imagem PNM</comment>
+  <comment xml:lang="pt_BR">Imagem PNM</comment>
+  <comment xml:lang="ru">изображение PNM</comment>
+  <comment xml:lang="sq">Figurë PNM</comment>
+  <comment xml:lang="sr">PNM слика</comment>
+  <comment xml:lang="sv">PNM-bild</comment>
+  <comment xml:lang="uk">Зображення PNM</comment>
+  <comment xml:lang="vi">Ảnh PNM</comment>
+  <comment xml:lang="zh_CN">PNM 图像</comment>
+  <comment xml:lang="zh_TW">PNM 圖片</comment>
+</mime-type>

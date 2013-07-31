@@ -1,0 +1,13 @@
+Package: libqtnetworke-dev
+Version: 4.6.3-r25.1-arago4.6
+Description: Version 4.6.3-r25.1-arago4 of package qt4-embedded
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPLv2.1
+Architecture: armv5te
+OE: qt4-embedded
+Homepage: http://www.trolltech.com
+Depends: libqtnetworke4, libqtcoree-dev
+Recommends: libts-1.0-dev, libfreetype-dev, libjpeg-dev, libpng-dev, libz-dev, dbus-dev, libglib-2.0-dev, gstreamer-dev, gst-plugins-base-dev, libqtcoree-dev, libc6-dev, libstdc++6-dev, libgcc1-dev
+Source: ftp://ftp.trolltech.com/qt/source/qt-everywhere-opensource-src-4.6.3.tar.gz file://0001-cross-compile.patch file://0002-fix-resinit-declaration.patch file://0004-no-qmake.patch file://0006-freetype-host-includes.patch file://0008-qt-lib-infix.patch file://0009-support-2bpp.patch file://0010-no-simpledecoration-example.patch file://fix-config-tests.patch file://qt-config.patch file://g++.conf file://linux.conf file://qte.sh file://hack-out-pg_config.patch

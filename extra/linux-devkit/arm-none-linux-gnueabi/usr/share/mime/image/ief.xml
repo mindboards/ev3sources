@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/ief">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>IEF image</comment>
+  <comment xml:lang="az">IEF rəsmi</comment>
+  <comment xml:lang="be@latin">Vyjava IEF</comment>
+  <comment xml:lang="bg">Изображение — IEF</comment>
+  <comment xml:lang="ca">imatge IEF</comment>
+  <comment xml:lang="cs">Obrázek IEF</comment>
+  <comment xml:lang="cy">Delwedd IEF</comment>
+  <comment xml:lang="da">IEF-billede</comment>
+  <comment xml:lang="de">IEF-Bild</comment>
+  <comment xml:lang="el">εικόνα IEF</comment>
+  <comment xml:lang="en_GB">IEF image</comment>
+  <comment xml:lang="eo">IEF-bildo</comment>
+  <comment xml:lang="es">imagen IEF</comment>
+  <comment xml:lang="eu">IEF irudia</comment>
+  <comment xml:lang="fi">IEF-kuva</comment>
+  <comment xml:lang="fr">image IEF</comment>
+  <comment xml:lang="ga">íomhá IEF</comment>
+  <comment xml:lang="hu">IEF-kép</comment>
+  <comment xml:lang="id">Citra IEF</comment>
+  <comment xml:lang="it">Immagine IEF</comment>
+  <comment xml:lang="ja">IEF 画像</comment>
+  <comment xml:lang="ko">IEF 그림</comment>
+  <comment xml:lang="lt">IEF paveikslėlis</comment>
+  <comment xml:lang="ms">Imej IEF</comment>
+  <comment xml:lang="nb">IEF-bilde</comment>
+  <comment xml:lang="nl">IEF-afbeelding</comment>
+  <comment xml:lang="nn">IEF-bilete</comment>
+  <comment xml:lang="pl">Obraz IEF</comment>
+  <comment xml:lang="pt">imagem IEF</comment>
+  <comment xml:lang="pt_BR">Imagem IEF</comment>
+  <comment xml:lang="ru">изображение IEF</comment>
+  <comment xml:lang="sq">Figurë IEF</comment>
+  <comment xml:lang="sr">IEF слика</comment>
+  <comment xml:lang="sv">IEF-bild</comment>
+  <comment xml:lang="uk">Зображення IEF</comment>
+  <comment xml:lang="vi">Ảnh IEF</comment>
+  <comment xml:lang="zh_CN">IEF 图像</comment>
+  <comment xml:lang="zh_TW">IEF 圖片</comment>
+</mime-type>

@@ -1,0 +1,11 @@
+Package: alsa-dev
+Version: 1.0.23-r0.6
+Description: Alsa sound library
+Section: libs/multimedia
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPLv2.1
+Architecture: armv5te
+OE: alsa-lib
+Homepage: http://www.alsa-project.org
+Source: ftp://ftp.alsa-project.org/pub/lib/alsa-lib-1.0.23.tar.bz2 file://fix-tstamp-declaration.patch file://fix_libmath.patch

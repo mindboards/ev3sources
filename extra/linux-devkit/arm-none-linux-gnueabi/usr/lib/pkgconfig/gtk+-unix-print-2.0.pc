@@ -1,0 +1,14 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+target=x11
+
+gtk_binary_version=2.10.0
+gtk_host=arm-none-linux-gnueabi
+
+Name: GTK+
+Description: GTK+ Unix print support
+Version: 2.20.1
+Requires: gtk+-${target}-2.0 atk cairo gio-2.0 pangoft2
+Cflags: -I${includedir}/gtk-unix-print-2.0

@@ -1,0 +1,13 @@
+Package: openssl-dev
+Version: 1.0.0b-r13.1-arago1.6
+Description: Secure Socket Layer (SSL) binary and related cryptographic tools.
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: openssl
+Architecture: armv5te
+OE: openssl
+Homepage: http://www.openssl.org/
+Depends: openssl, libssl1.0.0, libcrypto1.0.0
+Recommends: ocf-linux-dev, libc6-dev, libgcc1-dev, libcrypto-dev, libssl-dev, openssl-dev
+Source: http://www.openssl.org/source/openssl-1.0.0b.tar.gz;name=src file://configure-targets.patch file://shared-libs.patch file://debian.patch file://oe-ldflags.patch file://libdeps-first.patch file://engines-install-in-libdir-ssl.patch

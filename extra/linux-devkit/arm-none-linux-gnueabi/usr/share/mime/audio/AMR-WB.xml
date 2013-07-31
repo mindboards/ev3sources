@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/AMR-WB">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>AMR-WB audio</comment>
+  <comment xml:lang="be@latin">Aŭdyjo AMR-WB</comment>
+  <comment xml:lang="bg">Аудио — AMR-WB</comment>
+  <comment xml:lang="ca">àudio AMR-WB</comment>
+  <comment xml:lang="cs">Zvuk AMR-WB</comment>
+  <comment xml:lang="de">AMR-WB-Audio</comment>
+  <comment xml:lang="es">audio AMR-WB</comment>
+  <comment xml:lang="eu">AMR-WB audioa</comment>
+  <comment xml:lang="fi">AMR-WB-ääni</comment>
+  <comment xml:lang="fr">audio AMR-WB</comment>
+  <comment xml:lang="ga">fuaim AMR-WB</comment>
+  <comment xml:lang="hu">AMR-WB hang</comment>
+  <comment xml:lang="id">Audio AMR-WB</comment>
+  <comment xml:lang="it">Audio AMR-WB</comment>
+  <comment xml:lang="ko">AMR-WB 오디오</comment>
+  <comment xml:lang="lt">AMR-WB garsas</comment>
+  <comment xml:lang="nb">AMR-WB-lyd</comment>
+  <comment xml:lang="nl">AMR-WB-audio</comment>
+  <comment xml:lang="pl">Plik dźwiękowy AMR-WB</comment>
+  <comment xml:lang="pt_BR">Áudio AMR-WB</comment>
+  <comment xml:lang="ru">AMR-WB аудио</comment>
+  <comment xml:lang="sv">AMR-WB-ljud</comment>
+  <comment xml:lang="uk">Звук AMR-WB</comment>
+  <comment xml:lang="vi">Âm thanh AMR-WB</comment>
+  <acronym>AMR-WB</acronym>
+  <expanded-acronym>Adaptive Multi-Rate Wideband</expanded-acronym>
+</mime-type>

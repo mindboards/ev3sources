@@ -1,0 +1,13 @@
+Package: eggdbus-dev
+Version: 0.6-r0.6
+Description: gobject dbus binding
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2
+Architecture: armv5te
+OE: eggdbus
+Homepage: http://cgit.freedesktop.org/~david/eggdbus
+Depends: eggdbus, eggdbus, libglib-2.0-dev
+Recommends: dbus-dev, libglib-2.0-dev, libdbus-glib-1-dev, gio-2.0-dev, libc6-dev, libz-dev, gmodule-2.0-dev, libc6-dev, dbus-lib-dev, gobject-2.0-dev, gthread-2.0-dev, libgcc1-dev, eggdbus-dev
+Source: http://cgit.freedesktop.org/~david/eggdbus/snapshot/eggdbus-0.6.tar.bz2;name=eggdbus file://gtk-doc.patch file://marshal.patch

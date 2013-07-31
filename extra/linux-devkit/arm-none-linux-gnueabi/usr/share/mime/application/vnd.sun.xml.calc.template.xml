@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.sun.xml.calc.template">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>OpenOffice Calc template</comment>
+  <comment xml:lang="be@latin">Šablon OpenOffice Calc</comment>
+  <comment xml:lang="bg">Шаблон за таблици — OpenOffice Calc</comment>
+  <comment xml:lang="ca">plantilla d'OpenOffice Calc</comment>
+  <comment xml:lang="cs">Šablona OpenOffice Calc</comment>
+  <comment xml:lang="de">OpenOffice Calc-Vorlage</comment>
+  <comment xml:lang="en_GB">OpenOffice Calc template</comment>
+  <comment xml:lang="es">plantilla de OpenOffice Calc</comment>
+  <comment xml:lang="eu">OpenOffice Calc txantiloia</comment>
+  <comment xml:lang="fi">OpenOffice Calc -malli</comment>
+  <comment xml:lang="fr">modèle OpenOffice Calc</comment>
+  <comment xml:lang="ga">teimpléad OpenOffice Calc</comment>
+  <comment xml:lang="hu">OpenOffice Calc sablon</comment>
+  <comment xml:lang="id">Templat OpenOffice Calc</comment>
+  <comment xml:lang="it">Modello OpenOffice Calc</comment>
+  <comment xml:lang="ko">OpenOffice Calc 스프레드시트 문서 틀</comment>
+  <comment xml:lang="lt">OpenOffice Calc šablonas</comment>
+  <comment xml:lang="nb">OpenOffice Calc-mal</comment>
+  <comment xml:lang="nl">OpenOffice.org Calc-sjabloon</comment>
+  <comment xml:lang="nn">OpenOffice Calc-mal</comment>
+  <comment xml:lang="pl">Szablon arkusza OpenOffice</comment>
+  <comment xml:lang="pt_BR">Modelo do OpenOffice Calc</comment>
+  <comment xml:lang="ru">шаблон электронной таблицы OpenOffice Calc</comment>
+  <comment xml:lang="sv">OpenOffice Calc-mall</comment>
+  <comment xml:lang="uk">Шаблон ел.таблиці OpenOffice Calc</comment>
+  <comment xml:lang="vi">Mẫu bảng tính Calc của OpenOffice.org</comment>
+  <sub-class-of type="application/zip"/>
+  <generic-icon name="x-office-spreadsheet"/>
+</mime-type>

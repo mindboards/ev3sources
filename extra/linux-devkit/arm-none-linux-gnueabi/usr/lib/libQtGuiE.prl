@@ -1,0 +1,7 @@
+QMAKE_PRL_BUILD_DIR = /home/schuyler_2/am_builds/arago-tmp/work/armv5te-none-linux-gnueabi/qt4-embedded-4.6.3-r25.1-arago4/qt-everywhere-opensource-src-4.6.3/src/gui/
+QMAKE_PRO_INPUT = gui.pro
+QMAKE_PRL_TARGET = libQtGuiE.so.4.6.3
+QMAKE_PRL_DEFINES = QT_SHARED
+QMAKE_PRL_CONFIG = lex yacc warn_on uic resources qt warn_on release incremental link_prl no_mocdepend release stl qt_no_framework silent release shared dll embedded largefile stl exceptions_off dylib create_prl link_prl depend_includepath QTDIR_build qt_install_headers qt warn_on depend_includepath qmake_cache target_qt hide_symbols bsymbolic_functions create_libtool create_pc explicitlib opentype moc thread shared dll
+QMAKE_PRL_VERSION = 4.6.3
+QMAKE_PRL_LIBS =     -lQtNetworkE  -lQtCoreE -lglib-2.0 -lpthread 

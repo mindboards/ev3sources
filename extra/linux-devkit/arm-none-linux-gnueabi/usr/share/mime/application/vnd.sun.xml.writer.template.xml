@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.sun.xml.writer.template">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>OpenOffice Writer template</comment>
+  <comment xml:lang="az">OpenOffice Writer şablonu</comment>
+  <comment xml:lang="be@latin">Šablon OpenOffice Writer</comment>
+  <comment xml:lang="bg">Шаблон за документи — OpenOffice Writer</comment>
+  <comment xml:lang="ca">plantilla d'OpenOffice Writer</comment>
+  <comment xml:lang="cs">Šablona OpenOffice Writer</comment>
+  <comment xml:lang="cy">Templed OpenOffice (Writer)</comment>
+  <comment xml:lang="de">OpenOffice Writer-Vorlage</comment>
+  <comment xml:lang="en_GB">OpenOffice Writer template</comment>
+  <comment xml:lang="es">plantilla de OpenOffice Writer</comment>
+  <comment xml:lang="eu">OpenOffice Writer txantiloia</comment>
+  <comment xml:lang="fi">OpenOffice Writer -malli</comment>
+  <comment xml:lang="fr">modèle OpenOffice Writer</comment>
+  <comment xml:lang="ga">teimpléad OpenOffice Writer</comment>
+  <comment xml:lang="hu">OpenOffice Writer sablon</comment>
+  <comment xml:lang="id">Templat OpenOffice Writer</comment>
+  <comment xml:lang="it">Modello OpenOffice Writer</comment>
+  <comment xml:lang="ko">OpenOffice Writer 문서 틀</comment>
+  <comment xml:lang="lt">OpenOffice Writer šablonas</comment>
+  <comment xml:lang="nb">OpenOffice Writer-mal</comment>
+  <comment xml:lang="nl">OpenOffice.org Writer-sjabloon</comment>
+  <comment xml:lang="nn">OpenOffice Writer-mal</comment>
+  <comment xml:lang="pl">Szablon dokumentu OpenOffice</comment>
+  <comment xml:lang="pt_BR">Modelo do OpenOffice Writer</comment>
+  <comment xml:lang="ru">шаблон документа OpenOffice Writer</comment>
+  <comment xml:lang="sv">OpenOffice Writer-mall</comment>
+  <comment xml:lang="uk">Шаблон документу OpenOffice Writer</comment>
+  <comment xml:lang="vi">Mẫu tài liệu Writer của OpenOffice.org</comment>
+  <sub-class-of type="application/zip"/>
+  <generic-icon name="x-office-document"/>
+</mime-type>

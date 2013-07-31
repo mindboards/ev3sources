@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-mup">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Mup publication</comment>
+  <comment xml:lang="be@latin">Publikacyja Mup</comment>
+  <comment xml:lang="bg">Издание — Mup</comment>
+  <comment xml:lang="ca">publicació Mup</comment>
+  <comment xml:lang="cs">Publikace Mup</comment>
+  <comment xml:lang="de">Mup-Veröffentlichung</comment>
+  <comment xml:lang="en_GB">Mup publication</comment>
+  <comment xml:lang="es">publicación Mup</comment>
+  <comment xml:lang="eu">Mup publikazioa</comment>
+  <comment xml:lang="fi">Mup-julkaisu</comment>
+  <comment xml:lang="fr">publication Mup</comment>
+  <comment xml:lang="ga">foilseachán Mup</comment>
+  <comment xml:lang="hu">Mup publikáció</comment>
+  <comment xml:lang="id">Publikasi Mup</comment>
+  <comment xml:lang="it">Pubblicazione Mup</comment>
+  <comment xml:lang="ko">Mup 출판</comment>
+  <comment xml:lang="lt">Mup leidinys</comment>
+  <comment xml:lang="nb">Mup publikasjon</comment>
+  <comment xml:lang="nl">Mup-publicatie</comment>
+  <comment xml:lang="nn">Mup-publikasjon</comment>
+  <comment xml:lang="pl">Publikacja Mup</comment>
+  <comment xml:lang="pt_BR">Publicação do Mup</comment>
+  <comment xml:lang="sv">Mup-publicering</comment>
+  <comment xml:lang="uk">Публікація Mup</comment>
+  <comment xml:lang="vi">Bản xuất Mup</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

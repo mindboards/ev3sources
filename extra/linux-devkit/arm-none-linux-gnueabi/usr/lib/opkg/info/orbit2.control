@@ -1,0 +1,12 @@
+Package: orbit2
+Version: 2.14.17-r0.6
+Description: CORBA ORB
+Section: x11/gnome/libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPL
+Architecture: armv5te
+OE: orbit2
+Homepage: unknown
+Depends: libgmodule-2.0-0, libc6, libgobject-2.0-0, libgthread-2.0-0, libglib-2.0-0, libgcc1, libidl-2-0
+Source: http://ftp.gnome.org/pub/GNOME/sources/ORBit2/2.14/ORBit2-2.14.17.tar.bz2 file://configure-lossage.patch file://pkgconfig-fix.patch file://gtk-doc.m4 file://gtk-doc.make

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="message/external-body">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>reference to remote file</comment>
+  <comment xml:lang="az">uzaq fayla göstəriş</comment>
+  <comment xml:lang="be@latin">spasyłka da addalenaha fajłu</comment>
+  <comment xml:lang="bg">Препратка към отдалечен файл</comment>
+  <comment xml:lang="ca">referència a fitxer remot</comment>
+  <comment xml:lang="cs">Odkaz na vzdálený soubor</comment>
+  <comment xml:lang="cy">cyfeiriad at ffeil bell</comment>
+  <comment xml:lang="da">reference til fjern fil</comment>
+  <comment xml:lang="de">Verweis auf entfernte Datei</comment>
+  <comment xml:lang="el">αναφορά σε απόμακρο αρχείο</comment>
+  <comment xml:lang="en_GB">reference to remote file</comment>
+  <comment xml:lang="eo">referenco al fora dosiero</comment>
+  <comment xml:lang="es">referencia a un archivo remoto</comment>
+  <comment xml:lang="eu">erreferentzia urruneko fitxategiari</comment>
+  <comment xml:lang="fi">viittaus etätiedostoon</comment>
+  <comment xml:lang="fr">référence au fichier distant</comment>
+  <comment xml:lang="ga">tagairt do chomhad cianda</comment>
+  <comment xml:lang="hu">hivatkozás távoli fájlra</comment>
+  <comment xml:lang="id">referensi ke berkas jarak jauh</comment>
+  <comment xml:lang="it">Riferimento a file remoto</comment>
+  <comment xml:lang="ja">リモートファイルへの参照</comment>
+  <comment xml:lang="ko">원격 파일 참조</comment>
+  <comment xml:lang="lt">nuoroda į nutolusią rinkmeną</comment>
+  <comment xml:lang="ms">Rujukan ke fail jauh</comment>
+  <comment xml:lang="nb">referanse til ekstern fil</comment>
+  <comment xml:lang="nl">verwijzing naar bestand op afstand</comment>
+  <comment xml:lang="nn">referanse til fil over nettverk</comment>
+  <comment xml:lang="pl">odwołanie do pliku zdalnego</comment>
+  <comment xml:lang="pt">referência a um ficheiro remoto</comment>
+  <comment xml:lang="pt_BR">referência a um arquivo remoto</comment>
+  <comment xml:lang="sq">referim me file remot</comment>
+  <comment xml:lang="sr">референца на удаљену датотеку</comment>
+  <comment xml:lang="sv">referens till fjärrfil</comment>
+  <comment xml:lang="uk">посилання на віддалений файл</comment>
+  <comment xml:lang="vi">tham chiếu đến tập tin ở xa</comment>
+  <comment xml:lang="zh_CN">到远程文件的引用</comment>
+  <generic-icon name="text-x-generic"/>
+</mime-type>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-hwp">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Haansoft Hangul document</comment>
+  <comment xml:lang="be@latin">Dakument Haansoft Hangul</comment>
+  <comment xml:lang="bg">Документ — Haansoft Hangul</comment>
+  <comment xml:lang="ca">document Haansoft Hangul</comment>
+  <comment xml:lang="cs">Dokument Haansoft Hangul</comment>
+  <comment xml:lang="de">Haansoft Hangul-Dokument</comment>
+  <comment xml:lang="es">documento de Haansoft Hangul</comment>
+  <comment xml:lang="eu">Haansoft Hangul dokumentua</comment>
+  <comment xml:lang="fi">Haansoft Hangul -asiakirja</comment>
+  <comment xml:lang="fr">document Haansoft Hangul</comment>
+  <comment xml:lang="ga">cáipéis Haansoft Hangul</comment>
+  <comment xml:lang="hu">Haansoft hangul dokumentum</comment>
+  <comment xml:lang="id">Dokumen Haansoft Hangul</comment>
+  <comment xml:lang="it">Documento Haansoft Hangul</comment>
+  <comment xml:lang="ko">한소프트 한글 문서</comment>
+  <comment xml:lang="lt">Haansoft Hangul dokumentas</comment>
+  <comment xml:lang="nb">Haansoft Hangul-dokument</comment>
+  <comment xml:lang="nl">Haansoft Hangul-document</comment>
+  <comment xml:lang="pl">Dokument Haansoft Hangul</comment>
+  <comment xml:lang="pt_BR">Documento do Haansoft Hangul</comment>
+  <comment xml:lang="sv">Haansoft Hangul-dokument</comment>
+  <comment xml:lang="uk">Документ Haansoft Hangul</comment>
+  <comment xml:lang="vi">Tài liệu Hangul Haansoft</comment>
+  <generic-icon name="x-office-document"/>
+  <alias type="application/vnd.haansoft-hwp"/>
+</mime-type>

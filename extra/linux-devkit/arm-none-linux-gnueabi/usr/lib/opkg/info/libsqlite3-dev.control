@@ -1,0 +1,13 @@
+Package: libsqlite3-dev
+Version: 3.6.23.1-r3.1.6
+Description: An Embeddable SQL Database Engine
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: PD
+Architecture: armv5te
+OE: sqlite3
+Homepage: unknown
+Depends: libsqlite3-0
+Recommends: libreadline-dev, ncurses-dev, libc6-dev, libgcc1-dev, libsqlite3-dev
+Source: http://www.sqlite.org/sqlite-3.6.23.1.tar.gz file://libtool.patch

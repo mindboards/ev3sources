@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-qw">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Quicken document</comment>
+  <comment xml:lang="az">Quicken sənədi</comment>
+  <comment xml:lang="be@latin">Dakument Quicken</comment>
+  <comment xml:lang="bg">Документ — Quicken</comment>
+  <comment xml:lang="ca">document de Quicken</comment>
+  <comment xml:lang="cs">Dokument Quicken</comment>
+  <comment xml:lang="cy">Dogfen Quicken</comment>
+  <comment xml:lang="da">Quicken-dokument</comment>
+  <comment xml:lang="de">Quicken-Dokument</comment>
+  <comment xml:lang="el">έγγραφο Quicken</comment>
+  <comment xml:lang="en_GB">Quicken document</comment>
+  <comment xml:lang="eo">Quicken-dokumento</comment>
+  <comment xml:lang="es">documento de Quicken</comment>
+  <comment xml:lang="eu">Quicken dokumentua</comment>
+  <comment xml:lang="fi">Quicken-asiakirja</comment>
+  <comment xml:lang="fr">document Quicken</comment>
+  <comment xml:lang="ga">cáipéis Quicken</comment>
+  <comment xml:lang="hu">Quicken-dokumentum</comment>
+  <comment xml:lang="id">Dokumen Quicken</comment>
+  <comment xml:lang="it">Documento Quicken</comment>
+  <comment xml:lang="ja">Quicken ドキュメント</comment>
+  <comment xml:lang="ko">Quicken 문서</comment>
+  <comment xml:lang="lt">Quicken dokumentas</comment>
+  <comment xml:lang="ms">Dokumen Quicken</comment>
+  <comment xml:lang="nb">Quicken-dokument</comment>
+  <comment xml:lang="nl">Quicken-document</comment>
+  <comment xml:lang="nn">Quicken-dokument</comment>
+  <comment xml:lang="pl">Dokument Quicken</comment>
+  <comment xml:lang="pt">documento Quicken</comment>
+  <comment xml:lang="pt_BR">Documento do Quicken</comment>
+  <comment xml:lang="ru">документ Quicken</comment>
+  <comment xml:lang="sq">Dokument Quicken</comment>
+  <comment xml:lang="sr">Quicken документ</comment>
+  <comment xml:lang="sv">Quicken-dokument</comment>
+  <comment xml:lang="uk">Документ Quicken</comment>
+  <comment xml:lang="vi">Tài liệu Quicken</comment>
+  <comment xml:lang="zh_CN">Quicken 文档</comment>
+  <comment xml:lang="zh_TW">Quicken 文件</comment>
+  <generic-icon name="x-office-spreadsheet"/>
+</mime-type>

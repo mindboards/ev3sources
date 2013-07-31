@@ -1,0 +1,12 @@
+Package: task-arago-toolchain-tisdk-crypto-target
+Version: 1.0-r2.6
+Description: Task to install crypto dev packages in SDK
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT
+Architecture: am180x-evm
+OE: task-arago-toolchain-tisdk-crypto-target
+Homepage: unknown
+Depends: openssl-dev, wpa-supplicant-dev, ocf-linux-dev
+Source: file:///home/schuyler_2/am_builds/arago/recipes/tasks/task-arago-toolchain-tisdk-crypto-target.bb

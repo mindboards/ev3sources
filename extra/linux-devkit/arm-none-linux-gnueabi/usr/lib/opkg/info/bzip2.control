@@ -1,0 +1,12 @@
+Package: bzip2
+Version: 1.0.6-r0.6
+Description: Very high-quality data compression program
+Section: console/utils
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: bzip2
+Architecture: armv5te
+OE: bzip2
+Homepage: unknown
+Depends: libbz2-1, libgcc1, libc6
+Source: http://www.bzip.org/1.0.6/bzip2-1.0.6.tar.gz file://bzip2-1.0.5-autoconfiscated.patch

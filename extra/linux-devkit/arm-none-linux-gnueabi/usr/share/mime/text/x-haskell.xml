@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-haskell">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Haskell source code</comment>
+  <comment xml:lang="az">Haskell mənbə kodu</comment>
+  <comment xml:lang="be@latin">Kryničny kod Haskell</comment>
+  <comment xml:lang="bg">Изходен код на Haskell</comment>
+  <comment xml:lang="ca">codi font en Haskell</comment>
+  <comment xml:lang="cs">Zdrojový kód Haskell</comment>
+  <comment xml:lang="cy">Ffynhonnell rhaglen Haskell</comment>
+  <comment xml:lang="da">Haskell-kildekode</comment>
+  <comment xml:lang="de">Haskell-Quelltext</comment>
+  <comment xml:lang="el">πηγαίος κώδικας Haskell</comment>
+  <comment xml:lang="en_GB">Haskell source code</comment>
+  <comment xml:lang="eo">Haskell-fontkodo</comment>
+  <comment xml:lang="es">código fuente en Haskell</comment>
+  <comment xml:lang="eu">Haskell iturburu-kodea</comment>
+  <comment xml:lang="fi">Haskell-lähdekoodi</comment>
+  <comment xml:lang="fr">code source Haskell</comment>
+  <comment xml:lang="ga">cód foinseach Haskell</comment>
+  <comment xml:lang="hu">Haskell-forráskód</comment>
+  <comment xml:lang="id">Kode program Haskell</comment>
+  <comment xml:lang="it">Codice sorgente Haskell</comment>
+  <comment xml:lang="ja">Haskell ソースコード</comment>
+  <comment xml:lang="ko">Haskell 소스 코드</comment>
+  <comment xml:lang="lt">Haskell pradinis kodas</comment>
+  <comment xml:lang="ms">Kod sumber Haskell</comment>
+  <comment xml:lang="nb">Haskell-kildekode</comment>
+  <comment xml:lang="nl">Haskell-broncode</comment>
+  <comment xml:lang="nn">Haskell-kjeldekode</comment>
+  <comment xml:lang="pl">Kod źródłowy w Haskellu</comment>
+  <comment xml:lang="pt">código fonte Haskell</comment>
+  <comment xml:lang="pt_BR">Código fonte Haskell</comment>
+  <comment xml:lang="ru">исходный код на языке Haskell</comment>
+  <comment xml:lang="sq">Kod burues Haskell</comment>
+  <comment xml:lang="sr">Haskell изворни ко̂д</comment>
+  <comment xml:lang="sv">Haskell-källkod</comment>
+  <comment xml:lang="uk">Вихідний код на мові Haskell</comment>
+  <comment xml:lang="vi">Mã nguồn Haskell</comment>
+  <comment xml:lang="zh_CN">Haskell 源代码</comment>
+  <comment xml:lang="zh_TW">Haskell 源代碼</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

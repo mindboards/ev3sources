@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-font-libgrx">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>LIBGRX font</comment>
+  <comment xml:lang="az">LIBGRX yazı növü</comment>
+  <comment xml:lang="be@latin">Šryft LIBGRX</comment>
+  <comment xml:lang="bg">Шрифт — LIBGRX</comment>
+  <comment xml:lang="ca">tipus de lletra LIBGRX</comment>
+  <comment xml:lang="cs">Písmo LIBGRX</comment>
+  <comment xml:lang="cy">Ffont LIBGRX</comment>
+  <comment xml:lang="da">LIBGRX-skrifttype</comment>
+  <comment xml:lang="de">LIBGRX-Schrift</comment>
+  <comment xml:lang="el">γραμματοσειρά LIBGRX</comment>
+  <comment xml:lang="en_GB">LIBGRX font</comment>
+  <comment xml:lang="eo">LIBGRX-tiparo</comment>
+  <comment xml:lang="es">tipografía LIBGRX</comment>
+  <comment xml:lang="eu">LIBGRX letra-tipoa</comment>
+  <comment xml:lang="fi">LIBGRX-kirjasin</comment>
+  <comment xml:lang="fr">police LIBGRX</comment>
+  <comment xml:lang="ga">cló LIBGRX</comment>
+  <comment xml:lang="hu">LIBGRX-betűkészlet</comment>
+  <comment xml:lang="id">Fonta LIBGRX</comment>
+  <comment xml:lang="it">Tipo carattere LIBGRX</comment>
+  <comment xml:lang="ja">LIBGRX フォーマット</comment>
+  <comment xml:lang="ko">LIBGRX 글꼴</comment>
+  <comment xml:lang="lt">LIBGRX šriftas</comment>
+  <comment xml:lang="ms">Font LIBGRX</comment>
+  <comment xml:lang="nb">LIBGRX-skrifttype</comment>
+  <comment xml:lang="nl">LIBGRX-lettertype</comment>
+  <comment xml:lang="nn">LIBGRX skrifttype</comment>
+  <comment xml:lang="pl">Czcionka LIBGRX</comment>
+  <comment xml:lang="pt">tipo de letra LIBGRX</comment>
+  <comment xml:lang="pt_BR">Fonte LIBGRX</comment>
+  <comment xml:lang="ru">шрифт LIBGRX</comment>
+  <comment xml:lang="sq">Gërma LIBGRX</comment>
+  <comment xml:lang="sr">LIBGRX фонт</comment>
+  <comment xml:lang="sv">LIBGRX-typsnitt</comment>
+  <comment xml:lang="uk">Шрифт LIBGRX</comment>
+  <comment xml:lang="vi">Phông chữ LIBGRX</comment>
+  <comment xml:lang="zh_CN">LIBGRX 字体</comment>
+  <comment xml:lang="zh_TW">LIBGRX 字型檔</comment>
+  <generic-icon name="font-x-generic"/>
+</mime-type>

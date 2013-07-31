@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-glade">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Glade project</comment>
+  <comment xml:lang="az">Glade layihəsi</comment>
+  <comment xml:lang="be@latin">Prajekt Glade</comment>
+  <comment xml:lang="bg">Проект — Glade</comment>
+  <comment xml:lang="ca">projecte de Glade</comment>
+  <comment xml:lang="cs">Projekt Glade</comment>
+  <comment xml:lang="cy">Prosiect Glade</comment>
+  <comment xml:lang="da">Glade-projekt</comment>
+  <comment xml:lang="de">Glade-Projekt</comment>
+  <comment xml:lang="el">έργο Glade</comment>
+  <comment xml:lang="en_GB">Glade project</comment>
+  <comment xml:lang="eo">Glade-projekto</comment>
+  <comment xml:lang="es">proyecto de Glade</comment>
+  <comment xml:lang="eu">Glade projektua</comment>
+  <comment xml:lang="fi">Glade-projekti</comment>
+  <comment xml:lang="fr">projet Glade</comment>
+  <comment xml:lang="ga">tionscadal Glade</comment>
+  <comment xml:lang="hu">Glade-projekt</comment>
+  <comment xml:lang="id">Proyek Glade</comment>
+  <comment xml:lang="it">Progetto Glade</comment>
+  <comment xml:lang="ja">Glade プロジェクト</comment>
+  <comment xml:lang="ko">Glade 프로젝트</comment>
+  <comment xml:lang="lt">Glade projektas</comment>
+  <comment xml:lang="ms">Projek Glade</comment>
+  <comment xml:lang="nb">Glade prosjekt</comment>
+  <comment xml:lang="nl">Glade-project</comment>
+  <comment xml:lang="nn">Glade prosjekt</comment>
+  <comment xml:lang="pl">Projekt Glade</comment>
+  <comment xml:lang="pt">projecto Glade</comment>
+  <comment xml:lang="pt_BR">Projeto do Glade</comment>
+  <comment xml:lang="ru">Проект Glade</comment>
+  <comment xml:lang="sq">Projekt Glade</comment>
+  <comment xml:lang="sr">Глејд пројекат</comment>
+  <comment xml:lang="sv">Glade-projekt</comment>
+  <comment xml:lang="uk">Проект Glade</comment>
+  <comment xml:lang="vi">Dự án Glade</comment>
+  <comment xml:lang="zh_CN">Glade 工程</comment>
+  <comment xml:lang="zh_TW">Glade 專案</comment>
+  <sub-class-of type="application/xml"/>
+  <generic-icon name="x-office-document"/>
+</mime-type>

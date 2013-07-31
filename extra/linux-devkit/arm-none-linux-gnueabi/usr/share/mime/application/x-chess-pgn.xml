@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-chess-pgn">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>PGN chess game notation</comment>
+  <comment xml:lang="be@latin">Zaciem ab šachmatnaj partyi PGN</comment>
+  <comment xml:lang="bg">Игра шах — PGN</comment>
+  <comment xml:lang="ca">notació de joc d'escacs PGN</comment>
+  <comment xml:lang="cs">Šachová notace PGN</comment>
+  <comment xml:lang="de">PGN-Schachspielnotation</comment>
+  <comment xml:lang="es">notación para juegos de ajedrez PGN</comment>
+  <comment xml:lang="eu">PGN xake jokoaren notazioa</comment>
+  <comment xml:lang="fi">PGN-šakkipelinotaatio</comment>
+  <comment xml:lang="fr">notation de jeu d'échecs PGN</comment>
+  <comment xml:lang="ga">nodaireacht chluiche ficheall PGN</comment>
+  <comment xml:lang="hu">PGN sakkfeljegyzés</comment>
+  <comment xml:lang="id">Notasi permainan catur PGN</comment>
+  <comment xml:lang="it">Notazione partita a scacchi PGN</comment>
+  <comment xml:lang="ko">PGN 체스게임 기보</comment>
+  <comment xml:lang="lt">PGN šachmatų žaidimo žymėjimas</comment>
+  <comment xml:lang="nb">PGN sjakkspillnotasjon</comment>
+  <comment xml:lang="nl">PGN-schaakspelnotatie</comment>
+  <comment xml:lang="pl">Plik PGN notacji gry w szachy</comment>
+  <comment xml:lang="pt_BR">Notação de jogo de xadrez PGN</comment>
+  <comment xml:lang="sv">PGN-schackpartinotation</comment>
+  <comment xml:lang="uk">Запис гри у шахи PGN</comment>
+  <comment xml:lang="vi">Cách ghi lượt chơi cờ PGN</comment>
+  <generic-icon name="text-x-generic"/>
+  <sub-class-of type="text/plain"/>
+</mime-type>

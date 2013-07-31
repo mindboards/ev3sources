@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-lzop">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>LZO archive</comment>
+  <comment xml:lang="be@latin">Archiŭ LZO</comment>
+  <comment xml:lang="bg">Архив — LZO</comment>
+  <comment xml:lang="ca">arxiu LZO</comment>
+  <comment xml:lang="cs">Archiv LZO</comment>
+  <comment xml:lang="da">LZO-arkiv</comment>
+  <comment xml:lang="de">LZO-Archiv</comment>
+  <comment xml:lang="el">αρχείο LZO</comment>
+  <comment xml:lang="en_GB">LZO archive</comment>
+  <comment xml:lang="eo">LZO-arkivo</comment>
+  <comment xml:lang="es">archivador LZO</comment>
+  <comment xml:lang="eu">LZO artxiboa</comment>
+  <comment xml:lang="fi">LZO-arkisto</comment>
+  <comment xml:lang="fr">archive LZO</comment>
+  <comment xml:lang="ga">cartlann LZO</comment>
+  <comment xml:lang="hu">LZO-archívum</comment>
+  <comment xml:lang="id">Arsip LZO</comment>
+  <comment xml:lang="it">Archivio LZO</comment>
+  <comment xml:lang="ja">LZO アーカイブ</comment>
+  <comment xml:lang="ko">LZO 압축파일</comment>
+  <comment xml:lang="lt">LZO archyvas</comment>
+  <comment xml:lang="ms">Arkib LZO</comment>
+  <comment xml:lang="nb">LZO-arkiv</comment>
+  <comment xml:lang="nl">LZO-archief</comment>
+  <comment xml:lang="nn">LZO-arkiv</comment>
+  <comment xml:lang="pl">Archiwum LZO</comment>
+  <comment xml:lang="pt">arquivo LZO</comment>
+  <comment xml:lang="pt_BR">Pacote LZO</comment>
+  <comment xml:lang="ru">архив LZO</comment>
+  <comment xml:lang="sq">Arkiv LZO</comment>
+  <comment xml:lang="sr">LZO архива</comment>
+  <comment xml:lang="sv">LZO-arkiv</comment>
+  <comment xml:lang="uk">Архів LZO</comment>
+  <comment xml:lang="vi">Kho nén LZO</comment>
+  <comment xml:lang="zh_CN">LZO 压缩包</comment>
+  <comment xml:lang="zh_TW">LZO 保存檔</comment>
+  <generic-icon name="package-x-generic"/>
+</mime-type>

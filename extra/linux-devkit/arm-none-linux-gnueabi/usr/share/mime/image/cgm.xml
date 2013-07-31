@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/cgm">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Computer Graphics Metafile</comment>
+  <comment xml:lang="az">Kompüter Qrafikası Meta Faylı</comment>
+  <comment xml:lang="be@latin">Metafajł Computer Graphics</comment>
+  <comment xml:lang="bg">Метафайл — Computer Graphics</comment>
+  <comment xml:lang="ca">metafitxer de Computer Graphics</comment>
+  <comment xml:lang="cs">Computer Graphics Metafile</comment>
+  <comment xml:lang="cy">Delwedd ffurf CGM</comment>
+  <comment xml:lang="da">Computer Graphics Metafile-billede</comment>
+  <comment xml:lang="de">CGM-Datei</comment>
+  <comment xml:lang="el">αρχείο Computer Graphics Metafile</comment>
+  <comment xml:lang="en_GB">Computer Graphics Metafile</comment>
+  <comment xml:lang="es">metaarchivo de Computer Graphics</comment>
+  <comment xml:lang="eu">Ordenagailuko grafikoen meta-fitxategia</comment>
+  <comment xml:lang="fi">Computer Graphics -metatiedosto</comment>
+  <comment xml:lang="fr">métafichier Computer Graphics</comment>
+  <comment xml:lang="ga">meiteachomhad Grafaicí Ríomhaire</comment>
+  <comment xml:lang="hu">Computer Graphics-metafájl</comment>
+  <comment xml:lang="id">Computer Graphics Metafile</comment>
+  <comment xml:lang="it">Computer Graphics Metafile</comment>
+  <comment xml:lang="ja">コンピュータグラフィックメタファイル</comment>
+  <comment xml:lang="ko">컴퓨터 그래픽스 메타파일</comment>
+  <comment xml:lang="lt">Computer Graphics metarinkmena</comment>
+  <comment xml:lang="ms">Failmeta Grafik Komputer</comment>
+  <comment xml:lang="nb">Computer Graphics Metafile</comment>
+  <comment xml:lang="nl">Computer Graphics-metabestand</comment>
+  <comment xml:lang="nn">Computer Graphics Metafile</comment>
+  <comment xml:lang="pl">Metaplik grafiki komputerowej (CGM)</comment>
+  <comment xml:lang="pt">Computer Graphics Metafile</comment>
+  <comment xml:lang="pt_BR">Meta-arquivo do Computer Graphics</comment>
+  <comment xml:lang="ru">метафайл компьютерной графики</comment>
+  <comment xml:lang="sq">Metafile Computer Graphics</comment>
+  <comment xml:lang="sr">Метадатотека са рачунарском графиком (CGM)</comment>
+  <comment xml:lang="sv">Computer Graphics Metafil</comment>
+  <comment xml:lang="uk">Метафайл комп'ютерної графіки</comment>
+  <comment xml:lang="vi">Siêu tập tin đồ họa máy tính (CMF)</comment>
+  <comment xml:lang="zh_CN">CGM 计算机图像元文件</comment>
+  <comment xml:lang="zh_TW">CGM 圖片</comment>
+</mime-type>

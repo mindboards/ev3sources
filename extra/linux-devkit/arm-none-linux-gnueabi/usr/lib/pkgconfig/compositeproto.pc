@@ -1,0 +1,9 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: CompositeExt
+Description: Composite extension headers
+Version: 0.4.2
+Cflags: -I${includedir}

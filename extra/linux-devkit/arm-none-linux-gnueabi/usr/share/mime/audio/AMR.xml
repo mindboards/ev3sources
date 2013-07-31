@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/AMR">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>AMR audio</comment>
+  <comment xml:lang="be@latin">Aŭdyjo AMR</comment>
+  <comment xml:lang="bg">Аудио — AMR</comment>
+  <comment xml:lang="ca">àudio AMR</comment>
+  <comment xml:lang="cs">Zvuk AMR</comment>
+  <comment xml:lang="de">AMR-Audio</comment>
+  <comment xml:lang="es">audio AMR</comment>
+  <comment xml:lang="eu">AMR audioa</comment>
+  <comment xml:lang="fi">AMR-ääni</comment>
+  <comment xml:lang="fr">audio AMR</comment>
+  <comment xml:lang="ga">fuaim AMR</comment>
+  <comment xml:lang="hu">AMR hang</comment>
+  <comment xml:lang="id">Audio AMR</comment>
+  <comment xml:lang="it">Audio AMR</comment>
+  <comment xml:lang="ko">AMR 오디오</comment>
+  <comment xml:lang="lt">AMR garsas</comment>
+  <comment xml:lang="nb">AMR-lyd</comment>
+  <comment xml:lang="nl">AMR-audio</comment>
+  <comment xml:lang="pl">Plik dźwiękowy AMR</comment>
+  <comment xml:lang="pt_BR">Áudio AMR</comment>
+  <comment xml:lang="ru">AMR аудио</comment>
+  <comment xml:lang="sv">AMR-ljud</comment>
+  <comment xml:lang="uk">Звук AMR</comment>
+  <comment xml:lang="vi">Âm thanh AMR</comment>
+  <acronym>AMR</acronym>
+  <expanded-acronym>Adaptive Multi-Rate</expanded-acronym>
+</mime-type>

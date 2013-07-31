@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+includex11dir=/usr/include/X11
+ 
+Name: Xproto
+Description: Xproto headers
+Version: 7.0.19
+Cflags: -I${includedir}

@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: tslib
+Description: Touchscreen Access Library
+Version: 1.0.0
+Libs: -L${libdir} -lts
+Cflags: -I${includedir}

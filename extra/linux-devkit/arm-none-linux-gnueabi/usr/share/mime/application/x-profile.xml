@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-profile">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>profiler results</comment>
+  <comment xml:lang="az">profiler nəticələri</comment>
+  <comment xml:lang="be@latin">vyniki profilera</comment>
+  <comment xml:lang="bg">Резултати от анализатора</comment>
+  <comment xml:lang="ca">resultats del perfilador</comment>
+  <comment xml:lang="cs">Výsledky profiler</comment>
+  <comment xml:lang="cy">canlyniadau proffeilio</comment>
+  <comment xml:lang="da">profileringsresultater</comment>
+  <comment xml:lang="de">Profiler-Ergebnisse</comment>
+  <comment xml:lang="el">αποτελέσματα μετρήσεων για την εκτέλεση προγράμματος</comment>
+  <comment xml:lang="en_GB">profiler results</comment>
+  <comment xml:lang="eo">resultoj de profililo</comment>
+  <comment xml:lang="es">resultados del perfilador</comment>
+  <comment xml:lang="eu">profiler-aren emaitzak</comment>
+  <comment xml:lang="fi">profilointitulokset</comment>
+  <comment xml:lang="fr">résultats de profileur</comment>
+  <comment xml:lang="ga">torthaí próifíleora</comment>
+  <comment xml:lang="hu">profilírozó-eredmények</comment>
+  <comment xml:lang="id">hasil profiler</comment>
+  <comment xml:lang="it">Risultati profiler</comment>
+  <comment xml:lang="ja">プロファイラ結果</comment>
+  <comment xml:lang="ko">프로파일러 결과</comment>
+  <comment xml:lang="lt">profiliklio rezultatai</comment>
+  <comment xml:lang="ms">Hasil pemprofil</comment>
+  <comment xml:lang="nb">profileingsresultat</comment>
+  <comment xml:lang="nl">profiler-resultaten</comment>
+  <comment xml:lang="nn">profileringsresultat</comment>
+  <comment xml:lang="pl">wyniki profilera</comment>
+  <comment xml:lang="pt">resultados do 'profiler'</comment>
+  <comment xml:lang="pt_BR">resultados do profiler</comment>
+  <comment xml:lang="sq">rezultate të profiluesit</comment>
+  <comment xml:lang="sr">резултати профилатора</comment>
+  <comment xml:lang="sv">profilerarresultat</comment>
+  <comment xml:lang="uk">результати профілювання</comment>
+  <comment xml:lang="vi">kết quả nét hiện trạng</comment>
+  <comment xml:lang="zh_CN">profiler 结果</comment>
+  <sub-class-of type="text/plain"/>
+  <generic-icon name="text-x-generic"/>
+</mime-type>

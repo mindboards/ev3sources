@@ -1,0 +1,12 @@
+Package: libcairo-script-interpreter2
+Version: 1.10.0-r1.6
+Description: Cairo graphics library
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MPL LGPL
+Architecture: armv5te
+OE: cairo
+Homepage: unknown
+Depends: libcairo2, libc6, libpixman-1-0, libfontconfig1, libexpat1, libfreetype6, libpng12-0, libxrender1, libx11-6, libxcb1, libpthread-stubs0, libxau6, libz1, libgcc1
+Source: http://cairographics.org/releases/cairo-1.10.0.tar.gz;name=cairo

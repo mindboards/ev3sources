@@ -1,0 +1,12 @@
+Package: libmms0
+Version: 0.5-r0.6
+Description: LibMMS is a common library for parsing mms:// and mmsh:// type network streams.
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPLv2.1
+Architecture: armv5te
+OE: libmms
+Homepage: unknown
+Depends: libglib-2.0-0, libgcc1, libc6
+Source: http://launchpad.net/libmms/trunk/0.5/+download/libmms-0.5.tar.gz

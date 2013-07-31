@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="video/x-anim">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>ANIM animation</comment>
+  <comment xml:lang="az">ANIM animasiyası</comment>
+  <comment xml:lang="be@latin">Animacyja ANIM</comment>
+  <comment xml:lang="bg">Анимация — ANIM</comment>
+  <comment xml:lang="ca">animació ANIM</comment>
+  <comment xml:lang="cs">Animace ANIM</comment>
+  <comment xml:lang="cy">Animeiddiad ANIM</comment>
+  <comment xml:lang="da">ANIM-animation</comment>
+  <comment xml:lang="de">ANIM-Animation</comment>
+  <comment xml:lang="el">κινούμενο σχέδιο ANIM</comment>
+  <comment xml:lang="en_GB">ANIM animation</comment>
+  <comment xml:lang="eo">ANIM-animacio</comment>
+  <comment xml:lang="es">animación ANIM</comment>
+  <comment xml:lang="eu">ANIM animazioa</comment>
+  <comment xml:lang="fi">ANIM-animaatio</comment>
+  <comment xml:lang="fr">animation ANIM</comment>
+  <comment xml:lang="ga">beochan ANIM</comment>
+  <comment xml:lang="hu">ANIM-animáció</comment>
+  <comment xml:lang="id">Animasi ANIM</comment>
+  <comment xml:lang="it">Animazione ANIM</comment>
+  <comment xml:lang="ja">ANIM アニメーション</comment>
+  <comment xml:lang="ko">ANIM 동화상</comment>
+  <comment xml:lang="lt">ANIM animacija</comment>
+  <comment xml:lang="ms">Animasi ANIM</comment>
+  <comment xml:lang="nb">ANIM-animasjon</comment>
+  <comment xml:lang="nl">ANIM-animatie</comment>
+  <comment xml:lang="nn">ANIM-animasjon</comment>
+  <comment xml:lang="pl">Plik animacji ANIM</comment>
+  <comment xml:lang="pt">animação ANIM</comment>
+  <comment xml:lang="pt_BR">Animação ANIM</comment>
+  <comment xml:lang="ru">ANIM анимация</comment>
+  <comment xml:lang="sq">Animim ANIM</comment>
+  <comment xml:lang="sr">ANIM анимација</comment>
+  <comment xml:lang="sv">ANIM-animering</comment>
+  <comment xml:lang="uk">Анімація ANIM</comment>
+  <comment xml:lang="vi">Hoạt ảnh ANIM</comment>
+  <comment xml:lang="zh_CN">ANIM 动画</comment>
+  <comment xml:lang="zh_TW">ANIM 動畫</comment>
+</mime-type>

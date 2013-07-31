@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-portable-bitmap">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>PBM image</comment>
+  <comment xml:lang="be@latin">Vyjava PBM</comment>
+  <comment xml:lang="bg">Изображение — PBM</comment>
+  <comment xml:lang="ca">imatge PBM</comment>
+  <comment xml:lang="cs">Obrázek PBM</comment>
+  <comment xml:lang="de">PBM-Bild</comment>
+  <comment xml:lang="en_GB">PBM image</comment>
+  <comment xml:lang="es">imagen PBM</comment>
+  <comment xml:lang="eu">PBM irudia</comment>
+  <comment xml:lang="fi">PBM-kuva</comment>
+  <comment xml:lang="fr">image PBM</comment>
+  <comment xml:lang="ga">íomhá PBM</comment>
+  <comment xml:lang="hu">PBM kép</comment>
+  <comment xml:lang="id">Citra PBM</comment>
+  <comment xml:lang="it">Immagine PBM</comment>
+  <comment xml:lang="ko">PBM 그림</comment>
+  <comment xml:lang="lt">PBM paveikslėlis</comment>
+  <comment xml:lang="nb">PBM-bilde</comment>
+  <comment xml:lang="nl">PBM-afbeelding</comment>
+  <comment xml:lang="nn">PBM-bilete</comment>
+  <comment xml:lang="pl">Obraz PBM</comment>
+  <comment xml:lang="pt_BR">Imagem PBM</comment>
+  <comment xml:lang="sv">PBM-bild</comment>
+  <comment xml:lang="uk">Зображення PBM</comment>
+  <comment xml:lang="vi">Ảnh PBM</comment>
+  <acronym>PBM</acronym>
+  <expanded-acronym>Portable BitMap</expanded-acronym>
+  <sub-class-of type="image/x-portable-anymap"/>
+</mime-type>

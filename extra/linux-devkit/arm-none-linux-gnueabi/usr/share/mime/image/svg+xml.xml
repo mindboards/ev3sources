@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/svg+xml">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>SVG image</comment>
+  <comment xml:lang="be@latin">Vyjava SVG</comment>
+  <comment xml:lang="bg">Изображение — SVG</comment>
+  <comment xml:lang="ca">imatge SVG</comment>
+  <comment xml:lang="cs">Obrázek SVG</comment>
+  <comment xml:lang="de">SVG-Bild</comment>
+  <comment xml:lang="en_GB">SVG image</comment>
+  <comment xml:lang="es">imagen SVG</comment>
+  <comment xml:lang="eu">SVG irudia</comment>
+  <comment xml:lang="fi">SVG-kuva</comment>
+  <comment xml:lang="fr">image SVG</comment>
+  <comment xml:lang="ga">íomhá SVG</comment>
+  <comment xml:lang="hu">SVG kép</comment>
+  <comment xml:lang="id">Citra SVG</comment>
+  <comment xml:lang="it">Immagine SVG</comment>
+  <comment xml:lang="ko">SVG 그림</comment>
+  <comment xml:lang="lt">SVG paveikslėlis</comment>
+  <comment xml:lang="nb">SVG-bilde</comment>
+  <comment xml:lang="nl">SVG-afbeelding</comment>
+  <comment xml:lang="nn">SVG-bilete</comment>
+  <comment xml:lang="pl">Obraz SVG</comment>
+  <comment xml:lang="pt_BR">Imagem SVG</comment>
+  <comment xml:lang="sv">SVG-bild</comment>
+  <comment xml:lang="uk">Зображення SVG</comment>
+  <comment xml:lang="vi">Ảnh SVG</comment>
+  <acronym>SVG</acronym>
+  <expanded-acronym>Scalable Vector Graphics</expanded-acronym>
+  <sub-class-of type="application/xml"/>
+</mime-type>

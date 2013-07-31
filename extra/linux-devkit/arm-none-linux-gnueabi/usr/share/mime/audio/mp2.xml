@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/mp2">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>MP2 audio</comment>
+  <comment xml:lang="be@latin">Aŭdyjo MP2</comment>
+  <comment xml:lang="bg">Аудио — MP2</comment>
+  <comment xml:lang="ca">àudio MP2</comment>
+  <comment xml:lang="cs">Zvuk MP2</comment>
+  <comment xml:lang="de">MP2-Audio</comment>
+  <comment xml:lang="es">audio MP2</comment>
+  <comment xml:lang="eu">MP2 audioa</comment>
+  <comment xml:lang="fi">MP2-ääni</comment>
+  <comment xml:lang="fr">audio MP2</comment>
+  <comment xml:lang="ga">fuaim MP2</comment>
+  <comment xml:lang="hu">MP2 hang</comment>
+  <comment xml:lang="id">Audio MP2</comment>
+  <comment xml:lang="it">Audio MP2</comment>
+  <comment xml:lang="ko">MP2 오디오</comment>
+  <comment xml:lang="lt">MP2 garsas</comment>
+  <comment xml:lang="nb">MP2-lyd</comment>
+  <comment xml:lang="nl">MP2-audio</comment>
+  <comment xml:lang="pt_BR">Áudio MP2</comment>
+  <comment xml:lang="ru">MP2 аудио</comment>
+  <comment xml:lang="sv">MP2-ljud</comment>
+  <comment xml:lang="uk">Звук MP2</comment>
+  <comment xml:lang="vi">Âm thanh MP2</comment>
+</mime-type>

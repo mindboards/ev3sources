@@ -1,0 +1,12 @@
+Package: libdaemon0
+Version: 0.13-r0.6
+Description: libdaemon is a lightweight C library that eases the writing of UNIX daemons.
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPL
+Architecture: armv5te
+OE: libdaemon
+Homepage: http://0pointer.de/lennart/projects/libdaemon/
+Depends: libgcc1, libc6
+Source: http://0pointer.de/lennart/projects/libdaemon/libdaemon-0.13.tar.gz

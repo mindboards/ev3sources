@@ -1,0 +1,13 @@
+Package: alsa-utils-dev
+Version: 1.0.23-r4.6
+Description: ALSA Utilities
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2
+Architecture: armv5te
+OE: alsa-utils
+Homepage: http://www.alsa-project.org
+Depends: alsa-utils
+Recommends: gettext-dev, alsa-lib-dev, ncurses-dev, alsa-utils-dev, ncurses-libformw-dev, ncurses-libmenuw-dev, ncurses-libpanelw-dev, ncurses-libncursesw-dev, ncurses-libtinfo-dev, libasound-dev, libc6-dev, libgcc1-dev, virtual-locale-de-dev, virtual-locale-ru-dev, virtual-locale-ja-dev
+Source: ftp://ftp.alsa-project.org/pub/utils/alsa-utils-1.0.23.tar.bz2 file://alsa-utils-remove-xmlto-1.0.19plus.patch

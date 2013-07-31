@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-compress">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>UNIX-compressed file</comment>
+  <comment xml:lang="be@latin">Skampresavany UNIX-fajł</comment>
+  <comment xml:lang="bg">Файл — компресиран за UNIX</comment>
+  <comment xml:lang="ca">fitxer comprimit UNIX</comment>
+  <comment xml:lang="cs">Soubor komprimovaný v Unixu</comment>
+  <comment xml:lang="da">UNIX-komprimeret fil</comment>
+  <comment xml:lang="de">UNIX-komprimierte Datei</comment>
+  <comment xml:lang="el">αρχείο συμπιεσμένο με compress</comment>
+  <comment xml:lang="en_GB">UNIX-compressed file</comment>
+  <comment xml:lang="eo">UNIX-kunpremita dosiero</comment>
+  <comment xml:lang="es">archivo comprimido de Unix</comment>
+  <comment xml:lang="eu">UNIX-en konprimitutako fitxategia</comment>
+  <comment xml:lang="fi">UNIX-pakattu tiedosto</comment>
+  <comment xml:lang="fr">fichier compressé UNIX</comment>
+  <comment xml:lang="ga">comhad UNIX-comhbhrúite</comment>
+  <comment xml:lang="hu">Tömörített UNIX-fájl</comment>
+  <comment xml:lang="id">Berkas terkompresi UNIX</comment>
+  <comment xml:lang="it">File compresso-UNIX</comment>
+  <comment xml:lang="ja">UNIX-compress ファイル</comment>
+  <comment xml:lang="ko">UNIX 압축 파일</comment>
+  <comment xml:lang="lt">UNIX suglaudinta rinkmena</comment>
+  <comment xml:lang="ms">Fail termampat-UNIX</comment>
+  <comment xml:lang="nb">UNIX-komprimert fil</comment>
+  <comment xml:lang="nl">UNIX-ingepakt bestand</comment>
+  <comment xml:lang="nn">UNIX-komprimert fil</comment>
+  <comment xml:lang="pl">Plik skompresowany pod UNIXem</comment>
+  <comment xml:lang="pt">ficheiro comprimido UNIX</comment>
+  <comment xml:lang="pt_BR">Arquivo compactado do UNIX</comment>
+  <comment xml:lang="sq">File i kompresuar UNIX</comment>
+  <comment xml:lang="sr">UNIX-компресована датотека</comment>
+  <comment xml:lang="sv">UNIX-komprimerad fil</comment>
+  <comment xml:lang="uk">Стиснений файл UNIX</comment>
+  <comment xml:lang="vi">Tập tin đã nén UNIX</comment>
+  <comment xml:lang="zh_CN">UNIX-compress 压缩的文件</comment>
+  <comment xml:lang="zh_TW">UNIX compress 格式壓縮檔</comment>
+  <generic-icon name="package-x-generic"/>
+</mime-type>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/midi">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>MIDI audio</comment>
+  <comment xml:lang="az">MIDI audio faylı</comment>
+  <comment xml:lang="be@latin">Aŭdyjo MIDI</comment>
+  <comment xml:lang="bg">Аудио — MIDI</comment>
+  <comment xml:lang="ca">àudio MIDI</comment>
+  <comment xml:lang="cs">Zvuk MIDI</comment>
+  <comment xml:lang="cy">Sain MIDI</comment>
+  <comment xml:lang="da">MIDI-lyd</comment>
+  <comment xml:lang="de">MIDI-Audio</comment>
+  <comment xml:lang="el">ήχος MIDI</comment>
+  <comment xml:lang="en_GB">MIDI audio</comment>
+  <comment xml:lang="eo">MIDI-aŭdio</comment>
+  <comment xml:lang="es">audio MIDI</comment>
+  <comment xml:lang="eu">MIDI audioa</comment>
+  <comment xml:lang="fi">MIDI-ääni</comment>
+  <comment xml:lang="fr">audio MIDI</comment>
+  <comment xml:lang="ga">fuaim MIDI</comment>
+  <comment xml:lang="hu">MIDI hang</comment>
+  <comment xml:lang="id">Audio MIDI</comment>
+  <comment xml:lang="it">Audio MIDI</comment>
+  <comment xml:lang="ja">MIDI オーディオ</comment>
+  <comment xml:lang="ko">미디 오디오</comment>
+  <comment xml:lang="lt">MIDI garsas</comment>
+  <comment xml:lang="ms">Audio MIDI</comment>
+  <comment xml:lang="nb">MIDI-lyd</comment>
+  <comment xml:lang="nl">MIDI-audio</comment>
+  <comment xml:lang="nn">MIDI-lyd</comment>
+  <comment xml:lang="pl">Plik dźwiękowy MIDI</comment>
+  <comment xml:lang="pt">áudio MIDI</comment>
+  <comment xml:lang="pt_BR">Áudio MIDI</comment>
+  <comment xml:lang="ru">MIDI аудио</comment>
+  <comment xml:lang="sq">Audio MIDI</comment>
+  <comment xml:lang="sr">MIDI звучни запис</comment>
+  <comment xml:lang="sv">MIDI-ljud</comment>
+  <comment xml:lang="uk">Звук MIDI</comment>
+  <comment xml:lang="vi">Âm thanh MIDI</comment>
+  <comment xml:lang="zh_CN">MIDI 音频</comment>
+  <comment xml:lang="zh_TW">MIDI 音效</comment>
+  <alias type="audio/x-midi"/>
+</mime-type>

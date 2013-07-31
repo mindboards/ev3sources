@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-planperfect">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>PlanPerfect spreadsheet</comment>
+  <comment xml:lang="be@latin">Raźlikovy arkuš PlanPerfect</comment>
+  <comment xml:lang="bg">Таблица — PlanPerfect</comment>
+  <comment xml:lang="ca">full de càlcul de PlanPerfect</comment>
+  <comment xml:lang="cs">Sešit PlanPerfect</comment>
+  <comment xml:lang="de">PlanPerfect-Tabelle</comment>
+  <comment xml:lang="en_GB">PlanPerfect spreadsheet</comment>
+  <comment xml:lang="es">hoja de cálculo de PlanPerfect</comment>
+  <comment xml:lang="eu">PlanPerfect kalkulu-orria</comment>
+  <comment xml:lang="fi">PlanPerfect-taulukko</comment>
+  <comment xml:lang="fr">feuille de calcul PlanPerfect</comment>
+  <comment xml:lang="ga">scarbhileog PlanPerfect</comment>
+  <comment xml:lang="hu">PlanPerfect táblázat</comment>
+  <comment xml:lang="id">Lembar sebar PlanPerfect</comment>
+  <comment xml:lang="it">Foglio di calcolo PlanPerfect</comment>
+  <comment xml:lang="ko">PlanPerfect 스프레드시트</comment>
+  <comment xml:lang="lt">PlanPerfect skaičialentė</comment>
+  <comment xml:lang="nb">PlanPerfect-regneark</comment>
+  <comment xml:lang="nl">PlanPerfect-rekenblad</comment>
+  <comment xml:lang="nn">PlanPerfect-rekneark</comment>
+  <comment xml:lang="pl">Arkusz PlanPerfect</comment>
+  <comment xml:lang="pt_BR">Planilha do PlanPerfect</comment>
+  <comment xml:lang="sv">PlanPerfect-kalkylblad</comment>
+  <comment xml:lang="uk">Ел.таблиця PlanPerfect</comment>
+  <comment xml:lang="vi">Bảng tính PlanPerfect</comment>
+  <generic-icon name="x-office-spreadsheet"/>
+</mime-type>

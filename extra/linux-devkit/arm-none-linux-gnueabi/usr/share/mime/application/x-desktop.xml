@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-desktop">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>desktop configuration file</comment>
+  <comment xml:lang="be@latin">kanfihuracyjny fajł asiarodździa</comment>
+  <comment xml:lang="bg">Файл с информация за работния плот</comment>
+  <comment xml:lang="ca">fitxer de configuració d'escriptori</comment>
+  <comment xml:lang="cs">Soubor nastavení pracovní plochy</comment>
+  <comment xml:lang="da">skrivebordskonfigurationsfil</comment>
+  <comment xml:lang="de">Desktop-Konfigurationsdatei</comment>
+  <comment xml:lang="el">ρυθμίσεις επιφάνεια εργασίας</comment>
+  <comment xml:lang="en_GB">desktop configuration file</comment>
+  <comment xml:lang="eo">dosiero de agordoj de labortablo</comment>
+  <comment xml:lang="es">archivo de configuración del escritorio</comment>
+  <comment xml:lang="eu">Mahaigainaren konfigurazio-fitxategia</comment>
+  <comment xml:lang="fi">työpöydän asetustiedosto</comment>
+  <comment xml:lang="fr">fichier de configuration desktop</comment>
+  <comment xml:lang="ga">comhad chumraíocht deisce</comment>
+  <comment xml:lang="hu">munkaasztal-beállítófájl</comment>
+  <comment xml:lang="id">berkas konfigurasi destop</comment>
+  <comment xml:lang="it">File configurazione desktop</comment>
+  <comment xml:lang="ja">デスクトップ設定ファイル</comment>
+  <comment xml:lang="ko">바탕환경 설정 파일</comment>
+  <comment xml:lang="lt">darbastalio konfigūracijos rinkmena</comment>
+  <comment xml:lang="ms">Fail konfigurasi desktop</comment>
+  <comment xml:lang="nb">konfigurasjonsfil for skrivebordet</comment>
+  <comment xml:lang="nl">bureaublad-configuratiebestand</comment>
+  <comment xml:lang="nn">skrivebordsoppsettfil</comment>
+  <comment xml:lang="pl">plik z konfiguracją środowiska</comment>
+  <comment xml:lang="pt">ficheiro de configuração de área de trabalho</comment>
+  <comment xml:lang="pt_BR">arquivo de configuração de área de trabalho</comment>
+  <comment xml:lang="sq">file i konfigurimit të desktop</comment>
+  <comment xml:lang="sr">датотека за подешавања радне површи</comment>
+  <comment xml:lang="sv">skrivbordskonfigurationsfil</comment>
+  <comment xml:lang="uk">файл конфігурації стільниці</comment>
+  <comment xml:lang="vi">tập tin cấu hình môi trường</comment>
+  <comment xml:lang="zh_CN">桌面配置文件</comment>
+  <sub-class-of type="text/plain"/>
+  <generic-icon name="text-x-generic"/>
+  <alias type="application/x-gnome-app-info"/>
+</mime-type>

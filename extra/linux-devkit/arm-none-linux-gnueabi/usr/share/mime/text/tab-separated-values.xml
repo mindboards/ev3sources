@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/tab-separated-values">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>TSV document</comment>
+  <comment xml:lang="be@latin">Dakument TSV</comment>
+  <comment xml:lang="bg">Документ — TSV</comment>
+  <comment xml:lang="ca">document TSV</comment>
+  <comment xml:lang="cs">Dokument TSV</comment>
+  <comment xml:lang="de">TSV-Dokument</comment>
+  <comment xml:lang="en_GB">TSV document</comment>
+  <comment xml:lang="es">documento TSV</comment>
+  <comment xml:lang="eu">TSV dokumentua</comment>
+  <comment xml:lang="fi">TSV-asiakirja</comment>
+  <comment xml:lang="fr">document TSV</comment>
+  <comment xml:lang="ga">cáipéis TSV</comment>
+  <comment xml:lang="hu">TSV dokumentum</comment>
+  <comment xml:lang="id">Dokumen TSV</comment>
+  <comment xml:lang="it">Documento TSV</comment>
+  <comment xml:lang="ko">TSV 문서</comment>
+  <comment xml:lang="lt">TSV dokumentas</comment>
+  <comment xml:lang="nb">TSV-dokument</comment>
+  <comment xml:lang="nl">TSV-document</comment>
+  <comment xml:lang="nn">TSV-dokument</comment>
+  <comment xml:lang="pl">Dokument TSV</comment>
+  <comment xml:lang="pt_BR">Documento TSV</comment>
+  <comment xml:lang="sv">TSV-dokument</comment>
+  <comment xml:lang="uk">Документ TSV</comment>
+  <comment xml:lang="vi">Tài liệu TSV</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

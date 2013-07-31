@@ -1,0 +1,16 @@
+prefix=/usr/
+exec_prefix=${prefix}
+libdir=${prefix}lib
+includedir=${prefix}include/qtopia/Qt3Support
+qt_config=lex yacc warn_on uic resources qt warn_on release incremental link_prl no_mocdepend release stl qt_no_framework silent release shared dll embedded largefile stl exceptions_off dylib create_prl link_prl depend_includepath QTDIR_build qt_install_headers qt warn_on depend_includepath qmake_cache target_qt hide_symbols bsymbolic_functions create_libtool create_pc explicitlib no_debug_info moc thread shared dll
+moc_location=/usr/bin/moc4
+uic_location=/usr/bin/uic4
+
+Name: Qt3supporte
+Description: Qt3supporte Library
+Version: 4.6.3
+Libs: -L${libdir} -lQt3SupportE 
+Libs.private:     -lQtSqlE  -lQtXmlE -lQtGuiE -lQtNetworkE -lQtCoreE -lglib-2.0 -lpthread   
+Cflags: -I${includedir}/qt4-embedded/Qt3SupportE -DQT_SHARED -I${includedir}/qtopia -DQT3_SUPPORT -I${includedir}
+Requires: QtCoreE QtGuiE QtNetworkE QtSqlE
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.sun.xml.math">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>OpenOffice Math formula</comment>
+  <comment xml:lang="be@latin">Formuła OpenOffice Math</comment>
+  <comment xml:lang="bg">Формула — OpenOffice Math</comment>
+  <comment xml:lang="ca">fórmula d'OpenOffice Math</comment>
+  <comment xml:lang="cs">Vzorec OpenOffice Math</comment>
+  <comment xml:lang="de">OpenOffice Math-Formel</comment>
+  <comment xml:lang="es">fórmula de OpenOffice Math</comment>
+  <comment xml:lang="eu">OpenOffice.org Math formula</comment>
+  <comment xml:lang="fi">OpenOffice Math -kaava</comment>
+  <comment xml:lang="fr">formule OpenOffice Math</comment>
+  <comment xml:lang="ga">foirmle OpenOffice Math</comment>
+  <comment xml:lang="hu">OpenOffice Math képlet</comment>
+  <comment xml:lang="id">Formula OpenOffice Math</comment>
+  <comment xml:lang="it">Formula OpenOffice Math</comment>
+  <comment xml:lang="ko">OpenOffice Math 수식</comment>
+  <comment xml:lang="lt">OpenOffice Math formulė</comment>
+  <comment xml:lang="nb">OpenOffice Math-formel</comment>
+  <comment xml:lang="nl">OpenOffice.org Math-formule</comment>
+  <comment xml:lang="pt_BR">Fórmula do OpenOffice Math</comment>
+  <comment xml:lang="ru">формула OpenOffice Math</comment>
+  <comment xml:lang="sv">OpenOffice Math-formel</comment>
+  <comment xml:lang="uk">Формула OpenOffice Math</comment>
+  <comment xml:lang="vi">Công thức Math của OpenOffice.org</comment>
+  <sub-class-of type="application/zip"/>
+  <generic-icon name="x-office-document"/>
+</mime-type>

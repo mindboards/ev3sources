@@ -1,0 +1,13 @@
+Package: inputproto-dev
+Version: 1:2.0.1-r2.0.6
+Description: X protocol headers: inputproto
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT-X
+Architecture: armv5te
+OE: inputproto
+Homepage: http://www.x.org
+Depends: inputproto
+Recommends: util-macros-dev, inputproto-dev
+Source: http://xorg.freedesktop.org/releases/individual/proto/inputproto-2.0.1.tar.bz2;name=archive

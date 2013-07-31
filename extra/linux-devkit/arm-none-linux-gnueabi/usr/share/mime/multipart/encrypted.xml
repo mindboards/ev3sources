@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="multipart/encrypted">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>encrypted message</comment>
+  <comment xml:lang="az">şifrələnmiş ismarış</comment>
+  <comment xml:lang="be@latin">zašyfravanaje paviedamleńnie</comment>
+  <comment xml:lang="bg">Шифрирано съобщение</comment>
+  <comment xml:lang="ca">missatge xifrat</comment>
+  <comment xml:lang="cs">Zašifrovaná zpráva</comment>
+  <comment xml:lang="cy">Neges wedi ei hamgryptio</comment>
+  <comment xml:lang="da">krypteret meddelelse</comment>
+  <comment xml:lang="de">verschlüsselte Nachricht</comment>
+  <comment xml:lang="el">κρυπτογραφημένο μήνυμα</comment>
+  <comment xml:lang="en_GB">encrypted message</comment>
+  <comment xml:lang="eo">ĉifrita mesaĝo</comment>
+  <comment xml:lang="es">mensaje cifrado</comment>
+  <comment xml:lang="eu">mezu enkriptatua</comment>
+  <comment xml:lang="fi">salattu viesti</comment>
+  <comment xml:lang="fr">message chiffré</comment>
+  <comment xml:lang="ga">teachtaireacht chriptithe</comment>
+  <comment xml:lang="hu">titkosított üzenet</comment>
+  <comment xml:lang="id">pesan terenkripsi</comment>
+  <comment xml:lang="it">Messaggio cifrato</comment>
+  <comment xml:lang="ja">暗号化メッセージ</comment>
+  <comment xml:lang="ko">암호화된 메세지</comment>
+  <comment xml:lang="lt">užšifruotas laiškas</comment>
+  <comment xml:lang="ms">Mesej terenkripsi</comment>
+  <comment xml:lang="nb">kryptert melding</comment>
+  <comment xml:lang="nl">versleuteld bericht</comment>
+  <comment xml:lang="nn">kryptert melding</comment>
+  <comment xml:lang="pl">wiadomość zaszyfrowana</comment>
+  <comment xml:lang="pt">mensagem cifrada</comment>
+  <comment xml:lang="pt_BR">mensagem criptografada</comment>
+  <comment xml:lang="ru">зашифрованное сообщение</comment>
+  <comment xml:lang="sq">mesazh i kriptuar</comment>
+  <comment xml:lang="sr">шифрована порука</comment>
+  <comment xml:lang="sv">krypterat meddelande</comment>
+  <comment xml:lang="uk">шифроване повідомлення</comment>
+  <comment xml:lang="vi">thông điệp đã mật mã</comment>
+  <comment xml:lang="zh_CN">加密信件</comment>
+</mime-type>

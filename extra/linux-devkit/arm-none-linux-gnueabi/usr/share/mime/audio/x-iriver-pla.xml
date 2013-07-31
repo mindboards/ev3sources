@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/x-iriver-pla">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>iRiver Playlist</comment>
+  <comment xml:lang="be@latin">Śpis piesień iRiver</comment>
+  <comment xml:lang="bg">Списък за изпълнение — iRiver</comment>
+  <comment xml:lang="ca">llista de reproducció iRiver</comment>
+  <comment xml:lang="cs">Seznam skladeb iRiver</comment>
+  <comment xml:lang="es">lista de reproducción de iRiver</comment>
+  <comment xml:lang="eu">iRiver erreprodukzio-zerrenda</comment>
+  <comment xml:lang="fi">iRiver-soittolista</comment>
+  <comment xml:lang="fr">liste de lecture iRiver</comment>
+  <comment xml:lang="ga">seinmliosta iRiver</comment>
+  <comment xml:lang="hu">iRiver lejátszólista</comment>
+  <comment xml:lang="id">iRiver Playlist</comment>
+  <comment xml:lang="it">Scaletta iRiver</comment>
+  <comment xml:lang="ko">iRiver 연주목록</comment>
+  <comment xml:lang="lt">iRiver grojaraštis</comment>
+  <comment xml:lang="nb">iRiver-spilleliste</comment>
+  <comment xml:lang="nl">iRiver-afspeellijst</comment>
+  <comment xml:lang="pt_BR">Lista de reprodução do iRiver</comment>
+  <comment xml:lang="ru">Список композиций iRiver</comment>
+  <comment xml:lang="sv">iRiver-spellista</comment>
+  <comment xml:lang="uk">Список програвання iRiver</comment>
+  <comment xml:lang="vi">danh mục nhạc iRiver</comment>
+</mime-type>

@@ -1,0 +1,12 @@
+#!/bin/sh
+if test "x$D" != "x"; then
+	OPT="-r $D"
+else
+	OPT="-s"
+fi
+update-rc.d $OPT bluetooth defaults 23 19
+if [ x"$D" = "x" ]; then
+	if [ -e /etc/ld.so.conf ] ; then
+		[ -x /sbin/ldconfig ] && /sbin/ldconfig
+	fi
+fi

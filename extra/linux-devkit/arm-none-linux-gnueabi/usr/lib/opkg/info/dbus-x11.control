@@ -1,0 +1,12 @@
+Package: dbus-x11
+Version: 1.2.24-r19.1-arago2.6
+Description: A message bus system for inter-process communication
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2
+Architecture: armv5te
+OE: dbus
+Homepage: http://dbus.freedesktop.org
+Depends: dbus, libc6, libgcc1
+Source: http://dbus.freedesktop.org/releases/dbus/dbus-1.2.24.tar.gz;name=dbus file://tmpdir.patch file://fix-install-daemon.patch file://0001-Make-the-default-DBus-reply-timeout-configurable.patch file://dbus-1.init file://reuseaddr01.patch file://reuseaddr02.patch

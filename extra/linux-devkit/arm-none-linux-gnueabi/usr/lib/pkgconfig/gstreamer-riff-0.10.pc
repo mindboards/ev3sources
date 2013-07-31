@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include/gstreamer-0.10
+
+Name: GStreamer RIFF Library
+Description: RIFF helper functions
+Requires: gstreamer-0.10
+Version: 0.10.30
+Libs: -L${libdir} -lgstriff-0.10
+Cflags: -I${includedir}
+

@@ -1,0 +1,28 @@
+# can't do this offline
+    if [ "x$D" != "x" ]; then
+        exit 1
+    fi
+    grep "^polkituser:" /etc/group > /dev/null || addgroup polkituser
+    grep "^polkituser:" /etc/passwd > /dev/null || adduser --disabled-password --system --home /var/run/polkit polkituser --ingroup polkituser -g polkituser
+
+	# Fix owners
+	for i in /etc/polkit-1/localauthority /var/lib/polkit-1 ; do
+		mkdir -p $i
+		chown root $i
+		chmod 700 $i
+	done
+
+	for i in /usr/libexec/polkit-agent-helper-1 /usr/bin/pkexec ; do
+		chown root $i
+		chmod 4755 $i
+	done
+
+	DBUSPID=`pidof dbus-daemon`
+    if [ "x$DBUSPID" != "x" ]; then
+        /etc/init.d/dbus-1 force-reload
+    fi
+if [ x"$D" = "x" ]; then
+	if [ -e /etc/ld.so.conf ] ; then
+		[ -x /sbin/ldconfig ] && /sbin/ldconfig
+	fi
+fi

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-hdf">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>HDF document</comment>
+  <comment xml:lang="az">HDF sənədi</comment>
+  <comment xml:lang="be@latin">Dakument HDF</comment>
+  <comment xml:lang="bg">Документ — HDF</comment>
+  <comment xml:lang="ca">document HDF</comment>
+  <comment xml:lang="cs">Dokument HDF</comment>
+  <comment xml:lang="cy">Dogfen HDF</comment>
+  <comment xml:lang="da">HDF-dokument</comment>
+  <comment xml:lang="de">HDF-Dokument</comment>
+  <comment xml:lang="el">έγγραφο HDF</comment>
+  <comment xml:lang="en_GB">HDF document</comment>
+  <comment xml:lang="eo">HDF-dokumento</comment>
+  <comment xml:lang="es">documento HDF</comment>
+  <comment xml:lang="eu">HDF dokumentua</comment>
+  <comment xml:lang="fi">HDF-asiakirja</comment>
+  <comment xml:lang="fr">document HDF</comment>
+  <comment xml:lang="ga">cáipéis HDF</comment>
+  <comment xml:lang="hu">HDF-dokumentum</comment>
+  <comment xml:lang="id">Dokumen HDF</comment>
+  <comment xml:lang="it">Documento HDF</comment>
+  <comment xml:lang="ja">HDF ドキュメント</comment>
+  <comment xml:lang="ko">HDF 문서</comment>
+  <comment xml:lang="lt">HDF dokumentas</comment>
+  <comment xml:lang="ms">Dokumen HDF</comment>
+  <comment xml:lang="nb">HDF-dokument</comment>
+  <comment xml:lang="nl">HDF-document</comment>
+  <comment xml:lang="nn">HDF-dokument</comment>
+  <comment xml:lang="pl">Dokument HDF</comment>
+  <comment xml:lang="pt">documento HDF</comment>
+  <comment xml:lang="pt_BR">Documento HDF</comment>
+  <comment xml:lang="ru">документ HDF</comment>
+  <comment xml:lang="sq">Dokument HDF</comment>
+  <comment xml:lang="sr">HDF документ</comment>
+  <comment xml:lang="sv">HDF-dokument</comment>
+  <comment xml:lang="uk">Документ HDF</comment>
+  <comment xml:lang="vi">Tài liệu HDF</comment>
+  <comment xml:lang="zh_CN">HDF 文档</comment>
+  <comment xml:lang="zh_TW">HDF 文件</comment>
+  <acronym>HDF</acronym>
+  <expanded-acronym>Hierarchical Data Format</expanded-acronym>
+  <generic-icon name="x-office-document"/>
+</mime-type>

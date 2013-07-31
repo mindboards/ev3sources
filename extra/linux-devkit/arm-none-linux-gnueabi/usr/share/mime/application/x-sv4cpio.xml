@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-sv4cpio">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>SV4 CPIO archive</comment>
+  <comment xml:lang="az">SV4 CPIO arxivi</comment>
+  <comment xml:lang="be@latin">Archiŭ SV4 CPIO</comment>
+  <comment xml:lang="bg">Архив — SV4 CPIO</comment>
+  <comment xml:lang="ca">arxiu CPIO SV4</comment>
+  <comment xml:lang="cs">Archiv SV4 CPIO</comment>
+  <comment xml:lang="cy">Archif CPIO SV4</comment>
+  <comment xml:lang="da">SV4 CPIO-arkiv</comment>
+  <comment xml:lang="de">SV4-CPIO-Archiv</comment>
+  <comment xml:lang="el">αρχείο SV4 CPIO</comment>
+  <comment xml:lang="en_GB">SV4 CPIO archive</comment>
+  <comment xml:lang="eo">SV4-CPIO-arkivo</comment>
+  <comment xml:lang="es">archivador SV4 CPIO</comment>
+  <comment xml:lang="eu">SV4 CPIO artxiboa</comment>
+  <comment xml:lang="fi">SV4 CPIO -arkisto</comment>
+  <comment xml:lang="fr">archive SV4 CPIO</comment>
+  <comment xml:lang="ga">cartlann SV4 CPIO</comment>
+  <comment xml:lang="hu">SV4 CPIO-archívum</comment>
+  <comment xml:lang="id">Arsip SV4 CPIO</comment>
+  <comment xml:lang="it">Archivio SV4 CPIO</comment>
+  <comment xml:lang="ja">SV4 CPIO アーカイブ</comment>
+  <comment xml:lang="ko">SV4 CPIO 묶음파일</comment>
+  <comment xml:lang="lt">SV4 CPIO archyvas</comment>
+  <comment xml:lang="ms">Arkib CPIO SV4</comment>
+  <comment xml:lang="nb">SV4 CPIO-arkiv</comment>
+  <comment xml:lang="nl">SV4 CPIO-archief</comment>
+  <comment xml:lang="nn">SV4 CPIO-arkiv</comment>
+  <comment xml:lang="pl">Archiwum SV4 CPIO</comment>
+  <comment xml:lang="pt">ficheiro SV4 CPIO</comment>
+  <comment xml:lang="pt_BR">Pacote SV4 CPIO</comment>
+  <comment xml:lang="sq">Arkiv SV4 CPIO</comment>
+  <comment xml:lang="sr">SV4 CPIO архива</comment>
+  <comment xml:lang="sv">SV4 CPIO-arkiv</comment>
+  <comment xml:lang="uk">Архів SV4 CPIO</comment>
+  <comment xml:lang="vi">Kho nén CPIO SV4</comment>
+  <comment xml:lang="zh_CN">SV4 CPIO 压缩包</comment>
+  <comment xml:lang="zh_TW">SV4 CPIO 保存檔</comment>
+  <generic-icon name="package-x-generic"/>
+</mime-type>

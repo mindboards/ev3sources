@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-psd">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>PSD image</comment>
+  <comment xml:lang="be@latin">Vyjava PSD</comment>
+  <comment xml:lang="bg">Изображение — PSD</comment>
+  <comment xml:lang="ca">imatge PSD</comment>
+  <comment xml:lang="cs">Obrázek PSD</comment>
+  <comment xml:lang="de">PSD-Bild</comment>
+  <comment xml:lang="en_GB">PSD image</comment>
+  <comment xml:lang="es">imagen PSD</comment>
+  <comment xml:lang="eu">PSD irudia</comment>
+  <comment xml:lang="fi">PSD-kuva</comment>
+  <comment xml:lang="fr">image PSD</comment>
+  <comment xml:lang="ga">íomhá PSD</comment>
+  <comment xml:lang="hu">PSD kép</comment>
+  <comment xml:lang="id">Citra PSD</comment>
+  <comment xml:lang="it">Immagine PSD</comment>
+  <comment xml:lang="ko">PSD 그림</comment>
+  <comment xml:lang="lt">PSD paveikslėlis</comment>
+  <comment xml:lang="nb">PSD-bilde</comment>
+  <comment xml:lang="nl">PSD-afbeelding</comment>
+  <comment xml:lang="nn">PSD-bilete</comment>
+  <comment xml:lang="pl">Obraz PSD</comment>
+  <comment xml:lang="pt_BR">Imagem PSD</comment>
+  <comment xml:lang="sv">PSD-bild</comment>
+  <comment xml:lang="uk">Зображення PSD</comment>
+  <comment xml:lang="vi">Ảnh PSD</comment>
+  <acronym>PSD</acronym>
+  <expanded-acronym>PhotoShop Document</expanded-acronym>
+</mime-type>

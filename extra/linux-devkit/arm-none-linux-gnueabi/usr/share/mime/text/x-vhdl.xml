@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-vhdl">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>VHDL document</comment>
+  <comment xml:lang="be@latin">Dakument VHDL</comment>
+  <comment xml:lang="bg">Документ — VHDL</comment>
+  <comment xml:lang="ca">document VHDL</comment>
+  <comment xml:lang="cs">Dokument VHDL</comment>
+  <comment xml:lang="de">VHDL-Dokument</comment>
+  <comment xml:lang="es">documento VHDL</comment>
+  <comment xml:lang="eu">VHDL dokumentua</comment>
+  <comment xml:lang="fi">VHDF-asiakirja</comment>
+  <comment xml:lang="fr">document VHDL</comment>
+  <comment xml:lang="ga">cáipéis VHDL</comment>
+  <comment xml:lang="hu">VHDL dokumentum</comment>
+  <comment xml:lang="id">Dokumen VHDL</comment>
+  <comment xml:lang="it">Documento VHDL</comment>
+  <comment xml:lang="ko">VHDL 문서</comment>
+  <comment xml:lang="lt">VHDL dokumentas</comment>
+  <comment xml:lang="nb">VHDL-dokument</comment>
+  <comment xml:lang="nl">VHDL-document</comment>
+  <comment xml:lang="pl">Dokument VHDL</comment>
+  <comment xml:lang="pt_BR">Documento VHDL</comment>
+  <comment xml:lang="ru">документ VHDL</comment>
+  <comment xml:lang="sv">VHDL-dokument</comment>
+  <comment xml:lang="uk">Документ VHDL</comment>
+  <comment xml:lang="vi">Tài liệu VHDL</comment>
+  <acronym>VHDL</acronym>
+  <expanded-acronym>Very-High-Speed Integrated Circuit Hardware Description Language</expanded-acronym>
+  <sub-class-of type="text/plain"/>
+</mime-type>

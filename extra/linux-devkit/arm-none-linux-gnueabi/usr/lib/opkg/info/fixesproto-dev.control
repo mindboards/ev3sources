@@ -1,0 +1,13 @@
+Package: fixesproto-dev
+Version: 1:4.1.2-r2.0.6
+Description: X protocol headers: fixesproto
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT-X
+Architecture: armv5te
+OE: fixesproto
+Homepage: http://www.x.org
+Depends: fixesproto
+Recommends: util-macros-dev, fixesproto-dev
+Source: http://xorg.freedesktop.org/releases/individual/proto/fixesproto-4.1.2.tar.bz2;name=archive

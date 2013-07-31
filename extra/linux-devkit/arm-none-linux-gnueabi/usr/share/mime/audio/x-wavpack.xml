@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/x-wavpack">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>WavPack audio</comment>
+  <comment xml:lang="be@latin">Aŭdyjo WavPack</comment>
+  <comment xml:lang="bg">Аудио — WavPack</comment>
+  <comment xml:lang="ca">àudio WavPack</comment>
+  <comment xml:lang="cs">Zvuk WavPack</comment>
+  <comment xml:lang="de">WavPack-Audio</comment>
+  <comment xml:lang="es">audio WavPack</comment>
+  <comment xml:lang="eu">WavPack audioa</comment>
+  <comment xml:lang="fi">WavPack-ääni</comment>
+  <comment xml:lang="fr">audio WavPack</comment>
+  <comment xml:lang="ga">fuaim WavPack</comment>
+  <comment xml:lang="hu">WavPack hang</comment>
+  <comment xml:lang="id">Audio WavPack</comment>
+  <comment xml:lang="it">Audio WavPack</comment>
+  <comment xml:lang="ko">WavPack 오디오</comment>
+  <comment xml:lang="lt">WavPack garsas</comment>
+  <comment xml:lang="nb">WavPack-lyd</comment>
+  <comment xml:lang="nl">WavPack-audio</comment>
+  <comment xml:lang="pl">Plik dźwiękowy WavPack</comment>
+  <comment xml:lang="pt_BR">Áudio WavPack</comment>
+  <comment xml:lang="ru">WavPack аудио</comment>
+  <comment xml:lang="sv">WavPack-ljud</comment>
+  <comment xml:lang="uk">Звук WavPack</comment>
+  <comment xml:lang="vi">Âm thanh WavPack</comment>
+</mime-type>

@@ -1,0 +1,13 @@
+Package: libxft-dev
+Version: 1:2.2.0-r9.0.6
+Description: FreeType-based font drawing library for X
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT-X
+Architecture: armv5te
+OE: libxft
+Homepage: http://www.x.org
+Depends: libxft2, libxft2, xproto-dev
+Recommends: util-macros-dev, libxrender-dev, libfreetype-dev, libfontconfig-dev, libexpat-dev, libz-dev, libx11-dev, libxcb-dev, libpthread-stubs-dev, libxau-dev, libc6-dev, libgcc1-dev, libxft-dev, xproto-dev
+Source: http://xorg.freedesktop.org/releases/individual/lib/libXft-2.2.0.tar.bz2;name=archive

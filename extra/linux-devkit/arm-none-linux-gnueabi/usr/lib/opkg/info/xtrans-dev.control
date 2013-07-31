@@ -1,0 +1,12 @@
+Package: xtrans-dev
+Version: 1:1.2.6-r9.0.6
+Description: network API translation layer to insulate X applications and libraries from OS network vageries.
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT-X
+Architecture: armv5te
+OE: xtrans
+Homepage: http://www.x.org
+Recommends: util-macros-dev
+Source: http://xorg.freedesktop.org/releases/individual/lib/xtrans-1.2.6.tar.bz2;name=archive

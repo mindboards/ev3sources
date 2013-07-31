@@ -1,0 +1,13 @@
+Package: libfaac-dev
+Version: 1.24-r1.6
+Description: Library for reading some sort of media format.
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPL
+Architecture: armv5te
+OE: faac
+Homepage: unknown
+Depends: libfaac0
+Recommends: libgcc1-dev, libc6-dev
+Source: http://downloads.sourceforge.net/faac/faac-1.24.tar.gz

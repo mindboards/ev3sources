@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-xmi">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>XMI file</comment>
+  <comment xml:lang="be@latin">Fajł XMI</comment>
+  <comment xml:lang="bg">Файл — XMI</comment>
+  <comment xml:lang="ca">fitxer XMI</comment>
+  <comment xml:lang="cs">Soubor XMI</comment>
+  <comment xml:lang="de">XMI-Datei</comment>
+  <comment xml:lang="en_GB">XMI file</comment>
+  <comment xml:lang="es">archivo XMI</comment>
+  <comment xml:lang="eu">XMI fitxategia</comment>
+  <comment xml:lang="fi">XMI-tiedosto</comment>
+  <comment xml:lang="fr">fichier XMI</comment>
+  <comment xml:lang="ga">comhad XMI</comment>
+  <comment xml:lang="hu">XMI fájl</comment>
+  <comment xml:lang="id">Berkas XMI</comment>
+  <comment xml:lang="it">File XMI</comment>
+  <comment xml:lang="ko">XMI 파일</comment>
+  <comment xml:lang="lt">XMI rinkmena</comment>
+  <comment xml:lang="nb">XMI-fil</comment>
+  <comment xml:lang="nl">XMI-bestand</comment>
+  <comment xml:lang="nn">XMI-fil</comment>
+  <comment xml:lang="pl">Plik XMI</comment>
+  <comment xml:lang="pt_BR">Arquivo XMI</comment>
+  <comment xml:lang="sv">XMI-fil</comment>
+  <comment xml:lang="uk">Файл XMI</comment>
+  <comment xml:lang="vi">Tập tin XMI</comment>
+  <acronym>XMI</acronym>
+  <expanded-acronym>XML Metadata Interchange</expanded-acronym>
+  <sub-class-of type="application/xml"/>
+</mime-type>

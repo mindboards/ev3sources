@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: cairo-ps
+Description: PostScript surface backend for cairo graphics library
+Version: 1.10.0
+
+Requires: cairo 
+Libs: -lz 
+Cflags: -I${includedir}/cairo 

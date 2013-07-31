@@ -1,0 +1,60 @@
+Package: pkgconfig-sdk
+Version: 0.23-r8.1.6
+Depends: libc6
+Provides:
+Status: install ok installed
+Architecture: i686-armv5te-sdk
+Installed-Time: 1295979648
+Auto-Installed: yes
+
+Package: signgp-sdk
+Version: 1.0-r4.6
+Depends: libc6
+Provides:
+Status: install ok installed
+Architecture: i686-armv5te-sdk
+Installed-Time: 1295979649
+Auto-Installed: yes
+
+Package: libtool-sdk
+Version: 2.2.6b-r27.1.6
+Provides:
+Status: install ok installed
+Architecture: i686-armv5te-sdk
+Installed-Time: 1295979649
+Auto-Installed: yes
+
+Package: task-arago-toolchain-base-tisdk-host
+Version: 1.0-r0.6
+Depends: task-arago-toolchain-host, signgp-sdk
+Provides:
+Status: install user installed
+Architecture: i686-armv5te-sdk
+Installed-Time: 1295979649
+
+Package: qt4-tools-sdk
+Version: 4.6.3-r1-arago1.6
+Depends: libstdc++6, libc6, libgcc1
+Provides:
+Status: install user installed
+Architecture: i686-armv5te-sdk
+Installed-Time: 1296017908
+
+Package: opkg-sdk
+Version: 0.1.8+svnr587-r3.6
+Depends: libc6
+Provides:
+Status: install ok installed
+Architecture: i686-armv5te-sdk
+Installed-Time: 1295979649
+Auto-Installed: yes
+
+Package: task-arago-toolchain-host
+Version: 1.0-r3.6
+Depends: pkgconfig-sdk, opkg-sdk, libtool-sdk
+Provides:
+Status: install ok installed
+Architecture: i686-armv5te-sdk
+Installed-Time: 1295979648
+Auto-Installed: yes
+

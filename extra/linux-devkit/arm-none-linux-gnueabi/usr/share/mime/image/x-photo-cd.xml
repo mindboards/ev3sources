@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-photo-cd">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>PCD image</comment>
+  <comment xml:lang="be@latin">Vyjava PCD</comment>
+  <comment xml:lang="bg">Изображение — PCD</comment>
+  <comment xml:lang="ca">imatge PCD</comment>
+  <comment xml:lang="cs">Obrázek PCD</comment>
+  <comment xml:lang="de">PCD-Bild</comment>
+  <comment xml:lang="en_GB">PCD image</comment>
+  <comment xml:lang="es">imagen PCD</comment>
+  <comment xml:lang="eu">PCD irudia</comment>
+  <comment xml:lang="fi">PCD-kuva</comment>
+  <comment xml:lang="fr">image PCD</comment>
+  <comment xml:lang="ga">íomhá PCD</comment>
+  <comment xml:lang="hu">PCD kép</comment>
+  <comment xml:lang="id">Citra PCD</comment>
+  <comment xml:lang="it">Immagine PCD</comment>
+  <comment xml:lang="ko">PCD 그림</comment>
+  <comment xml:lang="lt">PCD paveikslėlis</comment>
+  <comment xml:lang="nb">PCD-bilde</comment>
+  <comment xml:lang="nl">PCD-afbeelding</comment>
+  <comment xml:lang="nn">PCD-bilete</comment>
+  <comment xml:lang="pl">Obraz PCD</comment>
+  <comment xml:lang="pt_BR">Imagem PCD</comment>
+  <comment xml:lang="sv">PCD-bild</comment>
+  <comment xml:lang="uk">Зображення PCD</comment>
+  <comment xml:lang="vi">Ảnh PCD</comment>
+  <acronym>PCD</acronym>
+  <expanded-acronym>PhotoCD</expanded-acronym>
+</mime-type>

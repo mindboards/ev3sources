@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="inode/socket">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>socket</comment>
+  <comment xml:lang="be@latin">sokiet</comment>
+  <comment xml:lang="bg">Гнездо</comment>
+  <comment xml:lang="ca">sòcol</comment>
+  <comment xml:lang="cs">Socket</comment>
+  <comment xml:lang="da">sokkel</comment>
+  <comment xml:lang="de">Socket</comment>
+  <comment xml:lang="el">υποδοχή</comment>
+  <comment xml:lang="en_GB">socket</comment>
+  <comment xml:lang="eo">kontaktoskatolo</comment>
+  <comment xml:lang="es">socket</comment>
+  <comment xml:lang="eu">socketa</comment>
+  <comment xml:lang="fi">pistoke</comment>
+  <comment xml:lang="fr">connecteur réseau</comment>
+  <comment xml:lang="ga">soicéad</comment>
+  <comment xml:lang="hu">illesztőpont</comment>
+  <comment xml:lang="id">soket</comment>
+  <comment xml:lang="it">Socket</comment>
+  <comment xml:lang="ja">ソケット</comment>
+  <comment xml:lang="ko">소켓</comment>
+  <comment xml:lang="lt">lizdas</comment>
+  <comment xml:lang="ms">Soket</comment>
+  <comment xml:lang="nb">plugg</comment>
+  <comment xml:lang="nl">socket</comment>
+  <comment xml:lang="nn">sokkel</comment>
+  <comment xml:lang="pl">gniazdo</comment>
+  <comment xml:lang="pt">'socket'</comment>
+  <comment xml:lang="pt_BR">socket</comment>
+  <comment xml:lang="ru">сокет</comment>
+  <comment xml:lang="sq">socket</comment>
+  <comment xml:lang="sr">сокет</comment>
+  <comment xml:lang="sv">uttag</comment>
+  <comment xml:lang="uk">гніздо</comment>
+  <comment xml:lang="vi">ổ cắm</comment>
+  <comment xml:lang="zh_CN">套接字</comment>
+  <comment xml:lang="zh_TW">socket</comment>
+</mime-type>

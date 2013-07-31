@@ -1,0 +1,13 @@
+Package: xf86bigfontproto-dev
+Version: 1:1.2.0-r2.0.6
+Description: X protocol headers: xf86bigfontproto
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT-X
+Architecture: armv5te
+OE: xf86bigfontproto
+Homepage: http://www.x.org
+Depends: xf86bigfontproto
+Recommends: util-macros-dev, xf86bigfontproto-dev
+Source: http://xorg.freedesktop.org/releases/individual/proto/xf86bigfontproto-1.2.0.tar.bz2;name=archive

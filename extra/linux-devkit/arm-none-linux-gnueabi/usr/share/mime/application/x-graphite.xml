@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-graphite">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Graphite scientific graph</comment>
+  <comment xml:lang="be@latin">Navukovy hrafik Graphite</comment>
+  <comment xml:lang="bg">Графика — Graphite</comment>
+  <comment xml:lang="ca">gràfic científic Graphite</comment>
+  <comment xml:lang="cs">Vědecký graf Graphite</comment>
+  <comment xml:lang="da">Graphite-videnskabelig graf</comment>
+  <comment xml:lang="de">wissenschaftlicher Graphite-Graph</comment>
+  <comment xml:lang="el">επιστημονικό γράφημα Graphite</comment>
+  <comment xml:lang="en_GB">Graphite scientific graph</comment>
+  <comment xml:lang="eo">scienca grafikaĵo de Graphite</comment>
+  <comment xml:lang="es">gráfica científica de Graphite</comment>
+  <comment xml:lang="eu">Graphite - grafiko zientifikoak</comment>
+  <comment xml:lang="fi">Graphite- tieteellinen graafi</comment>
+  <comment xml:lang="fr">graphe Graphite scientific</comment>
+  <comment xml:lang="ga">graf eolaíoch Graphite</comment>
+  <comment xml:lang="hu">Graphite tudományos grafikon</comment>
+  <comment xml:lang="id">Grafik sains Graphite</comment>
+  <comment xml:lang="it">Grafico scientifico Graphite</comment>
+  <comment xml:lang="ja">Graphite scientific グラフ</comment>
+  <comment xml:lang="ko">Graphite 공학 그래프</comment>
+  <comment xml:lang="lt">Graphite mokslinė diagrama</comment>
+  <comment xml:lang="ms">Graf saintifik Graphite</comment>
+  <comment xml:lang="nb">Vitenskapelig graf fra Graphite</comment>
+  <comment xml:lang="nl">Graphite wetenschappelijke grafiek</comment>
+  <comment xml:lang="nn">Graphite vitskaplege graf</comment>
+  <comment xml:lang="pl">Wykres Graphite scientific</comment>
+  <comment xml:lang="pt">gráfico científico Graphite</comment>
+  <comment xml:lang="pt_BR">Gráfico científico do Graphite</comment>
+  <comment xml:lang="sq">Grafik shllogaritës Graphite </comment>
+  <comment xml:lang="sr">Graphite научни графикони</comment>
+  <comment xml:lang="sv">Vetenskaplig Graphite-grafer</comment>
+  <comment xml:lang="uk">Наукова графіка Graphite</comment>
+  <comment xml:lang="vi">Biểu đồ khoa học Graphite</comment>
+  <comment xml:lang="zh_CN">Graphite 科学图形</comment>
+  <comment xml:lang="zh_TW">Graphite 科學圖表</comment>
+  <generic-icon name="x-office-document"/>
+</mime-type>

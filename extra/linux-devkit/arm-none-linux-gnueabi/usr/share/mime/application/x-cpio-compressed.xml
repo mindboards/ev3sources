@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-cpio-compressed">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>CPIO archive (gzip-compressed)</comment>
+  <comment xml:lang="az">CPIO arxivi (gzip ilə sıxışdırılmış)</comment>
+  <comment xml:lang="be@latin">Archiŭ CPIO (gzip-skampresavany)</comment>
+  <comment xml:lang="bg">Архив — CPIO, компресиран с gzip</comment>
+  <comment xml:lang="ca">arxiu CPIO (comprimit amb gzip)</comment>
+  <comment xml:lang="cs">Archiv CPIO (komprimovaný pomocí gzip)</comment>
+  <comment xml:lang="cy">Archif CPIO (gywasgwyd drwy gzip)</comment>
+  <comment xml:lang="da">CPIO-arkiv (gzip-komprimeret)</comment>
+  <comment xml:lang="de">CPIO-Archiv (gzip-komprimiert)</comment>
+  <comment xml:lang="el">αρχείο CPIO (συμπιεσμένο με gzip)</comment>
+  <comment xml:lang="en_GB">CPIO archive (gzip-compressed)</comment>
+  <comment xml:lang="eo">CPIO-arkivo (kunpremita per gzip)</comment>
+  <comment xml:lang="es">archivador CPIO (comprimido con gzip)</comment>
+  <comment xml:lang="eu">CPIO artxiboa (gzip-ekin konprimitua)</comment>
+  <comment xml:lang="fi">CPIO-arkisto (gzip-pakattu)</comment>
+  <comment xml:lang="fr">archive CPIO (compressé gzip)</comment>
+  <comment xml:lang="ga">cartlann CPIO (comhbhrúite le gzip)</comment>
+  <comment xml:lang="hu">CPIO-archívum (gzip-pel tömörítve)</comment>
+  <comment xml:lang="id">Arsip CPIO (terkompresi gzip)</comment>
+  <comment xml:lang="it">Archivio CPIO (compresso con gzip)</comment>
+  <comment xml:lang="ja">CPIO (gzip 圧縮) アーカイブ</comment>
+  <comment xml:lang="ko">CPIO 묶음파일 (gzip으로 압축)</comment>
+  <comment xml:lang="lt">CPIO archyvas (suglaudintas su gzip)</comment>
+  <comment xml:lang="ms">Arkib CPIO (dimampatkan-gzip)</comment>
+  <comment xml:lang="nb">CPIO-arkiv (gzip-komprimert)</comment>
+  <comment xml:lang="nl">CPIO-archief (ingepakt met gzip)</comment>
+  <comment xml:lang="nn">CPIO-arkiv (gzip-pakka)</comment>
+  <comment xml:lang="pl">Archiwum CPIO (kompresja gzip)</comment>
+  <comment xml:lang="pt">arquivo CPIO (comprimido com gzip)</comment>
+  <comment xml:lang="pt_BR">Pacote CPIO (compactado com gzip)</comment>
+  <comment xml:lang="ru">архив CPIO (сжатый gzip)</comment>
+  <comment xml:lang="sq">Arkiv CPIO (kompresuar me gzip)</comment>
+  <comment xml:lang="sr">CPIO архива (компресована gzip-ом)</comment>
+  <comment xml:lang="sv">CPIO-arkiv (gzip-komprimerat)</comment>
+  <comment xml:lang="uk">Архів CPIO (стиснений gzip)</comment>
+  <comment xml:lang="vi">Kho nén CPIO (đã nén gzip)</comment>
+  <comment xml:lang="zh_CN">CPIO 压缩包(gzip 压缩)</comment>
+  <comment xml:lang="zh_TW">CPIO 保存檔 (gzip 格式壓縮)</comment>
+  <generic-icon name="package-x-generic"/>
+</mime-type>

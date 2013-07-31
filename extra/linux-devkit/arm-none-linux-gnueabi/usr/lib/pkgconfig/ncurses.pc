@@ -1,0 +1,13 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+major_version=5
+version=5.7.20100501
+
+Name: ncurses
+Description: ncurses 5.7 library
+Version: ${version}
+Requires: tinfo
+Libs:  -lncurses
+Cflags: 

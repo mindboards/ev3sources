@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-bzdvi">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>TeX DVI document (bzip-compressed)</comment>
+  <comment xml:lang="be@latin">Dakument TeX DVI (bzip-skampresavany)</comment>
+  <comment xml:lang="bg">Документ — TeX DVI, компресиран с bzip</comment>
+  <comment xml:lang="ca">document TeX DVI (comprimit amb bzip)</comment>
+  <comment xml:lang="cs">Dokument TeX DVI (komprimovaný pomocí bzip)</comment>
+  <comment xml:lang="de">TeX-DVI-Dokument (bzip-komprimiert)</comment>
+  <comment xml:lang="es">documento DVI de TeX (comprimido con bzip)</comment>
+  <comment xml:lang="eu">TeX DVI dokumentua (bzip-ekin konprimitua)</comment>
+  <comment xml:lang="fi">TeX DVI -asiakirja (bzip-pakattu)</comment>
+  <comment xml:lang="fr">document DVI TeX (compressé bzip)</comment>
+  <comment xml:lang="ga">cáipéis DVI TeX (comhbhrúite le bzip)</comment>
+  <comment xml:lang="hu">TeX DVI dokumentum (bzip-tömörítésű)</comment>
+  <comment xml:lang="id">Dokumen TeX DVI (terkompresi bzip)</comment>
+  <comment xml:lang="it">Documento TeX DVI (compresso con bzip)</comment>
+  <comment xml:lang="ko">TeX DVI 문서 (bzip으로 압축)</comment>
+  <comment xml:lang="lt">TeX DVI dokumentas (suglaudintas su bzip)</comment>
+  <comment xml:lang="nb">TeX DVI-dokument (bzip-komprimert)</comment>
+  <comment xml:lang="nl">TeX DVI-document (ingepakt met bzip)</comment>
+  <comment xml:lang="pl">Dokument TeX DVI (kompresja bzip)</comment>
+  <comment xml:lang="pt_BR">Documento DVI TeX (compactado com bzip)</comment>
+  <comment xml:lang="ru">документ TeX DVI (сжатый bzip)</comment>
+  <comment xml:lang="sv">TeX DVI-dokument (bzip-komprimerat)</comment>
+  <comment xml:lang="uk">Документ TeX DVI (стиснений bzip)</comment>
+  <comment xml:lang="vi">Tài liệu DVI TeX (đã nén bzip)</comment>
+  <generic-icon name="x-office-document"/>
+</mime-type>

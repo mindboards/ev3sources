@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-fluid">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>FLTK Fluid file</comment>
+  <comment xml:lang="be@latin">Fajł FLTK Fluid</comment>
+  <comment xml:lang="ca">fitxer Fluid FLTK</comment>
+  <comment xml:lang="cs">Soubor FLTK Fluid</comment>
+  <comment xml:lang="es">Archivo FLTK Fluid</comment>
+  <comment xml:lang="fi">FLTK Fluid -tiedosto</comment>
+  <comment xml:lang="fr">fichier Fluid FLTK</comment>
+  <comment xml:lang="ga">comhad FLTK Fluid</comment>
+  <comment xml:lang="hu">FLTK Fluid fájl</comment>
+  <comment xml:lang="id">Berkas FLTK Fluid</comment>
+  <comment xml:lang="it">File FLTK Fluid</comment>
+  <comment xml:lang="ko">FLTK 파일</comment>
+  <comment xml:lang="lt">FLTK Fluid rinkmena</comment>
+  <comment xml:lang="nb">FLTK Fluid-fil</comment>
+  <comment xml:lang="nl">FLTK FLUID-bestand</comment>
+  <comment xml:lang="pt_BR">Arquivo Fluid do FLTK</comment>
+  <comment xml:lang="sv">FLTK Fluid-fil</comment>
+  <comment xml:lang="vi">Tập tin Fluid FLTK</comment>
+  <sub-class-of type="text/plain"/>
+  <generic-icon name="x-office-document"/>
+</mime-type>

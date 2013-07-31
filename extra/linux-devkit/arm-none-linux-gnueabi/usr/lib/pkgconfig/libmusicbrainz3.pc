@@ -1,0 +1,13 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: libmusicbrainz3
+Description: The Musicbrainz Client Library.
+URL: http://musicbrainz.org/doc/libmusicbrainz
+Version: 3.0.2
+Requires: neon >= 0.25, libdiscid
+Libs: -L/usr/lib -lmusicbrainz3
+Cflags: -I/usr/include
+

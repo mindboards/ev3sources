@@ -1,0 +1,14 @@
+/etc/terminfo/a/ansi
+/etc/terminfo/d/dumb
+/etc/terminfo/x/xterm-color
+/etc/terminfo/r/rxvt
+/etc/terminfo/s/screen
+/etc/terminfo/s/sun
+/etc/terminfo/l/linux
+/etc/terminfo/v/vt100
+/etc/terminfo/v/vt102
+/etc/terminfo/v/vt52
+/etc/terminfo/v/vt200
+/etc/terminfo/x/xterm-xfree86
+/etc/terminfo/x/xterm
+/etc/terminfo/v/vt220

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="video/quicktime">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>QuickTime video</comment>
+  <comment xml:lang="be@latin">Videa QuickTime</comment>
+  <comment xml:lang="bg">Видео — QuickTime</comment>
+  <comment xml:lang="ca">vídeo QuickTime</comment>
+  <comment xml:lang="cs">Video QuickTime</comment>
+  <comment xml:lang="da">QuickTime-video</comment>
+  <comment xml:lang="el">βίντεο QuickTime</comment>
+  <comment xml:lang="eo">QuickTime-video</comment>
+  <comment xml:lang="es">vídeo QuickTime</comment>
+  <comment xml:lang="eu">QuickTime bideoa</comment>
+  <comment xml:lang="fi">Quicktime-video</comment>
+  <comment xml:lang="fr">vidéo QuickTime</comment>
+  <comment xml:lang="ga">físeán QuickTime</comment>
+  <comment xml:lang="hu">QuickTime videó</comment>
+  <comment xml:lang="id">Video QuickTime</comment>
+  <comment xml:lang="it">Video QuickTime</comment>
+  <comment xml:lang="ja">QuickTime 動画</comment>
+  <comment xml:lang="ko">퀵타임 비디오</comment>
+  <comment xml:lang="lt">QuickTime vaizdas</comment>
+  <comment xml:lang="ms">Video QuickTime</comment>
+  <comment xml:lang="nb">Quicktime film</comment>
+  <comment xml:lang="nl">QuickTime-video</comment>
+  <comment xml:lang="pt">vídeo QuickTime</comment>
+  <comment xml:lang="pt_BR">Vídeo do QuickTime</comment>
+  <comment xml:lang="ru">QuickTime видео</comment>
+  <comment xml:lang="sq">Video QuickTime</comment>
+  <comment xml:lang="sr">QuickTime видео</comment>
+  <comment xml:lang="sv">QuickTime-video</comment>
+  <comment xml:lang="vi">Ảnh động QuickTime</comment>
+  <comment xml:lang="zh_CN">QuickTime 视频</comment>
+  <comment xml:lang="zh_TW">QuickTime 影音檔</comment>
+</mime-type>

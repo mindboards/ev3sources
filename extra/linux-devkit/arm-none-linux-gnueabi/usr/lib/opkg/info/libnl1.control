@@ -1,0 +1,12 @@
+Package: libnl1
+Version: 1.1-r4.6
+Description: libnl is a library for applications dealing with netlink sockets
+Section: libs/network
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPL
+Architecture: armv5te
+OE: libnl
+Homepage: http://www.infradead.org/~tgr/libnl/
+Depends: libc6, libgcc1
+Source: http://www.infradead.org/~tgr/libnl/files/libnl-1.1.tar.gz file://local-includes.patch file://fix-includes.patch file://respect-ldflags.patch file://netlink-local-fix.patch file://dont-link-libnl-from-sysroot.patch

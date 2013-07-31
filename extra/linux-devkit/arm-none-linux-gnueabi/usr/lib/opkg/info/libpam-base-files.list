@@ -1,0 +1,13 @@
+/etc/pam.d/atd
+/etc/pam.d/common-password
+/etc/pam.d/cvs
+/etc/pam.d/common-session
+/etc/pam.d/cron
+/etc/pam.d/libcupsys2
+/etc/pam.d/common-auth
+/etc/pam.d/sshd
+/etc/pam.d/sesman
+/etc/pam.d/common-session-noninteractive
+/etc/pam.d/other
+/etc/pam.d/ppp
+/etc/pam.d/common-account

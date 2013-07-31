@@ -1,0 +1,12 @@
+Package: libdbus-glib-1-2
+Version: 0.86-r2.1.6
+Description: GLib bindings for the dbus message bus system
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2+ AFLv2.1
+Architecture: armv5te
+OE: dbus-glib
+Homepage: http://www.freedesktop.org/Software/dbus
+Depends: libdbus-1-3, libgobject-2.0-0, libgthread-2.0-0, libc6, libglib-2.0-0, libgcc1
+Source: http://dbus.freedesktop.org/releases/dbus-glib/dbus-glib-0.86.tar.gz file://no-examples.patch file://no-introspect.patch

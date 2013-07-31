@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-magicpoint">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>MagicPoint presentation</comment>
+  <comment xml:lang="be@latin">Prezentacyja MagicPoint</comment>
+  <comment xml:lang="bg">Презентация — MagicPoint</comment>
+  <comment xml:lang="ca">presentació de MagicPoint</comment>
+  <comment xml:lang="cs">Prezentace MagicPoint</comment>
+  <comment xml:lang="da">MagicPoint-præsentation</comment>
+  <comment xml:lang="de">MagicPoint-Präsentation</comment>
+  <comment xml:lang="el">παρουσίαση MagicPoint</comment>
+  <comment xml:lang="en_GB">MagicPoint presentation</comment>
+  <comment xml:lang="eo">MagicPoint-prezentaĵo</comment>
+  <comment xml:lang="es">presentación de MagicPoint</comment>
+  <comment xml:lang="eu">MagicPoint aurkezpena</comment>
+  <comment xml:lang="fi">MagicPoint-esitys</comment>
+  <comment xml:lang="fr">présentation MagicPoint</comment>
+  <comment xml:lang="ga">láithreoireacht MagicPoint</comment>
+  <comment xml:lang="hu">MagicPoint-bemutató</comment>
+  <comment xml:lang="id">Presentasi MagicPoint</comment>
+  <comment xml:lang="it">Presentazione MagicPoint</comment>
+  <comment xml:lang="ja">MagicPoint プレゼンテーション</comment>
+  <comment xml:lang="ko">MagicPoint 프리젠테이션</comment>
+  <comment xml:lang="lt">MagicPoint pateiktis</comment>
+  <comment xml:lang="ms">Persembahan MagicPoint</comment>
+  <comment xml:lang="nb">MagicPoint-presentasjon</comment>
+  <comment xml:lang="nl">MagicPoint-presentatie</comment>
+  <comment xml:lang="nn">MagicPoint-presentasjon</comment>
+  <comment xml:lang="pl">Prezentacja programu MagicPoint</comment>
+  <comment xml:lang="pt">apresentação MagicPoint</comment>
+  <comment xml:lang="pt_BR">Apresentação do MagicPoint</comment>
+  <comment xml:lang="ru">презентация MagicPoint</comment>
+  <comment xml:lang="sq">Prezantim MagicPoint</comment>
+  <comment xml:lang="sr">MagicPoint презентација</comment>
+  <comment xml:lang="sv">MagicPoint-presentation</comment>
+  <comment xml:lang="uk">Презентація MagicPoint</comment>
+  <comment xml:lang="vi">Trình diễn MagicPoint</comment>
+  <comment xml:lang="zh_CN">MagicPoint 演示文稿</comment>
+  <comment xml:lang="zh_TW">MagicPoint 簡報檔</comment>
+  <sub-class-of type="text/plain"/>
+  <generic-icon name="x-office-presentation"/>
+</mime-type>

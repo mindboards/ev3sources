@@ -1,0 +1,49 @@
+#!/bin/sh
+
+progname=`echo "$0" | sed 's%^.*/%%'`
+
+PROGRAM=gnome-doc-common
+PACKAGE=gnome-common
+VERSION=2.28.0
+
+prefix=/usr
+datarootdir=${prefix}/share
+datadir=/usr/share
+
+# options
+docdir=.
+copy=no
+
+while test $# -gt 0; do
+  case "$1" in
+  --help)
+    echo "usage: $progname [--version|--help]" 1>&2
+    exit 1 ;;
+  --version)
+    echo "$PROGRAM ($PACKAGE) $VERSION"
+    exit 0 ;;
+  --copy)
+    copy=yes
+    shift ;;
+  -*)
+    echo "$progname: unrecognised option '$1'" 1>&2
+    echo "usage: $progname [--version|--help]" 1>&2
+    exit 1 ;;
+  *)
+    echo "$progname: too many arguments" 1>&2
+    echo "usage: $progname [--version|--help]" 1>&2
+    exit 1 ;;
+  esac
+done
+
+for file in omf.make xmldocs.make; do
+  rm -f $docdir/$file
+  if test "$copy" = yes; then
+    cp -f $datadir/$PACKAGE/data/$file $docdir/ ||
+      exit 1
+  else
+    ln -sf $datadir/$PACKAGE/data/$file $docdir/ ||
+      cp -f $datadir/$PACKAGE/data/$file $docdir/ ||
+      exit 1
+  fi
+done

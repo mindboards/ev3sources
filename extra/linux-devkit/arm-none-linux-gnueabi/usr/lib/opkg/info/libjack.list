@@ -1,0 +1,10 @@
+/usr/lib/libjack.so.0
+/usr/lib/libjack.so.0.0.28
+/usr/lib/jack/jack_dummy.so
+/usr/lib/jack/intime.so
+/usr/lib/jack/inprocess.so
+/usr/lib/libjackserver.so.0.0.28
+/usr/lib/jack/jack_oss.so
+/usr/lib/jack/jack_net.so
+/usr/lib/jack/jack_alsa.so
+/usr/lib/libjackserver.so.0

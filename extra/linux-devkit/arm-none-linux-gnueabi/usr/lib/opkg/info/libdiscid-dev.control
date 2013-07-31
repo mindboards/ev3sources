@@ -1,0 +1,13 @@
+Package: libdiscid-dev
+Version: 0.2.2-r0.6
+Description: The MusicBrainz client is a library which can be built into other programs. It allows you to access the data held on the MusicBrainz server.
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPL
+Architecture: armv5te
+OE: libdiscid
+Homepage: http://musicbrainz.org
+Depends: libdiscid0, libdiscid0
+Recommends: libgcc1-dev, libc6-dev, libdiscid-dev
+Source: http://users.musicbrainz.org/~matt/libdiscid-0.2.2.tar.gz

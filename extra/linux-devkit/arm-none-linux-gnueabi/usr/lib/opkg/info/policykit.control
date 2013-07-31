@@ -1,0 +1,12 @@
+Package: policykit
+Version: 0.96-r3.6
+Description: Version 0.96-r3 of package policykit
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPLv2+
+Architecture: armv5te
+OE: policykit
+Homepage: http://www.packagekit.org/
+Depends: eggdbus, libdbus-glib-1-2, libdbus-1-3, libgio-2.0-0, libc6, libz1, libgobject-2.0-0, libgmodule-2.0-0, libc6, libgthread-2.0-0, libglib-2.0-0, libexpat1, libgcc1, libpam
+Source: http://hal.freedesktop.org/releases/polkit-0.96.tar.gz;name=polkit

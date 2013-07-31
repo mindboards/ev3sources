@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/vnd.dxf">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>DXF vector image</comment>
+  <comment xml:lang="be@latin">Vektarnaja vyjava DXF</comment>
+  <comment xml:lang="bg">Изображение — DXF</comment>
+  <comment xml:lang="ca">imatge vectorial DXF</comment>
+  <comment xml:lang="cs">Vektorový obrázek DXF</comment>
+  <comment xml:lang="da">DXF-vektorbillede</comment>
+  <comment xml:lang="de">DXF-Vektorbild</comment>
+  <comment xml:lang="el">ανυσματική εικόνα DXF</comment>
+  <comment xml:lang="en_GB">DXF vector image</comment>
+  <comment xml:lang="eo">vektora DXF-bildo</comment>
+  <comment xml:lang="es">imagen vectorial DXF</comment>
+  <comment xml:lang="eu">DXF bektore-grafikoa</comment>
+  <comment xml:lang="fi">DXF-vektorikuva</comment>
+  <comment xml:lang="fr">image vectorielle DXF</comment>
+  <comment xml:lang="ga">íomhá veicteoir DXF</comment>
+  <comment xml:lang="hu">DXF-vektorkép</comment>
+  <comment xml:lang="id">Citra vektor DXF</comment>
+  <comment xml:lang="it">Immagine vettoriale DXF</comment>
+  <comment xml:lang="ja">DXF ベクタ画像</comment>
+  <comment xml:lang="ko">DXF 벡터 그림</comment>
+  <comment xml:lang="lt">DXF vektorinis paveikslėlis</comment>
+  <comment xml:lang="ms">Imej vektor DXF</comment>
+  <comment xml:lang="nb">DXF-vektorgrafikk</comment>
+  <comment xml:lang="nl">DXF-vectorafbeelding</comment>
+  <comment xml:lang="nn">DXF-vektorgrafikk</comment>
+  <comment xml:lang="pl">Obraz wektorowy DXF</comment>
+  <comment xml:lang="pt">imagem de vectores DXF</comment>
+  <comment xml:lang="pt_BR">Imagem vetorial DXF</comment>
+  <comment xml:lang="ru">векторное изображение DXF</comment>
+  <comment xml:lang="sq">Imazh vektorial DFX</comment>
+  <comment xml:lang="sr">DXF векторска графика</comment>
+  <comment xml:lang="sv">DXF-vektorbild</comment>
+  <comment xml:lang="uk">Векторне зображення DXF</comment>
+  <comment xml:lang="vi">Ảnh véc-tơ DXF</comment>
+  <comment xml:lang="zh_CN">DXF 矢量图像</comment>
+  <comment xml:lang="zh_TW">DXF 向量圖</comment>
+</mime-type>

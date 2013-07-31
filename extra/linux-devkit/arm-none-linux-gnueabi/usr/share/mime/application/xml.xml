@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/xml">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>XML document</comment>
+  <comment xml:lang="be@latin">Dakument XML</comment>
+  <comment xml:lang="bg">Документ — XML</comment>
+  <comment xml:lang="ca">document XML</comment>
+  <comment xml:lang="cs">Dokument XML</comment>
+  <comment xml:lang="de">XML-Dokument</comment>
+  <comment xml:lang="en_GB">XML document</comment>
+  <comment xml:lang="es">documento XML</comment>
+  <comment xml:lang="eu">XML dokumentua</comment>
+  <comment xml:lang="fi">XML-asiakirja</comment>
+  <comment xml:lang="fr">document XML</comment>
+  <comment xml:lang="ga">cáipéis XML</comment>
+  <comment xml:lang="hu">XML dokumentum</comment>
+  <comment xml:lang="id">Dokumen XML</comment>
+  <comment xml:lang="it">Documento XML</comment>
+  <comment xml:lang="ko">XML 문서</comment>
+  <comment xml:lang="lt">XML dokumentas</comment>
+  <comment xml:lang="nb">XML-dokument</comment>
+  <comment xml:lang="nl">XML-document</comment>
+  <comment xml:lang="nn">XML-dokument</comment>
+  <comment xml:lang="pl">Dokument XML</comment>
+  <comment xml:lang="pt_BR">Documento XML</comment>
+  <comment xml:lang="ru">документ XML</comment>
+  <comment xml:lang="sv">XML-dokument</comment>
+  <comment xml:lang="uk">Документ XML</comment>
+  <comment xml:lang="vi">Tài liệu XML</comment>
+  <acronym>XML</acronym>
+  <expanded-acronym>eXtensible Markup Language</expanded-acronym>
+  <sub-class-of type="text/plain"/>
+  <generic-icon name="text-html"/>
+  <alias type="text/xml"/>
+</mime-type>

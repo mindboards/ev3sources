@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/x-ms-asx">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Microsoft ASX playlist</comment>
+  <comment xml:lang="be@latin">Śpis Microsoft ASX</comment>
+  <comment xml:lang="bg">Списък за изпълнение — Microsoft ASX</comment>
+  <comment xml:lang="ca">llista de reproducció ASX de Microsoft</comment>
+  <comment xml:lang="cs">Seznam skladeb Microsoft ASX</comment>
+  <comment xml:lang="es">lista de reproducción ASX de Microsoft</comment>
+  <comment xml:lang="eu">Microsoft ASX erreprodukzio-zerrenda</comment>
+  <comment xml:lang="fi">Microsoft ASX -soittolista</comment>
+  <comment xml:lang="fr">liste de lecture Microsoft ASX</comment>
+  <comment xml:lang="ga">seinmliosta Microsoft ASX</comment>
+  <comment xml:lang="hu">Microsoft ASX lejátszólista</comment>
+  <comment xml:lang="id">Senarai putar Microsoft ASX</comment>
+  <comment xml:lang="it">Scaletta Microsoft ASX</comment>
+  <comment xml:lang="ko">Microsoft ASX 연주목록</comment>
+  <comment xml:lang="lt">Microsoft ASX grojaraštis</comment>
+  <comment xml:lang="nb">Microsoft ASX-spilleliste</comment>
+  <comment xml:lang="nl">Microsoft ASX-afspeellijst</comment>
+  <comment xml:lang="pt_BR">Lista de execução do Microsoft ASX</comment>
+  <comment xml:lang="sv">Microsoft ASX-spellista</comment>
+  <comment xml:lang="vi">Danh mục nhạc Microsoft ASX</comment>
+  <alias type="video/x-ms-wvx"/>
+  <alias type="video/x-ms-wax"/>
+  <alias type="video/x-ms-wmx"/>
+</mime-type>

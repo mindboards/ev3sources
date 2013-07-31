@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-alz">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Alzip archive</comment>
+  <comment xml:lang="be@latin">Archiŭ Alzip</comment>
+  <comment xml:lang="ca">arxiu alzip</comment>
+  <comment xml:lang="cs">Archiv Alzip</comment>
+  <comment xml:lang="es">archivador Alzip</comment>
+  <comment xml:lang="fi">Alzip-arkisto</comment>
+  <comment xml:lang="fr">archive alzip</comment>
+  <comment xml:lang="ga">cartlann Alzip</comment>
+  <comment xml:lang="hu">Alzip archívum</comment>
+  <comment xml:lang="id">Arsip Alzip</comment>
+  <comment xml:lang="it">Archivio Alzip</comment>
+  <comment xml:lang="ko">알집 압축파일</comment>
+  <comment xml:lang="lt">Alzip archyvas</comment>
+  <comment xml:lang="nb">Alzip-arkiv</comment>
+  <comment xml:lang="nl">Alzip-archief</comment>
+  <comment xml:lang="pt_BR">Pacote Alzip</comment>
+  <comment xml:lang="ru">архив Alzip</comment>
+  <comment xml:lang="sv">Alzip-arkiv</comment>
+  <comment xml:lang="vi">Kho nén Alzip</comment>
+  <generic-icon name="package-x-generic"/>
+</mime-type>

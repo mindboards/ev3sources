@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="inode/symlink">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>symbolic link</comment>
+  <comment xml:lang="az">simvolik körpü</comment>
+  <comment xml:lang="be@latin">symbalnaja spasyłka</comment>
+  <comment xml:lang="bg">Символна връзка</comment>
+  <comment xml:lang="ca">enllaç simbòlic</comment>
+  <comment xml:lang="cs">Symbolický odkaz</comment>
+  <comment xml:lang="cy">cyswllt symbolaidd</comment>
+  <comment xml:lang="da">symbolsk henvisning</comment>
+  <comment xml:lang="de">Symbolischer Link</comment>
+  <comment xml:lang="el">συμβολικός σύνδεσμος</comment>
+  <comment xml:lang="en_GB">symbolic link</comment>
+  <comment xml:lang="eo">simbola ligilo</comment>
+  <comment xml:lang="es">enlace simbólico</comment>
+  <comment xml:lang="eu">esteka sinbolikoa</comment>
+  <comment xml:lang="fi">symbolinen linkki</comment>
+  <comment xml:lang="fr">lien symbolique</comment>
+  <comment xml:lang="ga">nasc siombalach</comment>
+  <comment xml:lang="hu">szimbolikus link</comment>
+  <comment xml:lang="id">taut simbolik</comment>
+  <comment xml:lang="it">Collegamento simbolico</comment>
+  <comment xml:lang="ja">シンボリックリンク</comment>
+  <comment xml:lang="ko">심볼릭 링크</comment>
+  <comment xml:lang="lt">simbolinė nuoroda</comment>
+  <comment xml:lang="ms">Pautan simbolik</comment>
+  <comment xml:lang="nb">symbolsk lenke</comment>
+  <comment xml:lang="nl">symbolische koppeling</comment>
+  <comment xml:lang="nn">symbolsk lenkje</comment>
+  <comment xml:lang="pl">dowiązanie symboliczne</comment>
+  <comment xml:lang="pt">ligação simbólica</comment>
+  <comment xml:lang="pt_BR">ligação simbólica</comment>
+  <comment xml:lang="ru">символическая ссылка</comment>
+  <comment xml:lang="sq">lidhje simbolike</comment>
+  <comment xml:lang="sr">симболичка веза</comment>
+  <comment xml:lang="sv">symbolisk länk</comment>
+  <comment xml:lang="uk">символічне посилання</comment>
+  <comment xml:lang="vi">liên kết tượng trưng</comment>
+  <comment xml:lang="zh_CN">符号链接</comment>
+  <comment xml:lang="zh_TW">符號鏈結</comment>
+</mime-type>

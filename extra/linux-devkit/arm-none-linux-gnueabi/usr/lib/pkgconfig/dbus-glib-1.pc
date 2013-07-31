@@ -1,0 +1,13 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: dbus-glib
+Description: GLib integration for the free desktop message bus
+Version: 0.86
+Requires: dbus-1 glib-2.0 gobject-2.0
+Libs: -L${libdir} -ldbus-glib-1
+Cflags: -I${includedir}/dbus-1.0
+
+

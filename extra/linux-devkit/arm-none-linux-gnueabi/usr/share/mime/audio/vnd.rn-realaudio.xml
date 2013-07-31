@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/vnd.rn-realaudio">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>RealAudio document</comment>
+  <comment xml:lang="be@latin">Dakument RealAudio</comment>
+  <comment xml:lang="bg">Документ — RealAudio</comment>
+  <comment xml:lang="ca">document RealAudio</comment>
+  <comment xml:lang="cs">Dokument RealAudio</comment>
+  <comment xml:lang="de">RealAudio-Dokument</comment>
+  <comment xml:lang="en_GB">RealAudio document</comment>
+  <comment xml:lang="es">documento RealAudio</comment>
+  <comment xml:lang="eu">RealAudio dokumentua</comment>
+  <comment xml:lang="fi">RealAudio-asiakirja</comment>
+  <comment xml:lang="fr">document RealAudio</comment>
+  <comment xml:lang="ga">cáipéis RealAudio</comment>
+  <comment xml:lang="hu">RealAudio dokumentum</comment>
+  <comment xml:lang="id">Dokumen RealAudio</comment>
+  <comment xml:lang="it">Documento RealAudio</comment>
+  <comment xml:lang="ko">RealAudio 문서</comment>
+  <comment xml:lang="lt">RealAudio dokumentas</comment>
+  <comment xml:lang="nb">RealAudio-dokument</comment>
+  <comment xml:lang="nl">RealAudio-document</comment>
+  <comment xml:lang="nn">RealAudio-dokument</comment>
+  <comment xml:lang="pl">Dokument RealAudio</comment>
+  <comment xml:lang="pt_BR">Documento RealAudio</comment>
+  <comment xml:lang="sv">RealAudio-dokument</comment>
+  <comment xml:lang="uk">Документ RealAudio</comment>
+  <comment xml:lang="vi">Tài liệu âm thanh RealAudio</comment>
+  <alias type="audio/x-pn-realaudio"/>
+  <alias type="audio/vnd.m-realaudio"/>
+</mime-type>

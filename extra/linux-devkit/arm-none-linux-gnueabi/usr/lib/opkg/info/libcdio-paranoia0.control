@@ -1,0 +1,12 @@
+Package: libcdio-paranoia0
+Version: 0.82-r3.0.6
+Description: gstreamer cdio-paranoia library
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv3+
+Architecture: armv5te
+OE: libcdio
+Homepage: http://www.gnu.org/software/libcdio/
+Depends: libcdio-cdda0, libcdio12, libc6, libgcc1
+Source: ftp://ftp.gnu.org/gnu/libcdio/libcdio-0.82.tar.gz

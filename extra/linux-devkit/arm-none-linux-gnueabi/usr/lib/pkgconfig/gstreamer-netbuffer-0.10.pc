@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include/gstreamer-0.10
+
+Name: GStreamer Network Buffer Library
+Description: Network buffer for use in network sources/sinks
+Requires: gstreamer-0.10
+Version: 0.10.30
+Libs: -L${libdir} -lgstnetbuffer-0.10
+Cflags: -I${includedir}
+

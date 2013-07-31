@@ -1,0 +1,3 @@
+kernel/drivers/mmc/card/mmc_block.ko
+kernel/drivers/mmc/core/mmc_core.ko
+kernel/drivers/mmc/host/davinci_mmc.ko

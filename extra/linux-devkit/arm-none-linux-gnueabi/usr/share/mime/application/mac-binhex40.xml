@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/mac-binhex40">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Macintosh BinHex-encoded file</comment>
+  <comment xml:lang="az">Macintosh BinHex-kodlanmış fayl</comment>
+  <comment xml:lang="be@latin">Fajł Macintosh, BinHex-zakadavany</comment>
+  <comment xml:lang="bg">Файл — кодиран във формат BinHex за Macintosh</comment>
+  <comment xml:lang="ca">fitxer codificat BinHex de Macintosh</comment>
+  <comment xml:lang="cs">Soubor kódovaný pomocí Macintosh BinHex</comment>
+  <comment xml:lang="cy">Ffeil BinHex-amgodwyd Macintosh</comment>
+  <comment xml:lang="da">Macintosh BinHex-kodet fil</comment>
+  <comment xml:lang="de">Macintosh-Datei (BinHex-kodiert)</comment>
+  <comment xml:lang="el">αρχείο Macintosh κωδικοποίησης BinHex</comment>
+  <comment xml:lang="en_GB">Macintosh BinHex-encoded file</comment>
+  <comment xml:lang="eo">dosiero kodigita laŭ Macintosh BinHex</comment>
+  <comment xml:lang="es">archivo Macintosh codificado con BinHex</comment>
+  <comment xml:lang="eu">Macintosh BinHex-ekin kodetutako fitxategia</comment>
+  <comment xml:lang="fi">Macintosh BinHex -koodattu tiedosto</comment>
+  <comment xml:lang="fr">fichier codé Macintosh BinHex</comment>
+  <comment xml:lang="ga">comhad ionchódaithe le Macintosh BinHex</comment>
+  <comment xml:lang="hu">Macintosh BinHex kódolású fájl</comment>
+  <comment xml:lang="id">Berkas tersandi Macintosh BinHex</comment>
+  <comment xml:lang="it">File Macintosh codificato BinHex</comment>
+  <comment xml:lang="ja">Macintosh BinHex エンコードファイル</comment>
+  <comment xml:lang="ko">맥킨토시 BinHex-encoded 압축파일</comment>
+  <comment xml:lang="lt">Macintosh BinHex-encoded rinkmena</comment>
+  <comment xml:lang="ms">Fail terenkod-BinHex Macintosh</comment>
+  <comment xml:lang="nb">Macintosh BinHe-kodet arkiv</comment>
+  <comment xml:lang="nl">Macintosh BinHex-gecodeerd bestand</comment>
+  <comment xml:lang="nn">Macintosh BinHex-koda fil</comment>
+  <comment xml:lang="pl">Zakodowany w BinHex plik Macintosha</comment>
+  <comment xml:lang="pt">ficheiro codificado em BinHex de Macintosh</comment>
+  <comment xml:lang="pt_BR">Arquivo Macintosh codificado com BinHex</comment>
+  <comment xml:lang="sq">File Macintosh i kodifikuar BinHex</comment>
+  <comment xml:lang="sr">Мекинтош BinHex-encoded датотека</comment>
+  <comment xml:lang="sv">Macintosh BinHex-kodad fil</comment>
+  <comment xml:lang="uk">Файл закодований Macintosh BinHex</comment>
+  <comment xml:lang="vi">Tập tin đã mã hoá BinHex của Macintosh</comment>
+  <comment xml:lang="zh_CN">Macintosh BinHex 编码的文件</comment>
+  <comment xml:lang="zh_TW">Macintosh BinHex 編碼檔</comment>
+  <generic-icon name="package-x-generic"/>
+</mime-type>

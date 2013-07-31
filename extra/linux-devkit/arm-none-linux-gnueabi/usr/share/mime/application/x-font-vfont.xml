@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-font-vfont">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>V font</comment>
+  <comment xml:lang="az">V yazı növü</comment>
+  <comment xml:lang="be@latin">Šryft V</comment>
+  <comment xml:lang="bg">Шрифт — V</comment>
+  <comment xml:lang="ca">tipus de lletra V</comment>
+  <comment xml:lang="cs">Písmo V</comment>
+  <comment xml:lang="cy">Ffont V</comment>
+  <comment xml:lang="da">V-skrifttype</comment>
+  <comment xml:lang="de">V-Schrift</comment>
+  <comment xml:lang="el">γραμματοσειρά V</comment>
+  <comment xml:lang="en_GB">V font</comment>
+  <comment xml:lang="eo">V-tiparo</comment>
+  <comment xml:lang="es">tipografía V</comment>
+  <comment xml:lang="eu">V letra-tipoa</comment>
+  <comment xml:lang="fi">V-kirjasin</comment>
+  <comment xml:lang="fr">police V</comment>
+  <comment xml:lang="ga">cló V</comment>
+  <comment xml:lang="hu">V-betűkészlet</comment>
+  <comment xml:lang="id">Fonta V</comment>
+  <comment xml:lang="it">Tipo carattere V</comment>
+  <comment xml:lang="ja">V フォント</comment>
+  <comment xml:lang="ko">V 글꼴</comment>
+  <comment xml:lang="lt">V šriftas</comment>
+  <comment xml:lang="ms">Font V</comment>
+  <comment xml:lang="nb">V-skrift</comment>
+  <comment xml:lang="nl">V-lettertype</comment>
+  <comment xml:lang="nn">V-skrifttype</comment>
+  <comment xml:lang="pl">Czcionka V</comment>
+  <comment xml:lang="pt">tipo de letra V</comment>
+  <comment xml:lang="pt_BR">Fonte V</comment>
+  <comment xml:lang="sq">Gërmë V</comment>
+  <comment xml:lang="sr">V фонт</comment>
+  <comment xml:lang="sv">V-typsnitt</comment>
+  <comment xml:lang="uk">V-шрифт</comment>
+  <comment xml:lang="vi">Phông chữ V</comment>
+  <comment xml:lang="zh_CN">V 字体</comment>
+  <comment xml:lang="zh_TW">V 字型檔</comment>
+  <generic-icon name="font-x-generic"/>
+</mime-type>

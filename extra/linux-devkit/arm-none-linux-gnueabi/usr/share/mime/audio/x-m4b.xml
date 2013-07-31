@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/x-m4b">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>MPEG-4 audio book</comment>
+  <comment xml:lang="be@latin">Aŭdyjokniha MPEG-4</comment>
+  <comment xml:lang="bg">Аудио книга — MPEG-4</comment>
+  <comment xml:lang="ca">llibre d'àudio MPEG-4</comment>
+  <comment xml:lang="cs">Zvuková kniha MPEG-4</comment>
+  <comment xml:lang="es">audiolibro en MPEG-4</comment>
+  <comment xml:lang="eu">MPEG-4 audio-liburua</comment>
+  <comment xml:lang="fi">MPEG-4-äänikirja</comment>
+  <comment xml:lang="fr">livre audio MPEG-4</comment>
+  <comment xml:lang="ga">leabhar fhuaim MPEG-4</comment>
+  <comment xml:lang="hu">MPEG-4 hangoskönyv</comment>
+  <comment xml:lang="id">Buku audio MPEG-4</comment>
+  <comment xml:lang="it">Audiolibro MPEG-4</comment>
+  <comment xml:lang="ko">MPEG-4 오디오북</comment>
+  <comment xml:lang="lt">MPEG-4 garso knyga</comment>
+  <comment xml:lang="nb">MPEG-4-lydbok</comment>
+  <comment xml:lang="nl">MPEG4-audioboek</comment>
+  <comment xml:lang="pt_BR">Livro de Áudio MPEG-4</comment>
+  <comment xml:lang="sv">MPEG-4-ljudbok</comment>
+  <comment xml:lang="vi">Sách âm thanh MPEG-4</comment>
+  <sub-class-of type="audio/mp4"/>
+</mime-type>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-cmake">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>CMake source code</comment>
+  <comment xml:lang="be@latin">Kryničny kod CMake</comment>
+  <comment xml:lang="ca">codi font en CMake</comment>
+  <comment xml:lang="cs">Zdrojový kód CMake</comment>
+  <comment xml:lang="es">código fuente en CMake</comment>
+  <comment xml:lang="fi">CMake-lähdekoodi</comment>
+  <comment xml:lang="fr">code source CMake</comment>
+  <comment xml:lang="ga">cód foinseach CMake</comment>
+  <comment xml:lang="hu">CMake-forráskód</comment>
+  <comment xml:lang="id">Kode program CMake</comment>
+  <comment xml:lang="it">Codice sorgente CMake</comment>
+  <comment xml:lang="ko">CMake 소스 코드</comment>
+  <comment xml:lang="lt">CMake pirminis tekstas</comment>
+  <comment xml:lang="nb">CMake-kildekode</comment>
+  <comment xml:lang="nl">CMake-broncode</comment>
+  <comment xml:lang="pt_BR">Código fonte CMake</comment>
+  <comment xml:lang="ru">программа на языке CMake</comment>
+  <comment xml:lang="sv">CMake-källkod</comment>
+  <comment xml:lang="vi">Mã nguồn CMake</comment>
+</mime-type>

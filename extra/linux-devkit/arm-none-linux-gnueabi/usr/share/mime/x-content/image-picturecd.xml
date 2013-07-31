@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="x-content/image-picturecd">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Picture CD</comment>
+  <comment xml:lang="be@latin">Picture CD</comment>
+  <comment xml:lang="ca">foto CD</comment>
+  <comment xml:lang="fr">CD Picture</comment>
+  <comment xml:lang="ga">Dlúthdhiosca Grianghraf</comment>
+  <comment xml:lang="nl">foto-CD</comment>
+</mime-type>

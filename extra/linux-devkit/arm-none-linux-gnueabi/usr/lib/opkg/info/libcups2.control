@@ -1,0 +1,12 @@
+Package: libcups2
+Version: 1.2.12-r7.2.6
+Description: An Internet printing system for Unix.
+Section: console/utils
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPL LGPL
+Architecture: armv5te
+OE: cups
+Homepage: unknown
+Depends: libgnutls26, libc6, libz1, libgcc1
+Source: ftp://ftp.easysw.com/pub/cups/1.2.12/cups-1.2.12-source.tar.bz2

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-opml+xml">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>OPML syndication feed</comment>
+  <comment xml:lang="be@latin">Syndykacyjny kanał OPML</comment>
+  <comment xml:lang="bg">Емисия — OPML</comment>
+  <comment xml:lang="ca">canal de sindicació OPML</comment>
+  <comment xml:lang="cs">Kanál OPML</comment>
+  <comment xml:lang="es">Proveedor de noticias OPML</comment>
+  <comment xml:lang="eu">OPML harpidetze-iturria</comment>
+  <comment xml:lang="fi">OPML-yhdistevirta</comment>
+  <comment xml:lang="fr">fil de syndication OPML</comment>
+  <comment xml:lang="ga">fotha sindeacáitithe OPML</comment>
+  <comment xml:lang="hu">OPML egyesítőfolyam</comment>
+  <comment xml:lang="id">Umpan sindikasi OPML</comment>
+  <comment xml:lang="it">Feed di distribuzione OPML</comment>
+  <comment xml:lang="ko">OPML 묶음 feed</comment>
+  <comment xml:lang="lt">OPML sindikacijos kanalas</comment>
+  <comment xml:lang="nb">OPML syndikeringsstrøm</comment>
+  <comment xml:lang="nl">OPML-syndicatie-feed</comment>
+  <comment xml:lang="pt_BR">Fonte de notícias OPML</comment>
+  <comment xml:lang="sv">OPML-syndikeringskanal</comment>
+  <comment xml:lang="vi">Nguồn tin tức OPML</comment>
+  <sub-class-of type="application/xml"/>
+  <alias type="text/x-opml"/>
+  <generic-icon name="text-html"/>
+</mime-type>

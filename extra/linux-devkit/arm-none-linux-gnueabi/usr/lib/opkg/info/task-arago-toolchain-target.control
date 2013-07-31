@@ -1,0 +1,12 @@
+Package: task-arago-toolchain-target
+Version: 1.0-r6.6
+Description: Target packages for a standalone Arago SDK or external toolchain
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: unknown
+Architecture: armv5te
+OE: task-arago-toolchain-target
+Homepage: unknown
+Depends: alsa-dev, alsa-lib-dev, alsa-utils-dev, curl-dev, util-linux-ng-dev, i2c-tools-dev, libfreetype-dev, libjpeg-dev, liblzo-dev, libopkg-dev, libpng-dev, libreadline-dev, libts-dev, libusb-0.1-dev, libusb-1.0-dev, libvolume-id-dev, libz-dev, mtd-utils-dev, ncurses-dev, opkg-dev
+Source: file:///home/schuyler_2/am_builds/arago/recipes/tasks/task-arago-toolchain-target.bb

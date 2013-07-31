@@ -1,0 +1,13 @@
+Package: libjasper-dev
+Version: 1.900.1-r1.6
+Description: Jpeg 2000 implementation
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT
+Architecture: armv5te
+OE: jasper
+Homepage: unknown
+Depends: libjasper1, libjasper1
+Recommends: libc6-dev, libjpeg-dev, libgcc1-dev, libjasper-dev
+Source: http://www.ece.uvic.ca/~mdadams/jasper/software/jasper-1.900.1.zip

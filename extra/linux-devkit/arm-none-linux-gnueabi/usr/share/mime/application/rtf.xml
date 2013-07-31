@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/rtf">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>RTF document</comment>
+  <comment xml:lang="be@latin">Dakument RTF</comment>
+  <comment xml:lang="bg">Документ — RTF</comment>
+  <comment xml:lang="ca">document RTF</comment>
+  <comment xml:lang="cs">Dokument RTF</comment>
+  <comment xml:lang="de">RTF-Dokument</comment>
+  <comment xml:lang="en_GB">RTF document</comment>
+  <comment xml:lang="es">documento RTF</comment>
+  <comment xml:lang="eu">RTF dokumentua</comment>
+  <comment xml:lang="fi">RTF-asiakirja</comment>
+  <comment xml:lang="fr">document RTF</comment>
+  <comment xml:lang="ga">cáipéis RTF</comment>
+  <comment xml:lang="hu">RTF dokumentum</comment>
+  <comment xml:lang="id">Dokumen RTF</comment>
+  <comment xml:lang="it">Documento RTF</comment>
+  <comment xml:lang="ko">RTF 문서</comment>
+  <comment xml:lang="lt">RTF dokumentas</comment>
+  <comment xml:lang="nb">RTF-dokument</comment>
+  <comment xml:lang="nl">RTF-document</comment>
+  <comment xml:lang="nn">TRF-dokument</comment>
+  <comment xml:lang="pl">Dokument RTF</comment>
+  <comment xml:lang="pt_BR">Documento RTF</comment>
+  <comment xml:lang="sv">RTF-dokument</comment>
+  <comment xml:lang="uk">Документ RTF</comment>
+  <comment xml:lang="vi">Tài liệu RTF</comment>
+  <acronym>RTF</acronym>
+  <expanded-acronym>Rich Text Format</expanded-acronym>
+  <sub-class-of type="text/plain"/>
+  <generic-icon name="x-office-document"/>
+  <alias type="text/rtf"/>
+</mime-type>

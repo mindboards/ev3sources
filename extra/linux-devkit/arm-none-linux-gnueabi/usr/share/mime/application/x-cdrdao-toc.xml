@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-cdrdao-toc">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>CD Table Of Contents</comment>
+  <comment xml:lang="be@latin">Źmieściva CD</comment>
+  <comment xml:lang="ca">taula de continguts de CD</comment>
+  <comment xml:lang="cs">Obsah CD</comment>
+  <comment xml:lang="es">Índice de contenidos de CD</comment>
+  <comment xml:lang="fi">CD-sisällysluettelo</comment>
+  <comment xml:lang="fr">table des matières de CD</comment>
+  <comment xml:lang="ga">clár ábhar dlúthdhiosca</comment>
+  <comment xml:lang="hu">CD tartalomjegyzék</comment>
+  <comment xml:lang="id">Tabel Isi CD</comment>
+  <comment xml:lang="it">Indice CD</comment>
+  <comment xml:lang="ko">CD 내용 목록</comment>
+  <comment xml:lang="lt">CD turinys</comment>
+  <comment xml:lang="nb">Innholdsfortegnelse for CD</comment>
+  <comment xml:lang="nl">CD-inhoudsopgave</comment>
+  <comment xml:lang="pt_BR">Sumário de CD</comment>
+  <comment xml:lang="sv">Cd-innehållsförteckning</comment>
+  <comment xml:lang="vi">Mục Lục của đĩa CD</comment>
+  <sub-class-of type="text/plain"/>
+  <generic-icon name="text-x-generic"/>
+</mime-type>

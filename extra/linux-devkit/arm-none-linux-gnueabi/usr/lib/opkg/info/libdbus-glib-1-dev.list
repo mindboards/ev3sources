@@ -1,0 +1,9 @@
+/usr/lib/libdbus-glib-1.la
+/usr/include/dbus-1.0/dbus/dbus-glib-lowlevel.h
+/usr/lib/pkgconfig/dbus-glib-1.pc
+/usr/lib/libdbus-glib-1.so
+/usr/bin/dbus-binding-tool
+/usr/include/dbus-1.0/dbus/dbus-glib.h
+/usr/include/dbus-1.0/dbus/dbus-glib-bindings.h
+/usr/include/dbus-1.0/dbus/dbus-gtype-specialized.h
+/usr/include/dbus-1.0/dbus/dbus-glib-error-enum.h

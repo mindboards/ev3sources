@@ -1,0 +1,14 @@
+Package: iptables
+Version: 1.4.9.1-r7.1.6
+Description: iptables network filtering tools
+Section: console/utils
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2+
+Architecture: armv5te
+OE: iptables
+Homepage: http://www.netfilter.org/
+Depends: libc6, libgcc1
+Recommends: kernel-module-ip-tables, kernel-module-iptable-nat, kernel-module-iptable-filter, kernel-module-ipt-masquerade
+Provides: iptables-utils
+Source: http://netfilter.org/projects/iptables/files/iptables-1.4.9.1.tar.bz2;name=iptables-1.4.9.1

@@ -1,0 +1,13 @@
+Package: libx11-dev
+Version: 1:1.4.0-r9.0.6
+Description: Base X libs.
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT-X
+Architecture: armv5te
+OE: libx11
+Homepage: http://www.x.org
+Depends: libx11-6, libx11-xcb1, libx11-6, xproto-dev, kbproto-dev, libxcb-dev
+Recommends: libxcb-dev, util-macros-dev, xtrans-dev, libxdmcp-dev, libxau-dev, bigreqsproto-dev, xproto-dev, xextproto-dev, xcmiscproto-dev, xf86bigfontproto-dev, kbproto-dev, inputproto-dev, libx11-dev, libpthread-stubs-dev, libc6-dev, libgcc1-dev, libx11-xcb-dev
+Source: http://xorg.freedesktop.org/releases/individual/lib/libX11-1.4.0.tar.bz2;name=archive file://keysymdef_include.patch file://x11_disable_makekeys.patch

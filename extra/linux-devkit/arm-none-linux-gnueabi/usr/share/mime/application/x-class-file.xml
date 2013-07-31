@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-class-file">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Java byte code</comment>
+  <comment xml:lang="az">Java bayt kodu</comment>
+  <comment xml:lang="be@latin">Bajtavy kod Java</comment>
+  <comment xml:lang="bg">Байт код за Java</comment>
+  <comment xml:lang="ca">codi byte de java</comment>
+  <comment xml:lang="cs">Bajtový kód Java</comment>
+  <comment xml:lang="cy">Côd beit Java</comment>
+  <comment xml:lang="da">Java-bytekode</comment>
+  <comment xml:lang="de">Java-Bytecode</comment>
+  <comment xml:lang="el">συμβολοκώδικας Java</comment>
+  <comment xml:lang="en_GB">Java byte code</comment>
+  <comment xml:lang="eo">Java-bajtkodo</comment>
+  <comment xml:lang="es">bytecode Java</comment>
+  <comment xml:lang="eu">Java byte-kodea</comment>
+  <comment xml:lang="fi">Java-tavukoodi</comment>
+  <comment xml:lang="fr">code Java binaire</comment>
+  <comment xml:lang="ga">beartchód Java</comment>
+  <comment xml:lang="hu">Java-bájtkód</comment>
+  <comment xml:lang="id">Kode bita Java</comment>
+  <comment xml:lang="it">Bytecode Java</comment>
+  <comment xml:lang="ja">Java バイトコード</comment>
+  <comment xml:lang="ko">자바 바이트코드</comment>
+  <comment xml:lang="lt">Java baitinis kodas</comment>
+  <comment xml:lang="ms">Kod bait Java</comment>
+  <comment xml:lang="nb">Java-bytekode</comment>
+  <comment xml:lang="nl">Java-bytecode</comment>
+  <comment xml:lang="nn">Jave byte-kode</comment>
+  <comment xml:lang="pl">Kod bajtowy Javy</comment>
+  <comment xml:lang="pt">'byte-code' Java</comment>
+  <comment xml:lang="pt_BR">Código compilado Java</comment>
+  <comment xml:lang="ru">байт-код Java</comment>
+  <comment xml:lang="sq">Byte code Java</comment>
+  <comment xml:lang="sr">Јава бајтни ко̂д</comment>
+  <comment xml:lang="sv">Java-bytekod</comment>
+  <comment xml:lang="uk">Байт-код Java</comment>
+  <comment xml:lang="vi">Mã byte Java</comment>
+  <comment xml:lang="zh_CN">Java 字节码</comment>
+  <comment xml:lang="zh_TW">Java 位元碼</comment>
+</mime-type>

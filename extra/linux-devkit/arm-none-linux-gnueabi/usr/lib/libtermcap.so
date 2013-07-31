@@ -1,0 +1,2 @@
+/* GNU ld script */
+INPUT(AS_NEEDED(-ltinfo))

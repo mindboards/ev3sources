@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="video/x-sgi-movie">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>SGI video</comment>
+  <comment xml:lang="az">SGI video faylı</comment>
+  <comment xml:lang="be@latin">Videa SGI</comment>
+  <comment xml:lang="bg">Видео — SGI</comment>
+  <comment xml:lang="ca">vídeo SGI</comment>
+  <comment xml:lang="cs">Video SGI</comment>
+  <comment xml:lang="cy">Video SGI</comment>
+  <comment xml:lang="da">SGI-video</comment>
+  <comment xml:lang="de">SGI-Video</comment>
+  <comment xml:lang="el">βίντεο SGI</comment>
+  <comment xml:lang="en_GB">SGI video</comment>
+  <comment xml:lang="eo">SGI-video</comment>
+  <comment xml:lang="es">vídeo SGI</comment>
+  <comment xml:lang="eu">SGI bideoa</comment>
+  <comment xml:lang="fi">SGI-video</comment>
+  <comment xml:lang="fr">vidéo SGI</comment>
+  <comment xml:lang="ga">físeán SGI</comment>
+  <comment xml:lang="hu">SGI-videó</comment>
+  <comment xml:lang="id">Video SGI</comment>
+  <comment xml:lang="it">Video SGI</comment>
+  <comment xml:lang="ja">SGI 動画</comment>
+  <comment xml:lang="ko">SGI 비디오</comment>
+  <comment xml:lang="lt">SGI vaizdas</comment>
+  <comment xml:lang="ms">Video SGI</comment>
+  <comment xml:lang="nb">SGI-film</comment>
+  <comment xml:lang="nl">SGI-video</comment>
+  <comment xml:lang="nn">SGI-video</comment>
+  <comment xml:lang="pl">Plik wideo SGI</comment>
+  <comment xml:lang="pt">vídeo SGI</comment>
+  <comment xml:lang="pt_BR">Vídeo SGI</comment>
+  <comment xml:lang="sq">Video SGI</comment>
+  <comment xml:lang="sr">SGI видео</comment>
+  <comment xml:lang="sv">SGI-video</comment>
+  <comment xml:lang="uk">Відео-кліп SGI</comment>
+  <comment xml:lang="vi">Ảnh động SGI</comment>
+  <comment xml:lang="zh_CN">SGI 视频</comment>
+  <comment xml:lang="zh_TW">SGI 影音檔</comment>
+</mime-type>

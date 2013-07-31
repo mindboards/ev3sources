@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-nfo">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>NFO document</comment>
+  <comment xml:lang="be@latin">Dakument NFO</comment>
+  <comment xml:lang="ca">document NFO</comment>
+  <comment xml:lang="cs">Dokument NFO</comment>
+  <comment xml:lang="es">documento NFO</comment>
+  <comment xml:lang="fi">NFO-asiakirja</comment>
+  <comment xml:lang="fr">document NFO</comment>
+  <comment xml:lang="ga">cáipéis NFO</comment>
+  <comment xml:lang="hu">NFO-dokumentum</comment>
+  <comment xml:lang="id">Dokumen NFO</comment>
+  <comment xml:lang="it">Documento NFO</comment>
+  <comment xml:lang="ko">NFO 문서</comment>
+  <comment xml:lang="lt">NFO dokumentas</comment>
+  <comment xml:lang="nb">NFO-dokument</comment>
+  <comment xml:lang="nl">NFO-document</comment>
+  <comment xml:lang="pt_BR">Documento NFO</comment>
+  <comment xml:lang="ru">документ NFO</comment>
+  <comment xml:lang="sv">NFO-dokument</comment>
+  <comment xml:lang="vi">Tài liệu NFO</comment>
+  <sub-class-of type="text/x-readme"/>
+</mime-type>

@@ -1,0 +1,4 @@
+[D-BUS Service]
+Name=org.gnome.GConf.Defaults
+Exec=/usr/libexec/gconf-defaults-mechanism
+User=root

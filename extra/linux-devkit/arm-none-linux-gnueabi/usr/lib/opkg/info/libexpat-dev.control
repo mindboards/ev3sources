@@ -1,0 +1,13 @@
+Package: libexpat-dev
+Version: 2.0.1-r3.0.6
+Description: Jim Clarkes XML parser library.
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT
+Architecture: armv5te
+OE: expat
+Homepage: http://expat.sf.net/
+Depends: libexpat1, libexpat1
+Recommends: libgcc1-dev, libc6-dev, libexpat-dev
+Source: http://downloads.sourceforge.net/expat/expat-2.0.1.tar.gz;name=src file://autotools.patch

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-snes-rom">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Super NES ROM</comment>
+  <comment xml:lang="be@latin">Super Nintendo ROM</comment>
+  <comment xml:lang="bg">ROM — Super NES</comment>
+  <comment xml:lang="ca">ROM de Super NES</comment>
+  <comment xml:lang="cs">ROM pro Super Nintendo</comment>
+  <comment xml:lang="es">ROM de Super NES</comment>
+  <comment xml:lang="eu">Super Nintendo-ko ROMa</comment>
+  <comment xml:lang="fi">Super Nintendo -ROM</comment>
+  <comment xml:lang="fr">ROM Super Nintendo</comment>
+  <comment xml:lang="ga">ROM Super NES</comment>
+  <comment xml:lang="hu">Super NES ROM</comment>
+  <comment xml:lang="id">Memori baca-saja Super NES</comment>
+  <comment xml:lang="it">ROM Super Nintendo</comment>
+  <comment xml:lang="ko">슈퍼 NES 롬</comment>
+  <comment xml:lang="lt">Super NES ROM</comment>
+  <comment xml:lang="nb">Super Nintendo ROM</comment>
+  <comment xml:lang="nl">Super Nintendo</comment>
+  <comment xml:lang="pt_BR">ROM do Super Nintendo</comment>
+  <comment xml:lang="sv">Super NES-rom</comment>
+  <comment xml:lang="vi">ROM Super Nintendo</comment>
+  <generic-icon name="application-x-executable"/>
+</mime-type>

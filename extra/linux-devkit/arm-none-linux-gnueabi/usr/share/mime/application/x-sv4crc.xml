@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-sv4crc">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>SV4 CPIO archive (with CRC)</comment>
+  <comment xml:lang="be@latin">Archiŭ SV4 CPIO (z CRC)</comment>
+  <comment xml:lang="bg">Архив — SV4 CPIO, проверка за грешки CRC</comment>
+  <comment xml:lang="ca">arxiu CPIO SV4 (amb CRC)</comment>
+  <comment xml:lang="cs">Archiv SV4 CPIO (s CRC)</comment>
+  <comment xml:lang="da">SV4 CPIO-arkiv (med CRC)</comment>
+  <comment xml:lang="de">SV4-CPIO-Archiv (mit CRC)</comment>
+  <comment xml:lang="el">αρχείο SV4 CPIO (με CRC)</comment>
+  <comment xml:lang="es">archivador SV4 CPIO (con CRC)</comment>
+  <comment xml:lang="eu">SV4 CPIO artxiboa (CRC-rekin)</comment>
+  <comment xml:lang="fi">SV4 CPIO -arkisto (CRC:llä)</comment>
+  <comment xml:lang="fr">archive SV4 CPIO (avec CRC)</comment>
+  <comment xml:lang="ga">cartlann SV4 CPIO (le CRC)</comment>
+  <comment xml:lang="hu">SV4 CPIO-archívum (CRC-vel)</comment>
+  <comment xml:lang="id">Arsip SV4 CPIO (dengan CRC)</comment>
+  <comment xml:lang="it">Archivio SV4 CPIO (con CRC)</comment>
+  <comment xml:lang="ja">SV4 CPIO アーカイブ (CRC 有り)</comment>
+  <comment xml:lang="ko">(CRC를 가지는) SV4 CPIO 묶음파일</comment>
+  <comment xml:lang="lt">SV4 CPII archyvas (su CRC)</comment>
+  <comment xml:lang="ms">Arkib CPIO SV4 (dengan CRC)</comment>
+  <comment xml:lang="nb">SV4 CPIO-arkiv (med CRC)</comment>
+  <comment xml:lang="nl">SV4 CPIO-archief (met CRC)</comment>
+  <comment xml:lang="pl">Archiwum SV4 CPIO (z sumą kontrolną)</comment>
+  <comment xml:lang="pt_BR">Pacote SV4 CPIO (com CRC)</comment>
+  <comment xml:lang="sv">SV4 CPIO-arkiv (med CRC)</comment>
+  <comment xml:lang="uk">Архів SV4 CPIO (з CRC)</comment>
+  <comment xml:lang="vi">Kho nén CPIO SV4 (với CRC)</comment>
+  <generic-icon name="package-x-generic"/>
+</mime-type>

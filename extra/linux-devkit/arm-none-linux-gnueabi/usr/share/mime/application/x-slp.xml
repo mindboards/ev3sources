@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-slp">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Stampede package</comment>
+  <comment xml:lang="az">Stampede paketi</comment>
+  <comment xml:lang="be@latin">Pakunak Stampede</comment>
+  <comment xml:lang="bg">Пакет — Stampede</comment>
+  <comment xml:lang="ca">paquet Stampede</comment>
+  <comment xml:lang="cs">Balíček Stampede</comment>
+  <comment xml:lang="cy">Pecyn Stampede</comment>
+  <comment xml:lang="da">Stampede-pakke</comment>
+  <comment xml:lang="de">Stampede-Paket</comment>
+  <comment xml:lang="el">πακέτο Stampede</comment>
+  <comment xml:lang="en_GB">Stampede package</comment>
+  <comment xml:lang="eo">Stampede-pakaĵo</comment>
+  <comment xml:lang="es">paquete Stampede</comment>
+  <comment xml:lang="eu">Stampede paketea</comment>
+  <comment xml:lang="fi">Stampede-paketti</comment>
+  <comment xml:lang="fr">paquet Stampede</comment>
+  <comment xml:lang="ga">pacáiste Stampede</comment>
+  <comment xml:lang="hu">Stampede-csomag</comment>
+  <comment xml:lang="id">Paket Stampede</comment>
+  <comment xml:lang="it">Pacchetto Stampede</comment>
+  <comment xml:lang="ja">Stampede パッケージ</comment>
+  <comment xml:lang="ko">Stampede 꾸러미</comment>
+  <comment xml:lang="lt">Stampede paketas</comment>
+  <comment xml:lang="ms">Pakej Stampede</comment>
+  <comment xml:lang="nb">Stampede-pakke</comment>
+  <comment xml:lang="nl">Stampede-pakket</comment>
+  <comment xml:lang="nn">Stampede-pakke</comment>
+  <comment xml:lang="pl">Pakiet Stampede</comment>
+  <comment xml:lang="pt">pacote Stampede</comment>
+  <comment xml:lang="pt_BR">Pacote Stampede</comment>
+  <comment xml:lang="sq">Paketë Stampede</comment>
+  <comment xml:lang="sr">Stampede пакет</comment>
+  <comment xml:lang="sv">Stampede-paket</comment>
+  <comment xml:lang="uk">Пакет Stampede</comment>
+  <comment xml:lang="vi">Gói Stampede</comment>
+  <comment xml:lang="zh_CN">Stampede 软件包</comment>
+  <comment xml:lang="zh_TW">Stampede 套件</comment>
+  <generic-icon name="package-x-generic"/>
+</mime-type>

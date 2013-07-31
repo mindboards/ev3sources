@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-cue">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>CD image cuesheet</comment>
+  <comment xml:lang="be@latin">Infarmacyjny arkuš vyjavy CD</comment>
+  <comment xml:lang="bg">Описание — изображение на CD</comment>
+  <comment xml:lang="ca">«cuesheet» d'imatge de CD</comment>
+  <comment xml:lang="cs">Rozvržení stop obrazu CD</comment>
+  <comment xml:lang="de">CD-Image-Cuesheet</comment>
+  <comment xml:lang="en_GB">CD image cuesheet</comment>
+  <comment xml:lang="es">cue sheet de una imagen de CD</comment>
+  <comment xml:lang="eu">CD baten irudiaren CUE sheet-a</comment>
+  <comment xml:lang="fi">CD-vedos cuesheet</comment>
+  <comment xml:lang="fr">index de pistes de CD</comment>
+  <comment xml:lang="ga">bileog chiúáil íomhá CD</comment>
+  <comment xml:lang="hu">CD kép cuesheet</comment>
+  <comment xml:lang="id">Citra cuesheet CD</comment>
+  <comment xml:lang="it">Cuesheet immagine CD</comment>
+  <comment xml:lang="ko">CD 이미지 큐시트</comment>
+  <comment xml:lang="lt">CD atvaizdžio aprašas</comment>
+  <comment xml:lang="nb">Filliste for CD-avtrykk</comment>
+  <comment xml:lang="nl">CD-inhoudsopgave</comment>
+  <comment xml:lang="nn">CD-bilete-indeksfil</comment>
+  <comment xml:lang="pl">Obraz cuesheet płyty CD</comment>
+  <comment xml:lang="pt_BR">Índice de Imagem de CD</comment>
+  <comment xml:lang="sv">Kömall för cd-avbild</comment>
+  <comment xml:lang="uk">Задня обкладинка образу CD</comment>
+  <comment xml:lang="vi">Tờ tín hiệu báo ảnh CD</comment>
+  <sub-class-of type="text/plain"/>
+  <generic-icon name="text-x-generic"/>
+</mime-type>

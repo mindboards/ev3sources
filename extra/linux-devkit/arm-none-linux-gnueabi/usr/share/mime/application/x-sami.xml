@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-sami">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>SAMI subtitles</comment>
+  <comment xml:lang="be@latin">Subtytry SAMI</comment>
+  <comment xml:lang="bg">Субтитри — SAMI</comment>
+  <comment xml:lang="ca">subtítols SAMI</comment>
+  <comment xml:lang="cs">Titulky SAMI</comment>
+  <comment xml:lang="es">Subtítulos SAMI</comment>
+  <comment xml:lang="eu">SAMI azpitituluak</comment>
+  <comment xml:lang="fi">SAMI-tekstitykset</comment>
+  <comment xml:lang="fr">sous-titres SAMI</comment>
+  <comment xml:lang="ga">fotheidil SAMI</comment>
+  <comment xml:lang="hu">SAMI feliratok</comment>
+  <comment xml:lang="id">Subjudul SAMI</comment>
+  <comment xml:lang="it">Sottotitoli SAMI</comment>
+  <comment xml:lang="ko">SAMI 자막파일</comment>
+  <comment xml:lang="lt">SAMI subtitrai</comment>
+  <comment xml:lang="nb">SAMI undertekst</comment>
+  <comment xml:lang="nl">SAMI-ondertitels</comment>
+  <comment xml:lang="pt_BR">SAMI subtitles</comment>
+  <comment xml:lang="sv">SAMI-undertexter</comment>
+  <comment xml:lang="vi">Phụ đề SAMI</comment>
+  <acronym>SAMI</acronym>
+  <expanded-acronym>Synchronized Accessible Media Interchange</expanded-acronym>
+  <sub-class-of type="text/plain"/>
+  <generic-icon name="text-x-generic"/>
+</mime-type>

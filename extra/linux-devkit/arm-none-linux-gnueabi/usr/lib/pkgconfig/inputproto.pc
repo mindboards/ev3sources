@@ -1,0 +1,9 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+ 
+Name: InputProto
+Description: Input extension headers
+Version: 2.0.1
+Cflags: -I${includedir}

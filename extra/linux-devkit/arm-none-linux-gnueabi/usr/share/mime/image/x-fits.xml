@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-fits">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>FITS document</comment>
+  <comment xml:lang="be@latin">Dakument FITS</comment>
+  <comment xml:lang="bg">Документ — FITS</comment>
+  <comment xml:lang="ca">document FITS</comment>
+  <comment xml:lang="cs">Dokument FITS</comment>
+  <comment xml:lang="de">FITS-Dokument</comment>
+  <comment xml:lang="en_GB">FITS document</comment>
+  <comment xml:lang="es">documento FITS</comment>
+  <comment xml:lang="eu">FITS dokumentua</comment>
+  <comment xml:lang="fi">FITS-asiakirja</comment>
+  <comment xml:lang="fr">document FITS</comment>
+  <comment xml:lang="ga">cáipéis FITS</comment>
+  <comment xml:lang="hu">FITS dokumentum</comment>
+  <comment xml:lang="id">Dokumen FITS</comment>
+  <comment xml:lang="it">Documento FITS</comment>
+  <comment xml:lang="ko">FITS 문서</comment>
+  <comment xml:lang="lt">FITS dokumentas</comment>
+  <comment xml:lang="nb">FITS-dokument</comment>
+  <comment xml:lang="nl">FITS-document</comment>
+  <comment xml:lang="nn">FITS-dokument</comment>
+  <comment xml:lang="pl">Dokument FITS</comment>
+  <comment xml:lang="pt_BR">Documento FITS</comment>
+  <comment xml:lang="ru">документ FITS</comment>
+  <comment xml:lang="sv">FITS-dokument</comment>
+  <comment xml:lang="uk">Документ FITS</comment>
+  <comment xml:lang="vi">Tài liệu FITS</comment>
+  <acronym>FITS</acronym>
+  <expanded-acronym>Flexible Image Transport System</expanded-acronym>
+</mime-type>

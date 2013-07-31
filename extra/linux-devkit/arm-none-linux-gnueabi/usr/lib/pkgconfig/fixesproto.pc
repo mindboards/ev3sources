@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: FixesProto
+Description: X Fixes extension headers
+Version: 4.1.2
+Cflags: -I${includedir}
+Requires: xextproto >= 7.0.99.1

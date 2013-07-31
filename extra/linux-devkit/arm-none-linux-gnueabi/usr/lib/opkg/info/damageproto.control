@@ -1,0 +1,11 @@
+Package: damageproto
+Version: 1:1.2.1-r2.0.6
+Description: X protocol headers: damageproto
+Section: x11/libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT-X
+Architecture: armv5te
+OE: damageproto
+Homepage: http://www.x.org
+Source: http://xorg.freedesktop.org/releases/individual/proto/damageproto-1.2.1.tar.bz2;name=archive

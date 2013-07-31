@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-quicktime">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>QuickTime image</comment>
+  <comment xml:lang="be@latin">Vyjava QuickTime</comment>
+  <comment xml:lang="bg">Изображение — QuickTime</comment>
+  <comment xml:lang="ca">imatge QuickTime</comment>
+  <comment xml:lang="cs">Obrázek QuickTime</comment>
+  <comment xml:lang="es">imagen QuickTime</comment>
+  <comment xml:lang="eu">QuickTime irudia</comment>
+  <comment xml:lang="fi">QuickTime-kuva</comment>
+  <comment xml:lang="fr">image QuickTime</comment>
+  <comment xml:lang="ga">íomhá QuickTime</comment>
+  <comment xml:lang="hu">QuickTime kép</comment>
+  <comment xml:lang="id">Citra QuickTime</comment>
+  <comment xml:lang="it">Immagine QuickTime</comment>
+  <comment xml:lang="ko">퀵타임 그림</comment>
+  <comment xml:lang="lt">QuickTime paveikslėlis</comment>
+  <comment xml:lang="nb">Quicktime bilde</comment>
+  <comment xml:lang="nl">QuickTime-afbeelding</comment>
+  <comment xml:lang="pt_BR">Imagem do QuickTime</comment>
+  <comment xml:lang="sv">QuickTime-bild</comment>
+  <comment xml:lang="vi">Ảnh QuickTime</comment>
+</mime-type>

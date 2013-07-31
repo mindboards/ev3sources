@@ -1,0 +1,6 @@
+/usr/share/gnome-common/data/omf.make
+/usr/share/aclocal/gnome-common.m4
+/usr/bin/gnome-doc-common
+/usr/bin/gnome-autogen.sh
+/usr/share/aclocal/gnome-compiler-flags.m4
+/usr/share/gnome-common/data/xmldocs.make

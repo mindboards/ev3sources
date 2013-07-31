@@ -1,0 +1,6 @@
+#%PAM-1.0
+
+auth       include      common-auth
+account    include      common-auth
+password   include      common-auth
+session    include      common-auth

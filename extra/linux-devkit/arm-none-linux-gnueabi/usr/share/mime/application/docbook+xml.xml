@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/docbook+xml">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>DocBook document</comment>
+  <comment xml:lang="be@latin">Dakument DocBook</comment>
+  <comment xml:lang="bg">Документ — DocBook</comment>
+  <comment xml:lang="ca">document DocBook</comment>
+  <comment xml:lang="cs">Dokument DocBook</comment>
+  <comment xml:lang="de">DocBook-Dokument</comment>
+  <comment xml:lang="en_GB">DocBook document</comment>
+  <comment xml:lang="es">documento DocBook</comment>
+  <comment xml:lang="eu">DocBook dokumentua</comment>
+  <comment xml:lang="fi">DocBook-asiakirja</comment>
+  <comment xml:lang="fr">document DocBook</comment>
+  <comment xml:lang="ga">cáipéis DocBook</comment>
+  <comment xml:lang="hu">DocBook dokumentum</comment>
+  <comment xml:lang="id">Dokumen DocBook</comment>
+  <comment xml:lang="it">Documento DocBook</comment>
+  <comment xml:lang="ko">DocBook 문서</comment>
+  <comment xml:lang="lt">DocBook dokumentas</comment>
+  <comment xml:lang="nb">DocBook-dokument</comment>
+  <comment xml:lang="nl">DocBook-document</comment>
+  <comment xml:lang="nn">DocBook-dokument</comment>
+  <comment xml:lang="pl">Dokument DocBook</comment>
+  <comment xml:lang="pt_BR">Documento DocBook</comment>
+  <comment xml:lang="ru">документ DocBook</comment>
+  <comment xml:lang="sv">DocBook-dokument</comment>
+  <comment xml:lang="uk">Документ DocBook</comment>
+  <comment xml:lang="vi">Tài liệu DocBook</comment>
+  <sub-class-of type="application/xml"/>
+  <generic-icon name="x-office-document"/>
+</mime-type>

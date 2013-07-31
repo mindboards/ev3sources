@@ -1,0 +1,12 @@
+Package: libvpx
+Version: 0.9.5-r5.0.6
+Description: vpx Multi-Format Codec SDK
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: BSD
+Architecture: armv5te
+OE: libvpx
+Homepage: unknown
+Depends: libc6, libgcc1
+Source: git://review.webmproject.org/libvpx.git;protocol=git;tag=v0.9.5 file://libvpx-configure-support-blank-prefix.patch;apply=yes

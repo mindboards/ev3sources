@@ -1,0 +1,13 @@
+Package: libxrender-dev
+Version: 1:0.9.6-r9.0.6
+Description: X11 Rendering Extension client library
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: BSD-X
+Architecture: armv5te
+OE: libxrender
+Homepage: http://www.x.org
+Depends: libxrender1, libxrender1
+Recommends: util-macros-dev, renderproto-dev, xproto-dev, libxdmcp-dev, libx11-dev, libxcb-dev, libpthread-stubs-dev, libxau-dev, libc6-dev, libgcc1-dev, libxrender-dev
+Source: http://xorg.freedesktop.org/releases/individual/lib/libXrender-0.9.6.tar.bz2;name=archive

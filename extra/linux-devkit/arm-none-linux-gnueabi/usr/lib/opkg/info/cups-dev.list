@@ -1,0 +1,17 @@
+/usr/include/cups/adminutil.h
+/usr/include/cups/md5.h
+/usr/include/cups/file.h
+/usr/include/cups/dir.h
+/usr/include/cups/i18n.h
+/usr/include/cups/http.h
+/usr/include/cups/image.h
+/usr/include/cups/ipp.h
+/usr/lib/libcupsimage.so
+/usr/include/cups/cups.h
+/usr/include/cups/transcode.h
+/usr/include/cups/array.h
+/usr/include/cups/ppd.h
+/usr/include/cups/backend.h
+/usr/include/cups/language.h
+/usr/include/cups/raster.h
+/usr/lib/libcups.so

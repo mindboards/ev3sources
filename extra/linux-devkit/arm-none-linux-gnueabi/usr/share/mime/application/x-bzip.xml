@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-bzip">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Bzip archive</comment>
+  <comment xml:lang="be@latin">Archiŭ bzip</comment>
+  <comment xml:lang="bg">Архив — bzip</comment>
+  <comment xml:lang="ca">arxiu bzip</comment>
+  <comment xml:lang="cs">Archiv bzip</comment>
+  <comment xml:lang="es">archivador Bzip</comment>
+  <comment xml:lang="eu">Bzip artxiboa</comment>
+  <comment xml:lang="fi">Bzip-arkisto</comment>
+  <comment xml:lang="fr">archive bzip</comment>
+  <comment xml:lang="ga">cartlann Bzip</comment>
+  <comment xml:lang="hu">Bzip archívum</comment>
+  <comment xml:lang="id">Arsip Bzip</comment>
+  <comment xml:lang="it">Archivio bzip</comment>
+  <comment xml:lang="ko">bzip 압축파일</comment>
+  <comment xml:lang="lt">Bzip archyvas</comment>
+  <comment xml:lang="nb">Bzip-arkiv</comment>
+  <comment xml:lang="nl">Bzip-archief</comment>
+  <comment xml:lang="pt_BR">Pacote Bzip</comment>
+  <comment xml:lang="ru">архив bzip</comment>
+  <comment xml:lang="sv">Bzip-arkiv</comment>
+  <comment xml:lang="vi">Kho nén bzip</comment>
+  <generic-icon name="package-x-generic"/>
+  <alias type="application/x-bzip2"/>
+</mime-type>

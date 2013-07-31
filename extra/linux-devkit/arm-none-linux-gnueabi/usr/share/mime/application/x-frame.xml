@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-frame">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Adobe FrameMaker document</comment>
+  <comment xml:lang="be@latin">Dakument Adobe FrameMaker</comment>
+  <comment xml:lang="bg">Документ — Adobe FrameMaker</comment>
+  <comment xml:lang="ca">document FrameMaker d'Adobe</comment>
+  <comment xml:lang="cs">Dokument Adobe FrameMaker</comment>
+  <comment xml:lang="de">Adobe FrameMaker-Dokument</comment>
+  <comment xml:lang="es">Documento de Adobe FrameMaker</comment>
+  <comment xml:lang="eu">Adobe FrameMaker-en dokumentua</comment>
+  <comment xml:lang="fi">Adobe FrameMaker -asiakirja</comment>
+  <comment xml:lang="fr">document Adobe FrameMaker</comment>
+  <comment xml:lang="ga">cáipéis Adobe FrameMaker</comment>
+  <comment xml:lang="hu">Adobe FrameMaker dokumentum</comment>
+  <comment xml:lang="id">Dokumen Adobe FrameMaker</comment>
+  <comment xml:lang="it">Documento Adobe FrameMaker</comment>
+  <comment xml:lang="ko">어도비 프레임메이커 문서</comment>
+  <comment xml:lang="lt">Adobe FrameMaker dokumentas</comment>
+  <comment xml:lang="nb">Adobe FrameMaker-dokument</comment>
+  <comment xml:lang="nl">Adobe FrameMaker-document</comment>
+  <comment xml:lang="pl">Dokument Adobe FrameMakera</comment>
+  <comment xml:lang="pt_BR">Documento do Adobe FrameMaker</comment>
+  <comment xml:lang="ru">документ Adobe FrameMaker</comment>
+  <comment xml:lang="sv">Adobe FrameMaker-dokument</comment>
+  <comment xml:lang="uk">Докуемнт Adobe FrameMaker</comment>
+  <comment xml:lang="vi">Tài liệu Adobe FrameMaker</comment>
+  <generic-icon name="x-office-document"/>
+</mime-type>

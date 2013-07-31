@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-idl">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>IDL document</comment>
+  <comment xml:lang="az">IDL sənədi</comment>
+  <comment xml:lang="be@latin">Dakument IDL</comment>
+  <comment xml:lang="bg">Документ — IDL</comment>
+  <comment xml:lang="ca">document IDL</comment>
+  <comment xml:lang="cs">Dokument IDL</comment>
+  <comment xml:lang="cy">Dogfen IDL</comment>
+  <comment xml:lang="da">IDL-dokument</comment>
+  <comment xml:lang="de">IDL-Dokument</comment>
+  <comment xml:lang="el">έγγραφο IDL</comment>
+  <comment xml:lang="en_GB">IDL document</comment>
+  <comment xml:lang="eo">IDL-dokumento</comment>
+  <comment xml:lang="es">documento IDL</comment>
+  <comment xml:lang="eu">IDL dokumentua</comment>
+  <comment xml:lang="fi">IDL-asiakirja</comment>
+  <comment xml:lang="fr">document IDL</comment>
+  <comment xml:lang="ga">cáipéis IDL</comment>
+  <comment xml:lang="hu">IDL-dokumentum</comment>
+  <comment xml:lang="id">Dokumen IDL</comment>
+  <comment xml:lang="it">Documento IDL</comment>
+  <comment xml:lang="ja">IDL ドキュメント</comment>
+  <comment xml:lang="ko">IDL 문서</comment>
+  <comment xml:lang="lt">IDL dokumentas</comment>
+  <comment xml:lang="ms">Dokumen IDL</comment>
+  <comment xml:lang="nb">IDL-dokument</comment>
+  <comment xml:lang="nl">IDL-document</comment>
+  <comment xml:lang="nn">IDL-dokument</comment>
+  <comment xml:lang="pl">Dokument IDL</comment>
+  <comment xml:lang="pt">documento IDL</comment>
+  <comment xml:lang="pt_BR">Documento IDL</comment>
+  <comment xml:lang="ru">документ IDL</comment>
+  <comment xml:lang="sq">Dokument IDL</comment>
+  <comment xml:lang="sr">IDL документ</comment>
+  <comment xml:lang="sv">IDL-dokument</comment>
+  <comment xml:lang="uk">Документ IDL</comment>
+  <comment xml:lang="vi">Tài liệu IDL</comment>
+  <comment xml:lang="zh_CN">IDL 文档</comment>
+  <comment xml:lang="zh_TW">IDL 文件</comment>
+  <acronym>IDL</acronym>
+  <expanded-acronym>Interface Definition Language</expanded-acronym>
+  <sub-class-of type="text/plain"/>
+</mime-type>

@@ -1,0 +1,13 @@
+Package: xcmiscproto-dev
+Version: 1:1.2.1-r2.0.6
+Description: X protocol headers: xcmiscproto
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT-X
+Architecture: armv5te
+OE: xcmiscproto
+Homepage: http://www.x.org
+Depends: xcmiscproto
+Recommends: util-macros-dev, xcmiscproto-dev
+Source: http://xorg.freedesktop.org/releases/individual/proto/xcmiscproto-1.2.1.tar.bz2;name=archive

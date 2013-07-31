@@ -1,0 +1,824 @@
+#
+# Copyright (C) The Free Software Foundation, 1998, 1999, 2000
+# Copyright (C) Eazel, Inc. 2000, 2001
+# All rights reserved.
+#
+# Mime types as provided by the GNOME libraries for GNOME.
+#
+# Applications can provide more mime types by installing other
+# .mime files in the PREFIX/share/mime-info directory.
+#
+# The format of this file is:
+#
+# mime-type
+#	ext[,prio]:	list of extensions for this mime-type
+#	regex[,prio]:	a regular expression that matches the filename
+#
+# more than one ext: and regex: fields can be present.
+#
+# prio is the priority for the match, the default is 1. This is required
+# to distinguish composed filenames, for example .gz has a priority of 1
+# and .tar.gz has a priority of 2 (thus a file having the filename
+# something.tar.gz will match the mime-type for tar.gz before the mime-type
+# for .gz
+#
+# The values in this file are kept in alphabetical order for convenience.
+# Please maintain this when adding new types. Also consider adding a
+# human-readable description to gnome-vfs.keys when adding a new type here.
+#
+# Also do please not add illegal mime types, observe the mime standard when
+# adding new types.
+
+application/andrew-inset
+	ext: ez
+
+application/msword
+	ext: doc
+
+application/octet-stream
+	ext: bin
+
+application/oda
+	ext: oda
+
+application/ogg
+	ext: ogg
+
+application/pdf
+	ext: pdf
+
+application/pgp
+	ext: pgp
+
+application/postscript
+	ext: ps eps
+
+application/qif
+	ext: qif
+
+application/rtf
+	ext: rtf
+
+application/vnd.corel-draw
+	ext: cdr
+
+application/vnd.lotus-1-2-3
+	ext: 123 wk1 wk3 wk4 wks
+
+application/vnd.ms-excel
+	ext: xls xla xlt xlc xld
+
+application/vnd.ms-powerpoint
+	ext: ppt pps
+
+# StarOffice 5.x document types
+application/vnd.stardivision.calc
+	ext: sdc
+application/vnd.stardivision.chart
+	ext: sds
+application/vnd.stardivision.draw
+	ext: sda
+application/vnd.stardivision.impress
+	ext: sdd sdp
+application/vnd.stardivision.mail
+	ext: smd
+application/vnd.stardivision.math
+	ext: smf
+application/vnd.stardivision.writer
+	ext: sdw vor sgl
+
+# OpenOffice 6.x document types
+application/vnd.sun.xml.calc
+	ext: sxc
+application/vnd.sun.xml.calc.template
+	ext: stc
+application/vnd.sun.xml.draw
+	ext: sxd
+application/vnd.sun.xml.draw.template
+	ext: std
+application/vnd.sun.xml.impress
+	ext: sxi
+application/vnd.sun.xml.impress.template
+	ext: sti
+application/vnd.sun.xml.math
+	ext: sxm
+application/vnd.sun.xml.writer
+	ext: sxw
+application/vnd.sun.xml.writer.global
+	ext: sxg
+application/vnd.sun.xml.writer.template
+	ext: stw
+
+
+application/x-abiword
+	ext: abw
+
+application/x-ape
+	ext: ape
+
+application/x-applix-presents
+	ext: ap
+
+application/x-applix-spreadsheet
+	ext: as
+
+application/x-applix-word
+	ext: aw
+
+application/x-arj
+	ext: arj
+
+application/x-asp
+	ext: asp
+
+application/x-backup
+	ext: bak BAK
+
+application/x-bcpio
+	ext: bcpio
+
+application/x-bittorrent
+	ext: torrent
+
+application/x-blender
+	ext: blender blend BLEND
+
+application/x-bzip
+	ext: bz2 bz
+
+application/x-bzip-compressed-tar
+	regex,2: tar\.bz2$
+
+application/x-cgi
+	ext: cgi
+
+application/x-chess-pgn
+	ext: pgn
+
+application/x-cinelerra
+	ext:
+
+application/x-compress
+	ext: Z
+
+application/x-compressed-tar
+	regex,2: tar\.gz$
+	ext: tgz
+
+application/x-core-file
+	regex: ^core$
+
+application/x-cpio
+	ext: cpio
+
+application/x-cpio-compressed
+	regex,2: \.cpio\.gz$
+
+application/x-dc-rom
+	ext: dc
+
+application/x-deb
+	ext: deb
+
+application/x-dia-diagram
+	ext: dia
+
+application/x-dvi
+	ext: dvi
+
+application/x-e-theme
+	ext: etheme ETHEME
+
+application/x-font-afm
+	ext: afm
+
+application/x-font-bdf
+	ext: bdf
+
+application/x-font-linux-psf
+	ext: psf
+
+application/x-font-pcf
+	ext: pcf
+
+application/x-font-speedo
+	ext: spd
+
+application/x-font-ttf
+	ext: ttf TTF ttc TTC
+
+application/x-font-type1
+	ext: pfa pfb
+
+application/x-gameboy-rom
+	ext: gb
+
+application/x-gchempaint
+	ext: gchempaint
+
+application/x-gcrystal
+	ext: gcrystal
+
+application/x-genesis-rom
+	ext: gen md
+
+application/x-glade
+	ext: glade
+
+application/x-gnome-app-info
+	ext: desktop
+
+application/x-gnucash
+	ext: gnucash gnc xac
+
+application/x-gnumeric
+	ext: gnumeric
+
+application/x-gtar
+	ext: gtar
+
+application/x-gzip
+	ext: gz
+
+application/x-hdf
+	ext: hdf
+
+application/x-iso-image
+	ext:iso
+
+application/x-java-archive
+	ext: jar
+
+application/x-java-byte-code
+	ext: class
+
+application/x-jbuilder-project
+	ext: jpr jpx
+
+application/x-kde-app-info
+	ext: kdelnk
+
+application/x-killustrator
+	ext: kil
+
+application/x-kpresenter
+	ext: kpr
+
+application/x-kspread
+	ext: ksp
+
+application/x-kword
+	ext: kwd
+
+application/x-lha
+	ext: lha
+
+application/x-lhz
+	ext: lhz
+
+application/x-magicpoint
+	ext: mgp
+
+application/x-matroska
+	ext: mkv mka mks
+
+application/x-mif
+	ext: mif
+
+application/x-mrproject
+	ext: mrp mrproject
+
+application/x-ms-dos-executable
+	ext: exe
+
+application/x-msx-rom
+	ext: msx
+
+application/x-n64-rom
+	ext: n64
+
+application/x-nes-rom
+	ext: nes
+
+application/x-netcdf
+	ext: cdf nc
+
+application/x-object-file
+	ext: o lo
+
+application/x-oleo
+	ext: oleo
+
+application/x-palm-database
+	ext: pdb
+
+application/x-php
+	ext: php php3 php4
+
+application/x-profile
+	regex: gmon\.out$
+
+application/x-python-byte-code
+	ext: pyc
+
+application/x-qw
+	ext: qif
+
+application/x-rar
+	ext: rar
+
+application/x-rar-compressed
+	ext: rar
+
+application/x-reject
+	ext: rej
+
+application/x-rpm
+	ext: rpm
+
+application/x-shar
+	ext: shar
+
+application/x-shared-library
+	ext: so
+
+application/x-shared-library-la
+	ext: la
+
+application/x-shockwave-flash
+	ext: swf
+
+application/x-smil
+	ext: smil smi sml
+
+application/x-sms-rom
+	ext: sms gg
+
+application/x-sv4cpio
+	ext: sv4cpio
+
+application/x-sv4crc
+	ext: sv4crc
+
+application/x-tar
+	ext: tar
+
+application/x-theme
+	ext: theme
+
+# FIXME bugzilla.eazel.com 5372: This matches too many file
+# names, including virtually all file names that end in ".1.Z".
+application/x-troff-man-compressed
+	regex: ([^0-9]|^[^\.]*)\.([1-9][a-z]?|n)\.g?[Zz]$
+
+application/x-unix-archive
+	ext: a
+
+application/x-ustar
+	ext: ustar
+
+application/x-wais-source
+	ext: src
+
+application/x-xbase
+	ext: dbf
+
+application/x-xbel
+	ext: xbel
+
+application/x-zoo
+	ext: zoo
+
+application/zip
+	ext: zip
+
+audio/ac3
+	ext: ac3
+
+audio/basic
+	ext: snd
+
+audio/mpeg
+	ext: mp1 mp3
+
+audio/prs.sid
+	ext: sid psid
+
+audio/x-aiff
+	ext: aif aifc aiff
+
+audio/x-flac
+	ext: flac
+
+audio/x-it
+	ext: it IT
+
+audio/x-m4a
+	ext: m4a
+
+audio/x-midi
+	ext: midi mid
+
+audio/x-mod
+	ext: mod MOD
+
+audio/x-mpegurl
+	ext: m3u
+
+audio/x-ms-asx
+	ext: asx wax
+
+audio/x-pn-realaudio
+	ext: ram
+
+audio/x-real-audio
+	ext: rm ra rv
+
+audio/x-s3m
+	ext: S3M s3m
+
+audio/x-scpls
+	ext: pls
+
+audio/x-stm
+	ext: STM stm
+
+audio/x-ulaw
+	ext: au
+
+audio/x-voc
+	ext: voc
+
+audio/x-wav
+	ext: wav
+
+audio/x-xi
+	ext: xi
+
+audio/x-xm
+	ext: xm XM
+
+image/bmp
+	ext: bmp
+
+image/cgm
+	ext: cgm
+
+image/gif
+	ext: gif
+
+image/ief
+	ext: ief
+
+image/jpeg
+	ext: jpe jpeg jpg
+
+image/png
+	ext: png
+
+image/svg+xml
+	ext: svg svgz
+
+image/tiff
+	ext: tif tiff
+
+image/vnd.djvu
+	ext: djvu djv
+
+image/vnd.dwg
+	ext: dwg
+
+image/vnd.dxf
+	ext: dxf
+
+image/x-3ds
+	ext: 3ds
+
+image/x-applix-graphic
+	ext: ag
+
+image/x-bmp
+	ext: bmp
+
+image/x-cmu-raster
+	ext: ras
+
+image/x-compressed-xcf
+	regex,2: \.xcf\.gz$
+	regex,2: \.xcf\.bz2$
+
+image/x-dcm
+	ext: dcm
+
+image/x-emf
+	ext: emf
+
+image/x-fits
+	ext: fits
+
+image/x-gray
+	ext: gray
+
+image/x-icb
+	ext: icb
+
+image/x-ico
+	ext: ico
+
+image/x-iff
+	ext: iff IFF
+
+image/x-ilbm
+	ext: ilbm ILBM
+
+image/x-lwo
+	ext: lwo lwob
+
+image/x-lws
+	ext: lws
+
+image/x-miff
+	ext: miff
+
+image/x-palm
+	ext: palm
+
+image/x-pcx
+	ext: pcx
+
+image/x-photo-cd
+	ext: pcd
+
+image/x-pict
+	ext: pct pict
+
+image/x-portable-anymap
+	ext: pnm
+
+image/x-portable-bitmap
+	ext: pbm
+
+image/x-portable-graymap
+	ext: pgm
+
+image/x-portable-pixmap
+	ext: ppm
+
+image/x-psd
+	ext: psd
+
+image/x-rgb
+	ext: rgb
+
+image/x-sgi
+	ext: sgi
+
+image/x-sun-raster
+	ext: sun
+
+image/x-tga
+	ext: tga
+
+image/x-wmf
+	ext: wmf
+
+image/x-xbitmap
+	ext: xbm
+
+image/x-xcf
+	ext: xcf
+
+image/x-xfig
+	ext: fig
+
+image/x-xpixmap
+	ext: xpm
+
+image/x-xwindowdump
+	ext: xwd
+
+message/x-gnu-rmail
+	regex: ^RMAIL$
+
+
+
+model/vrml
+	ext: wrl
+
+
+text/abiword
+	ext: abw
+
+text/bib
+	ext: bib
+
+text/calendar
+	ext: ics
+
+text/css
+	ext: css
+
+text/html
+	ext: html htm HTML
+
+text/mathml
+	ext: mml
+
+text/plain
+	ext: asc txt TXT
+
+text/richtext
+	ext: rtx
+
+text/sgml
+	ext: sgml sgm
+
+text/spreadsheet
+	ext: sylk slk
+
+text/tab-separated-values
+	ext: tsv
+
+text/x-asm
+	ext: s
+
+text/x-authors
+	regex: AUTHORS
+
+text/x-c
+	ext: c
+
+text/x-c++
+	ext: cc C cpp c++
+
+text/x-c-header
+	ext: h H h++ hpp
+
+text/x-comma-separated-values
+	ext: csv
+
+text/x-copying
+	regex: COPYING
+
+text/x-credits
+	regex: CREDITS
+
+text/x-csh
+	ext: csh
+
+text/x-dcl
+	ext: dcl
+
+text/x-dsl
+	ext: dsl
+
+text/x-dtd
+	ext: dtd
+
+text/x-emacs-lisp
+	ext: el
+
+text/x-fortran
+	ext: f
+
+text/x-gtkrc
+	regex: [.|]gtkrc
+
+text/x-haskell
+	ext: hs
+
+text/x-idl
+	ext: idl
+
+text/x-install
+	regex: INSTALL
+
+text/x-java
+	ext: java
+
+text/x-javascript
+	ext: js
+
+text/x-literate-haskell
+	ext: lhs
+
+text/x-lua
+	ext: lua
+
+text/x-lyx
+	ext: lyx
+
+text/x-makefile
+	regex: [Mm]akefile
+
+text/x-objc
+	ext: m
+
+text/x-pascal
+	ext: p pascal
+
+text/x-patch
+	ext: diff patch
+
+text/x-perl
+	ext: pl perl pm
+
+text/x-po
+	ext: po
+
+text/x-python
+	ext: py
+
+text/x-readme
+	regex: README.*
+	regex: TODO*
+
+text/x-scheme
+	ext: scm
+
+text/x-setext
+	ext: etx
+
+text/x-sh
+	ext: sh
+
+text/x-sql
+	ext: sql
+
+text/x-tcl
+	ext: tcl
+
+text/x-tex
+	ext: tex cls sty ltx
+
+text/x-texinfo
+	ext: texi texinfo
+
+text/x-troff
+	ext: roff t tr
+
+# FIXME bugzilla.eazel.com 5372: This matches too many file
+# names, including virtually all file names that end in ".1".
+text/x-troff-man
+	regex: (([^0-9]|^[^\.]*)\.([1-9][A-Za-z]*|n)|\.man)$
+	ext: man
+
+text/x-troff-me
+	ext: me
+
+text/x-troff-mm
+	ext: mm
+
+text/x-troff-ms
+	ext: ms
+
+text/x-vcalendar
+	ext: vcs vcf
+
+text/x-vcard
+	ext: gcrd
+
+text/x-verilog-src
+	ext: v vl vh verilog
+
+text/x-yacc
+	ext: yacc y
+
+text/xml
+	ext: xml
+
+video/mpeg
+	ext: mp2 mpe mpeg mpg vob dat
+
+video/quicktime
+	ext: mov qt
+
+video/vnd.vivo
+	ext: viv vivo
+
+video/x-anim
+	regex: \.anim[1-9j]$
+
+video/x-flc
+	ext: flc
+
+video/x-fli
+	ext: fli
+
+video/x-ms-asf
+	ext: asf
+
+video/x-ms-wmv
+	ext: wmv
+
+video/x-ms-wvx
+	ext: wvx
+
+video/x-msvideo
+	ext: avi
+
+video/x-nsv
+	ext: nsv NSV
+
+video/x-sgi-movie
+	ext: movie

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-txt2tags">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>txt2tags document</comment>
+  <comment xml:lang="be@latin">dakument txt2tags</comment>
+  <comment xml:lang="bg">Документ — txt2tags</comment>
+  <comment xml:lang="ca">document txt2tags</comment>
+  <comment xml:lang="cs">Dokument txt2tags</comment>
+  <comment xml:lang="de">txt2tags-Dokument</comment>
+  <comment xml:lang="es">documento txt2tags</comment>
+  <comment xml:lang="eu">txt2tags dokumentua</comment>
+  <comment xml:lang="fi">txt2tags-asiakirja</comment>
+  <comment xml:lang="fr">document txt2tags</comment>
+  <comment xml:lang="ga">cáipéis txt2tags</comment>
+  <comment xml:lang="hu">txt2tags dokumentum</comment>
+  <comment xml:lang="id">dokumen txt2tags</comment>
+  <comment xml:lang="it">Documento txt2tags</comment>
+  <comment xml:lang="ko">txt2tags 문서</comment>
+  <comment xml:lang="lt">txt2tags dokumentas</comment>
+  <comment xml:lang="nb">txt2tags-dokument</comment>
+  <comment xml:lang="nl">txt2tags-document</comment>
+  <comment xml:lang="pl">dokument txt2tags</comment>
+  <comment xml:lang="pt_BR">Documento txt2tags</comment>
+  <comment xml:lang="ru">документ txt2tags</comment>
+  <comment xml:lang="sv">txt2tags-dokument</comment>
+  <comment xml:lang="uk">Документ txt2tags</comment>
+  <comment xml:lang="vi">tài liệu txt2tags</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

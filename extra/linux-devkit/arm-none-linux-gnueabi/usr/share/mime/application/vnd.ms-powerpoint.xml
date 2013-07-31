@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.ms-powerpoint">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>PowerPoint presentation</comment>
+  <comment xml:lang="be@latin">Prezentacyja PowerPoint</comment>
+  <comment xml:lang="bg">Презентация — PowerPoint</comment>
+  <comment xml:lang="ca">presentació de PowerPoint</comment>
+  <comment xml:lang="cs">Prezentace PowerPoint</comment>
+  <comment xml:lang="de">PowerPoint-Präsentation</comment>
+  <comment xml:lang="en_GB">PowerPoint presentation</comment>
+  <comment xml:lang="es">presentación de PowerPoint</comment>
+  <comment xml:lang="eu">PowerPoint aurkezpena</comment>
+  <comment xml:lang="fi">PowerPoint-esitys</comment>
+  <comment xml:lang="fr">présentation PowerPoint</comment>
+  <comment xml:lang="ga">láithreoireacht PowerPoint</comment>
+  <comment xml:lang="hu">PowerPoint prezentáció</comment>
+  <comment xml:lang="id">Presentasi PowerPoint</comment>
+  <comment xml:lang="it">Presentazione PowerPoint</comment>
+  <comment xml:lang="ko">파워포인트 프리젠테이션</comment>
+  <comment xml:lang="lt">PowerPoint pateiktis</comment>
+  <comment xml:lang="nb">PowerPoint-presentasjon</comment>
+  <comment xml:lang="nl">PowerPoint-presentatie</comment>
+  <comment xml:lang="nn">PowerPoint-presentasjon</comment>
+  <comment xml:lang="pl">Prezentacja PowerPoint</comment>
+  <comment xml:lang="pt_BR">Aprensentação do PowerPoint</comment>
+  <comment xml:lang="sv">PowerPoint-presentation</comment>
+  <comment xml:lang="uk">Презентація PowerPoint</comment>
+  <comment xml:lang="vi">Trình diễn PowerPoint</comment>
+  <generic-icon name="x-office-presentation"/>
+  <alias type="application/powerpoint"/>
+  <alias type="application/mspowerpoint"/>
+  <alias type="application/x-mspowerpoint"/>
+</mime-type>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-ipod-firmware">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>iPod firmware</comment>
+  <comment xml:lang="be@latin">Firmware iPod</comment>
+  <comment xml:lang="bg">Фърмуер за iPod</comment>
+  <comment xml:lang="ca">microprogramari d'iPod</comment>
+  <comment xml:lang="cs">Firmware iPod</comment>
+  <comment xml:lang="da">iPod-styreprogram</comment>
+  <comment xml:lang="de">iPod-Firmware</comment>
+  <comment xml:lang="el">εικόνα μνήμης firmware iPod</comment>
+  <comment xml:lang="en_GB">iPod firmware</comment>
+  <comment xml:lang="eo">iPod-firmvaro</comment>
+  <comment xml:lang="es">firmware de iPod</comment>
+  <comment xml:lang="eu">iPod firmwarea</comment>
+  <comment xml:lang="fi">iPod-laiteohjelmisto</comment>
+  <comment xml:lang="fr">firmware iPod</comment>
+  <comment xml:lang="ga">dochtearraí iPod</comment>
+  <comment xml:lang="hu">iPod-firmware</comment>
+  <comment xml:lang="id">peranti tegar iPod</comment>
+  <comment xml:lang="it">Firmware iPod</comment>
+  <comment xml:lang="ja">iPod ファームウェア</comment>
+  <comment xml:lang="ko">iPod 펌웨어</comment>
+  <comment xml:lang="lt">iPod programinė įranga</comment>
+  <comment xml:lang="ms">Firmware iPod</comment>
+  <comment xml:lang="nb">iPod-firmware</comment>
+  <comment xml:lang="nl">iPod-firmware</comment>
+  <comment xml:lang="nn">iPod-firmvare</comment>
+  <comment xml:lang="pl">oprogramowanie iPod</comment>
+  <comment xml:lang="pt">'firmware' iPod</comment>
+  <comment xml:lang="pt_BR">Firmware do iPod</comment>
+  <comment xml:lang="sq">Firmware iPod</comment>
+  <comment xml:lang="sr">iPod програм</comment>
+  <comment xml:lang="sv">fast iPod-program</comment>
+  <comment xml:lang="uk">мікропрограма iPod</comment>
+  <comment xml:lang="vi">phần vững iPod</comment>
+  <comment xml:lang="zh_CN">iPod 固件</comment>
+  <comment xml:lang="zh_TW">iPod 韌體</comment>
+</mime-type>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/sgml">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>SGML document</comment>
+  <comment xml:lang="be@latin">Dakument SGML</comment>
+  <comment xml:lang="bg">Документ — SGML</comment>
+  <comment xml:lang="ca">document SGML</comment>
+  <comment xml:lang="cs">Dokument SGML</comment>
+  <comment xml:lang="da">SGML-dokument</comment>
+  <comment xml:lang="de">SGML-Dokument</comment>
+  <comment xml:lang="el">έγγραφο SGML</comment>
+  <comment xml:lang="en_GB">SGML document</comment>
+  <comment xml:lang="eo">SGML-document</comment>
+  <comment xml:lang="es">documento SGML</comment>
+  <comment xml:lang="eu">SGML dokumentua</comment>
+  <comment xml:lang="fi">SGML-asiakirja</comment>
+  <comment xml:lang="fr">document SGML</comment>
+  <comment xml:lang="ga">cáipéis SGML</comment>
+  <comment xml:lang="hu">SGML-dokumentum</comment>
+  <comment xml:lang="id">Dokumen SGML</comment>
+  <comment xml:lang="it">Documento SGML</comment>
+  <comment xml:lang="ja">SGML ドキュメント</comment>
+  <comment xml:lang="ko">SGML 문서</comment>
+  <comment xml:lang="lt">SGML dokumentas</comment>
+  <comment xml:lang="ms">Dokumen SGML</comment>
+  <comment xml:lang="nb">SGML-dokument</comment>
+  <comment xml:lang="nl">SGML-document</comment>
+  <comment xml:lang="nn">SGML-dokument</comment>
+  <comment xml:lang="pl">Dokument SGML</comment>
+  <comment xml:lang="pt">documento SGML</comment>
+  <comment xml:lang="pt_BR">Documento SGML</comment>
+  <comment xml:lang="sq">Dokument SGML</comment>
+  <comment xml:lang="sr">SGML документ</comment>
+  <comment xml:lang="sv">SGML-dokument</comment>
+  <comment xml:lang="uk">Документ SGML</comment>
+  <comment xml:lang="vi">Tài liệu SGML</comment>
+  <comment xml:lang="zh_CN">SGML 文档</comment>
+  <comment xml:lang="zh_TW">SGML 文件</comment>
+  <acronym>SGML</acronym>
+  <expanded-acronym>Standard Generalized Markup Language</expanded-acronym>
+  <sub-class-of type="text/plain"/>
+</mime-type>

@@ -1,0 +1,13 @@
+Package: util-linux-ng-dev
+Version: 2.17-r34.3-arago1.6
+Description: Util-linux-ng is a suite of essential utilities for any Linux system.
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2
+Architecture: armv5te
+OE: util-linux-ng
+Homepage: unknown
+Depends: util-linux-ng, libuuid1, libblkid1
+Recommends: gettext-dev, libpam-dev, udev-dev, libz-dev, ncurses-dev, util-linux-ng-mountall-dev, util-linux-ng-umount-dev, util-linux-ng-swaponoff-dev, util-linux-ng-losetup-dev, util-linux-ng-fsck-dev, util-linux-ng-blkid-dev, libgcc1-dev, libc6-dev, libblkid-dev, libuuid-dev, ncurses-libtinfo-dev, ncurses-libncursesw-dev
+Source: http://kernel.org/pub/linux/utils/util-linux-ng/v2.17/util-linux-ng-2.17-arago1.tar.bz2;name=archive file://uclibc-compile.patch file://util-linux-ng-replace-siginterrupt.patch file://fdiskbsdlabel.h-nios2.patch file://uclibc-nolargefile.patch

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-java-archive">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Java archive</comment>
+  <comment xml:lang="be@latin">Archiŭ Java</comment>
+  <comment xml:lang="bg">Архив — Java</comment>
+  <comment xml:lang="ca">arxiu Java</comment>
+  <comment xml:lang="cs">Archiv Java</comment>
+  <comment xml:lang="da">Java-arkiv</comment>
+  <comment xml:lang="de">Java-Archiv</comment>
+  <comment xml:lang="el">αρχείο Java</comment>
+  <comment xml:lang="en_GB">Java archive</comment>
+  <comment xml:lang="eo">Java-arkivo</comment>
+  <comment xml:lang="es">archivador Java</comment>
+  <comment xml:lang="eu">Java artxiboa</comment>
+  <comment xml:lang="fi">Java-arkisto</comment>
+  <comment xml:lang="fr">archive Java</comment>
+  <comment xml:lang="ga">cartlann Java</comment>
+  <comment xml:lang="hu">Java-archívum</comment>
+  <comment xml:lang="id">Arsip Java</comment>
+  <comment xml:lang="it">Archivio Java</comment>
+  <comment xml:lang="ja">Java アーカイブ</comment>
+  <comment xml:lang="ko">자바 묶음파일</comment>
+  <comment xml:lang="lt">Java archyvas</comment>
+  <comment xml:lang="ms">Arkib Java</comment>
+  <comment xml:lang="nb">Java-arkiv</comment>
+  <comment xml:lang="nl">Java-archief</comment>
+  <comment xml:lang="nn">Java-arkiv</comment>
+  <comment xml:lang="pl">Archiwum Java</comment>
+  <comment xml:lang="pt">arquivo Java</comment>
+  <comment xml:lang="pt_BR">Pacote Java</comment>
+  <comment xml:lang="ru">архив Java</comment>
+  <comment xml:lang="sq">Arkiv Java</comment>
+  <comment xml:lang="sr">Јава архива</comment>
+  <comment xml:lang="sv">Java-arkiv</comment>
+  <comment xml:lang="uk">Архів Java</comment>
+  <comment xml:lang="vi">Kho nén Java</comment>
+  <comment xml:lang="zh_CN">Java 压缩包</comment>
+  <comment xml:lang="zh_TW">Java 保存檔</comment>
+  <generic-icon name="package-x-generic"/>
+  <alias type="application/x-jar"/>
+</mime-type>

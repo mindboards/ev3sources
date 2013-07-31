@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-gettext-translation">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>translated messages (machine-readable)</comment>
+  <comment xml:lang="be@latin">pierakładzienyja paviedamleńni (dla čytańnia kamputaram)</comment>
+  <comment xml:lang="bg">Преведени съобщения — машинен формат</comment>
+  <comment xml:lang="ca">missatges traduïts (llegible per màquina)</comment>
+  <comment xml:lang="cs">Přeložené zprávy (strojově čitelné)</comment>
+  <comment xml:lang="da">oversatte meddelelser (maskinlæsbare)</comment>
+  <comment xml:lang="de">übersetzte Meldungen (maschinenlesbar)</comment>
+  <comment xml:lang="el">μεταφρασμένα μηνύματα (για μηχανική ανάγνωση)</comment>
+  <comment xml:lang="en_GB">translated messages (machine-readable)</comment>
+  <comment xml:lang="eo">tradukitaj mesaĝoj (maŝinlegebla)</comment>
+  <comment xml:lang="es">mensajes traducidos (legibles por máquinas)</comment>
+  <comment xml:lang="eu">itzulitako mezuak (ordenagailuek irakurtzeko)</comment>
+  <comment xml:lang="fi">käännetyt viestit (koneluettava)</comment>
+  <comment xml:lang="fr">messages traduits (lisibles par machine)</comment>
+  <comment xml:lang="ga">teachtaireachtaí aistrithe (inléite ag meaisín)</comment>
+  <comment xml:lang="hu">lefordított üzenetek (gépi kód)</comment>
+  <comment xml:lang="id">pesan diterjemahkan (dapat dibaca mesin)</comment>
+  <comment xml:lang="it">Messaggi tradotti (leggibili da macchina)</comment>
+  <comment xml:lang="ja">翻訳メッセージ (マシン用)</comment>
+  <comment xml:lang="ko">(기계언어로 된) 번역 메세지</comment>
+  <comment xml:lang="lt">išversti užrašai (kompiuteriniu formatu)</comment>
+  <comment xml:lang="ms">Mesej diterjemah (bolehdibaca-mesin)</comment>
+  <comment xml:lang="nb">oversatte meldinger (maskinlesbar)</comment>
+  <comment xml:lang="nl">vertaalde berichten (machine-leesbaar)</comment>
+  <comment xml:lang="nn">oversette meldingar (maskinlesbare)</comment>
+  <comment xml:lang="pl">przetłumaczone komunikaty (czytelne dla maszyny)</comment>
+  <comment xml:lang="pt">mensagens traduzidas (leitura pelo computador)</comment>
+  <comment xml:lang="pt_BR">mensagens traduzidas (legível por máquinas)</comment>
+  <comment xml:lang="ru">переводы сообщений (откомпилированые)</comment>
+  <comment xml:lang="sq">mesazhe të përkthyer (të lexueshme nga makina)</comment>
+  <comment xml:lang="sr">преведене поруке (машинама читљиво)</comment>
+  <comment xml:lang="sv">översatta meddelanden (maskinläsbara)</comment>
+  <comment xml:lang="uk">перекладені повідомлення (у машинній формі)</comment>
+  <comment xml:lang="vi">thông điệp đã dịch (máy đọc được)</comment>
+  <comment xml:lang="zh_CN">翻译的消息(机读)</comment>
+  <comment xml:lang="zh_TW">翻譯訊息 (可讓程式讀取的格式)</comment>
+</mime-type>

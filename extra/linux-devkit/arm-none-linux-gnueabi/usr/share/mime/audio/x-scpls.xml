@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/x-scpls">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>MP3 ShoutCast playlist</comment>
+  <comment xml:lang="be@latin">Śpis piesień dla tranślacyi MP3</comment>
+  <comment xml:lang="bg">Списък за изпълнение — MP3 ShoutCast</comment>
+  <comment xml:lang="ca">llista de reproducció MP3 ShoutCast</comment>
+  <comment xml:lang="cs">Seznam skladeb MP3 ShoutCast</comment>
+  <comment xml:lang="da">MP3 ShoutCast-afspilningsliste</comment>
+  <comment xml:lang="de">MP3-ShoutCast-Wiedergabeliste</comment>
+  <comment xml:lang="el">Λίστα αναπαραγωγής MP3 ShoutCast</comment>
+  <comment xml:lang="en_GB">MP3 ShoutCast playlist</comment>
+  <comment xml:lang="eo">MP3-leglisto de ShoutCast</comment>
+  <comment xml:lang="es">lista de reproducción MP3 ShoutCast</comment>
+  <comment xml:lang="eu">MP3 ShoutCast erreprodukzio-zerrenda</comment>
+  <comment xml:lang="fi">MP3 ShoutCast -soittolista</comment>
+  <comment xml:lang="fr">liste de lecture MP3 ShoutCast</comment>
+  <comment xml:lang="ga">seinmliosta MP3 ShoutCast</comment>
+  <comment xml:lang="hu">MP3 ShoutCast-lejátszólista</comment>
+  <comment xml:lang="id">Senarai putar MP3 ShoutCast</comment>
+  <comment xml:lang="it">Scaletta MP3 ShoutCast</comment>
+  <comment xml:lang="ja">MP3 ShoutCast 演奏リスト</comment>
+  <comment xml:lang="ko">MP3 ShoutCast 연주목록</comment>
+  <comment xml:lang="lt">MP3 ShoutCast grojaraštis</comment>
+  <comment xml:lang="ms">Senaraimain ShoutCast MP3</comment>
+  <comment xml:lang="nb">MP3 ShoutCast-spilleliste</comment>
+  <comment xml:lang="nl">MP3 ShoutCast-afspeellijst</comment>
+  <comment xml:lang="nn">MP3 ShoutCast-speleliste</comment>
+  <comment xml:lang="pl">Lista odtwarzania MP3 ShoutCast</comment>
+  <comment xml:lang="pt">lista de reprodução MP3 ShoutCast</comment>
+  <comment xml:lang="pt_BR">Lista de reprodução MP3 ShoutCast</comment>
+  <comment xml:lang="ru">список песен MP3 ShoutCast</comment>
+  <comment xml:lang="sq">Listë titujsh MP3 ShoutCast</comment>
+  <comment xml:lang="sr">MP3 ShoutCast списак песама</comment>
+  <comment xml:lang="sv">MP3 ShoutCast-spellista</comment>
+  <comment xml:lang="uk">Список програвання MP3 ShoutCast</comment>
+  <comment xml:lang="vi">Danh mục nhạc MP3 ShoutCast</comment>
+  <comment xml:lang="zh_CN">MP3 ShoutCast 播放列表</comment>
+  <comment xml:lang="zh_TW">MP3 ShoutCast 播放清單</comment>
+  <alias type="application/pls"/>
+</mime-type>

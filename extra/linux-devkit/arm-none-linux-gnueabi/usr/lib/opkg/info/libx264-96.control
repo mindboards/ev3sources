@@ -1,0 +1,12 @@
+Package: libx264-96
+Version: r2245-r7.6
+Description: H.264 encoder
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPL
+Architecture: armv5te
+OE: x264
+Homepage: unknown
+Depends: libc6, libgcc1
+Source: http://download.videolan.org/pub/videolan/x264/snapshots/x264-snapshot-20100531-2245.tar.bz2

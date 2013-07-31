@@ -1,0 +1,45 @@
+<!-- Top-level element -->
+<!ELEMENT gconfschemafile (schemalist)>
+
+<!-- A list of schemas -->
+<!ELEMENT schemalist (schema)*>
+
+<!-- A single schema. What I am trying to say is "this set of
+elements, in any order". Duplicate elements (apart from <locale>) are
+not allowed). -->
+<!ELEMENT schema  (key|applyto*|owner?|type|(list_type|(car_type,cdr_type))?|default?|locale*)*>
+
+<!-- The key for this schema (e.g. /schemas/apps/foo/bar) -->
+<!ELEMENT key     (#PCDATA)>
+
+<!-- The keys to apply this schema too (e.g. /apps/foo/bar) -->
+<!ELEMENT applyto (#PCDATA)>
+
+<!-- The name of the owner of these keys (e.g. foo) -->
+<!ELEMENT owner   (#PCDATA)>
+
+<!-- The type of this schema (string|int|float|bool|list|pair)-->
+<!ELEMENT type    (#PCDATA)>
+
+<!-- If <type> is a list, then this is the type of the members -->
+<!ELEMENT list_type (#PCDATA)>
+
+<!-- If <type> is a pair, then this is the type of the car (first element) -->
+<!ELEMENT car_type (#PCDATA)>
+
+<!-- If <type> is a pair, then this is the type of the cdr (second element) -->
+<!ELEMENT cdr_type (#PCDATA)>
+
+<!-- The default value for the key -->
+<!ELEMENT default (#PCDATA)>
+
+<!-- Localised default value, short description and long description -->
+
+<!ELEMENT locale  (default?,short?,long?)>
+<!ATTLIST locale  name CDATA #REQUIRED>
+
+<!-- Short summary of the key -->
+<!ELEMENT short   (#PCDATA)>
+
+<!-- Long description of the key -->
+<!ELEMENT long   (#PCDATA)>

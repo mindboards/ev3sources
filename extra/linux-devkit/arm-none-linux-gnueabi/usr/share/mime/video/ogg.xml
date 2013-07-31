@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="video/ogg">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Ogg Video</comment>
+  <comment xml:lang="be@latin">Videa Ogg</comment>
+  <comment xml:lang="bg">Видео — Ogg</comment>
+  <comment xml:lang="ca">vídeo Ogg</comment>
+  <comment xml:lang="cs">Video Ogg</comment>
+  <comment xml:lang="es">vídeo Ogg</comment>
+  <comment xml:lang="eu">Ogg bideoa</comment>
+  <comment xml:lang="fi">Ogg-video</comment>
+  <comment xml:lang="fr">vidéo Ogg</comment>
+  <comment xml:lang="ga">físeán Ogg</comment>
+  <comment xml:lang="hu">Ogg videó</comment>
+  <comment xml:lang="id">Video Ogg</comment>
+  <comment xml:lang="it">Video Ogg</comment>
+  <comment xml:lang="ko">Ogg 비디오</comment>
+  <comment xml:lang="lt">Ogg vaizdas</comment>
+  <comment xml:lang="nb">Ogg video</comment>
+  <comment xml:lang="nl">Ogg-video</comment>
+  <comment xml:lang="pt_BR">Vídeo Ogg</comment>
+  <comment xml:lang="ru">Ogg видео</comment>
+  <comment xml:lang="sv">Ogg-video</comment>
+  <comment xml:lang="uk">Відео Ogg</comment>
+  <comment xml:lang="vi">Ảnh động Ogg</comment>
+  <sub-class-of type="application/ogg"/>
+  <alias type="video/x-ogg"/>
+</mime-type>

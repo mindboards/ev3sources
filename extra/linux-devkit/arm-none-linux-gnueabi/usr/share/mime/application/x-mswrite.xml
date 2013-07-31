@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-mswrite">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>WRI document</comment>
+  <comment xml:lang="be@latin">Dakument WRI</comment>
+  <comment xml:lang="bg">Документ — WRI</comment>
+  <comment xml:lang="ca">document WRI</comment>
+  <comment xml:lang="cs">Dokument WRI</comment>
+  <comment xml:lang="de">WRI-Dokument</comment>
+  <comment xml:lang="en_GB">WRI document</comment>
+  <comment xml:lang="es">documento WRI</comment>
+  <comment xml:lang="eu">WRI dokumentua</comment>
+  <comment xml:lang="fi">WRI-asiakirja</comment>
+  <comment xml:lang="fr">document WRI</comment>
+  <comment xml:lang="ga">cáipéis WRI</comment>
+  <comment xml:lang="hu">WRI dokumentum</comment>
+  <comment xml:lang="id">Dokumen WRI</comment>
+  <comment xml:lang="it">Documento WRI</comment>
+  <comment xml:lang="ko">WRI 문서</comment>
+  <comment xml:lang="lt">WRI dokumentas</comment>
+  <comment xml:lang="nb">WRI-dokument</comment>
+  <comment xml:lang="nl">WRI-document</comment>
+  <comment xml:lang="nn">WRI-dokument</comment>
+  <comment xml:lang="pl">Dokument WRI</comment>
+  <comment xml:lang="pt_BR">Documento WRI</comment>
+  <comment xml:lang="sv">WRI-dokument</comment>
+  <comment xml:lang="uk">Документ WRI</comment>
+  <comment xml:lang="vi">Tài liệu WRI</comment>
+  <generic-icon name="x-office-document"/>
+</mime-type>

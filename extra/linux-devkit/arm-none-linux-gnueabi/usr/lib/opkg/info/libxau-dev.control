@@ -1,0 +1,13 @@
+Package: libxau-dev
+Version: 1:1.0.6-r9.0.6
+Description: A Sample Authorization Protocol for X
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT-X
+Architecture: armv5te
+OE: libxau
+Homepage: http://www.x.org
+Depends: libxau6, libxau6, xproto-dev
+Recommends: util-macros-dev, xproto-dev, libgcc1-dev, libc6-dev, libxau-dev
+Source: http://xorg.freedesktop.org/releases/individual/lib/libXau-1.0.6.tar.bz2;name=archive

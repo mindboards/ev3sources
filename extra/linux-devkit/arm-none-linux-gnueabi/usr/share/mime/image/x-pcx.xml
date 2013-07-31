@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-pcx">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>PCX image</comment>
+  <comment xml:lang="be@latin">Vyjava PCX</comment>
+  <comment xml:lang="bg">Изображение — PCX</comment>
+  <comment xml:lang="ca">imatge PCX</comment>
+  <comment xml:lang="cs">Obrázek PCX</comment>
+  <comment xml:lang="de">PCX-Bild</comment>
+  <comment xml:lang="en_GB">PCX image</comment>
+  <comment xml:lang="es">imagen PCX</comment>
+  <comment xml:lang="eu">PCX irudia</comment>
+  <comment xml:lang="fi">PCX-kuva</comment>
+  <comment xml:lang="fr">image PCX</comment>
+  <comment xml:lang="ga">íomhá PCX</comment>
+  <comment xml:lang="hu">PCX kép</comment>
+  <comment xml:lang="id">Citra PCX</comment>
+  <comment xml:lang="it">Immagine PCX</comment>
+  <comment xml:lang="ko">PCX 그림</comment>
+  <comment xml:lang="lt">PCX paveikslėlis</comment>
+  <comment xml:lang="nb">PCX-bilde</comment>
+  <comment xml:lang="nl">PCX-afbeelding</comment>
+  <comment xml:lang="nn">PCX-bilete</comment>
+  <comment xml:lang="pl">Obraz PCX</comment>
+  <comment xml:lang="pt_BR">Imagem PCX</comment>
+  <comment xml:lang="sv">PCX-bild</comment>
+  <comment xml:lang="uk">Зображення PCX</comment>
+  <comment xml:lang="vi">Ảnh PCX</comment>
+  <acronym>PCX</acronym>
+  <expanded-acronym>PiCture eXchange</expanded-acronym>
+</mime-type>

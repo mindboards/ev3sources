@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.oasis.opendocument.presentation-template">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>ODP template</comment>
+  <comment xml:lang="be@latin">Šablon ODP</comment>
+  <comment xml:lang="bg">Шаблон — ODP</comment>
+  <comment xml:lang="ca">plantilla ODP</comment>
+  <comment xml:lang="cs">Šablona ODP</comment>
+  <comment xml:lang="de">ODP-Vorlage</comment>
+  <comment xml:lang="en_GB">ODP template</comment>
+  <comment xml:lang="es">plantilla ODP</comment>
+  <comment xml:lang="eu">ODP txantiloia</comment>
+  <comment xml:lang="fi">ODP-malli</comment>
+  <comment xml:lang="fr">modèle ODP</comment>
+  <comment xml:lang="ga">teimpléad ODP</comment>
+  <comment xml:lang="hu">ODP sablon</comment>
+  <comment xml:lang="id">Templat ODP</comment>
+  <comment xml:lang="it">Modello ODP</comment>
+  <comment xml:lang="ko">ODP 문서 틀</comment>
+  <comment xml:lang="lt">ODP šablonas</comment>
+  <comment xml:lang="nb">ODP-mal</comment>
+  <comment xml:lang="nl">ODP-sjabloon</comment>
+  <comment xml:lang="nn">ODP-mal</comment>
+  <comment xml:lang="pl">Szablon ODP</comment>
+  <comment xml:lang="pt_BR">Modelo ODP</comment>
+  <comment xml:lang="sv">ODP-mall</comment>
+  <comment xml:lang="uk">Шаблон ODP</comment>
+  <comment xml:lang="vi">Mẫu ODP</comment>
+  <acronym>OTP</acronym>
+  <expanded-acronym>OpenDocument Presentation Template</expanded-acronym>
+  <sub-class-of type="application/zip"/>
+  <generic-icon name="x-office-presentation"/>
+</mime-type>

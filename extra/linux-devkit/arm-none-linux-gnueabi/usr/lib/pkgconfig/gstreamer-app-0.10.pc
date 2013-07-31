@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include/gstreamer-0.10
+
+Name: GStreamer Application Library
+Description: Helper functions and base classes for application integration
+Requires: gstreamer-0.10 gstreamer-base-0.10
+Version: 0.10.30
+Libs: -L${libdir} -lgstapp-0.10
+Cflags: -I${includedir}
+

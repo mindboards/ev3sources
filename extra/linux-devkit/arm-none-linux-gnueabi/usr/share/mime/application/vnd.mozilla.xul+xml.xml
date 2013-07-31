@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.mozilla.xul+xml">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment xml:lang="en_GB">XUL document</comment>
+  <comment xml:lang="nn">XUL-dokument</comment>
+  <acronym>XUL</acronym>
+  <expanded-acronym>XML User Interface Language</expanded-acronym>
+  <sub-class-of type="application/xml"/>
+  <generic-icon name="text-x-generic"/>
+  <comment>XUL interface document</comment>
+  <comment xml:lang="be@latin">Interfejsny dakument XUL</comment>
+  <comment xml:lang="bg">Документ за интерфейс — XUL</comment>
+  <comment xml:lang="ca">document d'interfície XUL</comment>
+  <comment xml:lang="cs">Dokument rozhraní XUL</comment>
+  <comment xml:lang="de">XUL-Oberflächendokument</comment>
+  <comment xml:lang="es">documento de interfaz XUL</comment>
+  <comment xml:lang="eu">XUL interfazedaren dokumentua</comment>
+  <comment xml:lang="fi">XUL-käyttöliittymäasiakirja</comment>
+  <comment xml:lang="fr">document d'interface XUL</comment>
+  <comment xml:lang="ga">cáipéis chomhéadan XUL</comment>
+  <comment xml:lang="hu">XUL felületdokumentum</comment>
+  <comment xml:lang="id">Dokumen antarmuka XUL</comment>
+  <comment xml:lang="it">Documento interfaccia XUL</comment>
+  <comment xml:lang="ko">XUL 인터페이스 문서</comment>
+  <comment xml:lang="lt">XUL sąsajos dokumentas</comment>
+  <comment xml:lang="nb">XUL-grensesnittdokument</comment>
+  <comment xml:lang="nl">XUL-interface-document</comment>
+  <comment xml:lang="pl">Dokument interfejsu XUL</comment>
+  <comment xml:lang="pt_BR">Documento de interface XUL</comment>
+  <comment xml:lang="sv">XUL-gränssnittsdokument</comment>
+  <comment xml:lang="uk">Документ інтерфейсу XUL</comment>
+  <comment xml:lang="vi">Tài liệu giao diện XUL</comment>
+  <acronym>XUL</acronym>
+  <expanded-acronym>XML User interface markup Language</expanded-acronym>
+  <sub-class-of type="application/xml"/>
+  <generic-icon name="x-office-document"/>
+</mime-type>

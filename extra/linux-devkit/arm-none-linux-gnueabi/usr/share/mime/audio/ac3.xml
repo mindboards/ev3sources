@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/ac3">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Dolby Digital audio</comment>
+  <comment xml:lang="az">Dolby Digital audio</comment>
+  <comment xml:lang="be@latin">Aŭdyjo Dolby Digital</comment>
+  <comment xml:lang="bg">Аудио — Dolby Digital</comment>
+  <comment xml:lang="ca">àudio Dolby Digital</comment>
+  <comment xml:lang="cs">Zvuk Dolby Digital</comment>
+  <comment xml:lang="cy">Sain Dolby Digital</comment>
+  <comment xml:lang="da">Dolby Ditital-lyd</comment>
+  <comment xml:lang="de">Dolby Digital-Audio</comment>
+  <comment xml:lang="el">ψηφιακός Ήχος Dolby</comment>
+  <comment xml:lang="en_GB">Dolby Digital audio</comment>
+  <comment xml:lang="eo">aŭdio en Dolby Digital</comment>
+  <comment xml:lang="es">audio Dolby Digital</comment>
+  <comment xml:lang="eu">Dolby audio digitala</comment>
+  <comment xml:lang="fi">Dolby Digital -ääni</comment>
+  <comment xml:lang="fr">audio Dolby Digital</comment>
+  <comment xml:lang="ga">fuaim Dolby Digital</comment>
+  <comment xml:lang="hu">Dolby Digital hang</comment>
+  <comment xml:lang="id">Audio Dolby Digital</comment>
+  <comment xml:lang="it">Audio Dolby Digital</comment>
+  <comment xml:lang="ja">ドルビーデジタルオーディオ</comment>
+  <comment xml:lang="ko">돌비 디지털 오디오</comment>
+  <comment xml:lang="lt">Dolby Digital garsas</comment>
+  <comment xml:lang="ms">Audio Digital Dolby</comment>
+  <comment xml:lang="nb">Dolby digital lyd</comment>
+  <comment xml:lang="nl">Dolby Digital-audio</comment>
+  <comment xml:lang="nn">Dolby Digital lyd</comment>
+  <comment xml:lang="pl">Plik dźwiękowy Dolby Digital</comment>
+  <comment xml:lang="pt">áudio Dolby Digital</comment>
+  <comment xml:lang="pt_BR">Áudio Dolby Digital</comment>
+  <comment xml:lang="ru">Dolby Digital аудио</comment>
+  <comment xml:lang="sq">Audio Dolby Digital</comment>
+  <comment xml:lang="sr">Дигитални Dolby звучни запис</comment>
+  <comment xml:lang="sv">Dolby Digital-ljud</comment>
+  <comment xml:lang="uk">Звук Dolby Digital</comment>
+  <comment xml:lang="vi">Âm thanh Dolby Digital</comment>
+  <comment xml:lang="zh_CN">杜比数字音频</comment>
+  <comment xml:lang="zh_TW">杜比數碼音效</comment>
+</mime-type>

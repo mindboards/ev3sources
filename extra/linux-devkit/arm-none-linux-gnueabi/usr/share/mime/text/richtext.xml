@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/richtext">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>rich text document</comment>
+  <comment xml:lang="az">zəngin mətn sənədi</comment>
+  <comment xml:lang="be@latin">azdobleny tekstavy dakument</comment>
+  <comment xml:lang="bg">Документ — rich text</comment>
+  <comment xml:lang="ca">document de text enriquit</comment>
+  <comment xml:lang="cs">Textový dokument RTF</comment>
+  <comment xml:lang="cy">dogfen testun gyfoethog (rtf)</comment>
+  <comment xml:lang="da">rig tekst-dokument</comment>
+  <comment xml:lang="de">RTF-Textdokument</comment>
+  <comment xml:lang="el">έγγραφο εμπλουτισμένου κειμένου (RTF)</comment>
+  <comment xml:lang="en_GB">rich text document</comment>
+  <comment xml:lang="eo">riĉteksta dokumento</comment>
+  <comment xml:lang="es">documento de texto enriquecido</comment>
+  <comment xml:lang="eu">aberastutako testu formatua</comment>
+  <comment xml:lang="fi">RTF-asiakirja</comment>
+  <comment xml:lang="fr">document « rich text »</comment>
+  <comment xml:lang="ga">cáipéis mhéith-théacs</comment>
+  <comment xml:lang="hu">rich text-dokumentum</comment>
+  <comment xml:lang="id">dokumen teks kaya</comment>
+  <comment xml:lang="it">Documento rich text</comment>
+  <comment xml:lang="ja">リッチテキストドキュメント</comment>
+  <comment xml:lang="ko">rich text 문서</comment>
+  <comment xml:lang="lt">praturtinto teksto dokumentas</comment>
+  <comment xml:lang="ms">Dokumen teks diperkaya</comment>
+  <comment xml:lang="nb">rik tekst-dokument</comment>
+  <comment xml:lang="nl">opgemaakt tekstdocument</comment>
+  <comment xml:lang="nn">rik tekst-dokument</comment>
+  <comment xml:lang="pl">dokument rich text</comment>
+  <comment xml:lang="pt">documento em texto rico</comment>
+  <comment xml:lang="pt_BR">documento rich text</comment>
+  <comment xml:lang="sq">dokument rich text</comment>
+  <comment xml:lang="sr">обогаћени текстуални документ</comment>
+  <comment xml:lang="sv">RTF-textdokument</comment>
+  <comment xml:lang="uk">форматований текстовий документ</comment>
+  <comment xml:lang="vi">tài liệu văn bản có kiểu dáng (RTF)</comment>
+  <comment xml:lang="zh_CN">RTF 丰富文本文档</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

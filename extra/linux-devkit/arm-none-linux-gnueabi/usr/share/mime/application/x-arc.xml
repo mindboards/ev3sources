@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-arc">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>ARC archive</comment>
+  <comment xml:lang="be@latin">Archiŭ ARC</comment>
+  <comment xml:lang="bg">Архив — ARC</comment>
+  <comment xml:lang="ca">arxiu ARC</comment>
+  <comment xml:lang="cs">Archiv ARC</comment>
+  <comment xml:lang="de">ARC-Archiv</comment>
+  <comment xml:lang="es">archivador ARC</comment>
+  <comment xml:lang="eu">ARC artxiboa</comment>
+  <comment xml:lang="fi">ARC-arkisto</comment>
+  <comment xml:lang="fr">archive ARC</comment>
+  <comment xml:lang="ga">cartlann ARC</comment>
+  <comment xml:lang="hu">ARC-archívum</comment>
+  <comment xml:lang="id">Arsip ARC</comment>
+  <comment xml:lang="it">Archivio ARC</comment>
+  <comment xml:lang="ko">ARC 압축파일</comment>
+  <comment xml:lang="lt">ARC archyvas</comment>
+  <comment xml:lang="nb">ARC-arkiv</comment>
+  <comment xml:lang="nl">ARC-archief</comment>
+  <comment xml:lang="pl">Archiwum ARC</comment>
+  <comment xml:lang="pt_BR">Pacote ARC</comment>
+  <comment xml:lang="ru">архив ARC</comment>
+  <comment xml:lang="sv">ARC-arkiv</comment>
+  <comment xml:lang="uk">Архів ARC</comment>
+  <comment xml:lang="vi">Kho nén ARC</comment>
+  <generic-icon name="package-x-generic"/>
+</mime-type>

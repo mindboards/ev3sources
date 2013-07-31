@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-sony-srf">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Sony SRF raw image</comment>
+  <comment xml:lang="be@latin">Suvoraja vyjava Sony SRF</comment>
+  <comment xml:lang="bg">Изображение — Sony SRF raw</comment>
+  <comment xml:lang="ca">imatge en cru de Sony SRF</comment>
+  <comment xml:lang="cs">Surový obrázek Sony SRF</comment>
+  <comment xml:lang="es">imagen en bruto SRF de Sony</comment>
+  <comment xml:lang="eu">Sony SRF irudi gordina</comment>
+  <comment xml:lang="fi">Sony-SRF-raakakuva</comment>
+  <comment xml:lang="fr">image brute SRF Sony</comment>
+  <comment xml:lang="ga">amhíomhá Sony SRF</comment>
+  <comment xml:lang="hu">Sony SRF nyers kép</comment>
+  <comment xml:lang="id">Citra mentah Sony SRF</comment>
+  <comment xml:lang="it">Immagine raw Sony SRF</comment>
+  <comment xml:lang="ko">소니 SRF raw 이미지</comment>
+  <comment xml:lang="lt">Sony SRF neapdorotas paveikslėlis</comment>
+  <comment xml:lang="nb">Sony SRF raw-bilde</comment>
+  <comment xml:lang="nl">onbewerkt Sony SRF-beeld</comment>
+  <comment xml:lang="pt_BR">Imagem bruta SRF da Sony</comment>
+  <comment xml:lang="sv">Sony SRF-råbild</comment>
+  <comment xml:lang="vi">Ảnh thô Sony SRF</comment>
+  <acronym>SRF</acronym>
+  <expanded-acronym>Sony Raw Format</expanded-acronym>
+  <sub-class-of type="image/x-dcraw"/>
+  <sub-class-of type="image/tiff"/>
+</mime-type>

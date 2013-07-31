@@ -1,0 +1,11 @@
+Package: videoproto
+Version: 1:2.3.1-r2.0.6
+Description: X protocol headers: videoproto
+Section: x11/libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT-X
+Architecture: armv5te
+OE: videoproto
+Homepage: http://www.x.org
+Source: http://xorg.freedesktop.org/releases/individual/proto/videoproto-2.3.1.tar.bz2;name=archive

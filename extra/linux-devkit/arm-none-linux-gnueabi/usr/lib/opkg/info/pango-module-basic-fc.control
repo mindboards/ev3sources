@@ -1,0 +1,12 @@
+Package: pango-module-basic-fc
+Version: 1.24.4-r1.1.6
+Description: Pango module basic-fc
+Section: x11/libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPL
+Architecture: armv5te
+OE: pango
+Homepage: unknown
+Depends: pango, pango, libgobject-2.0-0, libgthread-2.0-0, libc6, libgmodule-2.0-0, libglib-2.0-0, libfontconfig1, libfreetype6, libz1, libexpat1, libgcc1
+Source: http://ftp.gnome.org/pub/GNOME/sources/pango/1.24/pango-1.24.4.tar.bz2;name=archive file://no-tests.patch file://CVE-2010-0421.patch

@@ -1,0 +1,12 @@
+Package: libsm6
+Version: 1:1.2.0-r9.0.6
+Description: X11 Session management library
+Section: x11/libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT-X
+Architecture: armv5te
+OE: libsm
+Homepage: http://www.x.org
+Depends: libice6, libuuid1, libgcc1, libc6
+Source: http://xorg.freedesktop.org/releases/individual/lib/libSM-1.2.0.tar.bz2;name=archive

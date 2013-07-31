@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/mathml">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>MathML document</comment>
+  <comment xml:lang="az">MathML sənədi</comment>
+  <comment xml:lang="be@latin">Dakument MathML</comment>
+  <comment xml:lang="bg">Документ — MathML</comment>
+  <comment xml:lang="ca">document de MathML</comment>
+  <comment xml:lang="cs">Dokument MathML</comment>
+  <comment xml:lang="cy">Dogfen MathML</comment>
+  <comment xml:lang="da">MathML-dokument</comment>
+  <comment xml:lang="de">MathML-Dokument</comment>
+  <comment xml:lang="el">έγγραφο MathML</comment>
+  <comment xml:lang="en_GB">MathML document</comment>
+  <comment xml:lang="eo">MathML-dokumento</comment>
+  <comment xml:lang="es">documento MathML</comment>
+  <comment xml:lang="eu">MathML dokumentua</comment>
+  <comment xml:lang="fi">MathML-asiakirja</comment>
+  <comment xml:lang="fr">document MathML</comment>
+  <comment xml:lang="ga">cáipéis MathML</comment>
+  <comment xml:lang="hu">MathML-dokumentum</comment>
+  <comment xml:lang="id">Dokumen MathML</comment>
+  <comment xml:lang="it">Documento MathML</comment>
+  <comment xml:lang="ja">MathML ドキュメント</comment>
+  <comment xml:lang="ko">MathML 문서</comment>
+  <comment xml:lang="lt">MathML dokumentas</comment>
+  <comment xml:lang="ms">Dokumen MathML</comment>
+  <comment xml:lang="nb">MathML-dokument</comment>
+  <comment xml:lang="nl">MathML-document</comment>
+  <comment xml:lang="nn">MathML-dokument</comment>
+  <comment xml:lang="pl">Dokument MathML</comment>
+  <comment xml:lang="pt">documento MathML</comment>
+  <comment xml:lang="pt_BR">Documento do MathML</comment>
+  <comment xml:lang="ru">документ MathML</comment>
+  <comment xml:lang="sq">Dokument MathML</comment>
+  <comment xml:lang="sr">MathML документ</comment>
+  <comment xml:lang="sv">MathML-dokument</comment>
+  <comment xml:lang="uk">Документ MathML</comment>
+  <comment xml:lang="vi">Tài liệu MathML</comment>
+  <comment xml:lang="zh_CN">MathML 文档</comment>
+  <comment xml:lang="zh_TW">MathML 文件</comment>
+  <sub-class-of type="application/xml"/>
+</mime-type>

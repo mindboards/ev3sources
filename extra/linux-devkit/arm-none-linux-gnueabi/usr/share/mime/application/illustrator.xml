@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/illustrator">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Adobe Illustrator document</comment>
+  <comment xml:lang="be@latin">Dakument Adobe Illustrator</comment>
+  <comment xml:lang="bg">Документ — Adobe Illustrator</comment>
+  <comment xml:lang="ca">document d'Adobe Illustrator</comment>
+  <comment xml:lang="cs">Dokument Adobe Illustrator</comment>
+  <comment xml:lang="da">Adobe Illustrator-dokument</comment>
+  <comment xml:lang="de">Adobe Illustrator-Dokument</comment>
+  <comment xml:lang="el">έγγραφο Adobe Illustrator</comment>
+  <comment xml:lang="en_GB">Adobe Illustrator document</comment>
+  <comment xml:lang="eo">dokumento de Adobe Illustrator</comment>
+  <comment xml:lang="es">documento de Adobe Illustrator</comment>
+  <comment xml:lang="eu">Adobe Illustrator dokumentua</comment>
+  <comment xml:lang="fi">Adobe Illustrator -asiakirja</comment>
+  <comment xml:lang="fr">document Adobe Illustrator</comment>
+  <comment xml:lang="ga">cáipéis Adobe Illustrator</comment>
+  <comment xml:lang="hu">Adobe Illustrator-dokumentum</comment>
+  <comment xml:lang="id">Dokumen Adobe Illustrator</comment>
+  <comment xml:lang="it">Documento Adobe Illustrator</comment>
+  <comment xml:lang="ja">Adobe Illustrator ドキュメント</comment>
+  <comment xml:lang="ko">어도비 일러스트레이터 문서</comment>
+  <comment xml:lang="lt">Adobe Illustrator dokumentas</comment>
+  <comment xml:lang="ms">Dokumen Adobe Illustrator</comment>
+  <comment xml:lang="nb">Adobe Illustrator-dokument</comment>
+  <comment xml:lang="nl">Adobe Illustrator-document</comment>
+  <comment xml:lang="nn">Adobe Illustrator-dokument</comment>
+  <comment xml:lang="pl">Dokument Adobe Illustratora</comment>
+  <comment xml:lang="pt">documento Adobe Illustrator</comment>
+  <comment xml:lang="pt_BR">Documento do Adobe Illustrator</comment>
+  <comment xml:lang="ru">документ Adobe Illustrator</comment>
+  <comment xml:lang="sq">Dokument Adobe Illustrator</comment>
+  <comment xml:lang="sr">Адоуби Илустратор документ</comment>
+  <comment xml:lang="sv">Adobe Illustrator-dokument</comment>
+  <comment xml:lang="uk">Документ Adobe Illustrator</comment>
+  <comment xml:lang="vi">Tài liệu Adobe Illustrator</comment>
+  <comment xml:lang="zh_CN">Adobe Illustrator 文档</comment>
+  <comment xml:lang="zh_TW">Adobe Illustrator 文件</comment>
+  <generic-icon name="image-x-generic"/>
+</mime-type>

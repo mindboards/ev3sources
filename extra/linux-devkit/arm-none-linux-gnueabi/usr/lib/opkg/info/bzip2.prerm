@@ -1,0 +1,2 @@
+	update-alternatives --remove bunzip2 bunzip2.bzip2
+	update-alternatives --remove bzcat bzcat.bzip2

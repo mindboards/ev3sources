@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: XCB Xv
+Description: XCB Xv Extension
+Version: 1.6
+Requires: xcb xcb-shm
+Libs: -L${libdir} -lxcb-xv
+Cflags: -I${includedir}

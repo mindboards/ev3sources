@@ -1,0 +1,13 @@
+Package: libsm-dev
+Version: 1:1.2.0-r9.0.6
+Description: X11 Session management library
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT-X
+Architecture: armv5te
+OE: libsm
+Homepage: http://www.x.org
+Depends: libsm6, libsm6, libice-dev, xproto-dev
+Recommends: util-macros-dev, libice-dev, xproto-dev, xtrans-dev, util-linux-ng-dev, libuuid-dev, libgcc1-dev, libc6-dev, libsm-dev
+Source: http://xorg.freedesktop.org/releases/individual/lib/libSM-1.2.0.tar.bz2;name=archive

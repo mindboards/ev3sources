@@ -1,0 +1,11 @@
+Package: update-rc.d
+Version: 0.7-r2.6
+Description: Manage symlinks in /etc/rcN.d
+Section: base
+Priority: standard
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2+
+Architecture: all
+OE: update-rc.d
+Homepage: unknown
+Source: file://update-rc.d file://add-verbose.patch

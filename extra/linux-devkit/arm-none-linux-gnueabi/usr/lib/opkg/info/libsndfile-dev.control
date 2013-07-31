@@ -1,0 +1,13 @@
+Package: libsndfile-dev
+Version: 1.0.21-r1.6
+Description: An audio format Conversion library
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPL
+Architecture: armv5te
+OE: libsndfile1
+Homepage: http://www.mega-nerd.com/libsndfile
+Depends: libsndfile1, libsndfile1
+Recommends: sqlite3-dev, libc6-dev, libgcc1-dev, libsndfile-dev, libsqlite3-dev, libasound-dev
+Source: http://www.mega-nerd.com/libsndfile/files/libsndfile-1.0.21.tar.gz;name=libsndfile1021targz

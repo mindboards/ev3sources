@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: XCB Render
+Description: XCB Render Extension
+Version: 1.6
+Requires: xcb
+Libs: -L${libdir} -lxcb-render
+Cflags: -I${includedir}

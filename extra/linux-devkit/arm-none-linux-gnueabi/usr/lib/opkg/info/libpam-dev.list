@@ -1,0 +1,16 @@
+/usr/lib/libpamc.la
+/usr/include/security/pam_modutil.h
+/usr/include/security/pam_modules.h
+/usr/lib/libpam.so
+/usr/include/security/pam_client.h
+/usr/lib/libpamc.so
+/usr/include/security/pam_misc.h
+/usr/lib/libpam_misc.la
+/usr/include/security/_pam_macros.h
+/usr/include/security/pam_appl.h
+/usr/include/security/pam_ext.h
+/usr/include/security/pam_filter.h
+/usr/lib/libpam_misc.so
+/usr/include/security/_pam_types.h
+/usr/lib/libpam.la
+/usr/include/security/_pam_compat.h

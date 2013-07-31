@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-lhz">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>LHZ archive</comment>
+  <comment xml:lang="be@latin">Archiŭ LHZ</comment>
+  <comment xml:lang="bg">Архив — LHZ</comment>
+  <comment xml:lang="ca">arxiu LHZ</comment>
+  <comment xml:lang="cs">Archiv LHZ</comment>
+  <comment xml:lang="da">LHZ-arkiv</comment>
+  <comment xml:lang="de">LHZ-Archiv</comment>
+  <comment xml:lang="el">αρχείο LHZ</comment>
+  <comment xml:lang="en_GB">LHZ archive</comment>
+  <comment xml:lang="eo">LHZ-arkivo</comment>
+  <comment xml:lang="es">archivador LHZ</comment>
+  <comment xml:lang="eu">LHZ artxiboa</comment>
+  <comment xml:lang="fi">LHZ-arkisto</comment>
+  <comment xml:lang="fr">archive LHZ</comment>
+  <comment xml:lang="ga">cartlann LHZ</comment>
+  <comment xml:lang="hu">LHZ-archívum</comment>
+  <comment xml:lang="id">Arsip LHZ</comment>
+  <comment xml:lang="it">Archivio LHZ</comment>
+  <comment xml:lang="ja">LHZ アーカイブ</comment>
+  <comment xml:lang="ko">LHZ 압축파일</comment>
+  <comment xml:lang="lt">LHZ archyvas</comment>
+  <comment xml:lang="ms">Arkib LHZ</comment>
+  <comment xml:lang="nb">LHZ-arkiv</comment>
+  <comment xml:lang="nl">LHZ-archief</comment>
+  <comment xml:lang="nn">LHZ-arkiv</comment>
+  <comment xml:lang="pl">Archiwum LHZ</comment>
+  <comment xml:lang="pt">arquivo LHZ</comment>
+  <comment xml:lang="pt_BR">Pacote LZH</comment>
+  <comment xml:lang="ru">архив LHZ</comment>
+  <comment xml:lang="sq">Arkiv LHZ</comment>
+  <comment xml:lang="sr">LHZ архива</comment>
+  <comment xml:lang="sv">LHZ-arkiv</comment>
+  <comment xml:lang="uk">Архів LHZ</comment>
+  <comment xml:lang="vi">Kho nén LHZ (LHA đã nén)</comment>
+  <comment xml:lang="zh_CN">LHZ 压缩包</comment>
+  <comment xml:lang="zh_TW">LHZ 保存檔</comment>
+  <generic-icon name="package-x-generic"/>
+</mime-type>

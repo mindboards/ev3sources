@@ -1,0 +1,11 @@
+Package: randrproto
+Version: 1:1.3.2-r2.0.6
+Description: X protocol headers: randrproto
+Section: x11/libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT-X
+Architecture: armv5te
+OE: randrproto
+Homepage: http://www.x.org
+Source: http://xorg.freedesktop.org/releases/individual/proto/randrproto-1.3.2.tar.bz2;name=archive

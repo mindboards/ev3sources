@@ -1,0 +1,13 @@
+Package: libcairo-dev
+Version: 1.10.0-r1.6
+Description: Cairo graphics library
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MPL LGPL
+Architecture: armv5te
+OE: cairo
+Homepage: unknown
+Depends: libcairo2, libcairo-script-interpreter2, libcairo2, libcairo-gobject2, libx11-dev, libpng-dev, libglib-2.0-dev
+Recommends: libpixman-1-dev, libsm-dev, libpng-dev, libfontconfig-dev, libxrender-dev, libglib-2.0-dev, libc6-dev, libexpat-dev, libfreetype-dev, libpng12-dev, libx11-dev, libxcb-dev, libpthread-stubs-dev, libxau-dev, libz-dev, libgcc1-dev
+Source: http://cairographics.org/releases/cairo-1.10.0.tar.gz;name=cairo

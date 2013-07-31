@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.stardivision.draw">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>StarDraw drawing</comment>
+  <comment xml:lang="az">StarDraw çəkimi</comment>
+  <comment xml:lang="be@latin">Rysunak StarDraw</comment>
+  <comment xml:lang="bg">Чертеж — StarDraw</comment>
+  <comment xml:lang="ca">dibuix de StarDraw</comment>
+  <comment xml:lang="cs">Kresba StarDraw</comment>
+  <comment xml:lang="cy">Darlun StarDraw</comment>
+  <comment xml:lang="da">StarDraw-tegning</comment>
+  <comment xml:lang="de">StarDraw-Zeichnung</comment>
+  <comment xml:lang="el">σχέδιο StarDraw</comment>
+  <comment xml:lang="en_GB">StarDraw drawing</comment>
+  <comment xml:lang="eo">StarDraw-grafikaĵo</comment>
+  <comment xml:lang="es">dibujo de StarDraw</comment>
+  <comment xml:lang="eu">StarDraw marrazkia</comment>
+  <comment xml:lang="fi">StarDraw-piirros</comment>
+  <comment xml:lang="fr">dessin StarDraw</comment>
+  <comment xml:lang="ga">líníocht StarDraw</comment>
+  <comment xml:lang="hu">StarDraw-rajz</comment>
+  <comment xml:lang="id">Gambar StarDraw</comment>
+  <comment xml:lang="it">Disegno StarDraw</comment>
+  <comment xml:lang="ja">StarDraw 絵</comment>
+  <comment xml:lang="ko">StarCalc 드로잉</comment>
+  <comment xml:lang="lt">StarDraw piešinys</comment>
+  <comment xml:lang="ms">Lukisan StarDraw</comment>
+  <comment xml:lang="nb">StarDraw tegning</comment>
+  <comment xml:lang="nl">StarDraw-tekening</comment>
+  <comment xml:lang="nn">StarDraw-teikning</comment>
+  <comment xml:lang="pl">Rysunek StarDraw</comment>
+  <comment xml:lang="pt">desenho do StarDraw</comment>
+  <comment xml:lang="pt_BR">Desenho do StarDraw</comment>
+  <comment xml:lang="sq">Vizatim StarDraw</comment>
+  <comment xml:lang="sr">StarDraw drawing</comment>
+  <comment xml:lang="sv">StarDraw-teckning</comment>
+  <comment xml:lang="uk">Малюнок StarDraw</comment>
+  <comment xml:lang="vi">Bản vẽ StarDraw</comment>
+  <comment xml:lang="zh_CN">StarDraw 绘图</comment>
+  <comment xml:lang="zh_TW">StarDraw 繪圖</comment>
+  <generic-icon name="image-x-generic"/>
+</mime-type>

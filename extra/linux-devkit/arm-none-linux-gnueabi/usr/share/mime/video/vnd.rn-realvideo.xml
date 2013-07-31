@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="video/vnd.rn-realvideo">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>RealVideo document</comment>
+  <comment xml:lang="be@latin">Dakument RealVideo</comment>
+  <comment xml:lang="bg">Документ — RealVideo</comment>
+  <comment xml:lang="ca">document RealVideo</comment>
+  <comment xml:lang="cs">Dokument RealVideo</comment>
+  <comment xml:lang="de">RealVideo-Dokument</comment>
+  <comment xml:lang="en_GB">RealVideo document</comment>
+  <comment xml:lang="es">documento RealVideo</comment>
+  <comment xml:lang="eu">RealVideo dokumentua</comment>
+  <comment xml:lang="fi">RealVideo-asiakirja</comment>
+  <comment xml:lang="fr">document RealVideo</comment>
+  <comment xml:lang="ga">cáipéis RealVideo</comment>
+  <comment xml:lang="hu">RealVideo dokumentum</comment>
+  <comment xml:lang="id">Dokumen RealVideo</comment>
+  <comment xml:lang="it">Documento RealVideo</comment>
+  <comment xml:lang="ko">RealVideo 문서</comment>
+  <comment xml:lang="lt">RealVideo dokumentas</comment>
+  <comment xml:lang="nb">RealAudio-dokument</comment>
+  <comment xml:lang="nl">RealVideo-document</comment>
+  <comment xml:lang="nn">RealVideo-dokument</comment>
+  <comment xml:lang="pl">Dokument RealVideo</comment>
+  <comment xml:lang="pt_BR">Documento RealVideo</comment>
+  <comment xml:lang="sv">RealVideo-dokument</comment>
+  <comment xml:lang="uk">Документ RealVideo</comment>
+  <comment xml:lang="vi">Tài liệu ảnh động RealVideo</comment>
+  <alias type="video/x-real-video"/>
+</mime-type>

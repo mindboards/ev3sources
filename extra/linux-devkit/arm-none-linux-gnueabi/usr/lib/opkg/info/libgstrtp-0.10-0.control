@@ -1,0 +1,12 @@
+Package: libgstrtp-0.10-0
+Version: 0.10.30-r11.0.6
+Description: gstreamer gstrtp-0.10 library
+Section: multimedia
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPL
+Architecture: armv5te
+OE: gst-plugins-base
+Homepage: http://www.gstreamer.net/
+Depends: gstreamer, libgobject-2.0-0, libgmodule-2.0-0, libxml2, libc6, libz1, libgthread-2.0-0, libglib-2.0-0, libgcc1
+Source: http://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-0.10.30.tar.bz2;name=archive file://ivorbis-thumb.patch file://make382.patch

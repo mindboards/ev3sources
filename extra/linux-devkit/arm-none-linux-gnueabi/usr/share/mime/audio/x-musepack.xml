@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/x-musepack">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Musepack audio</comment>
+  <comment xml:lang="be@latin">Aŭdyjo Musepack</comment>
+  <comment xml:lang="bg">Аудио — Musepack</comment>
+  <comment xml:lang="ca">àudio Musepack</comment>
+  <comment xml:lang="cs">Zvuk Musepack</comment>
+  <comment xml:lang="de">Musepack-Audio</comment>
+  <comment xml:lang="es">audio Musepack</comment>
+  <comment xml:lang="eu">Musepack audioa</comment>
+  <comment xml:lang="fi">Musepack-ääni</comment>
+  <comment xml:lang="fr">audio Musepack</comment>
+  <comment xml:lang="ga">fuaim Musepack</comment>
+  <comment xml:lang="hu">Musepack hang</comment>
+  <comment xml:lang="id">Audio Musepack</comment>
+  <comment xml:lang="it">Audio Musepack</comment>
+  <comment xml:lang="ko">Musepack 오디오</comment>
+  <comment xml:lang="lt">Musepack garsas</comment>
+  <comment xml:lang="nb">Musepack-lyd</comment>
+  <comment xml:lang="nl">Musepack-audio</comment>
+  <comment xml:lang="pl">Plik dźwiękowy Musepack</comment>
+  <comment xml:lang="pt_BR">Áudio Musepack</comment>
+  <comment xml:lang="sv">Musepack-ljud</comment>
+  <comment xml:lang="uk">Звук Musepack</comment>
+  <comment xml:lang="vi">Âm thanh Musepack</comment>
+</mime-type>

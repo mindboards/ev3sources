@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-tgif">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>TGIF document</comment>
+  <comment xml:lang="be@latin">Dakument TGIF</comment>
+  <comment xml:lang="bg">Документ — TGIF</comment>
+  <comment xml:lang="ca">document TGIF</comment>
+  <comment xml:lang="cs">Dokument TGIF</comment>
+  <comment xml:lang="da">TGIF-dokument</comment>
+  <comment xml:lang="de">TGIF-Dokument</comment>
+  <comment xml:lang="el">Σχέδιο TGIF</comment>
+  <comment xml:lang="en_GB">TGIF document</comment>
+  <comment xml:lang="eo">TGIF-dokumento</comment>
+  <comment xml:lang="es">documento TGIF</comment>
+  <comment xml:lang="eu">TGIF dokumentua</comment>
+  <comment xml:lang="fi">TGIF-asiakirja</comment>
+  <comment xml:lang="fr">document TGIF</comment>
+  <comment xml:lang="ga">cáipéis TGIF</comment>
+  <comment xml:lang="hu">TGIF-dokumentum</comment>
+  <comment xml:lang="id">Dokumen TGIF</comment>
+  <comment xml:lang="it">Documento TGIF</comment>
+  <comment xml:lang="ja">TGIF ドキュメント</comment>
+  <comment xml:lang="ko">TGIF 문서</comment>
+  <comment xml:lang="lt">TGIF dokumentas</comment>
+  <comment xml:lang="ms">Dokumen TGIF</comment>
+  <comment xml:lang="nb">TGIF-dokument</comment>
+  <comment xml:lang="nl">TGIF-document</comment>
+  <comment xml:lang="nn">TGIF-dokument</comment>
+  <comment xml:lang="pl">Dokument TGIF</comment>
+  <comment xml:lang="pt">documento TGIF</comment>
+  <comment xml:lang="pt_BR">Documento TGIF</comment>
+  <comment xml:lang="sq">Dokument TGIF</comment>
+  <comment xml:lang="sr">TGIF документ</comment>
+  <comment xml:lang="sv">TGIF-dokument</comment>
+  <comment xml:lang="uk">Документ TGIF</comment>
+  <comment xml:lang="vi">Tài liệu TGIF</comment>
+  <comment xml:lang="zh_CN">TGIF 文档</comment>
+  <generic-icon name="x-office-document"/>
+</mime-type>

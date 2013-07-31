@@ -1,0 +1,13 @@
+Package: gtk-doc-dev
+Version: 1.0-r3.6
+Description: Version 1.0-r3 of package gtk-doc
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPL
+Architecture: armv5te
+OE: gtk-doc
+Homepage: unknown
+Depends: gtk-doc
+Recommends: gtk-doc-dev
+Source: file://gtk-doc.m4

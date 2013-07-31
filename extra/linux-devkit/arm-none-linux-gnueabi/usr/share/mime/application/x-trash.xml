@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-trash">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>backup file</comment>
+  <comment xml:lang="be@latin">zapasny fajł</comment>
+  <comment xml:lang="bg">Резервно копие</comment>
+  <comment xml:lang="ca">fitxer de còpia de seguretat</comment>
+  <comment xml:lang="cs">Záložní soubor</comment>
+  <comment xml:lang="da">sikkerhedskopi</comment>
+  <comment xml:lang="de">Sicherungsdatei</comment>
+  <comment xml:lang="el">αντίγραφο ασφαλείας</comment>
+  <comment xml:lang="en_GB">backup file</comment>
+  <comment xml:lang="eo">restaŭrkopio</comment>
+  <comment xml:lang="es">archivo de respaldo</comment>
+  <comment xml:lang="eu">babes-kopiako fitxategia</comment>
+  <comment xml:lang="fi">varmuuskopio</comment>
+  <comment xml:lang="fr">fichier de sauvegarde</comment>
+  <comment xml:lang="ga">comhad cúltaca</comment>
+  <comment xml:lang="hu">biztonsági mentés</comment>
+  <comment xml:lang="id">berkas cadangan</comment>
+  <comment xml:lang="it">File di backup</comment>
+  <comment xml:lang="ja">バックアップファイル</comment>
+  <comment xml:lang="ko">백업 파일</comment>
+  <comment xml:lang="lt">atsarginė rinkmena</comment>
+  <comment xml:lang="ms">Fail backup</comment>
+  <comment xml:lang="nb">sikkerhetskopi</comment>
+  <comment xml:lang="nl">reservekopiebestand</comment>
+  <comment xml:lang="nn">tryggleikskopi</comment>
+  <comment xml:lang="pl">plik zapasowy</comment>
+  <comment xml:lang="pt">cópia de segurança</comment>
+  <comment xml:lang="pt_BR">Arquivo de backup</comment>
+  <comment xml:lang="ru">файл запасной копии</comment>
+  <comment xml:lang="sq">file backup</comment>
+  <comment xml:lang="sr">резервна копија</comment>
+  <comment xml:lang="sv">säkerhetskopia</comment>
+  <comment xml:lang="uk">резервна копія</comment>
+  <comment xml:lang="vi">tập tin sao lưu</comment>
+  <comment xml:lang="zh_CN">备份文件</comment>
+  <comment xml:lang="zh_TW">備份檔</comment>
+</mime-type>

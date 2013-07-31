@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-makefile">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Makefile</comment>
+  <comment xml:lang="az">İnşa faylı</comment>
+  <comment xml:lang="be@latin">Makefile</comment>
+  <comment xml:lang="bg">Файл — make</comment>
+  <comment xml:lang="ca">Makefile</comment>
+  <comment xml:lang="cs">Makefile</comment>
+  <comment xml:lang="cy">Ffeil "make"</comment>
+  <comment xml:lang="da">Bygningsfil</comment>
+  <comment xml:lang="de">Makefile</comment>
+  <comment xml:lang="el">Makefile</comment>
+  <comment xml:lang="en_GB">Makefile</comment>
+  <comment xml:lang="eo">Muntodosiero</comment>
+  <comment xml:lang="es">Makefile</comment>
+  <comment xml:lang="eu">Makefile</comment>
+  <comment xml:lang="fi">Makefile</comment>
+  <comment xml:lang="fr">makefile</comment>
+  <comment xml:lang="ga">Makefile</comment>
+  <comment xml:lang="hu">Makefile</comment>
+  <comment xml:lang="id">Makefile</comment>
+  <comment xml:lang="it">Makefile</comment>
+  <comment xml:lang="ja">Makefile</comment>
+  <comment xml:lang="ko">Makefile</comment>
+  <comment xml:lang="lt">Makefile</comment>
+  <comment xml:lang="ms">Makefile</comment>
+  <comment xml:lang="nb">Makefile</comment>
+  <comment xml:lang="nl">Makefile</comment>
+  <comment xml:lang="nn">Makefile</comment>
+  <comment xml:lang="pl">Plik sterujący dla make</comment>
+  <comment xml:lang="pt">Makefile</comment>
+  <comment xml:lang="pt_BR">Makefile (arquivo do make)</comment>
+  <comment xml:lang="ru">Makefile (файл сборки)</comment>
+  <comment xml:lang="sq">Makefile</comment>
+  <comment xml:lang="sr">Производна датотека</comment>
+  <comment xml:lang="sv">Makefil</comment>
+  <comment xml:lang="uk">Файл проекту make</comment>
+  <comment xml:lang="vi">Tập tin tạo ứng dụng (Makefile)</comment>
+  <comment xml:lang="zh_CN">Makefile</comment>
+  <comment xml:lang="zh_TW">Makefile</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

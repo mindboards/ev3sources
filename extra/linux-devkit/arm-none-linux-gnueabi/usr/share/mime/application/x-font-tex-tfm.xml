@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-font-tex-tfm">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>TeX font metrics</comment>
+  <comment xml:lang="az">TeX yazı növü metrikləri</comment>
+  <comment xml:lang="be@latin">Metryka šryftu TeX</comment>
+  <comment xml:lang="bg">Шрифтова метрика — TeX</comment>
+  <comment xml:lang="ca">mètrica de tipus de lletra TeX</comment>
+  <comment xml:lang="cs">Metrika písma TeX</comment>
+  <comment xml:lang="cy">Metrigau Ffont TeX</comment>
+  <comment xml:lang="da">TeX-skrifttypeinformation</comment>
+  <comment xml:lang="de">TeX-Schriftmetriken</comment>
+  <comment xml:lang="el">μετρικά γραμματοσειράς TeX</comment>
+  <comment xml:lang="en_GB">TeX font metrics</comment>
+  <comment xml:lang="eo">metrikoj de TeX-tiparo</comment>
+  <comment xml:lang="es">métricas de tipografía de TeX</comment>
+  <comment xml:lang="eu">TeX letra-tipoen neurriak</comment>
+  <comment xml:lang="fi">TeX-kirjasinmitat</comment>
+  <comment xml:lang="fr">métriques de police TeX</comment>
+  <comment xml:lang="ga">meadarachtaí cló TeX</comment>
+  <comment xml:lang="hu">TeX-betűmetrika</comment>
+  <comment xml:lang="id">Fonta metrik TeX</comment>
+  <comment xml:lang="it">Metriche tipo carattere TeX</comment>
+  <comment xml:lang="ja">TeX フォントメトリック</comment>
+  <comment xml:lang="ko">Tex 글꼴 메트릭스</comment>
+  <comment xml:lang="lt">TeX šrfitų metrika</comment>
+  <comment xml:lang="ms">Metrik font TeX</comment>
+  <comment xml:lang="nb">TeX skrifttypemetrikk</comment>
+  <comment xml:lang="nl">TeX-lettertype-metrieken</comment>
+  <comment xml:lang="nn">TeX skrifttypemetrikk</comment>
+  <comment xml:lang="pl">Metryki czcionki TeXa</comment>
+  <comment xml:lang="pt">métricas de tipo de letra TeX</comment>
+  <comment xml:lang="pt_BR">Métrica de fonte TeX</comment>
+  <comment xml:lang="sq">Gërma TeX metrics</comment>
+  <comment xml:lang="sr">ТеХ метрика фонта</comment>
+  <comment xml:lang="sv">TeX-typsnittsmetrik</comment>
+  <comment xml:lang="uk">Метрики шрифту TeX</comment>
+  <comment xml:lang="vi">Cách đo phông chữ TeX</comment>
+  <comment xml:lang="zh_TW">TeX 字型描述檔</comment>
+  <generic-icon name="font-x-generic"/>
+</mime-type>

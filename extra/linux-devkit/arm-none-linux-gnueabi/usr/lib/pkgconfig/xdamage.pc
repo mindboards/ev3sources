@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: Xdamage
+Description: X Damage  Library
+Version: 1.1.3
+Requires: xproto damageproto >= 1.1 xfixes
+Requires.private: x11 xfixes
+Cflags: -I${includedir}
+Libs: -L${libdir} -lXdamage

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-xcf">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>GIMP image</comment>
+  <comment xml:lang="be@latin">Vyjava GIMP</comment>
+  <comment xml:lang="bg">Изображение — GIMP</comment>
+  <comment xml:lang="ca">imatge del GIMP</comment>
+  <comment xml:lang="cs">Obrázek GIMP</comment>
+  <comment xml:lang="da">GIMP-billede</comment>
+  <comment xml:lang="de">GIMP-Bild</comment>
+  <comment xml:lang="el">εικόνα GIMP</comment>
+  <comment xml:lang="en_GB">GIMP image</comment>
+  <comment xml:lang="eo">GIMP-bildo</comment>
+  <comment xml:lang="es">imagen del GIMP</comment>
+  <comment xml:lang="eu">GIMP irudia</comment>
+  <comment xml:lang="fi">GIMP-kuva</comment>
+  <comment xml:lang="fr">image GIMP</comment>
+  <comment xml:lang="ga">íomhá GIMP</comment>
+  <comment xml:lang="hu">GIMP-kép</comment>
+  <comment xml:lang="id">Citra GIMP</comment>
+  <comment xml:lang="it">Immagine GIMP</comment>
+  <comment xml:lang="ja">GIMP 画像</comment>
+  <comment xml:lang="ko">GIMP 그림</comment>
+  <comment xml:lang="lt">GIMP paveikslėlis</comment>
+  <comment xml:lang="ms">Imej GIMP</comment>
+  <comment xml:lang="nb">GIMP-bilde</comment>
+  <comment xml:lang="nl">GIMP-afbeelding</comment>
+  <comment xml:lang="nn">GIMP-bilete</comment>
+  <comment xml:lang="pl">Obraz GIMPa</comment>
+  <comment xml:lang="pt">imagem do GIMP</comment>
+  <comment xml:lang="pt_BR">Imagem do GIMP</comment>
+  <comment xml:lang="ru">изображение GIMP</comment>
+  <comment xml:lang="sq">Figurë GIMP</comment>
+  <comment xml:lang="sr">Гимп слика</comment>
+  <comment xml:lang="sv">GIMP-bild</comment>
+  <comment xml:lang="uk">Зображення GIMP</comment>
+  <comment xml:lang="vi">Ảnh GIMP</comment>
+  <comment xml:lang="zh_CN">GIMP 图像</comment>
+  <comment xml:lang="zh_TW">GIMP 圖片</comment>
+</mime-type>

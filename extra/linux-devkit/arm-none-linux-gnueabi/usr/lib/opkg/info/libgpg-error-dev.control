@@ -1,0 +1,13 @@
+Package: libgpg-error-dev
+Version: 1.4-r7.1.6
+Description: GPG-Error library
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPL LGPL FDL
+Architecture: armv5te
+OE: libgpg-error
+Homepage: unknown
+Depends: libgpg-error0, libgpg-error0, libgpg-error0, libgcc1, libc6
+Recommends: gettext-dev, libgcc1-dev, libc6-dev, libgpg-error-dev, virtual-locale-fr-dev, virtual-locale-de-dev, virtual-locale-ro-dev, virtual-locale-pl-dev, virtual-locale-vi-dev
+Source: ftp://ftp.gnupg.org/gcrypt/libgpg-error/libgpg-error-1.4.tar.gz file://pkgconfig.patch

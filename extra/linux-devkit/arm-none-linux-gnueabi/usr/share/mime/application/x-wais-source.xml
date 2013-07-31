@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-wais-source">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>WAIS source code</comment>
+  <comment xml:lang="az">WAIS mənbə faylı</comment>
+  <comment xml:lang="be@latin">Kryničny kod WAIS</comment>
+  <comment xml:lang="bg">Изходен код — WAIS</comment>
+  <comment xml:lang="ca">codi font en WAIS</comment>
+  <comment xml:lang="cs">Zdrojový kód WAIS</comment>
+  <comment xml:lang="cy">Ffynhonnell Rhaglen WAIS</comment>
+  <comment xml:lang="da">WAIS-kildekode</comment>
+  <comment xml:lang="de">WAIS-Quelltext</comment>
+  <comment xml:lang="el">πηγαίος κώδικας WAIS</comment>
+  <comment xml:lang="en_GB">WAIS source code</comment>
+  <comment xml:lang="eo">WAIS-fontkodo</comment>
+  <comment xml:lang="es">código fuente WAIS</comment>
+  <comment xml:lang="eu">WAIS iturburu-kodea</comment>
+  <comment xml:lang="fi">WAIS-lähdekoodi</comment>
+  <comment xml:lang="fr">code source WAIS</comment>
+  <comment xml:lang="ga">cód foinseach WAIS</comment>
+  <comment xml:lang="hu">WAIS-forráskód</comment>
+  <comment xml:lang="id">Kode program WAIS</comment>
+  <comment xml:lang="it">Codice sorgente WAIS</comment>
+  <comment xml:lang="ja">WAIS ソースコード</comment>
+  <comment xml:lang="ko">WAIS 소스 코드</comment>
+  <comment xml:lang="lt">WAIS pradinis kodas</comment>
+  <comment xml:lang="ms">Kod sumber WAIS</comment>
+  <comment xml:lang="nb">WAIS-kildekode</comment>
+  <comment xml:lang="nl">WAIS-broncode</comment>
+  <comment xml:lang="nn">WAIS-kjeldekode</comment>
+  <comment xml:lang="pl">Plik źródłowy w WAIS</comment>
+  <comment xml:lang="pt">código fonte WAIS</comment>
+  <comment xml:lang="pt_BR">Código fonte WAIS</comment>
+  <comment xml:lang="sq">Kod burues WAIS</comment>
+  <comment xml:lang="sr">WAIS изворни ко̂д</comment>
+  <comment xml:lang="sv">WAIS-källkod</comment>
+  <comment xml:lang="uk">Вихідний код на мові WAIS</comment>
+  <comment xml:lang="vi">Mã nguồn WAIS</comment>
+  <comment xml:lang="zh_CN">WAIS 源代码</comment>
+  <comment xml:lang="zh_TW">WAIS 源代碼</comment>
+  <generic-icon name="text-x-generic"/>
+</mime-type>

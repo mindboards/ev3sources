@@ -1,0 +1,12 @@
+Package: gnome-mime-data
+Version: 2.18.0-r1.6
+Description: Version 2.18.0-r1 of package gnome-mime-data
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPL
+Architecture: armv5te
+OE: gnome-mime-data
+Homepage: unknown
+Depends: shared-mime-info
+Source: http://ftp.gnome.org/pub/GNOME/sources/gnome-mime-data/2.18/gnome-mime-data-2.18.0.tar.bz2;name=archive

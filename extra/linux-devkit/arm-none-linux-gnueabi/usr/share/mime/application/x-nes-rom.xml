@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-nes-rom">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>NES ROM</comment>
+  <comment xml:lang="be@latin">NES ROM</comment>
+  <comment xml:lang="bg">ROM — NES</comment>
+  <comment xml:lang="ca">ROM de NES</comment>
+  <comment xml:lang="cs">ROM pro NES</comment>
+  <comment xml:lang="da">NES-rom</comment>
+  <comment xml:lang="de">NES-ROM</comment>
+  <comment xml:lang="el">εικόνα μνήμης ROM NES</comment>
+  <comment xml:lang="en_GB">NES ROM</comment>
+  <comment xml:lang="eo">NES-NLM</comment>
+  <comment xml:lang="es">ROM de NES</comment>
+  <comment xml:lang="eu">NES-eko ROMa</comment>
+  <comment xml:lang="fi">NES-ROM</comment>
+  <comment xml:lang="fr">ROM NES</comment>
+  <comment xml:lang="ga">ROM NES</comment>
+  <comment xml:lang="hu">NES ROM</comment>
+  <comment xml:lang="id">Memori baca-saja NES</comment>
+  <comment xml:lang="it">ROM NES</comment>
+  <comment xml:lang="ja">NES ROM</comment>
+  <comment xml:lang="ko">NES 롬</comment>
+  <comment xml:lang="lt">NES ROM</comment>
+  <comment xml:lang="ms">ROM NES</comment>
+  <comment xml:lang="nb">NES ROM</comment>
+  <comment xml:lang="nl">Nintendo</comment>
+  <comment xml:lang="nn">NES-ROM</comment>
+  <comment xml:lang="pl">Plik ROM konsoli NES</comment>
+  <comment xml:lang="pt">ROM NES</comment>
+  <comment xml:lang="pt_BR">ROM do NES</comment>
+  <comment xml:lang="ru">NES ROM </comment>
+  <comment xml:lang="sq">ROM NES</comment>
+  <comment xml:lang="sr">NES ром</comment>
+  <comment xml:lang="sv">NES-rom</comment>
+  <comment xml:lang="uk">ПЗП NES</comment>
+  <comment xml:lang="vi">ROM NES</comment>
+  <comment xml:lang="zh_CN">NES ROM</comment>
+  <comment xml:lang="zh_TW">NES ROM</comment>
+  <generic-icon name="application-x-executable"/>
+</mime-type>

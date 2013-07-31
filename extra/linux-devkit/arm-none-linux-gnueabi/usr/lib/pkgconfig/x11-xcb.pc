@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: X11 XCB
+Description: X Library XCB interface
+Version: 1.4.0
+Requires: x11 xcb
+Cflags: -I${includedir}
+Libs: -L${libdir} -lX11-xcb

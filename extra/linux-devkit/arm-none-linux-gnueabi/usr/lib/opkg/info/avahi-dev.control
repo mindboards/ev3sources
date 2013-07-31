@@ -1,0 +1,13 @@
+Package: avahi-dev
+Version: 0.6.25-r1.6
+Description: Avahi implements the DNS-SD over Multicast DNS
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPL
+Architecture: armv5te
+OE: avahi
+Homepage: http://avahi.org
+Depends: avahi, libavahi-client3, libavahi-glib1, libavahi-core6, libavahi-common3, libavahi-gobject0, libglib-2.0-dev
+Recommends: libexpat-dev, libdaemon-dev, dbus-dev, libglib-2.0-dev, update-rc.d-dev, libavahi-client-dev, dbus-lib-dev, libc6-dev, libavahi-glib-dev, libavahi-common-dev, gobject-2.0-dev, gthread-2.0-dev, libgcc1-dev, sysvinit-pidof-dev, libavahi-core-dev, avahi-dev, libavahi-gobject-dev, virtual-locale-es-dev, virtual-locale-ms-dev, virtual-locale-en-nz-dev, virtual-locale-fr-dev, virtual-locale-en-ca-dev, virtual-locale-hu-dev, virtual-locale-de-dev, virtual-locale-ca-dev, virtual-locale-zh-cn-dev, virtual-locale-ro-dev, virtual-locale-en-au-dev, virtual-locale-it-dev, virtual-locale-el-dev, virtual-locale-pl-dev, virtual-locale-sv-dev, virtual-locale-sr+latin-dev, virtual-locale-fi-dev, virtual-locale-pt-br-dev, virtual-locale-sr-dev, virtual-locale-ru-dev, virtual-locale-en-gb-dev
+Source: http://avahi.org/download/avahi-0.6.25.tar.gz file://00avahi-autoipd file://99avahi-autoipd

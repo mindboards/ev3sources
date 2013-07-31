@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-kodak-dcr">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Kodak DCR raw image</comment>
+  <comment xml:lang="be@latin">Suvoraja vyjava Kodak DCR</comment>
+  <comment xml:lang="bg">Изображение — Kodak DCR raw</comment>
+  <comment xml:lang="ca">imatge en cru de Kodak DCR</comment>
+  <comment xml:lang="cs">Surový obrázek Kodak DCR</comment>
+  <comment xml:lang="es">imagen en bruto DCR de Kodak</comment>
+  <comment xml:lang="eu">Kodak DCR irudi gordina</comment>
+  <comment xml:lang="fi">Kodak-DCR-raakakuva</comment>
+  <comment xml:lang="fr">image brute DCR Kodak</comment>
+  <comment xml:lang="ga">amhíomhá Kodak DCR</comment>
+  <comment xml:lang="hu">Kodak DCR nyers kép</comment>
+  <comment xml:lang="id">Citra mentah Kodak DCR</comment>
+  <comment xml:lang="it">Immagine raw Kodak DCR</comment>
+  <comment xml:lang="ko">코닥 DCR raw 이미지</comment>
+  <comment xml:lang="lt">Kodak DCR neapdorotas paveikslėlis</comment>
+  <comment xml:lang="nb">Kodak DCR raw-bilde</comment>
+  <comment xml:lang="nl">onbewerkt Kodak DCR-beeld</comment>
+  <comment xml:lang="pt_BR">Imagem bruta DCR da Kodak</comment>
+  <comment xml:lang="sv">Kodak DCR-råbild</comment>
+  <comment xml:lang="vi">Ảnh thô Kodak DCR</comment>
+  <acronym>DCR</acronym>
+  <expanded-acronym>Digital Camera Raw</expanded-acronym>
+  <sub-class-of type="image/x-dcraw"/>
+  <sub-class-of type="image/tiff"/>
+</mime-type>

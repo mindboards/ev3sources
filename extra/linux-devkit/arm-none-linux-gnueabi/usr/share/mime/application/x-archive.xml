@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-archive">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>AR archive</comment>
+  <comment xml:lang="be@latin">Archiŭ AR</comment>
+  <comment xml:lang="bg">Архив — AR</comment>
+  <comment xml:lang="ca">arxiu AR</comment>
+  <comment xml:lang="cs">Archiv AR</comment>
+  <comment xml:lang="da">AR-arkiv</comment>
+  <comment xml:lang="de">AR-Archiv</comment>
+  <comment xml:lang="el">σρχείο AR</comment>
+  <comment xml:lang="en_GB">AR archive</comment>
+  <comment xml:lang="eo">AR-arkivo</comment>
+  <comment xml:lang="es">archivador AR</comment>
+  <comment xml:lang="eu">AR artxiboa</comment>
+  <comment xml:lang="fi">AR-arkisto</comment>
+  <comment xml:lang="fr">archive AR</comment>
+  <comment xml:lang="ga">cartlann AR</comment>
+  <comment xml:lang="hu">AR-archívum</comment>
+  <comment xml:lang="id">Arsip AR</comment>
+  <comment xml:lang="it">Archivio AR</comment>
+  <comment xml:lang="ja">AR アーカイブ</comment>
+  <comment xml:lang="ko">AR 묶음파일</comment>
+  <comment xml:lang="lt">AR archyvas</comment>
+  <comment xml:lang="ms">Arkib AR</comment>
+  <comment xml:lang="nb">AR-arkiv</comment>
+  <comment xml:lang="nl">AR-archief</comment>
+  <comment xml:lang="nn">AR-arkiv</comment>
+  <comment xml:lang="pl">Archiwum AR</comment>
+  <comment xml:lang="pt">arquivo AR</comment>
+  <comment xml:lang="pt_BR">Pacote AR</comment>
+  <comment xml:lang="ru">архив AR</comment>
+  <comment xml:lang="sq">Arkiv AR</comment>
+  <comment xml:lang="sr">АР архива</comment>
+  <comment xml:lang="sv">AR-arkiv</comment>
+  <comment xml:lang="uk">Архів AR</comment>
+  <comment xml:lang="vi">Kho nén AR</comment>
+  <comment xml:lang="zh_CN">AR 压缩包</comment>
+  <comment xml:lang="zh_TW">AR 保存檔</comment>
+  <generic-icon name="package-x-generic"/>
+</mime-type>

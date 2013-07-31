@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-dar">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>DAR archive</comment>
+  <comment xml:lang="be@latin">Archiŭ DAR</comment>
+  <comment xml:lang="bg">Архив — DAR</comment>
+  <comment xml:lang="ca">arxiu DAR</comment>
+  <comment xml:lang="cs">Archiv DAR</comment>
+  <comment xml:lang="de">DAR-Archiv</comment>
+  <comment xml:lang="es">archivador DAR</comment>
+  <comment xml:lang="eu">DAR artxiboa</comment>
+  <comment xml:lang="fi">DAR-arkisto</comment>
+  <comment xml:lang="fr">archive DAR</comment>
+  <comment xml:lang="ga">cartlann DAR</comment>
+  <comment xml:lang="hu">DAR archívum</comment>
+  <comment xml:lang="id">Arsip DAR</comment>
+  <comment xml:lang="it">Archivio DAR</comment>
+  <comment xml:lang="ko">DAR 묶음파일</comment>
+  <comment xml:lang="lt">DAR archyvas</comment>
+  <comment xml:lang="nb">DAR-arkiv</comment>
+  <comment xml:lang="nl">DAR-archief</comment>
+  <comment xml:lang="pl">Archiwum DAR</comment>
+  <comment xml:lang="pt_BR">Pacote DAR</comment>
+  <comment xml:lang="ru">архив DAR</comment>
+  <comment xml:lang="sv">DAR-arkiv</comment>
+  <comment xml:lang="uk">Архів DAR</comment>
+  <comment xml:lang="vi">Kho nén DAR</comment>
+  <generic-icon name="package-x-generic"/>
+</mime-type>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="inode/fifo">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>pipe</comment>
+  <comment xml:lang="be@latin">kanvejer</comment>
+  <comment xml:lang="bg">Конвейер</comment>
+  <comment xml:lang="ca">conducte</comment>
+  <comment xml:lang="cs">Roura</comment>
+  <comment xml:lang="da">datakanal</comment>
+  <comment xml:lang="de">Pipe</comment>
+  <comment xml:lang="el">σωλήνωση</comment>
+  <comment xml:lang="en_GB">pipe</comment>
+  <comment xml:lang="eo">dukto</comment>
+  <comment xml:lang="es">tubería</comment>
+  <comment xml:lang="eu">kanalizazioa</comment>
+  <comment xml:lang="fi">putki</comment>
+  <comment xml:lang="fr">tube</comment>
+  <comment xml:lang="ga">píopa</comment>
+  <comment xml:lang="hu">cső</comment>
+  <comment xml:lang="id">pipa</comment>
+  <comment xml:lang="it">Pipe</comment>
+  <comment xml:lang="ja">パイプ</comment>
+  <comment xml:lang="ko">파이프</comment>
+  <comment xml:lang="lt">konvejeris</comment>
+  <comment xml:lang="ms">Paip</comment>
+  <comment xml:lang="nb">rør</comment>
+  <comment xml:lang="nl">pijp</comment>
+  <comment xml:lang="nn">røyr</comment>
+  <comment xml:lang="pl">potok</comment>
+  <comment xml:lang="pt">canal</comment>
+  <comment xml:lang="pt_BR">pipe</comment>
+  <comment xml:lang="sq">pipe</comment>
+  <comment xml:lang="sr">цев</comment>
+  <comment xml:lang="sv">rör</comment>
+  <comment xml:lang="uk">канал</comment>
+  <comment xml:lang="vi">ống dẫn</comment>
+  <comment xml:lang="zh_CN">管道</comment>
+  <comment xml:lang="zh_TW">管線</comment>
+</mime-type>

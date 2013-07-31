@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include/gstreamer-0.10
+
+Name: GStreamer Video Library
+Description: Video base classes and helper functions
+Requires: gstreamer-0.10 gstreamer-base-0.10
+Version: 0.10.30
+Libs: -L${libdir} -lgstvideo-0.10
+Cflags: -I${includedir}
+

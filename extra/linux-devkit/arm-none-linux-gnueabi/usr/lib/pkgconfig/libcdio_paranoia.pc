@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: libcdio_paranoia
+Description: CD paranoia library from libcdio
+Version: 0.82
+#Requires: glib-2.0 
+Libs: -L${libdir} -lcdio_paranoia -lcdio_cdda -lcdio
+Cflags: -I${includedir}

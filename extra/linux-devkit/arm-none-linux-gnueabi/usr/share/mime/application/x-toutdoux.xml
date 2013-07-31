@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-toutdoux">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>ToutDoux document</comment>
+  <comment xml:lang="az">ToutDoux sənədi</comment>
+  <comment xml:lang="be@latin">Dakument ToutDoux</comment>
+  <comment xml:lang="bg">Документ — ToutDoux</comment>
+  <comment xml:lang="ca">document ToutDoux</comment>
+  <comment xml:lang="cs">Dokument ToutDoux</comment>
+  <comment xml:lang="cy">Dogfen ToutDoux</comment>
+  <comment xml:lang="da">ToutDoux-dokument</comment>
+  <comment xml:lang="de">ToutDoux-Dokument</comment>
+  <comment xml:lang="el">έγγραφο ToutDoux</comment>
+  <comment xml:lang="en_GB">ToutDoux document</comment>
+  <comment xml:lang="eo">ToutDoux-dokumento</comment>
+  <comment xml:lang="es">documento de ToutDoux</comment>
+  <comment xml:lang="eu">ToutDoux dokumentua</comment>
+  <comment xml:lang="fi">ToutDoux-asiakirja</comment>
+  <comment xml:lang="fr">document ToutDoux</comment>
+  <comment xml:lang="ga">cáipéis ToutDoux</comment>
+  <comment xml:lang="hu">ToutDoux-dokumentum</comment>
+  <comment xml:lang="id">Dokumen ToutDoux</comment>
+  <comment xml:lang="it">Documento ToutDoux</comment>
+  <comment xml:lang="ja">ToutDoux ドキュメント</comment>
+  <comment xml:lang="ko">ToutDoux 문서</comment>
+  <comment xml:lang="lt">ToutDoux dokumentas</comment>
+  <comment xml:lang="ms">Dokumen ToutDoux</comment>
+  <comment xml:lang="nb">ToutDoux-dokument</comment>
+  <comment xml:lang="nl">ToutDoux-document</comment>
+  <comment xml:lang="nn">ToutDoux-dokument</comment>
+  <comment xml:lang="pl">Dokument ToutDoux</comment>
+  <comment xml:lang="pt">documento ToutDoux</comment>
+  <comment xml:lang="pt_BR">Documento do ToutDoux</comment>
+  <comment xml:lang="sq">Dokument ToutDoux</comment>
+  <comment xml:lang="sr">ToutDoux документ</comment>
+  <comment xml:lang="sv">ToutDoux-dokument</comment>
+  <comment xml:lang="uk">Документ ToutDoux</comment>
+  <comment xml:lang="vi">Tài liệu ToutDoux</comment>
+  <comment xml:lang="zh_CN">ToutDoux 文档</comment>
+  <comment xml:lang="zh_TW">ToutDoux 文件</comment>
+  <generic-icon name="x-office-document"/>
+</mime-type>

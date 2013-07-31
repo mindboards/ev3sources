@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/x-minipsf">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>MiniPSF audio</comment>
+  <comment xml:lang="be@latin">Aŭdyjo MiniPSF</comment>
+  <comment xml:lang="bg">Аудио — MiniPSF</comment>
+  <comment xml:lang="ca">àudio MiniPSF</comment>
+  <comment xml:lang="cs">Zvuk MiniPSF</comment>
+  <comment xml:lang="de">MiniPSF-Audio</comment>
+  <comment xml:lang="es">audio MiniPSF</comment>
+  <comment xml:lang="eu">MiniPSF audioa</comment>
+  <comment xml:lang="fi">MiniPSF-ääni</comment>
+  <comment xml:lang="fr">audio MiniPSF</comment>
+  <comment xml:lang="ga">fuaim MiniPSF</comment>
+  <comment xml:lang="hu">MiniPSF hang</comment>
+  <comment xml:lang="id">Audio MiniPSF</comment>
+  <comment xml:lang="it">Audio MiniPSF</comment>
+  <comment xml:lang="ko">MiniPSF 오디오</comment>
+  <comment xml:lang="lt">MiniPSF garsas</comment>
+  <comment xml:lang="nb">MiniPSF-lyd</comment>
+  <comment xml:lang="nl">MiniPSF-audio</comment>
+  <comment xml:lang="pl">Plik dźwiękowy MiniPSF</comment>
+  <comment xml:lang="pt_BR">Áudio MiniPSF</comment>
+  <comment xml:lang="ru">MiniPSF аудио</comment>
+  <comment xml:lang="sv">MiniPSF-ljud</comment>
+  <comment xml:lang="uk">Звук MiniPSF</comment>
+  <comment xml:lang="vi">Âm thanh MiniPSF</comment>
+  <acronym>MiniPSF</acronym>
+  <expanded-acronym>Miniature Portable Sound Format</expanded-acronym>
+  <sub-class-of type="audio/x-psf"/>
+</mime-type>

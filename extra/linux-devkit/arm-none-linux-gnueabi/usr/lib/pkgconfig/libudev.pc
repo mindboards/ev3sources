@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr//lib
+includedir=/usr/include
+
+Name: libudev
+Description: Library to access udev device information
+Version: 141
+Libs: -L${libdir} -ludev
+Libs.private: 
+Cflags: -I${includedir}

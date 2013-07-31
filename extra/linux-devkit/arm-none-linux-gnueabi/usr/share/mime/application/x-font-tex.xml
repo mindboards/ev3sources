@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-font-tex">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>TeX font</comment>
+  <comment xml:lang="az">TeX yazı növü</comment>
+  <comment xml:lang="be@latin">Šryft TeX</comment>
+  <comment xml:lang="bg">Шрифт — TeX</comment>
+  <comment xml:lang="ca">tipus de lletra TeX</comment>
+  <comment xml:lang="cs">Písmo TeX</comment>
+  <comment xml:lang="cy">Ffont TeX</comment>
+  <comment xml:lang="da">TeX-skrifttype</comment>
+  <comment xml:lang="de">TeX-Schrift</comment>
+  <comment xml:lang="el">γραμματοσειρά TeX</comment>
+  <comment xml:lang="en_GB">TeX font</comment>
+  <comment xml:lang="eo">TeX-tiparo</comment>
+  <comment xml:lang="es">tipografía de TeX</comment>
+  <comment xml:lang="eu">TeX letra-tipoa</comment>
+  <comment xml:lang="fi">TeX-kirjasin</comment>
+  <comment xml:lang="fr">police TeX</comment>
+  <comment xml:lang="ga">cló TeX</comment>
+  <comment xml:lang="hu">TeX-betűkészlet</comment>
+  <comment xml:lang="id">Fonta TeX</comment>
+  <comment xml:lang="it">Tipo carattere TeX</comment>
+  <comment xml:lang="ja">TeX フォント</comment>
+  <comment xml:lang="ko">TeX 글꼴</comment>
+  <comment xml:lang="lt">TeX šriftas</comment>
+  <comment xml:lang="ms">Font TeX</comment>
+  <comment xml:lang="nb">TeX-skrift</comment>
+  <comment xml:lang="nl">TeX-lettertype</comment>
+  <comment xml:lang="nn">TeX-skrifttype</comment>
+  <comment xml:lang="pl">Czcionka TeXa</comment>
+  <comment xml:lang="pt">tipo de letra TeX</comment>
+  <comment xml:lang="pt_BR">Fonte TeX</comment>
+  <comment xml:lang="sq">Gërma TeX</comment>
+  <comment xml:lang="sr">ТеХ фонт</comment>
+  <comment xml:lang="sv">TeX-typsnitt</comment>
+  <comment xml:lang="uk">Шрифт TeX</comment>
+  <comment xml:lang="vi">Phông chữ TeX</comment>
+  <comment xml:lang="zh_CN">TeX 字体</comment>
+  <comment xml:lang="zh_TW">TeX 字型檔</comment>
+  <generic-icon name="font-x-generic"/>
+</mime-type>

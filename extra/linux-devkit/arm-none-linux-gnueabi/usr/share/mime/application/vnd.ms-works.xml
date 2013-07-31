@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.ms-works">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Microsoft Works document</comment>
+  <comment xml:lang="be@latin">Dakument Microsoft Works</comment>
+  <comment xml:lang="ca">document Works de Microsoft</comment>
+  <comment xml:lang="cs">Dokument Microsoft Works</comment>
+  <comment xml:lang="es">documento de Microsoft Works</comment>
+  <comment xml:lang="fi">Microsoft Works -asiakirja</comment>
+  <comment xml:lang="fr">document Microsoft Works</comment>
+  <comment xml:lang="ga">cáipéis Microsoft Works</comment>
+  <comment xml:lang="hu">Microsoft Works dokumentum</comment>
+  <comment xml:lang="id">Dokumen Microsoft Works</comment>
+  <comment xml:lang="it">Documento Microsoft Works</comment>
+  <comment xml:lang="ko">Microsoft 웍스 문서</comment>
+  <comment xml:lang="lt">Microsoft Works dokumentas</comment>
+  <comment xml:lang="nb">Microsoft Works-dokument</comment>
+  <comment xml:lang="nl">Microsoft Works-document</comment>
+  <comment xml:lang="pt_BR">Documento do Microsoft Works</comment>
+  <comment xml:lang="ru">документ Microsoft Works</comment>
+  <comment xml:lang="sv">Microsoft Works-dokument</comment>
+  <comment xml:lang="vi">Tài liệu Microsoft Works</comment>
+  <sub-class-of type="application/x-ole-storage"/>
+  <generic-icon name="x-office-document"/>
+</mime-type>

@@ -1,0 +1,12 @@
+Package: liblzo1
+Version: 1.08-r15.6
+Description: Lossless data compression library
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2
+Architecture: armv5te
+OE: lzo
+Homepage: http://www.oberhumer.com/opensource/lzo/
+Depends: libgcc1, libc6
+Source: http://www.oberhumer.com/opensource/lzo/download/lzo-1.08.tar.gz

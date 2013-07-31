@@ -1,0 +1,15 @@
+/usr/lib/libip6tc.la
+/usr/include/libiptc/libiptc.h
+/usr/lib/libiptc.so
+/usr/lib/libip6tc.so
+/usr/lib/libxtables.la
+/usr/include/libiptc/ipt_kernel_headers.h
+/usr/lib/pkgconfig/xtables.pc
+/usr/lib/libxtables.so
+/usr/include/libiptc/libip6tc.h
+/usr/lib/libip4tc.la
+/usr/include/libiptc/libxtc.h
+/usr/include/xtables.h
+/usr/lib/libiptc.la
+/usr/lib/libip4tc.so
+/usr/lib/pkgconfig/libiptc.pc

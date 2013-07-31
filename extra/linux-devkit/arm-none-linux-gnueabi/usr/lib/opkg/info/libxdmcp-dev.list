@@ -1,0 +1,4 @@
+/usr/lib/libXdmcp.so
+/usr/lib/pkgconfig/xdmcp.pc
+/usr/include/X11/Xdmcp.h
+/usr/lib/libXdmcp.la

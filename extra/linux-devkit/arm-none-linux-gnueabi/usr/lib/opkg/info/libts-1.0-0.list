@@ -1,0 +1,14 @@
+/usr/lib/libts-1.0.so.0.0.0
+/usr/lib/ts/arctic2.so
+/usr/lib/ts/linear_h2200.so
+/usr/lib/ts/variance.so
+/usr/lib/ts/input.so
+/usr/lib/ts/collie.so
+/usr/lib/ts/dejitter.so
+/usr/lib/ts/corgi.so
+/usr/lib/ts/pthres.so
+/usr/lib/libts-1.0.so.0
+/usr/lib/ts/h3600.so
+/usr/lib/ts/linear.so
+/usr/lib/ts/ucb1x00.so
+/usr/lib/ts/mk712.so

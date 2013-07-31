@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-iMelody">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>iMelody ringtone</comment>
+  <comment xml:lang="be@latin">Rington iMelody</comment>
+  <comment xml:lang="ca">to de trucada iMelody</comment>
+  <comment xml:lang="cs">Vyzváněcí melodie iMelody</comment>
+  <comment xml:lang="es">tono de llamada iMelody</comment>
+  <comment xml:lang="fi">iMelody-soittoääni</comment>
+  <comment xml:lang="fr">sonnerie iMelody</comment>
+  <comment xml:lang="ga">ton buailte iMelody</comment>
+  <comment xml:lang="hu">iMelody csengőhang</comment>
+  <comment xml:lang="id">nada dering iMelody</comment>
+  <comment xml:lang="it">Suoneria iMelody</comment>
+  <comment xml:lang="ko">iMelody 벨소리</comment>
+  <comment xml:lang="lt">iMelody skambučio melodija</comment>
+  <comment xml:lang="nb">iMelody ringetone</comment>
+  <comment xml:lang="nl">iMelody-beltoon</comment>
+  <comment xml:lang="pt_BR">Toque de celular do iMelody</comment>
+  <comment xml:lang="sv">iMelody-ringsignal</comment>
+  <comment xml:lang="vi">tiếng réo iMelody</comment>
+  <alias type="audio/x-iMelody"/>
+  <alias type="audio/iMelody"/>
+</mime-type>

@@ -1,0 +1,11 @@
+Package: xextproto
+Version: 1:7.1.2-r2.0.6
+Description: X protocol headers: xextproto
+Section: x11/libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT-X
+Architecture: armv5te
+OE: xextproto
+Homepage: http://www.x.org
+Source: http://xorg.freedesktop.org/releases/individual/proto/xextproto-7.1.2.tar.bz2;name=archive

@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+backendsdir=/usr/lib/orbit-2.0/idl-backends
+
+Name: ORBit-idl-2.0
+Description: ORBit-2.0 IDL Compiler Backend Interface
+Version: 2.14.17
+Requires: libIDL-2.0
+Libs: 
+Cflags: -I${includedir}/orbit-2.0/orbit-idl

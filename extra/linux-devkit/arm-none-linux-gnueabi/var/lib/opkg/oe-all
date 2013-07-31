@@ -1,0 +1,238 @@
+Package: am-benchmarks-src
+Version: 1.2-r3+svnr58-arago1
+Section: system
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: b741b696f5d627ae39986dd13fc83c95
+Size: 92542
+Filename: am-benchmarks-src_1.2-r3+svnr58-arago1_all.ipk
+Source: svn://gforge.ti.com/svn/am_benchmarks/;module=trunk;proto=https;user=anonymous;pswd='' https://gforge.ti.com/gf/download/frsrelease/406/3998/dhrystone-static.tar.gz
+Description: Patched sources for am-benchmarks
+Priority: Optional
+
+
+Package: am-sysinfo-src
+Version: 1.0-r2+svnr6
+Section: system
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: d1249725a88ac0d9a895c6f3c69b1040
+Size: 25834
+Filename: am-sysinfo-src_1.0-r2+svnr6_all.ipk
+Source: svn://gforge.ti.com/svn/am_sysinfo/;module=trunk;proto=https;user=anonymous;pswd=''
+Description: Patched sources for am-sysinfo
+Priority: Optional
+
+
+Package: font-update-common
+Version: 0.1-r1.6
+Section: base
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 97eb4bc41102d8e8cf5243e9f9a685e1
+Size: 854
+Filename: font-update-common_0.1-r1.6_all.ipk
+Source: file://update-fonts
+Description: Scripts to be called when fonts are installed or removed to make them known to the WM, whether X11 or Opie
+OE: font-update-common
+HomePage: unknown
+Priority: optional
+
+
+Package: hicolor-icon-theme-dev
+Version: 0.11-r1.6
+Depends: hicolor-icon-theme
+Recommends: hicolor-icon-theme-dev
+Section: devel
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 564587a85423eec7c086c78d01216f9b
+Size: 684
+Filename: hicolor-icon-theme-dev_0.11-r1.6_all.ipk
+Source: http://icon-theme.freedesktop.org/releases/hicolor-icon-theme-0.11.tar.gz
+Description: Version 0.11-r1 of package hicolor-icon-theme
+OE: hicolor-icon-theme
+HomePage: unknown
+Priority: optional
+
+
+Package: hicolor-icon-theme
+Version: 0.11-r1.6
+Section: unknown
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 4a5008a90c51219729ccf722c269200e
+Size: 7746
+Filename: hicolor-icon-theme_0.11-r1.6_all.ipk
+Source: http://icon-theme.freedesktop.org/releases/hicolor-icon-theme-0.11.tar.gz
+Description: Version 0.11-r1 of package hicolor-icon-theme
+OE: hicolor-icon-theme
+HomePage: unknown
+Priority: optional
+
+
+Package: matrix-gui-e-src
+Version: 1.3-r21.5
+Section: multimedia
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: f7ddb7067212f745ae2d80e6a4acba30
+Size: 2746270
+Filename: matrix-gui-e-src_1.3-r21.5_all.ipk
+Source: svn://gforge.ti.com/svn/matrix_gui/;module=trunk;proto=https;user=anonymous;pswd=''
+Description: Patched sources for matrix-gui-e
+Priority: Optional
+
+
+Package: task-arago-qte
+Version: 1.0-r7.6
+Depends: qt4-embedded, qt4-embedded-plugin-mousedriver-tslib, qt4-embedded-plugin-gfxdriver-gfxtransformed
+Section: base
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 8e64b87162c1116d8181738abf25c6b3
+Size: 738
+Filename: task-arago-qte_1.0-r7.6_all.ipk
+Source: file:///home/schuyler_2/am_builds/arago/recipes/tasks/task-arago-qte.bb
+Description: Task to add Qt/Embedded and basic plugins
+OE: task-arago-qte
+HomePage: unknown
+Priority: optional
+
+
+Package: task-arago-toolchain-tisdk-bsp-target
+Version: 1.0-r3.6
+Recommends: bluez4-dev, libopenobex-dev
+Section: base
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 8072b6f21813d167b6d7aae317ca298b
+Size: 752
+Filename: task-arago-toolchain-tisdk-bsp-target_1.0-r3.6_all.ipk
+Source: file:///home/schuyler_2/am_builds/arago/recipes/tasks/task-arago-toolchain-tisdk-bsp-target.bb
+Description: Task to build and install corresponding development packages for Board Support Package
+OE: task-arago-toolchain-tisdk-bsp-target
+HomePage: unknown
+Priority: optional
+
+
+Package: ti-pru-sw-examples-src
+Version: 1.00.00-r3+svnr24
+Section: base
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 62358be64ba41467bf52b348ca588b9d
+Size: 553896
+Filename: ti-pru-sw-examples-src_1.00.00-r3+svnr24_all.ipk
+Source: svn://gforge.ti.com/svn/pru_sw/;module=trunk;proto=https;user=anonymous;pswd=''
+Description: Patched sources for ti-pru-sw-examples
+Priority: Optional
+
+
+Package: ti-tisdk-licenses-src
+Version: 1.0-r1
+Section: base
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: f76e3a95fe7850cbd5569b678d530efd
+Size: 54766
+Filename: ti-tisdk-licenses-src_1.0-r1_all.ipk
+Source: file://ti-tisdk-licenses/APACHEv2.txt     file://ti-tisdk-licenses/ECLIPSEv1.txt     file://ti-tisdk-licenses/GPLv2.txt     file://ti-tisdk-licenses/GPLv3.txt     file://ti-tisdk-licenses/LGPLv2.1.txt     file://ti-tisdk-licenses/LGPLv3.txt     file://ti-tisdk-licenses/MPLv1.1.txt     file://ti-tisdk-licenses/TI_TSPA.txt     file://ti-tisdk-licenses/BSD.txt     file://ti-tisdk-licenses/MIT.txt     file://ti-tisdk-licenses/creativecommons.txt     file://ti-tisdk-licenses/openssl.txt
+Description: Patched sources for ti-tisdk-licenses
+Priority: Optional
+
+
+Package: ttf-dejavu-common
+Version: 2.23-r3.6
+Recommends: font-update-common
+Section: fonts
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 8e3b7f95430cf9bd91fcd2ed493551d5
+Size: 1036
+Filename: ttf-dejavu-common_2.23-r3.6_all.ipk
+Source: http://downloads.sourceforge.net/dejavu/dejavu-fonts-ttf-2.23.tar.bz2 file://30-dejavu-aliases.conf
+Description: DejaVu font - TTF Edition
+OE: ttf-dejavu
+HomePage: http://dejavu.sourceforge.net/wiki/
+Priority: optional
+
+
+Package: ttf-dejavu-sans
+Version: 2.23-r3.6
+Depends: ttf-dejavu-common
+Recommends: font-update-common
+Section: fonts
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 694c2e2ecaba4c2602ac41437e1765f9
+Size: 1317288
+Filename: ttf-dejavu-sans_2.23-r3.6_all.ipk
+Source: http://downloads.sourceforge.net/dejavu/dejavu-fonts-ttf-2.23.tar.bz2 file://30-dejavu-aliases.conf
+Description: DejaVu font - TTF Edition
+OE: ttf-dejavu
+HomePage: http://dejavu.sourceforge.net/wiki/
+Priority: optional
+
+
+Package: update-modules
+Version: 1.0-r10.6
+Depends: module-init-tools-depmod
+Section: base
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 44cfd82129a2127e2d27d42534d91502
+Size: 2510
+Filename: update-modules_1.0-r10.6_all.ipk
+Source: file://update-modules
+Description: Script to manage module configuration files
+OE: update-modules
+HomePage: unknown
+Priority: optional
+
+
+Package: update-rc.d-dev
+Version: 0.7-r2.6
+Depends: update-rc.d
+Recommends: update-rc.d-dev
+Section: devel
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: caa488022cc291a8d83d50968554afbf
+Size: 680
+Filename: update-rc.d-dev_0.7-r2.6_all.ipk
+Source: file://update-rc.d file://add-verbose.patch
+Description: Manage symlinks in /etc/rcN.d
+OE: update-rc.d
+HomePage: unknown
+Priority: standard
+
+
+Package: update-rc.d
+Version: 0.7-r2.6
+Section: base
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 64645ad7dde346a1b24ec6630bd52755
+Size: 2560
+Filename: update-rc.d_0.7-r2.6_all.ipk
+Source: file://update-rc.d file://add-verbose.patch
+Description: Manage symlinks in /etc/rcN.d
+OE: update-rc.d
+HomePage: unknown
+Priority: standard
+
+
+Package: wl1271-wlan-cli-src
+Version: 1.0-r1
+Section: network
+Architecture: all
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+MD5Sum: 81f8a5c1e5f4d1f08eaec1ff840c858d
+Size: 23782946
+Filename: wl1271-wlan-cli-src_1.0-r1_all.ipk
+Source: http://software-dl.ti.com/dsps/dsps_public_sw/sdo_sb/ecs/WL1271_Linux_SDK/Demos/wl1271-demos_v1.tar
+Description: Patched sources for wl1271-wlan-cli
+Priority: Optional
+
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-nintendo-ds-rom">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Nintendo DS ROM</comment>
+  <comment xml:lang="be@latin">Nintendo DS ROM</comment>
+  <comment xml:lang="bg">ROM — Nintendo DS</comment>
+  <comment xml:lang="ca">ROM de Nintendo DS</comment>
+  <comment xml:lang="cs">ROM pro Nintendo DS</comment>
+  <comment xml:lang="es">ROM de Nintendo DS</comment>
+  <comment xml:lang="eu">Nintendo DS-ko ROMa</comment>
+  <comment xml:lang="fi">Nintendo DS-ROM</comment>
+  <comment xml:lang="fr">ROM Nintendo DS</comment>
+  <comment xml:lang="ga">ROM Nintendo DS</comment>
+  <comment xml:lang="hu">Nintendo DS ROM</comment>
+  <comment xml:lang="id">Memori baca-saja Nintendo DS</comment>
+  <comment xml:lang="it">ROM Nintendo DS</comment>
+  <comment xml:lang="ko">닌텐도 DS 롬</comment>
+  <comment xml:lang="lt">Nintendo DS ROM</comment>
+  <comment xml:lang="nb">Nintendo DS-ROM</comment>
+  <comment xml:lang="nl">Nintendo-DS-ROM</comment>
+  <comment xml:lang="pt_BR">ROM do Nintendo DS</comment>
+  <comment xml:lang="ru">Nintendo DS ROM</comment>
+  <comment xml:lang="sv">Nintendo DS-rom</comment>
+  <comment xml:lang="uk">ПЗП Nintendo</comment>
+  <comment xml:lang="vi">ROM DS Nintendo</comment>
+  <generic-icon name="application-x-executable"/>
+</mime-type>

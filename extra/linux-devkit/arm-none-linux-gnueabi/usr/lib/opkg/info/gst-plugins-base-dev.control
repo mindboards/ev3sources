@@ -1,0 +1,13 @@
+Package: gst-plugins-base-dev
+Version: 0.10.30-r11.0.6
+Description: Plugins for GStreamer
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPL
+Architecture: armv5te
+OE: gst-plugins-base
+Homepage: http://www.gstreamer.net/
+Depends: gst-plugins-base, libgstaudio-0.10-0, libgstcdda-0.10-0, libgstfft-0.10-0, libgstinterfaces-0.10-0, libgstsdp-0.10-0, libgstrtp-0.10-0, libgstapp-0.10-0, libgstriff-0.10-0, libgstvideo-0.10-0, libgstrtsp-0.10-0, libgstnetbuffer-0.10-0, libgsttag-0.10-0, libgstpbutils-0.10-0, gstreamer-dev, libglib-2.0-dev
+Recommends: libcdio-dev, libwavpack-dev, libvisual-0.4-dev, gstreamer-dev, jack-dev, libvpx-dev, libx264-dev, libmms-dev, libmusicbrainz3-dev, libschroedinger-1.0-dev, faac-dev, faad2-dev, libmikmod-dev, liboil-dev, libogg-dev, libvorbisidec-dev, libvorbis-dev, libmad-dev, libid3tag-dev, udev-dev, cdparanoia-dev, pango-dev, libtheora-dev, alsa-lib-dev, libsm-dev, libfreetype-dev, gnome-vfs-dev, libxv-dev, gtk+-dev
+Source: http://gstreamer.freedesktop.org/src/gst-plugins-base/gst-plugins-base-0.10.30.tar.bz2;name=archive file://ivorbis-thumb.patch file://make382.patch

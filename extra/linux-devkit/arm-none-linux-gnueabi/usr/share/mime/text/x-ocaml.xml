@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-ocaml">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>OCaml source code</comment>
+  <comment xml:lang="be@latin">Kryničny kod OCaml</comment>
+  <comment xml:lang="bg">Изходен код — OCaml</comment>
+  <comment xml:lang="ca">codi font en OCaml</comment>
+  <comment xml:lang="cs">Zdrojový kód OCaml</comment>
+  <comment xml:lang="de">OCaml-Quelltext</comment>
+  <comment xml:lang="es">código fuente en OCaml</comment>
+  <comment xml:lang="eu">OCaml iturburu-kodea</comment>
+  <comment xml:lang="fi">OCaml-lähdekoodi</comment>
+  <comment xml:lang="fr">code source OCaml</comment>
+  <comment xml:lang="ga">cód foinseach OCaml</comment>
+  <comment xml:lang="hu">OCaml forráskód</comment>
+  <comment xml:lang="id">Kode program OCaml</comment>
+  <comment xml:lang="it">Codice sorgente OCaml</comment>
+  <comment xml:lang="ko">OCaml 소스 코드</comment>
+  <comment xml:lang="lt">OCaml pradinis kodas</comment>
+  <comment xml:lang="nb">OCaml-kildekode</comment>
+  <comment xml:lang="nl">OCaml-broncode</comment>
+  <comment xml:lang="pl">Kod źródłowy w OCaml</comment>
+  <comment xml:lang="pt_BR">Código fonte do OCaml</comment>
+  <comment xml:lang="ru">программа на языке OCaml</comment>
+  <comment xml:lang="sv">OCaml-källkod</comment>
+  <comment xml:lang="uk">Первинний код на мові OCaml</comment>
+  <comment xml:lang="vi">Mã nguồn OCaml</comment>
+</mime-type>

@@ -1,0 +1,16 @@
+/usr/lib/ts/input.la
+/usr/lib/ts/collie.la
+/usr/lib/ts/dejitter.la
+/usr/lib/ts/corgi.la
+/usr/lib/ts/pthres.la
+/usr/lib/libts.la
+/usr/lib/ts/h3600.la
+/usr/lib/ts/linear.la
+/usr/lib/ts/ucb1x00.la
+/usr/lib/ts/mk712.la
+/usr/lib/libts.so
+/usr/lib/pkgconfig/tslib-1.0.pc
+/usr/lib/ts/arctic2.la
+/usr/include/tslib.h
+/usr/lib/ts/linear_h2200.la
+/usr/lib/ts/variance.la

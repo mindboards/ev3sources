@@ -1,0 +1,13 @@
+Package: libts-1.0-0
+Version: 1.0-r28.6.6
+Description: tslib is a plugin-based flexible touchscreen access library.
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPLv2
+Architecture: armv5te
+OE: tslib
+Homepage: http://tslib.berlios.de/
+Depends: tslib-conf, libc6, libgcc1
+Recommends: pointercal
+Source: http://download.berlios.de/tslib/tslib-1.0.tar.bz2 file://fix_version.patch file://tslib-nopressure.patch file://tslib-pluginsld.patch file://newer-libtool-fix.patch file://ts.conf file://ts.conf-collie-2.4 file://ts.conf-simpad-2.4 file://tslib.sh

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="video/x-ms-asf">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>ASF video</comment>
+  <comment xml:lang="be@latin">Videa ASF</comment>
+  <comment xml:lang="bg">Видео — ASF</comment>
+  <comment xml:lang="ca">vídeo ASF</comment>
+  <comment xml:lang="cs">Video ASF</comment>
+  <comment xml:lang="de">ASF-Video</comment>
+  <comment xml:lang="en_GB">ASF video</comment>
+  <comment xml:lang="es">vídeo ASF</comment>
+  <comment xml:lang="eu">ASF bideoa</comment>
+  <comment xml:lang="fi">ASF-video</comment>
+  <comment xml:lang="fr">vidéo ASF</comment>
+  <comment xml:lang="ga">físeán ASF</comment>
+  <comment xml:lang="hu">ASF videó</comment>
+  <comment xml:lang="id">Video ASF</comment>
+  <comment xml:lang="it">Video ASF</comment>
+  <comment xml:lang="ko">ASF 비디오</comment>
+  <comment xml:lang="lt">ASF vaizdas</comment>
+  <comment xml:lang="nb">ASF-film</comment>
+  <comment xml:lang="nl">ASF-video</comment>
+  <comment xml:lang="nn">ASF-video</comment>
+  <comment xml:lang="pl">Plik wideo ASF</comment>
+  <comment xml:lang="pt_BR">Vídeo ASF</comment>
+  <comment xml:lang="ru">ASF видео</comment>
+  <comment xml:lang="sv">ASF-video</comment>
+  <comment xml:lang="uk">Відео-кліп ASF</comment>
+  <comment xml:lang="vi">Ảnh động ASF</comment>
+  <acronym>ASF</acronym>
+  <expanded-acronym>Advanced Streaming Format</expanded-acronym>
+  <alias type="video/x-ms-wm"/>
+</mime-type>

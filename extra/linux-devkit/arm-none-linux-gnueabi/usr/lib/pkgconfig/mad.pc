@@ -1,0 +1,14 @@
+# libmad pkg-config source file
+
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: mad
+Description: MPEG Audio Decoder
+Version: 0.15.1b
+Requires:
+Conflicts:
+Libs: -L${libdir} -lmad -lm
+Cflags: -I${includedir}

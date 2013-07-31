@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: libdiscid
+Description: The MusicBrainz DiscID Library.
+URL: http://musicbrainz.org/products/libdiscid/
+Version: 0.1.1
+Requires: 
+Libs: -L/usr/lib -ldiscid
+Cflags: -I/usr/include

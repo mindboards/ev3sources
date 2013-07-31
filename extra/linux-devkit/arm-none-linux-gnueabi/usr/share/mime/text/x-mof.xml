@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-mof">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Managed Object Format</comment>
+  <comment xml:lang="be@latin">Farmat Managed Object</comment>
+  <comment xml:lang="ca">format d'objecte gestionat</comment>
+  <comment xml:lang="cs">Managed Object Format</comment>
+  <comment xml:lang="es">Formato de objeto manejado</comment>
+  <comment xml:lang="fi">Managed Object Format</comment>
+  <comment xml:lang="fr">format Managed Object</comment>
+  <comment xml:lang="ga">formáid réada bainistithe</comment>
+  <comment xml:lang="hu">Felügyelt objektum (MO) formátum</comment>
+  <comment xml:lang="id">Managed Object Format</comment>
+  <comment xml:lang="it">Managed Object Format</comment>
+  <comment xml:lang="ko">관리되는 오브젝트 형식</comment>
+  <comment xml:lang="lt">Sutvarkytų objektų formatas</comment>
+  <comment xml:lang="nb">Managed Object Format</comment>
+  <comment xml:lang="nl">Managed Object Format</comment>
+  <comment xml:lang="pt_BR">Formato de objeto gerenciado</comment>
+  <comment xml:lang="sv">Managed Object Format</comment>
+  <comment xml:lang="vi">Định dạng Đối tượng đã Quản lý</comment>
+  <sub-class-of type="text/x-csrc"/>
+</mime-type>

@@ -1,0 +1,12 @@
+Package: libfontconfig1
+Version: 2.8.0-r0.6
+Description: A library for configuring and customizing font access.
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: BSD
+Architecture: armv5te
+OE: fontconfig
+Homepage: unknown
+Depends: libfreetype6, libz1, libexpat1, libgcc1, libc6
+Source: http://fontconfig.org/release/fontconfig-2.8.0.tar.gz;name=fontconfig

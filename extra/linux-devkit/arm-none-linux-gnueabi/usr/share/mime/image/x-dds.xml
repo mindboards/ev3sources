@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-dds">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>DirectDraw surface</comment>
+  <comment xml:lang="be@latin">Pavierchnia DirectDraw</comment>
+  <comment xml:lang="bg">Изображение — повърхност на DirectDraw</comment>
+  <comment xml:lang="ca">superfície DirectDraw</comment>
+  <comment xml:lang="cs">Plocha DirectDraw</comment>
+  <comment xml:lang="de">DirectDraw-Oberfläche</comment>
+  <comment xml:lang="es">superficie DirectDraw</comment>
+  <comment xml:lang="eu">DirectDraw gainazala</comment>
+  <comment xml:lang="fi">DirectDraw-piirtoalue</comment>
+  <comment xml:lang="fr">surface DirectDraw</comment>
+  <comment xml:lang="ga">dromchla DirectDraw</comment>
+  <comment xml:lang="hu">DirectDraw felület</comment>
+  <comment xml:lang="id">Permukaan DirectDraw</comment>
+  <comment xml:lang="it">Superficie DirectDraw</comment>
+  <comment xml:lang="ko">DirectDraw surface</comment>
+  <comment xml:lang="lt">DirectDraw paviršius</comment>
+  <comment xml:lang="nb">DirectDraw-overflate</comment>
+  <comment xml:lang="nl">DirectDraw-oppervlak</comment>
+  <comment xml:lang="pl">Powierzchnia DirectDraw</comment>
+  <comment xml:lang="pt_BR">Superfície do DirectDraw</comment>
+  <comment xml:lang="sv">DirectDraw-yta</comment>
+  <comment xml:lang="uk">Поверхня DirectDraw</comment>
+  <comment xml:lang="vi">Mặt DirectDraw</comment>
+</mime-type>

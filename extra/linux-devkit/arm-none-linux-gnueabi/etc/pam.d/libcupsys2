@@ -1,0 +1,3 @@
+auth       include      common-auth
+account    include      common-account
+session    include      common-session

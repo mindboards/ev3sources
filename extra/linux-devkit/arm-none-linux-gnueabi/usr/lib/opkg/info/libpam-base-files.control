@@ -1,0 +1,13 @@
+Package: libpam-base-files
+Version: 1.0-r7.6
+Description: Linux-PAM authentication library for Linux. Base configuration files
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2
+Architecture: armv5te
+OE: libpam-base-files
+Homepage: unknown
+Depends: libpam
+Recommends: libpam-meta
+Source: file://pam.d/*

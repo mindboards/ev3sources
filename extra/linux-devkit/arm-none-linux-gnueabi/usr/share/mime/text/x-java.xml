@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-java">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Java source code</comment>
+  <comment xml:lang="be@latin">Kryničny kod Java</comment>
+  <comment xml:lang="bg">Изходен код на Java</comment>
+  <comment xml:lang="ca">codi font en Java</comment>
+  <comment xml:lang="cs">Zdrojový kód v Javě</comment>
+  <comment xml:lang="da">Java-kildekode</comment>
+  <comment xml:lang="de">Java-Quelltext</comment>
+  <comment xml:lang="el">πηγαίος κώδικας Java</comment>
+  <comment xml:lang="en_GB">Java source code</comment>
+  <comment xml:lang="eo">Java-fontkodo</comment>
+  <comment xml:lang="es">código fuente en Java</comment>
+  <comment xml:lang="eu">Java iturburu-kodea</comment>
+  <comment xml:lang="fi">Java-lähdekoodi</comment>
+  <comment xml:lang="fr">code source Java</comment>
+  <comment xml:lang="ga">cód foinseach Java</comment>
+  <comment xml:lang="hu">Java-forráskód</comment>
+  <comment xml:lang="id">Kode program Java</comment>
+  <comment xml:lang="it">Codice sorgente Java</comment>
+  <comment xml:lang="ja">Java ソースコ</comment>
+  <comment xml:lang="ko">자바 소스 코드</comment>
+  <comment xml:lang="lt">Java pradinis kodas</comment>
+  <comment xml:lang="ms">Kod sumber Java</comment>
+  <comment xml:lang="nb">Java-kildekode</comment>
+  <comment xml:lang="nl">Java-broncode</comment>
+  <comment xml:lang="nn">Java-kjeldekode</comment>
+  <comment xml:lang="pl">Kod źródłowy Javy</comment>
+  <comment xml:lang="pt">código fonte Java</comment>
+  <comment xml:lang="pt_BR">Código fonte Java</comment>
+  <comment xml:lang="ru">исходный код на языке Java</comment>
+  <comment xml:lang="sq">Kod burues Java</comment>
+  <comment xml:lang="sr">Јава изворни ко̂д</comment>
+  <comment xml:lang="sv">Java-källkod</comment>
+  <comment xml:lang="uk">Вихідний код на мові Java</comment>
+  <comment xml:lang="vi">Mã nguồn Java</comment>
+  <comment xml:lang="zh_CN">Java 源代码</comment>
+  <comment xml:lang="zh_TW">Java 源代碼</comment>
+  <sub-class-of type="text/x-csrc"/>
+</mime-type>

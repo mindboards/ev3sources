@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-objcsrc">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Objective-C source code</comment>
+  <comment xml:lang="be@latin">Kryničny kod Objective-C</comment>
+  <comment xml:lang="bg">Изходен код — Objective C</comment>
+  <comment xml:lang="ca">codi font en Objective-C</comment>
+  <comment xml:lang="cs">Zdrojový kód v Objective-C</comment>
+  <comment xml:lang="da">Objektiv C-kildekode</comment>
+  <comment xml:lang="de">Objective-C-Quelltext</comment>
+  <comment xml:lang="el">πηγαίος κώδικας Objective-C</comment>
+  <comment xml:lang="en_GB">Objective-C source code</comment>
+  <comment xml:lang="eo">fontkodo en Objective-C</comment>
+  <comment xml:lang="es">código fuente en Objective-C</comment>
+  <comment xml:lang="eu">Objective-C iturburu-kodea</comment>
+  <comment xml:lang="fi">Objective-C-lähdekoodi</comment>
+  <comment xml:lang="fr">code source Objective-C</comment>
+  <comment xml:lang="ga">cód foinseach Objective-C</comment>
+  <comment xml:lang="hu">Objective-C forráskód</comment>
+  <comment xml:lang="id">Kode program Objective-C</comment>
+  <comment xml:lang="it">Codice sorgente Objective-C</comment>
+  <comment xml:lang="ja">Objective-C ソースコード</comment>
+  <comment xml:lang="ko">Objective-C 소스 코드</comment>
+  <comment xml:lang="lt">Objective-C pradinis kodas</comment>
+  <comment xml:lang="ms">Kod sumber Objective-C</comment>
+  <comment xml:lang="nb">Objective-C-kildekode</comment>
+  <comment xml:lang="nl">Objective-C-broncode</comment>
+  <comment xml:lang="nn">Objective-C-kjeldekode</comment>
+  <comment xml:lang="pl">Kod źródłowy w Obiektowym C</comment>
+  <comment xml:lang="pt">código fonte Objective-C</comment>
+  <comment xml:lang="pt_BR">Código fonte Objective-C</comment>
+  <comment xml:lang="ru">исходный код Objective-C </comment>
+  <comment xml:lang="sq">Kod burues C objekt</comment>
+  <comment xml:lang="sr">Објектни-C изворни ко̂д</comment>
+  <comment xml:lang="sv">Objective-C-källkod</comment>
+  <comment xml:lang="uk">Вихідний код на мові Objective-C</comment>
+  <comment xml:lang="vi">Mã nguồn Objective-C</comment>
+  <comment xml:lang="zh_CN">Objective-C 源代码</comment>
+  <comment xml:lang="zh_TW">Objective-C 源代碼</comment>
+  <sub-class-of type="text/x-csrc"/>
+</mime-type>

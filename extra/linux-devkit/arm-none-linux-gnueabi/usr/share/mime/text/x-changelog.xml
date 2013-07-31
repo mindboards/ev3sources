@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-changelog">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>ChangeLog document</comment>
+  <comment xml:lang="be@latin">Dakument zafiksavanych źmienaŭ ChangeLog</comment>
+  <comment xml:lang="bg">Дневник за промени — ChangeLog</comment>
+  <comment xml:lang="ca">document de registre de canvis</comment>
+  <comment xml:lang="cs">Dokument ChangeLog</comment>
+  <comment xml:lang="de">ChangeLog-Dokument</comment>
+  <comment xml:lang="en_GB">ChangeLog document</comment>
+  <comment xml:lang="es">documento de cambios</comment>
+  <comment xml:lang="eu">ChangeLog dokumentua</comment>
+  <comment xml:lang="fi">ChangeLog-asiakirja</comment>
+  <comment xml:lang="fr">document ChangeLog</comment>
+  <comment xml:lang="ga">cáipéis ChangeLog</comment>
+  <comment xml:lang="hu">ChangeLog dokumentum</comment>
+  <comment xml:lang="id">Dokumen ChangeLog</comment>
+  <comment xml:lang="it">Documento ChangeLog</comment>
+  <comment xml:lang="ko">ChangeLog 문서</comment>
+  <comment xml:lang="lt">ChangeLog dokumentas</comment>
+  <comment xml:lang="nb">ChangeLog-dokument</comment>
+  <comment xml:lang="nl">ChangeLog-document</comment>
+  <comment xml:lang="nn">ChangeLog-dokument</comment>
+  <comment xml:lang="pl">Dokument zmian (ChangeLog)</comment>
+  <comment xml:lang="pt_BR">Documento ChangeLog</comment>
+  <comment xml:lang="ru">протокол изменений</comment>
+  <comment xml:lang="sv">ChangeLog-dokument</comment>
+  <comment xml:lang="uk">Документ ChangeLog</comment>
+  <comment xml:lang="vi">Tài liệu ChangeLog (ghi lưu thay đổi)</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

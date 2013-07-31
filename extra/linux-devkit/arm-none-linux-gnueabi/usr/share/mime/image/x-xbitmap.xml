@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-xbitmap">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>XBM image</comment>
+  <comment xml:lang="be@latin">Vyjava XBM</comment>
+  <comment xml:lang="bg">Изображение — XBM</comment>
+  <comment xml:lang="ca">imatge XBM</comment>
+  <comment xml:lang="cs">Obrázek XBM</comment>
+  <comment xml:lang="de">XBM-Bild</comment>
+  <comment xml:lang="en_GB">XBM image</comment>
+  <comment xml:lang="es">imagen XBM</comment>
+  <comment xml:lang="eu">XBM irudia</comment>
+  <comment xml:lang="fi">XBM-kuva</comment>
+  <comment xml:lang="fr">image XBM</comment>
+  <comment xml:lang="ga">íomhá XBM</comment>
+  <comment xml:lang="hu">XBM kép</comment>
+  <comment xml:lang="id">Citra XBM</comment>
+  <comment xml:lang="it">Immagine XBM</comment>
+  <comment xml:lang="ko">XBM 그림</comment>
+  <comment xml:lang="lt">XBM paveikslėlis</comment>
+  <comment xml:lang="nb">XBM-bilde</comment>
+  <comment xml:lang="nl">XBM-afbeelding</comment>
+  <comment xml:lang="nn">XBM-bilete</comment>
+  <comment xml:lang="pl">Obraz XBM</comment>
+  <comment xml:lang="pt_BR">Imagem XBM</comment>
+  <comment xml:lang="sv">XBM-bild</comment>
+  <comment xml:lang="uk">Зображення XBM</comment>
+  <comment xml:lang="vi">Ảnh XBM</comment>
+  <acronym>XBM</acronym>
+  <expanded-acronym>X BitMap</expanded-acronym>
+</mime-type>

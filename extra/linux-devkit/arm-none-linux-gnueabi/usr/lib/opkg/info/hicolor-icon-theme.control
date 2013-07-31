@@ -1,0 +1,11 @@
+Package: hicolor-icon-theme
+Version: 0.11-r1.6
+Description: Version 0.11-r1 of package hicolor-icon-theme
+Section: unknown
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPL
+Architecture: all
+OE: hicolor-icon-theme
+Homepage: unknown
+Source: http://icon-theme.freedesktop.org/releases/hicolor-icon-theme-0.11.tar.gz

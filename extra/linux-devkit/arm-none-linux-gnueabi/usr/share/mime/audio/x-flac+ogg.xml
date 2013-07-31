@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/x-flac+ogg">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Ogg FLAC audio</comment>
+  <comment xml:lang="be@latin">Aŭdyjo Ogg FLAC</comment>
+  <comment xml:lang="ca">àudio Ogg FLAC</comment>
+  <comment xml:lang="cs">Zvuk Ogg FLAC</comment>
+  <comment xml:lang="es">audio Ogg FLAC</comment>
+  <comment xml:lang="fi">Ogg FLAC -ääni</comment>
+  <comment xml:lang="fr">audio Ogg FLAC</comment>
+  <comment xml:lang="ga">fuaim Ogg FLAC</comment>
+  <comment xml:lang="hu">Ogg FLAC hang</comment>
+  <comment xml:lang="id">Audio Ogg FLAC</comment>
+  <comment xml:lang="it">Audio Ogg FLAC</comment>
+  <comment xml:lang="ko">Ogg FLAC 오디오</comment>
+  <comment xml:lang="lt">Ogg FLAC garsas</comment>
+  <comment xml:lang="nb">Ogg FLAC-lyd</comment>
+  <comment xml:lang="nl">Ogg FLAC-audio</comment>
+  <comment xml:lang="pt_BR">Áudio FLAC Ogg</comment>
+  <comment xml:lang="ru">Ogg FLAC аудио</comment>
+  <comment xml:lang="sv">Ogg FLAC-ljud</comment>
+  <comment xml:lang="vi">Âm thanh FLAC Ogg</comment>
+  <sub-class-of type="audio/ogg"/>
+</mime-type>

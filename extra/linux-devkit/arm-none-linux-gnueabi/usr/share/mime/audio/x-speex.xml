@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/x-speex">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Speex audio</comment>
+  <comment xml:lang="be@latin">Aŭdyjo Speex</comment>
+  <comment xml:lang="bg">Аудио — Speex</comment>
+  <comment xml:lang="ca">àudio Speex</comment>
+  <comment xml:lang="cs">Zvuk Speex</comment>
+  <comment xml:lang="de">Speex-Audio</comment>
+  <comment xml:lang="es">audio Speex</comment>
+  <comment xml:lang="eu">Speex audioa</comment>
+  <comment xml:lang="fi">Speex-ääni</comment>
+  <comment xml:lang="fr">audio Speex</comment>
+  <comment xml:lang="ga">fuaim Speex</comment>
+  <comment xml:lang="hu">Speex hang</comment>
+  <comment xml:lang="id">Audio Speex</comment>
+  <comment xml:lang="it">Audio Speex</comment>
+  <comment xml:lang="ko">Speex 오디오</comment>
+  <comment xml:lang="lt">Speex garsas</comment>
+  <comment xml:lang="nb">Speex lyd</comment>
+  <comment xml:lang="nl">Speex-audio</comment>
+  <comment xml:lang="pt_BR">Áudio Speex</comment>
+  <comment xml:lang="sv">Speex-ljud</comment>
+  <comment xml:lang="uk">Звук Speex</comment>
+  <comment xml:lang="vi">Âm thanh Speex</comment>
+</mime-type>

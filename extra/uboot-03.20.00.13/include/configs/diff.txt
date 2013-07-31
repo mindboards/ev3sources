@@ -1,0 +1,59 @@
+55,56c55,57
+< //#define PHYS_SDRAM_1_SIZE	(32 << 20) /* SDRAM size 32MB */
+< #define PHYS_SDRAM_1_SIZE	(64 << 20) /* SDRAM size 64MB */
+---
+> #define PHYS_SDRAM_1_SIZE	(32 << 20) /* SDRAM size 32MB */
+> //LEGO - Size changed to 64 MB
+> //#define PHYS_SDRAM_1_SIZE	(64 << 20) /* SDRAM size 64MB */
+247,250c248,251
+< /*
+< #define CONFIG_BOOTARGS		"mem=32M console=ttyS1,115200n8 root=/dev/mmcblk0p2 rw rootwait ip=dhcp"
+< #define CONFIG_BOOTCOMMAND	"if mmc rescan 0; then if fatload mmc 0 0xc0600000 boot.scr; then source 0xc0600000; else fatload mmc 0 0xc0700000 uImage; bootm c0700000; fi; else sf probe 0; sf read 0xc0700000 0x40000 0x220000; sf read 0xc1180000 0x260000 0x900000; bootm 0xc0700000; fi"
+< */
+---
+> 
+> //#define CONFIG_BOOTARGS		"mem=32M console=ttyS1,115200n8 root=/dev/mmcblk0p2 rw rootwait ip=dhcp"
+> //#define CONFIG_BOOTCOMMAND	"if mmc rescan 0; then if fatload mmc 0 0xc0600000 boot.scr; then source 0xc0600000; else fatload mmc 0 0xc0700000 uImage; bootm c0700000; fi; else sf probe 0; sf read 0xc0700000 0x40000 0x220000; sf read 0xc1180000 0x260000 0x900000; bootm 0xc0700000; fi"
+> 
+252,253c253,288
+< #define CONFIG_BOOTARGS		"mem=32M initrd=0xc1180000,10M root=/dev/ram0 rw rootfstype=cramfs console=ttyS1,115200n8 ip=dhcp"
+< #define CONFIG_BOOTCOMMAND	"if mmc rescan 0; then if fatload mmc 0 0xc0600000 boot.scr; then source 0xc0600000; else fatload mmc 0 0xc0700000 uImage; bootm c0700000; fi; else sf probe 0; sf read 0xc0700000 0x40000 0x210000; sf read 0xc1180000 0x250000 0xA60000; bootm 0xc0700000; fi"
+---
+> //#define CONFIG_BOOTARGS		"mem=32M initrd=0xc1180000,10M root=/dev/ram0 rw rootfstype=cramfs console=ttyS1,115200n8 ip=dhcp"
+> //#define CONFIG_BOOTCOMMAND	"if mmc rescan 0; then if fatload mmc 0 0xc0600000 boot.scr; then source 0xc0600000; else fatload mmc 0 0xc0700000 uImage; bootm c0700000; fi; else sf probe 0; sf read 0xc0700000 0x40000 0x210000; sf read 0xc1180000 0x250000 0xA60000; bootm 0xc0700000; fi"
+> 
+> /* 
+>  * LEGO Defined Boot options 
+> */
+> 
+> #define CONFIG_EXTRA_ENV_SETTINGS \
+> 	"hostname=EV3\0" \
+>         "memsize=32M\0" \
+>         "ipaddr=dhcp\0" \
+> 	"console=ttyS1,115200n8\0" \
+> 	"bootscraddr=0xC0600000\0" \
+> 	"loadaddr=0xC0700000\0" \
+> 	"filesysaddr=0xC1180000\0" \
+> 	"loadimage=fatload mmc 0 ${loadaddr} ${bootfile}\0" \
+> 	"loadbootscr=fatload mmc 0 ${bootscraddr} boot.scr\0" \	
+> 	"bootscript=source ${loadaddr}\0" \
+> 	"flashargs=setenv bootargs mem=${memsize} console=${console} initrd=${filesysaddr} root=/dev/ram0 rw rootfstype=cramfs ip=${ipaddr}\0" \
+> 	"mmcargs=setenv bootargs mem=${memsize} console=${console} root=/dev/mmcblk0p2 rw rootfstype=ext2 rootwait ip=${ipaddr}\0" \
+> 	"bootflash=run flashargs; sf probe 0; sf read ${loadaddr} 0x40000 0x210000; sf read ${faaddr} 0x250000 0xA60000; bootm ${loadaddr}\0" \
+>         "bootmmc=run mmcargs; bootm ${loadaddr}\0" \
+> 
+> #define CONFIG_BOOTCOMMAND	\	
+> 	"if mmc rescan 0; then " \
+> 		"if run loadbootscript; then " \
+> 			"run bootscript; " \
+> 		"else " \
+> 			"if run loadimage; then " \
+> 				"run bootmmc; " \
+> 			"else run bootflash; " \
+> 			"fi; " \
+> 		"fi; " \
+> 	"else run bootflash; " \
+> 	"fi; " \
+> 
+255d289
+< #define CONFIG_BOOTDELAY	2

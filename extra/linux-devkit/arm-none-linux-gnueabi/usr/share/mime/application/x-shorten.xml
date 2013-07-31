@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-shorten">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Shorten audio</comment>
+  <comment xml:lang="be@latin">Aŭdyjo Shorten</comment>
+  <comment xml:lang="bg">Аудио — Shorten</comment>
+  <comment xml:lang="ca">àudio Shorten</comment>
+  <comment xml:lang="cs">Zvuk Shorten</comment>
+  <comment xml:lang="de">Shorten-Audio</comment>
+  <comment xml:lang="en_GB">Shorten audio</comment>
+  <comment xml:lang="es">audio Shorten</comment>
+  <comment xml:lang="eu">Shorten audioa</comment>
+  <comment xml:lang="fi">Shorten-ääni</comment>
+  <comment xml:lang="fr">audio Shorten</comment>
+  <comment xml:lang="ga">fuaim Shorten</comment>
+  <comment xml:lang="hu">Shorten hang</comment>
+  <comment xml:lang="id">Audio Shorten</comment>
+  <comment xml:lang="it">Audio Shorten</comment>
+  <comment xml:lang="ko">Shorten 오디오</comment>
+  <comment xml:lang="lt">Shorten garsas</comment>
+  <comment xml:lang="nb">Shorten lyd</comment>
+  <comment xml:lang="nl">Shorten-audio</comment>
+  <comment xml:lang="nn">Shorten-lyd</comment>
+  <comment xml:lang="pl">Plik dźwiękowy Shorten</comment>
+  <comment xml:lang="pt_BR">Áudio Shorten</comment>
+  <comment xml:lang="sv">Shorten-ljud</comment>
+  <comment xml:lang="uk">Звук Shorten</comment>
+  <comment xml:lang="vi">Âm thanh Shorten</comment>
+  <generic-icon name="audio-x-generic"/>
+</mime-type>

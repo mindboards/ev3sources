@@ -1,0 +1,9 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: XTrans
+Description: Abstract network code for X
+Version: 1.2.6
+Cflags: -I${includedir} -D_BSD_SOURCE -DHAS_FCHOWN -DHAS_STICKY_DIR_BIT

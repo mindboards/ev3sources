@@ -1,0 +1,12 @@
+Package: libcdparanoia
+Version: 10.2+svnr17714-r0.6
+Description: Audio CD digital audio extraction application
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPLv2.1
+Architecture: armv5te
+OE: cdparanoia
+Homepage: http://www.xiph.org/paranoia/
+Depends: libgcc1, libc6
+Source: svn://svn.xiph.org/trunk;module=cdparanoia;proto=http file://fixes10.patch file://Makefile.in.patch file://interface_Makefile.in.patch file://paranoia_Makefile.in.patch file://configure.in.patch

@@ -1,0 +1,6 @@
+/etc/wpa_supplicant/ifupdown.sh
+/etc/network/if-pre-up.d/wpasupplicant
+/etc/wpa_supplicant/functions.sh
+/etc/network/if-post-down.d/wpasupplicant
+/usr/sbin/wpa_supplicant
+/usr/sbin/wpa_cli

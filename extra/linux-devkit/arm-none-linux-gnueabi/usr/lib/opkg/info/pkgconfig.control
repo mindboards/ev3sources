@@ -1,0 +1,12 @@
+Package: pkgconfig
+Version: 0.23-r8.3.6
+Description: pkg-config is a system for managing library compile/link flags that works with automake and autoconf. It replaces the ubiquitous *-config scripts you may have seen with a single tool.
+Section: console/utils
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2+
+Architecture: armv5te
+OE: pkgconfig
+Homepage: http://pkg-config.freedesktop.org/wiki/
+Depends: libglib-2.0-0, libgcc1, libc6
+Source: http://pkgconfig.freedesktop.org/releases/pkg-config-0.23.tar.gz file://autofoo.patch file://sysrootfix.patch file://glibconfig-sysdefs.h

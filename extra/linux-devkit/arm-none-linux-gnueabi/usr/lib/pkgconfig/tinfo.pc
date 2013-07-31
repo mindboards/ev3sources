@@ -1,0 +1,13 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+major_version=5
+version=5.7.20100501
+
+Name: tinfo
+Description: ncurses 5.7 terminal interface library
+Version: ${version}
+Requires: 
+Libs:  -ltinfo 
+Cflags: 

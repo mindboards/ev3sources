@@ -1,0 +1,12 @@
+Package: libidl-2-0
+Version: 0.8.13-r0.6
+Description: Library for parsing CORBA IDL files
+Section: x11/gnome/libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPL
+Architecture: armv5te
+OE: libidl
+Homepage: unknown
+Depends: libglib-2.0-0, libgcc1, libc6
+Source: http://ftp.gnome.org/pub/GNOME/sources/libIDL/0.8/libIDL-0.8.13.tar.bz2

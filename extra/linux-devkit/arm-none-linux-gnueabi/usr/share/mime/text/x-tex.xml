@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-tex">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>TeX document</comment>
+  <comment xml:lang="be@latin">Dakument TeX</comment>
+  <comment xml:lang="bg">Документ — TeX</comment>
+  <comment xml:lang="ca">document TeX</comment>
+  <comment xml:lang="cs">Dokument TeX</comment>
+  <comment xml:lang="da">TeX-dokument</comment>
+  <comment xml:lang="de">TeX-Dokument</comment>
+  <comment xml:lang="el">έγγραφο TeX</comment>
+  <comment xml:lang="en_GB">TeX document</comment>
+  <comment xml:lang="eo">TeX-dokumento</comment>
+  <comment xml:lang="es">documento TeX</comment>
+  <comment xml:lang="eu">TeX dokumentua</comment>
+  <comment xml:lang="fi">TeX-asiakirja</comment>
+  <comment xml:lang="fr">document TeX</comment>
+  <comment xml:lang="ga">cáipéis TeX</comment>
+  <comment xml:lang="hu">TeX-dokumentum</comment>
+  <comment xml:lang="id">Dokumen TeX</comment>
+  <comment xml:lang="it">Documento TeX</comment>
+  <comment xml:lang="ja">TeX ドキュメント</comment>
+  <comment xml:lang="ko">TeX 문서</comment>
+  <comment xml:lang="lt">TeX dokumentas</comment>
+  <comment xml:lang="ms">Dokumen TeX</comment>
+  <comment xml:lang="nb">TeX-dokument</comment>
+  <comment xml:lang="nl">TeX-document</comment>
+  <comment xml:lang="nn">TeX-dokument</comment>
+  <comment xml:lang="pl">Dokument TeX</comment>
+  <comment xml:lang="pt">documento TeX</comment>
+  <comment xml:lang="pt_BR">Documento TeX</comment>
+  <comment xml:lang="sq">Dokument TeX</comment>
+  <comment xml:lang="sr">ТеХ документ</comment>
+  <comment xml:lang="sv">TeX-dokument</comment>
+  <comment xml:lang="uk">Документ TeX</comment>
+  <comment xml:lang="vi">Tài liệu TeX</comment>
+  <comment xml:lang="zh_CN">TeX 文档</comment>
+  <comment xml:lang="zh_TW">TeX 文件</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

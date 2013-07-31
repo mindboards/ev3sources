@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: XCB XFixes
+Description: XCB XFixes Extension
+Version: 1.6
+Requires: xcb xcb-render xcb-shape
+Libs: -L${libdir} -lxcb-xfixes
+Cflags: -I${includedir}

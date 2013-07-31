@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-matroska">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Matroska stream</comment>
+  <comment xml:lang="be@latin">Płyń Matroska</comment>
+  <comment xml:lang="ca">flux Matroska</comment>
+  <comment xml:lang="cs">Proud Matroska</comment>
+  <comment xml:lang="fi">Matroska-virta</comment>
+  <comment xml:lang="fr">flux Matroska</comment>
+  <comment xml:lang="ga">sruth Matroska</comment>
+  <comment xml:lang="id">Stream Matroska</comment>
+  <comment xml:lang="it">Stream Matroska</comment>
+  <comment xml:lang="ko">Matroska 스트림</comment>
+  <comment xml:lang="lt">Matroska srautas</comment>
+  <comment xml:lang="nl">Matroska-stream</comment>
+  <comment xml:lang="pt_BR">Transmissão do Matroska</comment>
+  <comment xml:lang="sv">Matroska-ström</comment>
+  <comment xml:lang="vi">Luồng Matroska</comment>
+</mime-type>

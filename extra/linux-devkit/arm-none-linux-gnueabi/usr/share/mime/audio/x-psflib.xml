@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/x-psflib">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>PSFlib audio library</comment>
+  <comment xml:lang="be@latin">Aŭdyjobiblijateka PSFlib</comment>
+  <comment xml:lang="bg">Аудио библиотека — PSFlib</comment>
+  <comment xml:lang="ca">biblioteca d'àudio PSFlib</comment>
+  <comment xml:lang="cs">Zvuková knihovna PSFlib</comment>
+  <comment xml:lang="de">PSFlib-Audiobibliothek</comment>
+  <comment xml:lang="es">biblioteca de audio PSFlib</comment>
+  <comment xml:lang="eu">PSFlib audioaren liburutegia</comment>
+  <comment xml:lang="fi">PSFlib-äänikirjasto</comment>
+  <comment xml:lang="fr">bibliothèque audio PSFlib</comment>
+  <comment xml:lang="ga">leabharlann fhuaim PSFlib</comment>
+  <comment xml:lang="hu">PSFlib hanggyűjtemény</comment>
+  <comment xml:lang="id">Pustaka audio PSFlib</comment>
+  <comment xml:lang="it">Libreria audio PSFlib</comment>
+  <comment xml:lang="ko">PSFlib 오디오 라이브러리</comment>
+  <comment xml:lang="lt">PSFlib garso biblioteka</comment>
+  <comment xml:lang="nb">PSFlib-lydbibliotek</comment>
+  <comment xml:lang="nl">PSFlib-audiobibliotheek</comment>
+  <comment xml:lang="pl">Biblioteka dźwiękowa PSFlib</comment>
+  <comment xml:lang="pt_BR">Biblioteca de áudio PSFlib</comment>
+  <comment xml:lang="sv">PSFlib-ljudbibliotek</comment>
+  <comment xml:lang="uk">Аудіо-бібліотека PSFlib</comment>
+  <comment xml:lang="vi">Thư viện âm thanh PSFlib</comment>
+  <acronym>PSFlib</acronym>
+  <expanded-acronym>Portable Sound Format Library</expanded-acronym>
+  <sub-class-of type="audio/x-psf"/>
+</mime-type>

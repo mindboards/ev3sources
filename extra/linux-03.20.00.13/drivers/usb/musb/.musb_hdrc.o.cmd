@@ -1,0 +1,1 @@
+cmd_drivers/usb/musb/musb_hdrc.o := arm-none-linux-gnueabi-ld -EL    -r -o drivers/usb/musb/musb_hdrc.o drivers/usb/musb/musb_core.o drivers/usb/musb/da8xx.o drivers/usb/musb/musb_gadget_ep0.o drivers/usb/musb/musb_gadget.o drivers/usb/musb/cppi41_dma.o drivers/usb/musb/cppi41.o 

@@ -1,0 +1,14 @@
+prefix=/usr/
+exec_prefix=${prefix}
+libdir=${prefix}lib
+includedir=${prefix}include/qtopia/QtDesigner
+qt_config=lex yacc warn_on uic resources qt warn_on release incremental link_prl no_mocdepend release stl qt_no_framework silent release shared dll embedded largefile stl exceptions_off dylib create_prl link_prl depend_includepath fix_output_dirs QTDIR_build hide_symbols qt dll qt_install_headers create_pc shared dll moc thread
+
+Name: Qtdesignere
+Description: Qtdesignere Library
+Version: 4.6.3
+Libs: -L${libdir} -lQtDesignerE 
+Libs.private:     -lQtScriptE  -lQtXmlE -lQtGuiE -lQtNetworkE -lQtCoreE -lglib-2.0 -lpthread   
+Cflags: -I${includedir}/qt4-embedded/QtDesignerE -I${includedir}/qtopia -I${includedir}
+Requires: QtXmlE
+

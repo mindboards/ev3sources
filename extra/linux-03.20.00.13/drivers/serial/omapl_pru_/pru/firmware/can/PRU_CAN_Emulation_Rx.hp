@@ -1,0 +1,242 @@
+// Source: PRU_CAN_Emulation_Rx.hp
+// Revision: 1.0
+//
+
+#ifndef _PRU_CAN_EMULATION_RX_HP_
+#define _PRU_CAN_EMULATION_RX_HP_
+
+// ***************************************
+// *      Global Macro definitions       *
+// ***************************************
+
+// Address for the Constant table Programmable Pointer Register 0(CTPPR_0) 
+#define CTPPR_0         0x7028 
+// Address for the Constant table Programmable Pointer Register 1(CTPPR_1) 
+#define CTPPR_1         0x702C 
+
+#define HOST_NUM          2
+#define CHN_NUM           2
+
+// ***************************************
+// *      Global Macro definitions       *
+// ***************************************
+
+#define CONST_PRUSSINTC 	C0
+#define CONST_PRUDRAM   	C3
+#define CONST_HPI       	C15
+#define CONST_DSPL2     	C28
+#define CONST_L3RAM     	C30
+#define CONST_DDR       	C31
+
+#define SYS_EVT         						33
+#define TRANSMIT_DSPARM_TO_PRU_HOST_NUM       	0
+#define TRANSMIT_DSPARM_TO_PRU_CHN_NUM        	0
+#define TRANSMIT_PRU_TO_DSPARM_HOST_NUM       	2
+#define TRANSMIT_PRU_TO_DSPARM_CHN_NUM        	2
+
+#define GER_OFFSET        			0x10
+#define HIESR_OFFSET      			0x34
+#define SICR_OFFSET       			0x24
+#define EISR_OFFSET       			0x28
+#define SRSR2_OFFSET    			0x4204
+#define SECR1_OFFSET    			0x4280
+#define SECR2_OFFSET    			0x4284
+#define ECR2_OFFSET      			0x4384
+//=====================================
+#define TIMER_SYS_EVT           19    // T64P0_TINT12_SYS_EVT
+#define HOST_NUM_0          	0
+#define CHN_NUM_0           	0
+
+#define TMR_REGS        	0x01F0D000
+#define TMR_TIM12_OFFSET  	0x10
+#define TMR_PRD12_OFFSET  	0x18
+#define TMR_TCR_OFFSET    	0x20
+#define TMR_TGCR_OFFSET   	0x24
+#define TMR_REL12_OFFSET  	0x34
+#define TMR_INTCTL_OFFSET 	0x44
+#define TIMER12_MODE      	0x0080
+#define TIMER12_MODE_ONESHOT 0x0040
+#define TIME_CONST        	1248
+
+#define	INTCTL_BASE 				  0x01c3
+#define INTC_REGS_BASE                0x00004000
+#define INTC_SYS_INT_REGS_OFFSET      0x0D00
+
+#define KICKR0				(0x01C14038)
+#define KICKR1				(0x01C1403C)
+#define KICK0R_UNLOCK       (0x83E70B13)
+#define KICK1R_UNLOCK       (0x95A4F1E0)
+#define KICK0R_LOCK         (0x00000000)
+#define KICK1R_LOCK         (0x00000000)
+
+#define  GPIOBANK_45_DIR_REG			0x01E26060
+#define  GPIOBANK_45_SET_DATA_REG		0x01E26068
+#define  GPIOBANK_45_CLR_DATA_REG		0x01E2606c
+#define  GPIOBANK_45_GPIO5_7			0x00800000
+#define	 PINMUX12REG					0x01C14150
+#define  PINMUX12REG_GP5_7_VAL			3
+#define  PINMUX12REG_PRU_VAL			2
+
+#define CanBitPeriodRegister     	r2
+#define EventStatus     			r31
+#define SystemEventRegister			r31
+
+#define ShiftRegister				r3
+#define MailboxShiftRegister		r10
+#define CRCFrame					r11
+#define CRC_TempVar					r12
+#define CRC_Input					r13
+#define RegisterOffset       		r15
+#define RegisterValue        		r16
+#define CanPhaseSegRegister			r17
+#define TempRegister				r18
+#define BitStuffCounter				r19
+#define CanFrame					r20
+#define CanFrameState				r21
+#define DataLength					r22
+#define BitsReceivedCntr			r23
+#define ErrorCounter				r24
+#define FrameLength					r25
+#define CanCurrentState				r26
+#define TempVar						r27
+#define MailboxNumber				r28
+#define Can_Bits_for_CRC			r29
+
+.macro  MOV32               
+.mparam dst, src
+    MOV     dst.w0, src & 0xFFFF
+    MOV     dst.w2, src >> 16
+.endm
+
+.macro  LD32
+.mparam dst,src
+    LBBO    dst,src,#0x00,4
+.endm
+
+.macro  LD16
+.mparam dst,src
+    LBBO    dst,src,#0x00,2
+.endm
+
+.macro  LD8
+.mparam dst,src
+    LBBO    dst,src,#0x00,1
+.endm
+
+.macro ST32
+.mparam src,dst
+    SBBO    src,dst,#0x00,4
+.endm
+
+.macro ST16
+.mparam src,dst
+    SBBO    src,dst,#0x00,2
+.endm
+
+.macro ST8
+.mparam src,dst
+    SBBO    src,dst,#0x00,1
+.endm
+
+#define GPIO_TX_BIT          0x15
+#define GPIO_RX_BIT          0x0
+
+.macro	GPIO_SET
+.mparam bitNum
+    SET	r30, r30, bitNum
+.endm
+
+.macro	GPIO_CLEAR
+.mparam bitNum
+  CLR	r30, r30, bitNum
+.endm
+
+.macro	DELAY_LOOP
+.mparam Delay
+mov 	DelayMacCntr,Delay
+QBEQ  EXIT,DelayMacCntr,0
+LOOP:
+  SUB	DelayMacCntr, DelayMacCntr, 1
+  QBEQ  EXIT,DelayMacCntr,0
+  JMP	LOOP
+EXIT:
+.endm
+
+//By accessing the pru internal m/y location, the execution will be much faster
+#define PRU_CAN_PRU0_BASE_ADDRESS					0
+
+#define PRU_CAN_RX_GLOBAL_CONTROL_REGISTER  		(PRU_CAN_PRU0_BASE_ADDRESS)
+#define PRU_CAN_RX_GLOBAL_STATUS_REGISTER  			(PRU_CAN_PRU0_BASE_ADDRESS	+	0x04)
+#define PRU_CAN_RX_INTERRUPT_MASK_REGISTER  		(PRU_CAN_PRU0_BASE_ADDRESS	+	0x08)
+#define PRU_CAN_RX_INTERRUPT_STATUS_REGISTER  		(PRU_CAN_PRU0_BASE_ADDRESS	+	0x0C)
+#define PRU_CAN_RX_MAILBOX0_STATUS_REGISTER  		(PRU_CAN_PRU0_BASE_ADDRESS	+	0x10)
+#define PRU_CAN_RX_MAILBOX1_STATUS_REGISTER  		(PRU_CAN_PRU0_BASE_ADDRESS	+	0x14)
+#define PRU_CAN_RX_MAILBOX2_STATUS_REGISTER  		(PRU_CAN_PRU0_BASE_ADDRESS	+	0x18)
+#define PRU_CAN_RX_MAILBOX3_STATUS_REGISTER  		(PRU_CAN_PRU0_BASE_ADDRESS	+	0x1C)
+#define PRU_CAN_RX_MAILBOX4_STATUS_REGISTER  		(PRU_CAN_PRU0_BASE_ADDRESS	+	0x20)
+#define PRU_CAN_RX_MAILBOX5_STATUS_REGISTER  		(PRU_CAN_PRU0_BASE_ADDRESS	+	0x24)
+#define PRU_CAN_RX_MAILBOX6_STATUS_REGISTER  		(PRU_CAN_PRU0_BASE_ADDRESS	+	0x28)
+#define PRU_CAN_RX_MAILBOX7_STATUS_REGISTER  		(PRU_CAN_PRU0_BASE_ADDRESS	+	0x2C)
+#define PRU_CAN_RX_MAILBOX8_STATUS_REGISTER  		(PRU_CAN_PRU0_BASE_ADDRESS	+	0x30)
+#define PRU_CAN_RX_ERROR_COUNTER_REGISTER  			(PRU_CAN_PRU0_BASE_ADDRESS	+	0x34)
+#define PRU_CAN_RX_TIMING_REGISTER  				(PRU_CAN_PRU0_BASE_ADDRESS	+	0x38)
+#define PRU_CAN_RX_CLOCK_BRP_REGISTER  				(PRU_CAN_PRU0_BASE_ADDRESS	+	0x3C)
+
+#define PRU_CAN_RX_MAILBOX0	 						(PRU_CAN_PRU0_BASE_ADDRESS	+	0x40)
+#define PRU_CAN_RX_MAILBOX1	 						(PRU_CAN_PRU0_BASE_ADDRESS 	+ 	0x50)
+#define PRU_CAN_RX_MAILBOX2	 						(PRU_CAN_PRU0_BASE_ADDRESS 	+ 	0x60)
+#define PRU_CAN_RX_MAILBOX3	 						(PRU_CAN_PRU0_BASE_ADDRESS 	+ 	0x70)
+#define PRU_CAN_RX_MAILBOX4	 						(PRU_CAN_PRU0_BASE_ADDRESS 	+ 	0x80)
+#define PRU_CAN_RX_MAILBOX5	 						(PRU_CAN_PRU0_BASE_ADDRESS 	+ 	0x90)
+#define PRU_CAN_RX_MAILBOX6	 						(PRU_CAN_PRU0_BASE_ADDRESS 	+ 	0xA0)
+#define PRU_CAN_RX_MAILBOX7	 						(PRU_CAN_PRU0_BASE_ADDRESS 	+ 	0xB0)
+#define PRU_CAN_RX_MAILBOX8	 						(PRU_CAN_PRU0_BASE_ADDRESS	+	0xC0)
+
+#define PRU_CAN_PHASE_SEG_TIMING_VAL_RX				(PRU_CAN_PRU0_BASE_ADDRESS 	+ 	0xD0)
+#define PRU_CAN_BIT_TIMING_VAL_RX					(PRU_CAN_PRU0_BASE_ADDRESS 	+ 	0xD4)
+#define PRU_CAN_RECEIVE_FRAME						(PRU_CAN_PRU0_BASE_ADDRESS 	+ 	0x110)
+#define	PRU_CAN_ID_MAP								(PRU_CAN_PRU0_BASE_ADDRESS 	+ 	0xF0)
+
+#define PRU_CAN_ERROR_ACTIVE			128
+#define ERR_FRAME_LENGTH				6
+#define	ERR_DELMTR_LEN					8
+#define CAN_CRC_LEN						16
+#define CAN_PASSIVE_ERR_BIT				3
+#define CAN_BUS_OFF_ERR_BIT				4
+
+
+#define CAN_ACK_FAILED				0xE
+#define CAN_ARBTR_FAIL				0xD
+#define CAN_BIT_ERROR				0xC
+#define	CAN_TRANSMISSION_SUCCESS	0xA
+
+#define STD_DATA_FRAME				0x1
+#define EXTD_DATA_FRAME				0x2
+#define STD_REMOTE_FRAME			0x3
+#define	EXTD_REMOTE_FRAME			0x4
+
+#define PRU_CAN_RX_INITIATION				0x2110
+
+#define PRU_CAN_TX_BUS_AQUIRED				0x2114
+
+#define PRU_CAN_TX_ERROR_COUNTER_REGISTER  	0x2030
+#define PRU_CAN_TX_GLOBAL_STATUS_REGISTER  	0x2004
+
+.struct CAN_MAIL_BOX_STRUCTURE
+
+	.u16 u16CANExtendedIdentifier
+	.u16 u16CANBaseIdentifier
+	.u8  u8CANdata7
+	.u8  u8CANdata6
+	.u8  u8CANdata5
+	.u8  u8CANdata4
+	.u8  u8CANdata3
+	.u8  u8CANdata2
+	.u8  u8CANdata1
+	.u8  u8CANdata0
+	.u16 u16CANdataLength
+	.u16 u16CANCRC
+.ends
+
+#endif
+

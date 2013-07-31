@@ -1,0 +1,13 @@
+Package: libpopt-dev
+Version: 1.14-r3.0.6
+Description: Popt is a C library for parsing command line parameters
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT
+Architecture: armv5te
+OE: popt
+Homepage: http://rpm5.org
+Depends: libpopt0, libpopt0
+Recommends: gettext-dev, libgcc1-dev, libc6-dev, libpopt-dev, virtual-locale-es-dev, virtual-locale-is-dev, virtual-locale-th-dev, virtual-locale-da-dev, virtual-locale-fr-dev, virtual-locale-gl-dev, virtual-locale-hu-dev, virtual-locale-de-dev, virtual-locale-nb-dev, virtual-locale-uk-dev, virtual-locale-zh-cn-dev, virtual-locale-ro-dev, virtual-locale-zh-tw-dev, virtual-locale-ko-dev, virtual-locale-it-dev, virtual-locale-cs-dev, virtual-locale-tr-dev, virtual-locale-pl-dev, virtual-locale-sv-dev, virtual-locale-fi-dev, virtual-locale-pt-dev, virtual-locale-nl-dev, virtual-locale-sl-dev, virtual-locale-ru-dev, virtual-locale-ga-dev, virtual-locale-vi-dev, virtual-locale-wa-dev, virtual-locale-sk-dev, virtual-locale-ja-dev
+Source: http://rpm5.org/files/popt/popt-1.14.tar.gz

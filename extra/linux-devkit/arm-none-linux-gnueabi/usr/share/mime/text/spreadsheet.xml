@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/spreadsheet">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>spreadsheet interchange document</comment>
+  <comment xml:lang="be@latin">dakument dla abmienu raźlikovymi arkušami</comment>
+  <comment xml:lang="bg">Документ за обмяна между програми за електронни таблици</comment>
+  <comment xml:lang="ca">document d'intercanvi de full de càlcul</comment>
+  <comment xml:lang="cs">Sešitový přenosový dokument</comment>
+  <comment xml:lang="es">documento de intercambio de hojas de cálculo</comment>
+  <comment xml:lang="eu">kalkulu-orriak trukaketzeko dokumentua</comment>
+  <comment xml:lang="fi">taulukkovälitysasiakirja</comment>
+  <comment xml:lang="fr">document d'échange de feuilles de calcul</comment>
+  <comment xml:lang="ga">cáipéis idirmhalartaithe scarbhileog</comment>
+  <comment xml:lang="hu">spreadsheet-cserélhetődokumentum</comment>
+  <comment xml:lang="id">dokumen lembar sebar saling tukar</comment>
+  <comment xml:lang="it">Documento di scambio per foglio di calcolo</comment>
+  <comment xml:lang="ko">spreadsheet 교환 문서</comment>
+  <comment xml:lang="lt">skaičialenčių apsikeitimo dokumentas</comment>
+  <comment xml:lang="nb">dokument for regnearkutveksling</comment>
+  <comment xml:lang="nl">rekenblad-uitwisselingsdocument</comment>
+  <comment xml:lang="pt_BR">Documento de intercâmbio de planilhas</comment>
+  <comment xml:lang="sv">spreadsheet interchange-dokument</comment>
+  <comment xml:lang="vi">tài liệu hoán đổi bảng tính</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

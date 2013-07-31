@@ -1,0 +1,13 @@
+Package: libusb-0.1-dev
+Version: 1:0.1.3-r0.6
+Description: libusb-0 compatibility library using libusb-1
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPLv2.1
+Architecture: armv5te
+OE: libusb-compat
+Homepage: http://libusb.sf.net
+Depends: libusb-0.1-4, libusb-0.1-4
+Recommends: libusb-1.0-dev, libc6-dev, libgcc1-dev, libusb-0.1-dev
+Source: http://downloads.sourceforge.net/libusb/libusb-compat-0.1.3.tar.bz2;name=libusbcompat013tarbz2

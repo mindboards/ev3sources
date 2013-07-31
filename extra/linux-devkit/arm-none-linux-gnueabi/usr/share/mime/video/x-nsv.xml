@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="video/x-nsv">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>NullSoft video</comment>
+  <comment xml:lang="be@latin">Videa NullSoft</comment>
+  <comment xml:lang="bg">Видео — NullSoft</comment>
+  <comment xml:lang="ca">vídeo NullSoft</comment>
+  <comment xml:lang="cs">Video NullSoft</comment>
+  <comment xml:lang="es">vídeo NullSoft</comment>
+  <comment xml:lang="eu">NullSoft bideoa</comment>
+  <comment xml:lang="fi">NullSoft-video</comment>
+  <comment xml:lang="fr">vidéo NullSoft</comment>
+  <comment xml:lang="ga">físeán NullSoft</comment>
+  <comment xml:lang="hu">NullSoft videó</comment>
+  <comment xml:lang="id">Video NullSoft</comment>
+  <comment xml:lang="it">Video NullSoft</comment>
+  <comment xml:lang="ko">널소프트 비디오</comment>
+  <comment xml:lang="lt">NullSoft vaizdas</comment>
+  <comment xml:lang="nb">Nullsoft-film</comment>
+  <comment xml:lang="nl">NullSoft-video</comment>
+  <comment xml:lang="pt_BR">Vídeo do Nullsoft</comment>
+  <comment xml:lang="ru">Nullsoft видео</comment>
+  <comment xml:lang="sv">NullSoft-video</comment>
+  <comment xml:lang="vi">Ảnh động NullSoft</comment>
+</mime-type>

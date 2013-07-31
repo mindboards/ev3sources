@@ -1,0 +1,12 @@
+Package: libnfnetlink0
+Version: 1.0.0-r0.0.6
+Description: libnfnetlink is the low-level library for netfilter related kernel/userspace communication. It provides a generic messaging infrastructure for in-kernel netfilter subsystems (such as nfnetlink_log, nfnetlink_queue, nfnetlink_conntrack) and their respective users and/or management tools in userspace.
+Section: devel/libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPL
+Architecture: armv5te
+OE: libnfnetlink
+Homepage: http://www.netfilter.org/projects/libnfnetlink/index.html
+Depends: libgcc1, libc6
+Source: http://www.netfilter.org/projects/libnfnetlink/files/libnfnetlink-1.0.0.tar.bz2;name=libnfnetlink-1.0.0

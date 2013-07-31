@@ -1,0 +1,5 @@
+/usr/lib/pkgconfig/QtUiToolsE.pc
+/usr/include/qtopia/QtUiTools/QUiLoader
+/usr/include/qtopia/QtUiTools/quiloader.h
+/usr/include/qtopia/QtUiTools/QtUiTools
+/usr/lib/libQtUiToolsE.prl

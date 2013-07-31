@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.oasis.opendocument.presentation">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>ODP presentation</comment>
+  <comment xml:lang="be@latin">Prezentacyja ODP</comment>
+  <comment xml:lang="bg">Презентация — ODP</comment>
+  <comment xml:lang="ca">presentació ODP</comment>
+  <comment xml:lang="cs">Prezentace ODP</comment>
+  <comment xml:lang="de">ODP-Präsentation</comment>
+  <comment xml:lang="en_GB">ODP presentation</comment>
+  <comment xml:lang="es">presentación ODP</comment>
+  <comment xml:lang="eu">ODP aurkezpena</comment>
+  <comment xml:lang="fi">ODP-esitys</comment>
+  <comment xml:lang="fr">présentation ODP</comment>
+  <comment xml:lang="ga">láithreoireacht ODP</comment>
+  <comment xml:lang="hu">ODP prezentáció</comment>
+  <comment xml:lang="id">Presentasi ODP</comment>
+  <comment xml:lang="it">Presentazione ODP</comment>
+  <comment xml:lang="ko">ODP 프리젠테이션</comment>
+  <comment xml:lang="lt">ODP pateiktis</comment>
+  <comment xml:lang="nb">ODP-presentasjon</comment>
+  <comment xml:lang="nl">ODP-presentatie</comment>
+  <comment xml:lang="nn">ODP-presentasjon</comment>
+  <comment xml:lang="pl">Prezentacja ODP</comment>
+  <comment xml:lang="pt_BR">Aprensentação ODP</comment>
+  <comment xml:lang="ru">презентация ODP</comment>
+  <comment xml:lang="sv">ODP-presentation</comment>
+  <comment xml:lang="uk">Презентація ODP</comment>
+  <comment xml:lang="vi">Trình diễn ODM</comment>
+  <acronym>ODP</acronym>
+  <expanded-acronym>OpenDocument Presentation</expanded-acronym>
+  <sub-class-of type="application/zip"/>
+  <generic-icon name="x-office-presentation"/>
+</mime-type>

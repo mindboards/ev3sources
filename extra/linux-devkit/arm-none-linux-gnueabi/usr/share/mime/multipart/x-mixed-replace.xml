@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="multipart/x-mixed-replace">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>stream of data (server push)</comment>
+  <comment xml:lang="be@latin">płyń źviestak (ad servera)</comment>
+  <comment xml:lang="bg">Поток от данни, от страна на сървър</comment>
+  <comment xml:lang="ca">flux de dades (enviat pel servidor)</comment>
+  <comment xml:lang="cs">Proud dat (posílaný serverem)</comment>
+  <comment xml:lang="da">datastrøm (server-skubbet)</comment>
+  <comment xml:lang="de">Datenstrom (Server-Push)</comment>
+  <comment xml:lang="el">χείμαρρος δεδομένων (στελλόμενα από τον εξυπηρετητή)</comment>
+  <comment xml:lang="en_GB">stream of data (server push)</comment>
+  <comment xml:lang="eo">datumstrio (puŝata per servilo)</comment>
+  <comment xml:lang="es">flujo de datos (por iniciativa del servidor)</comment>
+  <comment xml:lang="eu">datu-korrontea (zerbitzari igortzailea)</comment>
+  <comment xml:lang="fi">tietovirta (palvelin työntää)</comment>
+  <comment xml:lang="fr">flux de données (émis par le serveur)</comment>
+  <comment xml:lang="ga">sruth sonraí (brú freastalaí)</comment>
+  <comment xml:lang="hu">sugárzott adatfolyam (kiszolgálóról)</comment>
+  <comment xml:lang="id">arus data (dorongan server)</comment>
+  <comment xml:lang="it">Flusso di dati (server push)</comment>
+  <comment xml:lang="ja">データストリーム (サーバープッシュ型)</comment>
+  <comment xml:lang="ko">스트림 데이터 (서버 푸시)</comment>
+  <comment xml:lang="lt">duomenų srautas (iš serverio)</comment>
+  <comment xml:lang="ms">Aliran dara (paksaan pelayan)</comment>
+  <comment xml:lang="nb">datastrøm (server push)</comment>
+  <comment xml:lang="nl">gegevensstroom (server duwt)</comment>
+  <comment xml:lang="nn">datastraum (dytta av tenaren)</comment>
+  <comment xml:lang="pl">strumień danych (wymuszenie serwera)</comment>
+  <comment xml:lang="pt">fluxo de dados (empurrados pelo servidor)</comment>
+  <comment xml:lang="pt_BR">fluxo de dados (por iniciativa do servidor)</comment>
+  <comment xml:lang="sq">stream i të dhënave (server push)</comment>
+  <comment xml:lang="sr">проток података (гурање са сервера)</comment>
+  <comment xml:lang="sv">dataflöde (serverutsändning)</comment>
+  <comment xml:lang="uk">потік даних (від сервера)</comment>
+  <comment xml:lang="vi">luồng dữ liệu (trình phục vụ đẩy)</comment>
+  <comment xml:lang="zh_CN">数据流(服务器推送)</comment>
+</mime-type>

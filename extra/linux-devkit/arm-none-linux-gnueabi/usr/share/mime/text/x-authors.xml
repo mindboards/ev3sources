@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-authors">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>author list</comment>
+  <comment xml:lang="be@latin">śpis aŭtaraŭ</comment>
+  <comment xml:lang="bg">Списък на авторите</comment>
+  <comment xml:lang="ca">llista d'autors</comment>
+  <comment xml:lang="cs">Seznam autorů</comment>
+  <comment xml:lang="da">forfatterliste</comment>
+  <comment xml:lang="de">Autorenliste</comment>
+  <comment xml:lang="el">κατάλογος συγγραφέων</comment>
+  <comment xml:lang="en_GB">author list</comment>
+  <comment xml:lang="eo">listo de aŭtoroj</comment>
+  <comment xml:lang="es">lista de autores</comment>
+  <comment xml:lang="eu">egile-zerrenda</comment>
+  <comment xml:lang="fi">tekijäluettelo</comment>
+  <comment xml:lang="fr">liste d'auteurs</comment>
+  <comment xml:lang="ga">liosta údar</comment>
+  <comment xml:lang="hu">szerzőlista</comment>
+  <comment xml:lang="id">senarai penulis</comment>
+  <comment xml:lang="it">Elenco autori</comment>
+  <comment xml:lang="ja">著者リスト</comment>
+  <comment xml:lang="ko">저자 목록</comment>
+  <comment xml:lang="lt">autorių sąrašas</comment>
+  <comment xml:lang="ms">Senarai penulis</comment>
+  <comment xml:lang="nb">forfatterliste</comment>
+  <comment xml:lang="nl">auteurslijst</comment>
+  <comment xml:lang="nn">forfattarliste</comment>
+  <comment xml:lang="pl">lista autorów</comment>
+  <comment xml:lang="pt">lista de autores</comment>
+  <comment xml:lang="pt_BR">lista de autores</comment>
+  <comment xml:lang="sq">lista e autorëve</comment>
+  <comment xml:lang="sr">списак аутора</comment>
+  <comment xml:lang="sv">författarlista</comment>
+  <comment xml:lang="uk">перелік авторів</comment>
+  <comment xml:lang="vi">danh sách tác giả</comment>
+  <comment xml:lang="zh_CN">作者列表</comment>
+  <comment xml:lang="zh_TW">作者清單</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

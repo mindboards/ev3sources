@@ -1,0 +1,12 @@
+#
+# /etc/pam.d/cvs - specify the PAM behaviour of CVS
+#
+
+# We fall back to the system default in /etc/pam.d/common-*
+
+auth       include      common-auth
+account    include      common-account
+
+# We don't use password or session modules at all
+# password   include      common-password
+# session    include      common-session

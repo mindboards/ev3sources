@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-tex-gf">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>generic font file</comment>
+  <comment xml:lang="be@latin">zvyčajny fajł šryftu</comment>
+  <comment xml:lang="bg">Шрифт</comment>
+  <comment xml:lang="ca">fitxer genèric de tipus de lletra</comment>
+  <comment xml:lang="cs">Obecný soubor písma</comment>
+  <comment xml:lang="da">general skrifttypefil</comment>
+  <comment xml:lang="de">generische Schriftdatei</comment>
+  <comment xml:lang="el">γενικό αρχείο γραμματοσειράς</comment>
+  <comment xml:lang="en_GB">generic font file</comment>
+  <comment xml:lang="eo">genera tipara dosiero</comment>
+  <comment xml:lang="es">tipografía genérico</comment>
+  <comment xml:lang="eu">letra-tipo orokorra</comment>
+  <comment xml:lang="fi">yleinen kirjasintiedosto</comment>
+  <comment xml:lang="fr">fichier de polices générique</comment>
+  <comment xml:lang="ga">comhad cló ginearálta</comment>
+  <comment xml:lang="hu">általános betűkészletfájl</comment>
+  <comment xml:lang="id">berkas fonta generik</comment>
+  <comment xml:lang="it">File tipo carattere generico</comment>
+  <comment xml:lang="ja">一般フォントファイル</comment>
+  <comment xml:lang="ko">일반 글꼴 파일</comment>
+  <comment xml:lang="lt">bendra šrifto rinkmena</comment>
+  <comment xml:lang="ms">Fail font generik</comment>
+  <comment xml:lang="nb">vanlig skriftfil</comment>
+  <comment xml:lang="nl">algemeen lettertypebestand</comment>
+  <comment xml:lang="nn">vanleg skrifttypefil</comment>
+  <comment xml:lang="pl">zwykły plik czcionki</comment>
+  <comment xml:lang="pt">ficheiro genérico de tipo de letra</comment>
+  <comment xml:lang="pt_BR">arquivo de fonte genérico</comment>
+  <comment xml:lang="sq">file me gërma të zakonshme</comment>
+  <comment xml:lang="sr">општа датотека фонта</comment>
+  <comment xml:lang="sv">allmän typsnittsfil</comment>
+  <comment xml:lang="uk">загальний файл шрифту</comment>
+  <comment xml:lang="vi">tập tin phông giống loài</comment>
+  <comment xml:lang="zh_CN">通用字体文件</comment>
+  <generic-icon name="font-x-generic"/>
+</mime-type>

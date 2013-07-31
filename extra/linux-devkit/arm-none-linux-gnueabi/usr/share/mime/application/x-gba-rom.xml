@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-gba-rom">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Game Boy Advance ROM</comment>
+  <comment xml:lang="be@latin">Game Boy Advance ROM</comment>
+  <comment xml:lang="bg">ROM — Game Boy Advance</comment>
+  <comment xml:lang="ca">ROM de Game Boy Advance</comment>
+  <comment xml:lang="cs">ROM pro Game Boy Advance</comment>
+  <comment xml:lang="de">Game Boy Advance-ROM</comment>
+  <comment xml:lang="es">ROM de Game Boy Advance</comment>
+  <comment xml:lang="eu">Game Boy Advance-ko ROMa</comment>
+  <comment xml:lang="fi">Game Boy Advance -ROM</comment>
+  <comment xml:lang="fr">ROM Game Boy Advance</comment>
+  <comment xml:lang="ga">ROM Game Boy Advance</comment>
+  <comment xml:lang="hu">Game Boy Advance ROM</comment>
+  <comment xml:lang="id">Memori baca-saja Game Boy Advance</comment>
+  <comment xml:lang="it">ROM Game Boy Advance</comment>
+  <comment xml:lang="ko">게임보이 어드밴스 롬</comment>
+  <comment xml:lang="lt">Game Boy Advance ROM</comment>
+  <comment xml:lang="nb">Game Boy Advance-ROM</comment>
+  <comment xml:lang="nl">Game Boy Advance-ROM</comment>
+  <comment xml:lang="pl">Plik ROM konsoli Game Boy Advance</comment>
+  <comment xml:lang="pt_BR">ROM do Game Boy Advance</comment>
+  <comment xml:lang="ru">ROM для приставки Game Boy Advance</comment>
+  <comment xml:lang="sv">Game Boy Advance-rom</comment>
+  <comment xml:lang="uk">Розширене ПЗП Game Boy</comment>
+  <comment xml:lang="vi">ROM Game Boy Advance</comment>
+  <generic-icon name="application-x-executable"/>
+</mime-type>

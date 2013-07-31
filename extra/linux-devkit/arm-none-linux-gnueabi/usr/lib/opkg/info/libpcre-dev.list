@@ -1,0 +1,17 @@
+/usr/lib/libpcreposix.la
+/usr/include/pcre_scanner.h
+/usr/lib/libpcrecpp.so
+/usr/lib/libpcre.la
+/usr/lib/pkgconfig/libpcre.pc
+/usr/bin/pcre-config
+/usr/lib/libpcreposix.so
+/usr/include/pcre_stringpiece.h
+/usr/lib/libpcre.so
+/usr/lib/pkgconfig/libpcrecpp.pc
+/usr/include/pcrecpp.h
+/usr/include/pcreposix.h
+/usr/bin/pcretest
+/usr/bin/pcregrep
+/usr/include/pcrecpparg.h
+/usr/lib/libpcrecpp.la
+/usr/include/pcre.h

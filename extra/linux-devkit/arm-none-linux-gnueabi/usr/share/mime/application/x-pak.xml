@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-pak">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>PAK archive</comment>
+  <comment xml:lang="be@latin">Archiŭ PAK</comment>
+  <comment xml:lang="ca">arxiu PAK</comment>
+  <comment xml:lang="cs">Archiv PAK</comment>
+  <comment xml:lang="es">archivador PAK</comment>
+  <comment xml:lang="fi">PAK-arkisto</comment>
+  <comment xml:lang="fr">archive PAK</comment>
+  <comment xml:lang="ga">cartlann PAK</comment>
+  <comment xml:lang="hu">PAK-archívum</comment>
+  <comment xml:lang="id">Arsip PAK</comment>
+  <comment xml:lang="it">Archivio PAK</comment>
+  <comment xml:lang="ko">PAK 묶음파일</comment>
+  <comment xml:lang="lt">PAK archyvas</comment>
+  <comment xml:lang="nb">PAK-arkiv</comment>
+  <comment xml:lang="nl">PAK-archief</comment>
+  <comment xml:lang="pt_BR">Pacote PAK</comment>
+  <comment xml:lang="sv">PAK-arkiv</comment>
+  <comment xml:lang="vi">Kho nén PAK</comment>
+  <generic-icon name="package-x-generic"/>
+</mime-type>

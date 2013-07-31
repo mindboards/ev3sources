@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-troff-man">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Troff document (with manpage macros)</comment>
+  <comment xml:lang="be@latin">Dakument Troff (z makrasam man-staronak)</comment>
+  <comment xml:lang="bg">Документ — Troff, с макроси за справочни страници</comment>
+  <comment xml:lang="ca">document Troff (amb macros de pàgines de manual)</comment>
+  <comment xml:lang="cs">Dokument troff (s makry pro manuálové stránky)</comment>
+  <comment xml:lang="da">Troff-dokument (med manualsidemakroer)</comment>
+  <comment xml:lang="de">Troff-Dokument (mit man-Seitenmakros)</comment>
+  <comment xml:lang="el">έγγραφο troff (με μακροεντολές manpage)</comment>
+  <comment xml:lang="en_GB">Troff document (with manpage macros)</comment>
+  <comment xml:lang="eo">Troff-dokumento (kun manpaĝaj makrooj)</comment>
+  <comment xml:lang="es">documento troff (con macros de páginas de manual)</comment>
+  <comment xml:lang="eu">Troff dokumentua (manpage makroekin)</comment>
+  <comment xml:lang="fi">Troff-asiakirja (man-sivu-makroilla)</comment>
+  <comment xml:lang="fr">document Troff (avec macros manpage)</comment>
+  <comment xml:lang="ga">cáipéis Troff (le macraí manpage)</comment>
+  <comment xml:lang="hu">Troff-dokumentum (manpage-makrókkal)</comment>
+  <comment xml:lang="id">Dokumen Troff (dengan makro halaman manual)</comment>
+  <comment xml:lang="it">Documento Troff (con macro per manpage)</comment>
+  <comment xml:lang="ja">Troff 入力ドキュメント (man ページマクロ有り)</comment>
+  <comment xml:lang="ko">(설명서 매크로가 있는) Troff 문서</comment>
+  <comment xml:lang="lt">Troff dokumentas (su žin. puslapių makrokomandomis)</comment>
+  <comment xml:lang="ms">Dokumen Troff (dengan macros halaman man)</comment>
+  <comment xml:lang="nb">Troff-dokument (med manualsidemakroer)</comment>
+  <comment xml:lang="nl">Troff-document (met man-macro's)</comment>
+  <comment xml:lang="nn">Troff-dokument med manualside-makroar</comment>
+  <comment xml:lang="pl">Dokument Troff (z makrami stron pomocy)</comment>
+  <comment xml:lang="pt">documento Troff (com macros manpage)</comment>
+  <comment xml:lang="pt_BR">Documento troff (com macros de páginas de manual)</comment>
+  <comment xml:lang="sq">Dokumet Troff (me makro për manpage)</comment>
+  <comment xml:lang="sr">Troff документ (са макроима за ман странице)</comment>
+  <comment xml:lang="sv">Troff-dokument (med manualsidemakron)</comment>
+  <comment xml:lang="uk">Документ Troff (з макросами manpage)</comment>
+  <comment xml:lang="vi">Tài liệu Troff (có vĩ lệnh trang hướng dẫn)</comment>
+  <comment xml:lang="zh_CN">Troff 文档(带 manpage 宏)</comment>
+  <sub-class-of type="text/plain"/>
+  <generic-icon name="text-x-generic"/>
+</mime-type>

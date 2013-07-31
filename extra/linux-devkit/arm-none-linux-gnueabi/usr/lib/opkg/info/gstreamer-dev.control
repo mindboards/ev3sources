@@ -1,0 +1,13 @@
+Package: gstreamer-dev
+Version: 0.10.30-r1.6
+Description: GStreamer is a multimedia framework for encoding and decoding video and sound. It supports a wide range of formats including mp3, ogg, avi, mpeg and quicktime.
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPL
+Architecture: armv5te
+OE: gstreamer
+Homepage: http://www.gstreamer.net/
+Depends: gstreamer, gstreamer, libglib-2.0-dev, libxml2-dev
+Recommends: libxml2-dev, libglib-2.0-dev, libpopt-dev, libz-dev, libc6-dev, gobject-2.0-dev, gthread-2.0-dev, gmodule-2.0-dev, libgcc1-dev, gstreamer-dev, virtual-locale-es-dev, virtual-locale-az-dev, virtual-locale-da-dev, virtual-locale-eu-dev, virtual-locale-fr-dev, virtual-locale-hu-dev, virtual-locale-de-dev, virtual-locale-id-dev, virtual-locale-nb-dev, virtual-locale-uk-dev, virtual-locale-ca-dev, virtual-locale-zh-cn-dev, virtual-locale-zh-tw-dev, virtual-locale-be-dev, virtual-locale-it-dev, virtual-locale-rw-dev, virtual-locale-cs-dev, virtual-locale-tr-dev, virtual-locale-sq-dev, virtual-locale-pl-dev, virtual-locale-sv-dev, virtual-locale-fi-dev, virtual-locale-pt-br-dev, virtual-locale-nl-dev, virtual-locale-sr-dev, virtual-locale-bg-dev, virtual-locale-sl-dev, virtual-locale-ru-dev, virtual-locale-en-gb-dev, virtual-locale-af-dev, virtual-locale-vi-dev, virtual-locale-sk-dev, virtual-locale-ja-dev
+Source: http://gstreamer.freedesktop.org/src/gstreamer/gstreamer-0.10.30.tar.bz2;name=archive

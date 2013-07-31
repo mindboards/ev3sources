@@ -1,0 +1,408 @@
+<?xml version="1.0"?>
+<gconfschemafile>
+  <schemalist>
+    <schema>
+      <key>/schemas/system/smb/workgroup</key>
+      <applyto>/system/smb/workgroup</applyto>
+      <owner>gnome-vfs</owner>
+      <type>string</type>
+      <default></default>
+      <locale name="C">
+        <short>SMB workgroup</short>
+        <long>The Windows networking workgroup or domain that the user 
+        is part of. In order for a new workgroup to fully take effect 
+        the user may need to log out and log back in. </long>
+      </locale>
+
+      <locale name="af">
+        <short>SMB-werkgroep</short>
+        
+      </locale>
+
+      <locale name="ar">
+        <short>مجموعة عمل SMB</short>
+        <long>مجموعة العمل أو نطاق شبكة ويندوز التى يتبعها هذا المستخدم. لكي تؤثّر مجموعة العمل الجديدة تأثيرا كاملا قد تحتاج للخروج ثم الولوج مرّة أخرى.</long>
+      </locale>
+
+      <locale name="as">
+        <short>SMB ৱৰ্ক-গ্ৰুপ</short>
+        <long>ব্যবহাৰকাৰী যে Windows নেটৱৰ্কিং ৱৰ্কগ্ৰুপ অথবা ডোমেইনেৰ অংশ । নতুন ৱৰ্কগ্ৰুপ সম্পূৰ্ণৰূপে সক্ৰিয় কৰাৰ জন্য ব্যবহাৰকাৰীকে সম্ভবত লগ-আউট কৰে পুনৰায় লগ-ইন কৰতে হবে ।</long>
+      </locale>
+
+      <locale name="ast">
+        <short>Grea de trabayu SMB</short>
+        <long>La grea/grupu de trabayu de rede de Windows o el dominiu del que l&apos;usuariu ye parte. Pa que un grupu nuevu tenga efeutu, l&apos;usuariu pue necesitar zarrar la sesión y entrar de nuevu.</long>
+      </locale>
+
+      <locale name="az">
+        <short>SMB iş qrupu</short>
+        
+      </locale>
+
+      <locale name="be">
+        <short>Працоўная група SMB</short>
+        <long>Працоўная група сетак Windows ці маёнтак да якіх належыць карыстальнік. Будзе мець эфэкт у выпадку новай працоўнай групы калі карыстальнік пакіне й вернецца назад.</long>
+      </locale>
+
+      <locale name="bg">
+        <short>Работна група на SMB</short>
+        <long>Работната група или домейнът на Windows, в която потребителят участва. Възможно е да се наложи да излезете и да влезете в системата отново, за да може тази настройка да влезе в сила.</long>
+      </locale>
+
+      <locale name="bn">
+        <short>এস-এম-বি ওয়ার্কগ্রুপ</short>
+        <long>উইন্ডোজ নেটওয়ার্কিং ওয়ার্কগ্রুপ বা ক্ষেত্র ব্যবহারকারী যার অংশ। নতুন ওয়ার্কগ্রুপ এর প্রভাবের জন্য ব্যবহারকারীকে লগ-আউট করে আবার লগ-ইন করতে হতে পারে।</long>
+      </locale>
+
+      <locale name="bn_IN">
+        <short>SMB ওয়ার্ক-গ্রুপ</short>
+        <long>ব্যবহারকারী যে Windows নেটওয়ার্কিং ওয়ার্কগ্রুপ অথবা ডোমেইনের অংশ। নতুন ওয়ার্কগ্রুপ সম্পূর্ণরূপে সক্রিয় করার জন্য ব্যবহারকারীকে সম্ভবত লগ-আউট করে পুনরায় লগ-ইন করতে হবে।</long>
+      </locale>
+
+      <locale name="bs">
+        <short>Radna grupa SMB</short>
+        
+      </locale>
+
+      <locale name="ca">
+        <short>Grup de treball d&apos;SMB</short>
+        <long>El grup de treball o domini de la xarxa de Windows al qual pertany l&apos;usuari. Per a que un grup de treball nou tingui efecte, és possible que l&apos;usuari necessite sortir i tornar a entrar.</long>
+      </locale>
+
+      <locale name="cs">
+        <short>Pracovní skupina SMB</short>
+        <long>Pracovní skupina nebo doména Windows, jejímž členem je uživatel. Aby se úplně projevila nová pracovní skupina, uživatel se možná bude muset odhlásit a znovu přihlásit.</long>
+      </locale>
+
+      <locale name="cy">
+        <short>Grŵp gwaith SMB</short>
+        <long>Y grŵp gwaith neu&apos;r parth rhwydweithio Windows mae&apos;r defnyddiwr yn rhan ohono. Cyn i grŵp gwaith newydd ddod i rym, efallai bydd rhaid i&apos;r defnyddiwr allgofnodi a mewngofnodi eto.</long>
+      </locale>
+
+      <locale name="da">
+        <short>SMB-arbejdsgruppe</short>
+        <long>Windows netværks-arbejdsgruppen eller domænet som brugeren er en del af. For at en ny arbejdsgruppe er komplet aktiveret skal brugeren muligvis logge ud og logge ind igen.</long>
+      </locale>
+
+      <locale name="de">
+        <short>SMB-Arbeitsgruppe</short>
+        <long>Die Windows-Netzwerkarbeitsgruppe oder -domäne zu der der Benutzer gehört. Damit eine neue Arbeitsgruppe vollständig übernommen werden kann, muss sich der Benutzer ab- und wieder anmelden.</long>
+      </locale>
+
+      <locale name="dz">
+        <short>ཨེསི་ཨེམ་བི་ལཱ་སྡེ།</short>
+        <long>ལག་ལེན་པ་དེ་ ཆ་ཤས་ཅིག་ཨིན་མི་ ཝིན་ཌོསི་ཡོངས་འབྲེལ་སྡེ་ཚན་ ཡང་ན་ ཌོ་མེན། ལཱ་སྡེ་གསརཔ་ཅིག་ལུ་ ནུས་པ་ཧྲིལ་བུ་འཐོབ་ནིའི་དོན་ལུ་ ལག་ལེན་པ་དེ་གིས་ ཕྱིར་བསྐྱོད་འབད་ཞིནམ་ལས་ ལོག་ནང་བསྐྱོད་འབད་དགོཔ་འོང་།</long>
+      </locale>
+
+      <locale name="el">
+        <short>Ομάδα εργασίας SMB</short>
+        <long>Το Windows networking workgroup ή ο τομέας όπου ανήκει ο χρήστης. Για να πραγματοποιηθεί η δημιουργία ενός νέου workgroup ο χρήστης θα πρέπει να αποσυνδεθεί καινα επανασυνδεθεί.</long>
+      </locale>
+
+      <locale name="en_CA">
+        <short>SMB workgroup</short>
+        <long>The Windows networking workgroup or domain that the user is part of. In order for a new workgroup to fully take effect the user may need to log out and log back in.</long>
+      </locale>
+
+      <locale name="en_GB">
+        <short>SMB workgroup</short>
+        <long>The Windows networking workgroup or domain that the user is part of. In order for a new workgroup to fully take effect the user may need to log out and log back in.</long>
+      </locale>
+
+      <locale name="es">
+        <short>Grupo de trabajo SMB</short>
+        <long>El grupo de trabajo de red de Windows o el dominio del que el usuario es parte. Para que un grupo grupo nuevo tenga efecto, el usuario puede necesitar cerrar la sesión y entrar de nuevo.</long>
+      </locale>
+
+      <locale name="et">
+        <short>SMB töögrupp</short>
+        <long>Windows&apos;i võrgunduse töögrupi või domeeni nimi, kuhu see kasutaja kuulub. Selleks et kasutaja saaks täielikult ära kasutada uue töögrupi privileege, peaks ta kõigepealt välja ja seejärel uuesti sisse logima.</long>
+      </locale>
+
+      <locale name="eu">
+        <short>SMB lan-taldea</short>
+        <long>Erabiltzailea harpidetuta dagoen Windows sareko lan-taldea edo domeinua. Lan-talde berri batek erabateko eragina edukitzeko erabiltzaileak saioa amaitu eta berriro saioa hasi beharko du.</long>
+      </locale>
+
+      <locale name="fi">
+        <short>SMB-työryhmä</short>
+        <long>Windows-verkkojen työryhmä tai aluenimi, johon käyttäjä kuuluu. Jotta uusi työryhmänimi toimii kaikkialla, voi olla tarpeen kirjautua uudestaan sisään järjestelmään muutoksen jälkeen.</long>
+      </locale>
+
+      <locale name="fr">
+        <short>Groupe de travail SMB</short>
+        <long>Le groupe de travail ou le domaine Windows auquel appartient l&apos;utilisateur. Afin qu&apos;un nouveau groupe de travail soit pleinement opérationnel, l&apos;utilisateur doit se déconnecter et se reconnecter.</long>
+      </locale>
+
+      <locale name="gl">
+        <short>Grupo de traballo SMB</short>
+        <long>O grupo de traballo en rede ou o dominio de Windows ao que o usuario pertence. Para que un grupo novo sexa completamente efectivo, o usuario pode necesitar terminar a sesión e iniciala de novo.</long>
+      </locale>
+
+      <locale name="gu">
+        <short>SMB કામ કરતુ જૂથ</short>
+        <long>Windows નેટવર્કીંગ વર્કગ્રુપ અથવા ડોમેઈન કે જેનો વપરાશકર્તા ભાગ છે. નવા વર્કગ્રુપ માટે સંપૂર્ણ અસર લેવા માટે કે જેની માટે વપરાશકર્તાએ પ્રવેશ બહાર નીકળવાની અને ફરીથી પ્રવેશ કરવાની જરૂર છે.</long>
+      </locale>
+
+      <locale name="he">
+        <short>SMB workgroup</short>
+        <long>The Windows networking workgroup or domain that the user is part of. In order for a new workgroup to fully take effect the user may need to log out and log back in.</long>
+      </locale>
+
+      <locale name="hi">
+        <short>एसएमबी वर्कग्रुप</short>
+        <long>Windows संजाल कार्यसमूह या डोमेन जिसका उपयोक्ता हिस्सा है. नये कार्यसमूह के पूरी तरह प्रभावी होने के लिये उपयोक्ता को लॉग आउट व लॉग बैक होने की जरूरत है.</long>
+      </locale>
+
+      <locale name="hr">
+        <short>Radna grupa SMB</short>
+        <long>Radna grupa ili domena Windows umrežavanja, koje je korisnik član. Kako bi nova radna grupa došla do izražaja korisnik će se možda morati odjaviti i ponovno prijaviti u sustav.</long>
+      </locale>
+
+      <locale name="hu">
+        <short>SMB-munkacsoport</short>
+        <long>A Windows hálózati munkacsoport vagy tartomány, amelynek a felhasználó része. Egy új munkacsoport teljes életbe lépéséhez a felhasználónak lehet, hogy ki-, majd újra be kell jelentkeznie.</long>
+      </locale>
+
+      <locale name="id">
+        <short>Workgroup SMB</short>
+        <long>Kelompok kerja jaringan Windows atau ranah tempat pengguna berada. Pengguna sebaiknya keluar dan masuk kembali ke jaringan agar dapat diterima pada kelompok kerja.</long>
+      </locale>
+
+      <locale name="it">
+        <short>Workgroup SMB</short>
+        <long>Il workgroup o dominio della rete tipo Windows di cui l&apos;utente fa parte. È necessario terminare la sessione e riavviarla per poter operare pienamente dopo aver inserito un nuovo workgroup.</long>
+      </locale>
+
+      <locale name="ja">
+        <short>SMB ワークグループ</short>
+        <long>ユーザが所属する Windows ネットワーク・グループまたはドメインです。新しいワークグループを認識するには、ユーザがそのグループにログインしてログアウトする必要があります。</long>
+      </locale>
+
+      <locale name="ka">
+        <short>SMB სამუშაო ჯგუფი</short>
+        <long>Windows ქსელის სამუშაო ჯგუფი ან დომენი რომელშიც მომხმარებელია გაერთიანებული. სამუშაო ჯგუფის შეცვლის ძალაში შესასვლელად აუცილებელია სისტემიდან გამოსვლა და ხელახალი შესვლა.</long>
+      </locale>
+
+      <locale name="kn">
+        <short>SMB ಕೆಲಸದಗುಂಪು</short>
+        
+      </locale>
+
+      <locale name="ko">
+        <short>SMB 작업 그룹</short>
+        <long>사용자가 속해 있는 윈도우 네트워크 워크그룹 혹은 도메인. 새 워크그룹이 완전히 동작하려면 사용자가 로그아웃했다가 다시 로그인해야 할 수도 있습니다.</long>
+      </locale>
+
+      <locale name="lt">
+        <short>SMB darbo grupė</short>
+        <long>Windows tinklų darbo grupė arba sritis, kuriai priklauso naudotojas. Tam, kad visiškai įsigaliotų atlikti pakeitimai, naudotojui gali reikti atsijungti ir prisijungti iš naujo.</long>
+      </locale>
+
+      <locale name="lv">
+        <short>SMB darba grupa</short>
+        <long>Windows tīklošanas darba grupa vai domēns, kura sastāvā ir lietotājs. Lai jaunā darba grupa strādātu pilnīgi, lietotājam vajadzētu iziet no sistēmas un ienākt atpakaļ.</long>
+      </locale>
+
+      <locale name="mai">
+        <short>एसएमबी वर्कग्रुप</short>
+        <long>Windows सँजाल कार्यसमूह अथवा डोमेन जकर प्रयोक्ता हिस्सा अछि. नवीन कार्यसमूह क&apos; पूर्ण रूपेँ प्रभावी हएबाक लेल प्रयोक्ता केँ लाग आउट आ लाग बैक हएबाक जरूरत अछि.</long>
+      </locale>
+
+      <locale name="mg">
+        <short>Vondron-tsolosaina SMB</short>
+        <long>Ny vondron-tsolosaina mifandray na domenan&apos;ny Windows misy ilay mpampiasa. Mety mila mivoaka ary miverina miditra indray ilay mpampiasa mba ahafahan&apos;ny vondrona vaovao iray miasa tanteraka.</long>
+      </locale>
+
+      <locale name="mk">
+        <short>SMB работна група</short>
+        <long>Работната група или доменот на Windows чиј што член е корисникот. Зада биде додаден во нова работна група корисникот може ќе треба да се одјави и повторно да се најави.</long>
+      </locale>
+
+      <locale name="ml">
+        <short>SMB വര്‍ക്ക് ഗ്രൂപ്പ്</short>
+        <long>ഉപയോക്താവ് ഭാഗമായിരിക്കുന്ന Windows നെറ്റ്‍വര്‍ക്കിങ് ഗ്രൂപ്പ് അല്ലെങ്കില്‍ ഡൊമെയിന്‍. ഒരു പുതിയ വര്‍ക്ക് ഗ്രൂപ്പ് കംപ്യൂട്ടര്‍ അംഗീകരിക്കണമെങ്കില്‍ ഉപയോക്താവ് ലോഗൌട്ട് ചെയ്ത് വീണ്ടും ലോഗിന്‍ ചെയ്യേണ്ടതാകുന്നു.</long>
+      </locale>
+
+      <locale name="mn">
+        <short>SMB ажлын хэсэг</short>
+        
+      </locale>
+
+      <locale name="mr">
+        <short>SMB कार्यगट</short>
+        <long>वापरकर्ता ज्या कार्यस्थानाचा किंवा विंडोज नेटवर्कीग करणाऱ्या गटाचा भाग असेल ते स्थान एखाद्या नव्या कार्यगटाचा पूर्ण उपयोग करायचा असेल तर वापर करत्याने प्रथम प्रवेशातून बाहेर जावे आणि पुन्हा प्रवेश करावा.</long>
+      </locale>
+
+      <locale name="ms">
+        <short>Kumpulankerja SMB</short>
+        
+      </locale>
+
+      <locale name="nb">
+        <short>SMB-arbeidsgruppe</short>
+        <long>Arbeidsgruppe eller domene brukeren er del av i Windows-nettverket. Brukeren må logge ut for at endringer skal tre i kraft.</long>
+      </locale>
+
+      <locale name="ne">
+        <short>एसएमबी (SMB) कार्यसमूह</short>
+        <long>विण्डोज नेटवर्किङ कार्यसमूह वा डोमेन जुन प्रयोगकर्ता एउटा अंश हो । नयाँ कार्यसमूहका लागि पूरै प्रभाव पार्न प्रयोगकर्ताले लग आउट गरेर फेरि लगइन गर्नुपर्दछ ।</long>
+      </locale>
+
+      <locale name="nl">
+        <short>SMB-werkgroep</short>
+        <long>De werkgroep of het domein van het Windows-netwerk waar de gebruiker deel van is. Om de nieuwe werkgroep volledig effectief te laten zijn moet u mogelijkerwijs een keer uitloggen en opnieuw aanmelden.</long>
+      </locale>
+
+      <locale name="nn">
+        <short>SMB-arbeidsgruppe</short>
+        <long>Windows-nettverk-arbeidsgruppa eller -domenet som brukaren er ein del av. For at ei ny arbeidsgruppe skal tre i kraft må brukaren kanskje logga av og på.</long>
+      </locale>
+
+      <locale name="nso">
+        <short>Sehlopha sa mošomo sa SMB</short>
+        
+      </locale>
+
+      <locale name="oc">
+        <short>Grop de trabalh SMB</short>
+        
+      </locale>
+
+      <locale name="or">
+        <short>ଏସ୍.ଏମ୍.ବି. କାର୍ଯ୍ଯଦଳ</short>
+        <long>ବ୍ଯବହରକାରୀର ୱିଣ୍ଡୋଜ କାର୍ଯ୍ଯସମୂହ ବା ପରିସର. ନୂଆ କାର୍ଯ୍ଯସମୂହ ସମ୍ପୂର୍ଣ୍ଣ ପ୍ରଭାବ ଦେଖିବା ପାଇଁ ବ୍ଯବହରକାରୀକୁ ଲଗ ଆଉଟ କରି ପୁଣି ଲଗଇନ କରିବାକୁ ପଡ଼ିପାରେ.</long>
+      </locale>
+
+      <locale name="pa">
+        <short>SMB ਵਰਕਗਰੁੱਪ</short>
+        <long>Windows ਨੈੱਟਵਰਕ ਵਰਕਗਰੁੱਪ ਜਾਂ ਡੋਮੇਨ, ਜਿਸ ਦਾ ਯੂਜ਼ਰ ਭਾਗ ਹੈ। ਇੱਕ ਨਵੇਂ ਵਰਕਗਰੁੱਪ ਨੂੰ ਪੂਰੀ ਤਰਾਂ ਸਰਗਰਮ ਹੋਣ ਲਈ ਯੂਜ਼ਰ ਲਾਗਆਉਟ ਅਤੇ ਮੁੜ ਲਾਗਇਨ ਕਰ ਸਕਦਾ ਹੈ।</long>
+      </locale>
+
+      <locale name="pl">
+        <short>Grupa robocza SMB</short>
+        <long>Grupa robocza Windows lub domena do której należy użytkownik. Aby nowa grupa odniosła pełny skutek, użytkownik może potrzebować wylogować się i zalogować ponownie.</long>
+      </locale>
+
+      <locale name="pt">
+        <short>Grupo de trabalho SMB</short>
+        <long>O grupo de trabalho de rede Windows ou o domínio a que o utilizador pertence. Para que um novo grupo de trabalho tenha efeito total o utilizador poderá ter de terminar a sessão e iniciá-la novamente.</long>
+      </locale>
+
+      <locale name="pt_BR">
+        <short>Grupo de trabalho SMB</short>
+        <long>O grupo de trabalho de rede Windows ou domínio do qual o usuário faz parte. Para que um grupo de trabalho tenha total efeito, o usuário pode precisar logar novamente.</long>
+      </locale>
+
+      <locale name="ro">
+        <short>Grup SMB</short>
+        <long>Grupul sau domeniul Windows din care face parte utilizatorul. Pentru a intra în vigoare opțiunile unui nou workgroup, utilizatorul s-ar putea să trebuiască să iasă din sesiune și apoi să se autentifice din nou.</long>
+      </locale>
+
+      <locale name="ru">
+        <short>Рабочая группа SMB</short>
+        <long>Рабочая группа или домен Windows, к которым относится пользователь. Чтобы изменение рабочей группы вступило в силу, возможно потребуется повторная регистрация в системе.</long>
+      </locale>
+
+      <locale name="sk">
+        <short>Pracovná skupina SMB</short>
+        <long>Sieťová pracovná skupina alebo doména Windows, do ktorej patrí používateľ. Aby sa nová pracovná skupina úplne prejavila, použivateľ sa možno bude musieť odhlásiť a prihlásiť.</long>
+      </locale>
+
+      <locale name="sl">
+        <short>Delovna skupina SMB</short>
+        <long>Delovna skupina ali domena omrežja Windows, katere del je uporabnik. Za uveljavitev nastavitev nove delovne skupine bo morda potrebna ponovna prijava.</long>
+      </locale>
+
+      <locale name="sq">
+        <short>Grup pune SMB</short>
+        <long>Grupi i punës i rrjetit Windows apo domain pestar i të cilit është përdoruesi. Në menyrë që grupi i ri i punës të njihet efektivisht përdoruesit do t&apos;i duhet të shkëputet dhe të identifikohet përsëri.</long>
+      </locale>
+
+      <locale name="sr">
+        <short>СМБ радна група</short>
+        <long>Радна група или домен Windows мреже чији је корисник члан. Да би нова радна група узела маха корисник ће можда морати да се одјави и поново пријави.</long>
+      </locale>
+
+      <locale name="sr@ije">
+        <short>СМБ радна група</short>
+        
+      </locale>
+
+      <locale name="sr@latin">
+        <short>SMB radna grupa</short>
+        <long>Radna grupa ili domen Windows mreže čiji je korisnik član. Da bi nova radna grupa uzela maha korisnik će možda morati da se odjavi i ponovo prijavi.</long>
+      </locale>
+
+      <locale name="sv">
+        <short>SMB-arbetsgrupp</short>
+        <long>Windows-nätverksarbetsgruppen eller -domänen som användaren är del av. För att en ny arbetsgrupp ska börja gälla kan användaren behöva logga ut och in igen.</long>
+      </locale>
+
+      <locale name="ta">
+        <short>SMB பணிகுழு</short>
+        <long>பயனர் விண்டோஸ் பிணைய பணி குழு அல்லது களத்தின் பகுதியாக உள்ளார். புதிய பணிக்குழு முழுவதும் பணி செய்ய பயனர் வெளியேற வேண்டும் அல்லது மீண்டும் உள் அனுமதி பெற வேண்டும்.</long>
+      </locale>
+
+      <locale name="te">
+        <short>SMB పని సముదాయం</short>
+        <long>వినియోగదారి భాగముగావున్న విండోస్ నెట్వర్కింగ్ పనిసమూహం లేదా డొమైన్. కొత్త పనిసమూహం(వర్కుగ్రూప్) పూర్తిగా ప్రభావితం కావటానికి వినియోగదారి లాగ్అవుట్ అయ్యి లాగిన్ అవ్వవలసిరావచ్చు.</long>
+      </locale>
+
+      <locale name="th">
+        <short>เวิร์กกรุป SMB</short>
+        <long>เวิร์กกรุปหรือโดเมนของเครือข่ายวินโดวส์ที่ผู้ใช้อาศัยอยู่ ผู้ใช้อาจต้องออกจากระบบแล้วเข้าใหม่เพื่อจะเริ่มใช้เวิร์กกรุปใหม่ได้</long>
+      </locale>
+
+      <locale name="tr">
+        <short>SMB çalışma gurubu</short>
+        <long>Kullanıcının parçası olduğu Windows ağ çalışma grubu ya da etki alanı. Yeni çalışma grubunun tam olarak işlemesi için kullanıcının çıkış yapıp tekrar giriş yapması gerekebilir.</long>
+      </locale>
+
+      <locale name="uk">
+        <short>Робоча група протоколу SMB</short>
+        <long>Робоча група чи домен Windows, членом якого є користувач. При вказуванні нової робочої групи для набрання змінами повної сили користувачу може знадобитись вийти з сенсу та увійти знову.</long>
+      </locale>
+
+      <locale name="uz">
+        <short>SMB ishchi guruhi</short>
+        
+      </locale>
+
+      <locale name="uz@cyrillic">
+        <short>SMB ишчи гуруҳи</short>
+        
+      </locale>
+
+      <locale name="vi">
+        <short>Nhóm làm việc SMB</short>
+        <long>Nhóm làm việc chạy mạng Windows hay miền chứa người dùng này. Người dùng có lẽ cần phải đăng xuất rồi đăng nhập lại để dùng một nhóm làm việc mới.</long>
+      </locale>
+
+      <locale name="xh">
+        <short>Iqela lomsebenzi we-SMB</short>
+        
+      </locale>
+
+      <locale name="zh_CN">
+        <short>SMB 工作组</short>
+        <long>用户所属的 Windows 网络工作组或域。为了让新工作组完全生效，用户可能需要注销并再次登录。</long>
+      </locale>
+
+      <locale name="zh_HK">
+        <short>SMB 工作羣組</short>
+        <long>使用者所屬的 Windows 網絡羣組或網域。新的羣組可能要等使用者再登入後才能完全生效，</long>
+      </locale>
+
+      <locale name="zh_TW">
+        <short>SMB 工作群組</short>
+        <long>使用者所屬的 Windows 網路群組或網域。新的群組可能要等使用者再登入後才能完全生效，</long>
+      </locale>
+
+      <locale name="zu">
+        <short>Iqembu lokusebenza SMB</short>
+        
+      </locale>
+    </schema>
+  </schemalist>
+</gconfschemafile>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-font-dos">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>DOS font</comment>
+  <comment xml:lang="az">DOS yazı növü</comment>
+  <comment xml:lang="be@latin">Šryft DOS</comment>
+  <comment xml:lang="bg">Шрифт —  DOS</comment>
+  <comment xml:lang="ca">tipus de lletra DOS</comment>
+  <comment xml:lang="cs">Písmo pro DOS</comment>
+  <comment xml:lang="cy">Ffont DOS</comment>
+  <comment xml:lang="da">DOS-skrifttype</comment>
+  <comment xml:lang="de">DOS-Schrift</comment>
+  <comment xml:lang="el">γραμματοσειρά DOS</comment>
+  <comment xml:lang="en_GB">DOS font</comment>
+  <comment xml:lang="eo">DOS-tiparo</comment>
+  <comment xml:lang="es">tipografía DOS</comment>
+  <comment xml:lang="eu">DOS letra-tipoa</comment>
+  <comment xml:lang="fi">DOS-kirjasin</comment>
+  <comment xml:lang="fr">police DOS</comment>
+  <comment xml:lang="ga">cló DOS</comment>
+  <comment xml:lang="hu">DOS-betűkészlet</comment>
+  <comment xml:lang="id">Fonta DOS</comment>
+  <comment xml:lang="it">Tipo carattere DOS</comment>
+  <comment xml:lang="ja">DOS フォント</comment>
+  <comment xml:lang="ko">도스 글꼴</comment>
+  <comment xml:lang="lt">DOS šriftas</comment>
+  <comment xml:lang="ms">Font DOS</comment>
+  <comment xml:lang="nb">DOS-skrifttype</comment>
+  <comment xml:lang="nl">DOS-lettertype</comment>
+  <comment xml:lang="nn">DOS-skrifttype</comment>
+  <comment xml:lang="pl">Czcionka DOS</comment>
+  <comment xml:lang="pt">tipo de letra DOS</comment>
+  <comment xml:lang="pt_BR">Fonte do DOS</comment>
+  <comment xml:lang="ru">шрифт DOS</comment>
+  <comment xml:lang="sq">Gërmë DOS</comment>
+  <comment xml:lang="sr">DOS фонт</comment>
+  <comment xml:lang="sv">DOS-typsnitt</comment>
+  <comment xml:lang="uk">Шрифт DOS</comment>
+  <comment xml:lang="vi">Phông chữ DOS</comment>
+  <comment xml:lang="zh_CN">DOS 字体</comment>
+  <comment xml:lang="zh_TW">DOS 字型檔</comment>
+  <generic-icon name="font-x-generic"/>
+</mime-type>

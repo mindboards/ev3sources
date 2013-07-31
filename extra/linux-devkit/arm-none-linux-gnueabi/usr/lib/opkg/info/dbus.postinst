@@ -1,0 +1,21 @@
+#!/bin/sh
+#!/bin/sh
+# can't do adduser stuff offline
+if [ "x$D" != "x" ]; then
+  exit 1
+fi
+MESSAGEUSER=messagebus
+MESSAGEHOME=/var/run/dbus
+mkdir -p $MESSAGEHOME || true
+grep -q ^$MESSAGEUSER: /etc/group || addgroup "$MESSAGEUSER"
+chgrp "$MESSAGEUSER" "$MESSAGEHOME"
+grep -q ^$MESSAGEUSER: /etc/passwd || adduser --system --home "$MESSAGEHOME" --no-create-home --disabled-password --ingroup "$MESSAGEUSER" "$MESSAGEUSER"
+chown "$MESSAGEUSER"."$MESSAGEUSER" "$MESSAGEHOME"
+grep -q netdev: /etc/group || addgroup netdev
+chmod u+s /usr/libexec/dbus-daemon-launch-helper
+if test "x$D" != "x"; then
+	OPT="-r $D"
+else
+	OPT="-s"
+fi
+update-rc.d $OPT dbus-1 start 02 5 2 . stop 20 0 1 6 .

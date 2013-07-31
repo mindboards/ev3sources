@@ -1,0 +1,12 @@
+Package: liborc-test-0.4-0
+Version: 0.4.9-r0.6
+Description: ORC orc-test-0.4 library
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: orc
+Architecture: armv5te
+OE: orc
+Homepage: http://code.entropywave.com/projects/orc/
+Depends: liborc-0.4-0, libc6, libgcc1
+Source: http://code.entropywave.com/download/orc/orc-0.4.9.tar.gz;name=orc

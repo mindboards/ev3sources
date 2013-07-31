@@ -1,0 +1,2 @@
+kernel/drivers/spi/spi_bitbang.ko
+kernel/drivers/spi/davinci_spi.ko

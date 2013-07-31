@@ -1,0 +1,25 @@
+#!/bin/sh
+# get splash funcs
+if [ -f /etc/default/splashfuncs ]; then
+  . /etc/default/splashfuncs
+## tell boot status to "pulsate" really long busy cycle here
+status_pulse || true
+fi
+
+# run configure in bg
+if [  -f /etc/default/splashfuncs ]; then
+  opkg-cl configure &
+  PID=$!
+  
+  # while configure still running loop
+  while test -d /proc/$PID; do
+  # tick to splash so it doesn't time out
+    status_tick || true
+    sleep 1
+  done
+else
+  opkg-cl configure
+fi
+
+# delete myself
+rm -f /etc/rcS.d/S98configure

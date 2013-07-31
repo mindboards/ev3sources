@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-ustar">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Ustar archive</comment>
+  <comment xml:lang="be@latin">Archiŭ ustar</comment>
+  <comment xml:lang="bg">Архив — ustar</comment>
+  <comment xml:lang="ca">arxiu ustar</comment>
+  <comment xml:lang="cs">Archiv ustar</comment>
+  <comment xml:lang="es">archivador Ustar</comment>
+  <comment xml:lang="eu">Ustar artxiboa</comment>
+  <comment xml:lang="fi">Ustar-arkisto</comment>
+  <comment xml:lang="fr">archive Ustar</comment>
+  <comment xml:lang="ga">cartlann Ustar</comment>
+  <comment xml:lang="hu">Ustar archívum</comment>
+  <comment xml:lang="id">Arsip Ustar</comment>
+  <comment xml:lang="it">Archivio ustar</comment>
+  <comment xml:lang="ko">Ustar 묶음파일</comment>
+  <comment xml:lang="lt">Ustar archyvas</comment>
+  <comment xml:lang="nb">Ustar-arkiv</comment>
+  <comment xml:lang="nl">Ustar-archief</comment>
+  <comment xml:lang="pt_BR">Pacote Ustar</comment>
+  <comment xml:lang="ru">архив ustar</comment>
+  <comment xml:lang="sv">Ustar-arkiv</comment>
+  <comment xml:lang="vi">Kho nén ustar</comment>
+  <generic-icon name="package-x-generic"/>
+</mime-type>

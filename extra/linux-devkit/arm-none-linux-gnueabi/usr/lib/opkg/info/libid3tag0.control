@@ -1,0 +1,12 @@
+Package: libid3tag0
+Version: 0.15.1b-r3.6
+Description: Library for interacting with ID3 tags
+Section: libs/multimedia
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPL
+Architecture: armv5te
+OE: libid3tag
+Homepage: unknown
+Depends: libz1, libgcc1, libc6
+Source: ftp://ftp.mars.org/pub/mpeg/libid3tag-0.15.1b.tar.gz file://libid3tag-pkg-config.patch

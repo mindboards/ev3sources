@@ -1,0 +1,13 @@
+Package: ncurses-dev
+Version: 5.7+20100501-r15.6
+Description: Ncurses library
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT
+Architecture: armv5te
+OE: ncurses
+Homepage: http://www.gnu.org/software/ncurses/ncurses.html
+Depends: ncurses, libticw5, libtinfo5, libmenu5, libmenuw5, libform5, libncurses5, libtic5, libpanel5, libformw5, libpanelw5
+Recommends: libc6-dev, ncurses-libtinfo-dev, libgcc1-dev, ncurses-libncursesw-dev, ncurses-libncurses-dev, ncurses-dev, ncurses-libticw-dev, ncurses-libmenu-dev, ncurses-libmenuw-dev, ncurses-libform-dev, ncurses-libtic-dev, ncurses-libpanel-dev, ncurses-libformw-dev, ncurses-libpanelw-dev, ncurses-terminfo-base-dev
+Source: ftp://ftp.gnu.org/gnu/ncurses/ncurses-5.7.tar.gz;name=tarball ftp://invisible-island.net/ncurses/5.7/ncurses-5.7-20100424-patch.sh.bz2;apply=yes;name=p20100424sh ftp://invisible-island.net/ncurses/5.7/ncurses-5.7-20100501.patch.gz;name=p20100501 file://tic-hang.patch file://config.cache

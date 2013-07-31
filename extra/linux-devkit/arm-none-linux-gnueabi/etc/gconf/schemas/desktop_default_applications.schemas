@@ -1,0 +1,1178 @@
+<?xml version="1.0"?>
+<gconfschemafile>
+  <schemalist>
+    <schema>
+      <key>/schemas/desktop/gnome/applications/terminal/exec</key>
+      <applyto>/desktop/gnome/applications/terminal/exec</applyto>
+      <owner>gnome-vfs</owner>
+      <type>string</type>
+      <default>gnome-terminal</default>
+      <locale name="C">
+        <short>Default terminal application</short>
+        <long>The default terminal application to use for applications that require a terminal.</long>
+      </locale>
+
+      <locale name="af">
+        <short>Verstekterminaaltoepassing</short>
+        <long>Die verstekterminaaltoepassing wat gebruik moet word vir toepassings wat &apos;n terminaal vereis.</long>
+      </locale>
+
+      <locale name="ar">
+        <short>تطبيق الطرفية الافتراضي</short>
+        <long>الطرفية الافتراضية التي ستستعمل للتطبيقات التي تتطلب طرفية.</long>
+      </locale>
+
+      <locale name="as">
+        <short>ডিফল্ট টাৰ্মিনাল অ্যাপ্লিকেশন</short>
+        <long>আবশ্যকৰূপে টাৰ্মিনাল প্ৰয়োগকাৰী অ্যাপ্লিকেশনগুলিৰ দ্বাৰা ব্যবহাৰযোগ্য ডিফল্ট টাৰ্মিনাল ।</long>
+      </locale>
+
+      <locale name="ast">
+        <short>Aplicación de terminal predeterminada</short>
+        <long>La&apos;aplicación de terminal predeterminada pa les aplicaciones que lo requieran.</long>
+      </locale>
+
+      <locale name="az">
+        <short>Ön qurğulu terminal proqramı</short>
+        <long>Terminala məcbur olan proqramlar üçün işlədiləcək ön qurğulu terminal.</long>
+      </locale>
+
+      <locale name="be">
+        <short>Прадвызначанае дастасаваньне тэрміналу</short>
+        <long>Прадвызначанае дастасаваньне тэрміналу, каб выкарыстоўваць у дастасаваньнях, якія патрабуюць тэрмінал.</long>
+      </locale>
+
+      <locale name="bg">
+        <short>Стандартна програма за терминал</short>
+        <long>Стандартната терминална програма да се използва за програми, които изискват терминал.</long>
+      </locale>
+
+      <locale name="bn">
+        <short>ডিফল্ট টার্মিনাল অ্যাপ্লিকেশন</short>
+        <long>যেসব অ্যাপ্লিকেশনের জন্য টার্মিনাল প্রয়োজন সেগুলোর জন্য ডিফল্ট টার্মিনাল অ্যাপলিকেশন। </long>
+      </locale>
+
+      <locale name="bn_IN">
+        <short>ডিফল্ট টার্মিনাল অ্যাপ্লিকেশন</short>
+        <long>আবশ্যকরূপে টার্মিনাল প্রয়োগকারী অ্যাপ্লিকেশনগুলির দ্বারা ব্যবহারযোগ্য ডিফল্ট টার্মিনাল।</long>
+      </locale>
+
+      <locale name="bs">
+        <short>Uobičajena aplikacija terminala</short>
+        <long>Uobičajena aplikacija terminala koja se koristi za aplikacije koje zahtijevaju terminal.</long>
+      </locale>
+
+      <locale name="ca">
+        <short>Aplicació de terminal predeterminada</short>
+        <long>L&apos;aplicació de terminal a usar per defecte per a aplicacions que requereixin un terminal.</long>
+      </locale>
+
+      <locale name="cs">
+        <short>Implicitní aplikace terminálu</short>
+        <long>Implicitní aplikace terminálu, kterou používat pro aplikace, které vyžadují terminál.</long>
+      </locale>
+
+      <locale name="cy">
+        <short>Rhaglen terfynell rhagosodedig</short>
+        <long>Y rhaglen derfynell rhagosodedig a ddefnyddir gan raglenni sydd angen terfynell.</long>
+      </locale>
+
+      <locale name="da">
+        <short>Forvalgt terminalprogram</short>
+        <long>Det forvalgte terminalprogram til programmer der kræver en terminal.</long>
+      </locale>
+
+      <locale name="de">
+        <short>Vorgabe-Terminal-Anwendung</short>
+        <long>Die Vorgabe-Terminal-Anwendung, die für Anwendungen verwendet wird, die ein Terminal erforderlich machen.</long>
+      </locale>
+
+      <locale name="dz">
+        <short>སྔོན་སྒྲིག་ཊར་མི་ནཱལ་གློག་རིམ།</short>
+        <long>ཊར་མི་ནཱལ་ཅིག་དགོ་པའི་ གློག་རིམ་ཚུ་གི་དོན་ལུ་ ལག་ལེན་འཐབ་དགོ་པའི་ སྔོན་སྒྲིག་ཊར་མི་ནཱལ་གློག་རིམ།</long>
+      </locale>
+
+      <locale name="el">
+        <short>Προεπιλεγμένη εφαρμογή τερματικού</short>
+        <long>Η προεπιλεγμένη εφαρμογή τερματικού για χρήση σε εφαρμογές που απαιτούν ένα τερματικό.</long>
+      </locale>
+
+      <locale name="en_CA">
+        <short>Default terminal application</short>
+        <long>The default terminal application to use for applications that require a terminal.</long>
+      </locale>
+
+      <locale name="en_GB">
+        <short>Default terminal application</short>
+        <long>The default terminal application to use for applications that require a terminal.</long>
+      </locale>
+
+      <locale name="es">
+        <short>Aplicación de terminal predeterminada</short>
+        <long>La aplicación de terminal predeterminada para las aplicaciones que lo requieran.</long>
+      </locale>
+
+      <locale name="et">
+        <short>Vaikimisi terminalirakendus</short>
+        <long>Vaikimisi terminalirakendus kasutamiseks terminali vajavate rakenduste jaoks.</long>
+      </locale>
+
+      <locale name="eu">
+        <short>Terminal aplikazio lehenetsia</short>
+        <long>Terminal aplikazio lehenetsia, terminala eskatzen duten aplikazioetan erabiltzeko.</long>
+      </locale>
+
+      <locale name="fi">
+        <short>Oletusarvoinen päätesovellus</short>
+        <long>Oletusarvoinen päätesovellus päätteen vaativille sovelluksille.</long>
+      </locale>
+
+      <locale name="fr">
+        <short>Terminal par défaut</short>
+        <long>L&apos;application terminal par défaut à utiliser pour les applications qui nécessite un terminal.</long>
+      </locale>
+
+      <locale name="gl">
+        <short>Aplicación do terminal por defecto</short>
+        <long>A aplicación do terminal por defecto para usar nas aplicacións que precisan dun terminal.</long>
+      </locale>
+
+      <locale name="gu">
+        <short>મૂળભૂત ટર્મિનલ કાર્યક્રમ</short>
+        <long>કાર્યક્રમનો ઉપયોગ કરવા માટે મૂળભૂત ટર્મિનલ કાર્યક્રમ કે જેના માટે ટર્મિનલ જરુરી છે.</long>
+      </locale>
+
+      <locale name="he">
+        <short>יישום מסוף ברירת מחדל</short>
+        <long>The default terminal application to use for applications that require a terminal.</long>
+      </locale>
+
+      <locale name="hi">
+        <short>डिफ़ॉल्ट टर्मिनल अनुप्रयोग</short>
+        <long>उन अनुप्रयोगों हेतु डिफ़ॉल्ट टर्मिनल अनुप्रयोग जिन्हें टर्मिनल की आवश्यकता होती है.</long>
+      </locale>
+
+      <locale name="hr">
+        <short>Uobičajen terminalni program</short>
+        <long>Uobičajeni terminalni program koji se koristi za programe koji zahtijevaju terminal.</long>
+      </locale>
+
+      <locale name="hu">
+        <short>Alapértelmezett terminál alkalmazás</short>
+        <long>A terminált igénylő alkalmazásokhoz használandó alapértelmezett terminál.</long>
+      </locale>
+
+      <locale name="id">
+        <short>Aplikasi terminal standar</short>
+        <long>Aplikasi terminal standar yang akan digunakan bagi semua aplikasi yang membutuhkan terminal</long>
+      </locale>
+
+      <locale name="it">
+        <short>Applicazione di terminale predefinita</short>
+        <long>Applicazione di terminale predefinita da usare per applicazioni che richiedono un terminale.</long>
+      </locale>
+
+      <locale name="ja">
+        <short>デフォルトの端末アプリケーション</short>
+        <long>端末を必要とするアプリケーションで使用するデフォルトの端末アプリケーションです。</long>
+      </locale>
+
+      <locale name="ka">
+        <short>ტერმინალის ნაგულისხმები პროგრამა</short>
+        <long>ტერმინალის ნაგულისხმები პროგრამა, რომელიც ტერმინალის საჭიროებისთვის გამოიყენება.</long>
+      </locale>
+
+      <locale name="kn">
+        <short>ಡೀಫಾಲ್ಟ್‍ ಟರ್ಮಿನಲ್ ಅನ್ವಯ</short>
+        <long>ಟರ್ಮಿನಲ್ಲಿನ ಅಗತ್ಯವಿರುವ ಅನ್ವಯಗಳಲ್ಲಿ ಬಳಸಬೇಕಿರುವ ಡೀಫಾಲ್ಟ್‍ ಟರ್ಮಿನಲ್ ಅನ್ವಯ.</long>
+      </locale>
+
+      <locale name="ko">
+        <short>기본 터미널 프로그램</short>
+        <long>터미널이 필요한 프로그램에 사용할 기본 터미널 프로그램.</long>
+      </locale>
+
+      <locale name="lt">
+        <short>Numatytoji terminalo programa</short>
+        <long>Numatytoji terminalo programa, naudojama su programomis, kurioms reikia terminalo.</long>
+      </locale>
+
+      <locale name="lv">
+        <short>Noklusēta termināļa lietotne</short>
+        <long>Noklusēta termināļa lietotne, lai izmantotu lietotnes, kam nepieciešams terminālis.</long>
+      </locale>
+
+      <locale name="mai">
+        <short>मूलभूत टर्मिनल अनुप्रयोग</short>
+        <long>ओ अनुप्रयोगसभक लेल मूलभूत टर्मिनल अनुप्रयोग जकरा टर्मिनलक आवश्यकता होइछ.</long>
+      </locale>
+
+      <locale name="mg">
+        <short>Rindranasan&apos;ny terminal lasitra</short>
+        <long>Ny rindranasan&apos;ny terminal lasitra ampiasaina amina rindranasa mila terminal.</long>
+      </locale>
+
+      <locale name="mk">
+        <short>Стандардна апликација за терминал</short>
+        <long>Стандардната апликација која што ќе се користи како терминал за апликациите кои имаат потреба од терминал.</long>
+      </locale>
+
+      <locale name="ml">
+        <short>ഡീഫോള്‍ട്ടായ ടെര്‍മിനല്‍ പ്രയോഗം</short>
+        <long>ടെര്‍മിനല്‍ ആവശ്യമായ പ്രയോഗങ്ങള്‍ക്ക് ഉപയോഗിക്കുന്നതിനായുളള ഡീഫോള്‍ട്ടായ ടെര്‍മിനല്‍ പ്രയോഗം</long>
+      </locale>
+
+      <locale name="mn">
+        <short>Стандарт терминал програм</short>
+        <long>Терминал шаарддаг хэрэглээний програмуудад хэрэглэгдэх стандарт терминал програм.</long>
+      </locale>
+
+      <locale name="mr">
+        <short>मुलभूत टर्मिनल कार्यक्रम</short>
+        <long>ज्या कार्यक्रमासाठी टर्मिनलची गरज आहे अशा कार्यासाठी मुलभूत टर्मिनल.</long>
+      </locale>
+
+      <locale name="ms">
+        <short>Aplikasi terminal default</short>
+        <long>Aplikasi terminal default untuk digunakan bagi aplikasi yg memerlukan terminal.</long>
+      </locale>
+
+      <locale name="nb">
+        <short>Forvalgt terminalapplikasjon</short>
+        <long>Forvalgt terminalprogram som skal brukes for programmer som krever en terminal.</long>
+      </locale>
+
+      <locale name="ne">
+        <short>पूर्वनिर्धारित टर्मिनल अनुप्रयोग</short>
+        <long>टर्मिनल आवश्यक पर्ने अनुप्रयोगका लागि प्रयोग गरिने पूर्वनिर्धारित टर्मिनल अनुप्रयोग ।</long>
+      </locale>
+
+      <locale name="nl">
+        <short>Standaard terminalprogramma</short>
+        <long>Het standaard terminalprogramma voor toepassingen die een terminal nodig hebben.</long>
+      </locale>
+
+      <locale name="nn">
+        <short>Standard terminalemulator</short>
+        <long>Standard terminalemulator som skal brukast til program som krev ein terminal.</long>
+      </locale>
+
+      <locale name="nso">
+        <short>Dira gore tirišo ya kgokagano ya dithapo e hlaelele</short>
+        <long>Tirišo ya kgokagano ya dithapo e hlaelelago yeo e tla dirišwagoo bakeng sa ditirišo tšeo di nyakago kgokagano ya dithapo.</long>
+      </locale>
+
+      <locale name="oc">
+        <short>Terminal per defaut</short>
+        
+      </locale>
+
+      <locale name="or">
+        <short>ପୂର୍ବନିର୍ଦ୍ଧାରିତ ଟର୍ମିନାଲ୍ ପ୍ରୟୋଗ</short>
+        <long>ଯେଉଁ ପ୍ରୟୋଗଗୁଡିକ ପାଇଁ ଟର୍ମିନାଲ୍ ଆବଶ୍ଯକ ସେମାନଙ୍କ ପାଇଁ ପୂର୍ବନିର୍ଦ୍ଧାରିତ ଟର୍ମିନାଲ୍ ପ୍ରୟୋଗ।</long>
+      </locale>
+
+      <locale name="pa">
+        <short>ਡਿਫਾਲਟ ਟਰਮੀਨਲ ਐਪਲੀਕੇਸ਼ਨ</short>
+        <long>ਡਿਫਾਲਟ ਟਰਮੀਨਲ ਕਾਰਜ, ਜੋ ਕਿ ਕਾਰਜਾਂ ਲਈ ਵਰਤਣਾ ਹੈ, ਜੋ ਕਿ ਟਰਮੀਨਲ ਦੀ ਮੰਗ ਕਰਦੇ ਹਨ।</long>
+      </locale>
+
+      <locale name="pl">
+        <short>Domyślna aplikacja terminala</short>
+        <long>Domyślna aplikacja terminala używana dla aplikacji wymagającej terminala.</long>
+      </locale>
+
+      <locale name="pt">
+        <short>Aplicação de consola por omissão</short>
+        <long>A aplicação de consola a utilizar por omissão para aplicações que necessitem de uma consola.</long>
+      </locale>
+
+      <locale name="pt_BR">
+        <short>Aplicativo padrão de terminal</short>
+        <long>O terminal padrão para ser utilizado por aplicativos que requerem um terminal.</long>
+      </locale>
+
+      <locale name="ro">
+        <short>Aplicație terminal implicită</short>
+        <long>Aplicația terminal implicită de utilizat pentru programele ce necesită un terminal.</long>
+      </locale>
+
+      <locale name="ru">
+        <short>Приложение терминала по умолчанию</short>
+        <long>Приложение терминала, используемое по умолчанию приложениями, нуждающимися в терминале.</long>
+      </locale>
+
+      <locale name="sk">
+        <short>Štandardná aplikácia terminálu</short>
+        <long>Štandardná aplikácia terminálu používaná pre aplikácie, ktoré vyžadujú terminál.</long>
+      </locale>
+
+      <locale name="sl">
+        <short>Privzet terminal:</short>
+        <long>Privzet terminal za uporabo programov, ki potrebujejo terminal.</long>
+      </locale>
+
+      <locale name="sq">
+        <short>Programi terminal i prezgjedhur</short>
+        <long>Programi terminal i prezgjedhur që duhet përdorur për programet që kërkojnë një terminal.</long>
+      </locale>
+
+      <locale name="sr">
+        <short>Подразумевани терминалски програм</short>
+        <long>Подразумевани терминалски програм који се користи за програме којима је неопходан терминал.</long>
+      </locale>
+
+      <locale name="sr@ije">
+        <short>Подразумјевани терминалски програм</short>
+        <long>Подразумјевани терминалски програм који се користи за програме којима је неопходан терминал.</long>
+      </locale>
+
+      <locale name="sr@latin">
+        <short>Podrazumevani terminalski program</short>
+        <long>Podrazumevani terminalski program koji se koristi za programe kojima je neophodan terminal.</long>
+      </locale>
+
+      <locale name="sv">
+        <short>Standardterminalprogram</short>
+        <long>Standardterminalprogrammet att använda för program som kräver en terminal.</long>
+      </locale>
+
+      <locale name="ta">
+        <short>இயல்பான முனைய பயன்பாடுகள்</short>
+        <long>முனையத்திறகு தேவைப்படும் இயல்பான முனைய பயன்பாடு </long>
+      </locale>
+
+      <locale name="te">
+        <short>అప్రమేయ అగ్రం కార్యక్షేత్రం</short>
+        <long>అప్రమేయ అగ్రం కార్యక్షేత్రం వాడుట కొరకు కార్యక్షేత్రాలు అది ఒక అవసరం అగ్రం.</long>
+      </locale>
+
+      <locale name="th">
+        <short>โปรแกรมเทอร์มินัลปริยาย</short>
+        <long>โปรแกรมเทอร์มินัลปริยาย ไว้ใช้สำหรับ โปรแกรมที่ต้องใช้เทอร์มินัล</long>
+      </locale>
+
+      <locale name="tr">
+        <short>Öntanımlı uçbirim uygulaması</short>
+        <long>Uçbirim gerektiren uygulamalar için öntanımlı uçbirim uygulaması.</long>
+      </locale>
+
+      <locale name="uk">
+        <short>Типова програма терміналу</short>
+        <long>Типова програма терміналу, що використовується з програмами, якім потрібен термінал.</long>
+      </locale>
+
+      <locale name="uz">
+        <short>Andoza terminal dasturi</short>
+        
+      </locale>
+
+      <locale name="uz@cyrillic">
+        <short>Андоза терминал дастури</short>
+        
+      </locale>
+
+      <locale name="vi">
+        <short>Ứng dụng thiết bị cuối mặc định</short>
+        <long>Ứng dụng thiết bị cuối mặc định cần dùng cho các ứng dụng cần thiết thiết bị cuối.</long>
+      </locale>
+
+      <locale name="xh">
+        <short>Inkqubo yekhompyutha ene-terminal emiselweyo</short>
+        <long>Inkqubo yekhompyutha ene-terminal emiselweyo ukuba isetyenziswe kwiinkqubo zekhompyutha ezifuna i-terminal.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>默认终端应用程序</short>
+        <long>为需要终端的应用程序所使用的默认终端应用程序。</long>
+      </locale>
+
+      <locale name="zh_HK">
+        <short>預設的終端機</short>
+        <long>應用程式需要使用終端機時，預設執行的終端機。</long>
+      </locale>
+
+      <locale name="zh_TW">
+        <short>預設的終端機</short>
+        <long>應用程式需要使用終端機時，預設執行的終端機。</long>
+      </locale>
+
+      <locale name="zu">
+        <short>Iphutha lesigungu sokusetshenziswa</short>
+        <long>Iphutha lesisebenzisi esigungwini sokusebenzisa izisebenzisi ezidinga isigungu.</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/applications/terminal/exec_arg</key>
+      <applyto>/desktop/gnome/applications/terminal/exec_arg</applyto>
+      <owner>gnome-vfs</owner>
+      <type>string</type>
+      <default>-x</default>
+      <locale name="C">
+        <short>Exec argument for default terminal</short>
+        <long>The exec argument to use for the default terminal application.</long>
+      </locale>
+
+      <locale name="af">
+        <short>Exec-argument vir verstekterminaal</short>
+        <long>Die exec-argument wat gebruik moet word vir die verstekterminaaltoepassing.</long>
+      </locale>
+
+      <locale name="ar">
+        <short>معامل التنفيذ للطرفية الافتراضية</short>
+        <long>معامل التنفيذ الذي سيستعمل للطرفية الافتراضية.</long>
+      </locale>
+
+      <locale name="as">
+        <short>ডিফল্ট টাৰ্মিনালেৰ জন্য exec আৰ্গুমেন্ট</short>
+        <long>ডিফল্ট টাৰ্মিনাল অ্যাপ্লিকেশনেৰ জন্য ব্যবহাৰযোগ্য exec আৰ্গুমেন্ট ।</long>
+      </locale>
+
+      <locale name="ast">
+        <short>L&apos;argumentu exec pa la terminal predeterminada</short>
+        <long>L&apos;argumentu de exec a usar pa l&apos;aplicación de terminal predeterminada.</long>
+      </locale>
+
+      <locale name="az">
+        <short>Ön qurğulu terminal üçün icra ediləcək əmr</short>
+        <long>Ön qurğulu terminal gedişatı üçün icra ediləcək əmr.</long>
+      </locale>
+
+      <locale name="be">
+        <short>Аргумэнты выкананьня для прадвызначанага тэрміналу</short>
+        <long>Аргумэнт выкананьня для прадвызначанага тэрмінальнага дастасаваньня.</long>
+      </locale>
+
+      <locale name="bg">
+        <short>Аргументът exec за стандартната програма за терминал</short>
+        <long>Аргументът за изпълнение (exec) за терминалния емулатор по подразбиране.</long>
+      </locale>
+
+      <locale name="bn">
+        <short>ডিফল্ট টার্মিনাল-এর জন্য Exec আর্গুমেন্ট</short>
+        <long>ডিফল্ট টার্মিনাল-এর জন্য যে Exec আর্গুমেন্ট ব্যবহৃত হবে</long>
+      </locale>
+
+      <locale name="bn_IN">
+        <short>ডিফল্ট টার্মিনালের জন্য exec আর্গুমেন্ট</short>
+        <long>ডিফল্ট টার্মিনাল অ্যাপ্লিকেশনের জন্য ব্যবহারযোগ্য exec আর্গুমেন্ট।</long>
+      </locale>
+
+      <locale name="bs">
+        <short>Izvršni argument za uobičajeni terminal</short>
+        <long>Izvršni argument koji se koristi za uobičajenu aplikaciju terminala.</long>
+      </locale>
+
+      <locale name="ca">
+        <short>Argument d&apos;execució per al terminal predeterminat</short>
+        <long>L&apos;argument d&apos;execució a usar per a l&apos;aplicació de terminal predeterminada.</long>
+      </locale>
+
+      <locale name="cs">
+        <short>Argument exec pro implicitní terminál</short>
+        <long>Argument exec, který používat pro implicitní aplikaci terminálu.</long>
+      </locale>
+
+      <locale name="cy">
+        <short>Ymresymiad exec ar gyfer y derfynell rhagosodedig</short>
+        <long>Yr ymresymiad exec i&apos;w ddefnyddio ar gyfer y rhaglen derfynell rhagosodedig.</long>
+      </locale>
+
+      <locale name="da">
+        <short>Kørselsparameter for forvalgt terminal</short>
+        <long>Kørselsparameter der skal bruges til det forvalgte terminalprogram.</long>
+      </locale>
+
+      <locale name="de">
+        <short>Exec-Argument für Vorgabe-Terminal</short>
+        <long>Das an die Vorgabe-Terminal-Anwendung zu übergebende exec-Argument.</long>
+      </locale>
+
+      <locale name="dz">
+        <short>སྔོན་སྒྲིག་ཊར་མི་ནཱལ་གྱི་སྐོར་ལས་ སྒྲུབ་རྟགས་ལག་ལེན་འཐབ།</short>
+        <long>སྔོན་སྒྲིག་ཊར་མི་ནཱལ་ གློམ་རིམ་གྱི་དོན་ལུ་ ལག་ལེན་འཐབ་དགོ་པའི་ ཨི་ཨེགསི་ཨི་སི་ སྒྲུབ་རྟགས།</long>
+      </locale>
+
+      <locale name="el">
+        <short>Παράμετρος Exec για προεπιλεγμένο τερματικό</short>
+        <long>Η παράμετρος exec για χρήση στην προεπιλεγμένη εφαρμογή τερματικού.</long>
+      </locale>
+
+      <locale name="en_CA">
+        <short>Exec argument for default terminal</short>
+        <long>The exec argument to use for the default terminal application.</long>
+      </locale>
+
+      <locale name="en_GB">
+        <short>Exec argument for default terminal</short>
+        <long>The exec argument to use for the default terminal application.</long>
+      </locale>
+
+      <locale name="es">
+        <short>El argumento exec para la terminal predeterminada</short>
+        <long>El argumento de exec a usar para la aplicación de terminal predeterminada.</long>
+      </locale>
+
+      <locale name="et">
+        <short>Vaikimisi terminalikäivitusargument</short>
+        <long>Vaikimisi terminalirakenduse käivitusargument.</long>
+      </locale>
+
+      <locale name="eu">
+        <short>Exec argumentua, terminal lehenetsirako</short>
+        <long>Exec argumentua terminal aplikazio lehenetsian erabiltzeko.</long>
+      </locale>
+
+      <locale name="fi">
+        <short>Päätesovelluksen suoritusvalitsin</short>
+        <long>Päätesovelluksen valitsin, joka määrittää mitä suoritetaan.</long>
+      </locale>
+
+      <locale name="fr">
+        <short>Paramètre d&apos;exécution pour le terminal par défaut</short>
+        <long>L&apos;argument d&apos;exécution à utiliser pour l&apos;application de terminal par défaut.</long>
+      </locale>
+
+      <locale name="gl">
+        <short>Argumento exec para o terminal por defecto</short>
+        <long>O argumento exec para usar coa aplicación do terminal por defecto.</long>
+      </locale>
+
+      <locale name="gu">
+        <short>મૂળભૂત ટર્મિનલ માટે ચલાવવાની દલીલ</short>
+        <long>મૂળભૂત ટર્મિનલ કાર્યક્રમ માટે exec દલીલનો ઉપયોગ કરવાનો છે.</long>
+      </locale>
+
+      <locale name="he">
+        <short>ארגומנט Exec למסוף ברירת מחדל</short>
+        <long>The exec argument to use for the default terminal application.</long>
+      </locale>
+
+      <locale name="hi">
+        <short>डिफ़ॉल्ट टर्मिनल हेतु ईएक्सईसी ऑर्गुमेंट</short>
+        <long>डिफ़ॉल्ट टर्मिनल अनुप्रयोग में उपयोग हेतु ईएक्सईसी ऑर्गुमेंट.</long>
+      </locale>
+
+      <locale name="hr">
+        <short>Izvršni argument za uobičajeni terminal</short>
+        <long>Izvršni argument koji se koristi za uobičajeni terminalni program.</long>
+      </locale>
+
+      <locale name="hu">
+        <short>Az alapértelmezett terminál exec paramétere</short>
+        <long>Az alapértelmezett terminálalkalmazásnál használandó exec paraméter.</long>
+      </locale>
+
+      <locale name="id">
+        <short>Parameter tambahan untuk terminal standar</short>
+        <long>Parameter yang akan disampaikan kepada aplikasi terminal itu.</long>
+      </locale>
+
+      <locale name="it">
+        <short>Argomento exec per il terminale predefinito</short>
+        <long>L&apos;argomento exec da usare per l&apos;applicazione di terminale predefinita.</long>
+      </locale>
+
+      <locale name="ja">
+        <short>デフォルトの端末で使用する Exec 用引数</short>
+        <long>デフォルトの端末アプケーションで使用するプログラムを実行する時の引数です。</long>
+      </locale>
+
+      <locale name="ka">
+        <short>Exec ნაგულისხმები არგუმენტი ტერმინალისთვის</short>
+        <long>exec არგუმენტი, რომელიც ტერმინალის ნაგულისხმები პროგრამისთვის გამოიყენება.</long>
+      </locale>
+
+      <locale name="kn">
+        <short>ಡೀಫಾಲ್ಟ್‍ ಟರ್ಮಿನಲ್‌ಗಾಗಿನ Exec ಆರ್ಗ್ಯುಮೆಂಟ್್</short>
+        <long>ಡೀಫಾಲ್ಟ್‍ ಟರ್ಮಿನಲ್ ಅನ್ವಯದಲ್ಲಿ ಬಳಸಬೇಕಿರುವ exec ಆರ್ಗ್ಯಮೆಂಟ್.</long>
+      </locale>
+
+      <locale name="ko">
+        <short>기본 터미널을 실행할 때 줄 인자</short>
+        <long>기본 터미널 프로그램을 실행할 때 사용할 인자.</long>
+      </locale>
+
+      <locale name="lt">
+        <short>Numatytojo terminalo paleidimo argumentas</short>
+        <long>Argumentas naudojamas paleidžiant numatytąją terminalo programą.</long>
+      </locale>
+
+      <locale name="lv">
+        <short>Izpildes arguments noklusētam terminālam</short>
+        <long>Izpildes arguments noklusētu termināļa lietotni izmantošanai.</long>
+      </locale>
+
+      <locale name="mai">
+        <short>मूलभूत टर्मिनल लेल ईएक्सईसी ऑर्गुमेंट</short>
+        <long>मूलभूत टर्मिनल अनुप्रयोगमे उपयोग लेल ईएक्सईसी ऑर्गुमेंट.</long>
+      </locale>
+
+      <locale name="mg">
+        
+        <long>Ny tondrikim-panatanterahana ampiasaina amin&apos;ilay rindranasan&apos;ny terminal lasitra.</long>
+      </locale>
+
+      <locale name="mk">
+        <short>Exec аргумент за стандарден терминал</short>
+        <long>Еxec аргументот за употреба со стандардната терминална апликација.</long>
+      </locale>
+
+      <locale name="ml">
+        <short>ഡീഫോള്‍ട്ട് ടെര്‍മിനലിനായുളള exec ആര്‍ഗ്യുമെന്‍റ്</short>
+        <long>ഡീഫോള്‍ട്ടായ ടെര്‍മിനല്‍ പ്രയോഗത്തിന് ആയുളള exec ആര്‍ഗ്യുമെന്‍റ്</long>
+      </locale>
+
+      <locale name="mn">
+        <short>Стандарт терминалын хувьд аргументыг гүйцэтгэ</short>
+        <long>Стандарт терминалын хувьд гүйцэтгэх аргумент.</long>
+      </locale>
+
+      <locale name="mr">
+        <short>मुलभूत कार्यक्रमांसाठी Exec बाब</short>
+        <long>मुलभूत टर्मिनल कार्यक्रमासाठी लागणारी exec बाब.</long>
+      </locale>
+
+      <locale name="ms">
+        <short>Hujah exec bagi terminal default</short>
+        <long>Hujah exec digunakan bagi palikasi terminal default.</long>
+      </locale>
+
+      <locale name="nb">
+        <short>Kjøringsargument for forvalgt terminal</short>
+        <long>Kjøringsargument som skal brukes for forvalgt terminalprogram.</long>
+      </locale>
+
+      <locale name="ne">
+        <short>पूर्वनिर्धारित टर्मिनलका लागि Exec तर्क</short>
+        <long>पूर्वनिर्धारित टर्मिनल अनुप्रयोगका लागि प्रयोग गरिने exec तर्क ।</long>
+      </locale>
+
+      <locale name="nl">
+        <short>Opstartargumenten voor standaard terminal</short>
+        <long>Te gebruiken exec-argument voor het standaard terminalprogramma.</long>
+      </locale>
+
+      <locale name="nn">
+        <short>Exec-argument til standardterminalemulatoren</short>
+        <long>Exec-argumentet som skal brukast til standardterminalemulatoren.</long>
+      </locale>
+
+      <locale name="nso">
+        <short>Ngangišano ya kgonthe bakeng sa kgokagano ya dithapo e hlaelelago</short>
+        <long>Ngangišano ya kgonthe ya go dirišetšwa tirišo ya kgokagano ya dithapo e hlaelelago.</long>
+      </locale>
+
+      <locale name="or">
+        <short>ପୂର୍ବନିର୍ଦ୍ଧାରିତ ଟର୍ମିନାଲ୍ ପାଇଁ  ନିଷ୍ପାଦନ ସ୍ବତନ୍ତ୍ରଚର</short>
+        <long>ପୂର୍ବନିର୍ଦ୍ଧାରିତ ଟର୍ମିନାଲ୍ ପ୍ରୟୋଗ ପାଇଁ ନିଷ୍ପାଦନ ସ୍ବତନ୍ତ୍ରଚର।</long>
+      </locale>
+
+      <locale name="pa">
+        <short>ਡਿਫਾਲਟ ਟਰਮੀਨਲ ਲਈ Exec ਆਰਗੂਮੈਂਟ</short>
+        <long>ਡਿਫਾਲਟ ਟਰਮੀਨਲ ਕਾਰਜ ਵਿੱਚ ਵਰਤਣ ਲਈ Exec ਆਰਗੂਮੈਂਟ ਹੈ।</long>
+      </locale>
+
+      <locale name="pl">
+        <short>Argument uruchamiania dla domyślnego terminala</short>
+        <long>Argument uruchomienia używany dla domyślnej aplikacji terminala.</long>
+      </locale>
+
+      <locale name="pt">
+        <short>Argumentos de execução para consola por omissão</short>
+        <long>O argumento de execução a utilizar para a aplicação de consola por omissão.</long>
+      </locale>
+
+      <locale name="pt_BR">
+        <short>Argumento exec para terminal padrão</short>
+        <long>O argumento exec para o aplicativo padrão de terminal.</long>
+      </locale>
+
+      <locale name="ro">
+        <short>Argument „exec” pentru terminalul implicit</short>
+        <long>Argumentul „exec” de utilizat pentru aplicația terminal implicită.</long>
+      </locale>
+
+      <locale name="ru">
+        <short>Аргумент exec для терминала по умолчанию</short>
+        <long>Аргумент exec, использующийся приложением терминала по умолчанию.</long>
+      </locale>
+
+      <locale name="sk">
+        <short>Argument spustenia pre štandardný terminál</short>
+        <long>Parameter používaný pri spúšťaní štandardnej aplikácie terminálu.</long>
+      </locale>
+
+      <locale name="sl">
+        <short>Argument ukaza za zagon privzetega terminala</short>
+        <long>Argument ukaza, ki bo uporabljen za zagon privzetega terminala.</long>
+      </locale>
+
+      <locale name="sq">
+        <short>Argumenti exec për terminalin e prezgjedhur</short>
+        <long>Argumenti exec që duhet përdorur për terminalin e prezgjedhur</long>
+      </locale>
+
+      <locale name="sr">
+        <short>Аргумент извршавања за подразумевани терминал</short>
+        <long>Аргумент извршавања за подразумевани терминалски програм.</long>
+      </locale>
+
+      <locale name="sr@ije">
+        <short>Аргумент извршавања за подразумјевани терминал</short>
+        <long>Аргумент извршавања за подразумјевани терминалски програм.</long>
+      </locale>
+
+      <locale name="sr@latin">
+        <short>Argument izvršavanja za podrazumevani terminal</short>
+        <long>Argument izvršavanja za podrazumevani terminalski program.</long>
+      </locale>
+
+      <locale name="sv">
+        <short>Exekveringsargument för standardterminal</short>
+        <long>Exekveringsargumentet att använda för standardterminalprogrammet.</long>
+      </locale>
+
+      <locale name="ta">
+        <short>இயல்பான முனையத்திற்கான Exec அளவுரு</short>
+        <long>exec அளவுரு பயன்படுத்த வேண்டிய இயல்பான முனைய பயன்பாடு</long>
+      </locale>
+
+      <locale name="te">
+        <short>అప్రమేయ అగ్రం కొరకు నిర్వర్తించు క్రమానుగతసంకేతం</short>
+        <long>అప్రమేయ అగ్రం కార్యక్షేత్రం వాడుట కొరకు నిర్వర్తించు క్రమానుగతసంకేతం.</long>
+      </locale>
+
+      <locale name="th">
+        <short>อาร์กิวเมนต์ exec สำหรับเทอร์มินัลปริยาย</short>
+        <long>อาร์กิวเมนต์สำหรับโปรแกรมเทอร์มินัลปริยาย</long>
+      </locale>
+
+      <locale name="tr">
+        <short>Öntanımlı uçbirim için çalıştırma argümanı</short>
+        <long>Öntanımlı uçbirim uygulamsı için çalıştırma argümanları.</long>
+      </locale>
+
+      <locale name="uk">
+        <short>Аргументи виконання для типового терміналу</short>
+        <long>Аргументи виконання, що використовуються типовою програмою терміналу.</long>
+      </locale>
+
+      <locale name="vi">
+        <short>Đối số thức hiện cho thiết bị cuối mặc định</short>
+        <long>Đối số thực hiện cần dùng cho ứng dụng thiết bị cuối mặc định</long>
+      </locale>
+
+      <locale name="xh">
+        <short>i-Exec argument ye-Terminal emiselweyo</short>
+        <long>Isiphumezi- miyalelo se-exec argument sokusetyenziswa kwinkqubo yekhompyutha ye-terminal emiselweyo.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>默认终端的执行参数</short>
+        <long>为默认终端应用程序所使用的执行参数。</long>
+      </locale>
+
+      <locale name="zh_HK">
+        <short>預設終端機的 Exec 參數</short>
+        <long>預設終端機所使用的 exec 參數。</long>
+      </locale>
+
+      <locale name="zh_TW">
+        <short>預設終端機的 Exec 參數</short>
+        <long>預設終端機所使用的 exec 參數。</long>
+      </locale>
+
+      <locale name="zu">
+        <short>Sebenzisa umgomo wephutha lesigungu</short>
+        <long>Umgomo osetshenziswa ukusebenzisa iphutha lesigungu sesisebenziso.</long>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/desktop/gnome/applications/component_viewer/exec</key>
+      <applyto>/desktop/gnome/applications/component_viewer/exec</applyto>
+      <owner>gnome-vfs</owner>
+      <type>string</type>
+      <default>nautilus %s</default>
+      <locale name="C">
+        <short>Default component viewer application</short>
+        <long>The application to use for viewing files that require a component to view them. The parameter %s will be replaced by the file's URIs, the parameter %c will be replaced by the component IID.</long>
+      </locale>
+
+      <locale name="af">
+        <short>Verstekkomponentbekyker-toepassing</short>
+        <long>Die toepassing waarmee lêers bekyk wat &apos;n komponent vereis om hulle te bekyk. Die parameter %s sal deur die lêer se URI&apos;s vervang word, die parameter %c sal deur die komponent-IID vervang word.</long>
+      </locale>
+
+      <locale name="ar">
+        <short>تطبيق عرض المكونات الإفتراضي</short>
+        <long>التطبيق المستعمل لعرض الملفات التي تستحق مكونا لعرضها. سيعوض المتغير %s بـ URI الملف، كما سيعوض المتغير %c بـ IID المكون.</long>
+      </locale>
+
+      <locale name="as">
+        <short>কম্পোনেন্ট প্ৰদৰ্শনেৰ ডিফল্ট অ্যাপ্লিকেশন</short>
+        <long>আবশ্যকৰূপে কোনো কম্পোনেন্ট সহযোগে প্ৰদৰ্শনেৰ উদ্দেশ্যে চিহ্নিত নথিপত্ৰ প্ৰদৰ্শনেৰ জন্য ব্যবহৃত অ্যাপ্লিকেশন । %s পৰামিতিৰ দ্বাৰা নথিপত্ৰেৰ URI উল্লিখিত হবে ও পৰামিতি %c দ্বাৰা কম্পোনেন্টেৰ IID নিৰ্দিষ্ট কৰা হবে ।</long>
+      </locale>
+
+      <locale name="ast">
+        <short>Aplicación visualizadora del componente</short>
+        <long>L&apos;aplicación que s&apos;usará p&apos;adicar ficheros que requieren un componente pa velos. El parámetru %s podrá ser reemplazáu polos URIs del ficheru, el parámetru %c sedrá reemplazáu pol IID del componente.</long>
+      </locale>
+
+      <locale name="az">
+        <short>Ön qurğulu tərkib hissəsi nümayiş proqramı</short>
+        <long>The application to use for viewing files that require a component to view them. The parameter %s will be replaced by the file&apos;s URIs, the parameter %c will be replaced by the component IID.</long>
+      </locale>
+
+      <locale name="be">
+        <short>Прадвызначанае дастасаваньне прагляду кампанэнта</short>
+        <long>Дастасаваньне для прагляду файлаў, якія патрабуюць кампанэнт, каб прагледзіць іх. Парамэтар %s будзе заменены на URI файлаў, парамэтар %c будзе заменены IID кампанэнту.</long>
+      </locale>
+
+      <locale name="bg">
+        <short>Стандартната програма-компонент за преглед</short>
+        <long>Програмата, която да се използва за преглед на файлове, които изискват определен компонент за преглед. Параметърът %s ще бъде заменен пътя до файла, параметъра %c ще бъде заменен с IID на компонента.</long>
+      </locale>
+
+      <locale name="bn">
+        <short>ডিফল্ট কম্পোনেন্ট প্রদর্শক অ্যাপ্লিকেশন</short>
+        <long>ফাইল প্রদর্শনের জন্য অ্যাপলিকেশনটির একটি কম্পোনেন্ট প্রয়েজন। পরামিতি %s ফাইলের URI দ্বারা পরিবর্তিত হবে, পরামিতি %c পরিবর্তিত হবে কম্পোনেন্টের IID দিয়ে।</long>
+      </locale>
+
+      <locale name="bn_IN">
+        <short>কম্পোনেন্ট প্রদর্শনের ডিফল্ট অ্যাপ্লিকেশন</short>
+        <long>আবশ্যকরূপে কোনো কম্পোনেন্ট সহযোগে প্রদর্শনের উদ্দেশ্যে চিহ্নিত ফাইল প্রদর্শনের জন্য ব্যবহৃত অ্যাপ্লিকেশন। %s পরামিতির দ্বারা ফাইলের URI উল্লিখিত হবে ও পরামিতি %c দ্বারা কম্পোনেন্টের IID নির্দিষ্ট করা হবে।</long>
+      </locale>
+
+      <locale name="bs">
+        <short>Uobičajena aplikacija za pregled komponenti</short>
+        <long>Aplikacija koja se koristi za pregled datoteka čije gledanje zahtijeva komponentu. Parametar %s će biti zamijenjen URI-ima datoteke, a parametar %c će biti zamijenjen IID-om komponente.</long>
+      </locale>
+
+      <locale name="ca">
+        <short>Aplicació de visualització de components predeterminada</short>
+        <long>L&apos;aplicació a usar per a visualitzar fitxers que requereixen un component per a poder ser visualitzats. Es reemplaçarà el paràmetre %s amb l&apos;URI del fitxer, i es reemplaçarà el paràmetre %c amb l&apos;IID del component.</long>
+      </locale>
+
+      <locale name="cs">
+        <short>Implicitní aplikace prohlížeče komponent</short>
+        <long>Aplikace, kterou chcete používat k zobrazování souborů, které k zobrazení vyžadují komponentu. Parametr %s bude nahrazen URI souboru, parametr %c bude nahrazen IID komponenty.</long>
+      </locale>
+
+      <locale name="cy">
+        <short>Porwr cydran rhagosodedig</short>
+        <long>Y rhaglen i&apos;w ddefnyddio i bori ffeiliau sydd angen cydran er mwyn eu gwylio. Amnewidir y paramedr %s gan URI y ffeil, ac amnewidir y paramedr %c gan IID y gydran.</long>
+      </locale>
+
+      <locale name="da">
+        <short>Forvalgt komponentfremviser</short>
+        <long>Det program der skal bruges til at vise filer der kræver en komponent for at vise dem. Parameteren %s vil blive erstattet af filens adresser, parameteren %c vil blive erstattet med komponentens IID.</long>
+      </locale>
+
+      <locale name="de">
+        <short>Vorgabeanwendung für Ansichtskomponenten</short>
+        <long>Die zum Anzeigen von Dateien, die eine Ansichtskomponente erforderlich machen, verwendete Anwendung. Der Parameter %s wird durch die Dateiadresse, der Parameter %d durch die Komponenten-IID ersetzt.</long>
+      </locale>
+
+      <locale name="dz">
+        <short>སྔོན་སྒྲིག་ཆ་ཤས་ མཐོང་བྱེད་གློག་རིམ།</short>
+        <long>ཡིག་སྣོད་ལུ་ བལྟ་ནིའི་གློག་རིམ་དེ་ལུ་ ཆ་ཤས་ཅིག་དགོ ཚད་བཟུང་ %s གི་ཚབ་ལུ་ ཡིག་སྣོད་ཀྱི་ ཡུ་ཨར་ཨའི་ཚུ་ བཙུགས་ནི་དང་ ཚད་བཟུང་ %c གི་ཚབ་ལུ་ ཆ་ཤས་ཀྱི་ཨའི་ཌི་ཌི་ བཙུགས་ནི་ཨིན།</long>
+      </locale>
+
+      <locale name="el">
+        <short>Προεπιλεγμένο συστατικό εφαρμογής προβολής</short>
+        <long>Η εφαρμογή για την προβολή αρχείων που απαιτούν ένα συστατικό για την προβολή τους. Η παράμετρος %s θα αντικαταστηθεί από το  URIs αρχείου και η παράμετρος %c θα αντικατασταθεί από το IID συστατικού.</long>
+      </locale>
+
+      <locale name="en_CA">
+        <short>Default component viewer application</short>
+        <long>The application to use for viewing files that require a component to view them. The parameter %s will be replaced by the file&apos;s URIs, and the parameter %c will be replaced by the component IID.</long>
+      </locale>
+
+      <locale name="en_GB">
+        <short>Default component viewer application</short>
+        <long>The application to use for viewing files that require a component to view them. The parameter %s will be replaced by the file&apos;s URIs, the parameter %c will be replaced by the component IID.</long>
+      </locale>
+
+      <locale name="es">
+        <short>Aplicación visualizadora del componente predeterminada</short>
+        <long>La aplicación que se usará para ver archivos que requieren un componente para verlos. El parámetro %s podrá ser reemplazado por los URI del archivo, el parámetro %c será reemplazado por el IID del componente.</long>
+      </locale>
+
+      <locale name="et">
+        <short>Vaikimisi komponentide vaatamise rakendus</short>
+        <long>Rakendus, mida kasutada failide puhul, mille vaatamiseks on vaja kasutada komponenti. Parameeter %s asendatakse faili URI&apos;ga, parameeter %c komponendi IID&apos;ga.</long>
+      </locale>
+
+      <locale name="eu">
+        <short>Osagai lehenetsia, bistaratzaile aplikazioarena.</short>
+        <long>Fitxategiak bistaratzeko eta hauek ikusteko behar duen osagaia eskatzen duen aplikazioa. %s parametroa fitxategiaren URIagatik, eta %c parametroa IID osagaiatik ordeztuko dira.</long>
+      </locale>
+
+      <locale name="fi">
+        <short>Oletusarvoinen komponenttien katselusovellus</short>
+        <long>Katseluun komponentin vaativien tiedostojen katselusovellus. Parametri %s korvautuu tiedoston URI:lla, parametri %c komponentin IID:llä.</long>
+      </locale>
+
+      <locale name="fr">
+        <short>Visionneur de composants par défaut</short>
+        <long>L&apos;application à utiliser pour visualiser les fichiers qui nécessitent un composant pour les voir. Le paramètre %s sera remplacé par l&apos;URI du fichier, le paramètre %c sera remplacé par le composant IID.</long>
+      </locale>
+
+      <locale name="gl">
+        <short>Aplicación predeterminada para o visualizador de compoñentes</short>
+        <long>A aplicación usada para ver ficheiros que requiren un compoñente para visualizalos. O parámetro %s substitúese polos URI do ficheiro e o parámetro %c polo IID do compoñente.</long>
+      </locale>
+
+      <locale name="gu">
+        <short>મૂળભૂત ભાગો દેખાડનાર કાર્યક્રમ</short>
+        <long>ફાઇલોને જોવા માટે ઉપયોગમાં લેવાતા કાર્યક્રમ માટે તેને જોવા માટે ભાગ જરુરી છે. પરિમાણ %s ફાઇલના URI થી બદલાઇ જશે, પરિમાણ %c ભાગI ID થી બદલાઇ જશે.</long>
+      </locale>
+
+      <locale name="he">
+        <short>יישום להצגת רכיבים ברירת מחדל</short>
+        <long>The application to use for viewing files that require a component to view them. The parameter %s will be replaced by the file&apos;s URIs, the parameter %c will be replaced by the component IID.</long>
+      </locale>
+
+      <locale name="hi">
+        <short>डिफ़ॉल्ट अवयव प्रदर्शक अनुप्रयोग</short>
+        <long>फाइल देखने के लिये प्रयोगार्थ अनुप्रयोग जो उनको देखने के लिये एक घटक की जरूरत समझता है. पैरामीटर %s फाइल URIs के द्वारा प्रतिस्थापित होगा, पैरामीटर %c को घटक IID से विस्थापित किया जायेगा.</long>
+      </locale>
+
+      <locale name="hr">
+        <short>Uobičajeni program za pregled komponenti</short>
+        <long>Program koji se koristi za pregled datoteka, te koji zahtjeva komponentu za pregledavanje istih. Parametar %s će biti zamijenjen s URI datoteke, a parametar %c će biti zamijenjen s IID komponente.</long>
+      </locale>
+
+      <locale name="hu">
+        <short>Alapértelmezett komponensnéző alkalmazás</short>
+        <long>Az azon fájlok megtekintésére használt alkalmazás, amelyek megtekintéséhez egy összetevő szükséges. A %s paraméter a fájl URI címére, a %c az összetevő IID-jére lesz cserélve.</long>
+      </locale>
+
+      <locale name="id">
+        <short>Penampil standar</short>
+        <long>Aplikasi yang digunakan untuk menampilkan isi file ini. Parameter %s akan disubstitusi dengan URI file ini, dan parameter %c akan digantikan dengan IID komponennya</long>
+      </locale>
+
+      <locale name="it">
+        <short>Applicazione di visualizzatore componente predefinita</short>
+        <long>L&apos;applicazione da usare per visualizzare i file che richiedono un componente per essere visualizzati. Il parametro %s viene sostituito con l&apos;URI del file, il parametro %c viene sostituito con l&apos;IID del componente.</long>
+      </locale>
+
+      <locale name="ja">
+        <short>デフォルトのコンポーネント・ビューア・アプリケーション</short>
+        <long>コンポーネントが必要となるファイルを閲覧するためのアプリケーションです。%s はファイルの URI で、パラメータ %c はコポーネントの IID でそれぞれ置き換えられます。</long>
+      </locale>
+
+      <locale name="ka">
+        <short>კომპონენტების ჩვენების ნაგულისხმები პროგრამა</short>
+        <long>პროგრამა ამ ფაილის საჩვენებლად საჭიროებს დამატებით კომპონენტს. პარამეტრი %s შეიცვლება ფაილის URI-თ, პარამეტრი %c შეიცვლება კომპონენტის IID-ით.</long>
+      </locale>
+
+      <locale name="kn">
+        <short>ಡೀಫಾಲ್ಟ್‍ ಘಟಕ ನೋಡುವ ಅನ್ವಯ</short>
+        
+      </locale>
+
+      <locale name="ko">
+        <short>기본 컴포넌트 보기 프로그램</short>
+        <long>볼려면 컴포넌트가 필요한 파일을 볼 때 사용할 프로그램. 인자 %s은(는) 파일의 URI이고, 인자 %c은(는) 컴포넌트 IID입니다.</long>
+      </locale>
+
+      <locale name="lt">
+        <short>Numatytoji komponentų peržiūros programa</short>
+        <long>Programa naudojama peržiūrėti failus, kurie reikalauja specialaus peržiūros komponento. Parametras %s bus pakeistas failo adresu, parametras %c bus pakeistas komponento IID.</long>
+      </locale>
+
+      <locale name="lv">
+        <short>Noklusēta komponente pārlūka lietotnei</short>
+        <long>Lietotne, ko izmanto, lai aplūkotu datnes, kas pieprasa komponenti, lai aplūkotu tās. Parametrs %s būs aizvietots ar datnes URI, parametrs %c būs aizvietots ar komponenta IID.</long>
+      </locale>
+
+      <locale name="mai">
+        <short>मूलभूत अवयव प्रदर्शक अनुप्रयोग</short>
+        <long>फाइल देखबाक लेल प्रयोगार्थ अनुप्रयोग जे हुनका देखबाक लेल एकटा घटक क&apos; जरूरत समझैत अछि. पैरामीटर %s फाइल URIs क&apos; द्वारा प्रतिस्थापित हएताह, पैरामीटर %c केँ घटक IID सँ विस्थापित कएल जएताह.</long>
+      </locale>
+
+      <locale name="mg">
+        <short>Rindranasa fizahana singa fototra lasitra</short>
+        <long>Ny rindranasa ampiasaina hizahana ireo rakitra mila singa fototra raha hizaha azy ireo. Hosoloina ny URIn&apos;ilay rakitra ny mpizahaka %s; hosoloina ny IIDn&apos;ilay singa fototra ny mpizahaka %c.</long>
+      </locale>
+
+      <locale name="mk">
+        <short>Стандардна апликација за преглед на содржина</short>
+        <long>Апликацијата што ќе се користи за преглед на датотеки кои што имаат потреба од компонента за преглед. Параметарот %s ќе биде заменет од страна на URI, параметрот %c ќе биде заменете од IID на компонентата.</long>
+      </locale>
+
+      <locale name="ml">
+        <short>ഡീഫോള്‍ട്ടായ കംപോണന്‍റ് വ്യൂവര്‍ ആപ്ളിക്കേഷന്‍</short>
+        <long>പ്രയോഗത്തില്‍ ഉപയോഗിക്കുന്ന ഫയലുകള്‍ കാണുന്നതിനായി ആവശ്യമുളള ഘടകം. %s പരാമീറ്ററിന് പകരം ഫയലിന്‍റെ URI, %c പരാമീറ്ററിന് പകരം ഘടകം IID എന്നിവ ഉപയോഗിക്കുന്നു.</long>
+      </locale>
+
+      <locale name="mn">
+        <short>Стандарт бүрэлдэхүүн харагч програм</short>
+        <long>Харуулах бүрэлдэхүүн шаардлагатай файлууд харуулахад хэрэглэгдэх програм. %s параметр файлын хаягаар, %c параметр бүрэлдэхүүний-IID -р орлуулагдана.</long>
+      </locale>
+
+      <locale name="mr">
+        <short>मुलभूत भाग दर्शक कार्यक्रम</short>
+        <long>घटकाची आवश्यकता लागत असणाऱ्या फाइलला पहाण्याकरीताचे अनुप्रयोग. घटक %s फाइलच्या URI बदलविले जाईल, बाब %c घटकाच्या IID शी बदलविले जाईल.</long>
+      </locale>
+
+      <locale name="ms">
+        <short>Aplikasi pelihat komponen default</short>
+        <long>Aplikasi digunakan untuk melihat fail yang memerlukan komponen untuk melihatnya. Parameter %s akan digantikan dengan URI fail, parameter %c akan digantikan dengan IID komponen.</long>
+      </locale>
+
+      <locale name="nb">
+        <short>Forvalgt applikasjon for visning av komponent</short>
+        <long>Applikasjon som skal brukes for å vise filer som krever en komponent for visning. Parameteren %s vil erstattes med filens URIer, parameteren %c vil erstattes med komponentens IID.</long>
+      </locale>
+
+      <locale name="ne">
+        <short>पूर्वनिर्धारित अवयव दर्शक अनुप्रयोग</short>
+        <long>फाइल हेर्नका लागि प्रयोग गरिने अनुप्रयोगले ती फाइल हेर्नलाई केही तत्वको आवश्यकता महसुस गर्दछ । %s परामिति URIs फाइलमा प्रतिस्थापन गरिन्छन्, %c परामिति IID अवयवद्वारा प्रस्तिस्थापन गरिन्छ ।</long>
+      </locale>
+
+      <locale name="nl">
+        <short>Standaard componentweergave-programma</short>
+        <long>Te gebruiken programma voor weergave van bestanden die een component vereisen. De parameter %s zal vervangen worden door de URI van het bestand en de parameter %c zal vervangen worden de de IID van de component.</long>
+      </locale>
+
+      <locale name="nn">
+        <short>Standard komponentvisarprogram</short>
+        <long>Programmet som skal brukast til å visa filer som krev ein eigen komponent for å visast. Parameteren %s vert erstatta av URI-en til fila, og parameteren %c vert erstatta med komponenten sin IID.</long>
+      </locale>
+
+      <locale name="nso">
+        <short>Dira gore tirišo ya karolo ya go lebelela e hlaelele</short>
+        <long>Tirišo yeo e tla dirišetšwago go lebelela difaele tšeo di nyakago thušo gore o di lebelele. Ditekanyo tša %s di tla tšeelwa legato ke di-STS tša faele, tekanyo ya %c e tla tšeelwa legato ke thušo ya IID.</long>
+      </locale>
+
+      <locale name="or">
+        <short>ପୂର୍ବନିର୍ଦ୍ଧାରିତ ଯନ୍ତ୍ରାଶଂ ଦର୍ଶକ ପ୍ରୟୋଗ</short>
+        <long>ଯେଉଁ ଫାଇଲଗୁଡିକ ଦେଖିବା ପାଇଁ ଗୋଟିଏ ଯନ୍ତ୍ରାଂଶ ଆବଶ୍ଯକ, ସେମାନଙ୍କ ପାଇଁ କେଉଁ ପ୍ରୟୋଗ ବ୍ଯବହାର କରାଯିବ। ପ୍ରାଚଳ %s ଫାଇଲର ୟୁ.ଆର୍.ଆଇ. ଦ୍ବାରା ବଦଳ ହେବ, ପ୍ରାଚଳ %c ଯନ୍ତ୍ରାସଂର ଆଇ.ଆଇ.ଡି. ଦ୍ବାରା ବଦଳ ହେବ।</long>
+      </locale>
+
+      <locale name="pa">
+        <short>ਡਿਫਾਲਟ ਭਾਗ ਦਰਸ਼ਕ ਐਪਲੀਕੇਸ਼ਨ</short>
+        <long>ਫਾਇਲਾਂ ਨੂੰ ਵੇਖਣ ਲਈ ਵਰਤਣ ਵਾਲਾ ਕਾਰਜ, ਜੋ ਕਿ ਹਿੱਸੇ ਵੇਖਣ ਦੇ ਲਈ ਜ਼ਰੂਰੀ ਹੈ। ਪੈਰਾਮੀਟਰ %s ਨੂੰ ਫਾਇਲ ਦੇ URI ਨਾਲ ਤਬਦੀਲ ਕਰ ਦਿੱਤਾ ਜਾਵੇਗਾ, ਪੈਰਾਮੀਟਰ %c ਨੂੰ ਹਿੱਸੇ IID ਨਾਲ ਤਬਦੀਲ ਕਰ ਦਿੱਤਾ ਜਾਵੇਗਾ।</long>
+      </locale>
+
+      <locale name="pl">
+        <short>Domyślna aplikacja przeglądarki komponentów</short>
+        <long>Aplikacja używana do przeglądania plików wymagająca komponentu do ich obejrzenia. Parametr %s zostanie zastąpiony przez URI pliku, parametr %c zostanie zastąpiony poprzez IID komponentu.</long>
+      </locale>
+
+      <locale name="pt">
+        <short>Aplicação visualizadora por omissão de componente</short>
+        <long>A aplicação a utilizar para visualizar ficheiros que requerem um componente para que possam ser visualizadas. O parâmetro %s será substituído pelo URI do ficheiro, o parâmetro %c será substituído pelo IID do componente.</long>
+      </locale>
+
+      <locale name="pt_BR">
+        <short>Aplicativo padrão para visualização de componentes</short>
+        <long>O aplicativo para ser usado na visualização de arquivos que requerem um componente para serem visualizados. O parâmetro %s será substituído pelos URIs dos arquivos e o parâmetro %c será substituído pelo IID do componente.</long>
+      </locale>
+
+      <locale name="ro">
+        <short>Aplicație implicită de vizualizare înglobată</short>
+        <long>Aplicație de utilizat pentru vizualizarea fișierelor ce necesită o componentă de vizualizare. Parametrul %s va fi înlocuit cu URI-ul fișierului, iar parametrul %c va fi înlocuit cu componenta IID.</long>
+      </locale>
+
+      <locale name="ru">
+        <short>Приложение просмотра компонентов по умолчанию</short>
+        <long>Приложение, используемое для просмотра файлов, требующих компонента для просмотра. Параметр %s будет заменён адресом (URI) файла, параметр %c - идентификатором (IID) компонента.</long>
+      </locale>
+
+      <locale name="sk">
+        <short>Štandardná aplikácia prehliadača súčastí</short>
+        <long>Aplikácia používaná pre zobrazenie súborov, ktoré vyžadujú nejakú súčasť pre zobrazenie. Parameter %s bude nahradený URI súborov, parameter %c bude nahradený IID súčasti.</long>
+      </locale>
+
+      <locale name="sl">
+        <short>Privzet pregledovalnik komponent:</short>
+        <long>Program za pregledovanje datotek, ki za ogled zahtevajo komponento. Parameter %s bo zamenjan z URI-jem datoteke, parameter %c pa z IID komponente.</long>
+      </locale>
+
+      <locale name="sq">
+        <short>Programi i prezgjedhur për shikimin e komponuesit</short>
+        <long>Programi që duhet përdorur për të shikuar files që kanë nevojë për një komponent që të shikohen. Parametri %s do të zevendësohet nga URl e file, parametri %c do të zevendësohet nga IID e komponentit.</long>
+      </locale>
+
+      <locale name="sr">
+        <short>Подразумевани програм за преглед делова</short>
+        <long>Програм који се користи за прегледање датотека које захтевају компоненту за преглед. Параметар %s ће бити замењен адресом датотеке, а параметар %c ће бити замењен IID-ом компоненте.</long>
+      </locale>
+
+      <locale name="sr@ije">
+        <short>Подразумјевани програм за преглед дијелова</short>
+        <long>Програм који се користи за прегледање датотека које захтјевају компоненту за преглед. Параметар %s ће бити замјењен адресом датотеке, а параметар %c ће бити замјењен IID-ом компоненте.</long>
+      </locale>
+
+      <locale name="sr@latin">
+        <short>Podrazumevani program za pregled delova</short>
+        <long>Program koji se koristi za pregledanje datoteka koje zahtevaju komponentu za pregled. Parametar %s će biti zamenjen adresom datoteke, a parametar %c će biti zamenjen IID-om komponente.</long>
+      </locale>
+
+      <locale name="sv">
+        <short>Standardprogram för komponentvisning</short>
+        <long>Programmet som används för visning av filer som kräver en komponent för att visa dem. Parametern %s kommer att ersättas av filens URI:er, och parametern %c kommer att ersättas av komponent-IID.</long>
+      </locale>
+
+      <locale name="ta">
+        <short>இயல்பான ான பொருள் காட பயன்பாடுகள்ின்</short>
+        <long>கோப்புகளை பார்க்க தேவைப்படும் பயன்பாடுகளுக்கு பொருள்கள் தேவை. அளவுரு %s அதன் URI யால் மாற்றப்படும், அளவுரு %c அதன் பொருள் அடையாளத்தால் மாற்றப்படும்</long>
+      </locale>
+
+      <locale name="te">
+        <short>అప్రమేయ భాగమైన దర్శకి కార్యక్షేత్రం</short>
+        <long>దస్త్రములను దర్శించుటకు వుపయోగించే అనువర్తనముకు వాటిని దర్శించుటకు మూలకం అవసరమైంది. పారామితి %s దస్త్రముయొక్క URIల చేత పునఃస్థాపించబడుతుంది, పారామితి %c మూలకం IID చేత పునఃస్థాపించబడుతుంది.</long>
+      </locale>
+
+      <locale name="th">
+        <short>โปรแกรมแสดงปริยาย</short>
+        <long>โปรแกรมแสดง แฟ้มที่ต้องใช้คอมโพเนนต์แสดง %s จะถูกแทนที่ด้วย URI ของแฟ้ม และ %c จะถูกแทนที่ด้วย IID ของคอมโพเนนต์</long>
+      </locale>
+
+      <locale name="tr">
+        <short>Öntanımlı içerik görüntüleme uygulaması</short>
+        <long>Görüntülemek için kullanılan uygulama, görüntülemek için içerik gerektirir. %s parametresi doyaların URI &apos;si ile, %c parametresi ise içeriğin IID&apos;si ile değiştirilecek. </long>
+      </locale>
+
+      <locale name="uk">
+        <short>Типова програма перегляду компонентів</short>
+        <long>Програма, що використовується для перегляду файлів, для перегляду яких потрібен компонент. Параметр %s буде замінений адресою (URI) файлу, параметр %c - ідентифікатором (IID) компоненту.</long>
+      </locale>
+
+      <locale name="vi">
+        <short>Ứng dụng xem thành phần mặc định</short>
+        <long>Ứng dụng cần dùng để xem tập tin cần thiết thành phần để xem nó. Tham số %s sẽ được thay thế bằng các URI của tập tin đó, tham số %c sẽ được thay thế bằng IID của thành phần.</long>
+      </locale>
+
+      <locale name="xh">
+        <short>Isixhobo esimiselweyo esibonakalisayo senkqubo yekhompyutha</short>
+        <long>Inkqubo yekhompyutha omawuyisebenzise ukujonga iifayili ezifuna isixhobo ukuzijonga. Ixabiso lento ejikajikayo %s kuyakubakhona endaweni yalo iifayili ze-URIs, ixabiso lento ejikayo %c kuyakubakhona endaweni yaloisixhobo se-IID.</long>
+      </locale>
+
+      <locale name="zh_CN">
+        <short>默认组件查看器应用程序</short>
+        <long>该应用程序用于查看需要组件才能查看的文件。参数 %s 将被替换为文件的 URI，参数 %c 将被替换为组件 IID。</long>
+      </locale>
+
+      <locale name="zh_HK">
+        <short>預設的元件檢視程式</short>
+        <long>有些檔案需要有一個元件來檢視它們，這裏指定檢視所用的程式。參數 %s 會被檔案的 URI 所取代，參數 %c 會被元件 IID 所取代。</long>
+      </locale>
+
+      <locale name="zh_TW">
+        <short>預設的元件檢視程式</short>
+        <long>有些檔案需要有一個元件來檢視它們，這裡指定檢視所用的程式。參數 %s 會被檔案的 URI 所取代，參數 %c 會被元件 IID 所取代。</long>
+      </locale>
+
+      <locale name="zu">
+        <short>Iphutha lesitho sokusetshenziswa sokubuka</short>
+        <long>Isisebenziso sokubona ohele abadinga isitho sokubabona. Isigamu %s sizokubuyiselwa ngehele URIs, isigamu %c sizokubuyiselwa ngesitho IID.</long>
+      </locale>
+    </schema>
+  </schemalist>
+</gconfschemafile>

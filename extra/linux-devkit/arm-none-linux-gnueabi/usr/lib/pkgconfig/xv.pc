@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: Xv
+Description: The Xv Library
+Version: 1.0.6
+Requires: xproto videoproto
+Requires.private: x11 xext
+Cflags: -I${includedir}
+Libs: -L${libdir} -lXv

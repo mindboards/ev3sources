@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="video/mp4">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>MPEG-4 video</comment>
+  <comment xml:lang="be@latin">Videa MPEG-4</comment>
+  <comment xml:lang="bg">Видео — MPEG-4</comment>
+  <comment xml:lang="ca">vídeo MPEG-4</comment>
+  <comment xml:lang="cs">Video MPEG-4</comment>
+  <comment xml:lang="de">MPEG-4-Video</comment>
+  <comment xml:lang="en_GB">MPEG-4 video</comment>
+  <comment xml:lang="es">vídeo MPEG-4</comment>
+  <comment xml:lang="eu">MPEG-4 bideoa</comment>
+  <comment xml:lang="fi">MPEG-4-video</comment>
+  <comment xml:lang="fr">vidéo MPEG-4</comment>
+  <comment xml:lang="ga">físeán MPEG-4</comment>
+  <comment xml:lang="hu">MPEG-4 videó</comment>
+  <comment xml:lang="id">Video MPEG-4</comment>
+  <comment xml:lang="it">Video MPEG-4</comment>
+  <comment xml:lang="ko">MPEG-4 비디오</comment>
+  <comment xml:lang="lt">MPEG-4 vaizdas</comment>
+  <comment xml:lang="nb">MPEG-4-film</comment>
+  <comment xml:lang="nl">MPEG4-video</comment>
+  <comment xml:lang="nn">MPEG-4-video</comment>
+  <comment xml:lang="pl">Plik wideo MPEG-4</comment>
+  <comment xml:lang="pt_BR">Vídeo MPEG-4</comment>
+  <comment xml:lang="ru">MPEG-4 видео</comment>
+  <comment xml:lang="sv">MPEG-4-video</comment>
+  <comment xml:lang="uk">Відео-кліп MPEG-4</comment>
+  <comment xml:lang="vi">Ảnh động MPEG-4</comment>
+  <alias type="video/mp4v-es"/>
+  <alias type="video/x-m4v"/>
+</mime-type>

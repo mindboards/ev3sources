@@ -1,0 +1,25 @@
+#!/bin/sh
+if test "x$D" != "x"; then
+	OPT="-r $D"
+else
+	OPT="-s"
+fi
+update-rc.d $OPT udev-cache start 12 S .
+
+if [ -e $D/lib/udev/rules.d ] && [ ! -L $D/lib/udev/rules.d ] ; then
+	echo "$D/lib/udev/rules.d is not a symlink, fixing that"
+	mv $D/lib/udev/rules.d/* $D/etc/udev/rules.d/
+	rm -rf $D/lib/udev/rules.d
+	ln -sf /etc/udev/rules.d $D/lib/udev/
+fi
+if test "x$D" != "x"; then
+	OPT="-r $D"
+else
+	OPT="-s"
+fi
+update-rc.d $OPT udev start 03 S .
+if [ x"$D" = "x" ]; then
+	if [ -e /etc/ld.so.conf ] ; then
+		[ -x /sbin/ldconfig ] && /sbin/ldconfig
+	fi
+fi

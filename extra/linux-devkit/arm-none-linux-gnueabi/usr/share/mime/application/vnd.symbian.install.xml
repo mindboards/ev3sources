@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.symbian.install">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>SIS package</comment>
+  <comment xml:lang="be@latin">Pakunak SIS</comment>
+  <comment xml:lang="bg">Пакет — SIS</comment>
+  <comment xml:lang="ca">paquet SIS</comment>
+  <comment xml:lang="cs">Balíček SIS</comment>
+  <comment xml:lang="es">paquete SIS</comment>
+  <comment xml:lang="eu">SIS paketea</comment>
+  <comment xml:lang="fi">SIS-paketti</comment>
+  <comment xml:lang="fr">paquet SIS</comment>
+  <comment xml:lang="ga">pacáiste SIS</comment>
+  <comment xml:lang="hu">SIS csomag</comment>
+  <comment xml:lang="id">Paket SIS</comment>
+  <comment xml:lang="it">Pacchetto SIS</comment>
+  <comment xml:lang="ko">SIS 꾸러미</comment>
+  <comment xml:lang="lt">SIS paketas</comment>
+  <comment xml:lang="nb">SIS-pakke</comment>
+  <comment xml:lang="nl">SIS-pakket</comment>
+  <comment xml:lang="pt_BR">Pacote SIS</comment>
+  <comment xml:lang="sv">SIS-paket</comment>
+  <comment xml:lang="uk">Пакет SIS</comment>
+  <comment xml:lang="vi">Gói SIS</comment>
+  <acronym>SIS</acronym>
+  <expanded-acronym>Symbian Installation File</expanded-acronym>
+  <generic-icon name="package-x-generic"/>
+</mime-type>

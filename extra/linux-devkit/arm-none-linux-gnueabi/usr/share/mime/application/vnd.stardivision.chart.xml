@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.stardivision.chart">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>StarChart chart</comment>
+  <comment xml:lang="az">StarChart cədvəli</comment>
+  <comment xml:lang="be@latin">Dyjahrama StarChart</comment>
+  <comment xml:lang="bg">Диаграма — StarChart</comment>
+  <comment xml:lang="ca">diagrama de StarChart</comment>
+  <comment xml:lang="cs">Graf StarChart</comment>
+  <comment xml:lang="cy">Siart StarChart</comment>
+  <comment xml:lang="da">StarChart-diagram</comment>
+  <comment xml:lang="de">StarChart-Diagramm</comment>
+  <comment xml:lang="el">γράφημα StarChart</comment>
+  <comment xml:lang="en_GB">StarChart chart</comment>
+  <comment xml:lang="eo">StarChart-diagramo</comment>
+  <comment xml:lang="es">gráfica de StarChart</comment>
+  <comment xml:lang="eu">StarChart diagrama</comment>
+  <comment xml:lang="fi">StarChart-kaavio</comment>
+  <comment xml:lang="fr">graphique StarChart</comment>
+  <comment xml:lang="ga">cairt StarChart</comment>
+  <comment xml:lang="hu">StarChart-grafikon</comment>
+  <comment xml:lang="id">Bagan StarChart</comment>
+  <comment xml:lang="it">Grafico StarChart</comment>
+  <comment xml:lang="ja">StarChart チャート</comment>
+  <comment xml:lang="ko">StarCalc 표</comment>
+  <comment xml:lang="lt">StarChart diagrama</comment>
+  <comment xml:lang="ms">Carta StarChart</comment>
+  <comment xml:lang="nb">StarChart graf</comment>
+  <comment xml:lang="nl">StarChart-kaart</comment>
+  <comment xml:lang="nn">StarChart-graf</comment>
+  <comment xml:lang="pl">Wykres StarChart</comment>
+  <comment xml:lang="pt">gráfico do StarChart</comment>
+  <comment xml:lang="pt_BR">Gráfico StarChart</comment>
+  <comment xml:lang="sq">Grafik StarChart</comment>
+  <comment xml:lang="sr">StarChart графикон</comment>
+  <comment xml:lang="sv">StarChart-diagram</comment>
+  <comment xml:lang="uk">Діаграма StarChart</comment>
+  <comment xml:lang="vi">Đồ thị StarChart</comment>
+  <comment xml:lang="zh_CN">StarChart 图表</comment>
+  <comment xml:lang="zh_TW">StarChart 圖表</comment>
+  <generic-icon name="x-office-spreadsheet"/>
+</mime-type>

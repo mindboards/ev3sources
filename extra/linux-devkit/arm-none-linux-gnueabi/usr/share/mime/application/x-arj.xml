@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-arj">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>ARJ archive</comment>
+  <comment xml:lang="az">ARJ arxivi</comment>
+  <comment xml:lang="be@latin">Archiŭ ARJ</comment>
+  <comment xml:lang="bg">Архив — ARJ</comment>
+  <comment xml:lang="ca">arxiu ARJ</comment>
+  <comment xml:lang="cs">Archiv ARJ</comment>
+  <comment xml:lang="cy">Archif ARJ</comment>
+  <comment xml:lang="da">ARJ-arkiv</comment>
+  <comment xml:lang="de">ARJ-Archiv</comment>
+  <comment xml:lang="el">αρχείο ARJ</comment>
+  <comment xml:lang="en_GB">ARJ archive</comment>
+  <comment xml:lang="eo">ARJ-arkivo</comment>
+  <comment xml:lang="es">archivador ARJ</comment>
+  <comment xml:lang="eu">ARJ artxiboa</comment>
+  <comment xml:lang="fi">ARJ-arkisto</comment>
+  <comment xml:lang="fr">archive ARJ</comment>
+  <comment xml:lang="ga">cartlann ARJ</comment>
+  <comment xml:lang="hu">ARJ-archívum</comment>
+  <comment xml:lang="id">Arsip ARJ</comment>
+  <comment xml:lang="it">Archivio ARJ</comment>
+  <comment xml:lang="ja">ARJ アーカイブ</comment>
+  <comment xml:lang="ko">ARJ 압축파일</comment>
+  <comment xml:lang="lt">ARJ archyvas</comment>
+  <comment xml:lang="ms">Arkib ARJ</comment>
+  <comment xml:lang="nb">ARJ-arkiv</comment>
+  <comment xml:lang="nl">ARJ-archief</comment>
+  <comment xml:lang="nn">ARJ-arkiv</comment>
+  <comment xml:lang="pl">Archiwum ARJ</comment>
+  <comment xml:lang="pt">arquivo ARJ</comment>
+  <comment xml:lang="pt_BR">Pacote ARJ</comment>
+  <comment xml:lang="ru">архив ARJ</comment>
+  <comment xml:lang="sq">Arkiv ARJ</comment>
+  <comment xml:lang="sr">ARJ архива</comment>
+  <comment xml:lang="sv">ARJ-arkiv</comment>
+  <comment xml:lang="uk">Архів ARJ</comment>
+  <comment xml:lang="vi">Kho nén ARJ</comment>
+  <comment xml:lang="zh_CN">ARJ 压缩包</comment>
+  <comment xml:lang="zh_TW">ARJ 保存檔</comment>
+  <acronym>ARJ</acronym>
+  <expanded-acronym>Archived by Robert Jung</expanded-acronym>
+  <generic-icon name="package-x-generic"/>
+</mime-type>

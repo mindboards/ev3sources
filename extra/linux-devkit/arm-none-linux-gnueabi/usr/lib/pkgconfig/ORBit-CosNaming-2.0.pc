@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+
+Name: ORBit-CosNaming-2.0
+Description: High-performance CORBA Object Request Broker - Naming Service.
+Version: 2.14.17
+Requires: ORBit-2.0
+Libs: -L${libdir} -lORBitCosNaming-2
+Cflags: -I${includedir}/orbit-2.0

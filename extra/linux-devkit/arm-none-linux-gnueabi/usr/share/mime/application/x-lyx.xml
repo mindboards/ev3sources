@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-lyx">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>LyX document</comment>
+  <comment xml:lang="be@latin">Dakument LyX</comment>
+  <comment xml:lang="bg">Документ — LyX</comment>
+  <comment xml:lang="ca">document de LyX</comment>
+  <comment xml:lang="cs">Dokument LyX</comment>
+  <comment xml:lang="da">LyX-dokument</comment>
+  <comment xml:lang="de">LyX-Dokument</comment>
+  <comment xml:lang="el">έγγραφο LyX</comment>
+  <comment xml:lang="en_GB">LyX document</comment>
+  <comment xml:lang="eo">LyX-dokumento</comment>
+  <comment xml:lang="es">documento de LyX</comment>
+  <comment xml:lang="eu">LyX dokumentua</comment>
+  <comment xml:lang="fi">LyX-asiakirja</comment>
+  <comment xml:lang="fr">document LyX</comment>
+  <comment xml:lang="ga">cáipéis LyX</comment>
+  <comment xml:lang="hu">LyX-dokumentum</comment>
+  <comment xml:lang="id">Dokumen LyX</comment>
+  <comment xml:lang="it">Documento LyX</comment>
+  <comment xml:lang="ja">LyX ドキュメント</comment>
+  <comment xml:lang="ko">LyX 문서</comment>
+  <comment xml:lang="lt">LyX dokumentas</comment>
+  <comment xml:lang="ms">Dokumen LyX</comment>
+  <comment xml:lang="nb">LyX-dokument</comment>
+  <comment xml:lang="nl">LyX-document</comment>
+  <comment xml:lang="nn">LyX-dokument</comment>
+  <comment xml:lang="pl">Dokument LyX</comment>
+  <comment xml:lang="pt">documento LyX</comment>
+  <comment xml:lang="pt_BR">Documento LyX</comment>
+  <comment xml:lang="ru">документ LyX</comment>
+  <comment xml:lang="sq">Dokument LyX</comment>
+  <comment xml:lang="sr">LyX документ</comment>
+  <comment xml:lang="sv">LyX-dokument</comment>
+  <comment xml:lang="uk">Документ LyX</comment>
+  <comment xml:lang="vi">Tài liệu LyX</comment>
+  <comment xml:lang="zh_CN">LyX 文档</comment>
+  <comment xml:lang="zh_TW">LyX 文件</comment>
+  <sub-class-of type="text/plain"/>
+  <generic-icon name="x-office-document"/>
+  <alias type="text/x-lyx"/>
+</mime-type>

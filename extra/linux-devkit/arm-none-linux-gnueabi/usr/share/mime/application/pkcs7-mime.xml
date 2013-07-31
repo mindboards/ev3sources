@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/pkcs7-mime">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>S/MIME file</comment>
+  <comment xml:lang="az">S/MIME faylı</comment>
+  <comment xml:lang="be@latin">Fajł S/MIME</comment>
+  <comment xml:lang="bg">Файл — S/MIME</comment>
+  <comment xml:lang="ca">fitxer S/MIME</comment>
+  <comment xml:lang="cs">Soubor S/MIME</comment>
+  <comment xml:lang="cy">Ffeil S/MIME</comment>
+  <comment xml:lang="da">S/MIME-fil</comment>
+  <comment xml:lang="de">S/MIME-Datei</comment>
+  <comment xml:lang="el">αρχείο S/MIME</comment>
+  <comment xml:lang="en_GB">S/MIME file</comment>
+  <comment xml:lang="eo">S/MIME-dosiero</comment>
+  <comment xml:lang="es">archivo S/MIME</comment>
+  <comment xml:lang="eu">S/MIME fitxategia</comment>
+  <comment xml:lang="fi">S/MIME-tiedosto</comment>
+  <comment xml:lang="fr">fichier S/MIME</comment>
+  <comment xml:lang="ga">comhad S/MIME</comment>
+  <comment xml:lang="hu">S/MIME-fájl</comment>
+  <comment xml:lang="id">Berkas S/MIME</comment>
+  <comment xml:lang="it">File S/MIME</comment>
+  <comment xml:lang="ja">S/MIME ファイル</comment>
+  <comment xml:lang="ko">S/MIME 파일</comment>
+  <comment xml:lang="lt">S/MIME rinkmena</comment>
+  <comment xml:lang="ms">Fail S/MIME</comment>
+  <comment xml:lang="nb">S/MIME-fil</comment>
+  <comment xml:lang="nl">S/MIME-bestand</comment>
+  <comment xml:lang="nn">S/MIME-fil</comment>
+  <comment xml:lang="pl">Plik S/MIME</comment>
+  <comment xml:lang="pt">ficheiro S/MIME</comment>
+  <comment xml:lang="pt_BR">Arquivo S/MIME</comment>
+  <comment xml:lang="sq">File S/MIME</comment>
+  <comment xml:lang="sr">S/MIME датотека</comment>
+  <comment xml:lang="sv">S/MIME-fil</comment>
+  <comment xml:lang="uk">Файл S/MIME</comment>
+  <comment xml:lang="vi">Tập tin S/MIME</comment>
+  <comment xml:lang="zh_CN">S/MIME 文件</comment>
+  <comment xml:lang="zh_TW">S/MIME 檔</comment>
+  <generic-icon name="text-x-generic"/>
+</mime-type>

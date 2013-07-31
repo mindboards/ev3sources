@@ -1,0 +1,6 @@
+kernel/lib/bitrev.ko
+kernel/lib/crc-ccitt.ko
+kernel/lib/crc16.ko
+kernel/lib/crc-itu-t.ko
+kernel/lib/crc32.ko
+kernel/lib/zlib_inflate/zlib_inflate.ko

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.ms-tnef">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>TNEF message</comment>
+  <comment xml:lang="be@latin">List TNEF</comment>
+  <comment xml:lang="bg">Съобщение — TNEF</comment>
+  <comment xml:lang="ca">missatge TNEF</comment>
+  <comment xml:lang="cs">Zpráva TNEF</comment>
+  <comment xml:lang="de">TNEF-Nachricht</comment>
+  <comment xml:lang="es">mensaje TNEF</comment>
+  <comment xml:lang="eu">TNEF mezua</comment>
+  <comment xml:lang="fi">TNEF-viesti</comment>
+  <comment xml:lang="fr">message TNEF</comment>
+  <comment xml:lang="ga">teachtaireacht TNEF</comment>
+  <comment xml:lang="hu">TNEF üzenet</comment>
+  <comment xml:lang="id">Pesan TNEF</comment>
+  <comment xml:lang="it">Messaggio TNEF</comment>
+  <comment xml:lang="ko">TNEF 메세지</comment>
+  <comment xml:lang="lt">TNEF žinutė</comment>
+  <comment xml:lang="nb">TNEF-melding</comment>
+  <comment xml:lang="nl">TNEF-bericht</comment>
+  <comment xml:lang="pl">Wiadomość TNEF</comment>
+  <comment xml:lang="pt_BR">Mensagem TNEF</comment>
+  <comment xml:lang="sv">TNEF-meddelande</comment>
+  <comment xml:lang="uk">Повідомлення TNEF</comment>
+  <comment xml:lang="vi">Thông điệp TNEF</comment>
+  <acronym>TNEF</acronym>
+  <expanded-acronym>Transport Neutral Encapsulation Format</expanded-acronym>
+  <alias type="application/ms-tnef"/>
+</mime-type>

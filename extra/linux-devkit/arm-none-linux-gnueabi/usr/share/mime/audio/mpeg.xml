@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/mpeg">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>MP3 audio</comment>
+  <comment xml:lang="az">MP3 audio faylı</comment>
+  <comment xml:lang="be@latin">Aŭdyjo MP3</comment>
+  <comment xml:lang="bg">Аудио — MP3</comment>
+  <comment xml:lang="ca">àudio MP3</comment>
+  <comment xml:lang="cs">Zvuk MP3</comment>
+  <comment xml:lang="cy">Sain MP3</comment>
+  <comment xml:lang="da">MP3-lyd</comment>
+  <comment xml:lang="de">MP3-Audio</comment>
+  <comment xml:lang="el">ήχος MP3</comment>
+  <comment xml:lang="en_GB">MP3 audio</comment>
+  <comment xml:lang="eo">MP3-aŭdio</comment>
+  <comment xml:lang="es">audio MP3</comment>
+  <comment xml:lang="eu">MP3 audioa</comment>
+  <comment xml:lang="fi">MP3-ääni</comment>
+  <comment xml:lang="fr">audio MP3</comment>
+  <comment xml:lang="ga">fuaim MP3</comment>
+  <comment xml:lang="hu">MP3 hang</comment>
+  <comment xml:lang="id">Audio MP3</comment>
+  <comment xml:lang="it">Audio MP3</comment>
+  <comment xml:lang="ja">MP3 オーディオ</comment>
+  <comment xml:lang="ko">MP3 오디오</comment>
+  <comment xml:lang="lt">MP3 garsas</comment>
+  <comment xml:lang="ms">Audio MP3</comment>
+  <comment xml:lang="nb">MP3-lyd</comment>
+  <comment xml:lang="nl">MP3-audio</comment>
+  <comment xml:lang="nn">MP3-lyd</comment>
+  <comment xml:lang="pl">Plik dźwiękowy MP3</comment>
+  <comment xml:lang="pt">áudio MP3</comment>
+  <comment xml:lang="pt_BR">Áudio MP3</comment>
+  <comment xml:lang="ru">MP3 аудио</comment>
+  <comment xml:lang="sq">Audio MP3</comment>
+  <comment xml:lang="sr">MP3 звучни запис</comment>
+  <comment xml:lang="sv">MP3-ljud</comment>
+  <comment xml:lang="uk">Звук MP3</comment>
+  <comment xml:lang="vi">Âm thanh MP3</comment>
+  <comment xml:lang="zh_CN">MP3 音频</comment>
+  <comment xml:lang="zh_TW">MP3 音效</comment>
+  <alias type="audio/x-mp3"/>
+  <alias type="audio/x-mpeg"/>
+  <alias type="audio/mp3"/>
+</mime-type>

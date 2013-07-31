@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-pef-executable">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>PEF executable</comment>
+  <comment xml:lang="be@latin">Vykonvalny fajł PEF</comment>
+  <comment xml:lang="bg">Изпълним файл — PEF</comment>
+  <comment xml:lang="ca">executable PEF</comment>
+  <comment xml:lang="cs">Spustitelný soubor PEF</comment>
+  <comment xml:lang="da">PEF-kørbar</comment>
+  <comment xml:lang="de">PEF-Programm</comment>
+  <comment xml:lang="el">εκτελέσιμο PEF</comment>
+  <comment xml:lang="en_GB">PEF executable</comment>
+  <comment xml:lang="eo">PEF-plenumebla</comment>
+  <comment xml:lang="es">ejecutable PEF</comment>
+  <comment xml:lang="eu">PEF exekutagarria</comment>
+  <comment xml:lang="fi">PEF-ohjelma</comment>
+  <comment xml:lang="fr">exécutable PEF</comment>
+  <comment xml:lang="ga">comhad inrite PEF</comment>
+  <comment xml:lang="hu">PEF futtatható</comment>
+  <comment xml:lang="id">PEF dapat dieksekusi</comment>
+  <comment xml:lang="it">Eseguibile PEF</comment>
+  <comment xml:lang="ja">PEF 実行ファイル</comment>
+  <comment xml:lang="ko">PEF 실행파일</comment>
+  <comment xml:lang="lt">PEF vykdomoji rinkmena</comment>
+  <comment xml:lang="ms">Bolehlaksana PEF</comment>
+  <comment xml:lang="nb">PEF-kjørbar</comment>
+  <comment xml:lang="nl">PEF-uitvoerbaar bestand</comment>
+  <comment xml:lang="nn">Køyrbar PEF-fil</comment>
+  <comment xml:lang="pl">Plik uruchamialny PEF</comment>
+  <comment xml:lang="pt">executável PEF</comment>
+  <comment xml:lang="pt_BR">Executável PEF</comment>
+  <comment xml:lang="sq">E ekzekutueshme PEF</comment>
+  <comment xml:lang="sr">PEF извршна</comment>
+  <comment xml:lang="sv">Körbar PEF-fil</comment>
+  <comment xml:lang="uk">Виконуваний файл PEF</comment>
+  <comment xml:lang="vi">Tập tin thực hiện được PEF</comment>
+  <comment xml:lang="zh_CN">PEF 可执行文件</comment>
+  <comment xml:lang="zh_TW">PEF 可執行檔</comment>
+  <generic-icon name="application-x-executable"/>
+</mime-type>

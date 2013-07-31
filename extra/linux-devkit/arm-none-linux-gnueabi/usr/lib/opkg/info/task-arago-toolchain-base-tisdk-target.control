@@ -1,0 +1,12 @@
+Package: task-arago-toolchain-base-tisdk-target
+Version: 1.0-r2.6
+Description: Target packages for a standalone Arago SDK or external toolchain
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: unknown
+Architecture: armv5te
+OE: task-arago-toolchain-base-tisdk-target
+Homepage: unknown
+Depends: task-arago-toolchain-target, dbus-dev, libexpat-dev, libglib-2.0-dev, libxml2-dev, libpcre-dev, iptables-dev, libstdc++-dev
+Source: file:///home/schuyler_2/am_builds/arago/recipes/tasks/task-arago-toolchain-base-tisdk-target.bb

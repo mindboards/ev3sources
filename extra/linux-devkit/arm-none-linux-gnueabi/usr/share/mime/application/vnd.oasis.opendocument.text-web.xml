@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.oasis.opendocument.text-web">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>OTH template</comment>
+  <comment xml:lang="be@latin">Šablon OTH</comment>
+  <comment xml:lang="bg">Шаблон — OTH</comment>
+  <comment xml:lang="ca">plantilla OTH</comment>
+  <comment xml:lang="cs">Šablona OTH</comment>
+  <comment xml:lang="de">OTH-Vorlage</comment>
+  <comment xml:lang="en_GB">OTH template</comment>
+  <comment xml:lang="es">plantilla OTH</comment>
+  <comment xml:lang="eu">OTH txantiloia</comment>
+  <comment xml:lang="fi">OTH-malli</comment>
+  <comment xml:lang="fr">modèle OTH</comment>
+  <comment xml:lang="ga">teimpléad OTH</comment>
+  <comment xml:lang="hu">OTH sablon</comment>
+  <comment xml:lang="id">Templat OTH</comment>
+  <comment xml:lang="it">Modello OTH</comment>
+  <comment xml:lang="ko">OTH 문서 틀</comment>
+  <comment xml:lang="lt">OTH šablonas</comment>
+  <comment xml:lang="nb">OTH-mal</comment>
+  <comment xml:lang="nl">OTH-sjabloon</comment>
+  <comment xml:lang="nn">OTH-mal</comment>
+  <comment xml:lang="pl">Szablon OTH</comment>
+  <comment xml:lang="pt_BR">Modelo OTH</comment>
+  <comment xml:lang="sv">OTH-mall</comment>
+  <comment xml:lang="uk">Шаблон OTH</comment>
+  <comment xml:lang="vi">Mẫu ODH</comment>
+  <acronym>OTH</acronym>
+  <expanded-acronym>OpenDocument HTML</expanded-acronym>
+  <sub-class-of type="application/zip"/>
+  <generic-icon name="text-html"/>
+</mime-type>

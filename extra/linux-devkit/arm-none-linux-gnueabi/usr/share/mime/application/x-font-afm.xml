@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-font-afm">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Adobe font metrics</comment>
+  <comment xml:lang="az">Adobe yazı növü metrikləri</comment>
+  <comment xml:lang="be@latin">Metryka šryftu Adobe</comment>
+  <comment xml:lang="bg">Шрифтова метрика — Adobe</comment>
+  <comment xml:lang="ca">mètrica de tipus de lletra Adobe</comment>
+  <comment xml:lang="cs">Metrika písma Adobe</comment>
+  <comment xml:lang="cy">Metrigau Ffont Adobe</comment>
+  <comment xml:lang="da">Adobe skrifttypefil</comment>
+  <comment xml:lang="de">Adobe-Schriftmetriken</comment>
+  <comment xml:lang="el">μετρικά γραμματοσειράς Adobe</comment>
+  <comment xml:lang="en_GB">Adobe font metrics</comment>
+  <comment xml:lang="eo">metrikoj de Adobe-tiparo</comment>
+  <comment xml:lang="es">métricas de tipografía Adobe</comment>
+  <comment xml:lang="eu">Adobe letra-tipoen neurriak</comment>
+  <comment xml:lang="fi">Adobe-kirjasinmitat</comment>
+  <comment xml:lang="fr">métriques de police Adobe</comment>
+  <comment xml:lang="ga">meadarachtaí cló Adobe</comment>
+  <comment xml:lang="hu">Adobe-betűmetrika</comment>
+  <comment xml:lang="id">Metrik fonta Adobe</comment>
+  <comment xml:lang="it">Metriche tipo carattere Adobe</comment>
+  <comment xml:lang="ja">Adobe フォントメトリック</comment>
+  <comment xml:lang="ko">어도비 글꼴 메트릭스</comment>
+  <comment xml:lang="lt">Adobe šrfitų metrika</comment>
+  <comment xml:lang="ms">Metrik font Adobe</comment>
+  <comment xml:lang="nb">Adobe skrifttypefil</comment>
+  <comment xml:lang="nl">Adobe-lettertype-metrieken</comment>
+  <comment xml:lang="nn">Adobe skrifttypemetrikk</comment>
+  <comment xml:lang="pl">Metryka czcionki Adobe</comment>
+  <comment xml:lang="pt">métrica de tipos de letra Adobe</comment>
+  <comment xml:lang="pt_BR">Métricas de fonte Adobe</comment>
+  <comment xml:lang="ru">метрики шрифта Adobe</comment>
+  <comment xml:lang="sq">Gërma Adobe metrics</comment>
+  <comment xml:lang="sr">Adobe метрика фонта</comment>
+  <comment xml:lang="sv">Adobe-typsnittsmetrik</comment>
+  <comment xml:lang="uk">Метрики шрифту Adobe</comment>
+  <comment xml:lang="vi">Cách đo phông chữ Adobe</comment>
+  <comment xml:lang="zh_TW">Adobe 字型描述檔</comment>
+  <generic-icon name="font-x-generic"/>
+</mime-type>

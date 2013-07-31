@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-dvi">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>TeX DVI document</comment>
+  <comment xml:lang="be@latin">Dakument TeX DVI</comment>
+  <comment xml:lang="bg">Документ — TeX DVI</comment>
+  <comment xml:lang="ca">document TeX DVI</comment>
+  <comment xml:lang="cs">Dokument TeX DVI</comment>
+  <comment xml:lang="da">TeX DVI-dokument</comment>
+  <comment xml:lang="de">TeX-DVI-Dokument</comment>
+  <comment xml:lang="el"> έγγραφο TeX DVI</comment>
+  <comment xml:lang="en_GB">TeX DVI document</comment>
+  <comment xml:lang="eo">DVI-dokumento de TeX</comment>
+  <comment xml:lang="es">documento TeX DVI</comment>
+  <comment xml:lang="eu">TeX DVI dokumentua</comment>
+  <comment xml:lang="fi">TeX DVI -asiakirja</comment>
+  <comment xml:lang="fr">document TeX DVI</comment>
+  <comment xml:lang="ga">cáipéis DVI TeX</comment>
+  <comment xml:lang="hu">TeX DVI-dokumentum</comment>
+  <comment xml:lang="id">Dokumen TeX DVI</comment>
+  <comment xml:lang="it">Documento TeX DVI</comment>
+  <comment xml:lang="ja">TeX DVI ドキュメント</comment>
+  <comment xml:lang="ko">TeX DVI 문서</comment>
+  <comment xml:lang="lt">TeX DVI dokumentas</comment>
+  <comment xml:lang="ms">Dokumen TeX DVI</comment>
+  <comment xml:lang="nb">TeX DVI-dokument</comment>
+  <comment xml:lang="nl">TeX DVI-document</comment>
+  <comment xml:lang="nn">TeX DVI-dokument</comment>
+  <comment xml:lang="pl">Dokument TeX DVI</comment>
+  <comment xml:lang="pt">documento TeX DVI</comment>
+  <comment xml:lang="pt_BR">Documento TeX DVI</comment>
+  <comment xml:lang="sq">Dokument TeX DVI</comment>
+  <comment xml:lang="sr">ТеХ ДВИ документ</comment>
+  <comment xml:lang="sv">TeX DVI-dokument</comment>
+  <comment xml:lang="uk">Документ TeX DVI</comment>
+  <comment xml:lang="vi">Tài liệu DVI Tex</comment>
+  <comment xml:lang="zh_CN">TeX DVI 文档</comment>
+  <comment xml:lang="zh_TW">TeX DVI 文件</comment>
+  <generic-icon name="x-office-document"/>
+</mime-type>

@@ -1,0 +1,12 @@
+Package: qt4-tools-sdk
+Version: 4.6.3-r1-arago1.6
+Description: SDK tools for Qt/[X11|Mac|Embedded] version 4.x
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPLv2.1
+Architecture: i686-armv5te-sdk
+OE: qt4-tools-sdk
+Homepage: http://www.trolltech.com
+Depends: libstdc++6, libc6, libgcc1
+Source: ftp://ftp.trolltech.com/qt/source/qt-everywhere-opensource-src-4.6.3.tar.gz file://configure-lflags.patch file://compile.test-lflags.patch file://qt-config.patch file://g++.conf file://linux.conf

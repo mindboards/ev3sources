@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include/libvisual-0.4
+pluginsbasedir=/usr/lib/libvisual-0.4
+
+Name: libvisual
+Version: 0.4.0
+Description: an audio visualisation abstraction library.
+Requires: 
+Libs: -L${libdir} -lpthread -lm -ldl  -lvisual-0.4
+Cflags: -I${includedir} 

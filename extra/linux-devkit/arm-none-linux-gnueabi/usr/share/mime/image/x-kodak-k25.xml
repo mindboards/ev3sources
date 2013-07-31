@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-kodak-k25">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Kodak K25 raw image</comment>
+  <comment xml:lang="be@latin">Suvoraja vyjava Kodak K25</comment>
+  <comment xml:lang="bg">Изображение — Kodak K25 raw</comment>
+  <comment xml:lang="ca">imatge en cru de Kodak K25</comment>
+  <comment xml:lang="cs">Surový obrázek Kodak K25</comment>
+  <comment xml:lang="es">imagen en bruto K25 de Kodak</comment>
+  <comment xml:lang="eu">Kodak K25 raw image</comment>
+  <comment xml:lang="fi">Kodak-K25-raakakuva</comment>
+  <comment xml:lang="fr">image brute K25 Kodak</comment>
+  <comment xml:lang="ga">amhíomhá Kodak K25</comment>
+  <comment xml:lang="hu">Kodak K25 nyers kép</comment>
+  <comment xml:lang="id">Citra mentah Kodak K25</comment>
+  <comment xml:lang="it">Immagine raw Kodak K25</comment>
+  <comment xml:lang="ko">코닥 K25 raw 이미지</comment>
+  <comment xml:lang="lt">Kodak K25 neapdorotas paveikslėlis</comment>
+  <comment xml:lang="nb">Kodak K25 raw-bilde</comment>
+  <comment xml:lang="nl">onbewerkt Kodak K25-beeld</comment>
+  <comment xml:lang="pt_BR">Imagem bruta K25 da Kodak</comment>
+  <comment xml:lang="sv">Kodak K25-råbild</comment>
+  <comment xml:lang="vi">Ảnh thô Kodak K25</comment>
+  <acronym>K25</acronym>
+  <expanded-acronym>Kodak DC25</expanded-acronym>
+  <sub-class-of type="image/x-dcraw"/>
+  <sub-class-of type="image/tiff"/>
+</mime-type>

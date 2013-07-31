@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-mpsub">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>MPSub subtitles</comment>
+  <comment xml:lang="be@latin">Subtytry MPSub</comment>
+  <comment xml:lang="bg">Субтитри — MPSub</comment>
+  <comment xml:lang="ca">subtítols MPSub</comment>
+  <comment xml:lang="cs">Titulky MPSub</comment>
+  <comment xml:lang="es">Subtítulos MPSub</comment>
+  <comment xml:lang="eu">MPSub azpitituluak</comment>
+  <comment xml:lang="fi">MPSub-tekstitykset</comment>
+  <comment xml:lang="fr">sous-titres MPSub</comment>
+  <comment xml:lang="ga">fotheidil MPSub</comment>
+  <comment xml:lang="hu">MPSub feliratok</comment>
+  <comment xml:lang="id">Subjudul MPSub</comment>
+  <comment xml:lang="it">Sottotitoli MPSub</comment>
+  <comment xml:lang="ko">MPSub 자막파일</comment>
+  <comment xml:lang="lt">MPSub subtitrai</comment>
+  <comment xml:lang="nb">MPSub undertekst</comment>
+  <comment xml:lang="nl">MPSub-ondertitels</comment>
+  <comment xml:lang="pt_BR">Legendas MPSub</comment>
+  <comment xml:lang="sv">MPSub-undertexter</comment>
+  <comment xml:lang="vi">Phụ đề MPSub</comment>
+  <acronym>MPSub</acronym>
+  <expanded-acronym>MPlayer Subtitle</expanded-acronym>
+  <sub-class-of type="text/plain"/>
+</mime-type>

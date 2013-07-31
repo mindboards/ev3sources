@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-sun-raster">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Sun raster image</comment>
+  <comment xml:lang="be@latin">Rastravaja vyjava Sun</comment>
+  <comment xml:lang="bg">Изображение — Sun raster</comment>
+  <comment xml:lang="ca">imatge ràster Sun</comment>
+  <comment xml:lang="cs">Rastrový obrázek Sun</comment>
+  <comment xml:lang="es">imagen ráster de Sun</comment>
+  <comment xml:lang="eu">Sun raster irudia</comment>
+  <comment xml:lang="fi">Sun-rasterikuva</comment>
+  <comment xml:lang="fr">image raster Sun</comment>
+  <comment xml:lang="ga">íomhá rastar Sun</comment>
+  <comment xml:lang="hu">SUN raszterkép</comment>
+  <comment xml:lang="id">Citra raster Sun</comment>
+  <comment xml:lang="it">Immagine raster Sun</comment>
+  <comment xml:lang="ko">Sun 래스터 그림</comment>
+  <comment xml:lang="lt">Sun rastrinis paveikslėlis</comment>
+  <comment xml:lang="nb">Sun rasterbilde</comment>
+  <comment xml:lang="nl">Sun-rasterafbeelding</comment>
+  <comment xml:lang="pt_BR">Imagem raster da Sun</comment>
+  <comment xml:lang="sv">Sun-rasterbild</comment>
+  <comment xml:lang="vi">Ảnh mành Sun</comment>
+</mime-type>

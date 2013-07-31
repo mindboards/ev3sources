@@ -1,0 +1,4 @@
+/usr/lib/pkgconfig/wavpack.pc
+/usr/lib/libwavpack.so
+/usr/include/wavpack/wavpack.h
+/usr/lib/libwavpack.la

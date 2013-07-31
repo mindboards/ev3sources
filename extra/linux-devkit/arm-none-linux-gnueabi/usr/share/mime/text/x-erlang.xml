@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/x-erlang">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Erlang source code</comment>
+  <comment xml:lang="be@latin">Kryničny kod Erlang</comment>
+  <comment xml:lang="bg">Изходен код — Erlang</comment>
+  <comment xml:lang="ca">codi font en Erlang</comment>
+  <comment xml:lang="cs">Zdrojový kód Erlang</comment>
+  <comment xml:lang="es">código fuente en Erlang</comment>
+  <comment xml:lang="eu">Erlang iturburu-kodea</comment>
+  <comment xml:lang="fi">Erlang-lähdekoodi</comment>
+  <comment xml:lang="fr">code source Erlang</comment>
+  <comment xml:lang="ga">cód foinseach Erlang</comment>
+  <comment xml:lang="hu">Erlang forráskód</comment>
+  <comment xml:lang="id">Kode program Erlang</comment>
+  <comment xml:lang="it">Codice sorgente Erlang</comment>
+  <comment xml:lang="ko">Erlang 소스 코드</comment>
+  <comment xml:lang="lt">Erlang pradinis kodas</comment>
+  <comment xml:lang="nb">Erlang-kildekode</comment>
+  <comment xml:lang="nl">Erlang-broncode</comment>
+  <comment xml:lang="pt_BR">Código fonte Erlang</comment>
+  <comment xml:lang="ru">исходные коды на языке Erlang</comment>
+  <comment xml:lang="sv">Erlang-källkod</comment>
+  <comment xml:lang="uk">Вихідний код на мові Erlang</comment>
+  <comment xml:lang="vi">Mã nguồn Erlang</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

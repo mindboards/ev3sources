@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/fax-g3">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>CCITT G3 fax</comment>
+  <comment xml:lang="be@latin">Faks CCITT G3</comment>
+  <comment xml:lang="bg">Факс — CCITT G3</comment>
+  <comment xml:lang="ca">fax CCITT G3</comment>
+  <comment xml:lang="cs">Fax CCITT G3</comment>
+  <comment xml:lang="da">CCITT G3-fax</comment>
+  <comment xml:lang="de">CCITT-G3-Fax</comment>
+  <comment xml:lang="el">φαξ σε μορφή CCITT G3</comment>
+  <comment xml:lang="en_GB">CCITT G3 fax</comment>
+  <comment xml:lang="eo">G3-fakso de CCITT</comment>
+  <comment xml:lang="es">fax de CCITT G3</comment>
+  <comment xml:lang="eu">CCITT G3 faxa</comment>
+  <comment xml:lang="fi">CCITT G3 -faksi</comment>
+  <comment xml:lang="fr">télécopie G3 CCITT</comment>
+  <comment xml:lang="ga">facs CCITT G3</comment>
+  <comment xml:lang="hu">CCITT G3-fax</comment>
+  <comment xml:lang="id">Faks CCITT G3</comment>
+  <comment xml:lang="it">Fax CCITT G3</comment>
+  <comment xml:lang="ja">CCITT G3 FAX</comment>
+  <comment xml:lang="ko">CCITT G3 팩스</comment>
+  <comment xml:lang="lt">CCITT G3 faksas</comment>
+  <comment xml:lang="ms">Faks g3 CCITT</comment>
+  <comment xml:lang="nb">CCITT G3-faks</comment>
+  <comment xml:lang="nl">CCITT G3-fax</comment>
+  <comment xml:lang="nn">CCITT G3-fax</comment>
+  <comment xml:lang="pl">Faks CCITT G3</comment>
+  <comment xml:lang="pt">fax CCITT G3</comment>
+  <comment xml:lang="pt_BR">Fax do CCITT G3</comment>
+  <comment xml:lang="ru">факс CCITT G3</comment>
+  <comment xml:lang="sq">Fax CCITT G3</comment>
+  <comment xml:lang="sr">CCITT g3 факс</comment>
+  <comment xml:lang="sv">CCITT G3-fax</comment>
+  <comment xml:lang="uk">Факс CCITT G3</comment>
+  <comment xml:lang="vi">Điện thư G3 CCITT</comment>
+  <comment xml:lang="zh_CN">CCITT G3 传真</comment>
+  <comment xml:lang="zh_TW">CCITT G3 傳真檔</comment>
+</mime-type>

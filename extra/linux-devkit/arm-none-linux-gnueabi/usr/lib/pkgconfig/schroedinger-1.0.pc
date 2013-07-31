@@ -1,0 +1,15 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include/schroedinger-1.0
+toolsdir=${exec_prefix}/bin
+
+
+Name: schroedinger-1.0
+Description: Dirac codec library
+Requires:  orc-0.4 >= 0.4.3
+Version: 1.0.9
+Libs: -L${libdir} -lschroedinger-1.0 -lpthread -lm
+Cflags: -I${includedir}
+
+

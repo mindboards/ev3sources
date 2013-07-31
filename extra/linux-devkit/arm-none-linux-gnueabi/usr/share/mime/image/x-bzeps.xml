@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-bzeps">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>EPS image (bzip-compressed)</comment>
+  <comment xml:lang="be@latin">Vyjava EPS (bzip-skampresavanaja)</comment>
+  <comment xml:lang="bg">Изображение — EPS, компресирано с bzip</comment>
+  <comment xml:lang="ca">imatge EPS (comprimida amb bzip)</comment>
+  <comment xml:lang="cs">Obrázek EPS (komprimovaný pomocí bzip)</comment>
+  <comment xml:lang="de">EPS-Bild (bzip-komprimiert)</comment>
+  <comment xml:lang="es">imagen EPS (comprimida con bzip)</comment>
+  <comment xml:lang="eu">EPS irudia (bzip-ekin konprimitua)</comment>
+  <comment xml:lang="fi">EPS-kuva (bzip-pakattu)</comment>
+  <comment xml:lang="fr">image EPS (compressée bzip)</comment>
+  <comment xml:lang="ga">íomhá EPS (comhbhrúite le bzip)</comment>
+  <comment xml:lang="hu">EPS kép (bzip-tömörítésű)</comment>
+  <comment xml:lang="id">Citra EPS (terkompresi bzip)</comment>
+  <comment xml:lang="it">Immagine ESP (compressa con bzip)</comment>
+  <comment xml:lang="ko">EPS 그림 (bzip으로 압축)</comment>
+  <comment xml:lang="lt">EPS paveikslėlis (suglaudintas su bzip)</comment>
+  <comment xml:lang="nb">EPS-bilde (bzip-komprimert)</comment>
+  <comment xml:lang="nl">EPS-afbeelding (ingepakt met bzip)</comment>
+  <comment xml:lang="pl">Obraz EPS (skompresowany bzip)</comment>
+  <comment xml:lang="pt_BR">Imagem EPS (compactada com bzip)</comment>
+  <comment xml:lang="ru">изображение EPS (сжатое bzip)</comment>
+  <comment xml:lang="sv">EPS-bild (bzip-komprimerad)</comment>
+  <comment xml:lang="uk">Зображення EPS (стиснене bzip)</comment>
+  <comment xml:lang="vi">Ảnh EPS (đã nén bzip)</comment>
+</mime-type>

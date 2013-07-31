@@ -1,0 +1,13 @@
+Package: libxcursor-dev
+Version: 1:1.1.11-r9.0.6
+Description: X cursor management library
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: BSD-X
+Architecture: armv5te
+OE: libxcursor
+Homepage: http://www.x.org
+Depends: libxcursor1, libxcursor1, xproto-dev
+Recommends: util-macros-dev, libxrender-dev, libxfixes-dev, libx11-dev, libxcb-dev, libpthread-stubs-dev, libxau-dev, libc6-dev, libgcc1-dev, libxcursor-dev, xproto-dev
+Source: http://xorg.freedesktop.org/releases/individual/lib/libXcursor-1.1.11.tar.bz2;name=archive

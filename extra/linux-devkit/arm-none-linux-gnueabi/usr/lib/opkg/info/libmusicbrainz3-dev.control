@@ -1,0 +1,13 @@
+Package: libmusicbrainz3-dev
+Version: 3.0.2-r1.6
+Description: The MusicBrainz client is a library which can be built into other programs. It allows you to access the data held on the MusicBrainz server.
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPL
+Architecture: armv5te
+OE: libmusicbrainz
+Homepage: http://musicbrainz.org
+Depends: libmusicbrainz3-6, libmusicbrainz3-6
+Recommends: libexpat-dev, libneon-dev, libdiscid-dev, libc6-dev, libstdc++6-dev, libgcc1-dev, libmusicbrainz3-dev
+Source: ftp://ftp.musicbrainz.org/pub/musicbrainz/libmusicbrainz-3.0.2.tar.gz file://libmusicbrainz-3.0.2-gcc-4.4-fix.patch file://libmusicbrainz-3.0.2-cmake-neon.patch

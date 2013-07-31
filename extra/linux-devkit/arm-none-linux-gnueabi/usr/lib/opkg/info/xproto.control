@@ -1,0 +1,11 @@
+Package: xproto
+Version: 1:7.0.19-r2.0.6
+Description: X protocol headers: xproto
+Section: x11/libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT-X
+Architecture: armv5te
+OE: xproto
+Homepage: http://www.x.org
+Source: http://xorg.freedesktop.org/releases/individual/proto/xproto-7.0.19.tar.bz2;name=archive

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-xbel">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>XBEL bookmarks</comment>
+  <comment xml:lang="be@latin">Zakładki XBEL</comment>
+  <comment xml:lang="bg">Отметки — XBEL</comment>
+  <comment xml:lang="ca">llista d'adreces d'interès XBEL</comment>
+  <comment xml:lang="cs">Záložky XBEL</comment>
+  <comment xml:lang="da">XBEL-bogmærker</comment>
+  <comment xml:lang="de">XBEL-Lesezeichen</comment>
+  <comment xml:lang="el">σελιδοδείκτες XBEL</comment>
+  <comment xml:lang="en_GB">XBEL bookmarks</comment>
+  <comment xml:lang="eo">XBEL-legosignoj</comment>
+  <comment xml:lang="es">marcadores XBEL</comment>
+  <comment xml:lang="eu">XBEL laster-markak</comment>
+  <comment xml:lang="fi">XBEL-kirjanmerkit</comment>
+  <comment xml:lang="fr">marque-pages XBEL</comment>
+  <comment xml:lang="ga">leabharmharcanna XBEL</comment>
+  <comment xml:lang="hu">XBEL-könyvjelzők</comment>
+  <comment xml:lang="id">Bookmark XBEL</comment>
+  <comment xml:lang="it">Segnalibri XBEL</comment>
+  <comment xml:lang="ja">XBEL ブックマーク</comment>
+  <comment xml:lang="ko">XBEL 책갈피</comment>
+  <comment xml:lang="lt">XBEL žymelės</comment>
+  <comment xml:lang="ms">Tandabuku XBEL</comment>
+  <comment xml:lang="nb">XBEL-bokmerker</comment>
+  <comment xml:lang="nl">XBEL-bladwijzers</comment>
+  <comment xml:lang="nn">XBEL-bokmerker</comment>
+  <comment xml:lang="pl">Zakładki XBEL</comment>
+  <comment xml:lang="pt">marcadores XBEL</comment>
+  <comment xml:lang="pt_BR">Marcadores do XBEL</comment>
+  <comment xml:lang="sq">Libërshënues XBEL</comment>
+  <comment xml:lang="sr">XBEL обележивачи</comment>
+  <comment xml:lang="sv">XBEL-bokmärken</comment>
+  <comment xml:lang="uk">Закладки XBEL</comment>
+  <comment xml:lang="vi">Liên kết đã lưu XBEL</comment>
+  <comment xml:lang="zh_CN">XBEL 书签</comment>
+  <comment xml:lang="zh_TW">XBEL 格式書籤</comment>
+  <acronym>XBEL</acronym>
+  <expanded-acronym>XML Bookmark Exchange Language</expanded-acronym>
+  <sub-class-of type="application/xml"/>
+  <generic-icon name="text-html"/>
+</mime-type>

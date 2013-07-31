@@ -1,0 +1,13 @@
+Package: libmad-dev
+Version: 0.15.1b-r5.6
+Description: MPEG Audio Decoder Library
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPL
+Architecture: armv5te
+OE: libmad
+Homepage: unknown
+Depends: libmad0, libmad0
+Recommends: libid3tag-dev, libgcc1-dev, libc6-dev, libmad-dev
+Source: http://downloads.sourceforge.net/mad/libmad-0.15.1b.tar.gz file://add-pkgconfig.patch file://mad.diff file://mad-mips-h-constraint.patch

@@ -1,0 +1,14 @@
+/usr/include/curl/curlver.h
+/usr/include/curl/easy.h
+/usr/include/curl/multi.h
+/usr/lib/libcurl.la
+/usr/lib/pkgconfig/libcurl.pc
+/usr/include/curl/curl.h
+/usr/include/curl/curlrules.h
+/usr/lib/libcurl.so
+/usr/include/curl/stdcheaders.h
+/usr/include/curl/mprintf.h
+/usr/include/curl/typecheck-gcc.h
+/usr/include/curl/curlbuild.h
+/usr/bin/curl-config
+/usr/include/curl/types.h

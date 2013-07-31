@@ -1,0 +1,575 @@
+abiword
+	command=AbiWord-2.0
+	name=AbiWord
+	can_open_multiple_files=true
+	expects_uris=false
+	requires_terminal=false
+	mime_types=text/*,text/abiword,application/x-abiword,application/rtf,application/msword
+
+acroread
+	command=acroread
+	name=Adobe Acrobat Reader
+	can_open_multiple_files=true
+	expects_uris=false
+	requires_terminal=false
+	mime_types=application/pdf
+
+applix
+	command=applix
+	name=ApplixWare
+	can_open_multiple_files=true
+	expects_uris=false
+	requires_terminal=false
+	mime_types=application/x-applix-presents,application/x-applix-spreadsheet,application/x-applix-word,image/x-applix-graphic,application/msword,application/rtf,application/vnd.ms-excel
+
+bplay
+	command=bplay
+	name=bplay
+	can_open_multiple_files=true
+	expects_uris=false
+	requires_terminal=false
+	mime_types=audio/x-wav
+
+dia
+	command=dia
+	name=Diagram Editor (dia)
+	can_open_multiple_files=true
+	expects_uris=false
+	requires_terminal=false
+	mime_types=application/x-dia-diagram
+
+display
+	command=display
+	name=ImageMagick Display
+	can_open_multiple_files=true
+	expects_uris=false
+	requires_terminal=false
+	mime_types=image/bmp,image/gif,image/jpeg,image/png,image/tiff,image/x-xpixmap,image/x-bmp,image/x-png,image/x-portable-anymap,image/x-portable-bitmap,image/x-portable-graymap,image/x-portable-pixmap
+
+dpkg
+	command=dpkg -i
+	name=Install Package (dpkg)
+	can_open_multiple_files=true
+	expects_uris=false
+	requires_terminal=true
+	mime_types=application/x-deb
+
+electric_eyes
+	command=ee
+	name=Electric Eyes
+	can_open_multiple_files=true
+	expects_uris=false
+	requires_terminal=false
+	mime_types=image/bmp,image/gif,image/jpeg,image/png,image/tiff,image/x-xpixmap,image/x-bmp,image/x-png,image/x-portable-anymap,image/x-portable-bitmap,image/x-portable-graymap,image/x-portable-pixmap
+
+emacs
+	command=emacs
+	name=GNU Emacs
+	can_open_multiple_files=true
+	startup_notify=true
+	expects_uris=false
+	requires_terminal=false
+	mime_types=text/*,text/html,text/plain,text/x-c,text/x-objc,text/x-c++,text/x-c-header,text/x-perl
+
+eog
+	command=eog
+	name=Eye of Gnome
+	can_open_multiple_files=true
+	expects_uris=true
+	uses_gnomevfs=true
+	requires_terminal=false
+	mime_types=image/bmp,image/gif,image/jpeg,image/png,image/tiff,image/x-xpixmap,image/x-bmp,image/x-png,image/x-portable-anymap,image/x-portable-bitmap,image/x-portable-graymap,image/x-portable-pixmap
+
+epiphany
+	command=epiphany
+	name=Epiphany
+	can_open_multiple_files=false
+	startup_notify=true
+	expects_uris=true
+	requires_terminal=false
+	supported_uri_schemes=file,http,ftp
+	mime_types=text/html,x-directory/webdav,x-directory/webdav-prefer-directory,image/gif,image/jpeg
+
+file-roller
+	command=file-roller
+	name=File-roller
+	can_open_multiple_files=true
+	startup_notify=true
+	expects_uris=false
+	requires_terminal=false
+	mime_types=application/x-bzip,application/x-bzip-compressed-tar,application/x-arj,application/x-compress,application/x-compressed-tar,application/x-gtar,application/x-gzip,application/x-lha,application/x-lhz,application/x-tar,application/zip,application/x-rar-compressed,application/x-rar
+
+file-roller-pack
+	command=file-roller --add
+	name=File Roller
+	can_open_multiple_files=true
+	startup_notify=true
+	expects_uris=false
+	requires_terminal=false
+	mime_types=*/*
+
+freeamp
+	command=freeamp
+	name=FreeAmp
+	can_open_multiple_files=true
+	expects_uris=true
+	requires_terminal=false
+	supported_uri_schemes=http,file
+	mime_types=audio/x-mp3,audio/x-mpeg,application/x-ogg,application/ogg,audio/x-wav,audio/mpeg
+
+freeamp-no-uris
+	command=freeamp
+	name=FreeAmp (No URI's)
+	can_open_multiple_files=true
+	expects_uris=false
+	requires_terminal=false
+	mime_types=audio/x-mp3-playlist,audio/x-mpegurl,audio/x-scpls
+
+galeon
+	command=galeon
+	name=Galeon
+	can_open_multiple_files=false
+	startup_notify=true
+	expects_uris=true
+	requires_terminal=false
+	supported_uri_schemes=file,http,ftp
+	mime_types=text/html,x-directory/webdav,x-directory/webdav-prefer-directory,image/gif,image/jpeg
+
+gedit
+	command=gedit
+	name=gedit
+	can_open_multiple_files=false
+	expects_uris=true
+	uses_gnomevfs=true
+	requires_terminal=false
+	mime_types=text/*,text/html,text/plain
+
+ggv
+	command=ggv
+	name=ggv
+	can_open_multiple_files=false
+	startup_notify=true
+	expects_uris=false
+	requires_terminal=false
+	mime_types=application/pdf,application/postscript
+
+gimp
+	command=gimp-remote --new
+	name=The GIMP
+	can_open_multiple_files=true
+	expects_uris=non-file
+	requires_terminal=false
+	supported_uri_schemes=file
+	mime_types=image/bmp,image/gif,image/jpeg,image/png,image/tiff,image/x-xpixmap,image/x-bmp,image/x-png,image/x-portable-anymap,image/x-portable-bitmap,image/x-portable-graymap,image/x-portable-pixmap,image/x-psd,image/x-xbitmap,image/x-xcf
+
+glade
+	command=glade
+	name=Glade
+	can_open_multiple_files=false
+	expects_uris=false
+	requires_terminal=false
+	mime_types=application/x-glade
+
+gnomecal
+	command=gnomecal
+	name=Gnome Calendar
+	can_open_multiple_files=false
+	expects_uris=false
+	requires_terminal=false
+	mime_types=text/x-vcalendar
+
+gnomecard
+	command=gnomecard
+	name=GnomeCard
+	can_open_multiple_files=false
+	expects_uris=false
+	requires_terminal=false
+	mime_types=text/x-vcard
+
+gnucash
+	command=gnucash
+	name=GnuCash
+	can_open_multiple_files=false
+	expects_uris=false
+	requires_terminal=false
+	mime_types=application/qif,application/x-qw,application/x-gnucash
+
+gnumeric
+	command=gnumeric
+	name=Gnumeric
+	can_open_multiple_files=true
+	expects_uris=non-file
+	uses_gnomevfs=true
+	requires_terminal=false
+	mime_types=application/x-gnumeric,application/vnd.ms-excel,application/vnd.ms-excel,application/x-applix-spreadsheet,application/vnd.lotus-1-2-3,text/x-comma-separated-values,application/x-oleo,application/x-xbase,application/vnd.sun.xml.calc,application/vnd.sun.xml.calc.template,text/spreadsheet
+
+grecord
+	command=gnome-sound-recorder
+	name=Sound Recorder
+	can_open_multiple_files=false
+	expects_uris=false
+	requires_terminal=false
+	mime_types=audio/x-aiff,audio/x-aifc,audio/x-ulaw,audio/x-voc,audio/x-wav
+
+gtv
+	command=gtv
+	name=GTK+ MPEG Player
+	can_open_multiple_files=false
+	expects_uris=false
+	requires_terminal=false
+	mime_types=video/mpeg
+
+guitar
+	command=guitar
+	name=guiTAR
+	can_open_multiple_files=true
+	expects_uris=false
+	requires_terminal=false
+	mime_types=application/x-bzip,application/x-bzip-compressed-tar,application/x-arj,application/x-compress,application/x-compressed-tar,application/x-gtar,application/x-gzip,application/x-lha,application/x-lhz,application/x-tar,application/zip,application/x-rar-compressed,application/x-rar
+
+gv
+	command=gv
+	name=gv
+	can_open_multiple_files=false
+	expects_uris=false
+	requires_terminal=false
+	mime_types=application/pdf,application/postscript
+
+gvim
+	command=gvim -c ":cd %:p:h"
+	name=gvim
+	can_open_multiple_files=false
+	expects_uris=false
+	requires_terminal=false
+	mime_types=text/*,text/plain,text/x-c,text/x-objc,text/x-c++,text/x-c-header,text/x-perl
+
+java
+	command=java
+	name=Java Interpreter
+	can_open_multiple_files=false
+	expects_uris=false
+	requires_terminal=true
+	mime_types=application/x-java-byte-code
+
+javac
+	command=javac
+	name=Java compiler
+	can_open_multiple_files=true
+	expects_uris=false
+	requires_terminal=true
+	mime_types=text/x-java
+
+jbuilder
+	command=jbuilder
+	name=Borland JBuilder
+	can_open_multiple_files=true
+	expects_uris=false
+	requires_terminal=false
+	mime_types=text/x-java,application/x-jbuilder-project
+
+jcc
+	command=jcc
+	name=Code Crusader
+	can_open_multiple_files=true
+	expects_uris=false
+	requires_terminal=false
+	mime_types=text/*,text/html,text/plain,text/x-c,text/x-objc,text/x-c++,text/x-c-header
+
+killustrator
+	command=killustrator
+	name=KIllustrator
+	can_open_multiple_files=true
+	expects_uris=true
+	requires_terminal=false
+	supported_uri_schemes=file,http,ftp
+	mime_types=application/x-killustrator,image/x-xfig,image/x-wmf
+
+kpresenter
+	command=kpresenter
+	name=KPrestenter
+	can_open_multiple_files=true
+	expects_uris=true
+	requires_terminal=false
+	supported_uri_schemes=file,http,ftp
+	mime_types=application/x-kpresenter,application/vnd.ms-powerpoint
+
+kspread
+	command=kspread
+	name=KSpread
+	can_open_multiple_files=true
+	expects_uris=true
+	requires_terminal=false
+	supported_uri_schemes=file,http,ftp
+	mime_types=application/x-kspread,text/x-comma-separated-values
+
+kword
+	command=kword
+	name=KWord
+	can_open_multiple_files=true
+	expects_uris=true
+	requires_terminal=false
+	supported_uri_schemes=file,http,ftp
+	mime_types=application/x-kword,text/abiword,application/x-abiword,application/msword
+
+lpr
+	command=lpr
+	name=lpr
+	can_open_multiple_files=true
+	expects_uris=false
+	requires_terminal=false
+	mime_types=application/postscript
+
+lynx
+	command=lynx
+	name=Lynx
+	can_open_multiple_files=false
+	expects_uris=true
+	requires_terminal=true
+	supported_uri_schemes=file,http,ftp
+	mime_types=text/html,x-directory/webdav,x-directory/webdav-prefer-directory
+
+lyx
+	command=lyx
+	name=LyX Document Processor
+	can_open_multiple_files=true
+	expects_uris=false
+	requires_terminal=false
+	mime_types=text/x-lyx
+
+mozilla
+	command=mozilla
+	name=Mozilla
+	can_open_multiple_files=true
+	expects_uris=true
+	requires_terminal=false
+	supported_uri_schemes=file,http,ftp,telnet,gopher
+	mime_types=text/html,x-directory/webdav,x-directory/webdav-prefer-directory,image/gif,image/jpeg,text/xml
+
+mpeg_play
+	command=mpeg_play
+	name=mpeg_play
+	can_open_multiple_files=false
+	expects_uris=false
+	requires_terminal=false
+	mime_types=video/mpeg
+
+mpg123
+	command=mpg123
+	name=mpg123
+	can_open_multiple_files=true
+	expects_uris=non-file
+	requires_terminal=false
+	supported_uri_schemes=http,ftp,file
+	mime_types=audio/x-mp3,audio/x-mpeg,audio/mpeg
+
+mtv
+	command=mtv
+	name=mtv
+	can_open_multiple_files=false
+	expects_uris=false
+	requires_terminal=false
+	mime_types=video/mpeg
+
+mtvp
+	command=mtvp
+	name=mtvp
+	can_open_multiple_files=false
+	expects_uris=false
+	requires_terminal=false
+	mime_types=video/mpeg
+
+nedit
+	command=nedit
+	name=NEdit
+	can_open_multiple_files=true
+	expects_uris=false
+	requires_terminal=false
+	mime_types=text/*,text/html,text/plain
+
+netscape
+	command=netscape
+	name=Netscape
+	can_open_multiple_files=true
+	expects_uris=true
+	requires_terminal=false
+	supported_uri_schemes=file,http,ftp,telnet,gopher
+	mime_types=text/html,x-directory/webdav,x-directory/webdav-prefer-directory,image/gif,image/jpeg
+
+ogg123
+	command=ogg123
+	name=ogg123
+	can_open_multiple_files=true
+	expects_uris=true
+	requires_terminal=false
+	supported_uri_schemes=http,ftp,file
+	mime_types=application/x-ogg,application/ogg
+
+omsomi
+	command=omi_gtk
+	name=Open Media System Player
+	can_open_multiple_files=false
+	expects_uris=false
+	requires_terminal=false
+	mime_types=video/mpeg,video/x-msvideo,audio/ac3
+
+openoffice
+	command=ooffice
+	name=OpenOffice.org
+	can_open_multiple_files=true
+	expects_uris=false
+	requires_terminal=false
+	mime_types=text/abiword,application/x-abiword,application/vnd.ms-excel,application/rtf,application/msword,application/vnd.ms-powerpoint,application/vnd.stardivision.calc,application/vnd.stardivision.chart,application/vnd.stardivision.draw,application/vnd.stardivision.impress,application/vnd.stardivision.mail,application/vnd.stardivision.math,application/vnd.stardivision.writer,application/vnd.sun.xml.calc,application/vnd.sun.xml.calc.template,application/vnd.sun.xml.draw,application/vnd.sun.xml.draw.template,application/vnd.sun.xml.impress,application/vnd.sun.xml.impress.template,application/vnd.sun.xml.math,application/vnd.sun.xml.writer,application/vnd.sun.xml.writer.global,application/vnd.sun.xml.writer.template,image/x-emf,image/x-pcx,image/x-photo-cd,image/x-pict
+
+pico
+	command=jpico --help
+	name=jpico
+	can_open_multiple_files=false
+	expects_uris=false
+	requires_terminal=true
+	mime_types=text/*,text/html,text/plain,text/x-c,text/x-objc,text/x-c++,text/x-c-header,text/x-perl
+
+plaympeg
+	command=plaympeg
+	name=Simple MPEG Player (plaympeg)
+	can_open_multiple_files=false
+	expects_uris=false
+	requires_terminal=false
+	mime_types=video/mpeg
+
+realplayer
+	command=realplay
+	name=realplayer
+	can_open_multiple_files=false
+	expects_uris=true
+	requires_terminal=false
+	supported_uri_schemes=http,ftp,file
+	mime_types=audio/x-pn-realaudio,audio/x-real-audio,video/x-real-video,application/vnd.rn-realmedia
+
+sodipodi
+	command=sodipodi
+	name=Sodipodi
+	can_open_multiple_files=true
+	expects_uris=false
+	requires_terminal=false
+	mime_types=image/svg,image/svg+xml
+
+soundtracker
+	command=soundtracker
+	name=soundtracker
+	can_open_multiple_files=false
+	expects_uris=false
+	requires_terminal=false
+	mime_types=audio/x-mod
+
+staroffice
+	command=soffice
+	name=StarOffice
+	can_open_multiple_files=true
+	expects_uris=false
+	requires_terminal=false
+	mime_types=text/abiword,application/x-abiword,application/vnd.ms-excel,application/rtf,application/msword,application/vnd.ms-powerpoint,application/vnd.stardivision.calc,application/vnd.stardivision.chart,application/vnd.stardivision.draw,application/vnd.stardivision.impress,application/vnd.stardivision.mail,application/vnd.stardivision.math,application/vnd.stardivision.writer,application/vnd.sun.xml.calc,application/vnd.sun.xml.calc.template,application/vnd.sun.xml.draw,application/vnd.sun.xml.draw.template,application/vnd.sun.xml.impress,application/vnd.sun.xml.impress.template,application/vnd.sun.xml.math,application/vnd.sun.xml.writer,application/vnd.sun.xml.writer.global,application/vnd.sun.xml.writer.template,image/x-emf,image/x-pcx,image/x-photo-cd,image/x-pict
+
+vi
+	command=vi
+	name=vi
+	can_open_multiple_files=false
+	expects_uris=false
+	requires_terminal=true
+	mime_types=text/*,text/plain,text/x-c,text/x-c-header,text/x-c++,text/x-perl
+
+vim
+	command=vim -c ":cd %:p:h"
+	name=vim
+	can_open_multiple_files=false
+	expects_uris=false
+	requires_terminal=true
+	mime_types=text/*,text/plain,text/x-c,text/x-c-header,text/x-objc,text/x-c++,text/x-perl
+
+vlc
+	command=vlc
+	name=VideoLAN MPEG Player
+	can_open_multiple_files=true
+	expects_uris=true
+	supported_uri_schemes=http,ftp,file
+	requires_terminal=false
+	mime_types=video/mpeg
+
+wine
+	command=wine
+	name=Wine
+	can_open_multiple_files=false
+	expects_uris=false
+	mime_types=application/x-ms-dos-executable
+
+xanim
+	command=xanim
+	name=xanim
+	can_open_multiple_files=true
+	expects_uris=false
+	requires_terminal=false
+	mime_types=video/quicktime,video/x-anim,video/x-sgi-movie,video/x-avi,video/msvideo,video/x-msvideo
+
+xdvi
+	command=xdvi
+	name=xdvi
+	can_open_multiple_files=false
+	expects_uris=false
+	requires_terminal=false
+	mime_types=application/x-dvi
+
+xemacs
+	command=xemacs
+	name=XEmacs
+	can_open_multiple_files=true
+	expects_uris=false
+	requires_terminal=false
+	mime_types=text/*,text/html,text/plain,text/x-c,text/x-objc,text/x-c++,text/x-c-header,text/x-perl
+
+xfig
+	command=xfig
+	name=xfig
+	can_open_multiple_files=false
+	expects_uris=false
+	requires_terminal=false
+	mime_types=image/x-xfig
+
+xfte
+	command=xfte
+	name=xfte
+	can_open_multiple_files=true
+	expects_uris=false
+	requires_terminal=false
+	mime_types=text/*,text/plain,text/x-c,text/x-c-header,text/x-objc,text/x-c++,text/x-perl
+
+xmms
+	command=xmms
+	name=X Multimedia System
+	can_open_multiple_files=true
+	expects_uris=true
+	requires_terminal=false
+	supported_uri_schemes=http,ftp,file
+	mime_types=audio/x-mp3,audio/x-mpeg,application/x-ogg,application/ogg,audio/x-wav,audio/x-riff,audio/mpeg
+
+xmms-no-uris
+	command=xmms
+	name=X Multimedia System (No URI's)
+	can_open_multiple_files=true
+	expects_uris=false
+	requires_terminal=false
+	mime_types=audio/x-mp3-playlist,audio/x-mpegurl,audio/x-scpls
+
+xmps
+	command=xmps
+	name=X Movie Player (xmps)
+	can_open_multiple_files=true
+	expects_uris=false
+	requires_terminal=false
+	mime_types=video/x-msvideo,video/x-ms-asf,video/mpeg,audio/x-mp3,audio/ac3,audio/x-wav,audio/mpeg
+
+xpdf
+	command=xpdf
+	name=xpdf
+	can_open_multiple_files=true
+	expects_uris=false
+	requires_terminal=false
+	mime_types=application/pdf

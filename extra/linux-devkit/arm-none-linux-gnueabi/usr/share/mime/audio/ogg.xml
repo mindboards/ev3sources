@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/ogg">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Ogg Audio</comment>
+  <comment xml:lang="be@latin">Aŭdyjo Ogg</comment>
+  <comment xml:lang="bg">Аудио — Ogg</comment>
+  <comment xml:lang="ca">àudio Ogg</comment>
+  <comment xml:lang="cs">Zvuk Ogg</comment>
+  <comment xml:lang="es">audio Ogg</comment>
+  <comment xml:lang="eu">Ogg audioa</comment>
+  <comment xml:lang="fi">VOC-ääni</comment>
+  <comment xml:lang="fr">audio Ogg</comment>
+  <comment xml:lang="ga">fuaim Ogg</comment>
+  <comment xml:lang="hu">Ogg hang</comment>
+  <comment xml:lang="id">Audio Ogg</comment>
+  <comment xml:lang="it">Audio Ogg</comment>
+  <comment xml:lang="ko">Ogg 오디오</comment>
+  <comment xml:lang="lt">Ogg garsas</comment>
+  <comment xml:lang="nb">Ogg lyd</comment>
+  <comment xml:lang="nl">Ogg-audio</comment>
+  <comment xml:lang="pt_BR">Áudio Ogg</comment>
+  <comment xml:lang="ru">Ogg аудио</comment>
+  <comment xml:lang="sv">Ogg-ljud</comment>
+  <comment xml:lang="uk">Звук Ogg</comment>
+  <comment xml:lang="vi">Âm thanh Ogg</comment>
+  <sub-class-of type="application/ogg"/>
+  <alias type="audio/x-ogg"/>
+</mime-type>

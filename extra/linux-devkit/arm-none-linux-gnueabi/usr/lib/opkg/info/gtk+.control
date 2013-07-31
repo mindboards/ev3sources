@@ -1,0 +1,16 @@
+Package: gtk+
+Version: 2.20.1-r10.4.6
+Description: GTK+ is a multi-platform toolkit for creating graphical user interfaces. Offering a complete set of widgets, GTK+ is suitable for projects ranging from small one-off projects to complete application suites.
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPL
+Architecture: armv5te
+OE: gtk+
+Homepage: http://www.gtk.org
+Depends: hicolor-icon-theme, libxrandr2, libxext6, libxcursor1, pango, libxcomposite1, libxdamage1, libxfixes3, libatk-1.0-0, libcairo2, libpixman-1-0, libpng12-0, libxrender1, libx11-6, libxcb1, libpthread-stubs0, libxau6, libgio-2.0-0, libc6, libfontconfig1, libfreetype6, libz1, libexpat1, libgobject-2.0-0, libgmodule-2.0-0, libc6, libgthread-2.0-0, libglib-2.0-0, libgcc1
+Recommends: ttf-dejavu-sans, gdk-pixbuf-loader-png, gdk-pixbuf-loader-jpeg, gdk-pixbuf-loader-gif, gdk-pixbuf-loader-xpm, glibc-gconv-iso8859-1
+Provides: libgailutil18
+Replaces: libgailutil18
+Conflicts: libgailutil18
+Source: http://download.gnome.org/sources/gtk+/2.20/gtk+-2.20.1.tar.bz2;name=gtk file://hardcoded_libtool.patch file://run-iconcache.patch file://toggle-font.diff;striplevel=0 file://xsettings.patch file://gtk-dnd-grab-deadlock-fix.patch file://cross-nm.patch file://xkb-ifdef.patch

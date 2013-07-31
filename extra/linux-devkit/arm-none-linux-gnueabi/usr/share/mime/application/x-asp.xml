@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-asp">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>ASP page</comment>
+  <comment xml:lang="be@latin">Staronka ASP</comment>
+  <comment xml:lang="bg">Страница — ASP</comment>
+  <comment xml:lang="ca">pàgina ASP</comment>
+  <comment xml:lang="cs">Stránka ASP</comment>
+  <comment xml:lang="de">ASP-Seite</comment>
+  <comment xml:lang="en_GB">ASP page</comment>
+  <comment xml:lang="es">página ASP</comment>
+  <comment xml:lang="eu">ASP orria</comment>
+  <comment xml:lang="fi">ASP-sivu</comment>
+  <comment xml:lang="fr">page ASP</comment>
+  <comment xml:lang="ga">leathanach ASP</comment>
+  <comment xml:lang="hu">ASP oldal</comment>
+  <comment xml:lang="id">Halaman ASP</comment>
+  <comment xml:lang="it">Pagina ASP</comment>
+  <comment xml:lang="ko">ASP 페이지</comment>
+  <comment xml:lang="lt">ASP puslapis</comment>
+  <comment xml:lang="nb">ASP-side</comment>
+  <comment xml:lang="nl">ASP-pagina</comment>
+  <comment xml:lang="nn">ASP-side</comment>
+  <comment xml:lang="pl">Strona ASP</comment>
+  <comment xml:lang="pt_BR">Página ASP</comment>
+  <comment xml:lang="ru">ASP страница</comment>
+  <comment xml:lang="sv">ASP-sida</comment>
+  <comment xml:lang="uk">Сторінка ASP</comment>
+  <comment xml:lang="vi">Trang ASP</comment>
+  <acronym>ASP</acronym>
+  <expanded-acronym>Active Server Page</expanded-acronym>
+  <sub-class-of type="text/plain"/>
+  <generic-icon name="text-x-script"/>
+</mime-type>

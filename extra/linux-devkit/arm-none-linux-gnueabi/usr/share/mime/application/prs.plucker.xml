@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/prs.plucker">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Plucker document</comment>
+  <comment xml:lang="be@latin">Dakument Plucker</comment>
+  <comment xml:lang="bg">Документ — Plucker</comment>
+  <comment xml:lang="ca">document Plucker</comment>
+  <comment xml:lang="cs">Dokument Plucker</comment>
+  <comment xml:lang="es">documento de Plucker</comment>
+  <comment xml:lang="eu">Plucker dokumentua</comment>
+  <comment xml:lang="fi">Plucker-asiakirja</comment>
+  <comment xml:lang="fr">document Plucker</comment>
+  <comment xml:lang="ga">cáipéis Plucker</comment>
+  <comment xml:lang="hu">Plucker dokumentum</comment>
+  <comment xml:lang="id">Dokumen Plucker</comment>
+  <comment xml:lang="it">Documento Plucker</comment>
+  <comment xml:lang="ko">Plucker 문서</comment>
+  <comment xml:lang="lt">Plucker dokumentas</comment>
+  <comment xml:lang="nb">Plucker-dokument</comment>
+  <comment xml:lang="nl">Plucker-document</comment>
+  <comment xml:lang="pt_BR">Documento do Plucker</comment>
+  <comment xml:lang="sv">Plucker-dokument</comment>
+  <comment xml:lang="uk">Документ Plucker</comment>
+  <comment xml:lang="vi">Tài liệu Plucker</comment>
+  <generic-icon name="x-office-document"/>
+</mime-type>

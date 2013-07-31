@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-tar">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Tar archive</comment>
+  <comment xml:lang="az">Tar arxivi</comment>
+  <comment xml:lang="be@latin">Archiŭ tar</comment>
+  <comment xml:lang="bg">Архив — tar</comment>
+  <comment xml:lang="ca">arxiu tar</comment>
+  <comment xml:lang="cs">Archiv tar</comment>
+  <comment xml:lang="cy">Archif tar</comment>
+  <comment xml:lang="es">archivador Tar</comment>
+  <comment xml:lang="eu">Tar artxiboa</comment>
+  <comment xml:lang="fi">Tar-arkisto</comment>
+  <comment xml:lang="fr">archive tar</comment>
+  <comment xml:lang="ga">cartlann Tar</comment>
+  <comment xml:lang="hu">Tar archívum</comment>
+  <comment xml:lang="id">Arsip Tar</comment>
+  <comment xml:lang="it">Archivio tar</comment>
+  <comment xml:lang="ko">tar 묶음파일</comment>
+  <comment xml:lang="lt">Tar archyvas</comment>
+  <comment xml:lang="nb">Tar-arkiv</comment>
+  <comment xml:lang="nl">Tar-archief</comment>
+  <comment xml:lang="pt_BR">Pacote tar</comment>
+  <comment xml:lang="ru">архив tar</comment>
+  <comment xml:lang="sv">Tar-arkiv</comment>
+  <comment xml:lang="vi">Kho nén tar</comment>
+  <generic-icon name="package-x-generic"/>
+  <alias type="application/x-gtar"/>
+</mime-type>

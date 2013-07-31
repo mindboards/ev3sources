@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="text/htmlh">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>help page</comment>
+  <comment xml:lang="az">yardım səhifəsi</comment>
+  <comment xml:lang="be@latin">staronka dapamohi</comment>
+  <comment xml:lang="bg">Страница от помощта</comment>
+  <comment xml:lang="ca">pàgina d'ajuda</comment>
+  <comment xml:lang="cs">Stránka nápovědy</comment>
+  <comment xml:lang="cy">tudalen gymorth</comment>
+  <comment xml:lang="da">hjælpeside</comment>
+  <comment xml:lang="de">Hilfeseite</comment>
+  <comment xml:lang="el">σελίδα βοηθείας</comment>
+  <comment xml:lang="en_GB">help page</comment>
+  <comment xml:lang="eo">help-paĝo</comment>
+  <comment xml:lang="es">página de ayuda</comment>
+  <comment xml:lang="eu">laguntzako orria</comment>
+  <comment xml:lang="fi">ohjesivu</comment>
+  <comment xml:lang="fr">page d'aide</comment>
+  <comment xml:lang="ga">leathanach cabhrach</comment>
+  <comment xml:lang="hu">súgóoldal</comment>
+  <comment xml:lang="id">halaman bantuan</comment>
+  <comment xml:lang="it">Pagina di aiuto</comment>
+  <comment xml:lang="ja">ヘルプページ</comment>
+  <comment xml:lang="ko">도움말 페이지</comment>
+  <comment xml:lang="lt">žinyno puslapis</comment>
+  <comment xml:lang="ms">Halaman bantuan</comment>
+  <comment xml:lang="nb">hjelpside</comment>
+  <comment xml:lang="nl">hulppagina</comment>
+  <comment xml:lang="nn">hjelpeside</comment>
+  <comment xml:lang="pl">strona pomocy</comment>
+  <comment xml:lang="pt">página de ajuda</comment>
+  <comment xml:lang="pt_BR">página de ajuda</comment>
+  <comment xml:lang="ru">страница помощи</comment>
+  <comment xml:lang="sq">faqe ndihme</comment>
+  <comment xml:lang="sr">страна помоћи</comment>
+  <comment xml:lang="sv">hjälpsida</comment>
+  <comment xml:lang="uk">сторінка довідки</comment>
+  <comment xml:lang="vi">trang trợ giúp</comment>
+  <comment xml:lang="zh_CN">帮助页面</comment>
+  <sub-class-of type="text/plain"/>
+</mime-type>

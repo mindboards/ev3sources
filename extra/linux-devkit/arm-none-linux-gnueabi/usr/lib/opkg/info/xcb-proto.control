@@ -1,0 +1,11 @@
+Package: xcb-proto
+Version: 1.6-r3.0.6
+Description: XCB: an X protocol C binding
+Section: x11/libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT-X
+Architecture: armv5te
+OE: xcb-proto
+Homepage: http://xcb.freedesktop.org
+Source: http://xcb.freedesktop.org/dist/xcb-proto-1.6.tar.bz2

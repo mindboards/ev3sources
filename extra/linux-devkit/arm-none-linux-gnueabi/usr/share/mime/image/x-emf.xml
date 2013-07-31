@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-emf">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>EMF image</comment>
+  <comment xml:lang="be@latin">Vyjava EMF</comment>
+  <comment xml:lang="bg">Изображение — EMF</comment>
+  <comment xml:lang="ca">imatge EMF</comment>
+  <comment xml:lang="cs">Obrázek EMF</comment>
+  <comment xml:lang="es">imagen EMF</comment>
+  <comment xml:lang="eu">EMF irudia</comment>
+  <comment xml:lang="fi">EMF-kuva</comment>
+  <comment xml:lang="fr">image EMF</comment>
+  <comment xml:lang="ga">íomhá EMF</comment>
+  <comment xml:lang="hu">EMF kép</comment>
+  <comment xml:lang="id">Citra EMF</comment>
+  <comment xml:lang="it">Immagine EMF</comment>
+  <comment xml:lang="ko">EMF 그림</comment>
+  <comment xml:lang="lt">EMF paveikslėlis</comment>
+  <comment xml:lang="nb">EMF-bilde</comment>
+  <comment xml:lang="nl">EMF-afbeelding</comment>
+  <comment xml:lang="pt_BR">Imagem EMF</comment>
+  <comment xml:lang="ru">изображение EMF</comment>
+  <comment xml:lang="sv">EMF-bild</comment>
+  <comment xml:lang="uk">Зображення EMF</comment>
+  <comment xml:lang="vi">Ảnh EMF</comment>
+  <acronym>EMF</acronym>
+  <expanded-acronym>Enhanced MetaFile</expanded-acronym>
+</mime-type>

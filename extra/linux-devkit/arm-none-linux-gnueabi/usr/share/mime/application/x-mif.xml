@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-mif">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Adobe FrameMaker MIF document</comment>
+  <comment xml:lang="be@latin">Dakument Adobe FrameMaker MIF</comment>
+  <comment xml:lang="bg">Документ — Adobe FrameMaker MIF</comment>
+  <comment xml:lang="ca">document de FrameMaker MIF d'Adobe</comment>
+  <comment xml:lang="cs">Dokument Adobe FrameMaker MIF</comment>
+  <comment xml:lang="de">Adobe FrameMaker-MIF-Dokument</comment>
+  <comment xml:lang="es">Documento MIF de Adobe FrameMaker</comment>
+  <comment xml:lang="eu">Adobe FrameMaker-en MIF dokumentua</comment>
+  <comment xml:lang="fi">Adobe FrameMaker MIF -asiakirja</comment>
+  <comment xml:lang="fr">document MIF Adobe FrameMaker</comment>
+  <comment xml:lang="ga">cáipéis MIF Adobe FrameMaker</comment>
+  <comment xml:lang="hu">Adobe FrameMaker MIF-dokumentum</comment>
+  <comment xml:lang="id">Dokumen Adobe FrameMaker MIF</comment>
+  <comment xml:lang="it">Documento MIF Adobe FrameMaker</comment>
+  <comment xml:lang="ko">어도비 프레임메이커 MIF 문서</comment>
+  <comment xml:lang="lt">Adobe FrameMaker MIF dokumentas</comment>
+  <comment xml:lang="nb">Adobe FrameMaker MIF-dokument</comment>
+  <comment xml:lang="nl">Adobe FrameMaker MIF-document</comment>
+  <comment xml:lang="pl">Dokument MIF Adobe FrameMaker</comment>
+  <comment xml:lang="pt_BR">Documento MIF do Adobe FrameMaker</comment>
+  <comment xml:lang="ru">документ Adobe FrameMaker MIF</comment>
+  <comment xml:lang="sv">Adobe FrameMaker MIF-dokument</comment>
+  <comment xml:lang="uk">Документ Adobe FrameMaker MIF</comment>
+  <comment xml:lang="vi">Tài liệu Adobe FrameMaker MIF</comment>
+</mime-type>

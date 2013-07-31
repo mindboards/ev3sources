@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-msod">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Office drawing</comment>
+  <comment xml:lang="be@latin">Ofisny rysunak</comment>
+  <comment xml:lang="bg">Чертеж — Office</comment>
+  <comment xml:lang="ca">dibuix d'Office</comment>
+  <comment xml:lang="cs">Kresba Office</comment>
+  <comment xml:lang="de">Office-Zeichnung</comment>
+  <comment xml:lang="en_GB">Office drawing</comment>
+  <comment xml:lang="es">dibujo de Office</comment>
+  <comment xml:lang="eu">Office marrazkia</comment>
+  <comment xml:lang="fi">Office-piirros</comment>
+  <comment xml:lang="fr">dessin Office</comment>
+  <comment xml:lang="ga">líníocht Office</comment>
+  <comment xml:lang="hu">Office rajz</comment>
+  <comment xml:lang="id">Gambar Office</comment>
+  <comment xml:lang="it">Disegno Office</comment>
+  <comment xml:lang="ko">오피스 드로잉</comment>
+  <comment xml:lang="lt">Office piešinys</comment>
+  <comment xml:lang="nb">Office-tegning</comment>
+  <comment xml:lang="nl">Office-tekening</comment>
+  <comment xml:lang="nn">Office-teikning</comment>
+  <comment xml:lang="pl">Rysunek Office</comment>
+  <comment xml:lang="pt_BR">Desenho do Office</comment>
+  <comment xml:lang="sv">Office-teckning</comment>
+  <comment xml:lang="uk">Малюнок Office</comment>
+  <comment xml:lang="vi">Bản vẽ Office</comment>
+</mime-type>

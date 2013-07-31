@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.openofficeorg.extension">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>OpenOffice.org extension</comment>
+  <comment xml:lang="be@latin">Pašyreńnie OpenOffice.org</comment>
+  <comment xml:lang="ca">extensió d'OpenOffice.org</comment>
+  <comment xml:lang="cs">Rozšíření OpenOffice.org</comment>
+  <comment xml:lang="fi">OpenOffice.org-laajennus</comment>
+  <comment xml:lang="fr">extension OpenOffice.org</comment>
+  <comment xml:lang="ga">eisínteacht OpenOffice.org</comment>
+  <comment xml:lang="id">Ekstensi OpenOffice.org</comment>
+  <comment xml:lang="it">Estensione OpenOffice.org</comment>
+  <comment xml:lang="ko">OpenOffice.org 확장</comment>
+  <comment xml:lang="lt">OpenOffice.org plėtinys</comment>
+  <comment xml:lang="nl">OpenOffice.org-uitbreiding</comment>
+  <comment xml:lang="pt_BR">Extensão do OpenOffice</comment>
+  <comment xml:lang="sv">OpenOffice.org-tillägg</comment>
+  <comment xml:lang="vi">Phần mở rộng của OpenOffice.org</comment>
+  <sub-class-of type="application/zip"/>
+  <generic-icon name="x-office-document"/>
+</mime-type>

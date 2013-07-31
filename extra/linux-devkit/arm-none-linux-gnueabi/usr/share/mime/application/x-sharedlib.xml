@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-sharedlib">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>shared library</comment>
+  <comment xml:lang="az">bölüşülmüş kitabxana</comment>
+  <comment xml:lang="be@latin">supolnaja biblijateka</comment>
+  <comment xml:lang="bg">Споделена библиотека</comment>
+  <comment xml:lang="ca">biblioteca compartida</comment>
+  <comment xml:lang="cs">Sdílená knihovna</comment>
+  <comment xml:lang="cy">llyfrgell wedi ei rhannu</comment>
+  <comment xml:lang="da">delt bibliotek</comment>
+  <comment xml:lang="de">gemeinsame Bibliothek</comment>
+  <comment xml:lang="el">αρχείο κοινόχρηστης βιβλιοθήκης</comment>
+  <comment xml:lang="en_GB">shared library</comment>
+  <comment xml:lang="eo">dinamike bindebla biblioteko</comment>
+  <comment xml:lang="es">biblioteca compartida</comment>
+  <comment xml:lang="eu">partekatutako liburutegia</comment>
+  <comment xml:lang="fi">jaettu kirjasto</comment>
+  <comment xml:lang="fr">bibliothèque partagée</comment>
+  <comment xml:lang="ga">comhleabharlann</comment>
+  <comment xml:lang="hu">osztott programkönyvtár</comment>
+  <comment xml:lang="id">pustaka bersama</comment>
+  <comment xml:lang="it">Libreria condivisa</comment>
+  <comment xml:lang="ja">共有ライブラリ</comment>
+  <comment xml:lang="ko">공유 라이브러리</comment>
+  <comment xml:lang="lt">bendroji biblioteka</comment>
+  <comment xml:lang="ms">Pustaka terkongsi</comment>
+  <comment xml:lang="nb">delt bibliotek</comment>
+  <comment xml:lang="nl">gedeelde bibliotheek</comment>
+  <comment xml:lang="nn">delt bibliotek</comment>
+  <comment xml:lang="pl">biblioteka współdzielona</comment>
+  <comment xml:lang="pt">biblioteca partilhada</comment>
+  <comment xml:lang="pt_BR">biblioteca compartilhada</comment>
+  <comment xml:lang="ru">разделяемая библиотека</comment>
+  <comment xml:lang="sq">librari e përbashkët</comment>
+  <comment xml:lang="sr">дељена библиотека</comment>
+  <comment xml:lang="sv">delat bibliotek</comment>
+  <comment xml:lang="uk">спільна бібліотека</comment>
+  <comment xml:lang="vi">thư viện dùng chung</comment>
+  <comment xml:lang="zh_CN">共享库</comment>
+  <comment xml:lang="zh_TW">分享函式庫</comment>
+</mime-type>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-mswinurl">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Internet shortcut</comment>
+  <comment xml:lang="be@latin">Sieciŭnaja spasyłka</comment>
+  <comment xml:lang="ca">drecera d'Internet</comment>
+  <comment xml:lang="cs">Odkaz do Internetu</comment>
+  <comment xml:lang="es">Acceso directo a Internet</comment>
+  <comment xml:lang="fi">Internet-pikakuvake</comment>
+  <comment xml:lang="fr">raccourci Internet</comment>
+  <comment xml:lang="ga">aicearra Idirlín</comment>
+  <comment xml:lang="hu">Internetes indítóikon</comment>
+  <comment xml:lang="id">Jalan pintas Internet</comment>
+  <comment xml:lang="it">Scorciatoia Internet</comment>
+  <comment xml:lang="ko">인터넷 단축아이콘</comment>
+  <comment xml:lang="lt">Interneto nuoroda</comment>
+  <comment xml:lang="nb">Internettsnarvei</comment>
+  <comment xml:lang="nl">internetkoppeling</comment>
+  <comment xml:lang="pt_BR">Atalho da internet</comment>
+  <comment xml:lang="sv">Internetgenväg</comment>
+  <comment xml:lang="vi">Lối tắt Internet</comment>
+</mime-type>

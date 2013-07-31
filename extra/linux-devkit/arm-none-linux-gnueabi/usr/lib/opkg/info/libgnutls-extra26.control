@@ -1,0 +1,12 @@
+Package: libgnutls-extra26
+Version: 2.10.2-r10.1.6
+Description: GNU Transport Layer Security Library
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv3
+Architecture: armv5te
+OE: gnutls
+Homepage: http://www.gnu.org/software/gnutls/
+Depends: libgnutls26, libz1, libgcrypt11, libgpg-error0, libgcc1, libc6
+Source: ftp://ftp.gnutls.org/pub/gnutls/gnutls-2.10.2.tar.bz2;name=gnutls file://gettextize-with-gettext-0.18.patch file://gnutls-openssl.patch file://gnutls-replace-siginterrupt.patch file://parallel-build.patch

@@ -1,0 +1,26 @@
+# Process this file with autoconf to produce a pkg-config metadata file.
+# Copyright (C) 2002, 2003, 2004, 2005, 2006, 2008, 2010 Free Software
+# Foundation, Inc.
+# Author: Simon Josefsson
+# 
+# This file is free software; as a special exception the author gives
+# unlimited permission to copy and/or distribute it, with or without
+# modifications, as long as this notice is preserved.
+# 
+# This file is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: GnuTLS-extra
+Description: Additional add-ons for GnuTLS licensed under GPL
+URL: http://www.gnu.org/software/gnutls/
+Requires: gnutls
+Version: 2.10.2
+Libs: -L${libdir} -lgnutls-extra
+Libs.private: -L/usr/lib -lgnutls-extra  
+Cflags: -I${includedir}

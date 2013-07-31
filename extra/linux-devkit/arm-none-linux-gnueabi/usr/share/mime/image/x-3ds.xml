@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-3ds">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>3D Studio image</comment>
+  <comment xml:lang="az">3D Studio rəsmi</comment>
+  <comment xml:lang="be@latin">Vyjava 3D Studio</comment>
+  <comment xml:lang="bg">Изображение — 3D Studio</comment>
+  <comment xml:lang="ca">imatge de 3D Studio</comment>
+  <comment xml:lang="cs">Obrázek 3D Studio</comment>
+  <comment xml:lang="cy">Delwedd "3D Studio"</comment>
+  <comment xml:lang="da">3D Studio-billede</comment>
+  <comment xml:lang="de">3D Studio-Bild</comment>
+  <comment xml:lang="el">εικόνα 3D Studio</comment>
+  <comment xml:lang="en_GB">3D Studio image</comment>
+  <comment xml:lang="eo">bildo de 3D Studio</comment>
+  <comment xml:lang="es">imagen de 3D Studio</comment>
+  <comment xml:lang="eu">3D Studio-ko irudia</comment>
+  <comment xml:lang="fi">3D Studio -kuva</comment>
+  <comment xml:lang="fr">image 3D Studio</comment>
+  <comment xml:lang="ga">íomhá 3D Studio</comment>
+  <comment xml:lang="hu">3D Studio-kép</comment>
+  <comment xml:lang="id">Citra 3D Studio</comment>
+  <comment xml:lang="it">Immagine 3D Studio</comment>
+  <comment xml:lang="ja">3D Studio 画像</comment>
+  <comment xml:lang="ko">3D Studio 그림</comment>
+  <comment xml:lang="lt">3D Studio paveikslėlis</comment>
+  <comment xml:lang="ms">Imej 3D Studio</comment>
+  <comment xml:lang="nb">3D Studio-bilde</comment>
+  <comment xml:lang="nl">3D-Studio-afbeelding</comment>
+  <comment xml:lang="nn">3D Studio-bilete</comment>
+  <comment xml:lang="pl">Obraz 3D Studio</comment>
+  <comment xml:lang="pt">imagem 3D Studio</comment>
+  <comment xml:lang="pt_BR">Imagem do 3D Studio</comment>
+  <comment xml:lang="ru">изображение 3D Studio</comment>
+  <comment xml:lang="sq">Figurë 3D Studio</comment>
+  <comment xml:lang="sr">3D Studio слика</comment>
+  <comment xml:lang="sv">3D Studio-bild</comment>
+  <comment xml:lang="uk">Зображення 3D Studio</comment>
+  <comment xml:lang="vi">Ảnh xuởng vẽ 3D</comment>
+  <comment xml:lang="zh_CN">3D Studio 图像</comment>
+  <comment xml:lang="zh_TW">3D Studio 圖片</comment>
+</mime-type>

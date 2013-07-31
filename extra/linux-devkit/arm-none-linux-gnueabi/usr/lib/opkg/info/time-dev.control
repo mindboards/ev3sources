@@ -1,0 +1,13 @@
+Package: time-dev
+Version: 1.7-r1.6
+Description: time measures many of the CPU resources, such as time and memory, that other programs use.
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPL
+Architecture: armv5te
+OE: time
+Homepage: http://www.gnu.org/software/time/
+Depends: time
+Recommends: libgcc1-dev, libc6-dev, time-dev
+Source: ftp://ftp.gnu.org/gnu/time/time-1.7.tar.gz file://debian.patch

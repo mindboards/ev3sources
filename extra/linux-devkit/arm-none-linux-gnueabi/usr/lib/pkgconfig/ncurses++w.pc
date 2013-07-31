@@ -1,0 +1,13 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+major_version=5
+version=5.7.20100501
+
+Name: ncurses++w
+Description: ncurses 5.7 add-on library
+Version: ${version}
+Requires: panelw menuw formw ncursesw tinfo
+Libs:  -lncurses++w
+Cflags: 

@@ -1,0 +1,32 @@
+# Process this file with autoconf to produce a pkg-config metadata file.
+# Copyright (C) 2002, 2003, 2004, 2005, 2006 Free Software Foundation
+# Author: Simon Josefsson
+#
+# This file is free software; as a special exception the author gives
+# unlimited permission to copy and/or distribute it, with or without
+# modifications, as long as this notice is preserved.
+#
+# This file is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY, to the extent permitted by law; without even the
+# implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+# API info
+api_version=1
+
+# Misc information.
+symmetric_ciphers=arcfour blowfish cast5 des aes twofish serpent rfc2268 seed camellia
+asymmetric_ciphers=dsa elgamal rsa ecc
+digests=crc md4 md5 rmd160 sha1 sha256 sha512 tiger whirlpool
+
+Name: libgcrypt
+Description: GNU crypto library
+URL: http://www.gnupg.org
+Version: 1.4.1
+Libs: -L${libdir} -lgcrypt
+Libs.private: -L${libdir} -lgpg-error
+Cflags: -I${includedir} 

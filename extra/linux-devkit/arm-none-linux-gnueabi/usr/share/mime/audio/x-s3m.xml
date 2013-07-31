@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="audio/x-s3m">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Scream Tracker 3 audio</comment>
+  <comment xml:lang="az">Scream Tracker 3 audio faylı</comment>
+  <comment xml:lang="be@latin">Aŭdyjo Scream Tracker 3</comment>
+  <comment xml:lang="bg">Аудио — Scream Tracker 3</comment>
+  <comment xml:lang="ca">àudio de Scream Tracker 3</comment>
+  <comment xml:lang="cs">Skladba Scream Tracker 3</comment>
+  <comment xml:lang="cy">Sain Scream Tracker 3</comment>
+  <comment xml:lang="da">Scream Tracker 3-lyd</comment>
+  <comment xml:lang="de">Scream Tracker 3-Audio</comment>
+  <comment xml:lang="el">ήχος Scream Tracker 3</comment>
+  <comment xml:lang="en_GB">Scream Tracker 3 audio</comment>
+  <comment xml:lang="eo">aŭdio de Scream Tracker 3</comment>
+  <comment xml:lang="es">audio Scream Tracker 3</comment>
+  <comment xml:lang="eu">Scream Tracker 3 audioa</comment>
+  <comment xml:lang="fi">Scream Tracker 3 -ääni</comment>
+  <comment xml:lang="fr">audio Scream Tracker 3</comment>
+  <comment xml:lang="ga">fuaim Scream Tracker 3</comment>
+  <comment xml:lang="hu">Scream Tracker 3 hang</comment>
+  <comment xml:lang="id">Audio Scream Tracker 3</comment>
+  <comment xml:lang="it">Audio Scream Tracker 3</comment>
+  <comment xml:lang="ja">Scream Tracker 3 オーディオ</comment>
+  <comment xml:lang="ko">Scream Tracker 3 오디오</comment>
+  <comment xml:lang="lt">Scream Tracker 3 garsas</comment>
+  <comment xml:lang="ms">Audio Scream Tracker 3</comment>
+  <comment xml:lang="nb">Scream Tracker 3-lyd</comment>
+  <comment xml:lang="nl">Scream Tracker 3-audio</comment>
+  <comment xml:lang="nn">Sream Tracker 3 lyd</comment>
+  <comment xml:lang="pl">Plik dźwiękowy Scream Trackera 3</comment>
+  <comment xml:lang="pt">áudio Scream Tracker 3</comment>
+  <comment xml:lang="pt_BR">Áudio Scream Tracker 3</comment>
+  <comment xml:lang="sq">Audio Scream Tracker 3</comment>
+  <comment xml:lang="sr">Scream Tracker 3 звучни запис</comment>
+  <comment xml:lang="sv">Scream Tracker 3-ljud</comment>
+  <comment xml:lang="uk">Звук Scream Tracker 3</comment>
+  <comment xml:lang="vi">Âm thanh Scream Tracker 3</comment>
+  <comment xml:lang="zh_CN">Scheme Tracker 3 音频</comment>
+  <comment xml:lang="zh_TW">Scream Tracker 3 音效</comment>
+</mime-type>

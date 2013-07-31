@@ -1,0 +1,12 @@
+Package: libcdio++0
+Version: 0.82-r3.0.6
+Description: gstreamer cdio++ library
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv3+
+Architecture: armv5te
+OE: libcdio
+Homepage: http://www.gnu.org/software/libcdio/
+Depends: libcdio12, libstdc++6, libc6, libgcc1
+Source: ftp://ftp.gnu.org/gnu/libcdio/libcdio-0.82.tar.gz

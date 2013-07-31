@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-cd-image">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>raw CD image</comment>
+  <comment xml:lang="be@latin">suvoraja vyjava CD</comment>
+  <comment xml:lang="bg">Изображение — raw CD</comment>
+  <comment xml:lang="ca">imatge de CD en cru</comment>
+  <comment xml:lang="cs">Surový obraz CD</comment>
+  <comment xml:lang="da">rå CD-aftryk</comment>
+  <comment xml:lang="de">CD-Roh-Image</comment>
+  <comment xml:lang="el">εικόνα περιεχομένου ψηφιακού δίσκου</comment>
+  <comment xml:lang="en_GB">raw CD image</comment>
+  <comment xml:lang="eo">kruda lumdiskbildo</comment>
+  <comment xml:lang="es">imagen de CD en bruto</comment>
+  <comment xml:lang="eu">CD gordinaren irudia </comment>
+  <comment xml:lang="fi">raaka CD-vedos</comment>
+  <comment xml:lang="fr">image CD brute</comment>
+  <comment xml:lang="ga">amhíomhá dhlúthdhiosca</comment>
+  <comment xml:lang="hu">nyers CD-lemezkép</comment>
+  <comment xml:lang="id">citra CD mentah</comment>
+  <comment xml:lang="it">Immagine raw CD</comment>
+  <comment xml:lang="ja">生 CD イメージ</comment>
+  <comment xml:lang="ko">CD 이미지</comment>
+  <comment xml:lang="lt">raw CD atvaizdis</comment>
+  <comment xml:lang="ms">Imej CD mentah</comment>
+  <comment xml:lang="nb">rått CD-bilde</comment>
+  <comment xml:lang="nl">ruw CD-beeldbestand</comment>
+  <comment xml:lang="nn">rått CD-bilete</comment>
+  <comment xml:lang="pl">surowy obraz CD</comment>
+  <comment xml:lang="pt">imagem em bruto de CD</comment>
+  <comment xml:lang="pt_BR">imagem bruta de CD</comment>
+  <comment xml:lang="sq">Imazh CD raw</comment>
+  <comment xml:lang="sr">сирови отисак ЦД-а</comment>
+  <comment xml:lang="sv">rå cd-avbild</comment>
+  <comment xml:lang="uk">образ raw CD</comment>
+  <comment xml:lang="vi">ảnh đĩa CD thô</comment>
+  <comment xml:lang="zh_CN">原始 CD 映像</comment>
+</mime-type>

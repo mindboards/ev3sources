@@ -1,0 +1,24 @@
+# Process this file with autoconf to produce a pkg-config metadata file.
+
+# Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010  Free Software
+# Foundation, Inc.
+
+# Copying and distribution of this file, with or without modification,
+# are permitted in any medium without royalty provided the copyright
+# notice and this notice are preserved.  This file is offered as-is,
+# without any warranty.
+
+# Author: Simon Josefsson
+
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: GnuTLS
+Description: Transport Security Layer implementation for the GNU system
+URL: http://www.gnu.org/software/gnutls/
+Version: 2.10.2
+Libs: -L${libdir} -lgnutls
+Libs.private: -L/usr/lib -lgnutls  
+Cflags: -I${includedir}

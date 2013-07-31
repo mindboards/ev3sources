@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: sndfile
+Description: A library for reading and writing audio files
+Requires: 
+Version: 1.0.21
+Libs: -L${libdir} -lsndfile
+Libs.private: 
+Cflags: -I${includedir} 

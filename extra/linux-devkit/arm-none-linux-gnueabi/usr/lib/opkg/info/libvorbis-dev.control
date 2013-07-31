@@ -1,0 +1,13 @@
+Package: libvorbis-dev
+Version: 1.2.3-r2.1.6
+Description: Ogg Vorbis is a high-quality lossy audio codec that is free of intellectual property restrictions. libvorbis is the main vorbis codec library.
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: BSD
+Architecture: armv5te
+OE: libvorbis
+Homepage: unknown
+Depends: libvorbis0, libvorbis0, libogg-dev
+Recommends: libogg-dev, libc6-dev, libgcc1-dev, libvorbis-dev
+Source: http://downloads.xiph.org/releases/vorbis/libvorbis-1.2.3.tar.gz file://configure_powerpc-no-fixed-cpu.patch file://patch-lib_backends.h;apply=yes;striplevel=0 file://patch-lib_codebook.c;apply=yes;striplevel=0 file://patch-lib_modes_residue_44.h;apply=yes;striplevel=0 file://patch-lib_modes_residue_44u.h;apply=yes;striplevel=0 file://patch-lib_res0.c;apply=yes;striplevel=0

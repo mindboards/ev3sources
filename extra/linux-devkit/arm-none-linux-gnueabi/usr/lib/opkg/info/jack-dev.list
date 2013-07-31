@@ -1,0 +1,14 @@
+/usr/lib/pkgconfig/jack.pc
+/usr/include/jack/transport.h
+/usr/lib/libjack.la
+/usr/include/jack/timestamps.h
+/usr/include/jack/types.h
+/usr/include/jack/midiport.h
+/usr/lib/libjackserver.la
+/usr/lib/libjack.so
+/usr/include/jack/thread.h
+/usr/include/jack/ringbuffer.h
+/usr/include/jack/statistics.h
+/usr/lib/libjackserver.so
+/usr/include/jack/intclient.h
+/usr/include/jack/jack.h

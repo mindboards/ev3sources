@@ -1,0 +1,11 @@
+service printer
+{
+	socket_type = stream
+	protocol = tcp
+	wait = no
+	user = lp
+	group = lp
+	passenv =
+	server = /usr/lib/cups/daemon/cups-lpd
+	server_args = -o document-format=application/octet-stream
+}

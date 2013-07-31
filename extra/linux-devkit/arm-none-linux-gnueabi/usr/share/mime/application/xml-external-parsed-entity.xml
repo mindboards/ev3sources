@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/xml-external-parsed-entity">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>XML entities document</comment>
+  <comment xml:lang="be@latin">Dakument elementaŭ XML</comment>
+  <comment xml:lang="ca">document d'entitats XML</comment>
+  <comment xml:lang="cs">Dokument entit XML</comment>
+  <comment xml:lang="es">documento de entidades XML</comment>
+  <comment xml:lang="fi">XML-entiteettiasiakirja</comment>
+  <comment xml:lang="fr">document d'entités XML</comment>
+  <comment xml:lang="ga">cáipéis aonán XML</comment>
+  <comment xml:lang="hu">XML egyeddokumentum</comment>
+  <comment xml:lang="id">Dokumen entitas XML</comment>
+  <comment xml:lang="it">Documento entità XML</comment>
+  <comment xml:lang="ko">XML 엔티티 문서</comment>
+  <comment xml:lang="lt">XML esybių dokumentas</comment>
+  <comment xml:lang="nb">XML-entitetsdokument</comment>
+  <comment xml:lang="nl">XML entiteiten-document</comment>
+  <comment xml:lang="pt_BR">Documento de entidades XML</comment>
+  <comment xml:lang="sv">XML-entitetsdokument</comment>
+  <comment xml:lang="vi">Tài liệu thực thể XML</comment>
+  <acronym>XML</acronym>
+  <expanded-acronym>eXtensible Markup Language</expanded-acronym>
+  <sub-class-of type="application/xml"/>
+  <generic-icon name="text-html"/>
+  <alias type="text/xml-external-parsed-entity"/>
+</mime-type>

@@ -1,0 +1,12 @@
+Package: libxau6
+Version: 1:1.0.6-r9.0.6
+Description: A Sample Authorization Protocol for X
+Section: x11/libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: MIT-X
+Architecture: armv5te
+OE: libxau
+Homepage: http://www.x.org
+Depends: libgcc1, libc6
+Source: http://xorg.freedesktop.org/releases/individual/lib/libXau-1.0.6.tar.bz2;name=archive

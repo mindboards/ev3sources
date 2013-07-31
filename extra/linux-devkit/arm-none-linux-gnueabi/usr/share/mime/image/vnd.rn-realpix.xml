@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/vnd.rn-realpix">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>RealPix document</comment>
+  <comment xml:lang="be@latin">Dakument RealPix</comment>
+  <comment xml:lang="bg">Документ — RealPix</comment>
+  <comment xml:lang="ca">document RealPix</comment>
+  <comment xml:lang="cs">Dokument RealPix</comment>
+  <comment xml:lang="de">RealPix-Dokument</comment>
+  <comment xml:lang="en_GB">RealPix document</comment>
+  <comment xml:lang="es">documento RealPix</comment>
+  <comment xml:lang="eu">RealPix dokumentua</comment>
+  <comment xml:lang="fi">RealPix-asiakirja</comment>
+  <comment xml:lang="fr">document RealPix</comment>
+  <comment xml:lang="ga">cáipéis RealPix</comment>
+  <comment xml:lang="hu">RealPix dokumentum</comment>
+  <comment xml:lang="id">Dokumen RealPix</comment>
+  <comment xml:lang="it">Documento RealPix</comment>
+  <comment xml:lang="ko">RealPix 문서</comment>
+  <comment xml:lang="lt">RealPix dokumentas</comment>
+  <comment xml:lang="nb">RealPix-dokument</comment>
+  <comment xml:lang="nl">RealPix-document</comment>
+  <comment xml:lang="nn">RealPix-dokument</comment>
+  <comment xml:lang="pl">Dokument RealPix</comment>
+  <comment xml:lang="pt_BR">Documento RealPix</comment>
+  <comment xml:lang="sv">RealPix-dokument</comment>
+  <comment xml:lang="uk">Документ RealPix</comment>
+  <comment xml:lang="vi">Tài liệu ảnh RealPix</comment>
+</mime-type>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="video/x-matroska">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Matroska video</comment>
+  <comment xml:lang="be@latin">Videa Matroska</comment>
+  <comment xml:lang="bg">Видео — Matroska</comment>
+  <comment xml:lang="ca">vídeo Matroska</comment>
+  <comment xml:lang="cs">Video Matroska</comment>
+  <comment xml:lang="da">Matroska-video</comment>
+  <comment xml:lang="de">Matroska-Video</comment>
+  <comment xml:lang="el">βίντεο Matroska</comment>
+  <comment xml:lang="en_GB">Matroska video</comment>
+  <comment xml:lang="eo">Matroska-video</comment>
+  <comment xml:lang="es">vídeo Matroska</comment>
+  <comment xml:lang="eu">Matroska bideoa</comment>
+  <comment xml:lang="fi">Matroska-video</comment>
+  <comment xml:lang="fr">vidéo Matroska</comment>
+  <comment xml:lang="ga">físeán Matroska</comment>
+  <comment xml:lang="hu">Matroska-videó</comment>
+  <comment xml:lang="id">Video Matroska</comment>
+  <comment xml:lang="it">Video Matroska</comment>
+  <comment xml:lang="ja">Matroska 動画</comment>
+  <comment xml:lang="ko">Matroska 비디오</comment>
+  <comment xml:lang="lt">Matroska vaizdas</comment>
+  <comment xml:lang="ms">Video Matroska</comment>
+  <comment xml:lang="nb">Matroska-film</comment>
+  <comment xml:lang="nl">Matroska-video</comment>
+  <comment xml:lang="nn">Matroska-video</comment>
+  <comment xml:lang="pl">Plik wideo Matroska</comment>
+  <comment xml:lang="pt">vídeo Matroska</comment>
+  <comment xml:lang="pt_BR">Vídeo Matroska</comment>
+  <comment xml:lang="ru">Matroska видео</comment>
+  <comment xml:lang="sq">Video Matroska</comment>
+  <comment xml:lang="sr">Матрошка видео</comment>
+  <comment xml:lang="sv">Matroska-video</comment>
+  <comment xml:lang="uk">Відео-кліп Matroska</comment>
+  <comment xml:lang="vi">Ảnh động Matroska</comment>
+  <comment xml:lang="zh_CN">Matroska 视频</comment>
+  <comment xml:lang="zh_TW">Matroska 影音檔</comment>
+  <sub-class-of type="application/x-matroska"/>
+</mime-type>

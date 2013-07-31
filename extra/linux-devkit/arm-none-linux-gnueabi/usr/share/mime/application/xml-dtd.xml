@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/xml-dtd">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>DTD file</comment>
+  <comment xml:lang="be@latin">Fajł DTD</comment>
+  <comment xml:lang="bg">Документ — DTD</comment>
+  <comment xml:lang="ca">fitxer DTD</comment>
+  <comment xml:lang="cs">Soubor DTD</comment>
+  <comment xml:lang="de">DTD-Datei</comment>
+  <comment xml:lang="en_GB">DTD file</comment>
+  <comment xml:lang="es">archivo DTD</comment>
+  <comment xml:lang="eu">DTD fitxategia</comment>
+  <comment xml:lang="fi">DTD-tiedosto</comment>
+  <comment xml:lang="fr">fichier DTD</comment>
+  <comment xml:lang="ga">comhad DTD</comment>
+  <comment xml:lang="hu">DTD fájl</comment>
+  <comment xml:lang="id">Berkas DTD</comment>
+  <comment xml:lang="it">File DTD</comment>
+  <comment xml:lang="ko">DTD 파일</comment>
+  <comment xml:lang="lt">DTD rinkmena</comment>
+  <comment xml:lang="nb">DTD-fil</comment>
+  <comment xml:lang="nl">DTD-bestand</comment>
+  <comment xml:lang="nn">DTD-fil</comment>
+  <comment xml:lang="pl">Plik DTD</comment>
+  <comment xml:lang="pt_BR">Arquivo DTD</comment>
+  <comment xml:lang="sv">DTD-fil</comment>
+  <comment xml:lang="uk">Файл DTD</comment>
+  <comment xml:lang="vi">Tập tin DTD</comment>
+  <acronym>DTD</acronym>
+  <expanded-acronym>Document Type Definition</expanded-acronym>
+  <sub-class-of type="text/plain"/>
+  <generic-icon name="text-x-generic"/>
+  <alias type="text/x-dtd"/>
+</mime-type>

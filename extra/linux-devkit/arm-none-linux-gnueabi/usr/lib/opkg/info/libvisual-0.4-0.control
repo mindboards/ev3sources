@@ -1,0 +1,12 @@
+Package: libvisual-0.4-0
+Version: 0.4.0-r1.6
+Description: A cross platform audio visualization library
+Section: libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPL GPL
+Architecture: armv5te
+OE: libvisual
+Homepage: http://libvisual.sf.net
+Depends: libc6, libgcc1
+Source: http://downloads.sourceforge.net/libvisual/libvisual-0.4.0.tar.gz file://no-libdir.patch

@@ -1,0 +1,70 @@
+config CAN_TI_OMAPL_PRU
+	depends on CAN_DEV && ARCH_DAVINCI && ARCH_DAVINCI_DA850
+	tristate "PRU based CAN emulation for OMAPL"
+	---help---
+	Enable this to emulate a CAN controller on the PRU of OMAPL.
+	If not sure, mark N
+
+config OMAPL_CAN_FW_SOURCE
+    string "OMAPL PRU CAN source file(s)"
+    depends on CAN_TI_OMAPL_PRU
+    default ""
+    ---help---
+    Enter the path for the OMAPL PRU CAN source files (<system path>/pru)
+
+config OMAPL_PRU_CANID_MBX0
+    hex "CANID for mailbox 0"
+    depends on CAN_TI_OMAPL_PRU
+    default "0x123"
+    ---help---
+    Enter the CANID for mailbox 0
+
+config OMAPL_PRU_CANID_MBX1
+    hex "CANID for mailbox 1"
+    depends on CAN_TI_OMAPL_PRU
+    default "0x123"
+    ---help---
+    Enter the CANID for mailbox 1
+
+config OMAPL_PRU_CANID_MBX2
+    hex "CANID for mailbox 2"
+    depends on CAN_TI_OMAPL_PRU
+    default "0x123"
+    ---help---
+    Enter the CANID for mailbox 2
+
+config OMAPL_PRU_CANID_MBX3
+    hex "CANID for mailbox 3"
+    depends on CAN_TI_OMAPL_PRU
+    default "0x123"
+    ---help---
+    Enter the CANID for mailbox 3
+
+config OMAPL_PRU_CANID_MBX4
+    hex "CANID for mailbox 4"
+    depends on CAN_TI_OMAPL_PRU
+    default "0x123"
+    ---help---
+    Enter the CANID for mailbox 4
+
+config OMAPL_PRU_CANID_MBX5
+    hex "CANID for mailbox 5"
+    depends on CAN_TI_OMAPL_PRU
+    default "0x123"
+    ---help---
+    Enter the CANID for mailbox 5
+
+config OMAPL_PRU_CANID_MBX6
+    hex "CANID for mailbox 6"
+    depends on CAN_TI_OMAPL_PRU
+    default "0x123"
+    ---help---
+    Enter the CANID for mailbox 6
+
+config OMAPL_PRU_CANID_MBX7
+    hex "CANID for mailbox 7"
+    depends on CAN_TI_OMAPL_PRU
+    default "0x123"
+    ---help---
+    Enter the CANID for mailbox 7
+

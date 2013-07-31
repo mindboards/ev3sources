@@ -1,0 +1,12 @@
+Package: task-arago-toolchain-host
+Version: 1.0-r3.6
+Description: Host packages for a standalone Arago SDK or external toolchain
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: unknown
+Architecture: i686-armv5te-sdk
+OE: task-arago-toolchain-host
+Homepage: unknown
+Depends: pkgconfig-sdk, opkg-sdk, libtool-sdk
+Source: file:///home/schuyler_2/am_builds/arago/recipes/tasks/task-arago-toolchain-host.bb

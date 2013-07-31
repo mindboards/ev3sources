@@ -1,0 +1,3 @@
+/usr/lib/libpthread-stubs.la
+/usr/lib/pkgconfig/pthread-stubs.pc
+/usr/lib/libpthread-stubs.so

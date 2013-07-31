@@ -1,0 +1,12 @@
+Package: libopkg0
+Version: 0.1.8+svnr587-r3.6
+Description: Opkg Package Manager Library
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2
+Architecture: armv5te
+OE: opkg
+Homepage: unknown
+Depends: libgcc1, libc6
+Source: svn://opkg.googlecode.com/svn;module=trunk;proto=http file://configure

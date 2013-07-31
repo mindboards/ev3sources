@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: Xext
+Description: Misc X Extension Library
+Version: 1.2.0
+Requires: xextproto
+Requires.private: x11
+Cflags: -I${includedir}
+Libs: -L${libdir} -lXext

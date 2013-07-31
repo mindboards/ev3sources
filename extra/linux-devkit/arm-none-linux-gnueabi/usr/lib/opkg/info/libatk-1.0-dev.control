@@ -1,0 +1,13 @@
+Package: libatk-1.0-dev
+Version: 1.30.0-r1.6
+Description: An accessibility toolkit for GNOME.
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPL
+Architecture: armv5te
+OE: atk
+Homepage: unknown
+Depends: libatk-1.0-0, libatk-1.0-0, libglib-2.0-dev
+Recommends: libglib-2.0-dev, hicolor-icon-theme-dev, gobject-2.0-dev, gthread-2.0-dev, libc6-dev, libgcc1-dev, libatk-1.0-dev, virtual-locale-kn-dev, virtual-locale-es-dev, virtual-locale-yi-dev, virtual-locale-is-dev, virtual-locale-ka-dev, virtual-locale-ms-dev, virtual-locale-th-dev, virtual-locale-ta-dev, virtual-locale-az-dev, virtual-locale-lv-dev, virtual-locale-da-dev, virtual-locale-mr-dev, virtual-locale-eu-dev, virtual-locale-en+shaw-dev, virtual-locale-cy-dev, virtual-locale-fa-dev, virtual-locale-fr-dev, virtual-locale-he-dev, virtual-locale-gl-dev, virtual-locale-en-ca-dev, virtual-locale-ku-dev, virtual-locale-zh-hk-dev, virtual-locale-hu-dev, virtual-locale-or-dev, virtual-locale-ca+valencia-dev, virtual-locale-de-dev, virtual-locale-as-dev, virtual-locale-id-dev, virtual-locale-nb-dev, virtual-locale-uk-dev, virtual-locale-ca-dev, virtual-locale-zh-cn-dev, virtual-locale-et-dev, virtual-locale-bn-in-dev, virtual-locale-ro-dev, virtual-locale-zh-tw-dev, virtual-locale-mai-dev, virtual-locale-ko-dev, virtual-locale-be-dev, virtual-locale-lt-dev, virtual-locale-ug-dev, virtual-locale-ps-dev, virtual-locale-am-dev, virtual-locale-sr+ije-dev, virtual-locale-dz-dev, virtual-locale-tt-dev, virtual-locale-it-dev, virtual-locale-si-dev, virtual-locale-rw-dev, virtual-locale-mn-dev, virtual-locale-cs-dev, virtual-locale-oc-dev, virtual-locale-tr-dev, virtual-locale-eo-dev, virtual-locale-el-dev, virtual-locale-ar-dev, virtual-locale-te-dev, virtual-locale-sq-dev, virtual-locale-pl-dev, virtual-locale-sv-dev, virtual-locale-sr+latin-dev, virtual-locale-fi-dev, virtual-locale-pt-br-dev, virtual-locale-bs-dev, virtual-locale-pt-dev, virtual-locale-bn-dev, virtual-locale-nl-dev, virtual-locale-sr-dev, virtual-locale-gu-dev, virtual-locale-mk-dev, virtual-locale-bg-dev, virtual-locale-ast-dev, virtual-locale-sl-dev, virtual-locale-ru-dev, virtual-locale-en-gb-dev, virtual-locale-ga-dev, virtual-locale-li-dev, virtual-locale-nn-dev, virtual-locale-af-dev, virtual-locale-hr-dev, virtual-locale-tk-dev, virtual-locale-ml-dev, virtual-locale-vi-dev, virtual-locale-hi-dev, virtual-locale-xh-dev, virtual-locale-wa-dev, virtual-locale-ne-dev, virtual-locale-be+latin-dev, virtual-locale-sk-dev, virtual-locale-ja-dev, virtual-locale-pa-dev
+Source: http://ftp.gnome.org/pub/GNOME/sources/atk/1.30/atk-1.30.0.tar.bz2;name=archive

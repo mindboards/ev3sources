@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-eps">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>EPS image</comment>
+  <comment xml:lang="be@latin">Vyjava EPS</comment>
+  <comment xml:lang="bg">Изображение — EPS</comment>
+  <comment xml:lang="ca">imatge EPS</comment>
+  <comment xml:lang="cs">Obrázek EPS</comment>
+  <comment xml:lang="de">EPS-Bild</comment>
+  <comment xml:lang="en_GB">EPS image</comment>
+  <comment xml:lang="es">imagen EPS</comment>
+  <comment xml:lang="eu">EPS irudia</comment>
+  <comment xml:lang="fi">EPS-kuva</comment>
+  <comment xml:lang="fr">image EPS</comment>
+  <comment xml:lang="ga">íomhá EPS</comment>
+  <comment xml:lang="hu">EPS kép</comment>
+  <comment xml:lang="id">Citra EPS</comment>
+  <comment xml:lang="it">Immagine EPS</comment>
+  <comment xml:lang="ko">EPS 그림</comment>
+  <comment xml:lang="lt">EPS paveikslėlis</comment>
+  <comment xml:lang="nb">EPS-bilde</comment>
+  <comment xml:lang="nl">EPS-afbeelding</comment>
+  <comment xml:lang="nn">EPS-bilete</comment>
+  <comment xml:lang="pl">Obraz EPS</comment>
+  <comment xml:lang="pt_BR">Imagem EPS</comment>
+  <comment xml:lang="ru">изображение EPS</comment>
+  <comment xml:lang="sv">EPS-bild</comment>
+  <comment xml:lang="uk">Зображення EPS</comment>
+  <comment xml:lang="vi">Ảnh EPS</comment>
+  <acronym>EPS</acronym>
+  <expanded-acronym>Encapsulated PostScript</expanded-acronym>
+  <sub-class-of type="application/postscript"/>
+</mime-type>

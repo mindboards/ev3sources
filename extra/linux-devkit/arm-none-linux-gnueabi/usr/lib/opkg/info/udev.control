@@ -1,0 +1,13 @@
+Package: udev
+Version: 141-r30.3-arago2.6
+Description: udev is a daemon which dynamically creates and removes device nodes from /dev/, handles hotplug events and loads drivers at boot time. It replaces the hotplug package and requires a kernel not older than 2.6.12.
+Section: base
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2+
+Architecture: armv5te
+OE: udev
+Homepage: unknown
+Depends: module-init-tools-depmod, udev-utils, update-rc.d, libgcc1, libc6
+Provides: hotplug, udev-compat-wrapper
+Source: http://kernel.org/pub/linux/utils/kernel/hotplug/udev-141.tar.gz file://udev.rules file://devfs-udev.rules file://links.conf file://permissions.rules file://mount.sh file://network.sh file://local.rules file://init file://udev-compat-wrapper-patch file://mount.blacklist file://run.rules file://default file://cache

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="multipart/alternative">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>message in several formats</comment>
+  <comment xml:lang="az">verici formatlarında ismarış</comment>
+  <comment xml:lang="be@latin">paviedamleńnie ŭ niekalkich farmatach</comment>
+  <comment xml:lang="bg">Съобщение в няколко формата</comment>
+  <comment xml:lang="ca">missatge en varis formats</comment>
+  <comment xml:lang="cs">Zpráva v několika formátech</comment>
+  <comment xml:lang="cy">neges mewn sawl fformat</comment>
+  <comment xml:lang="da">meddelelse i flere formater</comment>
+  <comment xml:lang="de">Nachricht in mehreren Formaten</comment>
+  <comment xml:lang="el">μήνυμα σε διάφορες μορφές</comment>
+  <comment xml:lang="en_GB">message in several formats</comment>
+  <comment xml:lang="eo">mesaĝo en pluraj formatoj</comment>
+  <comment xml:lang="es">mensaje en varios formatos</comment>
+  <comment xml:lang="eu">hainbat formatuko mezua</comment>
+  <comment xml:lang="fi">viesti useissa muodoissa</comment>
+  <comment xml:lang="fr">message en formats divers</comment>
+  <comment xml:lang="ga">teachtaireacht i roinnt fhormáidí</comment>
+  <comment xml:lang="hu">többféle formátumú üzenet</comment>
+  <comment xml:lang="id">pesan dalam beberapa format</comment>
+  <comment xml:lang="it">Messaggio in diversi formati</comment>
+  <comment xml:lang="ja">いくつかの形式でのメッセージ</comment>
+  <comment xml:lang="ko">몇몇형식의 메세지</comment>
+  <comment xml:lang="lt">laiškas keletu formatų</comment>
+  <comment xml:lang="ms">Mesej dalam beberapa format</comment>
+  <comment xml:lang="nb">melding i flere formater</comment>
+  <comment xml:lang="nl">bericht in meerdere opmaken</comment>
+  <comment xml:lang="nn">melding i fleire format</comment>
+  <comment xml:lang="pl">wiadomość w wielu formatach</comment>
+  <comment xml:lang="pt">mensagem em vários formatos</comment>
+  <comment xml:lang="pt_BR">mensagem em vários formatos</comment>
+  <comment xml:lang="sq">mesazh i formateve të ndryshëm</comment>
+  <comment xml:lang="sr">поруке у више записа</comment>
+  <comment xml:lang="sv">meddelande i flera format</comment>
+  <comment xml:lang="uk">повідомлення у кількох форматах</comment>
+  <comment xml:lang="vi">thông điệp có vài định dạng</comment>
+  <comment xml:lang="zh_CN">各种格式的消息</comment>
+</mime-type>

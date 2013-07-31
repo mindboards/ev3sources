@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-executable">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>executable</comment>
+  <comment xml:lang="be@latin">vykonvalny fajł</comment>
+  <comment xml:lang="bg">Изпълним файл</comment>
+  <comment xml:lang="ca">executable</comment>
+  <comment xml:lang="cs">Spustitelný soubor</comment>
+  <comment xml:lang="da">kørbar</comment>
+  <comment xml:lang="de">Programm</comment>
+  <comment xml:lang="el">εκτελέσιμο</comment>
+  <comment xml:lang="en_GB">executable</comment>
+  <comment xml:lang="eo">plenumebla</comment>
+  <comment xml:lang="es">ejecutable</comment>
+  <comment xml:lang="eu">exekutagarria</comment>
+  <comment xml:lang="fi">suoritettava ohjelma</comment>
+  <comment xml:lang="fr">exécutable</comment>
+  <comment xml:lang="ga">comhad inrite</comment>
+  <comment xml:lang="hu">futtatható</comment>
+  <comment xml:lang="id">dapat dieksekusi</comment>
+  <comment xml:lang="it">Eseguibile</comment>
+  <comment xml:lang="ja">実行ファイル</comment>
+  <comment xml:lang="ko">실행파일</comment>
+  <comment xml:lang="lt">vykdomoji rinkmena</comment>
+  <comment xml:lang="ms">Bolehlaksana</comment>
+  <comment xml:lang="nb">kjørbar</comment>
+  <comment xml:lang="nl">uitvoerbaar bestand</comment>
+  <comment xml:lang="nn">køyrbar</comment>
+  <comment xml:lang="pl">plik uruchamialny</comment>
+  <comment xml:lang="pt">executável</comment>
+  <comment xml:lang="pt_BR">executável</comment>
+  <comment xml:lang="ru">исполняемый</comment>
+  <comment xml:lang="sq">e ekzekutueshme</comment>
+  <comment xml:lang="sr">извршна</comment>
+  <comment xml:lang="sv">körbar fil</comment>
+  <comment xml:lang="uk">виконуваний файл</comment>
+  <comment xml:lang="vi">thực hiện được</comment>
+  <comment xml:lang="zh_CN">可执行文件</comment>
+  <comment xml:lang="zh_TW">可執行檔</comment>
+  <generic-icon name="application-x-executable"/>
+</mime-type>

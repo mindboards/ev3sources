@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-cbz">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>comic book archive</comment>
+  <comment xml:lang="be@latin">archiŭ komiksaŭ</comment>
+  <comment xml:lang="ca">arxiu comic book</comment>
+  <comment xml:lang="cs">Archiv knihy komiksů</comment>
+  <comment xml:lang="es">archivador de libro de cómic</comment>
+  <comment xml:lang="fi">sarjakuva-arkisto</comment>
+  <comment xml:lang="fr">archive Comic Book</comment>
+  <comment xml:lang="ga">cartlann chartúin</comment>
+  <comment xml:lang="hu">képregényarchívum</comment>
+  <comment xml:lang="id">arsip buku komik</comment>
+  <comment xml:lang="it">Archivio comic book</comment>
+  <comment xml:lang="ko">코믹북 묶음파일</comment>
+  <comment xml:lang="lt">komiksų knygos archyvas</comment>
+  <comment xml:lang="nb">Tegneseriearkiv</comment>
+  <comment xml:lang="nl">stripboek-archief</comment>
+  <comment xml:lang="pt_BR">Pacote de livro de revista em quadrinhos</comment>
+  <comment xml:lang="sv">serietidningsarkiv</comment>
+  <comment xml:lang="vi">Kho nén sách tranh chuyện vui</comment>
+  <sub-class-of type="application/zip"/>
+  <generic-icon name="x-office-document"/>
+</mime-type>

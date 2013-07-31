@@ -1,0 +1,9 @@
+/usr/lib/alsa-lib/smixer/smixer-hda.la
+/usr/lib/alsa-lib/smixer/smixer-sbase.la
+/usr/lib/alsa-lib/smixer/smixer-ac97.la
+/usr/lib/alsa-lib/smixer/smixer-hda.so
+/usr/lib/alsa-lib/smixer/smixer-sbase.so
+/usr/lib/alsa-lib/smixer/smixer-ac97.so
+/usr/lib/alsa-lib/smixer/smixer-ac97.a
+/usr/lib/alsa-lib/smixer/smixer-hda.a
+/usr/lib/alsa-lib/smixer/smixer-sbase.a

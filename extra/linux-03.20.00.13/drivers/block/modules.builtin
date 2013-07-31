@@ -1,0 +1,2 @@
+kernel/drivers/block/brd.ko
+kernel/drivers/block/loop.ko

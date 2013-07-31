@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-nikon-nef">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Nikon NEF raw image</comment>
+  <comment xml:lang="be@latin">Suvoraja vyjava Nikon NEF</comment>
+  <comment xml:lang="bg">Изображение — Nikon NEF raw</comment>
+  <comment xml:lang="ca">imatge en cru de Nikon NEF</comment>
+  <comment xml:lang="cs">Surový obrázek Nikon NEF</comment>
+  <comment xml:lang="es">imagen en bruto NEF de Nikon</comment>
+  <comment xml:lang="eu">Nikon NEF irudi gordina</comment>
+  <comment xml:lang="fi">Nikon-NEF-raakakuva</comment>
+  <comment xml:lang="fr">image brute NEF Nikon</comment>
+  <comment xml:lang="ga">amhíomhá Nikon NEF</comment>
+  <comment xml:lang="hu">Nikon NEF nyers kép</comment>
+  <comment xml:lang="id">Citra mentah Nikon NEF</comment>
+  <comment xml:lang="it">Immagine raw Nikon NEF</comment>
+  <comment xml:lang="ko">니콘 NEF raw 이미지</comment>
+  <comment xml:lang="lt">Nikon NEF neapdorotas paveikslėlis</comment>
+  <comment xml:lang="nb">Nikon NEF raw-bilde</comment>
+  <comment xml:lang="nl">onbewerkt Nikon NEF-beeld</comment>
+  <comment xml:lang="pt_BR">Imagem bruta NEF da Nikon</comment>
+  <comment xml:lang="sv">Nikon NEF-råbild</comment>
+  <comment xml:lang="vi">Ảnh thô Nikon NEF</comment>
+  <acronym>NEF</acronym>
+  <expanded-acronym>Nikon Electronic Format</expanded-acronym>
+  <sub-class-of type="image/x-dcraw"/>
+  <sub-class-of type="image/tiff"/>
+</mime-type>

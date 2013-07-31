@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-skencil">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Skencil document</comment>
+  <comment xml:lang="be@latin">Dakument Skencil</comment>
+  <comment xml:lang="ca">document Skencil</comment>
+  <comment xml:lang="cs">Dokument Skencil</comment>
+  <comment xml:lang="fi">Skencil-asiakirja</comment>
+  <comment xml:lang="fr">document Skencil</comment>
+  <comment xml:lang="ga">cáipéis Skencil</comment>
+  <comment xml:lang="id">Dokumen Skencil</comment>
+  <comment xml:lang="it">Documento Skencil</comment>
+  <comment xml:lang="ko">Skencil 문서</comment>
+  <comment xml:lang="lt">Skencil dokumentas</comment>
+  <comment xml:lang="nl">Skencil-document</comment>
+  <comment xml:lang="pt_BR">Documento do Skencil</comment>
+  <comment xml:lang="sv">Skencil-dokument</comment>
+  <comment xml:lang="vi">Tài liệu Skencil</comment>
+</mime-type>

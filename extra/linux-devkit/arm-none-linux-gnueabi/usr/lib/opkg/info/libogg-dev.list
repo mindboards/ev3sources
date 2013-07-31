@@ -1,0 +1,7 @@
+/usr/lib/pkgconfig/ogg.pc
+/usr/lib/libogg.so
+/usr/share/aclocal/ogg.m4
+/usr/include/ogg/config_types.h
+/usr/include/ogg/ogg.h
+/usr/include/ogg/os_types.h
+/usr/lib/libogg.la

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="video/wavelet">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Wavelet video</comment>
+  <comment xml:lang="az">Wavelet video faylı</comment>
+  <comment xml:lang="be@latin">Videa Wavelet</comment>
+  <comment xml:lang="bg">Видео — Wavelet</comment>
+  <comment xml:lang="ca">vídeo Wavelet</comment>
+  <comment xml:lang="cs">Video Wavelet</comment>
+  <comment xml:lang="cy">Fideo Wavelet</comment>
+  <comment xml:lang="da">Wavelet-video</comment>
+  <comment xml:lang="de">Wavelet-Video</comment>
+  <comment xml:lang="el">βίντεο Wavelet</comment>
+  <comment xml:lang="en_GB">Wavelet video</comment>
+  <comment xml:lang="eo">Wavelet-video</comment>
+  <comment xml:lang="es">vídeo Wavelet</comment>
+  <comment xml:lang="eu">Wavelet bideoa</comment>
+  <comment xml:lang="fi">Wavelet-video</comment>
+  <comment xml:lang="fr">vidéo Wavelet</comment>
+  <comment xml:lang="ga">físeán Wavelet</comment>
+  <comment xml:lang="hu">Wavelet-videó</comment>
+  <comment xml:lang="id">Video Wavelet</comment>
+  <comment xml:lang="it">Video Wavelet</comment>
+  <comment xml:lang="ja">Wavelet 動画</comment>
+  <comment xml:lang="ko">Wavelet 비디오</comment>
+  <comment xml:lang="lt">Wavelet vaizdas</comment>
+  <comment xml:lang="ms">Video Wavelet</comment>
+  <comment xml:lang="nb">Wavelet-film</comment>
+  <comment xml:lang="nl">Wavelet-video</comment>
+  <comment xml:lang="nn">Wavelet video</comment>
+  <comment xml:lang="pl">Plik wideo Wavelet</comment>
+  <comment xml:lang="pt">vídeo Wavelet</comment>
+  <comment xml:lang="pt_BR">Vídeo Wavelet</comment>
+  <comment xml:lang="sq">Video Wavelet</comment>
+  <comment xml:lang="sr">Wavelet видео</comment>
+  <comment xml:lang="sv">Wavelet-video</comment>
+  <comment xml:lang="uk">Відео-кліп Wavelet</comment>
+  <comment xml:lang="vi">Ảnh động Wavelet</comment>
+  <comment xml:lang="zh_CN">Wavelet 视频</comment>
+  <comment xml:lang="zh_TW">Wavelet 影音檔</comment>
+</mime-type>

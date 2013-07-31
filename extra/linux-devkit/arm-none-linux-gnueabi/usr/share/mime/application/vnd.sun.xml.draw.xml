@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/vnd.sun.xml.draw">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>OpenOffice Draw drawing</comment>
+  <comment xml:lang="be@latin">Rysunak OpenOffice Draw</comment>
+  <comment xml:lang="bg">Чертеж — OpenOffice Draw</comment>
+  <comment xml:lang="ca">dibuix d'OpenOffice Draw</comment>
+  <comment xml:lang="cs">Kresba OpenOffice Draw</comment>
+  <comment xml:lang="de">OpenOffice Draw-Zeichnung</comment>
+  <comment xml:lang="es">dibujo de OpenOffice Draw</comment>
+  <comment xml:lang="eu">OpenOffice.org Draw marrazkia</comment>
+  <comment xml:lang="fi">OpenOffice Draw -piirros</comment>
+  <comment xml:lang="fr">dessin OpenOffice Draw</comment>
+  <comment xml:lang="ga">líníocht OpenOffice Draw</comment>
+  <comment xml:lang="hu">OpenOffice Draw rajz</comment>
+  <comment xml:lang="id">Gambar OpenOffice Draw</comment>
+  <comment xml:lang="it">Disegno OpenOffice Draw</comment>
+  <comment xml:lang="ko">OpenOffice Draw 그림</comment>
+  <comment xml:lang="lt">OpenOffice Draw piešinys</comment>
+  <comment xml:lang="nb">OpenOffice Draw-tegning</comment>
+  <comment xml:lang="nl">OpenOffice.org Draw-tekening</comment>
+  <comment xml:lang="pt_BR">Desenho do OpenOffice Draw</comment>
+  <comment xml:lang="ru">изображение OpenOffice Draw</comment>
+  <comment xml:lang="sv">OpenOffice Draw-teckning</comment>
+  <comment xml:lang="uk">Малюнок OpenOffice Draw</comment>
+  <comment xml:lang="vi">Bản vẽ Draw của OpenOffice.org</comment>
+  <sub-class-of type="application/zip"/>
+  <generic-icon name="image-x-generic"/>
+</mime-type>

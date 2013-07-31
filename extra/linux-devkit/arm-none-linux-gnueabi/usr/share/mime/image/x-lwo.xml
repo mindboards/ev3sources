@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-lwo">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>LightWave object</comment>
+  <comment xml:lang="az">LightWave cismi</comment>
+  <comment xml:lang="be@latin">Abjekt LightWave</comment>
+  <comment xml:lang="bg">Обект — LightWave</comment>
+  <comment xml:lang="ca">objecte de LightWave</comment>
+  <comment xml:lang="cs">Objekt LightWave</comment>
+  <comment xml:lang="cy">Gwrthrych LightWave</comment>
+  <comment xml:lang="da">LightWave-objekt</comment>
+  <comment xml:lang="de">LightWave-Objekt</comment>
+  <comment xml:lang="el">αντικείμενο LightWave</comment>
+  <comment xml:lang="en_GB">LightWave object</comment>
+  <comment xml:lang="eo">LightWave-objekto</comment>
+  <comment xml:lang="es">objeto LightWave</comment>
+  <comment xml:lang="eu">LightWave objektua</comment>
+  <comment xml:lang="fi">LightWave-esine</comment>
+  <comment xml:lang="fr">objet LightWave</comment>
+  <comment xml:lang="ga">réad LightWave</comment>
+  <comment xml:lang="hu">LightWave-objektum</comment>
+  <comment xml:lang="id">Proyek LightWave</comment>
+  <comment xml:lang="it">Oggetto LightWave</comment>
+  <comment xml:lang="ja">LightWave オブジェクト</comment>
+  <comment xml:lang="ko">LightWave 개체</comment>
+  <comment xml:lang="lt">LightWave objektas</comment>
+  <comment xml:lang="ms">Objek LightWave</comment>
+  <comment xml:lang="nb">LightWave-objekt</comment>
+  <comment xml:lang="nl">LightWave-object</comment>
+  <comment xml:lang="nn">LightWave-objekt</comment>
+  <comment xml:lang="pl">Obiekt LightWave</comment>
+  <comment xml:lang="pt">Objecto LightWave</comment>
+  <comment xml:lang="pt_BR">Objeto LightWave</comment>
+  <comment xml:lang="ru">объект LightWave</comment>
+  <comment xml:lang="sq">Objekt LightWave</comment>
+  <comment xml:lang="sr">LightWave објекат</comment>
+  <comment xml:lang="sv">LightWave-objekt</comment>
+  <comment xml:lang="uk">Об'єкт LightWave</comment>
+  <comment xml:lang="vi">Đối tượng LightWave</comment>
+  <comment xml:lang="zh_CN">LightWave 对象</comment>
+  <comment xml:lang="zh_TW">LightWave 物件</comment>
+</mime-type>

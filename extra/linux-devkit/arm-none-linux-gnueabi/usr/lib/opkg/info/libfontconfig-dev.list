@@ -1,0 +1,6 @@
+/usr/include/fontconfig/fontconfig.h
+/usr/lib/libfontconfig.la
+/usr/include/fontconfig/fcprivate.h
+/usr/lib/libfontconfig.so
+/usr/include/fontconfig/fcfreetype.h
+/usr/lib/pkgconfig/fontconfig.pc

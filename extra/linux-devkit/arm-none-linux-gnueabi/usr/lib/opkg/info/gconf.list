@@ -1,0 +1,14 @@
+/usr/libexec/gconf-defaults-mechanism
+/usr/bin/gconf-merge-tree
+/usr/share/dbus-1/services/org.gnome.GConf.service
+/usr/lib/GConf/2/libgconfbackend-oldxml.so
+/usr/libexec/gconfd-2
+/usr/lib/GConf/2/libgconfbackend-xml.so
+/usr/libexec/gconf-sanity-check-2
+/usr/bin/gconftool-2
+/usr/share/dbus-1/system-services/org.gnome.GConf.Defaults.service
+/usr/lib/libgconf-2.so.4
+/usr/lib/libgconf-2.so.4.1.5
+/etc/dbus-1/system.d/org.gnome.GConf.Defaults.conf
+/etc/gconf/2/path
+/usr/share/polkit-1/actions/org.gnome.gconf.defaults.policy

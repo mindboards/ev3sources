@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+
+Name: gnome-mime-data
+Description: Base set of file types and applications for GNOME
+Version: 2.18.0
+Requires:
+Libs:
+Cflags:

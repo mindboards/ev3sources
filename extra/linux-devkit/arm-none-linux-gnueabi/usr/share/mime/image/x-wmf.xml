@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="image/x-wmf">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>WMF image</comment>
+  <comment xml:lang="be@latin">Vyjava WMF</comment>
+  <comment xml:lang="bg">Изображение — WMF</comment>
+  <comment xml:lang="ca">imatge WMF</comment>
+  <comment xml:lang="cs">Obrázek WMF</comment>
+  <comment xml:lang="es">imagen WMF</comment>
+  <comment xml:lang="eu">WMF irudia</comment>
+  <comment xml:lang="fi">WMF-kuva</comment>
+  <comment xml:lang="fr">image WMF</comment>
+  <comment xml:lang="ga">íomhá WMF</comment>
+  <comment xml:lang="hu">WMF kép</comment>
+  <comment xml:lang="id">Citra WMF</comment>
+  <comment xml:lang="it">Immagine WMF</comment>
+  <comment xml:lang="ko">WMF 그림</comment>
+  <comment xml:lang="lt">WMF paveikslėlis</comment>
+  <comment xml:lang="nb">WMF-bilde</comment>
+  <comment xml:lang="nl">WMF-afbeelding</comment>
+  <comment xml:lang="pt_BR">Imagem WMF</comment>
+  <comment xml:lang="ru">изображение WMF</comment>
+  <comment xml:lang="sv">WMF-bild</comment>
+  <comment xml:lang="uk">Зображення WMF</comment>
+  <comment xml:lang="vi">Ảnh WMF</comment>
+  <acronym>WMF</acronym>
+  <expanded-acronym>Windows Metafile</expanded-acronym>
+</mime-type>

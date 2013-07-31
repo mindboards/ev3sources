@@ -1,0 +1,12 @@
+Package: pango-module-basic-x
+Version: 1.24.4-r1.1.6
+Description: Pango module basic-x
+Section: x11/libs
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: LGPL
+Architecture: armv5te
+OE: pango
+Homepage: unknown
+Depends: pango, pango, libc6, libgobject-2.0-0, libgthread-2.0-0, libgmodule-2.0-0, libglib-2.0-0, libx11-6, libxcb1, libpthread-stubs0, libxau6, libgcc1
+Source: http://ftp.gnome.org/pub/GNOME/sources/pango/1.24/pango-1.24.4.tar.bz2;name=archive file://no-tests.patch file://CVE-2010-0421.patch

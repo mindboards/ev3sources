@@ -1,0 +1,13 @@
+Package: i2c-tools-dev
+Version: 3.0.2-r2.6
+Description: Set of i2c tools for linux
+Section: devel
+Priority: optional
+Maintainer: Angstrom Developers <angstrom-distro-devel@linuxtogo.org>
+License: GPLv2
+Architecture: armv5te
+OE: i2c-tools
+Homepage: unknown
+Depends: i2c-tools
+Recommends: libgcc1-dev, libc6-dev, i2c-tools-dev
+Source: http://dl.lm-sensors.org/i2c-tools/releases/i2c-tools-3.0.2.tar.bz2 file://Module.mk

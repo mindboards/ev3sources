@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: x264
+Description: H.264 (MPEG4 AVC) encoder library
+Version: 0.96.x
+Libs: -L/usr/lib -lx264 -lpthread
+Cflags: -I/usr/include

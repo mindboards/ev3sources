@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mime-type xmlns="http://www.freedesktop.org/standards/shared-mime-info" type="application/x-shockwave-flash">
+  <!--Created automatically by update-mime-database. DO NOT EDIT!-->
+  <comment>Shockwave Flash file</comment>
+  <comment xml:lang="be@latin">Fajł Shockwave Flash</comment>
+  <comment xml:lang="bg">Файл — Shockwave Flash</comment>
+  <comment xml:lang="ca">fitxer Shockwave Flash</comment>
+  <comment xml:lang="cs">Soubor Shockwave Flash</comment>
+  <comment xml:lang="da">Shockwave Flash-fil</comment>
+  <comment xml:lang="de">Shockwave Flash-Datei</comment>
+  <comment xml:lang="el">αρχείο Shockwave Flash</comment>
+  <comment xml:lang="en_GB">Shockwave Flash file</comment>
+  <comment xml:lang="eo">dosiero de Shockwave Flash</comment>
+  <comment xml:lang="es">archivo Shockwave Flash</comment>
+  <comment xml:lang="eu">Shockwave Flash fitxategia</comment>
+  <comment xml:lang="fi">Shockwave Flash -tiedosto</comment>
+  <comment xml:lang="fr">fichier Shockwave Flash</comment>
+  <comment xml:lang="ga">comhad Shockwave Flash</comment>
+  <comment xml:lang="hu">Shockwave Flash-fájl</comment>
+  <comment xml:lang="id">Berkas Shockwave Flash</comment>
+  <comment xml:lang="it">File Shockwave Flash</comment>
+  <comment xml:lang="ja">Shockwave Flash ファイル</comment>
+  <comment xml:lang="ko">Shockwave 플래시 파일</comment>
+  <comment xml:lang="lt">Shockwave Flash rinkmena</comment>
+  <comment xml:lang="ms">Fail Shockwave Flash</comment>
+  <comment xml:lang="nb">Shockwave Flash-fil</comment>
+  <comment xml:lang="nl">Shockwave Flash-bestand</comment>
+  <comment xml:lang="nn">Shockwave Flash-fil</comment>
+  <comment xml:lang="pl">Plik Shockwave Flash</comment>
+  <comment xml:lang="pt">ficheiro Shockwave Flash</comment>
+  <comment xml:lang="pt_BR">Arquivo Shockwave Flash</comment>
+  <comment xml:lang="sq">File Flash Shockwave</comment>
+  <comment xml:lang="sr">Шоквејв Флеш датотека</comment>
+  <comment xml:lang="sv">Shockwave Flash-fil</comment>
+  <comment xml:lang="uk">Файл Shockwave Flash</comment>
+  <comment xml:lang="vi">Tập tin Flash Shockwave</comment>
+  <comment xml:lang="zh_CN">Shockwave Flash 文件</comment>
+  <comment xml:lang="zh_TW">Shockwave Flash 檔</comment>
+  <alias type="application/futuresplash"/>
+  <generic-icon name="video-x-generic"/>
+</mime-type>
