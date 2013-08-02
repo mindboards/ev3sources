@@ -3,5 +3,6 @@
 .cvsignore
 */.cvsignore
 *.d
+*.ko
 *.o
 !extra/linux-devkit/*/*.d
