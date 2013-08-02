@@ -4,4 +4,4 @@
 */.cvsignore
 *.d
 *.o
-!extra/linux-devkit/arm-none-linux-gnueabi/*/*.d
+!extra/linux-devkit/*/*.d
