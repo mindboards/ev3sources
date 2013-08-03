@@ -22,7 +22,7 @@ Use Git to clone this repo:
 
 The scripts in the EV3 sources expect the source code to live in a projects folder in your home directory. You will need to create a  projects symlink to the ev3sources folder that was created when you cloned the Git repo.
 
-I’ll publish some more elaborate HOWTOs in the next few days, for now, take a look at the scripts in ev3sources/lms2012/open_first.  You can open the lms2012 folder in Eclipse to open all of the sub projects, including the kernel modules and shared libraries.
+I’ll publish some more elaborate HOWTOs in the next few days, for now, take a look at the scripts in [`ev3sources/lms2012/open_first`](lms2012/open_first).  You can open the `lms2012` folder in Eclipse to open all of the sub projects, including the kernel modules and shared libraries.
 
 ## Contributing
 
