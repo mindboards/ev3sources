@@ -1,7 +1,7 @@
 LEGO MINDSTORMS EV3 source code
 ===============================
 
-See [the release accouncment on BotBench][1] for more information.
+See [the release announcement on BotBench][1] for more information.
 
 ## Things you will need
 
@@ -26,7 +26,7 @@ I’ll publish some more elaborate HOWTOs in the next few days, for now, take a 
 
 ## Contributing
 
-To make modifications to the source code, click on the **Fork** button at the top of this page. This will create a copy of this repository under your own GitHub account. You can make changes to this repository as you wish. [See this page for more information about Forking.][2]
+To make changes to the source code, click on the **Fork** button at the top of this page. This will create a copy of this repository under your own GitHub account. You can make changes to this repository as you wish. [See this page for more information about Forking.][2]
 
 If you want to make a change to this shared repo, submit a **Pull Request**, which people can discuss and decide whether to apply your changes or not. [See this page for more information about Pull Requests.][3].
 
