@@ -1,3 +1,0 @@
-kernel/net/bluetooth/bluetooth.ko
-kernel/net/bluetooth/l2cap.ko
-kernel/net/bluetooth/rfcomm/rfcomm.ko
