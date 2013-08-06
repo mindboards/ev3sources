@@ -1,9 +1,8 @@
-/CVS/*
-*/CVS/*
+CVS
 .cvsignore
-*/.cvsignore
 .metadata
 *.d
 *.ko
 *.o
+*.so
 !extra/linux-devkit/*/*.d
