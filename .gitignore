@@ -2,6 +2,7 @@
 */CVS/*
 .cvsignore
 */.cvsignore
+.metadata
 *.d
 *.ko
 *.o
