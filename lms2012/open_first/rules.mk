@@ -1,3 +1,7 @@
+#
+# ARCH defines
+#
+
 ifeq ($(ARCH),X86)
 CROSS_COMPILE =
 else ifeq ($(ARCH),AM1808)
@@ -7,6 +11,10 @@ $(error unknown ARCH)
 endif
 
 BASE = ../..
+
+#
+# Libraries and programs.
+#
 
 ifneq ($(CONF),Linuxmod)
 
@@ -69,5 +77,44 @@ uninstall:
 FORCE:
 
 -include $(DEPS)
+
+endif
+
+#
+# Kernel modules.
+#
+
+ifeq ($(CONF),Linuxmod)
+
+ifeq ($(ARCH),X86)
+KDIR ?= /lib/modules/`uname -r`/build
+else
+KDIR ?= $(BASE)/../extra/linux-03.20.00.13
+KERNEL_MAKEFLAGS = ARCH=arm CROSS_COMPILE=$(CROSS_COMPILE)
+PREPARE = kernel.prepare
+endif
+
+INSTALL_DIR = sys/mod
+INSTALL_TARGET = $(BASE)/lms2012/Linux_$(ARCH)/$(INSTALL_DIR)/$(TARGET)
+
+all: install
+
+$(TARGET): $(PREPARE)
+	$(MAKE) $(KERNEL_MAKEFLAGS) -C $(KDIR) M=$$PWD
+
+kernel.prepare:
+	$(MAKE) -C $(BASE)/open_first kernel.prepare
+
+install: $(INSTALL_TARGET)
+$(INSTALL_TARGET): $(TARGET)
+	mkdir -p $(dir $@) && cp $< $@
+
+clean:
+	$(MAKE) $(KERNEL_MAKEFLAGS) -C $(KDIR) M=$$PWD clean
+
+uninstall:
+	rm -f $(INSTALL_TARGET)
+
+.PHONY: all install clean uninstall
 
 endif

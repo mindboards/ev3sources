@@ -388,7 +388,7 @@ tar xvfz ~/eclipse-cpp-helios-SR1-linux-gtk.tar.gz -C ~/
 cd ~
 sudo apt-get install openjdk-6-jre
 
-    MKIMAGE:      Install mkimage (used in the "build_kernel" script to compress kernel image)
+    MKIMAGE:      Install mkimage (used to compress kernel image)
     --------
     
 sudo apt-get install u-boot-tools
