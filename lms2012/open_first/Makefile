@@ -8,6 +8,12 @@ UBOOT = $(BASE)/../extra/uboot-03.20.00.13
 
 KERNEL_CONF = LEGOBoard.config
 
+default: kernel u-boot
+
+#
+# Kernel.
+#
+
 kernel: uImage
 
 $(KERNEL)/.config: $(KERNEL_CONF)
@@ -26,6 +32,30 @@ uImage: $(KERNEL)/arch/arm/boot/uImage
 kernel.clean:
 	$(MAKE) -C $(KERNEL) ARCH=arm CROSS_COMPILE=$(CROSS_COMPILE) clean
 
-clean: kernel.clean
+.PHONY: kernel kernel.prepare kernel.clean
 
-.PHONY: kernel kernel.prepare kernel.clean clean
+#
+# U-Boot.
+#
+
+u-boot: uBoot
+
+$(UBOOT)/u-boot.bin:
+	$(MAKE) -C $(UBOOT) CROSS_COMPILE=$(CROSS_COMPILE) da850_omapl138_evm_config
+	$(MAKE) -C $(UBOOT) CROSS_COMPILE=$(CROSS_COMPILE) all
+
+uBoot: $(UBOOT)/u-boot.bin
+	cp $< $@
+
+u-boot.clean:
+	$(MAKE) -C $(UBOOT) CROSS_COMPILE=$(CROSS_COMPILE) distclean
+
+.PHONY: u-boot u-boot.clean
+
+#
+# Misc.
+#
+
+clean: kernel.clean u-boot.clean
+
+.PHONY: clean
