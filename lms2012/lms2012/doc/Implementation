@@ -1011,9 +1011,7 @@
  *****************************************************************************/
 /*! \mainpage Firmware Documentation
  *
-    \htmlonly
-    <IMG src="Lms2012.jpg">
-    \endhtmlonly
+ * \image html Lms2012.jpg
  *
  *- \subpage intro
  *  -  \subpage hardware
@@ -1773,17 +1771,11 @@
  *
  *  <hr size="1"/>
  *
-    \htmlonly
-    <IMG src="generalnavigation.png">
-    \endhtmlonly
-    \htmlonly
-    <IMG src="filenavigation.png">
-    \endhtmlonly
-    \htmlonly
-    <IMG src="buttonlight.png">
-    \endhtmlonly
-    \n
-    \subpage uiappcode
+ *  \image html generalnavigation.png
+ *  \image html filenavigation.png
+ *  \image html buttonlight.png
+ *  \n
+ *  \subpage uiappcode
  */
 
  
@@ -1794,11 +1786,9 @@
  *
  *  <hr size="1"/>
  *
-    \htmlonly
-    <IMG src="view.png">
-    \endhtmlonly
-    \n
-    \subpage portviewappcode
+ *  \image html view.png
+ *  \n
+ *  \subpage portviewappcode
  */
 
  
@@ -1809,11 +1799,9 @@
  *
  *  <hr size="1"/>
  *
-    \htmlonly
-    <IMG src="motorcontrol.png">
-    \endhtmlonly
-    \n
-    \subpage motorcontrolappcode
+ *  \image html motorcontrol.png
+ *  \n
+ *  \subpage motorcontrolappcode
  */
  
  
@@ -1824,11 +1812,9 @@
  *
  *  <hr size="1"/>
  *
-    \htmlonly
-    <IMG src="ircontrol.png">
-    \endhtmlonly
-    \n
-    \subpage ircontrolappcode
+ *  \image html ircontrol.png
+ *  \n
+ *  \subpage ircontrolappcode
  */
  
  
@@ -1839,13 +1825,11 @@
  *
  *  <hr size="1"/>
  *
-    \htmlonly
-    <IMG src="program.png">
-    \endhtmlonly
-    \n
-    \subpage brickprogramapp 
-    \n
-    \subpage brickprogramtemplateapp
+ *  \image html program.png
+ *  \n
+ *  \subpage brickprogramapp
+ *  \n
+ *  \subpage brickprogramtemplateapp
  */
  
  
@@ -1856,11 +1840,9 @@
  *
  *  <hr size="1"/>
  *
-    \htmlonly
-    <IMG src="datalog.png">
-    \endhtmlonly
-    \n
-    \subpage brickdatalogapp
+ *  \image html datalog.png
+ *  \n
+ *  \subpage brickdatalogapp
  */
 
  
