@@ -53,9 +53,28 @@ u-boot.clean:
 .PHONY: u-boot u-boot.clean
 
 #
+# Doc.
+#
+
+DOC_BROWSER = x-www-browser
+
+doc:
+	cd ../lms2012/doc && \
+		doxygen Doxyfile && \
+		cp graphics/LEGO.jpg html
+
+doc.view: doc
+	$(DOC_BROWSER) ../lms2012/doc/html/index.html
+
+doc.clean:
+	rm -rf ../lms2012/doc/html
+
+.PHONY: doc doc.view doc.clean
+
+#
 # Misc.
 #
 
-clean: kernel.clean u-boot.clean
+clean: kernel.clean u-boot.clean doc.clean
 
 .PHONY: clean
