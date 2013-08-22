@@ -6,3 +6,7 @@ CONF = Linuxlib
 ARCH = AM1808
 
 include ../../open_first/rules.mk
+
+c_ui.o: | genimages
+genimages:
+	$(MAKE) -C ../../lmssrc/c_ui install
