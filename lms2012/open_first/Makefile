@@ -1,5 +1,4 @@
 ARCH = AM1808
-CROSS_COMPILE = arm-none-linux-gnueabi-
 
 BASE = ..
 
@@ -9,6 +8,8 @@ UBOOT = $(BASE)/../extra/uboot-03.20.00.13
 KERNEL_CONF = LEGOBoard.config
 
 default: help
+
+include rules.mk
 
 #
 # lms2012 program.

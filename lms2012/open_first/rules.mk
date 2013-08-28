@@ -10,13 +10,13 @@ else
 $(error unknown ARCH)
 endif
 
-BASE = ../..
-
 #
 # Libraries and programs.
 #
 
-ifneq ($(CONF),Linuxmod)
+ifneq ($(filter Linux Linuxlib,$(CONF)),)
+
+BASE = ../..
 
 OBJS = $(SOURCES:%.c=%.o)
 DEPS = $(OBJS:%.o=%.d)
@@ -86,6 +86,8 @@ endif
 
 ifeq ($(CONF),Linuxmod)
 
+BASE = ../..
+
 ifeq ($(ARCH),X86)
 KDIR ?= /lib/modules/`uname -r`/build
 else
@@ -118,3 +120,31 @@ uninstall:
 .PHONY: all install clean uninstall
 
 endif
+
+#
+# Automagic PATH configuration.
+#
+
+PATH_CHECK = $(BASE)/open_first/.path-check
+PATH_CHECK_TRY = /usr/local/codesourcery/arm-2009q1/bin \
+		 /usr/local/arm-2009q1/bin \
+		 $(HOME)/CodeSourcery/Sourcery_G++_Lite/bin
+
+$(PATH_CHECK):
+	@if ! which $(CROSS_COMPILE)gcc > /dev/null; then \
+		for d in $(PATH_CHECK_TRY); do \
+			test -x $$d/$(CROSS_COMPILE)gcc && found=$$d; \
+		done; \
+		if test -z "$$found"; then \
+			echo "##################" >&2; \
+			echo "# Can not find $(CROSS_COMPILE)gcc, please install it." >&2; \
+			echo "##################" >&2; \
+			echo >&2; \
+		else \
+			echo 'export PATH := '$$found':$$(PATH)' > $@; \
+		fi; \
+	else \
+		touch $@; \
+	fi
+
+-include $(PATH_CHECK)
