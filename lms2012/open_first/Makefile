@@ -8,7 +8,53 @@ UBOOT = $(BASE)/../extra/uboot-03.20.00.13
 
 KERNEL_CONF = LEGOBoard.config
 
-default: kernel u-boot
+default: help
+
+#
+# lms2012 program.
+#
+
+LIBS = c_com c_input c_memory c_output c_sound c_ui
+
+lms2012:
+	$(MAKE) -C $(BASE)/lms2012/Linux_$(ARCH)
+
+lms2012.clean: $(LIBS:%=%.clean)
+	$(MAKE) -C $(BASE)/lms2012/Linux_$(ARCH) clean uninstall
+
+$(LIBS:%=%.clean): %.clean:
+	$(MAKE) -C $(BASE)/$*/Linuxlib_$(ARCH) clean uninstall
+
+.PHONY: lms2012 lms2012.clean $(LIBS:%=%.clean)
+
+#
+# lms2012 modules.
+#
+
+MODULES = d_analog d_bt d_iic d_power d_pwm d_sound d_uart d_ui d_usbdev \
+	  d_usbhost
+
+modules: $(MODULES)
+
+$(MODULES):
+	$(MAKE) -C $(BASE)/$@/Linuxmod_$(ARCH)
+
+modules.clean: $(MODULES:%=%.clean)
+
+$(MODULES:%=%.clean): %.clean:
+	$(MAKE) -C $(BASE)/$*/Linuxmod_$(ARCH) clean uninstall
+
+.PHONY: modules $(MODULES) modules.clean $(MODULES:%=%.clean)
+
+#
+# Programs.
+#
+
+programs:
+	$(MAKE) -C $(BASE)/lmssrc
+
+programs.clean:
+	$(MAKE) -C $(BASE)/lmssrc clean uninstall
 
 #
 # Kernel.
@@ -75,6 +121,20 @@ doc.clean:
 # Misc.
 #
 
-clean: kernel.clean u-boot.clean doc.clean
+help:
+	@echo 'Execute "make TARGET" where TARGET is:'
+	@echo ' lms2012: to build the lms2012 program and its libraries'
+	@echo ' modules: to build lms2012 kernel modules'
+	@echo ' programs: to build bytecode programs and their data files'
+	@echo ' kernel: to build Linux kernel'
+	@echo ' u-boot: to build u-Boot'
+	@echo ' doc: to build documentation'
+	@echo ' clean: to clean everything'
+	@echo
+	@echo 'Add the ARCH=X86 argument to run for X86 platform (some targets'
+	@echo 'are then meaningless).'
 
-.PHONY: clean
+clean: lms2012.clean modules.clean programs.clean kernel.clean u-boot.clean \
+	doc.clean
+
+.PHONY: help clean
