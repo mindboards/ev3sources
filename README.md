@@ -5,7 +5,8 @@ See [the release announcement on BotBench][1] for more information.
 
 ## Things you will need
 
-* A Linux (virtual) installation.  I used Ubuntu 13.04 on VMware Workstation, but I am sure other combinations also work.
+* A Linux (virtual) installation.  I used Ubuntu 13.04 on VMware Workstation, but I am sure other combinations also work.   
+The reason for the Linux installation requirement is due to the case-sensitive filenames used by the Linux kernel source repository. Attempting to clone the source repository to a non-case sensitive file system such as Mac OSX HFS+ or Windows FAT would result in a corrupted repository.
 * Eclipse.  I used Helios Service Release 1, but I know more recent versions will also work.
 * Java JRE (for Eclipse)
 * Code Sourcery Lite for ARM version 2009q1-203.  You can [download here directly][4].
