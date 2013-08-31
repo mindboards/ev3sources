@@ -57,7 +57,7 @@ all: install
 %.o: ../source/%.c
 	$(CROSS_COMPILE)gcc $(CFLAGS) -c -MMD -MP -o $@ $<
 
-$(TARGET): $(OBJS) $(LIBS)
+$(TARGET): $(OBJS) $(filter -lc_%,$(LIBS))
 	$(CROSS_COMPILE)gcc $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
 
 install: $(INSTALL_TARGET)
