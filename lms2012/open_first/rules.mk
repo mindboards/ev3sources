@@ -148,3 +148,16 @@ $(PATH_CHECK):
 	fi
 
 -include $(PATH_CHECK)
+
+MKIMAGE_CHECK = $(BASE)/open_first/.mkimage-check
+
+$(MKIMAGE_CHECK):
+	@if ! which mkimage > /dev/null; then \
+		echo "##################" >&2; \
+		echo "# Can not find mkimage, please install u-boot-tools package." >&2; \
+		echo "##################" >&2; \
+		echo >&2; \
+		false; \
+	else \
+		touch $@; \
+	fi

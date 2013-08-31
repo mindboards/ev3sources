@@ -70,7 +70,7 @@ kernel.prepare: $(KERNEL)/include/generated/bounds.h
 $(KERNEL)/include/generated/bounds.h: $(KERNEL)/.config
 	$(MAKE) -C $(KERNEL) ARCH=arm CROSS_COMPILE=$(CROSS_COMPILE) oldconfig modules_prepare
 
-$(KERNEL)/arch/arm/boot/uImage: kernel.prepare
+$(KERNEL)/arch/arm/boot/uImage: kernel.prepare | $(MKIMAGE_CHECK)
 	$(MAKE) -C $(KERNEL) ARCH=arm CROSS_COMPILE=$(CROSS_COMPILE) uImage
 
 uImage: $(KERNEL)/arch/arm/boot/uImage
