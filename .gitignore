@@ -1,8 +1,13 @@
-/CVS/*
-*/CVS/*
+CVS
 .cvsignore
-*/.cvsignore
+.metadata
 *.d
 *.ko
 *.o
+*.so
+*.cmd
+*.mod.c
+.tmp_versions
+modules.order
+Module.symvers
 !extra/linux-devkit/*/*.d
