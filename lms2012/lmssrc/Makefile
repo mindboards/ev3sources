@@ -21,6 +21,7 @@ uninstall: $(SUBDIRS:%=%.uninstall) $(SUBDIRS_DISABLED:%=%.uninstall)
 	$(MAKE) -C $(call space,$*) uninstall
 
 clean: $(SUBDIRS:%=%.clean) $(SUBDIRS_DISABLED:%=%.clean)
+	rm -f .convert-check
 
 %.clean:
 	$(MAKE) -C $(call space,$*) clean

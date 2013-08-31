@@ -69,7 +69,7 @@ $(foreach program,$(PROGRAMS_TASM),\
 	$(eval $(call PROGRAM_TASM_rule,$(program))))
 
 define GRAPHIC_rule
-$$(call space,$$(APP)/$1).rgf: $$(call space,$2).bmp .dirstamp
+$$(call space,$$(APP)/$1).rgf: $$(call space,$2).bmp .dirstamp | ../.convert-check
 	$$(BMP_TO_XBM) "$$<" bitmap.xbm
 	$$(XBM_TO_RGF) bitmap "$$(basename $$@)"
 $$(call space,$$(foreach to,$$(INSTALL_TO),$$(INSTALL_DIR_$$(to))/$1.rgf)): $$(call space,$$(APP)/$1).rgf .dirstamp_install
@@ -80,7 +80,7 @@ $(foreach graphic,$(GRAPHICS),\
 	$(if $($(graphic)_SOURCE),$($(graphic)_SOURCE),$(graphic)))))
 
 define GRAPHIC_XBM_rule
-$$(call space,$$(APP)/$1).xbm: $$(call space,$2).bmp .dirstamp
+$$(call space,$$(APP)/$1).xbm: $$(call space,$2).bmp .dirstamp | ../.convert-check
 	$$(BMP_TO_XBM) "$$<" "$$@"
 $$(call space,$$(foreach to,$$(INSTALL_TO),$$(INSTALL_DIR_$$(to))/$1.xbm)): $$(call space,$$(APP)/$1).xbm .dirstamp_install
 	cp "$$<" "$$@"
@@ -108,6 +108,16 @@ else
 	mkdir -p $(call space,$(dir $(foreach to,$(INSTALL_TO),$(INSTALL_DIR_$(to)))))
 endif
 	touch $@
+
+../.convert-check:
+	@if ! which $(BMP_TO_XBM) > /dev/null; then \
+		echo "##################" >&2; \
+		echo "# Can not find $(BMP_TO_XBM), please install imagemagick package." >&2; \
+		echo "##################" >&2; \
+		echo >&2; \
+	else \
+		touch $@; \
+	fi
 
 $(LMS_TO_RBF_DEPS): ../adk/lmsasm/%: ../../lms2012/source/%
 	cp $< $@
