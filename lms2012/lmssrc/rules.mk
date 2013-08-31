@@ -46,7 +46,7 @@ else
 all: $(call space,$(APP).raf)
 $(call space,$(APP).raf): $(call space,$(GENERATED))
 	tar czf "$@" "$(basename $@)"
-$(call space,$(INSTALLED)): $(call space,$(APP).raf)
+$(call space,$(INSTALLED)): $(call space,$(APP).raf) .dirstamp_install
 	cp "$<" "$@"
 endif
 
@@ -102,7 +102,11 @@ $(foreach sound,$(SOUNDS),\
 	mkdir -p $(call space,$(APP))
 	touch $@
 .dirstamp_install:
+ifneq ($(ARCHIVE),y)
 	mkdir -p $(call space,$(foreach to,$(INSTALL_TO),$(INSTALL_DIR_$(to))))
+else
+	mkdir -p $(call space,$(dir $(foreach to,$(INSTALL_TO),$(INSTALL_DIR_$(to)))))
+endif
 	touch $@
 
 $(LMS_TO_RBF_DEPS): ../adk/lmsasm/%: ../../lms2012/source/%
