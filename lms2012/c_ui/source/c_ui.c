@@ -220,72 +220,71 @@ UI_GLOBALS UiInstance;
   //#define __dbg1
   //#define __dbg2
 
-  /*************************** Model parametre *******************************/
-  //~ 6 Varta industrial batteriers initielle interne modstand :
+  /*************************** Model parameters *******************************/
+  //Approx. initial internal resistance of 6 Energizer industrial batteries :
   float R_bat_init = 0.63468;
-  //Bjarkes forslag til fjeder modstand :
+  //Bjarke's proposal for spring resistance :
   //float spring_resistance = 0.42;
-  //Batterisæts varme kapacitet :
+  //Batteries' heat capacity :
   float heat_cap_bat = 136.6598;
-  //Newtons'k afkølings konstant til elektronik :
+  //Newtonian cooling constant for electronics :
   float K_bat_loss_to_elec = -0.0003; //-0.000789767;
-  //Newtons'k opvarmningskonstant fra elektronik :
+  //Newtonian heating constant for electronics :
   float K_bat_gain_from_elec = 0.001242896; //0.001035746;
-  //Newtonsk afkølingskonstant til omgivelser :
+  //Newtonian cooling constant for environment :
   float K_bat_to_room = -0.00012;
-  //Batteri power Boost
+  //Battery power Boost
   float battery_power_boost = 1.7;
-  //Batteri R_bat negativ bidrag
+  //Battery R_bat negative gain
   float R_bat_neg_gain = 1.00;
 
-  //Hældning for elektronikkens tabsfri opvarmningskurve (lineær!!) [deg.C/s] :
+  //Slope of electronics lossless heating curve (linear!!!) [Deg.C / s] :
   float K_elec_heat_slope = 0.0123175;
-  //Newtons'k afkølings konstant til batterisæt :
+  //Newtonian cooling constant for battery packs :
   float K_elec_loss_to_bat = -0.004137487;
-  //Newtons'k opvarmningskonstant fra batterisæt :
+  //Newtonian heating constant for battery packs :
   float K_elec_gain_from_bat = 0.002027574; //0.00152068;
-  //Newtonsk afkølingskonstant til omgivelser :
+  //Newtonian cooling constant for environment :
   float K_elec_to_room = -0.001931431; //-0.001843639;
 
-  // Funktion til estimering af ny batteritemperatur på baggrund af nye målinger på
-  // batterispænding og batteristrøm.
+  // Function for estimating new battery temperature based on measurements
+  // of battery voltage and battery power.
     float new_bat_temp (float V_bat, float I_bat)
     {
 
-      static int   index       = 0; //Holder styr på sample index siden power-on
-      static float I_bat_mean  = 0; //Løbende middel strøm
-      const float sample_period = 0.4; //Algoritme opdaterings periode i sekunder
-      static float T_bat = 0; //Batterisæts temperatur udvikling
-      static float T_elec = 0; //EV3 elektronik temperatur udvikling
+      static int   index       = 0; //Keeps track of sample index since power-on
+      static float I_bat_mean  = 0; //Running mean current
+      const float sample_period = 0.4; //Algorithm update period in seconds
+      static float T_bat = 0; //Battery temperature
+      static float T_elec = 0; //EV3 electronics temperature
 
-      static float R_bat_model_old = 0;//Batterisæts gamle interne modstand i model
-      float R_bat_model;    //Batterisæts interne modstand i model
-      static float R_bat = 0; //Batterisæts interne modstand
-      float slope_A;        //Hældning ved lineær interpolation
-      float intercept_b;    //Offset ved lineær interpolation
-      const float I_1A = 0.05;      //Strømbelastning ved nedre karakteristik
-      const float I_2A = 2.0;      //Strømbelastning ved øvre karakteristik
+      static float R_bat_model_old = 0;//Old internal resistance of the battery model
+      float R_bat_model;    //Internal resistance of the battery model
+      static float R_bat = 0; //Internal resistance of the batteries
+      float slope_A;        //Slope obtained by linear interpolation
+      float intercept_b;    //Offset obtained by linear interpolation
+      const float I_1A = 0.05;      //Current carrying capacity at bottom of the curve
+      const float I_2A = 2.0;      //Current carrying capacity at the top of the curve
 
-      float R_1A = 0.0;          //Batterisæts interne modstand ved 1A og V_bat
-      float R_2A = 0.0;          //Batterisæts interne modstand ved 2A og V_bat
+      float R_1A = 0.0;          //Internal resistance of the batteries at 1A and V_bat
+      float R_2A = 0.0;          //Internal resistance of the batteries at 2A and V_bat
 
+      //Flag that prevents initialization of R_bat when the battery is charging
       static unsigned char has_passed_7v5_flag = 'N';
-      //Flag der hjælper med at undgå modstands initialisering
-      // under batteri regenerering
 
-      float dT_bat_own = 0.0; //Batterisæts egen varme udvikling
-      float dT_bat_loss_to_elec = 0.0; // Batterisæts varmetab til elektronik
-      float dT_bat_gain_from_elec = 0.0; //Batterisæts varmestigning fra elektronik
-      float dT_bat_loss_to_room = 0.0; //Batterisæts afkøling til omgivelser
+      float dT_bat_own = 0.0; //Batteries' own heat
+      float dT_bat_loss_to_elec = 0.0; // Batteries' heat loss to electronics
+      float dT_bat_gain_from_elec = 0.0; //Batteries' heat gain from electronics
+      float dT_bat_loss_to_room = 0.0; //Batteries' cooling from environment
 
-      float dT_elec_own = 0.0; //Elektroniks egen elektriske varme udvikling
-      float dT_elec_loss_to_bat = 0.0;//Elektroniks varmetab til batterisæt
-      float dT_elec_gain_from_bat = 0.0;//Elektroniks varmestigning fra batterisæt
-      float dT_elec_loss_to_room = 0.0; //Elektroniks varmetab til omgivelser
+      float dT_elec_own = 0.0; //Electronics' own heat
+      float dT_elec_loss_to_bat = 0.0;//Electronics' heat loss to the battery pack
+      float dT_elec_gain_from_bat = 0.0;//Electronics' heat gain from battery packs
+      float dT_elec_loss_to_room = 0.0; //Electronics' heat loss to the environment
 
       /***************************************************************************/
 
-      //Opdater middelstrøm : I_bat_mean
+      //Update the average current: I_bat_mean
       if (index > 0)
         {
     I_bat_mean = ((index) * I_bat_mean + I_bat) / (index + 1) ;
@@ -298,54 +297,54 @@ UI_GLOBALS UiInstance;
       index = index + 1;
 
 
-      //Beregn R_1A som funktion af V_bat (intern modstand ved 1A kontinuert)
+      //Calculate R_1A as a function of V_bat (internal resistance at 1A continuous)
       R_1A  =   0.014071 * (V_bat * V_bat * V_bat * V_bat)
         - 0.335324 * (V_bat * V_bat * V_bat)
         + 2.933404 * (V_bat * V_bat)
         - 11.243047 * V_bat
         + 16.897461;
 
-      //Beregn R_2A som funktion af V_bat (intern modstand ved 2A kontinuert)
+      //Calculate R_2A as a function of V_bat (internal resistance at 2A continuous)
       R_2A  =   0.014420 * (V_bat * V_bat * V_bat * V_bat)
         - 0.316728 * (V_bat * V_bat * V_bat)
         + 2.559347 * (V_bat * V_bat)
         - 9.084076 * V_bat
         + 12.794176;
 
-      //Beregn hældning ved lineær interpolation mellem R_1A og R_2A
+      //Calculate the slope by linear interpolation between R_1A and R_2A
       slope_A  =  (R_1A - R_2A) / (I_1A - I_2A);
 
-      //Beregn offset ved lineær interpolation mellem R1_A og R2_A
+      //Calculate intercept by linear interpolation between R1_A and R2_A
       intercept_b  =  R_1A - slope_A * R_1A;
 
-      //Opdater R_bat_model:
+      //Reload R_bat_model:
       R_bat_model  =  slope_A * I_bat_mean + intercept_b;
 
-      //Beregn batterisæts interne modstand: R_bat
+      //Calculate batteries' internal resistance: R_bat
       if ((V_bat > 7.5) && (has_passed_7v5_flag == 'N'))
         {
-    R_bat = R_bat_init; //7,5V ikke passeret en første gang
+    R_bat = R_bat_init; //7.5 V not passed a first time
         }
       else
         {
-    //Opdater kun R_bat med positive udfald af: R_bat_model - R_bat_model_old
-    //R_bat opdateres med ændring i model, R_bat er ikke lig værdi i model!!!
+    //Only update R_bat with positive outcomes: R_bat_model - R_bat_model_old
+    //R_bat updated with the change in model R_bat is not equal value in the model!
     if ((R_bat_model - R_bat_model_old) > 0)
       {
         R_bat = R_bat + R_bat_model - R_bat_model_old;
       }
-      else // Ved negativ udfald af R_bat_model tilføjes kun en del til R_bat
+      else // The negative outcome of R_bat_model added to only part of R_bat
         {
           R_bat = R_bat + ( R_bat_neg_gain * (R_bat_model - R_bat_model_old));
         }
-    //Garder så vi ikke senere initialiserer R_bat
+    //Make sure we initialize R_bat later
     has_passed_7v5_flag = 'Y';
         }
 
-      //Gem R_bat_model til brug ved næste funktionskald
+      //Save R_bat_model for use in the next function call
       R_bat_model_old = R_bat_model;
 
-      //Debug kode:
+      //Debug code:
   #ifdef __dbg1
       if (index < 500)
         {
@@ -354,13 +353,13 @@ UI_GLOBALS UiInstance;
         }
   #endif
 
-      /**********Beregn samtlig 4 batterisæts-temperatur-ændrings-bidrag**********/
+      /*****Calculate the 4 types of temperature change for the batteries******/
 
-      //Beregn batterisæts egen varme udvikling siden sidst
+      //Calculate the batteries' own temperature change
       dT_bat_own = R_bat * I_bat * I_bat * sample_period  * battery_power_boost
                    / heat_cap_bat;
 
-      //Beregn batterisæts afkøling til elektronik siden sidst
+      //Calculate the batteries' heat loss to the electronics
       if (T_bat > T_elec)
         {
     dT_bat_loss_to_elec = K_bat_loss_to_elec * (T_bat - T_elec)
@@ -371,7 +370,7 @@ UI_GLOBALS UiInstance;
     dT_bat_loss_to_elec = 0.0;
         }
 
-      //Beregn batterisæts opvarmning fra elektronik siden sidst
+      //Calculate the batteries' heat gain from the electronics
       if (T_bat < T_elec)
         {
     dT_bat_gain_from_elec = K_bat_gain_from_elec * (T_elec - T_bat)
@@ -382,18 +381,18 @@ UI_GLOBALS UiInstance;
     dT_bat_gain_from_elec = 0.0;
         }
 
-      //Beregn batterisæts afkøling til omgivelser sident sidst
+      //Calculate the batteries' heat loss to environment
       dT_bat_loss_to_room = K_bat_to_room * T_bat * sample_period;
-      /***************************************************************************/
+      /************************************************************************/
 
 
 
-      /*********Beregn samtlig 4 elektronik-temperatur-ændrings-bidrag************/
+      /*****Calculate the 4 types of temperature change for the electronics****/
 
-      //Beregn elektronikkens egen varme udvikling siden sidst
+      //Calculate the electronics' own temperature change
       dT_elec_own = K_elec_heat_slope * sample_period;
 
-      //Beregn elektronikkens afkøling til baterisæt siden sidst
+      //Calculate the electronics' heat loss to the batteries
       if (T_elec > T_bat)
         {
     dT_elec_loss_to_bat =   K_elec_loss_to_bat * (T_elec - T_bat)
@@ -404,7 +403,7 @@ UI_GLOBALS UiInstance;
     dT_elec_loss_to_bat = 0.0;
         }
 
-      //Beregn elektronikkens opvarmning fra batterisæt siden sidst
+      //Calculate the electronics' heat gain from the batteries
       if (T_elec < T_bat)
         {
     dT_elec_gain_from_bat = K_elec_gain_from_bat * (T_bat - T_elec)
@@ -415,11 +414,11 @@ UI_GLOBALS UiInstance;
     dT_elec_gain_from_bat = 0.0;
         }
 
-      //Beregn elektronikkens afkøling til omgivelser sident sidst
+      //Calculate the electronics' heat loss to the environment
       dT_elec_loss_to_room = K_elec_to_room * T_elec * sample_period;
 
       /*****************************************************************************/
-      //Debug kode:
+      //Debug code:
   #ifdef __dbg2
       if (index < 500)
         {
@@ -432,11 +431,11 @@ UI_GLOBALS UiInstance;
 
 
 
-      //Opdater batteri temperatur
+      //Refresh battery temperature
       T_bat =  T_bat + dT_bat_own + dT_bat_loss_to_elec
         + dT_bat_gain_from_elec + dT_bat_loss_to_room;
 
-      //Opdater elektronikkens temparatur
+      //Refresh electronics temperature
       T_elec =  T_elec + dT_elec_own + dT_elec_loss_to_bat
         + dT_elec_gain_from_bat + dT_elec_loss_to_room;
 
