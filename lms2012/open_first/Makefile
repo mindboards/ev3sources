@@ -130,7 +130,12 @@ help:
 	@echo ' kernel: to build Linux kernel'
 	@echo ' u-boot: to build u-Boot'
 	@echo ' doc: to build documentation'
-	@echo ' clean: to clean everything'
+	@echo
+	@echo 'Execute "make doc.view" to view the documentation in a web'
+	@echo 'browser'
+	@echo 
+	@echo 'Execute "make TARGET.clean" to clean an individual target'
+	@echo 'or "make clean" to clean everything'
 	@echo
 	@echo 'Add the ARCH=X86 argument to run for X86 platform (some targets'
 	@echo 'are then meaningless).'
