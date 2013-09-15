@@ -2193,7 +2193,7 @@ void      cComSystemCommand(RXBUF *pRxBuf, TXBUF *pTxBuf)
     {
       MAKE_DIR        *pMakeDir;
       RPLY_MAKE_DIR   *pReplyMakeDir;
-      char            Folder[60];
+      char            Folder[sizeof(ComInstance.Files[FileHandle].Name)];
 
       //Setup pointers
       pMakeDir        =  (MAKE_DIR*)pRxBuf->Buf;
@@ -2205,7 +2205,7 @@ void      cComSystemCommand(RXBUF *pRxBuf, TXBUF *pTxBuf)
       pReplyMakeDir->Cmd      =  CREATE_DIR;
       pReplyMakeDir->Status   =  SUCCESS;
 
-      snprintf(Folder,sizeof(ComInstance.Files[FileHandle].Name),"%s",(char*)(pMakeDir->Dir));
+      snprintf(Folder,sizeof(Folder),"%s",(char*)(pMakeDir->Dir));
 
       if (0 == mkdir(Folder,S_IRWXU | S_IRWXG | S_IRWXO))
       {
