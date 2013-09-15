@@ -108,6 +108,9 @@
 #define   DEBUG_TRACE_VM
 #endif
 
+// Buttons are mapped differently in the enum BUTTONTYPE and in ButtonState.
+#define IDX_BACK_BUTTON BACK_BUTTON-1
+
 //*****************************************************************************
 // UI bootloader
 //*****************************************************************************
@@ -548,8 +551,8 @@ DSPSTAT   ExecuteByteCode(IP pByteCode,GP pGlobals,LP pLocals)
   VMInstance.Priority             =  1;
 
   // Execute special byte code stream
-  UiInstance.ButtonState[BACK_BUTTON] &= ~BUTTON_LONGPRESS;
-  while ((*VMInstance.ObjectIp != opOBJECT_END) && (!(UiInstance.ButtonState[BACK_BUTTON] & BUTTON_LONGPRESS)))
+  UiInstance.ButtonState[IDX_BACK_BUTTON] &= ~BUTTON_LONGPRESS;
+  while ((*VMInstance.ObjectIp != opOBJECT_END) && (!(UiInstance.ButtonState[IDX_BACK_BUTTON] & BUTTON_LONGPRESS)))
   {
     VMInstance.DispatchStatus       =  NOBREAK;
     VMInstance.Priority             =  C_PRIORITY;
@@ -585,7 +588,7 @@ DSPSTAT   ExecuteByteCode(IP pByteCode,GP pGlobals,LP pLocals)
   }
   Result                          =  VMInstance.DispatchStatus;
 
-  UiInstance.ButtonState[BACK_BUTTON] &= ~BUTTON_LONGPRESS;
+  UiInstance.ButtonState[IDX_BACK_BUTTON] &= ~BUTTON_LONGPRESS;
 
   // Restore running object parameters
   VMInstance.Priority             =  VMInstance.PrioritySave;
