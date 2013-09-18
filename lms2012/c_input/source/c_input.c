@@ -560,8 +560,8 @@ RESULT    cInputGetIicString(DATA8 Type,DATA8 Mode,IICSTR *IicStr)
 
         (*IicStr).Type          =  Type;
         (*IicStr).Mode          =  Mode;
-        snprintf((char*)(*IicStr).Manufacturer,IIC_DATA_LENGTH + 1,"%s",(char*)InputInstance.IicString[Index].Manufacturer);
-        snprintf((char*)(*IicStr).SensorType,IIC_DATA_LENGTH + 1,"%s",(char*)InputInstance.IicString[Index].SensorType);
+        snprintf((char*)IicStr->Manufacturer, sizeof(IicStr->Manufacturer),"%s", (char*)InputInstance.IicString[Index].Manufacturer);
+        snprintf((char*)IicStr->SensorType, sizeof(IicStr->SensorType), "%s",(char*)InputInstance.IicString[Index].SensorType);
         (*IicStr).SetupLng      =  InputInstance.IicString[Index].SetupLng;
         (*IicStr).SetupString   =  InputInstance.IicString[Index].SetupString;
         (*IicStr).PollLng       =  InputInstance.IicString[Index].PollLng;
