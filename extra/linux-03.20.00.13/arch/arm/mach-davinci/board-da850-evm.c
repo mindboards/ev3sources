@@ -1437,10 +1437,21 @@ static const short da850_lms2012_lcd_pins[] = {
 	-1
 };
 
+static void lego_ev3_poweroff(void)
+{
+#define LEGO_EV3_POWER_PIN GPIO_TO_PIN(6, 11) /* 5VPENON on HW-IDs <= EP2 */
+	if (!gpio_request(LEGO_EV3_POWER_PIN, "5VPENON\n"))
+		gpio_direction_output(LEGO_EV3_POWER_PIN, 0);
+	else
+		pr_err("da850_evm_init: can not open GPIO %d for power off\n",
+			LEGO_EV3_POWER_PIN);
+}
 
 static __init void da850_evm_init(void)
 {
 	int ret;
+
+	pm_power_off = lego_ev3_poweroff;
 
 	//ret = da8xx_register_edma();
 	ret = da850_register_edma(da850_edma_rsv);
