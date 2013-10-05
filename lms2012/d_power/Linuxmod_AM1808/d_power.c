@@ -220,11 +220,6 @@ void      InitGpio(void)
                                           (*PowerPin[PENON].pGpio).dir       &= ~PowerPin[PENON].Mask;\
                                         }
 
-#define   POWEROff                      {\
-                                          (*PowerPin[PENON].pGpio).clr_data   =  PowerPin[PENON].Mask;\
-                                          (*PowerPin[PENON].pGpio).dir       &= ~PowerPin[PENON].Mask;\
-                                        }
-
 
 #define   ACCUFloat                     {\
                                           (*PowerPin[SW_RECHARGE].pGpio).dir |=  PowerPin[SW_RECHARGE].Mask;\
@@ -247,11 +242,9 @@ void      InitGpio(void)
 
 // DEVICE1 ********************************************************************
 
-static    UBYTE PowerOffFlag = 0;
-
 static int Device1Ioctl(struct inode *pNode, struct file *File, unsigned int Request, unsigned long Pointer)
 {
-  PowerOffFlag  =  1;
+  /* ignored */
 
   return (0);
 }
@@ -329,8 +322,6 @@ static int Device1Init(void)
   }
   else
   {
-    PowerOffFlag  =  0;
-
 #ifdef DEBUG
     printk("  %s device register succes\n",DEVICE1_NAME);
 #endif
@@ -397,27 +388,12 @@ static int ModuleInit(void)
 
 static void ModuleExit(void)
 {
-  ULONG   Tmp1;
-  ULONG   Tmp2;
-
 #ifdef DEBUG
   printk("%s exit started\n",MODULE_NAME);
 #endif
 
   TESTOff;
   Device1Exit();
-
-  if (PowerOffFlag)
-  {
-    for (Tmp1 = 0;Tmp1 < 0xFFFFFFFF;Tmp1++)
-    {
-      for (Tmp2 = 0;Tmp2 < 0xFFFFFFFF;Tmp2++)
-      {
-        POWEROff;
-      }
-    }
-  }
-
   iounmap(GpioBase);
 
 }
