@@ -3607,7 +3607,6 @@ RESULT    cInputExit(void)
 
   if (InputInstance.DcmFile >= MIN_HANDLE)
   {
-    munmap(InputInstance.pUart,sizeof(UART));
     close(InputInstance.DcmFile);
   }
 
