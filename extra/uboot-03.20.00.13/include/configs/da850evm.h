@@ -265,12 +265,12 @@
 	"verify=n\0" \
 	"console=ttyS1,115200n8\0" \
 	"bootscraddr=0xC0600000\0" \
-	"loadaddr=0xC0700000\0" \
+	"loadaddr=0xC0007FC0\0" \
 	"filesysaddr=0xC1180000\0" \
 	"mmcargs=setenv bootargs mem=${memsize} console=${console} root=/dev/mmcblk0p2 rw rootwait ip=${ipaddr} lpj=747520\0" \
 	"mmcboot=bootm ${loadaddr}\0" \
-	"flashargs=setenv bootargs mem=${memsize} initrd=${filesysaddr},${filesyssize} root=/dev/ram0 rw rootfstype=cramfs console=${console} ip=${ipaddr} lpj=747520\0" \
-	"flashboot=sf probe 0; sf read ${loadaddr} 0x50000 0x200000; sf read ${filesysaddr} 0x250000 0xA60000; bootm ${loadaddr}\0" \
+	"flashargs=setenv bootargs mem=${memsize} initrd=${filesysaddr},${filesyssize} root=/dev/ram0 rw rootfstype=cramfs console=${console} ip=${ipaddr} lpj=747520 quiet\0" \
+	"flashboot=sf probe 0; sf read ${loadaddr} 0x50000 0x210000; sf read ${filesysaddr} 0x250000 0x9B0000; bootm ${loadaddr}\0" \
 	"loadimage=fatload mmc 0 ${loadaddr} uImage\0" \
 	"loadbootscr=fatload mmc 0 ${bootscraddr} boot.scr\0" \
 	"bootscript=source ${bootscraddr}\0" \
