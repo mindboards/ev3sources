@@ -174,10 +174,10 @@ char      *HwId = "03";
 
 #define   TESTDEVICE    3
 
-#ifdef Linux_X86
-#define   DISABLE_DAISYCHAIN
-#define   DISABLE_DAISYCHAIN_COM_CALL
-#endif
+//#ifdef Linux_X86
+//#define   DISABLE_DAISYCHAIN
+//#define   DISABLE_DAISYCHAIN_COM_CALL
+//#endif
 
 #ifndef PCASM
 #include  <asm/types.h>
