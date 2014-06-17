@@ -7,6 +7,6 @@ ARCH = AM1808
 
 include ../../open_first/rules.mk
 
-c_ui.o: | genimages
+c_ui.o d_lcd.o: | genimages
 genimages:
 	$(MAKE) -C ../../lmssrc/c_ui install
