@@ -3113,6 +3113,14 @@ static enum hrtimer_restart Device1TimerInterrupt1(struct hrtimer *pTimer)
 
             if (UartPort[Port].InLength)
             {
+	      // Workaround for LEGO EV3 Color Sensor (type 29) in RGB-RAW mode (4)
+	      // which always appears to generate unexpected CRC errors
+	      if (UartPort[Port].Type     == 29 &&
+		  UartPort[Port].Mode     == 4  &&
+		  UartPort[Port].InLength == 8)
+	      {
+		CrcError = 0;
+	      }
               if (!CrcError)
               {
                 if (UartPort[Port].Initialised == 0)
