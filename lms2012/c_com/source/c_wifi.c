@@ -79,10 +79,10 @@ static char AccessNameTable[MAX_ACCESS_NAME_COUNT][MAX_ACCESS_NAME_LENGTH];
 // of available H/W and a description of the drivers to load. I.e. a simple and download-
 // able way of integrating new and more drivers. NO commandline stuff.
 
-#define HARDWARE_SEARCH_STRING          "ID 0846:9030 NetGear, Inc."
+#define HARDWARE_SEARCH_STRING          "ID 0846:9041 NetGear, Inc."
 
 #define WIFI_VENDOR_ID    "0846"
-#define WIFI_DONGLE_ID    "9030"
+#define WIFI_DONGLE_ID    "9041"
 
 
 // The following could be set to variable/editable strings via methodes, but for now....
