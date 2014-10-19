@@ -1295,14 +1295,14 @@ RESULT cWiFiDeepDongleSearch(void)
 
   if (FilePointer)
   {
-    while((getline(&OneLine, &NumberOfBytes, FilePointer) > 0) && OneLine)
-    {
-      if((OneLine = strstr(OneLine, HARDWARE_SEARCH_STRING)) > 0)
-      {
+    //while((getline(&OneLine, &NumberOfBytes, FilePointer) > 0) && OneLine)
+    //{
+    //  if((OneLine = strstr(OneLine, HARDWARE_SEARCH_STRING)) > 0)
+    //  {
         Result = OK;
-        break;
-      }
-    }
+    //    break;
+    //  }
+    // }
     pclose(FilePointer);
   }
   return Result;
@@ -1324,14 +1324,14 @@ RESULT cWiFiKnownDongleAttached(void)
 
   if((pIdVendor != NULL) && (pIdProduct != NULL))
   {
-    if(fgets(VendorBuffer, sizeof (VendorBuffer), pIdVendor) != NULL)
-    {
-      if(fgets(ProductBuffer, sizeof (ProductBuffer), pIdProduct) != NULL)
-      {
-        if((strstr(ProductBuffer, WIFI_DONGLE_ID) > 0) && (strstr(VendorBuffer, WIFI_VENDOR_ID) > 0))
+//    if(fgets(VendorBuffer, sizeof (VendorBuffer), pIdVendor) != NULL)
+//    {
+//      if(fgets(ProductBuffer, sizeof (ProductBuffer), pIdProduct) != NULL)
+//      {
+//        if((strstr(ProductBuffer, WIFI_DONGLE_ID) > 0) && (strstr(VendorBuffer, WIFI_VENDOR_ID) > 0))
           Result = OK;
-      }
-    }
+//      }
+//    }
   }
 
   if(pIdVendor != NULL)
@@ -2585,13 +2585,13 @@ RESULT cWiFiGetLogicalName(void)  // Get the Logical Name of the Interface
     size_t NumberOfBytes;
     while((getline(&OneLine, &NumberOfBytes, FilePointer) > 0) && OneLine)
     {
-      if(strstr(OneLine, "IEEE 802"))
-      {
+      //if(strstr(OneLine, "IEEE 802"))
+      //{
           OneLine[5] = 0x00;
-          strcpy(LogicalIfName, OneLine);
+          strcpy(LogicalIfName, "wlan0");
           Result = OK;
-          break;
-      }
+      //    break;
+      //}
     }
     pclose(FilePointer);
   }
@@ -3374,6 +3374,16 @@ void cWiFiLoadAthHwModules(void)
     if(!(cWiFiCheckForLoadedModule("ath9k_htc")))
       system("/sbin/insmod /lib/modules/2.6.33-rc4/kernel/drivers/net/wireless/ath/ath9k/ath9k_htc.ko &> /dev/null");
   #endif
+  
+  //#define DEBUG
+  #undef DEBUG
+  #ifdef DEBUG
+    if(!(cWiFiCheckForLoadedModule("8192cu")))
+      system("/sbin/insmod /lib/modules/2.6.33-rc4/kernel/drivers/net/wireless/8192cu.ko");
+  #else
+    if(!(cWiFiCheckForLoadedModule("8192cu")))
+      system("/sbin/insmod /lib/modules/2.6.33-rc4/kernel/drivers/net/wireless/8192cu.ko &> /dev/null");
+  #endif
 }
 
 void cWiFiUnLoadAthHwModules(void)
@@ -3456,6 +3466,16 @@ void cWiFiUnLoadAthHwModules(void)
   #else
     if(cWiFiCheckForLoadedModule("compat"))
           system("/sbin/rmmod compat.ko &> /dev/null");
+  #endif
+  
+  //#define DEBUG
+  #undef DEBUG
+  #ifdef DEBUG
+    if(cWiFiCheckForLoadedModule("8192cu"))
+      system("/sbin/rmmod 8192cu.ko");
+  #else
+    if(cWiFiCheckForLoadedModule("8192cu"))
+        system("/sbin/rmmod 8192cu.ko &> /dev/null");
   #endif
 }
 
