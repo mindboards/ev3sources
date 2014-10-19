@@ -62,6 +62,8 @@ rm $PATH4/sys/10-lms.rules
 rm $PATH4/sys/gdbinit
 rm $PATH4/sys/lib/dummy
 
+cp 8192cu.ko /mnt/tmpdrv_fs/lib/modules/*/kernel/drivers/net/wireless/
+
 sed -i "s/\#\//\//g" $PATH4/sys/exit
 echo "EV3" > $PATH5/hostname
 
