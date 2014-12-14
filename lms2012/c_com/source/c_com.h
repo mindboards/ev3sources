@@ -960,13 +960,18 @@ enum
 typedef   UWORD     CMDSIZE;
 typedef   UWORD     MSGCNT;
 
+#ifdef SETALIGNMENT
+#pragma pack(push, 1)
+#endif
 
 typedef   struct                        //!< Common command struct
 {
   CMDSIZE CmdSize;
   MSGCNT  MsgCnt;
   UBYTE   Cmd;
+#ifndef NOPAYLOADS
   UBYTE   PayLoad[];                    //!< Pay load is DIRCMD or SYSCMD
+#endif
 }
 COMCMD;
 
@@ -976,7 +981,9 @@ typedef   struct                        //!< Common reply struct
   CMDSIZE CmdSize;
   MSGCNT  MsgCnt;
   UBYTE   Cmd;
+#ifndef NOPAYLOADS
   UBYTE   PayLoad[];
+#endif
 }
 COMRPL;
 
@@ -985,7 +992,9 @@ typedef   struct                        //!< Direct command struct
 {
   UBYTE   Globals;
   UBYTE   Locals;
+#ifndef NOPAYLOADS
   UBYTE   Code[];
+#endif
 }
 DIRCMD;
 
@@ -1024,7 +1033,9 @@ typedef   struct                        //!< System command continue down load c
 {
   UBYTE   Sys;
   UBYTE   Handle;
+#ifndef NOPAYLOADS
   UBYTE   PayLoad[];
+#endif
 }
 SYSCMDC;
 
@@ -1554,6 +1565,11 @@ typedef   struct
   UWORD   WriteCnt;
   ULONG   Content[(MAILBOX_CONTENT_SIZE/4) + 1];
 }MAILBOX;
+
+
+#ifdef SETALIGNMENT
+#pragma pack(pop)
+#endif
 
 
 typedef struct
