@@ -552,12 +552,13 @@ char      *HwId = "03";
 
 #define   KB                    1024
 
+#if !defined(TRUE) && !defined(FALSE)
 enum
 {
   FALSE = 0,
   TRUE  = 1,
 };
-
+#endif
 
 // Reserved device types
 typedef   enum
