@@ -2269,7 +2269,7 @@ void      cComSystemCommand(RXBUF *pRxBuf, TXBUF *pTxBuf)
 
     case LIST_OPEN_HANDLES:
     {
-      UBYTE HCnt1, HCnt2;
+      UBYTE NByte, NBit;
 
       LIST_HANDLES       *pListHandles;
       RPLY_LIST_HANDLES  *pReplyListHandles;
@@ -2284,23 +2284,20 @@ void      cComSystemCommand(RXBUF *pRxBuf, TXBUF *pTxBuf)
       pReplyListHandles->Cmd      =  LIST_OPEN_HANDLES;
       pReplyListHandles->Status   =  SUCCESS;
 
-      for (HCnt1 = 0; HCnt1 < ((MAX_FILE_HANDLES/8) + 1); HCnt1++)
+      for (NByte = 0; NByte < ((MAX_FILE_HANDLES + 7) / 8); NByte++)
       {
+        pReplyListHandles->PayLoad[NByte] = 0;
 
-        pReplyListHandles->PayLoad[HCnt1 + 2] = 0;
-
-        for(HCnt2 = 0; HCnt2 < 8; HCnt2++)
+        for (NBit = 0; NBit < 8 && (NByte * 8 + NBit) < MAX_OPEN_HANDLES; NBit++)
         {
-
-          if (0 != ComInstance.Files[HCnt2 * HCnt1].State)
+          if (0 != ComInstance.Files[NByte * 8 + NBit].State)
           { // Filehandle is in use
-
-            pReplyListHandles->PayLoad[HCnt1 + 2] |= (0x01 << HCnt2) ;
+            pReplyListHandles->PayLoad[NByte] |= (0x01 << NBit);
           }
         }
       }
-      pReplyListHandles->CmdSize  +=  HCnt1;
-      pTxBuf->BlockLen             =  SIZEOF_RPLYLISTHANDLES + HCnt1;
+      pReplyListHandles->CmdSize  +=  NByte;
+      pTxBuf->BlockLen             =  SIZEOF_RPLYLISTHANDLES + NByte;
     }
     break;
 
